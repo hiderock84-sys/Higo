@@ -34,6 +34,9 @@ body {
   height: 45px;
   width: auto;
   display: block;
+  background: rgba(52, 140, 169, 1);
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .header-right {
