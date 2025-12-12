@@ -13,9 +13,9 @@ body {
 
 /* ヘッダー */
 .header {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 12px 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: linear-gradient(to bottom, rgba(52, 140, 169, 0.95), rgba(52, 140, 169, 1));
+  padding: 8px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -30,14 +30,45 @@ body {
 }
 
 .header-logo {
-  height: 50px;
+  height: 40px;
   width: auto;
   display: block;
+  opacity: 0.85;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.header-phone-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.header-phone-number {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .header-menu {
   font-size: 1.8rem;
-  color: #348ca9;
+  color: white;
   background: none;
   border: none;
   cursor: pointer;
