@@ -79,15 +79,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2px;
-  min-width: 140px;
+  gap: 4px;
+  min-width: 150px;
 }
 
 .header-phone-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: rgba(255,255,255,0.95);
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: 0.08em;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   text-align: right;
@@ -96,10 +96,10 @@ body {
 
 .header-phone-number {
   font-family: 'Roboto', 'Zen Kaku Gothic New', sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: white;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: 0.05em;
   text-decoration: none;
   text-align: right;
