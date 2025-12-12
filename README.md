@@ -37,8 +37,9 @@
 5. お問い合わせフォームの実装
 
 ## URL
+- **本番URL**: https://higonoie.pages.dev
+- **最新デプロイ**: https://25f080b4.higonoie.pages.dev
 - **ローカルプレビュー**: https://3000-iskfi6o22jcy0uz3roc7j-2e77fc33.sandbox.novita.ai
-- **本番（デプロイ後）**: https://higonoie.pages.dev
 
 ## データアーキテクチャ
 - **データモデル**: 静的HTMLサイト
@@ -53,9 +54,10 @@
 
 ## デプロイ
 - **プラットフォーム**: Cloudflare Pages
-- **ステータス**: ⏳ デプロイ待ち（Cloudflare APIキー設定が必要）
+- **ステータス**: ✅ デプロイ完了
 - **技術スタック**: HTML + CSS + JavaScript (静的サイト)
-- **最終更新**: 2025-12-12
+- **プロジェクト名**: higonoie
+- **最終デプロイ**: 2025-12-12
 
 ## 変更履歴
 - 2025-12-12: ヒーロー背景画像を鳥居と湖の画像に変更
