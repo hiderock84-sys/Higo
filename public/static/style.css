@@ -14,7 +14,7 @@ body {
 /* ヘッダー */
 .header {
   background: linear-gradient(to bottom, rgba(52, 140, 169, 0.4), rgba(52, 140, 169, 0.5));
-  padding: 2px 20px;
+  padding: 1px 20px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
@@ -24,6 +24,7 @@ body {
   align-items: center;
   gap: 20px;
   backdrop-filter: blur(8px);
+  min-height: 0;
 }
 
 .header-left {
@@ -33,11 +34,12 @@ body {
 }
 
 .header-logo {
-  height: 135px;
+  height: 120px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
   flex-shrink: 0;
+  background: transparent;
 }
 
 .header-nav {
