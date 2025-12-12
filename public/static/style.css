@@ -22,6 +22,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
 .header-left {
@@ -31,16 +32,39 @@ body {
 }
 
 .header-logo {
-  height: 112px;
+  height: 90px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
+  flex-shrink: 0;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .header-phone {
@@ -60,11 +84,34 @@ body {
 
 .header-phone-number {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: white;
   line-height: 1;
   letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.header-phone-number:hover {
+  opacity: 0.9;
+}
+
+.header-consult-btn {
+  background: white;
+  color: #348ca9;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.header-consult-btn:hover {
+  background: rgba(255,255,255,0.9);
+  transform: translateY(-1px);
 }
 
 .header-menu {
@@ -670,6 +717,20 @@ body {
 }
 
 /* レスポンシブデザイン */
+@media (max-width: 1200px) {
+  .header-nav {
+    display: none;
+  }
+  
+  .header-phone {
+    display: none;
+  }
+  
+  .header-consult-btn {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.8rem;
