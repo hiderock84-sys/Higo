@@ -13,9 +13,9 @@ body {
 
 /* ヘッダー */
 .header {
-  background: linear-gradient(to bottom, rgba(52, 140, 169, 0.65), rgba(52, 140, 169, 0.75));
+  background: linear-gradient(to bottom, rgba(52, 140, 169, 0.4), rgba(52, 140, 169, 0.5));
   padding: 2px 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -23,6 +23,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  backdrop-filter: blur(8px);
 }
 
 .header-left {
