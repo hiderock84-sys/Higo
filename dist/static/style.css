@@ -200,8 +200,7 @@ body {
 
 /* ヒーローセクション */
 .hero-section {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5)), 
-              url('/static/aso-landscape.jpg') center/cover no-repeat;
+  background: url('/static/aso-landscape.jpg') center/cover no-repeat;
   color: #333;
   padding: 100px 20px 120px;
   text-align: center;
@@ -210,6 +209,7 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  filter: brightness(1.15) contrast(0.95);
 }
 
 .hero-title {
@@ -218,8 +218,8 @@ body {
   letter-spacing: 0.2em;
   margin-bottom: 30px;
   line-height: 1.2;
-  text-shadow: 2px 2px 12px rgba(255,255,255,0.8);
-  color: #333;
+  text-shadow: 2px 2px 16px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.8);
+  color: #2d2d2d;
 }
 
 .hero-tagline {
@@ -227,7 +227,8 @@ body {
   margin-bottom: 60px;
   letter-spacing: 0.15em;
   font-weight: 400;
-  color: #333;
+  color: #2d2d2d;
+  text-shadow: 1px 1px 8px rgba(255,255,255,0.9);
 }
 
 .hero-message {
@@ -235,7 +236,8 @@ body {
   letter-spacing: 0.05em;
   margin-bottom: 40px;
   line-height: 2;
-  color: #555;
+  color: #444;
+  text-shadow: 1px 1px 6px rgba(255,255,255,0.8);
 }
 
 .hero-submessage {
@@ -243,7 +245,8 @@ body {
   letter-spacing: 0.03em;
   margin-bottom: 0;
   line-height: 2;
-  color: #555;
+  color: #444;
+  text-shadow: 1px 1px 6px rgba(255,255,255,0.8);
 }
 
 
