@@ -33,6 +33,7 @@ body {
   height: 50px;
   width: auto;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
 .header-menu {
