@@ -27,27 +27,38 @@ body {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .header-home-icon {
   color: white;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
 }
 
 .header-subtitle {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.9);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.95);
   font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .logo {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: white;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  line-height: 1;
 }
 
 .header-menu {
@@ -185,8 +196,9 @@ body {
 /* ヒーローセクション */
 .hero-section {
   /* 阿蘇の草原と山々をイメージした背景 */
-  background: linear-gradient(to bottom, rgba(70, 130, 150, 0.25), rgba(52, 140, 169, 0.45)), 
-              url('/static/hero-image.jpg') center/cover;
+  background: linear-gradient(to bottom, rgba(30, 60, 80, 0.5), rgba(20, 50, 70, 0.6)), 
+              url('/static/hero-image.jpg') center top/contain no-repeat;
+  background-color: #4a7c9e;
   color: white;
   padding: 80px 20px 120px;
   text-align: center;
