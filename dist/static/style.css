@@ -200,14 +200,12 @@ body {
 
 /* ヒーローセクション */
 .hero-section {
-  /* 阿蘇の草原と山々をイメージした背景 */
-  background: linear-gradient(to bottom, rgba(30, 60, 80, 0.5), rgba(20, 50, 70, 0.6)), 
-              url('/static/hero-image.jpg') center top/contain no-repeat;
-  background-color: #4a7c9e;
-  color: white;
-  padding: 80px 20px 120px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5)), 
+              url('/static/aso-landscape.jpg') center/cover no-repeat;
+  color: #333;
+  padding: 100px 20px 120px;
   text-align: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -215,71 +213,40 @@ body {
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 300;
-  letter-spacing: 0.15em;
-  margin-bottom: 20px;
+  letter-spacing: 0.2em;
+  margin-bottom: 30px;
   line-height: 1.2;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 12px rgba(255,255,255,0.8);
+  color: #333;
 }
 
 .hero-tagline {
-  font-size: 1.4rem;
-  margin-bottom: 50px;
-  letter-spacing: 0.08em;
+  font-size: 1.5rem;
+  margin-bottom: 60px;
+  letter-spacing: 0.15em;
   font-weight: 400;
+  color: #333;
 }
 
 .hero-message {
-  font-size: 1.05rem;
-  opacity: 0.95;
-  letter-spacing: 0.03em;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
   line-height: 2;
+  color: #555;
 }
 
 .hero-submessage {
-  font-size: 0.95rem;
-  opacity: 0.9;
-  letter-spacing: 0.02em;
-  margin-bottom: 50px;
-  line-height: 1.9;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0;
+  line-height: 2;
+  color: #555;
 }
 
-.hero-button {
-  background: white;
-  color: #348ca9;
-  border: 2px solid white;
-  padding: 15px 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 3px;
-  margin-bottom: 40px;
-}
 
-.hero-button:hover {
-  background: rgba(255,255,255,0.1);
-  color: white;
-}
-
-.hero-more {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.hero-more a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.95rem;
-  opacity: 0.9;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
-  padding-bottom: 2px;
-}
 
 /* コンテンツセクション */
 .content-section {
