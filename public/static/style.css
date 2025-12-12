@@ -14,7 +14,7 @@ body {
 /* ヘッダー */
 .header {
   background: linear-gradient(to bottom, rgba(52, 140, 169, 0.95), rgba(52, 140, 169, 1));
-  padding: 8px 15px;
+  padding: 10px 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   position: sticky;
   top: 0;
@@ -31,11 +31,11 @@ body {
 }
 
 .header-logo {
-  height: 45px;
+  height: 112px;
   width: auto;
   display: block;
-  background: rgba(52, 140, 169, 1);
-  padding: 5px 10px;
+  background-color: rgba(52, 140, 169, 1) !important;
+  padding: 8px 15px;
   border-radius: 4px;
 }
 
