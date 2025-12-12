@@ -200,7 +200,8 @@ body {
 
 /* ヒーローセクション */
 .hero-section {
-  background: url('/static/aso-landscape.jpg') center/cover no-repeat;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.45)), 
+              url('/static/aso-landscape.jpg') center/cover no-repeat;
   color: #333;
   padding: 100px 20px 120px;
   text-align: center;
@@ -209,7 +210,6 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  filter: brightness(1.15) contrast(0.95);
 }
 
 .hero-title {
