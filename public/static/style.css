@@ -664,6 +664,16 @@ body {
   text-align: left;
 }
 
+.footer-logo-container {
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
 .footer-title {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 1.5rem;
