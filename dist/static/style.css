@@ -742,12 +742,35 @@ body {
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   .header {
-    overflow-x: auto;
-    white-space: nowrap;
+    flex-wrap: wrap;
+    padding: 8px 10px;
+    gap: 10px;
+  }
+  
+  .header-logo {
+    height: 60px;
+  }
+  
+  .header-nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 8px 0;
   }
   
   .nav-link {
     font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+  
+  .header-right {
+    gap: 10px;
+  }
+  
+  .header-phone {
+    min-width: 120px;
   }
   
   .header-phone-label {
@@ -755,56 +778,119 @@ body {
   }
   
   .header-phone-number {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .header-consult-btn {
-    padding: 8px 16px;
-    font-size: 0.8rem;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .hero-section {
+    padding: 60px 15px 80px;
+    min-height: calc(100vh - 120px);
   }
   
   .hero-title {
-    font-size: 3.64rem;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.15em;
   }
   
   .hero-tagline {
-    font-size: 1.495rem;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
   }
   
   .hero-message {
-    font-size: 1.235rem;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
   }
   
   .hero-submessage {
-    font-size: 1.105rem;
+    font-size: 0.85rem;
+    line-height: 1.8;
   }
   
   .content-section {
-    padding: 60px 20px;
+    padding: 50px 15px;
+  }
+  
+  .text-content {
+    font-size: 1rem;
+    line-height: 2;
   }
   
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .pillar-grid {
+    gap: 30px;
+  }
+  
+  .pillar-title {
+    font-size: 1.3rem;
+  }
+  
+  .pillar-description {
+    font-size: 0.95rem;
   }
   
   .contact-title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+  }
+  
+  .contact-section {
+    padding: 60px 15px;
+  }
+  
+  .story-section {
+    padding: 60px 15px;
   }
   
   .story-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .staff-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   
   .staff-story {
-    padding: 60px 20px;
+    padding: 50px 15px;
+  }
+  
+  .staff-content {
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+  
+  .access-section {
+    padding: 60px 15px;
+  }
+  
+  .footer {
+    padding: 40px 15px 20px;
+  }
+  
+  .footer-logo {
+    height: 60px;
   }
   
   .footer-section {
     text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .footer-title {
+    font-size: 1.3rem;
+  }
+  
+  .footer-info {
+    font-size: 0.9rem;
   }
 }
 
