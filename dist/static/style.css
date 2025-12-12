@@ -13,12 +13,11 @@ body {
 
 /* ヘッダー */
 .header {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.95);
   padding: 12px 20px;
-  position: absolute;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -34,12 +33,11 @@ body {
   height: 50px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
 }
 
 .header-menu {
   font-size: 1.8rem;
-  color: white;
+  color: #348ca9;
   background: none;
   border: none;
   cursor: pointer;
