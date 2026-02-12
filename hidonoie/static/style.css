@@ -465,7 +465,7 @@ body {
 /* ナビゲーションセクション */
 .navigation-section {
   background: linear-gradient(to bottom, rgba(100, 160, 100, 0.15), rgba(100, 160, 100, 0.08));
-  padding: 60px 20px 80px;
+  padding: 60px clamp(6px, 2.2vw, 16px) 80px;
 }
 
 .nav-section-header {
@@ -487,7 +487,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
-  max-width: 600px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -517,6 +518,8 @@ body {
   isolation: isolate;
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-card-bg {
