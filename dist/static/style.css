@@ -14,7 +14,7 @@ body {
 /* ヘッダー */
 .header {
   background: linear-gradient(to bottom, rgba(52, 140, 169, 0.58), rgba(52, 140, 169, 0.68));
-  padding: 8px 12px;
+  padding: 10px 14px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
@@ -22,9 +22,9 @@ body {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 12px;
   backdrop-filter: blur(8px);
-  min-height: 62px;
+  min-height: 72px;
 }
 
 .header-left {
@@ -34,7 +34,7 @@ body {
 }
 
 .header-logo {
-  height: 42px;
+  height: 50px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
@@ -50,30 +50,31 @@ body {
   gap: 2px;
   text-decoration: none;
   color: white;
-  background: rgba(22, 85, 114, 0.5);
-  border: 1px solid rgba(255,255,255,0.28);
-  border-radius: 10px;
-  padding: 6px 12px;
-  width: min(52vw, 220px);
+  background: linear-gradient(135deg, rgba(22, 85, 114, 0.72), rgba(40, 123, 156, 0.74));
+  border: 1px solid rgba(255,255,255,0.36);
+  border-radius: 12px;
+  padding: 8px 14px 7px;
+  width: clamp(176px, 44vw, 260px);
   min-width: 0;
   max-width: 100%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.24);
 }
 
 .header-call-label {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.04em;
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  opacity: 0.95;
 }
 
 .header-call-number {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 1.08rem;
+  font-weight: 900;
   line-height: 1.1;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 
 .header-phone {
@@ -116,19 +117,19 @@ body {
   justify-content: center;
   background: linear-gradient(135deg, #ffffff 0%, #eaf7ff 100%);
   color: #1f5f7f;
-  padding: 7px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 800;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   transition: all 0.3s ease;
   white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border: 2px solid rgba(255,255,255,0.92);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   line-height: 1.25;
-  min-width: 102px;
+  min-width: 124px;
   cursor: pointer;
 }
 
@@ -139,11 +140,11 @@ body {
 }
 
 .header-sections-btn {
-  background: linear-gradient(135deg, #165c7d 0%, #2a84a8 100%);
+  background: linear-gradient(135deg, #165c7d 0%, #2f8cb4 100%);
   color: #ffffff;
   border: 2px solid rgba(255,255,255,0.9);
-  box-shadow: 0 3px 12px rgba(0,0,0,0.24);
-  min-width: 114px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.26);
+  min-width: 132px;
 }
 
 .header-sections-btn:hover {
@@ -761,30 +762,30 @@ body {
 @media (max-width: 768px) {
   .header {
     grid-template-columns: auto 1fr auto;
-    padding: 6px 7px;
-    column-gap: 6px;
-    min-height: 56px;
+    padding: 7px 8px;
+    column-gap: 8px;
+    min-height: 64px;
   }
   
   .header-logo {
-    height: 30px;
+    height: 38px;
   }
 
   .header-call-cta {
-    padding: 4px 6px;
-    width: min(54vw, 176px);
+    padding: 5px 8px;
+    width: clamp(132px, 44vw, 186px);
     min-width: 0;
-    border-radius: 8px;
+    border-radius: 10px;
     gap: 1px;
   }
 
   .header-call-label {
-    font-size: 0.5rem;
+    font-size: 0.53rem;
     line-height: 1.05;
   }
 
   .header-call-number {
-    font-size: 0.66rem;
+    font-size: 0.78rem;
     line-height: 1.05;
   }
 
@@ -808,14 +809,14 @@ body {
   }
   
   .header-consult-btn {
-    padding: 5px 8px;
-    font-size: 0.64rem;
+    padding: 6px 10px;
+    font-size: 0.66rem;
     border-radius: 999px;
-    min-width: 86px;
+    min-width: 104px;
   }
 
   .header-sections-btn {
-    min-width: 96px;
+    min-width: 112px;
   }
   
   .hero-section {
