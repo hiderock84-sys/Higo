@@ -46,41 +46,38 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 0;
   margin-left: 12px;
   flex: 1 1 auto;
   min-width: 0;
   max-width: 46vw;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.header-nav::-webkit-scrollbar {
-  display: none;
 }
 
 .nav-link {
-  color: white;
-  background: rgba(28, 92, 124, 0.56);
-  border: 1px solid rgba(255,255,255,0.45);
+  color: #1d5f7b;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255,255,255,0.9);
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   white-space: nowrap;
   transition: all 0.2s;
   letter-spacing: 0.03em;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   line-height: 1.2;
-  padding: 3px 8px;
+  padding: 4px 12px;
   flex: 0 0 auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 .nav-link:hover {
-  background: rgba(28, 92, 124, 0.74);
+  background: #ffffff;
   opacity: 1;
+}
+
+.nav-link-contact {
+  background: linear-gradient(135deg, #ffffff 0%, #f5fbff 100%);
 }
 
 .header-right {
@@ -771,20 +768,20 @@ body {
     order: 3;
     width: 100%;
     max-width: 100%;
-    gap: 5px;
+    gap: 0;
     margin-left: 0;
     justify-content: flex-end;
     padding-top: 4px;
     border-top: 1px solid rgba(255,255,255,0.25);
     white-space: normal;
     overflow-x: visible;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
   
   .nav-link {
     display: inline-flex;
-    font-size: 0.6rem;
-    padding: 2px 7px;
+    font-size: 0.66rem;
+    padding: 3px 10px;
   }
   
   .header-right {
