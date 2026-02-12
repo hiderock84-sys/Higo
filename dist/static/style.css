@@ -292,12 +292,12 @@ body {
 
 /* ヒーローセクション */
 .hero-section {
-  background: linear-gradient(to bottom, rgba(11, 73, 117, 0.08), rgba(11, 73, 117, 0.15)),
+  background: linear-gradient(to bottom, rgba(11, 73, 117, 0.12), rgba(11, 73, 117, 0.2)),
               url('/static/aso-landscape.jpg') center/cover no-repeat;
   color: #fff;
-  padding: 100px 20px 120px;
+  padding: 110px 24px 122px;
   text-align: center;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - 74px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -305,40 +305,74 @@ body {
 }
 
 .hero-title {
-  font-size: 6.5rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  margin-bottom: 30px;
-  line-height: 1.2;
+  font-size: 5.4rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  margin-bottom: 22px;
+  line-height: 1.15;
   text-shadow: 2px 2px 16px rgba(0,0,0,0.45), 0 0 42px rgba(0,0,0,0.28);
   color: white;
 }
 
 .hero-tagline {
-  font-size: 1.95rem;
-  margin-bottom: 60px;
-  letter-spacing: 0.15em;
-  font-weight: 400;
+  font-size: 1.72rem;
+  margin-bottom: 38px;
+  letter-spacing: 0.11em;
+  font-weight: 500;
   color: white;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
 }
 
 .hero-message {
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 40px;
-  line-height: 2;
+  max-width: 860px;
+  margin: 0 auto 26px;
+  font-size: 1.22rem;
+  letter-spacing: 0.04em;
+  line-height: 1.85;
   color: white;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
 }
 
 .hero-submessage {
-  font-size: 1.17rem;
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 1.05rem;
   letter-spacing: 0.03em;
-  margin-bottom: 0;
-  line-height: 2;
+  line-height: 1.9;
   color: white;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
+}
+
+
+.intro-about {
+  max-width: 920px;
+  padding: 72px 24px 56px;
+}
+
+.intro-about .text-content {
+  font-size: 1.16rem;
+  line-height: 1.95;
+  margin-bottom: 28px;
+  color: #4a4a4a;
+}
+
+.intro-message {
+  max-width: 920px;
+  padding: 62px 24px 78px;
+}
+
+.intro-message .text-content {
+  font-size: 1.12rem;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  color: #4a4a4a;
+}
+
+.intro-message .text-content.highlight {
+  font-size: 1.24rem;
+  font-weight: 700;
+  color: #1f7f9f;
+  line-height: 1.7;
 }
 
 
@@ -367,7 +401,7 @@ body {
 /* 三つの柱セクション */
 .pillars-section {
   background: #f9fafb;
-  padding: 80px 20px;
+  padding: 74px 24px;
 }
 
 .section-title {
@@ -391,7 +425,7 @@ body {
 
 .pillar-item {
   text-align: center;
-  padding: 30px 20px;
+  padding: 24px 18px;
 }
 
 .pillar-title {
@@ -403,8 +437,8 @@ body {
 }
 
 .pillar-description {
-  font-size: 1.05rem;
-  line-height: 2;
+  font-size: 1rem;
+  line-height: 1.9;
   color: #555;
 }
 
@@ -841,30 +875,40 @@ body {
   }
   
   .hero-section {
-    padding: 60px 15px 80px;
-    min-height: calc(100vh - 72px);
+    padding: 78px 16px 90px;
+    min-height: calc(100vh - 82px);
   }
   
   .hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    letter-spacing: 0.15em;
+    font-size: 2.34rem;
+    margin-bottom: 14px;
+    letter-spacing: 0.1em;
   }
   
   .hero-tagline {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+    font-size: 1.06rem;
+    margin-bottom: 28px;
   }
   
   .hero-message {
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-    line-height: 1.8;
+    font-size: 0.98rem;
+    margin-bottom: 20px;
+    line-height: 1.75;
   }
   
   .hero-submessage {
-    font-size: 0.85rem;
-    line-height: 1.8;
+    font-size: 0.9rem;
+    line-height: 1.78;
+  }
+
+  .intro-about {
+    padding: 48px 16px 34px;
+  }
+
+  .intro-about .text-content {
+    font-size: 0.98rem;
+    line-height: 1.85;
+    margin-bottom: 18px;
   }
   
   .content-section {
@@ -882,15 +926,36 @@ body {
   }
   
   .pillar-grid {
-    gap: 30px;
+    gap: 22px;
+  }
+
+  .pillars-section {
+    padding: 50px 16px;
   }
   
   .pillar-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
   }
   
   .pillar-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .intro-message {
+    padding: 44px 16px 58px;
+  }
+
+  .intro-message .text-content {
+    font-size: 0.96rem;
+    line-height: 1.82;
+    margin-bottom: 18px;
+  }
+
+  .intro-message .text-content.highlight {
+    font-size: 1.06rem;
+    line-height: 1.65;
   }
   
   .contact-title {
