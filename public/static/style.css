@@ -305,18 +305,18 @@ body {
 }
 
 .hero-title {
-  font-size: 5.4rem;
+  font-size: 5.8rem;
   font-weight: 400;
   letter-spacing: 0.14em;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   line-height: 1.15;
   text-shadow: 2px 2px 16px rgba(0,0,0,0.45), 0 0 42px rgba(0,0,0,0.28);
   color: white;
 }
 
 .hero-tagline {
-  font-size: 1.72rem;
-  margin-bottom: 38px;
+  font-size: 1.86rem;
+  margin-bottom: 34px;
   letter-spacing: 0.11em;
   font-weight: 500;
   color: white;
@@ -327,12 +327,12 @@ body {
   max-width: 860px;
   margin: 0 auto 26px;
   font-size: 1.22rem;
-  letter-spacing: 0.02em;
-  line-height: 1.85;
+  letter-spacing: 0.01em;
+  line-height: 1.78;
   color: white;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
   line-break: strict;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .hero-submessage {
@@ -340,11 +340,11 @@ body {
   margin: 0 auto;
   font-size: 1.05rem;
   letter-spacing: 0.015em;
-  line-height: 1.9;
+  line-height: 1.8;
   color: white;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
   line-break: strict;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 
@@ -358,11 +358,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-size: 1.16rem;
-  line-height: 1.9;
+  line-height: 1.86;
   margin-bottom: 28px;
   color: #4a4a4a;
   line-break: strict;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .intro-message {
@@ -375,11 +375,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-size: 1.12rem;
-  line-height: 1.86;
+  line-height: 1.84;
   margin-bottom: 30px;
   color: #4a4a4a;
   line-break: strict;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .intro-message .text-content.highlight {
@@ -389,7 +389,7 @@ body {
   font-size: 1.24rem;
   font-weight: 700;
   color: #1f7f9f;
-  line-height: 1.7;
+  line-height: 1.64;
   text-wrap: balance;
 }
 
@@ -474,9 +474,13 @@ body {
 }
 
 .nav-section-subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
-  line-height: 1.8;
+  line-height: 1.82;
+  max-width: 34em;
+  margin: 0 auto;
+  text-wrap: balance;
+  line-break: strict;
 }
 
 .nav-grid {
@@ -900,20 +904,20 @@ body {
   }
   
   .hero-title {
-    font-size: 2.34rem;
-    margin-bottom: 14px;
+    font-size: 2.62rem;
+    margin-bottom: 16px;
     letter-spacing: 0.1em;
   }
   
   .hero-tagline {
-    font-size: 1.06rem;
-    margin-bottom: 28px;
+    font-size: 1.18rem;
+    margin-bottom: 24px;
   }
   
   .hero-message {
     font-size: 0.98rem;
-    margin-bottom: 20px;
-    line-height: 1.75;
+    margin-bottom: 18px;
+    line-height: 1.72;
     max-width: 24em;
     margin-left: auto;
     margin-right: auto;
@@ -921,8 +925,8 @@ body {
   }
   
   .hero-submessage {
-    font-size: 0.9rem;
-    line-height: 1.78;
+    font-size: 0.92rem;
+    line-height: 1.74;
     max-width: 24em;
     margin-left: auto;
     margin-right: auto;
@@ -935,9 +939,9 @@ body {
 
   .intro-about .text-content {
     font-size: 0.98rem;
-    line-height: 1.85;
+    line-height: 1.78;
     margin-bottom: 18px;
-    max-width: 24em;
+    max-width: 25em;
   }
   
   .content-section {
@@ -969,8 +973,8 @@ body {
   
   .pillar-description {
     font-size: 0.9rem;
-    line-height: 1.75;
-    max-width: 23em;
+    line-height: 1.72;
+    max-width: 24em;
     margin-left: auto;
     margin-right: auto;
   }
@@ -981,15 +985,21 @@ body {
 
   .intro-message .text-content {
     font-size: 0.96rem;
-    line-height: 1.82;
+    line-height: 1.76;
     margin-bottom: 18px;
-    max-width: 24em;
+    max-width: 25em;
   }
 
   .intro-message .text-content.highlight {
     font-size: 1.06rem;
-    line-height: 1.65;
-    max-width: 22em;
+    line-height: 1.58;
+    max-width: 24em;
+  }
+
+  .nav-section-subtitle {
+    font-size: 0.94rem;
+    line-height: 1.72;
+    max-width: 24em;
   }
   
   .contact-title {
