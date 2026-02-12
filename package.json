@@ -11,6 +11,7 @@
     "build:prod": "npm run build",
     "build:cloudflare": "npm run build",
     "build:hidonoie": "npm run build",
+    "build:higono-ie": "npm run build",
     "preview": "wrangler pages dev dist",
     "deploy": "npm run build && node scripts/maybe-wrangler-deploy.mjs",
     "deploy:prod": "npm run build && node scripts/maybe-wrangler-deploy.mjs --project-name higonoie",

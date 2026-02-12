@@ -5,16 +5,25 @@ import { fileURLToPath } from 'node:url'
 const currentFile = fileURLToPath(import.meta.url)
 const projectRoot = path.resolve(path.dirname(currentFile), '..')
 const distDir = path.join(projectRoot, 'dist')
-const targets = [
+const subprojectRoots = ['hidonoie', 'higono-ie']
+const rootTargets = [
   path.join(projectRoot, 'build'),
-  path.join(projectRoot, 'hidonoie', 'dist'),
-  path.join(projectRoot, 'hidonoie', 'build'),
+  path.join(projectRoot, 'out'),
+  path.join(projectRoot, 'output'),
+  path.join(projectRoot, '.output', 'public'),
+  path.join(projectRoot, '.vercel', 'output', 'static'),
 ]
+const subprojectTargets = subprojectRoots.flatMap((folder) => [
+  path.join(projectRoot, folder, 'dist'),
+  path.join(projectRoot, folder, 'build'),
+  path.join(projectRoot, folder, 'out'),
+  path.join(projectRoot, folder, 'output'),
+  path.join(projectRoot, folder, '.output', 'public'),
+])
+const targets = [...rootTargets, ...subprojectTargets]
 const cleanupAssets = [
   path.join(projectRoot, 'dist', 'static', 'logo-design.jpg'),
-  path.join(projectRoot, 'build', 'static', 'logo-design.jpg'),
-  path.join(projectRoot, 'hidonoie', 'dist', 'static', 'logo-design.jpg'),
-  path.join(projectRoot, 'hidonoie', 'build', 'static', 'logo-design.jpg'),
+  ...targets.map((target) => path.join(target, 'static', 'logo-design.jpg')),
 ]
 
 async function copyDistToTargets() {
@@ -25,16 +34,19 @@ async function copyDistToTargets() {
   }
 }
 
-async function syncRootFilesForSubproject() {
+async function syncRootFilesForSubprojects() {
   const sourceIndex = path.join(projectRoot, 'index.html')
-  const targetIndex = path.join(projectRoot, 'hidonoie', 'index.html')
   const sourceStyle = path.join(projectRoot, 'public', 'static', 'style.css')
-  const targetStyle = path.join(projectRoot, 'hidonoie', 'static', 'style.css')
-
   const html = await readFile(sourceIndex, 'utf8')
-  await mkdir(path.dirname(targetStyle), { recursive: true })
-  await writeFile(targetIndex, html)
-  await writeFile(targetStyle, await readFile(sourceStyle, 'utf8'))
+  const css = await readFile(sourceStyle, 'utf8')
+
+  for (const folder of subprojectRoots) {
+    const targetIndex = path.join(projectRoot, folder, 'index.html')
+    const targetStyle = path.join(projectRoot, folder, 'static', 'style.css')
+    await mkdir(path.dirname(targetStyle), { recursive: true })
+    await writeFile(targetIndex, html)
+    await writeFile(targetStyle, css)
+  }
 }
 
 async function cleanupUnusedAssets() {
@@ -44,5 +56,5 @@ async function cleanupUnusedAssets() {
 }
 
 await copyDistToTargets()
-await syncRootFilesForSubproject()
+await syncRootFilesForSubprojects()
 await cleanupUnusedAssets()

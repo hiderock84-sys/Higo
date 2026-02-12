@@ -26,6 +26,7 @@ async function ensureFromRootDist() {
 async function ensureFromFallback() {
   const html = await readFile(fallbackIndex, 'utf8')
   const css = await readFile(fallbackStyle, 'utf8')
+
   for (const target of targets) {
     await rm(target, { recursive: true, force: true })
     await mkdir(path.join(target, 'static'), { recursive: true })
