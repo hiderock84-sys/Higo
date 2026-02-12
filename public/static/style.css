@@ -14,15 +14,15 @@ body {
 /* ヘッダー */
 .header {
   background: linear-gradient(to bottom, rgba(52, 140, 169, 0.4), rgba(52, 140, 169, 0.5));
-  padding: 1px 20px;
+  padding: 2px 16px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   backdrop-filter: blur(8px);
   min-height: 0;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .header-logo {
-  height: 120px;
+  height: 60px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
@@ -45,21 +45,23 @@ body {
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 18px;
-  flex: 1;
-  justify-content: center;
+  gap: 12px;
+  flex: 0 1 auto;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .nav-link {
   color: white;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
   white-space: nowrap;
   transition: all 0.2s;
   letter-spacing: 0.03em;
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  padding: 4px 0;
+  line-height: 1.25;
+  padding: 2px 0;
   border-bottom: 2px solid transparent;
 }
 
@@ -71,39 +73,37 @@ body {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
 .header-phone {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  min-width: 150px;
+  align-items: flex-end;
+  gap: 2px;
+  min-width: auto;
 }
 
 .header-phone-label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.95);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  text-align: center;
-  width: 100%;
+  text-align: right;
 }
 
 .header-phone-number {
-  font-family: 'Roboto', 'Zen Kaku Gothic New', sans-serif;
-  font-size: 1.05rem;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 0.8rem;
   font-weight: 600;
   color: white;
-  line-height: 1.2;
-  letter-spacing: 0.05em;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
   text-decoration: none;
-  text-align: center;
-  width: 100%;
+  text-align: right;
 }
 
 .header-phone-number:hover {
@@ -113,7 +113,7 @@ body {
 .header-consult-btn {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   color: #2c5f7a;
-  padding: 8px 18px;
+  padding: 6px 12px;
   border-radius: 5px;
   text-decoration: none;
   font-size: 0.8rem;
@@ -123,7 +123,8 @@ body {
   white-space: nowrap;
   box-shadow: 0 2px 5px rgba(0,0,0,0.12);
   border: 1px solid rgba(255,255,255,0.3);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
 }
 
 .header-consult-btn:hover {
@@ -743,47 +744,50 @@ body {
 @media (max-width: 768px) {
   .header {
     flex-wrap: wrap;
-    padding: 8px 10px;
-    gap: 10px;
+    padding: 6px 10px;
+    gap: 8px;
   }
   
   .header-logo {
-    height: 60px;
+    height: 44px;
   }
   
   .header-nav {
     order: 3;
     width: 100%;
     flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    padding: 8px 0;
+    gap: 6px;
+    justify-content: flex-end;
+    padding: 6px 0 0;
+    margin-left: 0;
   }
   
   .nav-link {
-    font-size: 0.75rem;
-    padding: 6px 8px;
+    font-size: 0.7rem;
+    padding: 4px 6px;
   }
   
   .header-right {
-    gap: 10px;
+    gap: 8px;
+    margin-left: auto;
   }
   
   .header-phone {
-    min-width: 120px;
+    min-width: auto;
+    align-items: flex-end;
   }
   
   .header-phone-label {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
   
   .header-phone-number {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
   }
   
   .header-consult-btn {
-    padding: 6px 12px;
-    font-size: 0.75rem;
+    padding: 5px 10px;
+    font-size: 0.7rem;
   }
   
   .hero-section {
