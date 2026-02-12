@@ -15,7 +15,7 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <link href="/static/style.css?v=20260212v" rel="stylesheet">
+  <link href="/static/style.css?v=20260212w" rel="stylesheet">
 </head>
 
 <body>
@@ -174,59 +174,95 @@
     </div>
     
     <div class="nav-grid">
-      <div class="nav-card nav-card-top">
+      <a href="#top" class="nav-card nav-card-top" aria-label="トップへ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">トップ</div>
-        <div class="nav-subtitle">ホームへ戻る</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">🏠</div>
+          <div class="nav-title">トップ</div>
+          <div class="nav-subtitle">ホームへ戻る</div>
+        </div>
+        <div class="nav-action">詳しく見る</div>
+      </a>
       
-      <div class="nav-card nav-card-about">
+      <a href="#about" class="nav-card nav-card-about" aria-label="私たちについてへ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">私たちについて</div>
-        <div class="nav-subtitle">施設の理念と特徴</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">ℹ️</div>
+          <div class="nav-title">私たちについて</div>
+          <div class="nav-subtitle">施設の理念と特徴</div>
+        </div>
+        <div class="nav-action">詳しく見る</div>
+      </a>
       
-      <div class="nav-card nav-card-staff">
+      <a href="#testimonials" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">スタッフ紹介</div>
-        <div class="nav-subtitle">経験豊かな支援者</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">👥</div>
+          <div class="nav-title">スタッフ紹介</div>
+          <div class="nav-subtitle">経験豊かな支援者</div>
+        </div>
+        <div class="nav-action">詳しく見る</div>
+      </a>
       
-      <div class="nav-card nav-card-program">
+      <a href="#program" class="nav-card nav-card-program" aria-label="プログラムへ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">プログラム</div>
-        <div class="nav-subtitle">回復への道のり</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">📋</div>
+          <div class="nav-title">プログラム</div>
+          <div class="nav-subtitle">回復への道のり</div>
+        </div>
+        <div class="nav-action">詳しく見る</div>
+      </a>
       
-      <div class="nav-card nav-card-voice">
+      <a href="#testimonials" class="nav-card nav-card-voice" aria-label="体験談へ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">体験談</div>
-        <div class="nav-subtitle">回復者の声</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">💬</div>
+          <div class="nav-title">体験談</div>
+          <div class="nav-subtitle">回復者の声</div>
+        </div>
+        <div class="nav-action">詳しく見る</div>
+      </a>
       
-      <div class="nav-card nav-card-women" id="women">
+      <a href="#contact" class="nav-card nav-card-women" id="women" aria-label="女性専用施設の相談窓口へ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">女性専用施設</div>
-        <div class="nav-subtitle">らぽーる</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">🌸</div>
+          <div class="nav-title">女性専用施設</div>
+          <div class="nav-subtitle">らぽーる</div>
+        </div>
+        <div class="nav-action">相談窓口へ</div>
+      </a>
       
-      <div class="nav-card nav-card-home" id="grouphome">
+      <a href="#contact" class="nav-card nav-card-home" id="grouphome" aria-label="グループホームの相談窓口へ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">グループホーム</div>
-        <div class="nav-subtitle">共同生活の場</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">🏡</div>
+          <div class="nav-title">グループホーム</div>
+          <div class="nav-subtitle">共同生活の場</div>
+        </div>
+        <div class="nav-action">相談窓口へ</div>
+      </a>
       
-      <div class="nav-card nav-card-usage" id="usage">
+      <a href="#contact" class="nav-card nav-card-usage" id="usage" aria-label="ご利用案内の相談窓口へ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">ご利用案内</div>
-        <div class="nav-subtitle">ご利用の流れ</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">📘</div>
+          <div class="nav-title">ご利用案内</div>
+          <div class="nav-subtitle">ご利用の流れ</div>
+        </div>
+        <div class="nav-action">相談窓口へ</div>
+      </a>
       
-      <div class="nav-card nav-card-family" id="family">
+      <a href="#contact" class="nav-card nav-card-family" id="family" aria-label="家族ガイドの相談窓口へ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">家族ガイド</div>
-        <div class="nav-subtitle">ご家族へのサポート</div>
-      </div>
+        <div class="nav-card-content">
+          <div class="nav-icon" aria-hidden="true">👨‍👩‍👧</div>
+          <div class="nav-title">家族ガイド</div>
+          <div class="nav-subtitle">ご家族へのサポート</div>
+        </div>
+        <div class="nav-action">相談窓口へ</div>
+      </a>
     </div>
   </section>
 
