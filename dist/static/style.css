@@ -20,7 +20,7 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   column-gap: 10px;
   backdrop-filter: blur(8px);
@@ -54,7 +54,8 @@ body {
   border: 1px solid rgba(255,255,255,0.28);
   border-radius: 10px;
   padding: 6px 12px;
-  min-width: 170px;
+  width: min(52vw, 220px);
+  min-width: 0;
   max-width: 100%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
@@ -110,20 +111,24 @@ body {
 
 .header-consult-btn {
   justify-self: end;
-  background: linear-gradient(135deg, #ffffff 0%, #f2f8fb 100%);
-  color: #2c5f7a;
-  padding: 6px 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff 0%, #eaf7ff 100%);
+  color: #1f5f7f;
+  padding: 7px 12px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.66rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   transition: all 0.3s ease;
   white-space: nowrap;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
-  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  border: 2px solid rgba(255,255,255,0.92);
   letter-spacing: 0.03em;
   line-height: 1.25;
+  min-width: 102px;
 }
 
 .header-consult-btn:hover {
@@ -743,7 +748,7 @@ body {
 @media (max-width: 768px) {
   .header {
     grid-template-columns: auto 1fr auto;
-    padding: 6px 8px;
+    padding: 6px 7px;
     column-gap: 6px;
     min-height: 56px;
   }
@@ -754,7 +759,8 @@ body {
 
   .header-call-cta {
     padding: 4px 6px;
-    min-width: 120px;
+    width: min(54vw, 176px);
+    min-width: 0;
     border-radius: 8px;
     gap: 1px;
   }
@@ -789,9 +795,10 @@ body {
   }
   
   .header-consult-btn {
-    padding: 4px 8px;
-    font-size: 0.58rem;
+    padding: 5px 8px;
+    font-size: 0.64rem;
     border-radius: 999px;
+    min-width: 86px;
   }
   
   .hero-section {
