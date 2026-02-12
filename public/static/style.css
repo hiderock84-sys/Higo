@@ -14,17 +14,17 @@ body {
 /* ヘッダー */
 .header {
   background: linear-gradient(to bottom, rgba(52, 140, 169, 0.58), rgba(52, 140, 169, 0.68));
-  padding: 7px 12px;
+  padding: 8px 12px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 8px;
+  column-gap: 10px;
   backdrop-filter: blur(8px);
-  min-height: 0;
+  min-height: 62px;
 }
 
 .header-left {
@@ -34,7 +34,7 @@ body {
 }
 
 .header-logo {
-  height: 54px;
+  height: 42px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
@@ -42,50 +42,37 @@ body {
   background: transparent;
 }
 
-.header-nav {
+.header-call-cta {
+  justify-self: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0;
-  margin-left: 12px;
-  flex: 1 1 auto;
-  min-width: 0;
-  max-width: 46vw;
-}
-
-.nav-link {
-  color: #1d5f7b;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255,255,255,0.9);
-  border-radius: 999px;
+  gap: 2px;
   text-decoration: none;
-  font-size: 0.7rem;
-  font-weight: 700;
-  white-space: nowrap;
-  transition: all 0.2s;
-  letter-spacing: 0.03em;
+  color: white;
+  background: rgba(22, 85, 114, 0.5);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 10px;
+  padding: 6px 12px;
+  min-width: 170px;
+  max-width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.header-call-label {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  line-height: 1.2;
-  padding: 4px 12px;
-  flex: 0 0 auto;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
 }
 
-.nav-link:hover {
-  background: #ffffff;
-  opacity: 1;
-}
-
-.nav-link-contact {
-  background: linear-gradient(135deg, #ffffff 0%, #f5fbff 100%);
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: 0;
-  flex-shrink: 0;
+.header-call-number {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
 }
 
 .header-phone {
@@ -122,12 +109,13 @@ body {
 }
 
 .header-consult-btn {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  justify-self: end;
+  background: linear-gradient(135deg, #ffffff 0%, #f2f8fb 100%);
   color: #2c5f7a;
-  padding: 4px 10px;
-  border-radius: 5px;
+  padding: 6px 11px;
+  border-radius: 999px;
   text-decoration: none;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   transition: all 0.3s ease;
@@ -754,41 +742,35 @@ body {
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   .header {
-    flex-wrap: wrap;
-    padding: 6px 8px 4px;
-    gap: 6px;
+    grid-template-columns: auto 1fr auto;
+    padding: 6px 8px;
+    column-gap: 6px;
+    min-height: 56px;
   }
   
   .header-logo {
-    height: 32px;
+    height: 30px;
   }
-  
-  .header-nav {
-    display: flex;
-    order: 3;
-    width: 100%;
-    max-width: 100%;
-    gap: 0;
-    margin-left: 0;
-    justify-content: flex-end;
-    padding-top: 4px;
-    border-top: 1px solid rgba(255,255,255,0.25);
-    white-space: normal;
-    overflow-x: visible;
-    flex-wrap: nowrap;
+
+  .header-call-cta {
+    padding: 4px 6px;
+    min-width: 120px;
+    border-radius: 8px;
+    gap: 1px;
   }
-  
-  .nav-link {
-    display: inline-flex;
+
+  .header-call-label {
+    font-size: 0.5rem;
+    line-height: 1.05;
+  }
+
+  .header-call-number {
     font-size: 0.66rem;
-    padding: 3px 10px;
+    line-height: 1.05;
   }
-  
-  .header-right {
-    display: flex;
-    gap: 5px;
-    margin-left: auto;
-    order: 2;
+
+  .header-nav {
+    display: none;
   }
   
   .header-phone {
@@ -807,8 +789,9 @@ body {
   }
   
   .header-consult-btn {
-    padding: 3px 8px;
-    font-size: 0.6rem;
+    padding: 4px 8px;
+    font-size: 0.58rem;
+    border-radius: 999px;
   }
   
   .hero-section {
