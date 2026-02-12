@@ -492,22 +492,29 @@ body {
 }
 
 .nav-card {
-  background: white;
-  padding: 36px 24px 32px;
-  min-height: 146px;
+  --card-background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.62), rgba(255,255,255,0) 48%),
+    radial-gradient(circle at 84% 80%, rgba(166, 197, 221, 0.34), rgba(166, 197, 221, 0) 56%),
+    repeating-linear-gradient(140deg, rgba(255,255,255,0.16) 0 12px, rgba(255,255,255,0) 12px 24px),
+    linear-gradient(130deg, rgba(236,245,252,0.95), rgba(208,226,241,0.92));
+  --card-title-color: #1f4f70;
+  --card-subtitle-color: #435968;
+  padding: 38px 24px 34px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 9px;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 7px 18px rgba(21, 48, 63, 0.12);
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid rgba(45, 90, 124, 0.1);
+  border-radius: 14px;
+  border: 1px solid rgba(32, 70, 94, 0.14);
+  isolation: isolate;
 }
 
 .nav-card-bg {
@@ -516,48 +523,155 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(180, 210, 230, 0.3), rgba(180, 210, 230, 0.15));
+  background: var(--card-background);
   z-index: 0;
-  opacity: 0.5;
+  opacity: 1;
+  transform: scale(1.02);
+  filter: saturate(1.03) contrast(1.01);
+  transition: transform 0.45s ease, filter 0.45s ease;
 }
 
 .nav-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 24px rgba(20, 48, 62, 0.17);
 }
 
 .nav-card:hover .nav-card-bg {
-  opacity: 0.8;
+  transform: scale(1.05);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.nav-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0.14) 52%, rgba(255,255,255,0.06));
+  z-index: 0;
+  pointer-events: none;
 }
 
 .nav-title {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #2e5f83;
+  color: var(--card-title-color);
   margin: 0;
   line-height: 1.34;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.025em;
   line-break: strict;
   text-wrap: balance;
-  white-space: nowrap;
+  white-space: normal;
   word-break: keep-all;
+  max-width: 11em;
+  text-shadow: 0 1px 8px rgba(255,255,255,0.5);
   position: relative;
   z-index: 1;
 }
 
 .nav-subtitle {
   font-size: 0.92rem;
-  color: #556370;
+  color: var(--card-subtitle-color);
   margin: 0;
   line-height: 1.56;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.015em;
   line-break: strict;
   text-wrap: pretty;
-  white-space: nowrap;
+  white-space: normal;
   word-break: keep-all;
+  max-width: 12em;
+  text-shadow: 0 1px 5px rgba(255,255,255,0.42);
   position: relative;
   z-index: 1;
+}
+
+.nav-card-top {
+  --card-title-color: #1f2f41;
+  --card-subtitle-color: #3c4f63;
+  --card-background:
+    radial-gradient(circle at 16% 16%, rgba(255,255,255,0.68), rgba(255,255,255,0) 48%),
+    radial-gradient(circle at 84% 76%, rgba(219,198,165,0.45), rgba(219,198,165,0) 56%),
+    repeating-linear-gradient(136deg, rgba(255,255,255,0.18) 0 10px, rgba(255,255,255,0) 10px 22px),
+    linear-gradient(132deg, rgba(248,244,235,0.96), rgba(230,219,200,0.93));
+}
+
+.nav-card-about {
+  --card-title-color: #0f4d8a;
+  --card-subtitle-color: #295f8f;
+  --card-background:
+    radial-gradient(circle at 20% 24%, rgba(255,255,255,0.55), rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 78% 82%, rgba(72,140,193,0.32), rgba(72,140,193,0) 54%),
+    repeating-linear-gradient(125deg, rgba(255,255,255,0.16) 0 11px, rgba(255,255,255,0) 11px 24px),
+    linear-gradient(132deg, rgba(214,236,251,0.96), rgba(177,216,243,0.92));
+}
+
+.nav-card-staff {
+  --card-title-color: #3a2f8f;
+  --card-subtitle-color: #4d429f;
+  --card-background:
+    radial-gradient(circle at 14% 18%, rgba(255,255,255,0.56), rgba(255,255,255,0) 47%),
+    radial-gradient(circle at 82% 80%, rgba(196,153,215,0.34), rgba(196,153,215,0) 57%),
+    repeating-linear-gradient(134deg, rgba(255,255,255,0.16) 0 10px, rgba(255,255,255,0) 10px 22px),
+    linear-gradient(132deg, rgba(237,224,247,0.96), rgba(216,198,237,0.92));
+}
+
+.nav-card-program {
+  --card-title-color: #bd4c14;
+  --card-subtitle-color: #c7641c;
+  --card-background:
+    radial-gradient(circle at 20% 16%, rgba(255,255,255,0.52), rgba(255,255,255,0) 48%),
+    radial-gradient(circle at 82% 82%, rgba(241,171,110,0.36), rgba(241,171,110,0) 56%),
+    repeating-linear-gradient(128deg, rgba(255,255,255,0.17) 0 10px, rgba(255,255,255,0) 10px 22px),
+    linear-gradient(130deg, rgba(250,235,216,0.96), rgba(241,214,181,0.92));
+}
+
+.nav-card-voice {
+  --card-title-color: #1d6a35;
+  --card-subtitle-color: #2f7f47;
+  --card-background:
+    radial-gradient(circle at 16% 14%, rgba(255,255,255,0.56), rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 82% 82%, rgba(138,196,131,0.35), rgba(138,196,131,0) 54%),
+    repeating-linear-gradient(136deg, rgba(255,255,255,0.15) 0 10px, rgba(255,255,255,0) 10px 24px),
+    linear-gradient(134deg, rgba(225,246,220,0.96), rgba(197,231,191,0.92));
+}
+
+.nav-card-women {
+  --card-title-color: #97285f;
+  --card-subtitle-color: #ae3b76;
+  --card-background:
+    radial-gradient(circle at 22% 18%, rgba(255,255,255,0.58), rgba(255,255,255,0) 47%),
+    radial-gradient(circle at 78% 80%, rgba(233,153,190,0.34), rgba(233,153,190,0) 55%),
+    repeating-linear-gradient(128deg, rgba(255,255,255,0.16) 0 10px, rgba(255,255,255,0) 10px 23px),
+    linear-gradient(130deg, rgba(252,226,239,0.96), rgba(241,198,220,0.92));
+}
+
+.nav-card-home {
+  --card-title-color: #2f4e63;
+  --card-subtitle-color: #3f637a;
+  --card-background:
+    radial-gradient(circle at 18% 16%, rgba(255,255,255,0.58), rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 80% 82%, rgba(166,188,203,0.36), rgba(166,188,203,0) 56%),
+    repeating-linear-gradient(134deg, rgba(255,255,255,0.16) 0 10px, rgba(255,255,255,0) 10px 23px),
+    linear-gradient(132deg, rgba(233,240,246,0.96), rgba(204,218,229,0.92));
+}
+
+.nav-card-usage {
+  --card-title-color: #826217;
+  --card-subtitle-color: #967531;
+  --card-background:
+    radial-gradient(circle at 18% 16%, rgba(255,255,255,0.6), rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 84% 82%, rgba(218,192,127,0.34), rgba(218,192,127,0) 54%),
+    repeating-linear-gradient(132deg, rgba(255,255,255,0.16) 0 10px, rgba(255,255,255,0) 10px 24px),
+    linear-gradient(132deg, rgba(247,238,215,0.96), rgba(234,220,177,0.92));
+}
+
+.nav-card-family {
+  --card-title-color: #1f5968;
+  --card-subtitle-color: #2e6f7f;
+  --card-background:
+    radial-gradient(circle at 20% 16%, rgba(255,255,255,0.56), rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 82% 82%, rgba(133,190,194,0.34), rgba(133,190,194,0) 55%),
+    repeating-linear-gradient(136deg, rgba(255,255,255,0.16) 0 10px, rgba(255,255,255,0) 10px 24px),
+    linear-gradient(132deg, rgba(220,245,243,0.96), rgba(189,227,223,0.92));
 }
 
 /* 相談セクション */
@@ -1028,18 +1142,20 @@ body {
   }
 
   .nav-card {
-    padding: 32px 20px 28px;
-    min-height: 132px;
+    padding: 30px 18px 26px;
+    min-height: 136px;
     gap: 8px;
-    border-radius: 9px;
+    border-radius: 12px;
   }
 
   .nav-title {
-    font-size: 1.32rem;
+    font-size: 1.3rem;
+    max-width: 10.6em;
   }
 
   .nav-subtitle {
     font-size: 0.9rem;
+    max-width: 11.4em;
   }
   
   .contact-title {
@@ -1142,18 +1258,21 @@ body {
 
   .nav-card {
     padding: 28px 14px 24px;
-    min-height: 118px;
+    min-height: 126px;
     gap: 7px;
+    border-radius: 11px;
   }
 
   .nav-title {
-    font-size: 1.24rem;
+    font-size: 1.21rem;
     letter-spacing: 0.02em;
+    max-width: 10.2em;
   }
 
   .nav-subtitle {
     font-size: 0.86rem;
     letter-spacing: 0.01em;
+    max-width: 11em;
   }
 }
 
