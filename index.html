@@ -15,7 +15,7 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <link href="/static/style.css?v=20260212f" rel="stylesheet">
+  <link href="/static/style.css?v=20260212g" rel="stylesheet">
 </head>
 
 <body>
@@ -31,6 +31,16 @@
       </div>
       <a href="tel:0964-41-2387" class="header-consult-btn">相談窓口</a>
     </div>
+    <nav class="header-nav">
+      <a href="#top" class="nav-link">トップ</a>
+      <a href="#about" class="nav-link">私たちについて</a>
+      <a href="#program" class="nav-link">プログラム</a>
+      <a href="#testimonials" class="nav-link">体験談</a>
+      <a href="#women" class="nav-link">女性専用施設</a>
+      <a href="#grouphome" class="nav-link">グループホーム</a>
+      <a href="#usage" class="nav-link">ご利用案内</a>
+      <a href="#family" class="nav-link">家族ガイド</a>
+    </nav>
     <button class="header-menu" id="menuButton">☰</button>
   </header>
 
@@ -58,7 +68,7 @@
     
     <nav class="mobile-menu-nav">
       <div class="mobile-menu-section-title">メニュー</div>
-      <a href="#" class="mobile-menu-item">トップ</a>
+      <a href="#top" class="mobile-menu-item">トップ</a>
       <a href="#about" class="mobile-menu-item">私たちについて</a>
       <a href="#program" class="mobile-menu-item">プログラム</a>
       <a href="#testimonials" class="mobile-menu-item">体験談</a>
@@ -77,7 +87,7 @@
   </div>
 
   <!-- ヒーローセクション -->
-  <section class="hero-section">
+  <section class="hero-section" id="top">
     <h1 class="hero-title">ひごのいえ</h1>
     
     <div class="hero-tagline">
@@ -121,7 +131,7 @@
   </section>
 
   <!-- 三つの柱 -->
-  <section class="content-section pillars-section">
+  <section class="content-section pillars-section" id="program">
     <h2 class="section-title">私たちが大切にする<br>三つの柱</h2>
     
     <div class="pillar-grid">
@@ -232,25 +242,25 @@
         <div class="nav-subtitle">回復者の声</div>
       </div>
       
-      <div class="nav-card">
+      <div class="nav-card" id="women">
         <div class="nav-card-bg"></div>
         <div class="nav-title">女性専用施設</div>
         <div class="nav-subtitle">らぽーる</div>
       </div>
       
-      <div class="nav-card">
+      <div class="nav-card" id="grouphome">
         <div class="nav-card-bg"></div>
         <div class="nav-title">グループホーム</div>
         <div class="nav-subtitle">共同生活の場</div>
       </div>
       
-      <div class="nav-card">
+      <div class="nav-card" id="usage">
         <div class="nav-card-bg"></div>
         <div class="nav-title">ご利用案内</div>
         <div class="nav-subtitle">ご利用の流れ</div>
       </div>
       
-      <div class="nav-card">
+      <div class="nav-card" id="family">
         <div class="nav-card-bg"></div>
         <div class="nav-title">家族ガイド</div>
         <div class="nav-subtitle">ご家族へのサポート</div>
@@ -259,7 +269,7 @@
   </section>
 
   <!-- ストーリーセクション -->
-  <section class="story-section">
+  <section class="story-section" id="testimonials">
     <div class="story-content">
       <div class="story-label">STORIES OF RECOVERY</div>
       <h2 class="story-title">絶望から希望へ</h2>
