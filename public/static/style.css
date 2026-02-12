@@ -14,17 +14,17 @@ body {
 /* ヘッダー */
 .header {
   background: linear-gradient(to bottom, rgba(52, 140, 169, 0.58), rgba(52, 140, 169, 0.68));
-  padding: 10px 14px;
+  padding: 9px 14px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(92px, auto) minmax(188px, 1fr) minmax(124px, auto);
   align-items: center;
   column-gap: 12px;
   backdrop-filter: blur(8px);
-  min-height: 72px;
+  min-height: 74px;
 }
 
 .header-left {
@@ -34,7 +34,7 @@ body {
 }
 
 .header-logo {
-  height: 50px;
+  height: 52px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
@@ -54,24 +54,24 @@ body {
   border: 1px solid rgba(255,255,255,0.36);
   border-radius: 12px;
   padding: 8px 14px 7px;
-  width: clamp(176px, 44vw, 260px);
+  width: clamp(188px, 42vw, 246px);
   min-width: 0;
   max-width: 100%;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.24);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.22);
 }
 
 .header-call-label {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   font-weight: 700;
   line-height: 1.05;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   opacity: 0.95;
 }
 
 .header-call-number {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 1.08rem;
+  font-size: 1.04rem;
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: 0.03em;
@@ -118,9 +118,9 @@ body {
   background: linear-gradient(135deg, #ffffff 0%, #eaf7ff 100%);
   color: #1f5f7f;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 12px;
   text-decoration: none;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   transition: all 0.3s ease;
@@ -129,7 +129,7 @@ body {
   border: 2px solid rgba(255,255,255,0.92);
   letter-spacing: 0.04em;
   line-height: 1.25;
-  min-width: 124px;
+  min-width: 128px;
   cursor: pointer;
 }
 
@@ -144,7 +144,7 @@ body {
   color: #ffffff;
   border: 2px solid rgba(255,255,255,0.9);
   box-shadow: 0 4px 14px rgba(0,0,0,0.26);
-  min-width: 132px;
+  min-width: 136px;
 }
 
 .header-sections-btn:hover {
@@ -763,29 +763,29 @@ body {
   .header {
     grid-template-columns: auto 1fr auto;
     padding: 7px 8px;
-    column-gap: 8px;
-    min-height: 64px;
+    column-gap: 7px;
+    min-height: 62px;
   }
   
   .header-logo {
-    height: 38px;
+    height: 36px;
   }
 
   .header-call-cta {
     padding: 5px 8px;
-    width: clamp(132px, 44vw, 186px);
+    width: clamp(134px, 44vw, 178px);
     min-width: 0;
     border-radius: 10px;
     gap: 1px;
   }
 
   .header-call-label {
-    font-size: 0.53rem;
+    font-size: 0.52rem;
     line-height: 1.05;
   }
 
   .header-call-number {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     line-height: 1.05;
   }
 
@@ -809,14 +809,14 @@ body {
   }
   
   .header-consult-btn {
-    padding: 6px 10px;
-    font-size: 0.66rem;
-    border-radius: 999px;
-    min-width: 104px;
+    padding: 5px 8px;
+    font-size: 0.62rem;
+    border-radius: 10px;
+    min-width: 98px;
   }
 
   .header-sections-btn {
-    min-width: 112px;
+    min-width: 102px;
   }
   
   .hero-section {
@@ -924,6 +924,41 @@ body {
   
   .footer-info {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .header {
+    padding: 6px;
+    column-gap: 6px;
+    min-height: 58px;
+  }
+
+  .header-logo {
+    height: 33px;
+  }
+
+  .header-call-cta {
+    width: clamp(120px, 42vw, 160px);
+    padding: 4px 6px;
+  }
+
+  .header-call-label {
+    font-size: 0.48rem;
+  }
+
+  .header-call-number {
+    font-size: 0.7rem;
+  }
+
+  .header-consult-btn {
+    min-width: 90px;
+    padding: 4px 7px;
+    font-size: 0.58rem;
+  }
+
+  .header-sections-btn {
+    min-width: 94px;
   }
 }
 
