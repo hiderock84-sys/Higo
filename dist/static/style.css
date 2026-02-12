@@ -20,7 +20,7 @@ body {
   top: 0;
   z-index: 100;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 8px;
   backdrop-filter: blur(8px);
@@ -34,7 +34,7 @@ body {
 }
 
 .header-logo {
-  height: 48px;
+  height: 42px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
@@ -43,12 +43,7 @@ body {
 }
 
 .header-nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 0 1 auto;
-  justify-content: flex-end;
-  margin-left: auto;
+  display: none;
 }
 
 .nav-link {
@@ -73,7 +68,8 @@ body {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  margin-left: auto;
   flex-shrink: 0;
 }
 
@@ -86,10 +82,10 @@ body {
 }
 
 .header-phone-label {
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   color: rgba(255,255,255,0.95);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.15;
   letter-spacing: 0.03em;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   text-align: right;
@@ -97,10 +93,10 @@ body {
 
 .header-phone-number {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: white;
-  line-height: 1.25;
+  line-height: 1.15;
   letter-spacing: 0.03em;
   text-decoration: none;
   text-align: right;
@@ -113,10 +109,10 @@ body {
 .header-consult-btn {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   color: #2c5f7a;
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 700;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   transition: all 0.3s ease;
@@ -745,39 +741,25 @@ body {
   .header {
     flex-wrap: nowrap;
     padding: 4px 8px;
-    gap: 6px;
+    gap: 4px;
   }
   
   .header-logo {
-    height: 30px;
+    height: 24px;
   }
   
   .header-nav {
-    order: 2;
-    width: auto;
-    max-width: calc(100vw - 110px);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 8px;
-    justify-content: flex-end;
-    padding: 0;
-    margin-left: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .header-nav::-webkit-scrollbar {
     display: none;
   }
   
   .nav-link {
-    font-size: 0.62rem;
-    padding: 1px 0;
-    flex: 0 0 auto;
+    display: none;
   }
   
   .header-right {
-    display: none;
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
   }
   
   .header-phone {
@@ -786,16 +768,18 @@ body {
   }
   
   .header-phone-label {
-    font-size: 0.7rem;
+    font-size: 0.54rem;
+    line-height: 1.1;
   }
   
   .header-phone-number {
-    font-size: 0.7rem;
+    font-size: 0.58rem;
+    line-height: 1.1;
   }
   
   .header-consult-btn {
-    padding: 5px 10px;
-    font-size: 0.7rem;
+    padding: 3px 6px;
+    font-size: 0.58rem;
   }
   
   .hero-section {
