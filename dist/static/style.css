@@ -13,8 +13,8 @@ body {
 
 /* ヘッダー */
 .header {
-  background: linear-gradient(to bottom, rgba(52, 140, 169, 0.4), rgba(52, 140, 169, 0.5));
-  padding: 6px 12px;
+  background: linear-gradient(to bottom, rgba(52, 140, 169, 0.58), rgba(52, 140, 169, 0.68));
+  padding: 7px 12px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   backdrop-filter: blur(8px);
   min-height: 0;
 }
@@ -46,11 +46,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 8px;
   margin-left: 12px;
   flex: 1 1 auto;
   min-width: 0;
-  max-width: 42vw;
+  max-width: 46vw;
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -63,6 +63,9 @@ body {
 
 .nav-link {
   color: white;
+  background: rgba(28, 92, 124, 0.56);
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 999px;
   text-decoration: none;
   font-size: 0.68rem;
   font-weight: 600;
@@ -71,14 +74,13 @@ body {
   letter-spacing: 0.03em;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   line-height: 1.2;
-  padding: 2px 0;
-  border-bottom: 2px solid transparent;
+  padding: 3px 8px;
   flex: 0 0 auto;
 }
 
 .nav-link:hover {
-  border-bottom-color: white;
-  opacity: 0.95;
+  background: rgba(28, 92, 124, 0.74);
+  opacity: 1;
 }
 
 .header-right {
@@ -98,7 +100,7 @@ body {
 }
 
 .header-phone-label {
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   color: rgba(255,255,255,0.95);
   font-weight: 600;
   line-height: 1.15;
@@ -109,7 +111,7 @@ body {
 
 .header-phone-number {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 600;
   color: white;
   line-height: 1.15;
@@ -128,7 +130,7 @@ body {
   padding: 4px 10px;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   font-weight: 700;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   transition: all 0.3s ease;
@@ -274,9 +276,9 @@ body {
 
 /* ヒーローセクション */
 .hero-section {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.45)), 
+  background: linear-gradient(to bottom, rgba(11, 73, 117, 0.08), rgba(11, 73, 117, 0.15)),
               url('/static/aso-landscape.jpg') center/cover no-repeat;
-  color: #333;
+  color: #fff;
   padding: 100px 20px 120px;
   text-align: center;
   min-height: calc(100vh - 56px);
@@ -292,7 +294,7 @@ body {
   letter-spacing: 0.2em;
   margin-bottom: 30px;
   line-height: 1.2;
-  text-shadow: 2px 2px 16px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 16px rgba(0,0,0,0.45), 0 0 42px rgba(0,0,0,0.28);
   color: white;
 }
 
@@ -302,7 +304,7 @@ body {
   letter-spacing: 0.15em;
   font-weight: 400;
   color: white;
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
 }
 
 .hero-message {
@@ -311,7 +313,7 @@ body {
   margin-bottom: 40px;
   line-height: 2;
   color: white;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
 }
 
 .hero-submessage {
@@ -320,7 +322,7 @@ body {
   margin-bottom: 0;
   line-height: 2;
   color: white;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
 }
 
 
@@ -769,16 +771,20 @@ body {
     order: 3;
     width: 100%;
     max-width: 100%;
-    gap: 8px;
+    gap: 5px;
     margin-left: 0;
     justify-content: flex-end;
-    padding-top: 2px;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    white-space: normal;
+    overflow-x: visible;
+    flex-wrap: wrap;
   }
   
   .nav-link {
     display: inline-flex;
-    font-size: 0.62rem;
-    padding: 1px 0;
+    font-size: 0.6rem;
+    padding: 2px 7px;
   }
   
   .header-right {
@@ -794,18 +800,18 @@ body {
   }
   
   .header-phone-label {
-    font-size: 0.56rem;
+    font-size: 0.58rem;
     line-height: 1.1;
   }
   
   .header-phone-number {
-    font-size: 0.6rem;
+    font-size: 0.62rem;
     line-height: 1.1;
   }
   
   .header-consult-btn {
-    padding: 3px 7px;
-    font-size: 0.58rem;
+    padding: 3px 8px;
+    font-size: 0.6rem;
   }
   
   .hero-section {
