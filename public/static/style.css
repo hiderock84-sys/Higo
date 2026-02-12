@@ -327,20 +327,24 @@ body {
   max-width: 860px;
   margin: 0 auto 26px;
   font-size: 1.22rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   line-height: 1.85;
   color: white;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 .hero-submessage {
   max-width: 860px;
   margin: 0 auto;
   font-size: 1.05rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.015em;
   line-height: 1.9;
   color: white;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.45);
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 
@@ -350,10 +354,15 @@ body {
 }
 
 .intro-about .text-content {
+  max-width: 43em;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.16rem;
-  line-height: 1.95;
+  line-height: 1.9;
   margin-bottom: 28px;
   color: #4a4a4a;
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 .intro-message {
@@ -362,17 +371,26 @@ body {
 }
 
 .intro-message .text-content {
+  max-width: 43em;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.12rem;
-  line-height: 1.9;
+  line-height: 1.86;
   margin-bottom: 30px;
   color: #4a4a4a;
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 .intro-message .text-content.highlight {
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.24rem;
   font-weight: 700;
   color: #1f7f9f;
   line-height: 1.7;
+  text-wrap: balance;
 }
 
 
@@ -440,6 +458,8 @@ body {
   font-size: 1rem;
   line-height: 1.9;
   color: #555;
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 /* ナビゲーションセクション */
@@ -894,11 +914,19 @@ body {
     font-size: 0.98rem;
     margin-bottom: 20px;
     line-height: 1.75;
+    max-width: 24em;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: balance;
   }
   
   .hero-submessage {
     font-size: 0.9rem;
     line-height: 1.78;
+    max-width: 24em;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: balance;
   }
 
   .intro-about {
@@ -909,6 +937,7 @@ body {
     font-size: 0.98rem;
     line-height: 1.85;
     margin-bottom: 18px;
+    max-width: 24em;
   }
   
   .content-section {
@@ -941,6 +970,9 @@ body {
   .pillar-description {
     font-size: 0.9rem;
     line-height: 1.75;
+    max-width: 23em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .intro-message {
@@ -951,11 +983,13 @@ body {
     font-size: 0.96rem;
     line-height: 1.82;
     margin-bottom: 18px;
+    max-width: 24em;
   }
 
   .intro-message .text-content.highlight {
     font-size: 1.06rem;
     line-height: 1.65;
+    max-width: 22em;
   }
   
   .contact-title {
