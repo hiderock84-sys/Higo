@@ -493,13 +493,21 @@ body {
 
 .nav-card {
   background: white;
-  padding: 40px 30px;
+  padding: 36px 24px 32px;
+  min-height: 146px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(45, 90, 124, 0.1);
 }
 
 .nav-card-bg {
@@ -526,15 +534,28 @@ body {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #2d5a7c;
-  margin-bottom: 10px;
+  color: #2e5f83;
+  margin: 0;
+  line-height: 1.34;
+  letter-spacing: 0.03em;
+  line-break: strict;
+  text-wrap: balance;
+  white-space: nowrap;
+  word-break: keep-all;
   position: relative;
   z-index: 1;
 }
 
 .nav-subtitle {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.92rem;
+  color: #556370;
+  margin: 0;
+  line-height: 1.56;
+  letter-spacing: 0.02em;
+  line-break: strict;
+  text-wrap: pretty;
+  white-space: nowrap;
+  word-break: keep-all;
   position: relative;
   z-index: 1;
 }
@@ -1001,6 +1022,25 @@ body {
     line-height: 1.72;
     max-width: 24em;
   }
+
+  .nav-grid {
+    gap: 16px;
+  }
+
+  .nav-card {
+    padding: 32px 20px 28px;
+    min-height: 132px;
+    gap: 8px;
+    border-radius: 9px;
+  }
+
+  .nav-title {
+    font-size: 1.32rem;
+  }
+
+  .nav-subtitle {
+    font-size: 0.9rem;
+  }
   
   .contact-title {
     font-size: 1.6rem;
@@ -1098,6 +1138,22 @@ body {
 
   .header-sections-btn {
     min-width: 84px;
+  }
+
+  .nav-card {
+    padding: 28px 14px 24px;
+    min-height: 118px;
+    gap: 7px;
+  }
+
+  .nav-title {
+    font-size: 1.24rem;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-subtitle {
+    font-size: 0.86rem;
+    letter-spacing: 0.01em;
   }
 }
 
