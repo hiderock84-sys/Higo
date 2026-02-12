@@ -4,6 +4,10 @@ node_modules/
 # Build output
 dist/_worker.js
 dist/_routes.json
+out/
+output/
+.output/
+.vercel/
 .wrangler/
 
 # Environment variables

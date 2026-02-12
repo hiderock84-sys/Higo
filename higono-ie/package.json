@@ -1,0 +1,20 @@
+{
+  "name": "higono-ie-pages-compat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ./build.mjs",
+    "build:pages": "npm run build",
+    "pages:build": "npm run build",
+    "build:prod": "npm run build",
+    "build:cloudflare": "npm run build",
+    "build:static": "npm run build",
+    "build:production": "npm run build",
+    "cf:build": "npm run build",
+    "generate": "npm run build",
+    "export": "npm run build",
+    "deploy": "npm run build",
+    "deploy:prod": "npm run build"
+  }
+}

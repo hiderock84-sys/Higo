@@ -15,7 +15,7 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <link href="/static/style.css" rel="stylesheet">
+  <link href="/static/style.css?v=20260212z" rel="stylesheet">
 </head>
 
 <body>
@@ -24,23 +24,11 @@
     <div class="header-left">
       <img src="/static/higonoie-logo-new.png" alt="一般社団法人 ひごのいえ" class="header-logo">
     </div>
-    <nav class="header-nav">
-      <a href="#" class="nav-link">トップ</a>
-      <a href="#about" class="nav-link">私たちについて</a>
-      <a href="#program" class="nav-link">プログラム</a>
-      <a href="#testimonials" class="nav-link">体験談</a>
-      <a href="#women" class="nav-link">女性専用施設</a>
-      <a href="#grouphome" class="nav-link">グループホーム</a>
-      <a href="#usage" class="nav-link">ご利用案内</a>
-      <a href="#family" class="nav-link">家族ガイド</a>
-    </nav>
-    <div class="header-right">
-      <div class="header-phone">
-        <div class="header-phone-label">電話相談</div>
-        <a href="tel:0964-41-2387" class="header-phone-number">0964-41-2387</a>
-      </div>
-      <a href="#contact" class="header-consult-btn">相談する</a>
-    </div>
+    <a href="tel:0964-41-2387" class="header-call-cta">
+      <span class="header-call-label">今すぐ電話相談</span>
+      <span class="header-call-number">0964-41-2387</span>
+    </a>
+    <button type="button" class="header-consult-btn header-sections-btn" id="sectionTabButton">ご案内メニュー</button>
     <button class="header-menu" id="menuButton">☰</button>
   </header>
 
@@ -68,7 +56,7 @@
     
     <nav class="mobile-menu-nav">
       <div class="mobile-menu-section-title">メニュー</div>
-      <a href="#" class="mobile-menu-item">トップ</a>
+      <a href="#top" class="mobile-menu-item">トップ</a>
       <a href="#about" class="mobile-menu-item">私たちについて</a>
       <a href="#program" class="mobile-menu-item">プログラム</a>
       <a href="#testimonials" class="mobile-menu-item">体験談</a>
@@ -76,6 +64,7 @@
       <a href="#grouphome" class="mobile-menu-item">グループホーム</a>
       <a href="#usage" class="mobile-menu-item">ご利用案内</a>
       <a href="#family" class="mobile-menu-item">家族ガイド</a>
+      <a href="#contact" class="mobile-menu-item">相談窓口</a>
     </nav>
     
     <div class="mobile-menu-contact">
@@ -87,7 +76,7 @@
   </div>
 
   <!-- ヒーローセクション -->
-  <section class="hero-section">
+  <section class="hero-section" id="top">
     <h1 class="hero-title">ひごのいえ</h1>
     
     <div class="hero-tagline">
@@ -95,271 +84,250 @@
     </div>
     
     <div class="hero-message">
-      阿蘇の雄大な山々、<br>
-      天草の穏やかな海——<br>
-      熊本の豊かな自然に抱かれた、回復のための場所
+      阿蘇の山々と天草の海に抱かれた、<br>
+      依存症からの回復をめざす方の安心できる居場所
     </div>
     
     <div class="hero-submessage">
-      ここは、誰もがありのままの自分でいられる場所。<br>
-      過去を責めることなく、未来への不安を抱え込まず、<br>
-      「今、この瞬間」を大切に生きることを共に学び合える場所です。
+      ご本人・ご家族・医療機関・行政機関が安心して連携できる体制を整え、<br>
+      再発予防まで見据えた回復支援を提供します。
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="content-section" id="about">
+  <section class="content-section intro-about" id="about">
     <div class="text-content">
-      阿蘇の雄大な山々、<br>
-      天草の穏やかな海——<br>
-      熊本の豊かな自然に抱かれた<br>
-      「ひごのいえ」は、<br>
-      依存症に苦しむ方々と<br>
-      そのご家族の<br>
-      回復を支えるために生まれました。
+      「ひごのいえ」は、依存症に悩むご本人とご家族を支えるために、
+      医療機関・行政機関と連携した受け入れ体制を構築しています。
     </div>
     
     <div class="text-content">
-      ここは、誰もがありのままの<br>
-      自分でいられる場所。<br>
-      過去を責めることなく、<br>
-      未来への不安を抱え込まず、<br>
-      「今、この瞬間」を<br>
-      大切に生きることを<br>
-      共に学び合える場所です。
+      初回相談から入所検討、回復プログラム、退所後の生活再建まで、
+      一人ひとりの状況に合わせて継続的に伴走します。
     </div>
   </section>
 
   <!-- 三つの柱 -->
-  <section class="content-section pillars-section">
+  <section class="content-section pillars-section" id="program">
     <h2 class="section-title">私たちが大切にする<br>三つの柱</h2>
     
     <div class="pillar-grid">
       <div class="pillar-item">
         <h3 class="pillar-title">Hope　希望</h3>
         <p class="pillar-description">
-          どんなに深い闇の中にいても、<br>
-          必ず光は見つかります。<br>
-          一歩ずつ、共に前へ進みましょう。
+          回復は段階的に進みます。
+          評価と対話を重ね、現実的な目標を一歩ずつ達成します。
         </p>
       </div>
       
       <div class="pillar-item">
         <h3 class="pillar-title">Honesty　正直</h3>
         <p class="pillar-description">
-          自分の弱さも痛みも、<br>
-          素直に認めることから<br>
-          本当の回復が始まります。
+          状態を正確に把握し、課題を共有することが、
+          再発を防ぐ支援の出発点になります。
         </p>
       </div>
       
       <div class="pillar-item">
         <h3 class="pillar-title">Healing　回復</h3>
         <p class="pillar-description">
-          心の傷を癒し、<br>
-          新しい自分を育てる。<br>
-          時間をかけて、<br>
-          焦らず丁寧に。
+          心身と生活を整え、社会とのつながりを回復するまで、
+          焦らず着実に支えます。
         </p>
       </div>
     </div>
   </section>
 
   <!-- メッセージセクション -->
-  <section class="content-section">
+  <section class="content-section intro-message">
     <div class="text-content">
-      ここでは、一人ひとりが<br>
-      自分のペースで、<br>
-      自分らしく回復への道を<br>
-      歩んでいきます。<br>
-      誰かと比べる必要はありません。<br>
-      あなたはあなたのままで、<br>
-      十分に価値があるのです。
+      回復のペースは人それぞれです。
+      比較ではなく、個別性を尊重した支援で前進を支えます。
     </div>
     
     <div class="text-content">
-      経験豊かなスタッフが、<br>
-      あなたの話に耳を傾け、<br>
-      寄り添い、支えます。<br>
-      同じ道を歩む仲間たちと<br>
-      支え合いながら、<br>
-      新しい人生を<br>
-      一緒に築いていきましょう。
+      経験豊富なスタッフが、
+      相談・入所・家族支援・関係機関連携を一貫して担当します。
     </div>
     
     <div class="text-content">
-      一人ひとりが自分を取り戻し、<br>
-      新しい人生を歩む力を育み、<br>
-      そして心から笑顔になれる<br>
-      温かい場所——
+      本人だけでなく、ご家族や関係機関と情報を整理し、
+      安心して回復に向き合える環境を整えます。
     </div>
     
     <div class="text-content highlight">
-      それが「ひごのいえ」です。
+      まずは相談から。
+      医療機関・行政機関からのご相談にも、<br>
+      誠実かつ迅速に対応します。
     </div>
     
     <div class="text-content">
-      どうぞ、安心してお越しください。<br>
-      あなたの勇気ある一歩を、<br>
-      私たちは心から歓迎します。
+      電話・メールどちらでも受け付けています。
+      「話してみる」ことから、回復への道が始まります。
     </div>
   </section>
 
   <!-- Navigation Cards -->
   <section class="navigation-section">
     <div class="nav-section-header">
-      <div class="nav-section-subtitle">薬物・アルコール・ギャンブル・処方薬など、依存症に悩むご本人とご家族のための場所です</div>
+      <div class="nav-section-subtitle">薬物・アルコール・ギャンブル・処方薬など、依存症に悩むご本人とご家族のための相談・回復支援の拠点です</div>
     </div>
     
     <div class="nav-grid">
-      <div class="nav-card">
+      <a href="#top" class="nav-card nav-card-top" aria-label="トップへ移動">
         <div class="nav-card-bg"></div>
-        <div class="nav-title">トップ</div>
-        <div class="nav-subtitle">ホームへ戻る</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">私たちについて</div>
-        <div class="nav-subtitle">施設の理念と特徴</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">スタッフ紹介</div>
-        <div class="nav-subtitle">経験豊かな支援者</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">プログラム</div>
-        <div class="nav-subtitle">回復への道のり</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">体験談</div>
-        <div class="nav-subtitle">回復者の声</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">女性専用施設</div>
-        <div class="nav-subtitle">らぽーる</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">グループホーム</div>
-        <div class="nav-subtitle">共同生活の場</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">ご利用案内</div>
-        <div class="nav-subtitle">ご利用の流れ</div>
-      </div>
-      
-      <div class="nav-card">
-        <div class="nav-card-bg"></div>
-        <div class="nav-title">家族ガイド</div>
-        <div class="nav-subtitle">ご家族へのサポート</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 相談セクション -->
-  <section class="contact-section">
-    <h2 class="contact-title">まずは、お気軽にご相談ください</h2>
-    
-    <div class="contact-subtitle">
-      相談は無料です。秘密は厳守いたします。
-    </div>
-    
-    <div class="contact-message">
-      あなたの勇気ある一歩を、私たちは全力でサポートします。
-    </div>
-    
-    <div class="contact-buttons">
-      <a href="tel:0964-41-2387" class="contact-button primary">
-        電話で相談する<br>
-        <span class="phone-number">0964-41-2387</span>
+        <div class="nav-card-content">
+          <div class="nav-title">トップ</div>
+          <div class="nav-subtitle">ホームへ戻る</div>
+        </div>
       </a>
-      <a href="mailto:info@higonoie.or.jp" class="contact-button outline">
-        メールで相談する
+      
+      <a href="#about" class="nav-card nav-card-about" aria-label="私たちについてへ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">私たちについて</div>
+          <div class="nav-subtitle">施設の理念と特徴</div>
+        </div>
       </a>
-    </div>
-    
-    <div class="contact-hours">
-      受付時間：平日 10:00〜17:00<br>
-      土日祝日、時間外のご相談も可能です。まずはお電話でご相談ください。
+      
+      <a href="#testimonials" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">スタッフ紹介</div>
+          <div class="nav-subtitle">経験豊かな支援者</div>
+        </div>
+      </a>
+      
+      <a href="#program" class="nav-card nav-card-program" aria-label="プログラムへ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">プログラム</div>
+          <div class="nav-subtitle">回復への道のり</div>
+        </div>
+      </a>
+      
+      <a href="#testimonials" class="nav-card nav-card-voice" aria-label="体験談へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">体験談</div>
+          <div class="nav-subtitle">回復者の声</div>
+        </div>
+      </a>
+      
+      <a href="#contact" class="nav-card nav-card-women" id="women" aria-label="女性専用施設の相談窓口へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">女性専用施設</div>
+          <div class="nav-subtitle">らぽーる</div>
+        </div>
+      </a>
+      
+      <a href="#contact" class="nav-card nav-card-home" id="grouphome" aria-label="グループホームの相談窓口へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">グループホーム</div>
+          <div class="nav-subtitle">共同生活の場</div>
+        </div>
+      </a>
+      
+      <a href="#contact" class="nav-card nav-card-usage" id="usage" aria-label="ご利用案内の相談窓口へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">ご利用案内</div>
+          <div class="nav-subtitle">ご利用の流れ</div>
+        </div>
+      </a>
+      
+      <a href="#contact" class="nav-card nav-card-family" id="family" aria-label="家族ガイドの相談窓口へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">家族ガイド</div>
+          <div class="nav-subtitle">ご家族へのサポート</div>
+        </div>
+      </a>
     </div>
   </section>
 
   <!-- ストーリーセクション -->
-  <section class="story-section">
+  <section class="story-section" id="testimonials">
     <div class="story-content">
-      <div class="story-label">STORIES OF RECOVERY</div>
-      <h2 class="story-title">絶望から希望へ</h2>
+      <div class="story-label">YOUR STORY BEGINS HERE</div>
+      <h2 class="story-title">あなたの物語も、<br>ここから始まる</h2>
       <div class="story-subtitle">
-        5人の回復者が語る、再生の物語<br>
-        そして今、笑顔で未来を語る。
+        彼らは絶望の底から這い上がった。<br>
+        今、彼らは笑顔で「回復できた」と語る。<br>
+        あなたも必ず回復できます。
       </div>
     </div>
   </section>
 
   <!-- スタッフストーリー -->
   <section class="staff-story">
-    <h3 class="staff-title">20年間の薬物地獄から、<br>希望を伝えるスタッフへ</h3>
+    <h3 class="staff-title">Q&amp;A　よくあるご質問</h3>
     
     <div class="staff-content">
-      <strong>回復スタッフ　回復歴5年</strong>
+      <strong>Q. 費用はどのくらいかかりますか？</strong>
     </div>
     
     <div class="staff-content">
-      18歳から覚醒剤、暴力団の世界に足を踏み入れ、逮捕3回、最後3回。出所するたびに「もうやらない」と誓うが、気づけばまた手を出していた。家族は見放し、友人も離れ、鏡に映る自分が誰だかわからなくなった。
+      A. 障害福祉サービス受給者証をお持ちの方は、自己負担額が軽減されます。詳しくは利用案内をご覧ください。まずはお気軽にご相談ください。
     </div>
     
     <div class="staff-content">
-      最後の逮捕から出所した日、迎えに来る人は誰もいなかった。その時初めて「このままでは本当に終わる」と心の底から思った。偶然手にした依存症回復施設のパンフレット。それが私の転機だった。
+      <strong>Q. 家族だけの相談も可能ですか？</strong>
     </div>
     
     <div class="staff-quote">
-      今はひごのいえのスタッフとして、同じ苦しみを持つ仲間をサポートしています。「あなたは一人じゃない」と伝えられる喜び。薬物に支配された人生から、誰かの希望になれる人生へ。
+      A. はい、ご家族だけのご相談も大歓迎です。依存症は本人だけでなく、ご家族も苦しむ病気です。まずはご家族の気持ちをお聞かせください。
     </div>
     
     <div class="staff-content">
-      薬物に支配された人生から、誰かの希望になれる人生へ。依存症は決して治らない病気ではありません。適切な支援と仲間がいれば、必ず回復できる。私がその生きた証拠です。
+      <strong>Q. 女性専用の施設はありますか？</strong>
     </div>
     
     <div class="staff-content">
-      もしあなたが今、どん底にいるとしても、諦めないでください。ここから始まる新しい物語があります。私たちが全力でサポートします。一緒に、新しい人生を歩んでいきましょう。
+      A. はい、女性専用施設「らぽーる」（2025年3月24日開設）をご利用いただけます。女性スタッフが常駐し、女性特有の課題に配慮したサポートを提供しています。詳しくは女性専用施設ページをご覧ください。
+      <br><br>
+      A. はい、依存症は「回復できる病気」です。適切な支援と環境、仲間との絆があれば、必ず希望ある未来を取り戻せます。実際に回復した仲間の体験談もぜひご覧ください。
     </div>
   </section>
 
   <!-- 最終メッセージ -->
   <section class="content-section">
     <div class="text-content" style="font-size: 1.2rem; color: #348ca9; font-weight: 600;">
-      あなたの人生は、ここから変わります。
+      全ての体験談を読む
     </div>
     
     <div class="text-content">
-      「ひごのいえ」で、新しい自分に出会ってみませんか。<br>
-      私たちはあなたを待っています。
+      その他のQ&amp;Aを見る →
     </div>
   </section>
 
-  <!-- アクセス・連絡先 -->
-  <section class="access-section">
-    <h2 class="section-title">アクセス・連絡先</h2>
+  <!-- 相談セクション -->
+  <section class="contact-section" id="contact">
+    <h2 class="contact-title">安心してご相談ください</h2>
     
-    <div class="access-content">
-      <h3 class="access-facility-title">施設情報</h3>
-      <div class="access-info">一般社団法人ひごのいえ</div>
-      <div class="access-info">〒861-3200 熊本県上益城郡御船町</div>
-      <div class="access-info"><strong>TEL: 096-282-5000</strong></div>
-      <div class="access-info">Email: [email protected]</div>
-      <div class="access-info">受付時間：平日 10:00〜17:00</div>
+    <div class="contact-subtitle">
+      「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。
+    </div>
+    
+    <div class="contact-message">
+      あなたの勇気ある一歩を、私たちは心から応援します。
+    </div>
+    
+    <div class="contact-buttons">
+      <a href="tel:0964-41-2387" class="contact-button primary">
+        今すぐ相談する<br>
+        <span class="phone-number">0964-41-2387</span>
+      </a>
+      <a href="mailto:info@higonoie.or.jp" class="contact-button outline">
+        体験談を読む
+      </a>
+    </div>
+    
+    <div class="contact-hours">
+      受付時間：平日 10:00〜17:00<br>
+      土日祝日、時間外のご相談も可能です。まずはお電話でご相談ください。
     </div>
   </section>
 
@@ -413,26 +381,39 @@
   <script>
     // Mobile menu functionality
     const menuButton = document.getElementById('menuButton');
+    const sectionTabButton = document.getElementById('sectionTabButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
     
-    menuButton.addEventListener('click', () => {
+    const openMobileMenu = () => {
       mobileMenu.classList.add('active');
       document.body.style.overflow = 'hidden';
-    });
+    };
     
-    closeMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    if (menuButton) {
+      menuButton.addEventListener('click', openMobileMenu);
+    }
     
-    // Close menu when clicking outside
-    mobileMenu.addEventListener('click', (e) => {
-      if (e.target === mobileMenu) {
+    if (sectionTabButton) {
+      sectionTabButton.addEventListener('click', openMobileMenu);
+    }
+    
+    if (closeMenuButton) {
+      closeMenuButton.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
-      }
-    });
+      });
+    }
+    
+    // Close menu when clicking outside
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -445,8 +426,10 @@
             block: 'start'
           });
           // Close mobile menu if open
-          mobileMenu.classList.remove('active');
-          document.body.style.overflow = '';
+          if (mobileMenu) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
         }
       });
     });
