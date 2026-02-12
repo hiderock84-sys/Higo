@@ -129,12 +129,25 @@ body {
   letter-spacing: 0.03em;
   line-height: 1.25;
   min-width: 102px;
+  cursor: pointer;
 }
 
 .header-consult-btn:hover {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   transform: translateY(-1px);
   box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+}
+
+.header-sections-btn {
+  background: linear-gradient(135deg, #165c7d 0%, #2a84a8 100%);
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.24);
+  min-width: 114px;
+}
+
+.header-sections-btn:hover {
+  background: linear-gradient(135deg, #1a6d94 0%, #3194bb 100%);
 }
 
 .header-menu {
@@ -799,6 +812,10 @@ body {
     font-size: 0.64rem;
     border-radius: 999px;
     min-width: 86px;
+  }
+
+  .header-sections-btn {
+    min-width: 96px;
   }
   
   .hero-section {

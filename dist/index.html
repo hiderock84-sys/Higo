@@ -15,7 +15,7 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <link href="/static/style.css?v=20260212l" rel="stylesheet">
+  <link href="/static/style.css?v=20260212m" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
       <span class="header-call-label">今すぐ電話相談</span>
       <span class="header-call-number">0964-41-2387</span>
     </a>
-    <a href="#contact" class="header-consult-btn" id="headerContactTab">相談窓口タブ</a>
+    <button type="button" class="header-consult-btn header-sections-btn" id="sectionTabButton">セクションタブ</button>
     <button class="header-menu" id="menuButton">☰</button>
   </header>
 
@@ -64,6 +64,7 @@
       <a href="#grouphome" class="mobile-menu-item">グループホーム</a>
       <a href="#usage" class="mobile-menu-item">ご利用案内</a>
       <a href="#family" class="mobile-menu-item">家族ガイド</a>
+      <a href="#contact" class="mobile-menu-item">相談窓口</a>
     </nav>
     
     <div class="mobile-menu-contact">
@@ -387,26 +388,39 @@
   <script>
     // Mobile menu functionality
     const menuButton = document.getElementById('menuButton');
+    const sectionTabButton = document.getElementById('sectionTabButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
     
-    menuButton.addEventListener('click', () => {
+    const openMobileMenu = () => {
       mobileMenu.classList.add('active');
       document.body.style.overflow = 'hidden';
-    });
+    };
     
-    closeMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    if (menuButton) {
+      menuButton.addEventListener('click', openMobileMenu);
+    }
     
-    // Close menu when clicking outside
-    mobileMenu.addEventListener('click', (e) => {
-      if (e.target === mobileMenu) {
+    if (sectionTabButton) {
+      sectionTabButton.addEventListener('click', openMobileMenu);
+    }
+    
+    if (closeMenuButton) {
+      closeMenuButton.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
-      }
-    });
+      });
+    }
+    
+    // Close menu when clicking outside
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -419,8 +433,10 @@
             block: 'start'
           });
           // Close mobile menu if open
-          mobileMenu.classList.remove('active');
-          document.body.style.overflow = '';
+          if (mobileMenu) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
         }
       });
     });
