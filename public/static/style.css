@@ -47,7 +47,9 @@ body {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
-  margin-left: auto;
+  margin-left: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
   max-width: 42vw;
   overflow-x: auto;
   white-space: nowrap;
@@ -62,7 +64,7 @@ body {
 .nav-link {
   color: white;
   text-decoration: none;
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   font-weight: 600;
   white-space: nowrap;
   transition: all 0.2s;
@@ -753,32 +755,37 @@ body {
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   .header {
-    flex-wrap: nowrap;
-    padding: 4px 8px;
+    flex-wrap: wrap;
+    padding: 6px 8px 4px;
     gap: 6px;
   }
   
   .header-logo {
-    height: 34px;
+    height: 32px;
   }
   
   .header-nav {
     display: flex;
-    max-width: 46vw;
-    gap: 6px;
-    margin-left: auto;
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    gap: 8px;
+    margin-left: 0;
+    justify-content: flex-end;
+    padding-top: 2px;
   }
   
   .nav-link {
     display: inline-flex;
-    font-size: 0.56rem;
+    font-size: 0.62rem;
     padding: 1px 0;
   }
   
   .header-right {
     display: flex;
     gap: 5px;
-    margin-left: 0;
+    margin-left: auto;
+    order: 2;
   }
   
   .header-phone {
