@@ -4,15 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRO | 一般社団法人ひごのいえ</title>
-  <meta name="description" content="元ページと同一構成・同一リンク・同一バナーを維持して表示します。">
+  <meta name="description" content="ページ構成・リンク・バナーを維持しながら、デザインとレイアウトをプロ品質へ強化した表示です。">
   <style>
+    :root {
+      --pro-bg: #edf3f9;
+      --pro-line: rgba(15, 42, 67, 0.16);
+      --pro-shadow: 0 22px 44px rgba(15, 42, 67, 0.18);
+      --pro-frame-shadow: 0 10px 24px rgba(15, 42, 67, 0.14);
+      --pro-accent: #165c9a;
+      --pro-accent-2: #2a9d8f;
+    }
+
     html,
     body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #fff;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(22, 92, 154, 0.14), transparent 35%),
+        radial-gradient(circle at 92% 14%, rgba(42, 157, 143, 0.12), transparent 42%),
+        var(--pro-bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
     }
 
     #originFrame {
@@ -25,11 +38,136 @@
   </style>
 </head>
 <body>
-  <!-- Mirror mode: keep structure/links/banners exactly as original -->
   <iframe
     id="originFrame"
-    src="https://higono-ie.pages.dev/"
+    src="/"
     title="一般社団法人ひごのいえ トップページ">
   </iframe>
+
+  <script>
+    const frame = document.getElementById('originFrame');
+
+    function enhanceDocument(doc) {
+      if (!doc || doc.getElementById('pro-enhancement-style')) return;
+
+      const style = doc.createElement('style');
+      style.id = 'pro-enhancement-style';
+      style.textContent = `
+        :root {
+          --pro-shadow-sm: 0 8px 18px rgba(15, 42, 67, 0.10);
+          --pro-shadow-md: 0 16px 34px rgba(15, 42, 67, 0.15);
+          --pro-line: rgba(15, 42, 67, 0.14);
+          --pro-accent: #165c9a;
+          --pro-accent-2: #2a9d8f;
+        }
+
+        body {
+          background:
+            radial-gradient(circle at 14% 0%, rgba(22, 92, 154, 0.17), transparent 38%),
+            radial-gradient(circle at 92% 14%, rgba(42, 157, 143, 0.14), transparent 42%),
+            linear-gradient(135deg, #edf3f9, #f8fbff) !important;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+          background: rgba(255, 255, 255, 0.90) !important;
+          border-bottom: 1px solid var(--pro-line) !important;
+          box-shadow: var(--pro-shadow-sm) !important;
+          backdrop-filter: blur(8px);
+        }
+
+        .header-container {
+          max-width: 1200px !important;
+          margin-inline: auto;
+        }
+
+        .nav-menu a {
+          border-radius: 10px;
+          transition: all 0.2s ease !important;
+          padding: 0.42rem 0.62rem !important;
+        }
+
+        .nav-menu a:hover {
+          background: rgba(22, 92, 154, 0.12);
+          color: #0f4f87 !important;
+        }
+
+        .landing-hero {
+          max-width: 1240px;
+          margin: 1rem auto 0 !important;
+          border-radius: 22px !important;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.36);
+          box-shadow: 0 24px 48px rgba(15, 42, 67, 0.18);
+        }
+
+        .landing-intro,
+        .section {
+          border-radius: 18px !important;
+          border: 1px solid var(--pro-line) !important;
+          background: rgba(255, 255, 255, 0.88) !important;
+          box-shadow: var(--pro-shadow-sm) !important;
+          margin-top: 1.2rem !important;
+          margin-bottom: 1.2rem !important;
+        }
+
+        .three-pillars {
+          border-radius: 18px !important;
+          border: 1px solid rgba(22, 92, 154, 0.20) !important;
+          box-shadow: var(--pro-shadow-sm) !important;
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(240, 248, 255, 0.78)) !important;
+        }
+
+        .btn,
+        .fixed-cta a {
+          border-radius: 12px !important;
+          transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+          box-shadow: var(--pro-shadow-sm) !important;
+        }
+
+        .btn:hover,
+        .fixed-cta a:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--pro-shadow-md) !important;
+        }
+
+        .btn-primary {
+          background: linear-gradient(135deg, var(--pro-accent), var(--pro-accent-2)) !important;
+          border-color: transparent !important;
+        }
+
+        .btn-secondary {
+          background: #fff !important;
+          color: var(--pro-accent) !important;
+          border: 1px solid rgba(22, 92, 154, 0.28) !important;
+        }
+
+        footer {
+          background: linear-gradient(180deg, #0f2a43, #0b2237) !important;
+        }
+
+        .footer-section {
+          border-radius: 14px !important;
+          border: 1px solid rgba(255, 255, 255, 0.16) !important;
+          background: rgba(255, 255, 255, 0.03) !important;
+          padding: 0.9rem !important;
+        }
+      `;
+
+      doc.head.appendChild(style);
+    }
+
+    if (frame) {
+      frame.addEventListener('load', () => {
+        try {
+          enhanceDocument(frame.contentDocument);
+        } catch {
+          // If a cross-origin navigation happens, keep original rendering.
+        }
+      });
+    }
+  </script>
 </body>
 </html>
