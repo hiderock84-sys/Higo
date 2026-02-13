@@ -423,6 +423,30 @@ body {
   color: #555;
 }
 
+.route-summary {
+  padding-top: 44px;
+  padding-bottom: 30px;
+}
+
+.route-summary-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  max-width: 860px;
+  margin: 10px auto 0;
+  padding: 0;
+}
+
+.route-summary-list li {
+  background: rgba(52, 140, 169, 0.08);
+  border: 1px solid rgba(52, 140, 169, 0.22);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #2a4a58;
+}
+
 .text-content.highlight {
   font-weight: 600;
   color: #348ca9;
@@ -1121,6 +1145,16 @@ body {
   .text-content {
     font-size: 1rem;
     line-height: 2;
+  }
+
+  .route-summary-list {
+    gap: 10px;
+  }
+
+  .route-summary-list li {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    padding: 10px 12px;
   }
   
   .section-title {
