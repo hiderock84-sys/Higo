@@ -11,6 +11,19 @@ body {
   background-color: #fefefe;
 }
 
+#top,
+#about,
+#program,
+#staff,
+#testimonials,
+#rapport,
+#grouphome,
+#guide,
+#family-guide,
+#contact {
+  scroll-margin-top: 90px;
+}
+
 /* ヘッダー */
 .header {
   background: linear-gradient(to bottom, rgba(52, 140, 169, 0.58), rgba(52, 140, 169, 0.68));
@@ -942,6 +955,7 @@ body {
   color: rgba(255,255,255,0.75);
   font-size: 0.95rem;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer-nav-item:hover {

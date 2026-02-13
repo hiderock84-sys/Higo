@@ -29,7 +29,7 @@
       <span class="header-call-number">0964-41-2387</span>
     </a>
     <button type="button" class="header-consult-btn header-sections-btn" id="sectionTabButton">ご案内メニュー</button>
-    <button class="header-menu" id="menuButton">☰</button>
+    <button class="header-menu" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">☰</button>
   </header>
 
   <!-- モバイルメニュー -->
@@ -47,7 +47,7 @@
           <div class="mobile-menu-title">ひごのいえ</div>
         </div>
       </div>
-      <button class="mobile-menu-close" id="closeMenuButton">×</button>
+      <button class="mobile-menu-close" id="closeMenuButton" aria-label="メニューを閉じる">×</button>
     </div>
     
     <div class="mobile-menu-description">
@@ -59,11 +59,12 @@
       <a href="/top#top" class="mobile-menu-item">トップ</a>
       <a href="/about#about" class="mobile-menu-item">私たちについて</a>
       <a href="/program#program" class="mobile-menu-item">プログラム</a>
+      <a href="/staff#staff" class="mobile-menu-item">スタッフ紹介</a>
       <a href="/testimonials#testimonials" class="mobile-menu-item">体験談</a>
-      <a href="/women#contact" class="mobile-menu-item">女性専用施設</a>
-      <a href="/grouphome#contact" class="mobile-menu-item">グループホーム</a>
-      <a href="/usage#contact" class="mobile-menu-item">ご利用案内</a>
-      <a href="/family#contact" class="mobile-menu-item">家族ガイド</a>
+      <a href="/rapport#rapport" class="mobile-menu-item">女性専用施設</a>
+      <a href="/grouphome#grouphome" class="mobile-menu-item">グループホーム</a>
+      <a href="/guide#guide" class="mobile-menu-item">利用案内</a>
+      <a href="/family-guide#family-guide" class="mobile-menu-item">家族ガイド</a>
       <a href="/contact#contact" class="mobile-menu-item">相談窓口</a>
     </nav>
     
@@ -190,7 +191,7 @@
         </div>
       </a>
       
-      <a href="/staff#testimonials" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
+      <a href="/staff#staff" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
           <div class="nav-title">スタッフ紹介</div>
@@ -214,7 +215,7 @@
         </div>
       </a>
       
-      <a href="/women#contact" class="nav-card nav-card-women" id="women" aria-label="女性専用施設の相談窓口へ移動">
+      <a href="/rapport#rapport" class="nav-card nav-card-women" aria-label="女性専用施設へ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
           <div class="nav-title">女性専用施設</div>
@@ -222,7 +223,7 @@
         </div>
       </a>
       
-      <a href="/grouphome#contact" class="nav-card nav-card-home" id="grouphome" aria-label="グループホームの相談窓口へ移動">
+      <a href="/grouphome#grouphome" class="nav-card nav-card-home" aria-label="グループホームへ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
           <div class="nav-title">グループホーム</div>
@@ -230,7 +231,7 @@
         </div>
       </a>
       
-      <a href="/usage#contact" class="nav-card nav-card-usage" id="usage" aria-label="ご利用案内の相談窓口へ移動">
+      <a href="/guide#guide" class="nav-card nav-card-usage" aria-label="ご利用案内へ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
           <div class="nav-title">ご利用案内</div>
@@ -238,13 +239,54 @@
         </div>
       </a>
       
-      <a href="/family#contact" class="nav-card nav-card-family" id="family" aria-label="家族ガイドの相談窓口へ移動">
+      <a href="/family-guide#family-guide" class="nav-card nav-card-family" aria-label="家族ガイドへ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
           <div class="nav-title">家族ガイド</div>
           <div class="nav-subtitle">ご家族へのサポート</div>
         </div>
       </a>
+    </div>
+  </section>
+
+  <!-- セクション詳細 -->
+  <section class="content-section" id="rapport">
+    <h2 class="section-title">女性専用施設 らぽーる</h2>
+    <div class="text-content">
+      女性専用施設「らぽーる」（2025年3月24日開設）をご利用いただけます。女性スタッフが常駐し、女性特有の課題に配慮したサポートを提供しています。
+    </div>
+    <div class="text-content">
+      「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。安心して回復に向き合える環境を整えています。
+    </div>
+  </section>
+
+  <section class="content-section" id="grouphome">
+    <h2 class="section-title">グループホーム</h2>
+    <div class="text-content">
+      阿蘇の山々と天草の海に抱かれた環境の中で、依存症からの回復をめざす方の安心できる居場所として、共同生活の場を提供しています。
+    </div>
+    <div class="text-content">
+      回復のペースは人それぞれです。比較ではなく個別性を尊重した支援で、生活再建に向けた前進を着実に支えます。
+    </div>
+  </section>
+
+  <section class="content-section" id="guide">
+    <h2 class="section-title">利用案内</h2>
+    <div class="text-content">
+      初回相談から入所検討、回復プログラム、退所後の生活再建まで、一人ひとりの状況に合わせて継続的に伴走します。
+    </div>
+    <div class="text-content">
+      受付時間は平日10:00〜17:00です。電話・メールどちらでも受け付けています。まずは相談から始めてみてください。
+    </div>
+  </section>
+
+  <section class="content-section" id="family-guide">
+    <h2 class="section-title">家族ガイド</h2>
+    <div class="text-content">
+      ご家族だけのご相談も大歓迎です。依存症は本人だけでなく、ご家族も苦しむ病気です。まずはご家族の気持ちをお聞かせください。
+    </div>
+    <div class="text-content">
+      医療機関・行政機関との連携を含め、必要な支援を整理しながら、安心して回復に向き合える環境づくりをサポートします。
     </div>
   </section>
 
@@ -261,7 +303,7 @@
   </section>
 
   <!-- スタッフストーリー -->
-  <section class="staff-story">
+  <section class="staff-story" id="staff">
     <h3 class="staff-title">回復者スタッフ<br>回復歴5年<br>20年間の薬物地獄から、<br>希望を伝えるスタッフへ</h3>
     
     <div class="staff-content">
@@ -360,8 +402,8 @@
         </div>
         <div class="footer-info">一般社団法人ひごのいえ</div>
         <div class="footer-info">〒861-3200 熊本県上益城郡御船町</div>
-        <div class="footer-info">TEL: 096-282-5000</div>
-        <div class="footer-info">Email: [email protected]</div>
+        <div class="footer-info">TEL: 0964-41-2387</div>
+        <div class="footer-info">Email: info@higonoie.or.jp</div>
       </div>
 
       <!-- ナビゲーション -->
@@ -369,20 +411,21 @@
         <h4 class="footer-nav-title">ナビゲーション</h4>
         <a href="/top#top" class="footer-nav-item">トップ</a>
         <a href="/about#about" class="footer-nav-item">私たちについて</a>
-        <a href="/staff#testimonials" class="footer-nav-item">スタッフ紹介</a>
+        <a href="/staff#staff" class="footer-nav-item">スタッフ紹介</a>
         <a href="/program#program" class="footer-nav-item">プログラム</a>
         <a href="/testimonials#testimonials" class="footer-nav-item">体験談</a>
-        <a href="/women#contact" class="footer-nav-item">女性専用施設</a>
-        <a href="/grouphome#contact" class="footer-nav-item">グループホーム</a>
-        <a href="/usage#contact" class="footer-nav-item">利用案内</a>
-        <a href="/family#contact" class="footer-nav-item">家族ガイド</a>
+        <a href="/rapport#rapport" class="footer-nav-item">女性専用施設</a>
+        <a href="/grouphome#grouphome" class="footer-nav-item">グループホーム</a>
+        <a href="/guide#guide" class="footer-nav-item">利用案内</a>
+        <a href="/family-guide#family-guide" class="footer-nav-item">家族ガイド</a>
       </div>
 
       <!-- 相談窓口 -->
       <div class="consultation-section">
         <h4 class="consultation-title">相談窓口</h4>
-        <div class="consultation-info">電話相談: 毎日 9:00-18:00</div>
-        <div class="consultation-info">メール相談: 24時間受付</div>
+        <div class="consultation-info">電話相談: 0964-41-2387</div>
+        <div class="consultation-info">受付時間: 平日 10:00-17:00</div>
+        <div class="consultation-info">メール相談: info@higonoie.or.jp</div>
         <div class="consultation-info">面談: 予約制</div>
         
         <div class="consultation-note">
@@ -408,6 +451,17 @@
     const openMobileMenu = () => {
       mobileMenu.classList.add('active');
       document.body.style.overflow = 'hidden';
+      if (menuButton) {
+        menuButton.setAttribute('aria-expanded', 'true');
+      }
+    };
+
+    const closeMobileMenu = () => {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+      if (menuButton) {
+        menuButton.setAttribute('aria-expanded', 'false');
+      }
     };
     
     if (menuButton) {
@@ -419,18 +473,14 @@
     }
     
     if (closeMenuButton) {
-      closeMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      closeMenuButton.addEventListener('click', closeMobileMenu);
     }
     
     // Close menu when clicking outside
     if (mobileMenu) {
       mobileMenu.addEventListener('click', (e) => {
         if (e.target === mobileMenu) {
-          mobileMenu.classList.remove('active');
-          document.body.style.overflow = '';
+          closeMobileMenu();
         }
       });
     }
@@ -447,12 +497,56 @@
           });
           // Close mobile menu if open
           if (mobileMenu) {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMobileMenu();
           }
         }
       });
     });
+
+    const pathSectionMap = {
+      '/top': 'top',
+      '/about': 'about',
+      '/staff': 'staff',
+      '/program': 'program',
+      '/testimonials': 'testimonials',
+      '/rapport': 'rapport',
+      '/grouphome': 'grouphome',
+      '/guide': 'guide',
+      '/family-guide': 'family-guide',
+      '/contact': 'contact',
+      '/women': 'rapport',
+      '/usage': 'guide',
+      '/family': 'family-guide',
+    };
+
+    const pathMetaMap = {
+      '/about': ['私たちについて | ひごのいえ', 'ひごのいえの理念と依存症回復支援体制をご紹介します。'],
+      '/staff': ['スタッフ紹介 | ひごのいえ', '回復経験と支援経験を持つスタッフによるサポート体制をご紹介します。'],
+      '/program': ['プログラム | ひごのいえ', '希望・正直・回復を軸にした、再発予防まで見据えた回復支援プログラムの概要です。'],
+      '/testimonials': ['体験談 | ひごのいえ', '依存症回復を実現した体験談と、回復への具体的な道のりをご紹介します。'],
+      '/rapport': ['女性専用施設 | ひごのいえ', '女性専用施設「らぽーる」の支援内容と安心して回復できる環境をご案内します。'],
+      '/grouphome': ['グループホーム | ひごのいえ', '共同生活を通じた生活再建と回復支援についてご紹介します。'],
+      '/guide': ['利用案内 | ひごのいえ', '初回相談から利用開始、生活再建までのご利用の流れをご案内します。'],
+      '/family-guide': ['家族ガイド | ひごのいえ', 'ご家族向けの相談支援と連携体制についてご案内します。'],
+      '/contact': ['相談窓口 | ひごのいえ', '相談窓口の受付時間と連絡先をご案内します。'],
+    };
+
+    const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+    const pathMeta = pathMetaMap[normalizedPath];
+    if (pathMeta) {
+      document.title = pathMeta[0];
+      const descriptionMeta = document.querySelector('meta[name="description"]');
+      if (descriptionMeta) {
+        descriptionMeta.setAttribute('content', pathMeta[1]);
+      }
+    }
+
+    if (!window.location.hash && pathSectionMap[normalizedPath]) {
+      const sectionTarget = document.getElementById(pathSectionMap[normalizedPath]);
+      if (sectionTarget) {
+        sectionTarget.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    }
   </script>
 </body>
 </html>

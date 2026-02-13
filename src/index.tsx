@@ -8,9 +8,12 @@ const sectionPageRoutes = [
   '/staff',
   '/program',
   '/testimonials',
+  '/rapport',
   '/women',
   '/grouphome',
+  '/guide',
   '/usage',
+  '/family-guide',
   '/family',
   '/contact',
 ]
