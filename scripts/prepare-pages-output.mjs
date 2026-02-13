@@ -158,6 +158,7 @@ function injectProStyle(html) {
 }
 
 async function refreshProHomepageSource() {
+  // Keep using committed pro-homepage.html when external fetch is unavailable.
   let existing = ''
   try {
     existing = await readFile(proHomepageSource, 'utf8')
