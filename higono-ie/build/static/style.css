@@ -937,9 +937,15 @@ body {
 }
 
 .footer-nav-item {
+  display: block;
   margin-bottom: 10px;
   color: rgba(255,255,255,0.75);
   font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.footer-nav-item:hover {
+  color: rgba(255,255,255,0.92);
 }
 
 .consultation-section {

@@ -21,6 +21,7 @@ const subprojectTargets = subprojectRoots.flatMap((folder) => [
   path.join(projectRoot, folder, '.output', 'public'),
 ])
 const targets = [...rootTargets, ...subprojectTargets]
+const allOutputTargets = [distDir, ...targets]
 const cleanupAssets = [
   path.join(projectRoot, 'dist', 'static', 'logo-design.jpg'),
   ...targets.map((target) => path.join(target, 'static', 'logo-design.jpg')),
@@ -49,6 +50,19 @@ async function syncRootFilesForSubprojects() {
   }
 }
 
+async function syncRootFilesForOutputs() {
+  const sourceIndex = path.join(projectRoot, 'index.html')
+  const sourceStyle = path.join(projectRoot, 'public', 'static', 'style.css')
+  const html = await readFile(sourceIndex, 'utf8')
+  const css = await readFile(sourceStyle, 'utf8')
+
+  for (const target of allOutputTargets) {
+    await mkdir(path.join(target, 'static'), { recursive: true })
+    await writeFile(path.join(target, 'index.html'), html)
+    await writeFile(path.join(target, 'static', 'style.css'), css)
+  }
+}
+
 async function cleanupUnusedAssets() {
   for (const assetPath of cleanupAssets) {
     await rm(assetPath, { force: true })
@@ -56,5 +70,6 @@ async function cleanupUnusedAssets() {
 }
 
 await copyDistToTargets()
+await syncRootFilesForOutputs()
 await syncRootFilesForSubprojects()
 await cleanupUnusedAssets()
