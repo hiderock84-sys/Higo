@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グループホーム | 一般社団法人ひごのいえ</title>
+    <meta name="description" content="グループホーム（共同生活援助）のご案内。障害福祉サービス、受給者証の取得方法、利用料金について。">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="グループホーム | 一般社団法人ひごのいえ">
+    <meta property="og:description" content="グループホーム（共同生活援助）のご案内。障害福祉サービス、受給者証の取得方法、利用料金について。">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts: シャープで切れのある明朝体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700;900&family=Shippori+Mincho:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 共通スタイル -->
+    <link href="https://higono-ie.pages.dev/static/common.css" rel="stylesheet">
+
+<style id="pro-enhancement-style">
+  :root {
+    --pro-bg-0: #eef4fb;
+    --pro-bg-1: #fafdff;
+    --pro-line: rgba(15, 42, 67, 0.14);
+    --pro-shadow-sm: 0 10px 22px rgba(15, 42, 67, 0.10);
+    --pro-shadow-md: 0 18px 38px rgba(15, 42, 67, 0.14);
+    --pro-shadow-lg: 0 30px 56px rgba(15, 42, 67, 0.20);
+    --pro-accent: #165c9a;
+    --pro-accent-2: #2a9d8f;
+    --pro-photo-1: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-2: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-3: url("https://images.unsplash.com/photo-1493244040629-496f6d136cc3?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-4: url("https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-5: url("https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-6: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-7: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-8: url("https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-9: url("https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-10: url("https://images.unsplash.com/photo-1522364723953-452d3431c267?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-11: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=80");
+    --pro-photo-12: url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1800&q=80");
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 14% 0%, rgba(22, 92, 154, 0.20), transparent 38%),
+      radial-gradient(circle at 90% 12%, rgba(42, 157, 143, 0.16), transparent 40%),
+      linear-gradient(135deg, var(--pro-bg-0), var(--pro-bg-1)) !important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: rgba(255, 255, 255, 0.90) !important;
+    border-bottom: 1px solid var(--pro-line) !important;
+    box-shadow: var(--pro-shadow-sm) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .header-container {
+    max-width: 1240px !important;
+    margin-inline: auto;
+  }
+
+  .logo-image {
+    filter: drop-shadow(0 4px 8px rgba(15, 42, 67, 0.18));
+  }
+
+  .nav-menu a {
+    border-radius: 12px;
+    transition: all 0.2s ease !important;
+    padding: 0.45rem 0.66rem !important;
+  }
+
+  .nav-menu a:hover {
+    background: rgba(22, 92, 154, 0.12);
+    color: #0f4f87 !important;
+  }
+
+  .landing-hero {
+    max-width: 1240px;
+    margin: 1rem auto 0 !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    box-shadow: var(--pro-shadow-lg);
+  }
+
+  .landing-hero-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.44)) !important;
+  }
+
+  .section,
+  .landing-intro,
+  .three-pillars {
+    border-radius: 20px !important;
+    border: 1px solid var(--pro-line) !important;
+    box-shadow: var(--pro-shadow-sm) !important;
+    margin-top: 1.15rem !important;
+    margin-bottom: 1.15rem !important;
+    overflow: hidden;
+  }
+
+  .section,
+  .landing-intro {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.93), rgba(247, 252, 255, 0.88)) !important;
+  }
+
+  .three-pillars {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 248, 255, 0.86)) !important;
+  }
+
+  .card,
+  .story-card,
+  .staff-card,
+  .testimonial-card,
+  .faq-item,
+  .footer-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 16px !important;
+    border: 1px solid var(--pro-line) !important;
+    box-shadow: var(--pro-shadow-sm) !important;
+    background-color: rgba(255, 255, 255, 0.90) !important;
+  }
+
+  .card > *,
+  .story-card > *,
+  .staff-card > *,
+  .testimonial-card > *,
+  .faq-item > *,
+  .footer-section > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .card::before,
+  .story-card::before,
+  .staff-card::before,
+  .testimonial-card::before,
+  .faq-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(160deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.60)),
+      var(--pro-card-photo, var(--pro-photo-1)) center / cover no-repeat;
+    opacity: 0.26;
+  }
+
+  main .card:nth-of-type(12n + 1) { --pro-card-photo: var(--pro-photo-1); }
+  main .card:nth-of-type(12n + 2) { --pro-card-photo: var(--pro-photo-2); }
+  main .card:nth-of-type(12n + 3) { --pro-card-photo: var(--pro-photo-3); }
+  main .card:nth-of-type(12n + 4) { --pro-card-photo: var(--pro-photo-4); }
+  main .card:nth-of-type(12n + 5) { --pro-card-photo: var(--pro-photo-5); }
+  main .card:nth-of-type(12n + 6) { --pro-card-photo: var(--pro-photo-6); }
+  main .card:nth-of-type(12n + 7) { --pro-card-photo: var(--pro-photo-7); }
+  main .card:nth-of-type(12n + 8) { --pro-card-photo: var(--pro-photo-8); }
+  main .card:nth-of-type(12n + 9) { --pro-card-photo: var(--pro-photo-9); }
+  main .card:nth-of-type(12n + 10) { --pro-card-photo: var(--pro-photo-10); }
+  main .card:nth-of-type(12n + 11) { --pro-card-photo: var(--pro-photo-11); }
+  main .card:nth-of-type(12n + 12) { --pro-card-photo: var(--pro-photo-12); }
+
+  .section-title,
+  .hero-title,
+  h1,
+  h2,
+  h3 {
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+  }
+
+  .btn,
+  .fixed-cta a {
+    border-radius: 12px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    box-shadow: var(--pro-shadow-sm) !important;
+  }
+
+  .btn:hover,
+  .fixed-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--pro-shadow-md) !important;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--pro-accent), var(--pro-accent-2)) !important;
+    border-color: transparent !important;
+  }
+
+  .btn-secondary {
+    background: #fff !important;
+    color: var(--pro-accent) !important;
+    border: 1px solid rgba(22, 92, 154, 0.30) !important;
+  }
+
+  footer {
+    background:
+      linear-gradient(180deg, rgba(7, 31, 52, 0.96), rgba(7, 23, 40, 0.98)),
+      var(--pro-photo-9) center / cover no-repeat !important;
+    color: #e5f2ff !important;
+  }
+
+  .footer-section {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .pro-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    transition-delay: var(--pro-delay, 0ms);
+  }
+
+  .pro-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body[data-pro-page="about"] .section:first-of-type { --pro-card-photo: var(--pro-photo-2); }
+  body[data-pro-page="program"] .section:first-of-type { --pro-card-photo: var(--pro-photo-4); }
+  body[data-pro-page="testimonials"] .section:first-of-type { --pro-card-photo: var(--pro-photo-8); }
+  body[data-pro-page="rapport"] .section:first-of-type { --pro-card-photo: var(--pro-photo-6); }
+  body[data-pro-page="grouphome"] .section:first-of-type { --pro-card-photo: var(--pro-photo-5); }
+  body[data-pro-page="guide"] .section:first-of-type { --pro-card-photo: var(--pro-photo-10); }
+  body[data-pro-page="family-guide"] .section:first-of-type { --pro-card-photo: var(--pro-photo-3); }
+  body[data-pro-page="contact"] .section:first-of-type { --pro-card-photo: var(--pro-photo-7); }
+  body[data-pro-page="staff"] .section:first-of-type { --pro-card-photo: var(--pro-photo-11); }
+
+  @media (max-width: 768px) {
+    .section,
+    .landing-intro,
+    .three-pillars {
+      border-radius: 14px !important;
+      margin-top: 0.75rem !important;
+      margin-bottom: 0.75rem !important;
+    }
+  }
+</style>
+
+</head>
+<body data-pro-page="grouphome">
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container" style="padding-left: 0.25rem;">
+            <a href="/pro/index.html" class="logo" style="margin-left: 0;">
+                <img src="https://higono-ie.pages.dev/static/logo.png" alt="一般社団法人ひごのいえ" class="logo-image" style="width: 35px; height: 35px; object-fit: contain;">
+                <span class="logo-text" style="font-family: 'Noto Serif JP', 'Shippori Mincho', serif; font-size: 0.896rem; color: #0F2A43; font-weight: 700; white-space: nowrap; letter-spacing: 0.08em;">
+                    一般社団法人ひごのいえ
+                </span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/pro/index.html">トップ</a></li>
+                    <li><a href="/pro/about/index.html">私たちについて</a></li>
+                    <li><a href="/pro/program/index.html">プログラム</a></li>
+                    <li><a href="/pro/testimonials/index.html">体験談</a></li>
+                    <li><a href="/pro/rapport/index.html">女性専用施設</a></li>
+                    <li><a href="/pro/grouphome/index.html">グループホーム</a></li>
+                    <li><a href="/pro/guide/index.html">ご利用案内</a></li>
+                    <li><a href="/pro/family-guide/index.html">家族ガイド</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="メニュー">☰</button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        
+    <section class="section">
+        <h1 class="section-title">グループホーム（共同生活援助）</h1>
+        <p style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 2rem; color: var(--primary-blue); font-weight: 600;">
+            地域で安心して暮らし、新しい人生を始める — 障害福祉サービスを活用した生活支援
+        </p>
+        
+        <div class="card mb-4" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%); border-left: 4px solid var(--accent-teal);">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem;">🏠 グループホームとは</h2>
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                グループホーム（共同生活援助）は、障害のある方が地域の中で<strong>少人数で共同生活</strong>を送りながら、<strong>自立した生活</strong>を目指すための障害福祉サービスです。
+            </p>
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                依存症からの回復において、グループホームは<strong>「施設」ではなく「家」</strong>です。仲間と共に生活し、お互いに支え合いながら、規則正しい生活習慣を身につけ、社会復帰への準備を整えることができます。
+            </p>
+            <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; margin-top: 1.5rem;">
+                <h3 style="font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem;">✅ こんな方に最適です</h3>
+                <ul style="line-height: 2; padding-left: 1.5rem;">
+                    <li>依存症からの回復を目指し、規則正しい生活を送りたい方</li>
+                    <li>一人暮らしでは不安があり、仲間と共に支え合いながら生活したい方</li>
+                    <li>施設から退所後、地域で自立した生活を始めたい方</li>
+                    <li>経済的な負担を抑えながら、安心できる住居を確保したい方</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-subtitle" style="margin-top: 3rem;">📋 障害福祉サービスとは</h2>
+        <div class="card mb-4">
+            <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                <strong>障害福祉サービス</strong>は、障害者総合支援法に基づき、障害のある方が地域で自立した生活を送るために国や自治体が提供する公的な支援制度です。
+            </p>
+            
+            <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.75rem; margin-bottom: 1.5rem;">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem;">🔍 依存症も障害福祉サービスの対象です</h3>
+                <p style="line-height: 1.8;">
+                    <strong>アルコール・薬物・ギャンブル等の依存症</strong>は、精神障害として認定されており、障害福祉サービスの対象となります。障害者手帳がなくても、医師の診断書があれば申請が可能です。
+                </p>
+            </div>
+
+            <h3 style="font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem;">📌 主な障害福祉サービス（依存症者向け）</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="background: white; padding: 1.25rem; border-radius: 0.75rem; border: 1px solid var(--border-light);">
+                    <h4 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">🏠 共同生活援助（グループホーム）</h4>
+                    <p style="line-height: 1.7; font-size: 0.95rem;">少人数での共同生活を通じて、日常生活の支援を受けながら自立を目指します。</p>
+                </div>
+                <div style="background: white; padding: 1.25rem; border-radius: 0.75rem; border: 1px solid var(--border-light);">
+                    <h4 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">🌟 自立訓練（生活訓練）</h4>
+                    <p style="line-height: 1.7; font-size: 0.95rem;">規則正しい生活習慣の確立、対人関係のスキル向上、社会復帰の準備を行います。</p>
+                </div>
+                <div style="background: white; padding: 1.25rem; border-radius: 0.75rem; border: 1px solid var(--border-light);">
+                    <h4 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">💼 就労移行支援</h4>
+                    <p style="line-height: 1.7; font-size: 0.95rem;">就職に必要なスキルを身につけ、企業実習や就職活動をサポートします。</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-subtitle" style="margin-top: 3rem;">📝 受給者証の取得方法（ステップバイステップ）</h2>
+        <div class="card mb-4">
+            <p style="line-height: 1.8; margin-bottom: 2rem;">
+                障害福祉サービスを利用するには、<strong>「障害福祉サービス受給者証」</strong>の取得が必要です。以下の5つのステップで申請できます。
+            </p>
+
+            <div style="display: grid; gap: 1.5rem;">
+                <!-- ステップ1 -->
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, white 100%); padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary-blue);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: var(--primary-blue); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0;">1</div>
+                        <h3 style="font-weight: 700; color: var(--primary-navy); margin: 0;">市区町村の障害福祉窓口へ相談</h3>
+                    </div>
+                    <p style="line-height: 1.8; padding-left: 3rem;">
+                        お住まいの市区町村役場の<strong>障害福祉課</strong>（自治体により名称が異なります）に行き、「障害福祉サービスを利用したい」と相談します。<br>
+                        <span style="color: var(--text-gray); font-size: 0.95rem;">※ひごのいえでも相談窓口への同行支援を行っています。お気軽にご相談ください。</span>
+                    </p>
+                </div>
+
+                <!-- ステップ2 -->
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, white 100%); padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary-blue);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: var(--primary-blue); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0;">2</div>
+                        <h3 style="font-weight: 700; color: var(--primary-navy); margin: 0;">申請書類の準備と提出</h3>
+                    </div>
+                    <div style="padding-left: 3rem;">
+                        <p style="line-height: 1.8; margin-bottom: 1rem;">以下の書類を準備し、窓口に提出します。</p>
+                        <ul style="line-height: 2; padding-left: 1.5rem;">
+                            <li><strong>申請書</strong>（窓口で入手）</li>
+                            <li><strong>医師の診断書</strong>または<strong>意見書</strong>（精神科医が作成）</li>
+                            <li><strong>障害者手帳</strong>（お持ちの方のみ。手帳がなくても申請可能です）</li>
+                            <li>本人確認書類（運転免許証、マイナンバーカードなど）</li>
+                        </ul>
+                        <p style="line-height: 1.8; color: var(--text-gray); font-size: 0.95rem; margin-top: 1rem;">
+                            ⚠️ <strong>重要</strong>: 依存症の場合、障害者手帳がなくても医師の診断書があれば申請できます。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ステップ3 -->
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, white 100%); padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary-blue);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: var(--primary-blue); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0;">3</div>
+                        <h3 style="font-weight: 700; color: var(--primary-navy); margin: 0;">認定調査・審査</h3>
+                    </div>
+                    <p style="line-height: 1.8; padding-left: 3rem;">
+                        市区町村の調査員が訪問し、生活状況や必要な支援について聞き取り調査を行います。その後、審査会で障害支援区分（非該当〜区分6）が決定されます。<br>
+                        <span style="color: var(--text-gray); font-size: 0.95rem;">※グループホームは区分に関係なく利用可能です。</span>
+                    </p>
+                </div>
+
+                <!-- ステップ4 -->
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, white 100%); padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary-blue);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: var(--primary-blue); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0;">4</div>
+                        <h3 style="font-weight: 700; color: var(--primary-navy); margin: 0;">サービス等利用計画案の作成</h3>
+                    </div>
+                    <p style="line-height: 1.8; padding-left: 3rem;">
+                        <strong>相談支援事業所</strong>の相談支援専門員が、本人の希望や状況に応じた「サービス等利用計画案」を作成します。<br>
+                        <span style="color: var(--text-gray); font-size: 0.95rem;">※ひごのいえと連携している相談支援事業所をご紹介できます。</span>
+                    </p>
+                </div>
+
+                <!-- ステップ5 -->
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, white 100%); padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary-blue);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: var(--primary-blue); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0;">5</div>
+                        <h3 style="font-weight: 700; color: var(--primary-navy); margin: 0;">受給者証の交付・サービス開始</h3>
+                    </div>
+                    <p style="line-height: 1.8; padding-left: 3rem;">
+                        審査が通ると、<strong>「障害福祉サービス受給者証」</strong>が交付されます（通常1〜2ヶ月）。受給者証を持って、ひごのいえのグループホームでの生活を開始できます。<br>
+                        <span style="color: var(--accent-teal); font-weight: 600; font-size: 0.95rem;">✅ 受給者証の有効期限は通常1〜3年で、更新手続きが必要です。</span>
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.75rem; margin-top: 2rem;">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem;">⏱️ 申請から受給者証交付までの期間</h3>
+                <p style="line-height: 1.8;">
+                    通常<strong>1〜2ヶ月程度</strong>かかります。ひごのいえでは、受給者証の取得手続きを全面的にサポートしますので、お気軽にご相談ください。
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-subtitle" style="margin-top: 3rem;">💰 利用料金について</h2>
+        <div class="card mb-4">
+            <p style="line-height: 1.8; margin-bottom: 2rem;">
+                グループホーム（共同生活援助）の利用料は、<strong>所得に応じた自己負担</strong>となります。多くの方が<strong>無料または低負担</strong>で利用できます。
+            </p>
+
+            <h3 style="font-weight: 700; color: var(--primary-blue); margin-bottom: 1.5rem;">📊 障害福祉サービス利用料（月額自己負担上限額）</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; background: white;">
+                    <thead>
+                        <tr style="background: var(--primary-navy); color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-light);">所得区分</th>
+                            <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-light);">対象者</th>
+                            <th style="padding: 1rem; text-align: center; border: 1px solid var(--border-light);">月額負担上限額</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); font-weight: 600;">生活保護</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light);">生活保護受給世帯</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); text-align: center; font-weight: 700; color: var(--accent-teal); font-size: 1.125rem;">0円</td>
+                        </tr>
+                        <tr style="background: var(--bg-light);">
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); font-weight: 600;">市町村民税非課税</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light);">本人と配偶者が市町村民税非課税（年収約103万円以下）</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); text-align: center; font-weight: 700; color: var(--accent-teal); font-size: 1.125rem;">0円</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); font-weight: 600;">市町村民税課税</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light);">本人または配偶者が市町村民税課税（年収約103万円超）</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); text-align: center; font-weight: 700; color: var(--primary-blue); font-size: 1.125rem;">9,300円</td>
+                        </tr>
+                        <tr style="background: var(--bg-light);">
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); font-weight: 600;">20歳以上<br>入所施設利用者</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light);">入所施設を利用する20歳以上の方</td>
+                            <td style="padding: 1rem; border: 1px solid var(--border-light); text-align: center; font-weight: 700; color: var(--primary-blue); font-size: 1.125rem;">37,200円</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+                <h4 style="font-weight: 700; color: #856404; margin-bottom: 0.75rem;">💡 ポイント</h4>
+                <ul style="line-height: 2; padding-left: 1.5rem; color: #856404;">
+                    <li><strong>多くの方が0円または9,300円</strong>で利用できます</li>
+                    <li>生活保護受給中の方、無収入の方は<strong>0円</strong>です</li>
+                    <li>自己負担額は<strong>月額上限額</strong>なので、それ以上は請求されません</li>
+                </ul>
+            </div>
+
+            <h3 style="font-weight: 700; color: var(--primary-blue); margin-bottom: 1.5rem; margin-top: 2.5rem;">🏠 その他の費用（実費負担）</h3>
+            <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.75rem;">
+                <p style="line-height: 1.8; margin-bottom: 1rem;">障害福祉サービス利用料とは別に、以下の実費がかかります。</p>
+                <ul style="line-height: 2; padding-left: 1.5rem;">
+                    <li><strong>家賃</strong>: 月額 約30,000〜50,000円（物件により異なります）</li>
+                    <li><strong>水光熱費</strong>: 月額 約10,000〜15,000円</li>
+                    <li><strong>食費</strong>: 月額 約30,000〜40,000円</li>
+                    <li><strong>日用品費</strong>: 各自負担</li>
+                </ul>
+                <p style="line-height: 1.8; margin-top: 1rem; color: var(--text-gray); font-size: 0.95rem;">
+                    ※生活保護受給中の方は、住宅扶助・生活扶助が適用されるため、実質負担はほとんどありません。
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-subtitle" style="margin-top: 3rem;">🌟 ひごのいえのグループホームの特徴</h2>
+        <div class="grid-2 mb-4">
+            <div class="card" style="border-left: 4px solid var(--accent-teal);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem;">🤝 仲間と共に回復する環境</h3>
+                <p style="line-height: 1.8;">
+                    同じ依存症の問題を抱える仲間と共に生活することで、孤立せず、お互いに支え合いながら回復を目指すことができます。
+                </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--accent-teal);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem;">📅 規則正しい生活リズム</h3>
+                <p style="line-height: 1.8;">
+                    起床、食事、就寝の時間を決め、日中活動（プログラム参加、就労など）を通じて、健全な生活習慣を身につけます。
+                </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--accent-teal);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem;">👨‍⚕️ 専門スタッフによる支援</h3>
+                <p style="line-height: 1.8;">
+                    世話人・生活支援員が24時間体制でサポート。回復プログラムへの参加、就労支援、行政手続きの支援なども行います。
+                </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--accent-teal);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 1rem;">🏘️ 地域との繋がり</h3>
+                <p style="line-height: 1.8;">
+                    施設ではなく地域の一般住宅で生活するため、買い物、通院、就労など、地域社会とのつながりを保ちながら自立を目指します。
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-subtitle" style="margin-top: 3rem;">❓ よくある質問</h2>
+        <div class="card mb-4">
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-light);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">Q1. 障害者手帳がなくても利用できますか?</h3>
+                <p style="line-height: 1.8; padding-left: 1.5rem;">
+                    <strong>A.</strong> はい、利用できます。医師の診断書があれば、障害者手帳がなくても障害福祉サービスの申請が可能です。
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-light);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">Q2. 生活保護を受けながらグループホームに入れますか?</h3>
+                <p style="line-height: 1.8; padding-left: 1.5rem;">
+                    <strong>A.</strong> はい、入れます。生活保護受給中の方は、障害福祉サービス利用料は0円、家賃・光熱費は住宅扶助で賄われるため、実質的な自己負担はほとんどありません。
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-light);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">Q3. どのくらいの期間利用できますか?</h3>
+                <p style="line-height: 1.8; padding-left: 1.5rem;">
+                    <strong>A.</strong> グループホームには利用期限がありません。回復のペースに合わせて、必要な期間利用できます。多くの方が1〜3年程度利用されています。
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-light);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">Q4. 一人部屋ですか? 相部屋ですか?</h3>
+                <p style="line-height: 1.8; padding-left: 1.5rem;">
+                    <strong>A.</strong> 物件により異なりますが、基本的には個室をご用意しています。プライバシーを確保しながら、共有スペース（リビング、キッチン、浴室など）で仲間と交流します。
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-light);">
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">Q5. 外出や外泊は自由ですか?</h3>
+                <p style="line-height: 1.8; padding-left: 1.5rem;">
+                    <strong>A.</strong> 回復状況に応じて、外出や外泊のルールを決めています。就労している方は自由に通勤できます。回復初期の方は、スタッフと相談しながら段階的に自由度を高めていきます。
+                </p>
+            </div>
+
+            <div>
+                <h3 style="font-weight: 700; color: var(--primary-navy); margin-bottom: 0.75rem;">Q6. アルコールや薬物を使ってしまった場合はどうなりますか?</h3>
+                <p style="line-height: 1.8; padding-left: 1.5rem;">
+                    <strong>A.</strong> 再使用（スリップ）は回復プロセスの一部として理解しています。すぐに退所ということはありません。スタッフや仲間と話し合い、原因を振り返り、再度回復に向けて歩み直すことができます。
+                </p>
+            </div>
+        </div>
+
+        <div class="card" style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%); color: white; text-align: center;">
+            <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: white;">まずは無料相談から始めましょう</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.95;">
+                グループホームの見学、受給者証の取得手続き、費用の相談など、どんなことでもお気軽にご相談ください。<br>
+                あなたの回復を、私たちがしっかりサポートします。
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/pro/contact/index.html" class="btn btn-primary" style="background: white; color: var(--primary-navy); font-size: 1.125rem; padding: 1rem 2rem;">お問い合わせ</a>
+                <a href="tel:0964-41-2387" class="btn btn-secondary" style="background: transparent; color: white; border: 2px solid white; font-size: 1.125rem; padding: 1rem 2rem;">☎ 0964-41-2387</a>
+            </div>
+        </div>
+    </section>
+  
+    </main>
+
+    <!-- 固定CTAボタン -->
+    <div class="fixed-cta" style="display: flex; gap: 0.5rem; justify-content: center; align-items: center;">
+        <a href="tel:0964-41-2387" class="btn" style="background: linear-gradient(135deg, #165C9A 0%, #2A9D8F 100%); color: white; border: 2px solid transparent; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem !important; border-radius: 0.5rem; text-decoration: none; font-weight: 700 !important; font-size: 0.95rem !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1); white-space: nowrap; width: 140px; height: 50px; box-sizing: border-box;">📞 電話相談</a>
+        <a href="/pro/contact/index.html" class="btn" style="background: white; color: #333; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem !important; border-radius: 0.5rem; text-decoration: none; font-weight: 700 !important; font-size: 0.95rem !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1); white-space: nowrap; width: 140px; height: 50px; box-sizing: border-box;">無料相談</a>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div style="margin-bottom: 1rem;">
+                        <img src="https://higono-ie.pages.dev/static/logo.png" alt="一般社団法人ひごのいえ" style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 0.75rem;">
+                    </div>
+                    <h3 style="font-family: 'Noto Serif JP', 'Shippori Mincho', serif; font-size: 1.28rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; white-space: nowrap; letter-spacing: 0.08em;">
+                        一般社団法人ひごのいえ
+                    </h3>
+                    <p>依存症からの回復と希望の家</p>
+                    <p class="mt-2">
+                        電話: <a href="tel:0964-41-2387">0964-41-2387</a><br>
+                        受付時間: 平日 9:00〜17:00
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>メニュー</h3>
+                    <ul>
+                        <li><a href="/pro/about/index.html">ひごのいえとは</a></li>
+                        <li><a href="https://higono-ie.pages.dev/message">代表挨拶</a></li>
+                        <li><a href="/pro/staff/index.html">スタッフ紹介</a></li>
+                        <li><a href="/pro/program/index.html">回復プログラム</a></li>
+                        <li><a href="/pro/testimonials/index.html">回復体験談</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>ご利用案内</h3>
+                    <ul>
+                        <li><a href="/pro/guide/index.html">利用案内</a></li>
+                        <li><a href="https://higono-ie.pages.dev/admission">入寮ガイド</a></li>
+                        <li><a href="/pro/family-guide/index.html">家族ガイド</a></li>
+                        <li><a href="https://higono-ie.pages.dev/faq">よくある質問</a></li>
+                        <li><a href="https://higono-ie.pages.dev/access">アクセス</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>サポート</h3>
+                    <ul>
+                        <li><a href="/pro/rapport/index.html">女性専用施設『ラポール』</a></li>
+                        <li><a href="/pro/grouphome/index.html">グループホーム</a></li>
+                        <li><a href="https://higono-ie.pages.dev/partnership">連携について</a></li>
+                        <li><a href="https://higono-ie.pages.dev/donate">寄付・ボランティア</a></li>
+                        <li><a href="/pro/contact/index.html">無料相談・お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 一般社団法人ひごのいえ All Rights Reserved.</p>
+                <p class="mt-1">
+                    <a href="https://higono-ie.pages.dev/privacy">プライバシーポリシー</a> | 
+                    <a href="https://higono-ie.pages.dev/terms">利用規約</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 共通JavaScript -->
+    <script src="https://higono-ie.pages.dev/static/common.js"></script>
+
+<script id="pro-enhancement-script">
+(() => {
+  if (window.__proEnhancedLanding) return;
+  window.__proEnhancedLanding = true;
+  const targets = Array.from(
+    document.querySelectorAll('.section, .landing-intro, .three-pillars, .card, .btn, .footer-section')
+  );
+  if (!targets.length || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  targets.forEach((element, index) => {
+    element.classList.add('pro-reveal');
+    element.style.setProperty('--pro-delay', String(Math.min(index * 40, 520)) + 'ms');
+    observer.observe(element);
+  });
+})();
+</script>
+
+</body>
+</html>
+  
