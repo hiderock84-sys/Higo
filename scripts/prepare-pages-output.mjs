@@ -5,6 +5,10 @@ import { fileURLToPath } from 'node:url'
 const currentFile = fileURLToPath(import.meta.url)
 const projectRoot = path.resolve(path.dirname(currentFile), '..')
 const distDir = path.join(projectRoot, 'dist')
+const proHomepageSource = path.join(projectRoot, 'pro-homepage.html')
+const proRouteDir = path.join(distDir, 'pro')
+const proRouteIndex = path.join(proRouteDir, 'index.html')
+const proHomepageDistCopy = path.join(distDir, 'pro-homepage.html')
 const subprojectRoots = ['hidonoie', 'higono-ie']
 const rootTargets = [
   path.join(projectRoot, 'build'),
@@ -34,6 +38,13 @@ async function copyDistToTargets() {
   }
 }
 
+async function addProHomepageToDist() {
+  const proHtml = await readFile(proHomepageSource, 'utf8')
+  await mkdir(proRouteDir, { recursive: true })
+  await writeFile(proRouteIndex, proHtml)
+  await writeFile(proHomepageDistCopy, proHtml)
+}
+
 async function syncRootFilesForSubprojects() {
   const sourceIndex = path.join(projectRoot, 'index.html')
   const sourceStyle = path.join(projectRoot, 'public', 'static', 'style.css')
@@ -55,6 +66,7 @@ async function cleanupUnusedAssets() {
   }
 }
 
+await addProHomepageToDist()
 await copyDistToTargets()
 await syncRootFilesForSubprojects()
 await cleanupUnusedAssets()
