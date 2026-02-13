@@ -3,1159 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ひごのいえ - 依存症回復支援施設 | 熊本県御船町</title>
-  <meta name="description" content="一般社団法人ひごのいえは、熊本県上益城郡御船町にある依存症回復支援施設です。薬物・アルコール・ギャンブル・処方薬などの依存症に悩むご本人とご家族を支援します。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <title>PRO | 一般社団法人ひごのいえ</title>
+  <meta name="description" content="ひごのいえトップページと同一内容を、別ファイルでプロ品質のUI強化を適用して表示します。">
   <style>
     :root {
-      --bg: #f3f6fb;
-      --surface: rgba(255, 255, 255, 0.9);
-      --surface-strong: #ffffff;
-      --ink: #0f1c2f;
-      --ink-soft: #334155;
-      --line: rgba(15, 28, 47, 0.1);
-      --brand: #0f4c81;
-      --brand-strong: #083861;
-      --accent: #2f7eb6;
-      --ok: #0b8f68;
-      --shadow: 0 16px 32px rgba(15, 28, 47, 0.12);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --max: 1160px;
-      --header-h: 82px;
+      --pro-bg: #f2f6fb;
+      --pro-ink: #0f2a43;
+      --pro-line: rgba(15, 42, 67, 0.12);
+      --pro-shadow: 0 16px 40px rgba(15, 42, 67, 0.16);
+      --pro-accent: #165c9a;
+      --pro-accent-2: #2a9d8f;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html,
     body {
       margin: 0;
-      color: var(--ink);
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
       background:
-        radial-gradient(circle at 15% 0%, rgba(47, 126, 182, 0.18), transparent 44%),
-        radial-gradient(circle at 90% 20%, rgba(11, 143, 104, 0.16), transparent 42%),
-        var(--bg);
-      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+        radial-gradient(circle at 15% 0%, rgba(22, 92, 154, 0.15), transparent 38%),
+        radial-gradient(circle at 90% 12%, rgba(42, 157, 143, 0.14), transparent 42%),
+        var(--pro-bg);
+      color: var(--pro-ink);
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(100% - 2rem, var(--max));
-      margin-inline: auto;
-    }
-
-    .section {
-      padding: 5rem 0;
-    }
-
-    .section-head {
-      margin-bottom: 1.6rem;
-    }
-
-    .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.64);
-      backdrop-filter: blur(8px);
-      color: var(--ink-soft);
-      font-size: 0.74rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border-radius: 999px;
-      padding: 0.34rem 0.74rem;
-      margin-bottom: 1rem;
-    }
-
-    .title {
-      margin: 0;
-      font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
-      line-height: 1.35;
-      letter-spacing: 0.05em;
-      font-size: clamp(1.65rem, 2.6vw, 2.3rem);
-      color: #0a233b;
-    }
-
-    .text {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: 1.02rem;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 90;
-      height: var(--header-h);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(243, 246, 251, 0.76);
-      backdrop-filter: blur(12px);
-    }
-
-    .header-inner {
+    .pro-shell {
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 1rem;
+      grid-template-rows: auto 1fr;
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      min-width: 0;
-    }
-
-    .brand-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      object-fit: contain;
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 0.2rem;
-      box-shadow: 0 8px 16px rgba(15, 28, 47, 0.12);
-      flex-shrink: 0;
-    }
-
-    .brand-text {
-      min-width: 0;
-    }
-
-    .brand-sub {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: 0.68rem;
-      line-height: 1.2;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .brand-main {
-      margin: 0.2rem 0 0;
-      font-family: "Shippori Mincho B1", serif;
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
-      letter-spacing: 0.07em;
-      color: #0b2f50;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .desktop-nav {
-      display: none;
-      align-items: center;
-      gap: 0.3rem;
-      margin-right: 0.8rem;
-    }
-
-    .desktop-nav a {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #29445d;
-      padding: 0.45rem 0.62rem;
-      border-radius: 10px;
-      transition: all 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .desktop-nav a:hover,
-    .desktop-nav a:focus-visible {
-      color: var(--brand-strong);
-      background: rgba(15, 76, 129, 0.12);
-      outline: none;
-    }
-
-    .header-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(15, 76, 129, 0.2);
-      background: linear-gradient(135deg, #ffffff, #e9f1f8);
-      color: var(--brand-strong);
-      font-size: 0.77rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
-      padding: 0.58rem 0.9rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .header-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 18px rgba(15, 76, 129, 0.2);
-    }
-
-    .mobile-menu-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 11px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.85);
-      color: #123a61;
-      font-size: 1.4rem;
-      line-height: 1;
-      display: inline-grid;
-      place-items: center;
-      cursor: pointer;
-    }
-
-    .mobile-nav-wrap {
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 25, 42, 0.56);
-      backdrop-filter: blur(2px);
-      display: none;
-      align-items: flex-start;
-      justify-content: flex-end;
-      z-index: 120;
-    }
-
-    .mobile-nav-wrap.open {
+    .pro-header {
+      position: relative;
+      z-index: 10;
       display: flex;
-    }
-
-    .mobile-nav {
-      width: min(88vw, 360px);
-      min-height: 100%;
-      padding: 1rem 1rem 2rem;
-      background: #f8fbff;
-      box-shadow: -20px 0 40px rgba(8, 26, 45, 0.2);
-      border-left: 1px solid rgba(15, 28, 47, 0.08);
-    }
-
-    .mobile-nav-head {
-      display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--pro-line);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(10px);
     }
 
-    .mobile-nav-title {
+    .pro-title {
       margin: 0;
-      font-family: "Shippori Mincho B1", serif;
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-      color: #0f2f4b;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      font-weight: 700;
+      color: #12395e;
     }
 
-    .mobile-nav-close {
-      width: 38px;
-      height: 38px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fff;
-      color: #0f2f4b;
-      font-size: 1.1rem;
-      cursor: pointer;
+    .pro-desc {
+      margin: 0.22rem 0 0;
+      font-size: 0.78rem;
+      color: #395773;
     }
 
-    .mobile-nav a {
-      display: block;
-      padding: 0.72rem 0.75rem;
-      border-radius: 10px;
-      color: #213f59;
-      font-weight: 600;
-      font-size: 0.92rem;
-      margin-bottom: 0.28rem;
-    }
-
-    .mobile-nav a:hover {
-      background: rgba(15, 76, 129, 0.1);
-    }
-
-    .hero {
-      position: relative;
-      isolation: isolate;
-      padding: clamp(4rem, 8vw, 7rem) 0 clamp(3.4rem, 7vw, 5rem);
-    }
-
-    .hero-shell {
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      min-height: clamp(460px, 72vh, 700px);
-      display: grid;
+    .pro-link {
+      display: inline-flex;
       align-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: var(--shadow);
-      background:
-        linear-gradient(130deg, rgba(8, 33, 58, 0.82), rgba(11, 57, 92, 0.62)),
-        url("/static/hero-image.jpg") center / cover no-repeat;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid rgba(22, 92, 154, 0.22);
+      color: #0f4f87;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      background: #fff;
+      white-space: nowrap;
     }
 
-    .hero-shell::before {
-      content: "";
+    .frame-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0.9rem;
+    }
+
+    .frame-card {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--pro-line);
+      box-shadow: var(--pro-shadow);
+      background: #fff;
+    }
+
+    #homeFrame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
+    .loading {
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(168, 220, 255, 0.3), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(111, 202, 179, 0.22), transparent 42%);
+      inset: 0.9rem;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(2px);
+      color: #1d446a;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      transition: opacity 0.25s ease;
       pointer-events: none;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: #fff;
-      width: min(100% - 2rem, 920px);
-      margin-inline: auto;
-      padding-block: 2rem;
-    }
-
-    .hero-kicker {
-      margin: 0;
-      letter-spacing: 0.24em;
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.86);
-      text-transform: uppercase;
-    }
-
-    .hero-title {
-      margin: 0.7rem 0 0.1rem;
-      font-size: clamp(2.1rem, 7vw, 4.7rem);
-      line-height: 1.18;
-      letter-spacing: 0.16em;
-      font-family: "Shippori Mincho B1", serif;
-      text-shadow: 0 8px 26px rgba(3, 11, 20, 0.46);
-    }
-
-    .hero-tagline {
-      margin: 0.7rem 0 1.5rem;
-      font-size: clamp(1rem, 2.2vw, 1.42rem);
-      letter-spacing: 0.13em;
-      font-weight: 500;
-      color: rgba(238, 248, 255, 0.96);
-    }
-
-    .hero-message,
-    .hero-submessage {
-      margin: 0 auto;
-      max-width: 760px;
-      font-size: clamp(0.95rem, 2vw, 1.18rem);
-      color: rgba(245, 251, 255, 0.95);
-      text-shadow: 0 4px 12px rgba(3, 11, 20, 0.38);
-    }
-
-    .hero-submessage {
-      margin-top: 1rem;
-      font-size: clamp(0.85rem, 1.8vw, 1rem);
-      color: rgba(236, 248, 255, 0.86);
-    }
-
-    .hero-actions {
-      margin-top: 2.1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-weight: 800;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      border-radius: 999px;
-      padding: 0.78rem 1.18rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #eaf7ff, #ffffff);
-      color: #0b3f6a;
-      border-color: rgba(234, 247, 255, 0.6);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(255, 255, 255, 0.32);
-      color: #eff8ff;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 20px rgba(7, 25, 44, 0.26);
-    }
-
-    .grid-2 {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 16px 26px rgba(15, 28, 47, 0.08);
-      backdrop-filter: blur(8px);
-      padding: clamp(1.2rem, 2vw, 1.7rem);
-    }
-
-    .about-card {
-      min-height: 180px;
-      display: grid;
-      align-content: center;
-    }
-
-    .pillars-shell {
-      border: 1px solid rgba(15, 76, 129, 0.16);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(226, 240, 252, 0.55));
-      border-radius: calc(var(--radius-lg) + 4px);
-      box-shadow: 0 18px 28px rgba(15, 76, 129, 0.08);
-      padding: clamp(1.3rem, 3vw, 2rem);
-    }
-
-    .pillars-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    }
-
-    .pillar {
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(15, 28, 47, 0.1);
-      background: #fff;
-      padding: 1.1rem;
-      min-height: 190px;
-      box-shadow: 0 10px 16px rgba(15, 28, 47, 0.06);
-    }
-
-    .pillar-title {
-      margin: 0;
-      color: #0a3156;
-      font-family: "Shippori Mincho B1", serif;
-      font-size: 1.18rem;
-      letter-spacing: 0.05em;
-    }
-
-    .pillar-desc {
-      margin: 0.7rem 0 0;
-      color: var(--ink-soft);
-      font-size: 0.96rem;
-    }
-
-    .message-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.8rem;
-    }
-
-    .message-box {
-      border-radius: var(--radius-md);
-      border: 1px solid var(--line);
-      background: #fff;
-      padding: 1rem 1.1rem;
-      color: #2d4359;
-      font-size: 0.96rem;
-      box-shadow: 0 8px 16px rgba(15, 28, 47, 0.06);
-    }
-
-    .message-box.highlight {
-      border-color: rgba(15, 76, 129, 0.35);
-      background: linear-gradient(180deg, #f4faff, #ffffff);
-      color: #0f4c81;
-      font-weight: 600;
-    }
-
-    .nav-shell {
-      border-radius: calc(var(--radius-lg) + 2px);
-      border: 1px solid rgba(15, 28, 47, 0.12);
-      background: var(--surface-strong);
-      box-shadow: 0 14px 26px rgba(15, 28, 47, 0.08);
-      padding: clamp(1.1rem, 2.3vw, 1.8rem);
-    }
-
-    .nav-summary {
-      margin: 0;
-      color: #21435f;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    .nav-grid {
-      margin-top: 1.1rem;
-      display: grid;
-      gap: 0.75rem;
-      grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
-    }
-
-    .nav-card {
-      display: block;
-      border-radius: 14px;
-      border: 1px solid rgba(15, 28, 47, 0.1);
-      padding: 0.95rem;
-      background: linear-gradient(180deg, #ffffff, #f7fbff);
-      transition: transform 0.24s ease, box-shadow 0.24s ease;
-      min-height: 108px;
-    }
-
-    .nav-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 16px rgba(15, 28, 47, 0.1);
-    }
-
-    .nav-title {
-      margin: 0;
-      color: #0f3458;
-      font-family: "Shippori Mincho B1", serif;
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-    }
-
-    .nav-subtitle {
-      margin-top: 0.45rem;
-      color: #3d5a73;
-      font-size: 0.84rem;
-      line-height: 1.5;
-    }
-
-    .story {
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: var(--shadow);
-      background:
-        linear-gradient(145deg, rgba(7, 41, 70, 0.92), rgba(11, 90, 106, 0.72)),
-        url("/static/aso-landscape.jpg") center / cover no-repeat;
-      color: #f2fbff;
-      padding: clamp(2.2rem, 5vw, 4rem);
-      text-align: center;
-    }
-
-    .story-label {
-      margin: 0;
-      letter-spacing: 0.24em;
-      font-size: 0.7rem;
-      color: rgba(215, 245, 255, 0.9);
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .story-title {
-      margin: 0.75rem 0;
-      font-family: "Shippori Mincho B1", serif;
-      font-size: clamp(1.8rem, 4.2vw, 2.8rem);
-      line-height: 1.4;
-      letter-spacing: 0.08em;
-      text-shadow: 0 10px 20px rgba(3, 13, 22, 0.32);
-    }
-
-    .story-subtitle {
-      margin: 0 auto;
-      max-width: 720px;
-      color: rgba(239, 251, 255, 0.92);
-      font-size: 0.98rem;
-    }
-
-    .faq-grid {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .faq-item {
-      border-radius: var(--radius-md);
-      border: 1px solid var(--line);
-      background: #fff;
-      padding: 1rem 1.1rem;
-      box-shadow: 0 8px 16px rgba(15, 28, 47, 0.06);
-    }
-
-    .faq-question {
-      margin: 0;
-      color: #113b62;
-      font-weight: 800;
-      font-size: 0.98rem;
-    }
-
-    .faq-answer {
-      margin: 0.55rem 0 0;
-      color: #324f66;
-      font-size: 0.93rem;
-    }
-
-    .links-area {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-    }
-
-    .pill-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 0.7rem 1rem;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      border: 1px solid rgba(15, 76, 129, 0.2);
-      color: #0f4c81;
-      background: #fff;
-    }
-
-    .pill-btn.accent {
-      color: #0b6f54;
-      border-color: rgba(11, 143, 104, 0.28);
-      background: #f3fff9;
-    }
-
-    .contact {
-      border-radius: calc(var(--radius-lg) + 6px);
-      border: 1px solid rgba(15, 76, 129, 0.18);
-      background: linear-gradient(180deg, #ffffff, #eef6ff);
-      box-shadow: 0 18px 28px rgba(15, 76, 129, 0.1);
-      padding: clamp(1.4rem, 3vw, 2rem);
-      text-align: center;
-    }
-
-    .contact-title {
-      margin: 0;
-      font-family: "Shippori Mincho B1", serif;
-      font-size: clamp(1.55rem, 3.4vw, 2.25rem);
-      letter-spacing: 0.06em;
-      color: #0a3156;
-    }
-
-    .contact-subtitle,
-    .contact-message,
-    .contact-hours {
-      margin: 0.8rem 0 0;
-      color: #35536b;
-      font-size: 0.94rem;
-    }
-
-    .contact-message {
-      font-weight: 700;
-      color: #0f4c81;
-    }
-
-    .contact-actions {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    .contact-btn {
-      min-width: min(100%, 280px);
-      border-radius: 14px;
-      border: 1px solid transparent;
-      padding: 0.85rem 1rem;
-      font-size: 0.88rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.5;
-    }
-
-    .contact-btn.primary {
-      background: linear-gradient(135deg, #0f4c81, #2f7eb6);
-      color: #fff;
-      box-shadow: 0 10px 18px rgba(15, 76, 129, 0.24);
-    }
-
-    .contact-btn.outline {
-      background: #fff;
-      border-color: rgba(15, 76, 129, 0.22);
-      color: #0f4c81;
-    }
-
-    .footer {
-      margin-top: 5rem;
-      padding: 2.6rem 0 2rem;
-      background: linear-gradient(180deg, #0d2238, #061726);
-      color: #d2e6f8;
-    }
-
-    .footer-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-    }
-
-    .footer-card {
-      border: 1px solid rgba(210, 230, 248, 0.18);
-      border-radius: var(--radius-md);
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .footer-logo {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: #fff;
-      border: 1px solid rgba(210, 230, 248, 0.3);
-      padding: 0.2rem;
-      margin-bottom: 0.7rem;
-      object-fit: contain;
-    }
-
-    .footer-title {
-      margin: 0 0 0.6rem;
-      color: #ebf7ff;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .footer-text,
-    .footer-link {
-      margin: 0.18rem 0;
-      color: #c7ddf2;
-      font-size: 0.86rem;
-    }
-
-    .footer-link:hover {
-      color: #fff;
-    }
-
-    .copyright {
-      margin-top: 1.4rem;
-      text-align: center;
-      color: #98b9d6;
-      font-size: 0.78rem;
-      letter-spacing: 0.05em;
-    }
-
-    .fade-in {
+    .loading.hidden {
       opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.45s ease, transform 0.45s ease;
-      transition-delay: calc(var(--index, 0) * 40ms);
-    }
-
-    .fade-in.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (min-width: 760px) {
-      .grid-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .message-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .message-grid .message-box.highlight {
-        grid-column: 1 / -1;
-      }
-      .footer-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 1080px) {
-      .header-inner {
-        grid-template-columns: auto 1fr auto auto;
-      }
-      .desktop-nav {
-        display: inline-flex;
-      }
-      .mobile-menu-btn {
-        display: none;
-      }
-      .hero {
-        padding-top: clamp(4.6rem, 8vw, 7rem);
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: min(100% - 1.2rem, var(--max));
-      }
-      .section {
-        padding: 3.8rem 0;
-      }
-      .hero-shell {
-        border-radius: 22px;
-      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="brand">
-        <img src="/static/higonoie-logo-new.png" alt="一般社団法人 ひごのいえ" class="brand-logo">
-        <div class="brand-text">
-          <p class="brand-sub">依存症回復支援施設</p>
-          <p class="brand-main">一般社団法人 ひごのいえ</p>
-        </div>
-      </a>
-
-      <nav class="desktop-nav" aria-label="メインナビゲーション">
-        <a href="#top">トップ</a>
-        <a href="#about">私たちについて</a>
-        <a href="#program">プログラム</a>
-        <a href="#testimonials">体験談</a>
-        <a href="#women">女性専用施設</a>
-        <a href="#grouphome">グループホーム</a>
-        <a href="#usage">ご利用案内</a>
-        <a href="#family">家族ガイド</a>
-      </nav>
-
-      <a href="tel:0964-41-2387" class="header-cta" aria-label="今すぐ電話相談 0964-41-2387">
-        今すぐ電話相談
-      </a>
-
-      <button class="mobile-menu-btn" id="mobileMenuOpen" aria-label="メニューを開く">☰</button>
-    </div>
-  </header>
-
-  <div class="mobile-nav-wrap" id="mobileNavWrap">
-    <nav class="mobile-nav" aria-label="モバイルナビゲーション">
-      <div class="mobile-nav-head">
-        <h2 class="mobile-nav-title">ご案内メニュー</h2>
-        <button type="button" class="mobile-nav-close" id="mobileMenuClose" aria-label="メニューを閉じる">✕</button>
+  <div class="pro-shell">
+    <header class="pro-header">
+      <div>
+        <h1 class="pro-title">PROビュー（文章はトップページと同一）</h1>
+        <p class="pro-desc">見た目のみを強化して表示します</p>
       </div>
-      <a href="#top">トップ</a>
-      <a href="#about">私たちについて</a>
-      <a href="#program">プログラム</a>
-      <a href="#testimonials">体験談</a>
-      <a href="#women">女性専用施設</a>
-      <a href="#grouphome">グループホーム</a>
-      <a href="#usage">ご利用案内</a>
-      <a href="#family">家族ガイド</a>
-      <a href="#contact">相談窓口</a>
-    </nav>
+      <a href="/" class="pro-link">通常トップを開く</a>
+    </header>
+
+    <main class="frame-wrap">
+      <div class="frame-card">
+        <iframe id="homeFrame" src="https://higono-ie.pages.dev/" title="一般社団法人ひごのいえ トップページ"></iframe>
+      </div>
+      <div id="loading" class="loading">LOADING...</div>
+    </main>
   </div>
 
-  <main>
-    <section class="hero container" id="top">
-      <div class="hero-shell">
-        <div class="hero-content">
-          <h1 class="hero-title">ひごのいえ</h1>
-          <p class="hero-tagline">生き直すここから</p>
-          <p class="hero-message">
-            阿蘇の山々と天草の海に抱かれた、<br>
-            依存症からの回復をめざす方の安心できる居場所
-          </p>
-          <p class="hero-submessage">
-            ご本人・ご家族・医療機関・行政機関が安心して連携できる体制を整え、<br>
-            再発予防まで見据えた回復支援を提供します。
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">相談窓口へ</a>
-            <a class="btn btn-secondary" href="#about">私たちについて</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container fade-in" id="about" style="--index: 1;">
-      <div class="section-head">
-        <h2 class="title">私たちについて</h2>
-      </div>
-      <div class="grid-2">
-        <article class="card about-card">
-          <p class="text">
-            「ひごのいえ」は、依存症に悩むご本人とご家族を支えるために、
-            医療機関・行政機関と連携した受け入れ体制を構築しています。
-          </p>
-        </article>
-        <article class="card about-card">
-          <p class="text">
-            初回相談から入所検討、回復プログラム、退所後の生活再建まで、
-            一人ひとりの状況に合わせて継続的に伴走します。
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container fade-in" id="program" style="--index: 2;">
-      <div class="pillars-shell">
-        <div class="section-head">
-          <h2 class="title">私たちが大切にする<br>三つの柱</h2>
-        </div>
-        <div class="pillars-grid">
-          <article class="pillar">
-            <h3 class="pillar-title">Hope　希望</h3>
-            <p class="pillar-desc">
-              回復は段階的に進みます。
-              評価と対話を重ね、現実的な目標を一歩ずつ達成します。
-            </p>
-          </article>
-          <article class="pillar">
-            <h3 class="pillar-title">Honesty　正直</h3>
-            <p class="pillar-desc">
-              状態を正確に把握し、課題を共有することが、
-              再発を防ぐ支援の出発点になります。
-            </p>
-          </article>
-          <article class="pillar">
-            <h3 class="pillar-title">Healing　回復</h3>
-            <p class="pillar-desc">
-              心身と生活を整え、社会とのつながりを回復するまで、
-              焦らず着実に支えます。
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container fade-in" style="--index: 3;">
-      <div class="message-grid">
-        <article class="message-box">
-          回復のペースは人それぞれです。
-          比較ではなく、個別性を尊重した支援で前進を支えます。
-        </article>
-        <article class="message-box">
-          経験豊富なスタッフが、
-          相談・入所・家族支援・関係機関連携を一貫して担当します。
-        </article>
-        <article class="message-box">
-          本人だけでなく、ご家族や関係機関と情報を整理し、
-          安心して回復に向き合える環境を整えます。
-        </article>
-        <article class="message-box">
-          電話・メールどちらでも受け付けています。
-          「話してみる」ことから、回復への道が始まります。
-        </article>
-        <article class="message-box highlight">
-          まずは相談から。
-          医療機関・行政機関からのご相談にも、<br>
-          誠実かつ迅速に対応します。
-        </article>
-      </div>
-    </section>
-
-    <section class="section container fade-in" style="--index: 4;">
-      <div class="nav-shell">
-        <p class="nav-summary">薬物・アルコール・ギャンブル・処方薬など、依存症に悩むご本人とご家族のための相談・回復支援の拠点です</p>
-        <div class="nav-grid">
-          <a href="#top" class="nav-card" aria-label="トップへ移動">
-            <h3 class="nav-title">トップ</h3>
-            <p class="nav-subtitle">ホームへ戻る</p>
-          </a>
-          <a href="#about" class="nav-card" aria-label="私たちについてへ移動">
-            <h3 class="nav-title">私たちについて</h3>
-            <p class="nav-subtitle">施設の理念と特徴</p>
-          </a>
-          <a href="#testimonials" class="nav-card" aria-label="スタッフ紹介へ移動">
-            <h3 class="nav-title">スタッフ紹介</h3>
-            <p class="nav-subtitle">経験豊かな支援者</p>
-          </a>
-          <a href="#program" class="nav-card" aria-label="プログラムへ移動">
-            <h3 class="nav-title">プログラム</h3>
-            <p class="nav-subtitle">回復への道のり</p>
-          </a>
-          <a href="#testimonials" class="nav-card" aria-label="体験談へ移動">
-            <h3 class="nav-title">体験談</h3>
-            <p class="nav-subtitle">回復者の声</p>
-          </a>
-          <a href="#contact" class="nav-card" id="women" aria-label="女性専用施設の相談窓口へ移動">
-            <h3 class="nav-title">女性専用施設</h3>
-            <p class="nav-subtitle">らぽーる</p>
-          </a>
-          <a href="#contact" class="nav-card" id="grouphome" aria-label="グループホームの相談窓口へ移動">
-            <h3 class="nav-title">グループホーム</h3>
-            <p class="nav-subtitle">共同生活の場</p>
-          </a>
-          <a href="#contact" class="nav-card" id="usage" aria-label="ご利用案内の相談窓口へ移動">
-            <h3 class="nav-title">ご利用案内</h3>
-            <p class="nav-subtitle">ご利用の流れ</p>
-          </a>
-          <a href="#contact" class="nav-card" id="family" aria-label="家族ガイドの相談窓口へ移動">
-            <h3 class="nav-title">家族ガイド</h3>
-            <p class="nav-subtitle">ご家族へのサポート</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container fade-in" id="testimonials" style="--index: 5;">
-      <div class="story">
-        <p class="story-label">YOUR STORY BEGINS HERE</p>
-        <h2 class="story-title">あなたの物語も、<br>ここから始まる</h2>
-        <p class="story-subtitle">
-          彼らは絶望の底から這い上がった。<br>
-          今、彼らは笑顔で「回復できた」と語る。<br>
-          あなたも必ず回復できます。
-        </p>
-      </div>
-    </section>
-
-    <section class="section container fade-in" style="--index: 6;">
-      <div class="section-head">
-        <h2 class="title">Q&amp;A　よくあるご質問</h2>
-      </div>
-      <div class="faq-grid">
-        <article class="faq-item">
-          <h3 class="faq-question">Q. 費用はどのくらいかかりますか？</h3>
-          <p class="faq-answer">A. 障害福祉サービス受給者証をお持ちの方は、自己負担額が軽減されます。詳しくは利用案内をご覧ください。まずはお気軽にご相談ください。</p>
-        </article>
-        <article class="faq-item">
-          <h3 class="faq-question">Q. 家族だけの相談も可能ですか？</h3>
-          <p class="faq-answer">A. はい、ご家族だけのご相談も大歓迎です。依存症は本人だけでなく、ご家族も苦しむ病気です。まずはご家族の気持ちをお聞かせください。</p>
-        </article>
-        <article class="faq-item">
-          <h3 class="faq-question">Q. 女性専用の施設はありますか？</h3>
-          <p class="faq-answer">A. はい、女性専用施設「らぽーる」（2025年3月24日開設）をご利用いただけます。女性スタッフが常駐し、女性特有の課題に配慮したサポートを提供しています。詳しくは女性専用施設ページをご覧ください。</p>
-          <p class="faq-answer">A. はい、依存症は「回復できる病気」です。適切な支援と環境、仲間との絆があれば、必ず希望ある未来を取り戻せます。実際に回復した仲間の体験談もぜひご覧ください。</p>
-        </article>
-      </div>
-      <div class="links-area">
-        <a href="#testimonials" class="pill-btn accent">全ての体験談を読む</a>
-        <a href="#testimonials" class="pill-btn">その他のQ&amp;Aを見る →</a>
-      </div>
-    </section>
-
-    <section class="section container fade-in" id="contact" style="--index: 7;">
-      <div class="contact">
-        <h2 class="contact-title">安心してご相談ください</h2>
-        <p class="contact-subtitle">「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。</p>
-        <p class="contact-message">あなたの勇気ある一歩を、私たちは心から応援します。</p>
-        <div class="contact-actions">
-          <a href="tel:0964-41-2387" class="contact-btn primary">
-            今すぐ相談する<br>
-            <span class="phone-number">0964-41-2387</span>
-          </a>
-          <a href="mailto:info@higonoie.or.jp" class="contact-btn outline">体験談を読む</a>
-        </div>
-        <p class="contact-hours">
-          受付時間：平日 10:00〜17:00<br>
-          土日祝日、時間外のご相談も可能です。まずはお電話でご相談ください。
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <section class="footer-card">
-          <img src="/static/higonoie-logo-new.png" alt="一般社団法人 ひごのいえ" class="footer-logo">
-          <h3 class="footer-title">施設情報</h3>
-          <p class="footer-text">一般社団法人ひごのいえ</p>
-          <p class="footer-text">〒861-3200 熊本県上益城郡御船町</p>
-          <p class="footer-text">TEL: 096-282-5000</p>
-          <p class="footer-text">Email: [email protected]</p>
-        </section>
-        <section class="footer-card">
-          <h3 class="footer-title">ナビゲーション</h3>
-          <p class="footer-link"><a href="#top">トップ</a></p>
-          <p class="footer-link"><a href="#about">私たちについて</a></p>
-          <p class="footer-link"><a href="#testimonials">スタッフ紹介</a></p>
-          <p class="footer-link"><a href="#program">プログラム</a></p>
-          <p class="footer-link"><a href="#testimonials">体験談</a></p>
-          <p class="footer-link"><a href="#women">女性専用施設</a></p>
-          <p class="footer-link"><a href="#grouphome">グループホーム</a></p>
-          <p class="footer-link"><a href="#usage">利用案内</a></p>
-        </section>
-        <section class="footer-card">
-          <h3 class="footer-title">相談窓口</h3>
-          <p class="footer-text">電話相談: 毎日 9:00-18:00</p>
-          <p class="footer-text">メール相談: 24時間受付</p>
-          <p class="footer-text">面談: 予約制</p>
-          <p class="footer-text">ご家族からのご相談も承ります。<br>お気軽にお問い合わせください。</p>
-        </section>
-      </div>
-      <p class="copyright">© 2024 一般社団法人ひごのいえ All Rights Reserved.</p>
-    </div>
-  </footer>
-
   <script>
-    const mobileNavWrap = document.getElementById('mobileNavWrap');
-    const mobileMenuOpen = document.getElementById('mobileMenuOpen');
-    const mobileMenuClose = document.getElementById('mobileMenuClose');
-    const allAnchors = document.querySelectorAll('a[href^="#"]');
-    const fadeInElements = document.querySelectorAll('.fade-in');
+    const frame = document.getElementById('homeFrame');
+    const loading = document.getElementById('loading');
 
-    const openMenu = () => {
-      if (!mobileNavWrap) return;
-      mobileNavWrap.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    };
+    function injectProStyle(doc) {
+      if (!doc || doc.getElementById('pro-enhancement-style')) return;
 
-    const closeMenu = () => {
-      if (!mobileNavWrap) return;
-      mobileNavWrap.classList.remove('open');
-      document.body.style.overflow = '';
-    };
-
-    if (mobileMenuOpen) {
-      mobileMenuOpen.addEventListener('click', openMenu);
-    }
-
-    if (mobileMenuClose) {
-      mobileMenuClose.addEventListener('click', closeMenu);
-    }
-
-    if (mobileNavWrap) {
-      mobileNavWrap.addEventListener('click', (event) => {
-        if (event.target === mobileNavWrap) {
-          closeMenu();
+      const style = doc.createElement('style');
+      style.id = 'pro-enhancement-style';
+      style.textContent = `
+        :root {
+          --pro-shadow-sm: 0 8px 16px rgba(15, 42, 67, 0.08);
+          --pro-shadow-md: 0 14px 28px rgba(15, 42, 67, 0.12);
+          --pro-line: rgba(15, 42, 67, 0.12);
         }
-      });
+        body {
+          background:
+            radial-gradient(circle at 12% 0%, rgba(22, 92, 154, 0.12), transparent 35%),
+            radial-gradient(circle at 88% 10%, rgba(42, 157, 143, 0.10), transparent 42%),
+            linear-gradient(135deg, #eef4fa 0%, #f8fbff 100%) !important;
+        }
+        header {
+          background: rgba(255, 255, 255, 0.90) !important;
+          backdrop-filter: blur(8px);
+          box-shadow: 0 8px 18px rgba(15, 42, 67, 0.12) !important;
+        }
+        .section,
+        .story-card,
+        .staff-card,
+        .testimonial-card,
+        .faq-item,
+        .footer-section {
+          border-radius: 14px !important;
+          border: 1px solid var(--pro-line) !important;
+          box-shadow: var(--pro-shadow-sm) !important;
+        }
+        .btn,
+        .contact-button,
+        .nav-card,
+        .mobile-menu-item {
+          transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        }
+        .btn:hover,
+        .contact-button:hover,
+        .nav-card:hover {
+          transform: translateY(-2px) !important;
+          box-shadow: var(--pro-shadow-md) !important;
+        }
+        .section-title,
+        .hero-title,
+        h1,
+        h2,
+        h3 {
+          letter-spacing: 0.02em;
+        }
+      `;
+      doc.head.appendChild(style);
     }
 
-    allAnchors.forEach((anchor) => {
-      anchor.addEventListener('click', (event) => {
-        const href = anchor.getAttribute('href');
-        if (!href || href.length < 2) return;
-        const target = document.querySelector(href);
-        if (!target) return;
-
-        event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        closeMenu();
-      });
-    });
-
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.18 });
-
-      fadeInElements.forEach((element) => observer.observe(element));
-    } else {
-      fadeInElements.forEach((element) => element.classList.add('is-visible'));
+    function onFrameLoad() {
+      try {
+        const doc = frame.contentDocument;
+        injectProStyle(doc);
+      } catch {
+        // Cross-origin fallback: keep original rendering.
+      } finally {
+        loading.classList.add('hidden');
+      }
     }
+
+    frame.addEventListener('load', onFrameLoad);
   </script>
 </body>
 </html>
