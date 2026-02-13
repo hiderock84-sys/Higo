@@ -4,219 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRO | 一般社団法人ひごのいえ</title>
-  <meta name="description" content="ひごのいえトップページと同一内容を、別ファイルでプロ品質のUI強化を適用して表示します。">
+  <meta name="description" content="元ページと同一構成・同一リンク・同一バナーを維持して表示します。">
   <style>
-    :root {
-      --pro-bg: #f2f6fb;
-      --pro-ink: #0f2a43;
-      --pro-line: rgba(15, 42, 67, 0.12);
-      --pro-shadow: 0 16px 40px rgba(15, 42, 67, 0.16);
-      --pro-accent: #165c9a;
-      --pro-accent-2: #2a9d8f;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     html,
     body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(22, 92, 154, 0.15), transparent 38%),
-        radial-gradient(circle at 90% 12%, rgba(42, 157, 143, 0.14), transparent 42%),
-        var(--pro-bg);
-      color: var(--pro-ink);
-    }
-
-    .pro-shell {
-      height: 100%;
-      display: grid;
-      grid-template-rows: auto 1fr;
-    }
-
-    .pro-header {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--pro-line);
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(10px);
-    }
-
-    .pro-title {
-      margin: 0;
-      font-size: 0.95rem;
-      letter-spacing: 0.03em;
-      font-weight: 700;
-      color: #12395e;
-    }
-
-    .pro-desc {
-      margin: 0.22rem 0 0;
-      font-size: 0.78rem;
-      color: #395773;
-    }
-
-    .pro-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 0.55rem 0.9rem;
-      border: 1px solid rgba(22, 92, 154, 0.22);
-      color: #0f4f87;
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      background: #fff;
-      white-space: nowrap;
-    }
-
-    .frame-wrap {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      padding: 0.9rem;
-    }
-
-    .frame-card {
-      width: 100%;
-      height: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--pro-line);
-      box-shadow: var(--pro-shadow);
       background: #fff;
     }
 
-    #homeFrame {
+    #originFrame {
       width: 100%;
       height: 100%;
       border: 0;
       display: block;
       background: #fff;
     }
-
-    .loading {
-      position: absolute;
-      inset: 0.9rem;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(2px);
-      color: #1d446a;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      transition: opacity 0.25s ease;
-      pointer-events: none;
-    }
-
-    .loading.hidden {
-      opacity: 0;
-    }
   </style>
 </head>
 <body>
-  <div class="pro-shell">
-    <header class="pro-header">
-      <div>
-        <h1 class="pro-title">PROビュー（文章はトップページと同一）</h1>
-        <p class="pro-desc">見た目のみを強化して表示します</p>
-      </div>
-      <a href="/" class="pro-link">通常トップを開く</a>
-    </header>
-
-    <main class="frame-wrap">
-      <div class="frame-card">
-        <iframe id="homeFrame" src="https://higono-ie.pages.dev/" title="一般社団法人ひごのいえ トップページ"></iframe>
-      </div>
-      <div id="loading" class="loading">LOADING...</div>
-    </main>
-  </div>
-
-  <script>
-    const frame = document.getElementById('homeFrame');
-    const loading = document.getElementById('loading');
-
-    function injectProStyle(doc) {
-      if (!doc || doc.getElementById('pro-enhancement-style')) return;
-
-      const style = doc.createElement('style');
-      style.id = 'pro-enhancement-style';
-      style.textContent = `
-        :root {
-          --pro-shadow-sm: 0 8px 16px rgba(15, 42, 67, 0.08);
-          --pro-shadow-md: 0 14px 28px rgba(15, 42, 67, 0.12);
-          --pro-line: rgba(15, 42, 67, 0.12);
-        }
-        body {
-          background:
-            radial-gradient(circle at 12% 0%, rgba(22, 92, 154, 0.12), transparent 35%),
-            radial-gradient(circle at 88% 10%, rgba(42, 157, 143, 0.10), transparent 42%),
-            linear-gradient(135deg, #eef4fa 0%, #f8fbff 100%) !important;
-        }
-        header {
-          background: rgba(255, 255, 255, 0.90) !important;
-          backdrop-filter: blur(8px);
-          box-shadow: 0 8px 18px rgba(15, 42, 67, 0.12) !important;
-        }
-        .section,
-        .story-card,
-        .staff-card,
-        .testimonial-card,
-        .faq-item,
-        .footer-section {
-          border-radius: 14px !important;
-          border: 1px solid var(--pro-line) !important;
-          box-shadow: var(--pro-shadow-sm) !important;
-        }
-        .btn,
-        .contact-button,
-        .nav-card,
-        .mobile-menu-item {
-          transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-        }
-        .btn:hover,
-        .contact-button:hover,
-        .nav-card:hover {
-          transform: translateY(-2px) !important;
-          box-shadow: var(--pro-shadow-md) !important;
-        }
-        .section-title,
-        .hero-title,
-        h1,
-        h2,
-        h3 {
-          letter-spacing: 0.02em;
-        }
-      `;
-      doc.head.appendChild(style);
-    }
-
-    function onFrameLoad() {
-      try {
-        const doc = frame.contentDocument;
-        injectProStyle(doc);
-      } catch {
-        // Cross-origin fallback: keep original rendering.
-      } finally {
-        loading.classList.add('hidden');
-      }
-    }
-
-    frame.addEventListener('load', onFrameLoad);
-  </script>
+  <iframe
+    id="originFrame"
+    src="https://higono-ie.pages.dev/"
+    title="一般社団法人ひごのいえ トップページ">
+  </iframe>
 </body>
 </html>
