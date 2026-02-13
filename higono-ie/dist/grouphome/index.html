@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>グループホーム | ひごのいえ</title>
+  <meta name="description" content="ひごのいえのグループホーム案内ページです。共同生活の中で、回復と生活再建を支援します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="/static/style.css?v=20260213a" rel="stylesheet">
+  <style>
+    .page-shell {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 96px 20px 48px;
+    }
+    .page-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(52, 140, 169, 0.15);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 28px 24px;
+      margin-bottom: 20px;
+    }
+    .page-title {
+      font-family: 'Shippori Mincho B1', serif;
+      color: #0f4f68;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .page-lead {
+      color: #2e3b45;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+    .feature-list {
+      margin: 14px 0 0;
+      padding-left: 1.2rem;
+      color: #2e3b45;
+      line-height: 1.9;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .cta-primary {
+      background: #0f6d8f;
+      color: #fff;
+    }
+    .cta-secondary {
+      border: 1px solid #0f6d8f;
+      color: #0f6d8f;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <img src="/static/higonoie-logo-new.png" alt="一般社団法人 ひごのいえ" class="header-logo">
+    </div>
+    <a href="tel:0964-41-2387" class="header-call-cta">
+      <span class="header-call-label">今すぐ電話相談</span>
+      <span class="header-call-number">0964-41-2387</span>
+    </a>
+    <a href="/" class="header-consult-btn">トップへ戻る</a>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-card">
+      <h1 class="page-title">グループホーム</h1>
+      <p class="page-lead">
+        ひごのいえのグループホームでは、共同生活の中で生活リズムを整えながら、
+        依存症からの回復と社会復帰に向けた準備を段階的に進めます。
+      </p>
+    </section>
+
+    <section class="page-card">
+      <h2 class="section-title">主な支援内容</h2>
+      <ul class="feature-list">
+        <li>日々の生活習慣づくり（起床・食事・通所・服薬など）</li>
+        <li>相談支援専門員・関係機関との連携による個別支援</li>
+        <li>再発予防を見据えた面談と振り返り</li>
+        <li>就労や地域生活に向けた準備サポート</li>
+      </ul>
+    </section>
+
+    <section class="page-card">
+      <h2 class="section-title">ご相談について</h2>
+      <p class="page-lead">
+        ご本人だけでなく、ご家族・医療機関・行政機関からのご相談も受け付けています。
+        空き状況やご利用条件など、まずはお気軽にお問い合わせください。
+      </p>
+      <div class="cta-row">
+        <a href="tel:0964-41-2387" class="cta-button cta-primary">電話で相談する</a>
+        <a href="mailto:info@higonoie.or.jp" class="cta-button cta-secondary">メールで相談する</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
