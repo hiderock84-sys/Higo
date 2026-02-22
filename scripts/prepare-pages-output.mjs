@@ -37,15 +37,20 @@ async function copyDistToTargets() {
 async function syncRootFilesForSubprojects() {
   const sourceIndex = path.join(projectRoot, 'index.html')
   const sourceStyle = path.join(projectRoot, 'public', 'static', 'style.css')
+  const sourceGrouphome = path.join(projectRoot, 'public', 'grouphome', 'index.html')
   const html = await readFile(sourceIndex, 'utf8')
   const css = await readFile(sourceStyle, 'utf8')
+  const grouphomeHtml = await readFile(sourceGrouphome, 'utf8')
 
   for (const folder of subprojectRoots) {
     const targetIndex = path.join(projectRoot, folder, 'index.html')
     const targetStyle = path.join(projectRoot, folder, 'static', 'style.css')
+    const targetGrouphome = path.join(projectRoot, folder, 'grouphome', 'index.html')
     await mkdir(path.dirname(targetStyle), { recursive: true })
+    await mkdir(path.dirname(targetGrouphome), { recursive: true })
     await writeFile(targetIndex, html)
     await writeFile(targetStyle, css)
+    await writeFile(targetGrouphome, grouphomeHtml)
   }
 }
 
