@@ -493,7 +493,7 @@ body {
 }
 
 .nav-card {
-  --card-image: url("https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(140deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.5));
   --card-position: center center;
   --card-title-color: #203748;
@@ -618,7 +618,7 @@ body {
 }
 
 .nav-card-top {
-  --card-image: url("https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(255, 248, 240, 0.72), rgba(255, 241, 226, 0.52));
   --card-position: center center;
   --card-title-color: #2f2f2f;
@@ -626,7 +626,7 @@ body {
 }
 
 .nav-card-about {
-  --card-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(231, 243, 253, 0.72), rgba(207, 230, 247, 0.5));
   --card-position: center center;
   --card-title-color: #174b8c;
@@ -634,7 +634,7 @@ body {
 }
 
 .nav-card-staff {
-  --card-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(244, 229, 249, 0.72), rgba(226, 205, 241, 0.5));
   --card-position: center center;
   --card-title-color: #3b2f8b;
@@ -642,7 +642,7 @@ body {
 }
 
 .nav-card-program {
-  --card-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(250, 238, 221, 0.72), rgba(243, 217, 183, 0.5));
   --card-position: center center;
   --card-title-color: #bc4b12;
@@ -650,7 +650,7 @@ body {
 }
 
 .nav-card-voice {
-  --card-image: url("https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(229, 247, 223, 0.7), rgba(202, 236, 193, 0.5));
   --card-position: center center;
   --card-title-color: #18672f;
@@ -658,7 +658,7 @@ body {
 }
 
 .nav-card-women {
-  --card-image: url("https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(252, 231, 242, 0.72), rgba(243, 202, 223, 0.52));
   --card-position: center center;
   --card-title-color: #9a225f;
@@ -666,7 +666,7 @@ body {
 }
 
 .nav-card-home {
-  --card-image: url("https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(236, 244, 249, 0.72), rgba(211, 225, 236, 0.54));
   --card-position: center center;
   --card-title-color: #315165;
@@ -674,7 +674,7 @@ body {
 }
 
 .nav-card-usage {
-  --card-image: url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(249, 240, 220, 0.7), rgba(236, 221, 180, 0.52));
   --card-position: center center;
   --card-title-color: #866315;
@@ -682,7 +682,7 @@ body {
 }
 
 .nav-card-family {
-  --card-image: url("https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1600&q=80");
   --card-overlay: linear-gradient(136deg, rgba(225, 246, 243, 0.7), rgba(195, 229, 224, 0.52));
   --card-position: center center;
   --card-title-color: #1f5968;
@@ -691,7 +691,8 @@ body {
 
 /* 相談セクション */
 .contact-section {
-  background: linear-gradient(135deg, #1e88a8 0%, #2dbca0 100%);
+  background: linear-gradient(135deg, rgba(30, 136, 168, 0.84) 0%, rgba(45, 188, 160, 0.78) 100%),
+              url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
   color: white;
   padding: 80px 20px;
   text-align: center;
