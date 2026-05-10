@@ -617,7 +617,7 @@ body {
 }
 
 .nav-card-about {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumamoto_Castle_(Kumamoto_Jo).jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg");
 }
 
 .nav-card-staff {
@@ -641,7 +641,7 @@ body {
 }
 
 .nav-card-usage {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumamoto_Castle_(Kumamoto_Jo).jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg");
 }
 
 .nav-card-family {
@@ -847,7 +847,7 @@ body {
   padding: 80px 20px;
   background:
     linear-gradient(135deg, rgba(15, 72, 97, 0.9), rgba(25, 142, 126, 0.84)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumamoto_Castle_(Kumamoto_Jo).jpg") center/cover no-repeat;
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg") center/cover no-repeat;
 }
 
 .contact-title {
