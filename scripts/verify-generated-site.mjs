@@ -135,24 +135,11 @@ async function verify() {
   }
 
   for (const workerPath of compatibilityWorkerChecks) {
-    if (!(await fileExists(workerPath))) {
-      failures.push(`Missing compatibility worker: ${path.relative(projectRoot, workerPath)}`)
-      continue
+    if (await fileExists(workerPath)) {
+      failures.push(
+        `Compatibility output must not include worker runtime: ${path.relative(projectRoot, workerPath)}`,
+      )
     }
-
-    const workerContent = await readFile(workerPath, 'utf8')
-    mustContain(
-      workerContent,
-      'root:"./"',
-      `${path.relative(projectRoot, workerPath)} must use root:\"./\"`,
-      failures,
-    )
-    mustContain(
-      workerContent,
-      'path:"./index.html"',
-      `${path.relative(projectRoot, workerPath)} must use path:\"./index.html\"`,
-      failures,
-    )
   }
 
   if (failures.length > 0) {

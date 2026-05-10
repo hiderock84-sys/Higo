@@ -19,12 +19,6 @@ const localStaticDir = path.join(subprojectRoot, 'static')
 const sourceDirCandidates = [rootDist, distDir, buildDir]
 const fallbackIndexCandidates = [fallbackIndex, localIndex]
 const fallbackStaticCandidates = [fallbackStaticDir, localStaticDir]
-const workerPathReplacements = [
-  ['root:"./dist"', 'root:"./"'],
-  ['path:"./dist/index.html"', 'path:"./index.html"'],
-  ["root:'./dist'", "root:'./'"],
-  ["path:'./dist/index.html'", "path:'./index.html'"],
-]
 
 async function exists(targetPath) {
   try {
@@ -55,34 +49,21 @@ async function pickExistingFile(candidates) {
   return null
 }
 
-async function normalizeWorkerPaths(targetDir) {
-  const workerPath = path.join(targetDir, '_worker.js')
-  if (!(await exists(workerPath))) {
-    return
-  }
-
-  const workerContent = await readFile(workerPath, 'utf8')
-  let normalizedContent = workerContent
-  for (const [fromPath, toPath] of workerPathReplacements) {
-    normalizedContent = normalizedContent.replaceAll(fromPath, toPath)
-  }
-
-  if (normalizedContent !== workerContent) {
-    await writeFile(workerPath, normalizedContent)
-  }
-}
-
 async function copyFromSourceDirectory(sourceDir) {
   const resolvedSource = path.resolve(sourceDir)
   for (const target of targets) {
     if (path.resolve(target) === resolvedSource) {
-      await normalizeWorkerPaths(target)
       continue
     }
     await rm(target, { recursive: true, force: true })
     await mkdir(path.dirname(target), { recursive: true })
     await cp(sourceDir, target, { recursive: true })
-    await normalizeWorkerPaths(target)
+  }
+}
+
+async function removeWorkersFromTargets() {
+  for (const target of targets) {
+    await rm(path.join(target, '_worker.js'), { force: true })
   }
 }
 
@@ -114,3 +95,4 @@ try {
 } catch {
   await ensureFromFallback()
 }
+await removeWorkersFromTargets()

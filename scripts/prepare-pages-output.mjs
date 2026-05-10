@@ -26,12 +26,6 @@ const cleanupAssets = [
   path.join(projectRoot, 'dist', 'static', 'logo-design.jpg'),
   ...targets.map((target) => path.join(target, 'static', 'logo-design.jpg')),
 ]
-const workerPathReplacements = [
-  ['root:"./dist"', 'root:"./"'],
-  ['path:"./dist/index.html"', 'path:"./index.html"'],
-  ["root:'./dist'", "root:'./'"],
-  ["path:'./dist/index.html'", "path:'./index.html'"],
-]
 const pagesBaseUrl = 'https://higono-ie.pages.dev'
 const routePageDefinitions = [
   {
@@ -194,21 +188,9 @@ async function copyDistToTargets() {
   }
 }
 
-async function normalizeCompatibilityWorkerPaths() {
+async function removeCompatibilityWorkers() {
   for (const target of subprojectTargets) {
-    const workerPath = path.join(target, '_worker.js')
-    try {
-      const workerContent = await readFile(workerPath, 'utf8')
-      let normalizedContent = workerContent
-      for (const [fromPath, toPath] of workerPathReplacements) {
-        normalizedContent = normalizedContent.replaceAll(fromPath, toPath)
-      }
-      if (normalizedContent !== workerContent) {
-        await writeFile(workerPath, normalizedContent)
-      }
-    } catch {
-      // _worker.js is optional depending on target type; ignore missing files.
-    }
+    await rm(path.join(target, '_worker.js'), { force: true })
   }
 }
 
@@ -335,7 +317,7 @@ async function cleanupUnusedAssets() {
 }
 
 await copyDistToTargets()
-await normalizeCompatibilityWorkerPaths()
+await removeCompatibilityWorkers()
 await syncRootFilesForOutputs()
 await generateSectionPagesForOutputs()
 await syncRootFilesForSubprojects()
