@@ -46,9 +46,20 @@ body {
   gap: 10px;
   padding: 9px 12px;
   min-height: 72px;
-  background: rgba(19, 84, 115, 0.78);
+  background: linear-gradient(100deg, rgba(10, 38, 58, 0.9), rgba(18, 88, 118, 0.86));
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(16, 44, 63, 0.18);
+  box-shadow: 0 10px 30px rgba(9, 31, 48, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 222, 173, 0.3), rgba(95, 207, 214, 0.45), rgba(255, 222, 173, 0.3));
 }
 
 .header-left {
@@ -235,7 +246,7 @@ body {
   padding: 92px 20px 100px;
   background:
     linear-gradient(135deg, rgba(8, 28, 43, 0.75), rgba(16, 78, 103, 0.68)),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    url("/static/aso-landscape.jpg") center/cover no-repeat;
 }
 
 .hero-inner {
@@ -549,7 +560,7 @@ body {
 }
 
 .nav-card {
-  --card-image: url("https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("/static/aso-landscape.jpg");
   --card-overlay: linear-gradient(145deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.52));
   --card-position: center center;
   --card-title-color: #1f3850;
@@ -602,39 +613,43 @@ body {
 }
 
 .nav-card-top {
-  --card-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg");
 }
 
 .nav-card-about {
-  --card-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumamoto_Castle_(Kumamoto_Jo).jpg");
 }
 
 .nav-card-staff {
-  --card-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("/static/hero-image.jpg");
 }
 
 .nav-card-program {
-  --card-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg");
 }
 
 .nav-card-voice {
-  --card-image: url("https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Shiratsuru-hama_beach_and_the_village_of_Takahama.jpg");
 }
 
 .nav-card-women {
-  --card-image: url("https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("/static/hero-image.jpg");
 }
 
 .nav-card-home {
-  --card-image: url("https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg");
 }
 
 .nav-card-usage {
-  --card-image: url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumamoto_Castle_(Kumamoto_Jo).jpg");
 }
 
 .nav-card-family {
-  --card-image: url("https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=80");
+  --card-image: url("/static/aso-landscape.jpg");
+}
+
+.nav-card-contact {
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg");
 }
 
 .detail-section .section-title {
@@ -659,7 +674,7 @@ body {
   text-align: center;
   background:
     linear-gradient(130deg, rgba(4, 16, 24, 0.82), rgba(16, 97, 126, 0.67)),
-    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Shiratsuru-hama_beach_and_the_village_of_Takahama.jpg") center/cover no-repeat;
 }
 
 .story-content {
@@ -832,7 +847,7 @@ body {
   padding: 80px 20px;
   background:
     linear-gradient(135deg, rgba(15, 72, 97, 0.9), rgba(25, 142, 126, 0.84)),
-    url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumamoto_Castle_(Kumamoto_Jo).jpg") center/cover no-repeat;
 }
 
 .contact-title {
@@ -894,9 +909,12 @@ body {
 }
 
 .footer {
-  background: #1f3041;
+  background:
+    linear-gradient(145deg, rgba(12, 30, 45, 0.98), rgba(19, 59, 86, 0.96)),
+    url("/static/hero-image.jpg") center/cover no-repeat;
   color: #fff;
   padding: 54px 20px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .footer-content {
