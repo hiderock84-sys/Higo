@@ -1,0 +1,39 @@
+name: Site Quality Gate
+
+on:
+  push:
+    branches:
+      - main
+      - cursor/reference-text-compatibility-a5c0
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify-site:
+    name: Build and verify generated site
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --no-package-lock
+
+      - name: Run build (includes verification)
+        run: npm run build
+
+      - name: Run explicit site verification
+        run: npm run verify:site
+
+      - name: Build compatibility outputs
+        run: |
+          npm --prefix ./hidonoie run build
+          npm --prefix ./higono-ie run build

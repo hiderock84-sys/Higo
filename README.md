@@ -60,6 +60,16 @@ npm run deploy
 
 `CLOUDFLARE_API_TOKEN` が設定されている場合のみ、Wrangler による deploy を実行します。
 
+## CI 自動化
+
+`.github/workflows/site-quality-gate.yml` により、push / PR 時に以下を自動実行します。
+
+- `npm run build`
+- `npm run verify:site`
+- `hidonoie` / `higono-ie` の互換ビルド
+
+これにより、ルート生成・SEOメタ・sitemap・headers・redirects の破壊を自動検知できます。
+
 ## 技術スタック
 
 - Vite
