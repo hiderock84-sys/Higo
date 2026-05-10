@@ -79,6 +79,8 @@ async function verify() {
 
   const robotsPath = path.join(distDir, 'robots.txt')
   const sitemapPath = path.join(distDir, 'sitemap.xml')
+  const headersPath = path.join(distDir, '_headers')
+  const redirectsPath = path.join(distDir, '_redirects')
 
   if (!(await fileExists(robotsPath))) {
     failures.push('Missing dist/robots.txt')
@@ -106,6 +108,28 @@ async function verify() {
     }
   }
 
+  if (!(await fileExists(headersPath))) {
+    failures.push('Missing dist/_headers')
+  } else {
+    const headers = await readFile(headersPath, 'utf8')
+    mustContain(headers, 'X-Frame-Options: DENY', '_headers missing X-Frame-Options', failures)
+    mustContain(headers, 'X-Content-Type-Options: nosniff', '_headers missing nosniff', failures)
+    mustContain(headers, 'Strict-Transport-Security:', '_headers missing HSTS', failures)
+    mustContain(headers, 'Content-Security-Policy:', '_headers missing CSP', failures)
+  }
+
+  if (!(await fileExists(redirectsPath))) {
+    failures.push('Missing dist/_redirects')
+  } else {
+    const redirects = await readFile(redirectsPath, 'utf8')
+    mustContain(redirects, '/women', '_redirects missing /women rule', failures)
+    mustContain(redirects, '/usage', '_redirects missing /usage rule', failures)
+    mustContain(redirects, '/family', '_redirects missing /family rule', failures)
+    mustContain(redirects, '/rapport', '_redirects missing /rapport target', failures)
+    mustContain(redirects, '/guide', '_redirects missing /guide target', failures)
+    mustContain(redirects, '/family-guide', '_redirects missing /family-guide target', failures)
+  }
+
   if (failures.length > 0) {
     console.error('[verify-generated-site] Verification failed:')
     for (const failure of failures) {
@@ -114,7 +138,7 @@ async function verify() {
     process.exit(1)
   }
 
-  console.log('[verify-generated-site] All route, SEO, and sitemap checks passed.')
+  console.log('[verify-generated-site] All route, SEO, sitemap, headers, and redirects checks passed.')
 }
 
 await verify()
