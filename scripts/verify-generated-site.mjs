@@ -81,6 +81,10 @@ async function verify() {
   const sitemapPath = path.join(distDir, 'sitemap.xml')
   const headersPath = path.join(distDir, '_headers')
   const redirectsPath = path.join(distDir, '_redirects')
+  const compatibilityWorkerChecks = [
+    path.join(projectRoot, 'hidonoie', 'dist', '_worker.js'),
+    path.join(projectRoot, 'higono-ie', 'dist', '_worker.js'),
+  ]
 
   if (!(await fileExists(robotsPath))) {
     failures.push('Missing dist/robots.txt')
@@ -128,6 +132,27 @@ async function verify() {
     mustContain(redirects, '/rapport', '_redirects missing /rapport target', failures)
     mustContain(redirects, '/guide', '_redirects missing /guide target', failures)
     mustContain(redirects, '/family-guide', '_redirects missing /family-guide target', failures)
+  }
+
+  for (const workerPath of compatibilityWorkerChecks) {
+    if (!(await fileExists(workerPath))) {
+      failures.push(`Missing compatibility worker: ${path.relative(projectRoot, workerPath)}`)
+      continue
+    }
+
+    const workerContent = await readFile(workerPath, 'utf8')
+    mustContain(
+      workerContent,
+      'root:"./"',
+      `${path.relative(projectRoot, workerPath)} must use root:\"./\"`,
+      failures,
+    )
+    mustContain(
+      workerContent,
+      'path:"./index.html"',
+      `${path.relative(projectRoot, workerPath)} must use path:\"./index.html\"`,
+      failures,
+    )
   }
 
   if (failures.length > 0) {
