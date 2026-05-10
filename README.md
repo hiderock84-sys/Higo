@@ -1,66 +1,63 @@
 # ひごのいえ
 
-## プロジェクト概要
-- **名前**: ひごのいえ
-- **目的**: 熊本県の依存症回復支援施設のランディングページ
-- **主な機能**: 施設情報の提供、相談窓口の案内、回復者の体験談紹介
+依存症回復支援施設「ひごのいえ」のランディングサイトです。  
+Cloudflare Pages 向けに、静的ページ + Workers ルーティングで構成しています。
 
-## 完成した機能
-- ✅ ヘッダーとモバイルメニュー
-- ✅ ヒーローセクション（鳥居と湖の画像を背景に使用）
-- ✅ 三つの柱セクション（Hope, Honesty, Healing）
-- ✅ ナビゲーションカード
-- ✅ 相談セクション
-- ✅ スタッフストーリー
-- ✅ アクセス・連絡先情報
-- ✅ フッター
+## ページ構成
 
-## 現在の機能URI
-- `/` - トップページ
-- `/static/style.css` - スタイルシート
-- `/static/hero-image.jpg` - ヒーロー背景画像（鳥居と湖）
+### メイン
+- `/` (トップ)
 
-## 未実装の機能
-- プログラム詳細ページ
-- スタッフ紹介ページ
-- 体験談詳細ページ
-- 女性専用施設ページ
-- グループホームページ
-- 利用案内ページ
-- 家族ガイドページ
+### セクション専用ページ
+- `/about` (私たちについて)
+- `/staff` (スタッフ紹介)
+- `/program` (プログラム)
+- `/testimonials` (体験談)
+- `/rapport` (女性専用施設)
+- `/grouphome` (グループホーム)
+- `/guide` (利用案内)
+- `/family-guide` (家族ガイド)
+- `/contact` (相談窓口)
 
-## 推奨される次のステップ
-1. Cloudflare APIキーを設定
-2. Cloudflare Pagesにデプロイ
-3. カスタムドメインの設定（オプション）
-4. 各サブページの作成
-5. お問い合わせフォームの実装
+### 互換ルート（旧リンク）
+- `/women` → `/rapport`
+- `/usage` → `/guide`
+- `/family` → `/family-guide`
 
-## URL
-- **本番URL**: https://higonoie.pages.dev
-- **最新デプロイ**: https://25f080b4.higonoie.pages.dev
-- **ローカルプレビュー**: https://3000-iskfi6o22jcy0uz3roc7j-2e77fc33.sandbox.novita.ai
+## SEO / 品質
 
-## データアーキテクチャ
-- **データモデル**: 静的HTMLサイト
-- **ストレージサービス**: Cloudflare Pages（静的ホスティング）
-- **データフロー**: クライアント → Cloudflare Workers → 静的ファイル
+- ルート別に静的HTMLを生成（title/description/canonical/OGP/Twitter）
+- `robots.txt` / `sitemap.xml` を配信
+- JSON-LD（Organization / FAQPage）を埋め込み
+- ルート別本文（要約 + 要点）を自動生成
 
-## ユーザーガイド
-このサイトは、依存症に悩む方々とそのご家族のための情報提供サイトです。
-- トップページから施設の理念や特徴を確認できます
-- 相談ボタンから電話またはメールで相談できます
-- モバイルメニューから各セクションへ簡単に移動できます
+## 開発コマンド
+
+```bash
+npm run dev
+npm run build
+npm run verify:site
+```
+
+### build の内容
+`npm run build` は以下を連続実行します:
+1. `vite build`
+2. `scripts/prepare-pages-output.mjs`（互換出力・ルート別静的ページ生成）
+3. `scripts/verify-generated-site.mjs`（自動検証）
+
+検証で失敗した場合、ビルドはエラー終了します。
 
 ## デプロイ
-- **プラットフォーム**: Cloudflare Pages
-- **ステータス**: ✅ デプロイ完了
-- **技術スタック**: HTML + CSS + JavaScript (静的サイト)
-- **プロジェクト名**: higonoie
-- **最終デプロイ**: 2025-12-12
 
-## 変更履歴
-- 2025-12-12 14:07: 完成ロゴ画像をヘッダーに配置
-- 2025-12-12 13:55: ヘッダーロゴのレイアウトを調整、ヒーロー画像の濃度と表示方法を最適化
-- 2025-12-12 10:59: ヒーロー背景画像を鳥居と湖の画像に変更
-- 2025-12-12: プロジェクト初期作成
+```bash
+npm run deploy
+```
+
+`CLOUDFLARE_API_TOKEN` が設定されている場合のみ、Wrangler による deploy を実行します。
+
+## 技術スタック
+
+- Vite
+- Hono（Cloudflare Workers）
+- Cloudflare Pages
+- 静的HTML / CSS / JavaScript
