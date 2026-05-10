@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -20,16 +19,13 @@
   <meta name="twitter:title" content="私たちについて | ひごのいえ">
   <meta name="twitter:description" content="ひごのいえの理念と依存症回復支援体制をご紹介します。">
   <meta name="twitter:image" content="https://higono-ie.pages.dev/static/higonoie-logo-new.png">
-  
-  <!-- Google Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <link href="/static/style.css?v=20260212z" rel="stylesheet">
+  <link href="/static/style.css?v=20260510a" rel="stylesheet">
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -81,16 +77,14 @@
           "name": "本当に回復できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい、依存症は「回復できる病気」です。適切な支援と環境、仲間との絆があれば、必ず希望ある未来を取り戻せます。実際に回復した仲間の体験談もぜひご覧ください。"
+            "text": "はい、依存症は回復できる病気です。適切な支援と環境、仲間との絆があれば、必ず希望ある未来を取り戻せます。実際に回復した仲間の体験談もぜひご覧ください。"
           }
         }
       ]
     }
   </script>
 </head>
-
 <body>
-  <!-- ヘッダー -->
   <header class="header">
     <div class="header-left">
       <img src="/static/higonoie-logo-new.png" alt="一般社団法人 ひごのいえ" class="header-logo">
@@ -103,7 +97,6 @@
     <button class="header-menu" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">☰</button>
   </header>
 
-  <!-- モバイルメニュー -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-header">
       <div class="mobile-menu-logo">
@@ -120,11 +113,9 @@
       </div>
       <button class="mobile-menu-close" id="closeMenuButton" aria-label="メニューを閉じる">×</button>
     </div>
-    
     <div class="mobile-menu-description">
-      依存症からの回復と「生き直す」ための支援を行う施設です。男性・女性を問わず、回復を望むすべての方とそのご家族をサポートします。
+      依存症からの回復と「生き直し」を支えるために、熊本の自然と地域連携を活かした包括的な支援を行っています。
     </div>
-    
     <nav class="mobile-menu-nav">
       <div class="mobile-menu-section-title">メニュー</div>
       <a href="/top" class="mobile-menu-item">トップ</a>
@@ -138,7 +129,6 @@
       <a href="/family-guide" class="mobile-menu-item">家族ガイド</a>
       <a href="/contact" class="mobile-menu-item">相談窓口</a>
     </nav>
-    
     <div class="mobile-menu-contact">
       <div class="mobile-menu-section-title">お問い合わせ</div>
       <div class="mobile-menu-contact-phone">0964-41-2387</div>
@@ -147,23 +137,41 @@
     </div>
   </div>
 
-  <!-- ヒーローセクション -->
   <section class="hero-section" id="top">
-    <h1 class="hero-title">ひごのいえ</h1>
-    
-    <div class="hero-tagline">
-      生き直しは、ここから。
+    <div class="hero-inner">
+      <p class="hero-eyebrow">KUMAMOTO RECOVERY COMMUNITY</p>
+      <h1 class="hero-title">ひごのいえ</h1>
+      <p class="hero-tagline">生き直しは、ここから。</p>
+      <p class="hero-message">
+        阿蘇の山々と天草の海に抱かれた環境で、<br>
+        ご本人・ご家族・医療機関・行政機関が安心して連携できる回復支援体制を整えています。
+      </p>
+      <div class="hero-chip-list">
+        <span class="hero-chip">初回相談無料</span>
+        <span class="hero-chip">秘密厳守</span>
+        <span class="hero-chip">家族相談対応</span>
+        <span class="hero-chip">女性専用施設あり</span>
+      </div>
+      <div class="hero-actions">
+        <a href="/contact" class="hero-action primary">今すぐ相談する</a>
+        <a href="/guide" class="hero-action ghost">利用の流れを見る</a>
+      </div>
     </div>
-    
-    <div class="hero-message">
-      阿蘇の山々と天草の海に抱かれた、<br>
-      依存症からの回復をめざす方の安心できる居場所
-    </div>
-    
-    <div class="hero-submessage">
-      ご本人・ご家族・医療機関・行政機関が安心して連携できる体制を整え、<br>
-      再発予防まで見据えた回復支援を提供します。
-    </div>
+  </section>
+
+  <section class="visual-strip" aria-label="熊本の自然と回復支援の風景">
+    <article class="visual-card">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80" alt="熊本の雄大な山並み">
+      <p>熊本の大自然が、心を整える時間を支えます。</p>
+    </article>
+    <article class="visual-card">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80" alt="笑顔で会話する人々">
+      <p>孤立させない伴走支援で、日常を取り戻します。</p>
+    </article>
+    <article class="visual-card">
+      <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1400&q=80" alt="暖かい灯りのある家">
+      <p>安心できる居場所づくりを最優先にしています。</p>
+    </article>
   </section>
 
   <!-- ROUTE_SUMMARY_START -->
@@ -183,85 +191,74 @@
   </section>
   <!-- ROUTE_SUMMARY_END -->
 
-  <!-- About Section -->
   <section class="content-section intro-about" id="about">
-    <div class="text-content">
-      「ひごのいえ」は、依存症に悩むご本人とご家族を支えるために、
-      医療機関・行政機関と連携した受け入れ体制を構築しています。
+    <p class="section-kicker">ABOUT HIGONOIE</p>
+    <h2 class="section-title">私たちについて</h2>
+    <div class="copy-grid">
+      <div class="text-content">
+        ひごのいえは、依存症に悩むご本人とご家族を支えるために、医療機関・行政機関・地域福祉と連携した受け入れ体制を構築しています。
+      </div>
+      <div class="text-content">
+        初回相談から入所検討、回復プログラム、退所後の生活再建まで、一人ひとりの状況に合わせて継続的に伴走します。
+      </div>
     </div>
-    
-    <div class="text-content">
-      初回相談から入所検討、回復プログラム、退所後の生活再建まで、
-      一人ひとりの状況に合わせて継続的に伴走します。
+    <div class="mini-gallery">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80" alt="熊本の自然に近い風景">
+      <img src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?auto=format&fit=crop&w=1200&q=80" alt="チームで支え合う支援者">
     </div>
   </section>
 
-  <!-- 三つの柱 -->
   <section class="content-section pillars-section" id="program">
-    <h2 class="section-title">私たちが大切にする<br>三つの柱</h2>
-    
+    <p class="section-kicker">RECOVERY PROGRAM</p>
+    <h2 class="section-title">私たちが大切にする三つの柱</h2>
     <div class="pillar-grid">
-      <div class="pillar-item">
-        <h3 class="pillar-title">Hope　希望</h3>
+      <article class="pillar-item">
+        <h3 class="pillar-title">Hope | 希望</h3>
         <p class="pillar-description">
-          回復は段階的に進みます。
-          評価と対話を重ね、現実的な目標を一歩ずつ達成します。
+          回復は段階的に進みます。評価と対話を重ね、現実的な目標を一歩ずつ達成できるプログラムを設計します。
         </p>
-      </div>
-      
-      <div class="pillar-item">
-        <h3 class="pillar-title">Honesty　正直</h3>
+      </article>
+      <article class="pillar-item">
+        <h3 class="pillar-title">Honesty | 正直</h3>
         <p class="pillar-description">
-          状態を正確に把握し、課題を共有することが、
-          再発を防ぐ支援の出発点になります。
+          状態を正確に把握し、課題を共有することが再発予防の出発点です。安心して本音を話せる場づくりを徹底します。
         </p>
-      </div>
-      
-      <div class="pillar-item">
-        <h3 class="pillar-title">Healing　回復</h3>
+      </article>
+      <article class="pillar-item">
+        <h3 class="pillar-title">Healing | 回復</h3>
         <p class="pillar-description">
-          心身と生活を整え、社会とのつながりを回復するまで、
-          焦らず着実に支えます。
+          心身と生活を整え、社会とのつながりを回復するまで、焦らず着実にサポートします。
         </p>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- メッセージセクション -->
   <section class="content-section intro-message">
-    <div class="text-content">
-      回復のペースは人それぞれです。
-      比較ではなく、個別性を尊重した支援で前進を支えます。
+    <h2 class="section-title">回復を支える実践サイクル</h2>
+    <div class="support-steps">
+      <div class="support-step">
+        <h3>1. 受け止める</h3>
+        <p>現在の状況を整理し、本人と家族の不安を言語化します。</p>
+      </div>
+      <div class="support-step">
+        <h3>2. 整える</h3>
+        <p>生活リズム・医療連携・対人関係を安定化させます。</p>
+      </div>
+      <div class="support-step">
+        <h3>3. つなげる</h3>
+        <p>就労・住居・家族関係を含む社会復帰を段階的に設計します。</p>
+      </div>
     </div>
-    
-    <div class="text-content">
-      経験豊富なスタッフが、
-      相談・入所・家族支援・関係機関連携を一貫して担当します。
-    </div>
-    
-    <div class="text-content">
-      本人だけでなく、ご家族や関係機関と情報を整理し、
-      安心して回復に向き合える環境を整えます。
-    </div>
-    
     <div class="text-content highlight">
-      まずは相談から。
-      医療機関・行政機関からのご相談にも、<br>
-      誠実かつ迅速に対応します。
-    </div>
-    
-    <div class="text-content">
-      電話・メールどちらでも受け付けています。
-      「話してみる」ことから、回復への道が始まります。
+      まずは相談から。医療機関・行政機関からのご相談にも、誠実かつ迅速に対応します。
     </div>
   </section>
 
-  <!-- Navigation Cards -->
   <section class="navigation-section">
     <div class="nav-section-header">
-      <div class="nav-section-subtitle">薬物・アルコール・ギャンブル・処方薬など、依存症に悩むご本人とご家族のための相談・回復支援の拠点です</div>
+      <h2 class="section-title">ページメニュー</h2>
+      <div class="nav-section-subtitle">リンク構成はそのままに、全ページをスマートフォンでも読みやすく再設計しています。</div>
     </div>
-    
     <div class="nav-grid">
       <a href="/top" class="nav-card nav-card-top" aria-label="トップへ移動">
         <div class="nav-card-bg"></div>
@@ -270,7 +267,6 @@
           <div class="nav-subtitle">ホームへ戻る</div>
         </div>
       </a>
-      
       <a href="/about" class="nav-card nav-card-about" aria-label="私たちについてへ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
@@ -278,15 +274,13 @@
           <div class="nav-subtitle">施設の理念と特徴</div>
         </div>
       </a>
-      
       <a href="/staff" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
           <div class="nav-title">スタッフ紹介</div>
-          <div class="nav-subtitle">経験豊かな支援者</div>
+          <div class="nav-subtitle">支援スタッフと代表メッセージ</div>
         </div>
       </a>
-      
       <a href="/program" class="nav-card nav-card-program" aria-label="プログラムへ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
@@ -294,7 +288,6 @@
           <div class="nav-subtitle">回復への道のり</div>
         </div>
       </a>
-      
       <a href="/testimonials" class="nav-card nav-card-voice" aria-label="体験談へ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
@@ -302,7 +295,6 @@
           <div class="nav-subtitle">回復者の声</div>
         </div>
       </a>
-      
       <a href="/rapport" class="nav-card nav-card-women" aria-label="女性専用施設へ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
@@ -310,7 +302,6 @@
           <div class="nav-subtitle">らぽーる</div>
         </div>
       </a>
-      
       <a href="/grouphome" class="nav-card nav-card-home" aria-label="グループホームへ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
@@ -318,7 +309,6 @@
           <div class="nav-subtitle">共同生活の場</div>
         </div>
       </a>
-      
       <a href="/guide" class="nav-card nav-card-usage" aria-label="ご利用案内へ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
@@ -326,7 +316,6 @@
           <div class="nav-subtitle">ご利用の流れ</div>
         </div>
       </a>
-      
       <a href="/family-guide" class="nav-card nav-card-family" aria-label="家族ガイドへ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
@@ -337,153 +326,187 @@
     </div>
   </section>
 
-  <!-- セクション詳細 -->
-  <section class="content-section" id="rapport">
+  <section class="content-section detail-section" id="rapport">
+    <p class="section-kicker">WOMEN ONLY SUPPORT</p>
     <h2 class="section-title">女性専用施設 らぽーる</h2>
-    <div class="text-content">
-      女性専用施設「らぽーる」（2025年3月24日開設）をご利用いただけます。女性スタッフが常駐し、女性特有の課題に配慮したサポートを提供しています。
+    <div class="copy-grid">
+      <div class="text-content">
+        女性専用施設「らぽーる」（2025年3月24日開設）では、女性スタッフが常駐し、女性特有の課題に配慮した支援を提供しています。
+      </div>
+      <div class="text-content">
+        「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。安心して回復に向き合える環境を整えています。
+      </div>
     </div>
-    <div class="text-content">
-      「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。安心して回復に向き合える環境を整えています。
+    <div class="mini-gallery">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80" alt="穏やかな雰囲気で過ごす女性">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="相談に寄り添う女性スタッフ">
     </div>
   </section>
 
-  <section class="content-section" id="grouphome">
+  <section class="content-section detail-section" id="grouphome">
+    <p class="section-kicker">GROUP HOME</p>
     <h2 class="section-title">グループホーム</h2>
-    <div class="text-content">
-      阿蘇の山々と天草の海に抱かれた環境の中で、依存症からの回復をめざす方の安心できる居場所として、共同生活の場を提供しています。
+    <div class="copy-grid">
+      <div class="text-content">
+        阿蘇の山々と天草の海に抱かれた環境の中で、依存症からの回復をめざす方の安心できる居場所として共同生活の場を提供しています。
+      </div>
+      <div class="text-content">
+        比較ではなく個別性を尊重した支援で、生活再建に向けた前進を着実にサポートし、地域生活への移行まで伴走します。
+      </div>
     </div>
-    <div class="text-content">
-      回復のペースは人それぞれです。比較ではなく個別性を尊重した支援で、生活再建に向けた前進を着実に支えます。
+    <div class="mini-gallery">
+      <img src="https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&w=1200&q=80" alt="暖かい雰囲気の住まい">
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="共同生活のイメージ">
     </div>
   </section>
 
-  <section class="content-section" id="guide">
+  <section class="content-section detail-section" id="guide">
+    <p class="section-kicker">USER GUIDE</p>
     <h2 class="section-title">利用案内</h2>
-    <div class="text-content">
-      初回相談から入所検討、回復プログラム、退所後の生活再建まで、一人ひとりの状況に合わせて継続的に伴走します。
+    <div class="copy-grid">
+      <div class="text-content">
+        初回相談から入所検討、回復プログラム、退所後の生活再建まで、一人ひとりの状況に合わせて継続的に伴走します。
+      </div>
+      <div class="text-content">
+        受付時間は平日10:00〜17:00です。電話・メールどちらでも受け付けています。まずは相談から始めてみてください。
+      </div>
     </div>
-    <div class="text-content">
-      受付時間は平日10:00〜17:00です。電話・メールどちらでも受け付けています。まずは相談から始めてみてください。
+    <div class="support-banner">
+      <strong>ご相談窓口：</strong> 0964-41-2387（平日10:00〜17:00） / info@higonoie.or.jp（24時間受付）
     </div>
   </section>
 
-  <section class="content-section" id="family-guide">
+  <section class="content-section detail-section" id="family-guide">
+    <p class="section-kicker">FAMILY SUPPORT</p>
     <h2 class="section-title">家族ガイド</h2>
-    <div class="text-content">
-      ご家族だけのご相談も大歓迎です。依存症は本人だけでなく、ご家族も苦しむ病気です。まずはご家族の気持ちをお聞かせください。
+    <div class="copy-grid">
+      <div class="text-content">
+        ご家族だけのご相談も大歓迎です。依存症は本人だけでなく、ご家族も苦しむ病気です。まずはご家族の気持ちをお聞かせください。
+      </div>
+      <div class="text-content">
+        医療機関・行政機関との連携を含め、必要な支援を整理しながら、安心して回復に向き合える環境づくりをサポートします。
+      </div>
     </div>
-    <div class="text-content">
-      医療機関・行政機関との連携を含め、必要な支援を整理しながら、安心して回復に向き合える環境づくりをサポートします。
+    <div class="mini-gallery">
+      <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80" alt="家族で支え合うイメージ">
+      <img src="https://images.unsplash.com/photo-1478479474071-8a3014f1f36e?auto=format&fit=crop&w=1200&q=80" alt="穏やかな家族の時間">
     </div>
   </section>
 
-  <!-- ストーリーセクション -->
   <section class="story-section" id="testimonials">
     <div class="story-content">
       <div class="story-label">STORIES OF RECOVERY</div>
       <h2 class="story-title">絶望から希望へ</h2>
       <div class="story-subtitle">
-        5人の回復者が語る、再生の物語<br>
+        5人の回復者が語る、再生の物語。<br>
         彼らは地獄を見た。そして今、笑顔で未来を語る。
       </div>
     </div>
   </section>
 
-  <!-- スタッフストーリー -->
+  <section class="testimonial-grid-wrap">
+    <article class="testimonial-card">
+      <h3>薬物依存症 / 回復者スタッフ</h3>
+      <p>
+        18歳から覚醒剤。逮捕と服役を繰り返し、家族も友人も離れていきました。最後の出所の日、迎えは誰もいませんでした。そこから支援に繋がり、今は仲間の回復を支える側に立っています。
+      </p>
+      <p class="name">—— 田村 健一さん（42歳・仮名）</p>
+    </article>
+    <article class="testimonial-card">
+      <h3>ギャンブル依存症 / 回復歴1年半</h3>
+      <p>
+        借金2000万円、離職、家族との別離。どん底でしたが、支援につながって債務整理と生活再建を進め、今は子どもと再会できる日々を取り戻しています。
+      </p>
+      <p class="name">—— 佐藤 裕介さん（45歳・仮名）</p>
+    </article>
+    <article class="testimonial-card">
+      <h3>アルコール依存症 / 女性専用施設で回復中</h3>
+      <p>
+        医師の警告を受けてもやめられなかった日々。娘の一言をきっかけに、女性専用施設で回復を開始。今は「母として生きる」目標に向かって歩いています。
+      </p>
+      <p class="name">—— 中村 美咲さん（38歳・仮名）</p>
+    </article>
+  </section>
+
   <section class="staff-story" id="staff">
-    <h3 class="staff-title">回復者スタッフ<br>回復歴5年<br>20年間の薬物地獄から、<br>希望を伝えるスタッフへ</h3>
-    
-    <div class="staff-content">
-      18歳から覚醒剤。暴力団の世界に足を踏み入れ、逮捕3回、服役3回。出所するたびに「もうやらない」と誓うが、気づけばまた手を出していた。家族は見放し、友人も離れ、鏡に映る自分が誰だか分からなくなった。<br><br>
-      最後の逮捕から出所した日、迎えに来る人は誰もいなかった。その時初めて「このままでは本当に終わる」と心の底から思った。偶然手にした依存症回復施設のパンフレット。それが私の転機だった。
+    <p class="section-kicker">OUR STAFF</p>
+    <h2 class="section-title">スタッフ紹介</h2>
+
+    <div class="leader-message">
+      <h3>代表 土地原 慎太郎 メッセージ</h3>
+      <p>
+        「もう無理かもしれない」と感じる瞬間にこそ、支援の力が必要です。私たちは“叱る”のではなく“支える”姿勢で、人生を立て直すプロセスを一緒に組み立てます。ご本人もご家族も、どうか一人で抱え込まないでください。
+      </p>
     </div>
-    
-    <div class="staff-content">
-      今はひごのいえのスタッフとして、同じ苦しみを持つ仲間をサポートしています。「あなたは一人じゃない」と伝えられる喜び。薬物に支配された人生から、誰かの希望になれる人生へ。毎日が奇跡です。<br>
-      —— 田村 健一さん（42歳・仮名）
-    </div>
-    
-    <div class="staff-content">
-      <strong>ギャンブル依存症<br>回復歴1年半<br>借金2000万円。<br>妻も子供も失った男の再生</strong>
-    </div>
-    
-    <div class="staff-quote">
-      パチンコで借金2000万円。妻は子供を連れて実家へ。会社もクビ。消費者金融からの催促電話が鳴り止まず、ホームレス寸前。人生が完全に行き詰まったと感じた。<br><br>
-      ある日、元妻から届いた一通のメッセージ。「子供たちがパパを心配している」。その言葉が胸に突き刺さった。このままでは子供たちに顔向けできない。勇気を出して「ひごのいえ」の門を叩いた。
-    </div>
-    
-    <div class="staff-content">
-      今は債務整理を終え、地道に働いて返済中。月に一度、子供たちと会えるようになりました。長男が「パパ、頑張ってるね」と言ってくれた時、涙が止まらなかった。ギャンブルよりも大切なものを取り戻せた。<br>
-      —— 佐藤 裕介さん（45歳・仮名）
-    </div>
-    
-    <div class="staff-content">
-      <strong>アルコール依存症<br>回復中<br>医師から警告を受けた母が、<br>今笑顔で生きる</strong><br><br>
-      目覚めるとまず酒。離婚して子供2人は元夫へ。仕事も辞め、部屋はゴミだらけ。意識を失って救急搬送された病院で医師から「このままでは1年以内に危険な状態になる」と厳しく告げられた。<br><br>
-      それでも酒をやめられなかった。ある日、娘からの着信。震える手で出ると「ママ、生きててくれてありがとう」という言葉。その瞬間、何かが崩れた。女性専用施設なら、私でも変われるかもしれない。<br><br>
-      女性専用施設「らぽーる」で回復中。女性スタッフと女性の仲間に支えられ、初めて心を開けた。先月、子供たちと再会。「ママ、元気になったね」その言葉が嬉しくて涙が止まらなかった。今、私は母親として生きている。<br>
-      —— 中村 美咲さん（38歳・仮名）
+
+    <div class="staff-profile-grid">
+      <article class="staff-profile-card">
+        <div class="profile-type">薬物依存支援 / 回復者スタッフ</div>
+        <h3>田村 健一（仮名）</h3>
+        <p>回復歴5年。20年間の薬物依存から回復し、現在は再発予防プログラムと生活支援を担当。「一人じゃない」を体感できる関わりを大切にしています。</p>
+      </article>
+      <article class="staff-profile-card">
+        <div class="profile-type">薬物依存支援 / ピアサポーター</div>
+        <h3>山本 翔太（仮名）</h3>
+        <p>回復歴3年。処方薬・違法薬物依存の経験を活かし、初期相談と日中活動支援を担当。体調・睡眠・食事のリズム再建に強みがあります。</p>
+      </article>
+      <article class="staff-profile-card">
+        <div class="profile-type">ギャンブル依存支援 / 生活再建担当</div>
+        <h3>佐藤 裕介（仮名）</h3>
+        <p>回復歴1年半。債務整理や家族関係の再構築を経験し、金銭管理と就労定着の支援を担当。「小さな達成の積み重ね」を実践しています。</p>
+      </article>
     </div>
   </section>
 
-  <!-- 最終メッセージ -->
-  <section class="content-section">
-    <div class="text-content" style="font-size: 1.2rem; color: #348ca9; font-weight: 600;">
-      YOUR STORY BEGINS HERE
-    </div>
-    
+  <section class="content-section assurance-section">
+    <h2 class="section-title">YOUR STORY BEGINS HERE</h2>
     <div class="text-content">
-      あなたの物語も、ここから始まる<br><br>
-      彼らは絶望の底から這い上がった。<br>
-      今、彼らは笑顔で「回復できた」と語る。<br>
-      あなたも必ず回復できます。<br><br>
-      全ての体験談を読む<br>
-      💡 よくある質問<br><br>
-      Q. 費用はどのくらいかかりますか？<br><br>
-      A. 障害福祉サービス受給者証をお持ちの方は、自己負担額が軽減されます。詳しくは利用案内をご覧ください。まずはお気軽にご相談ください。<br><br>
-      Q. 家族だけの相談も可能ですか？<br><br>
-      A. はい、ご家族だけのご相談も大歓迎です。依存症は本人だけでなく、ご家族も苦しむ病気です。まずはご家族の気持ちをお聞かせください。<br><br>
-      Q. 女性専用の施設はありますか？<br><br>
-      A. はい、女性専用施設「らぽーる」（2025年3月24日開設）をご利用いただけます。女性スタッフが常駐し、女性特有の課題に配慮したサポートを提供しています。詳しくは女性専用施設ページをご覧ください。<br><br>
-      Q. 本当に回復できますか？<br><br>
-      A. はい、依存症は「回復できる病気」です。適切な支援と環境、仲間との絆があれば、必ず希望ある未来を取り戻せます。実際に回復した仲間の体験談もぜひご覧ください。<br><br>
-      📖 その他のQ&amp;Aを見る →
+      あなたの物語も、ここから始まります。<br>
+      彼らは絶望の底から這い上がり、今、笑顔で「回復できた」と語っています。あなたも必ず回復できます。
+    </div>
+    <div class="faq-grid">
+      <article class="faq-item">
+        <h3>Q. 費用はどのくらいかかりますか？</h3>
+        <p>A. 障害福祉サービス受給者証をお持ちの方は自己負担額が軽減されます。詳しくは利用案内をご覧ください。</p>
+      </article>
+      <article class="faq-item">
+        <h3>Q. 家族だけの相談も可能ですか？</h3>
+        <p>A. はい。ご家族だけのご相談も歓迎しています。まずは現状を丁寧に伺います。</p>
+      </article>
+      <article class="faq-item">
+        <h3>Q. 女性専用の施設はありますか？</h3>
+        <p>A. はい。女性専用施設「らぽーる」をご利用いただけます。女性スタッフが常駐しています。</p>
+      </article>
+      <article class="faq-item">
+        <h3>Q. 本当に回復できますか？</h3>
+        <p>A. 依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば未来は変えられます。</p>
+      </article>
     </div>
   </section>
 
-  <!-- 相談セクション -->
   <section class="contact-section" id="contact">
-    <h2 class="contact-title">🌸 安心してご相談ください</h2>
-    
+    <h2 class="contact-title">安心してご相談ください</h2>
     <div class="contact-subtitle">
       「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。
     </div>
-    
     <div class="contact-message">
       あなたの勇気ある一歩を、私たちは心から応援します。
     </div>
-    
     <div class="contact-buttons">
       <a href="tel:0964-41-2387" class="contact-button primary">
-        📞 今すぐ相談する<br>
+        今すぐ相談する
         <span class="phone-number">0964-41-2387</span>
       </a>
-      <a href="/testimonials" class="contact-button outline">
-        💬 体験談を読む
-      </a>
+      <a href="/testimonials" class="contact-button outline">体験談を読む</a>
     </div>
-    
     <div class="contact-hours">
       受付時間：平日 10:00〜17:00<br>
       土日祝日、時間外のご相談も可能です。まずはお電話でご相談ください。
     </div>
   </section>
 
-  <!-- フッター -->
   <footer class="footer">
     <div class="footer-content">
-      <!-- 施設情報 -->
       <div class="footer-section">
         <div class="footer-logo-container">
           <img src="/static/higonoie-logo-new.png" alt="一般社団法人 ひごのいえ" class="footer-logo">
@@ -493,8 +516,6 @@
         <div class="footer-info">TEL: 0964-41-2387</div>
         <div class="footer-info">Email: info@higonoie.or.jp</div>
       </div>
-
-      <!-- ナビゲーション -->
       <div class="footer-section">
         <h4 class="footer-nav-title">ナビゲーション</h4>
         <a href="/top" class="footer-nav-item">トップ</a>
@@ -507,22 +528,17 @@
         <a href="/guide" class="footer-nav-item">利用案内</a>
         <a href="/family-guide" class="footer-nav-item">家族ガイド</a>
       </div>
-
-      <!-- 相談窓口 -->
       <div class="consultation-section">
         <h4 class="consultation-title">相談窓口</h4>
         <div class="consultation-info">電話相談: 0964-41-2387</div>
         <div class="consultation-info">受付時間: 平日 10:00-17:00</div>
         <div class="consultation-info">メール相談: info@higonoie.or.jp</div>
         <div class="consultation-info">面談: 予約制</div>
-        
         <div class="consultation-note">
           ご家族からのご相談も承ります。<br>
           お気軽にお問い合わせください。
         </div>
       </div>
-
-      <!-- コピーライト -->
       <div class="copyright">
         © 2024 一般社団法人ひごのいえ All Rights Reserved.
       </div>
@@ -530,12 +546,11 @@
   </footer>
 
   <script>
-    // Mobile menu functionality
     const menuButton = document.getElementById('menuButton');
     const sectionTabButton = document.getElementById('sectionTabButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     const openMobileMenu = () => {
       mobileMenu.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -551,42 +566,41 @@
         menuButton.setAttribute('aria-expanded', 'false');
       }
     };
-    
+
     if (menuButton) {
       menuButton.addEventListener('click', openMobileMenu);
     }
-    
+
     if (sectionTabButton) {
       sectionTabButton.addEventListener('click', openMobileMenu);
     }
-    
+
     if (closeMenuButton) {
       closeMenuButton.addEventListener('click', closeMobileMenu);
     }
-    
-    // Close menu when clicking outside
+
     if (mobileMenu) {
-      mobileMenu.addEventListener('click', (e) => {
-        if (e.target === mobileMenu) {
+      mobileMenu.addEventListener('click', (event) => {
+        if (event.target === mobileMenu) {
           closeMobileMenu();
         }
       });
     }
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+
+    document.querySelectorAll('.mobile-menu-item').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (event) {
+        event.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
           });
-          // Close mobile menu if open
-          if (mobileMenu) {
-            closeMobileMenu();
-          }
+          closeMobileMenu();
         }
       });
     });
@@ -612,7 +626,7 @@
       '/staff': ['スタッフ紹介 | ひごのいえ', '回復経験と支援経験を持つスタッフによるサポート体制をご紹介します。'],
       '/program': ['プログラム | ひごのいえ', '希望・正直・回復を軸にした、再発予防まで見据えた回復支援プログラムの概要です。'],
       '/testimonials': ['体験談 | ひごのいえ', '依存症回復を実現した体験談と、回復への具体的な道のりをご紹介します。'],
-      '/rapport': ['女性専用施設 | ひごのいえ', '女性専用施設「らぽーる」の支援内容と安心して回復できる環境をご案内します。'],
+      '/rapport': ['女性専用施設 | ひごのいえ', '女性専用施設らぽーるの支援内容と安心して回復できる環境をご案内します。'],
       '/grouphome': ['グループホーム | ひごのいえ', '共同生活を通じた生活再建と回復支援についてご紹介します。'],
       '/guide': ['利用案内 | ひごのいえ', '初回相談から利用開始、生活再建までのご利用の流れをご案内します。'],
       '/family-guide': ['家族ガイド | ひごのいえ', 'ご家族向けの相談支援と連携体制についてご案内します。'],
@@ -638,4 +652,3 @@
   </script>
 </body>
 </html>
-  
