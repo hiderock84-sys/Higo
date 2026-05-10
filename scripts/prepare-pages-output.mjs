@@ -188,8 +188,8 @@ async function copyDistToTargets() {
   }
 }
 
-async function removeCompatibilityWorkers() {
-  for (const target of subprojectTargets) {
+async function removeWorkersFromOutputs() {
+  for (const target of [distDir, ...targets]) {
     await rm(path.join(target, '_worker.js'), { force: true })
   }
 }
@@ -317,7 +317,7 @@ async function cleanupUnusedAssets() {
 }
 
 await copyDistToTargets()
-await removeCompatibilityWorkers()
+await removeWorkersFromOutputs()
 await syncRootFilesForOutputs()
 await generateSectionPagesForOutputs()
 await syncRootFilesForSubprojects()

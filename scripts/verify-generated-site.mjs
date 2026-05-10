@@ -81,6 +81,7 @@ async function verify() {
   const sitemapPath = path.join(distDir, 'sitemap.xml')
   const headersPath = path.join(distDir, '_headers')
   const redirectsPath = path.join(distDir, '_redirects')
+  const rootWorkerPath = path.join(projectRoot, 'dist', '_worker.js')
   const compatibilityWorkerChecks = [
     path.join(projectRoot, 'hidonoie', 'dist', '_worker.js'),
     path.join(projectRoot, 'higono-ie', 'dist', '_worker.js'),
@@ -132,6 +133,10 @@ async function verify() {
     mustContain(redirects, '/rapport', '_redirects missing /rapport target', failures)
     mustContain(redirects, '/guide', '_redirects missing /guide target', failures)
     mustContain(redirects, '/family-guide', '_redirects missing /family-guide target', failures)
+  }
+
+  if (await fileExists(rootWorkerPath)) {
+    failures.push('dist/_worker.js must not be present in static-only output')
   }
 
   for (const workerPath of compatibilityWorkerChecks) {
