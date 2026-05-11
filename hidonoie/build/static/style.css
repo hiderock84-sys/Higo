@@ -14,10 +14,12 @@
   --brand-blue: #2f79a4;
   --brand-cyan: #24a6a7;
   --brand-steel: #123149;
+  --font-body: 'Noto Sans JP', 'Inter', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
 }
 
 body {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: var(--font-body);
   line-height: 1.85;
   color: var(--base-text);
   background:
@@ -100,14 +102,14 @@ body {
 }
 
 .header-call-label {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
 
 .header-call-number {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.92rem;
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -121,7 +123,7 @@ body {
   min-width: 120px;
   padding: 8px 10px;
   cursor: pointer;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -177,7 +179,7 @@ body {
 }
 
 .mobile-menu-title {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -204,7 +206,7 @@ body {
 }
 
 .mobile-menu-section-title {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.62);
@@ -259,7 +261,7 @@ body {
 }
 
 .hero-eyebrow {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.74rem;
   letter-spacing: 0.2em;
   margin-bottom: 14px;
@@ -268,7 +270,8 @@ body {
 
 .hero-title {
   font-size: clamp(2.4rem, 8vw, 5.8rem);
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-weight: 700;
   letter-spacing: 0.14em;
   line-height: 1.12;
   text-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
@@ -299,7 +302,7 @@ body {
 }
 
 .hero-chip {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   padding: 7px 11px;
@@ -323,7 +326,7 @@ body {
   min-height: 46px;
   min-width: 180px;
   text-decoration: none;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   border-radius: 12px;
   letter-spacing: 0.04em;
@@ -375,7 +378,7 @@ body {
   font-size: 0.86rem;
   line-height: 1.7;
   color: #2f4658;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-body);
 }
 
 .brand-axis {
@@ -396,7 +399,7 @@ body {
 }
 
 .axis-card h3 {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: 0.08em;
   font-size: 0.8rem;
   margin-bottom: 8px;
@@ -416,7 +419,7 @@ body {
 }
 
 .section-kicker {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.74rem;
   letter-spacing: 0.18em;
   color: var(--ink-500);
@@ -425,7 +428,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.5rem, 4vw, 2.1rem);
   line-height: 1.42;
   text-align: center;
@@ -521,7 +524,7 @@ body {
 }
 
 .pillar-title {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.08rem;
   color: #143852;
   margin-bottom: 10px;
@@ -548,7 +551,7 @@ body {
 }
 
 .support-step h3 {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.98rem;
   color: var(--ink-900);
   margin-bottom: 8px;
@@ -558,6 +561,68 @@ body {
   font-size: 0.9rem;
   color: #3c5668;
   line-height: 1.75;
+}
+
+.section-lead {
+  max-width: 50em;
+  margin: 0 auto 18px;
+  text-align: center;
+  color: #294458;
+}
+
+.program-track-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.program-track-card {
+  border-radius: 10px;
+  border: 1px solid rgba(18, 69, 101, 0.25);
+  background: #f7fbff;
+  box-shadow: 0 10px 20px rgba(16, 48, 68, 0.08);
+  padding: 14px;
+}
+
+.program-track-card h3 {
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  color: #133d5a;
+  margin-bottom: 7px;
+}
+
+.program-track-card p {
+  font-size: 0.86rem;
+  line-height: 1.68;
+  color: #355264;
+}
+
+.program-marathon-note {
+  margin-top: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(18, 67, 97, 0.28);
+  background: linear-gradient(145deg, #0f2f44, #1a4f6a);
+  color: #e8f7ff;
+  box-shadow: 0 14px 24px rgba(10, 34, 49, 0.2);
+  padding: 18px 16px;
+}
+
+.program-marathon-note h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #a9ecff;
+}
+
+.program-marathon-note p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.program-marathon-note p:last-child {
+  margin-bottom: 0;
 }
 
 .text-content.highlight {
@@ -635,7 +700,7 @@ body {
 }
 
 .nav-title {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   color: var(--card-title-color);
 }
@@ -654,39 +719,39 @@ body {
 }
 
 .nav-card-about {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Amakusa_City_viewed_from_Junkyo_Park.jpg");
 }
 
 .nav-card-staff {
-  --card-image: url("/static/hero-image.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Hakata-gion-yamakasa-oiyama.jpg");
 }
 
 .nav-card-program {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Aso_city_Miyaji_district_Aerial_photograph.2016.jpg");
 }
 
 .nav-card-voice {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Shiratsuru-hama_beach_and_the_village_of_Takahama.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Hakata_Gion_Yamakasa_-_Kazariyama.jpg");
 }
 
 .nav-card-women {
-  --card-image: url("/static/hero-image.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Dorphin-watching_Amakusa.jpg");
 }
 
 .nav-card-home {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Contemporary_japanese_homes_-_panoramio.jpg");
 }
 
 .nav-card-usage {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Fukuoka,_water_festival_1.jpg");
 }
 
 .nav-card-family {
-  --card-image: url("/static/aso-landscape.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Karatsu,_Saga_(31397237522).jpg");
 }
 
 .nav-card-contact {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg");
+  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumato_tomatoes.jpg");
 }
 
 .detail-section .section-title {
@@ -701,6 +766,159 @@ body {
   padding: 14px 16px;
   font-size: 0.92rem;
   line-height: 1.76;
+}
+
+.home-feature-list {
+  margin: 16px 0 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.home-feature-list li {
+  border-radius: 8px;
+  border: 1px solid rgba(16, 70, 101, 0.24);
+  background: rgba(241, 248, 252, 0.9);
+  padding: 10px 12px;
+  font-size: 0.88rem;
+  color: #23465e;
+}
+
+.home-showcase-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.home-showcase-grid img {
+  width: 100%;
+  height: 176px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(19, 71, 100, 0.24);
+  box-shadow: 0 10px 18px rgba(17, 45, 64, 0.12);
+}
+
+.kyushu-culture-section {
+  border-radius: 12px;
+  border: 1px solid rgba(17, 67, 95, 0.2);
+  background: linear-gradient(160deg, #f4f9fc, #edf4f9);
+  padding: 34px 20px;
+}
+
+.culture-gallery {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.culture-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(18, 66, 95, 0.2);
+  box-shadow: 0 10px 20px rgba(20, 47, 66, 0.1);
+}
+
+.culture-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.culture-card p {
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: #2b4659;
+  padding: 10px 11px 12px;
+}
+
+.family-process {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(24, 74, 104, 0.24);
+  background: #fff;
+  box-shadow: 0 10px 18px rgba(22, 55, 77, 0.08);
+  padding: 16px;
+}
+
+.family-process h3 {
+  font-family: var(--font-heading);
+  color: #173f58;
+  font-size: 0.98rem;
+  margin-bottom: 9px;
+}
+
+.family-process-list {
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.family-process-list li {
+  border-left: 3px solid #2a7da9;
+  background: #f4fafc;
+  padding: 8px 10px;
+  font-size: 0.87rem;
+  line-height: 1.7;
+  color: #2c495d;
+}
+
+.family-recovery-chart {
+  margin-top: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(24, 76, 106, 0.22);
+  background: #fff;
+  box-shadow: 0 10px 18px rgba(16, 49, 68, 0.08);
+  padding: 14px;
+}
+
+.family-recovery-chart h3 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: #173f58;
+  margin-bottom: 10px;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.chart-row span {
+  font-size: 0.84rem;
+  color: #335568;
+}
+
+.chart-bar {
+  position: relative;
+  height: 9px;
+  border-radius: 999px;
+  background: #e5eef4;
+  overflow: hidden;
+}
+
+.chart-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--bar);
+  background: linear-gradient(90deg, #2f80ab, #28b3ae);
+}
+
+.family-emphasis {
+  margin-top: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(23, 80, 109, 0.24);
+  background: #f4fbff;
+  padding: 14px;
 }
 
 .story-section {
@@ -720,7 +938,7 @@ body {
 }
 
 .story-label {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: 0.2em;
   font-size: 0.78rem;
   margin-bottom: 12px;
@@ -755,7 +973,7 @@ body {
 }
 
 .testimonial-card h3 {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.97rem;
   color: #194c67;
   margin-bottom: 8px;
@@ -789,7 +1007,7 @@ body {
 }
 
 .leader-message h3 {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.05rem;
   color: #164868;
   margin-bottom: 10px;
@@ -819,7 +1037,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.72rem;
   color: #0f5c7f;
   background: #eaf7ff;
@@ -830,7 +1048,7 @@ body {
 }
 
 .staff-profile-card h3 {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1rem;
   color: #153f58;
   margin-bottom: 8px;
@@ -864,7 +1082,7 @@ body {
 }
 
 .faq-item h3 {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.92rem;
   color: #164967;
   margin-bottom: 7px;
@@ -919,7 +1137,7 @@ body {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -964,7 +1182,7 @@ body {
 }
 
 .footer-lead {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   color: rgba(171, 231, 244, 0.9);
@@ -996,7 +1214,7 @@ body {
 
 .footer-nav-title,
 .consultation-title {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   color: #7ad2df;
   margin-bottom: 10px;
@@ -1054,6 +1272,12 @@ body {
   }
 
   .brand-axis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .program-track-grid,
+  .culture-gallery,
+  .home-showcase-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1164,6 +1388,10 @@ body {
   .mini-gallery,
   .pillar-grid,
   .support-steps,
+  .program-track-grid,
+  .home-feature-list,
+  .home-showcase-grid,
+  .culture-gallery,
   .nav-grid,
   .testimonial-grid-wrap,
   .staff-profile-grid,
@@ -1175,6 +1403,16 @@ body {
 
   .mini-gallery img {
     height: 190px;
+  }
+
+  .culture-card img,
+  .home-showcase-grid img {
+    height: 168px;
+  }
+
+  .chart-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .nav-card {
