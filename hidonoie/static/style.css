@@ -47,7 +47,7 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: 58px minmax(190px, 1fr) 124px;
+  grid-template-columns: 84px minmax(190px, 1fr) 124px;
   align-items: center;
   gap: 10px;
   padding: 9px 12px;
@@ -72,8 +72,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 74px;
+  height: 52px;
   border-radius: 10px;
   border: 1px solid rgba(198, 232, 246, 0.72);
   background: rgba(247, 253, 255, 0.96);
@@ -84,8 +84,8 @@ body {
 .header-logo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  object-position: center center;
   padding: 0;
 }
 
@@ -1292,15 +1292,15 @@ body {
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: 46px minmax(124px, 1fr) 92px;
+    grid-template-columns: 64px minmax(124px, 1fr) 92px;
     min-height: 58px;
     padding: 7px 8px;
     gap: 6px;
   }
 
   .header-left {
-    width: 38px;
-    height: 38px;
+    width: 56px;
+    height: 40px;
     border-radius: 10px;
   }
 
@@ -1474,15 +1474,15 @@ body {
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: 42px minmax(110px, 1fr) 84px;
+    grid-template-columns: 58px minmax(110px, 1fr) 84px;
     min-height: 54px;
     padding: 6px;
     gap: 5px;
   }
 
   .header-left {
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 38px;
   }
 
   .header-logo {

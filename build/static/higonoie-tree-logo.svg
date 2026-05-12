@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">rTnDH (nÌ¥</title>
+  <desc id="desc">ÑèâKDIgÜíœO(n∑Û‹ÎÌ¥</desc>
+  <rect width="512" height="512" fill="#ffffff"/>
+  <rect x="0" y="436" width="512" height="76" fill="#86c26b"/>
+
+  <g fill="#6fae8d" transform="translate(256 206)">
+    <ellipse cx="0" cy="-156" rx="26" ry="18"/>
+    <ellipse cx="48" cy="-148" rx="25" ry="17" fill="#9acb79"/>
+    <ellipse cx="92" cy="-132" rx="24" ry="17" fill="#6db7cd"/>
+    <ellipse cx="128" cy="-104" rx="24" ry="17" fill="#a0d587"/>
+    <ellipse cx="150" cy="-64" rx="24" ry="17" fill="#96c96f"/>
+    <ellipse cx="158" cy="-16" rx="24" ry="17" fill="#6fbfa6"/>
+    <ellipse cx="148" cy="30" rx="24" ry="17" fill="#89cd7f"/>
+    <ellipse cx="126" cy="70" rx="24" ry="17" fill="#73b1cd"/>
+    <ellipse cx="94" cy="100" rx="24" ry="17" fill="#8cc56f"/>
+    <ellipse cx="52" cy="118" rx="24" ry="17" fill="#aad68b"/>
+    <ellipse cx="4" cy="126" rx="24" ry="17" fill="#7cb89f"/>
+    <ellipse cx="-44" cy="122" rx="24" ry="17" fill="#95cb74"/>
+    <ellipse cx="-88" cy="104" rx="24" ry="17" fill="#6db8ca"/>
+    <ellipse cx="-124" cy="76" rx="24" ry="17" fill="#a1d68e"/>
+    <ellipse cx="-146" cy="36" rx="24" ry="17" fill="#7bbd95"/>
+    <ellipse cx="-156" cy="-12" rx="24" ry="17" fill="#8fcb72"/>
+    <ellipse cx="-146" cy="-58" rx="24" ry="17" fill="#6fb9cb"/>
+    <ellipse cx="-124" cy="-98" rx="24" ry="17" fill="#aed98f"/>
+    <ellipse cx="-90" cy="-128" rx="24" ry="17" fill="#8fc66f"/>
+    <ellipse cx="-48" cy="-146" rx="24" ry="17" fill="#79b79d"/>
+  </g>
+
+  <g stroke="#76717a" stroke-width="9" stroke-linecap="round" fill="none">
+    <path d="M256 420 L256 260"/>
+    <path d="M256 305 L214 270"/>
+    <path d="M256 305 L298 270"/>
+    <path d="M236 286 L214 242"/>
+    <path d="M276 286 L298 242"/>
+    <path d="M214 272 L186 256"/>
+    <path d="M298 272 L326 256"/>
+    <path d="M224 250 L216 224"/>
+    <path d="M288 250 L296 224"/>
+  </g>
+
+  <rect x="236" y="398" width="40" height="38" fill="#77717b"/>
+</svg>
