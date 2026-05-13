@@ -47,7 +47,7 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: 116px minmax(190px, 1fr) 124px;
+  grid-template-columns: 98px minmax(190px, 1fr) 124px;
   align-items: center;
   gap: 10px;
   padding: 9px 12px;
@@ -72,8 +72,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 104px;
-  height: 72px;
+  width: 86px;
+  height: 66px;
   border: 0;
   background: transparent;
   overflow: visible;
@@ -1291,15 +1291,15 @@ body {
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: 94px minmax(124px, 1fr) 92px;
+    grid-template-columns: 78px minmax(124px, 1fr) 92px;
     min-height: 58px;
     padding: 7px 8px;
     gap: 6px;
   }
 
   .header-left {
-    width: 82px;
-    height: 56px;
+    width: 66px;
+    height: 50px;
   }
 
   .header-logo {
@@ -1472,15 +1472,15 @@ body {
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: 84px minmax(96px, 1fr) 84px;
+    grid-template-columns: 68px minmax(96px, 1fr) 84px;
     min-height: 54px;
     padding: 6px;
     gap: 5px;
   }
 
   .header-left {
-    width: 74px;
-    height: 50px;
+    width: 56px;
+    height: 44px;
   }
 
   .header-logo {
