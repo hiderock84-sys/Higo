@@ -47,7 +47,7 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: 90px minmax(190px, 1fr) 124px;
+  grid-template-columns: 76px minmax(190px, 1fr) 124px;
   align-items: center;
   gap: 10px;
   padding: 9px 12px;
@@ -72,8 +72,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
   border-radius: 12px;
   border: 1px solid rgba(198, 232, 246, 0.72);
   background: rgba(252, 255, 255, 0.98);
@@ -1293,15 +1293,15 @@ body {
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: 70px minmax(124px, 1fr) 92px;
+    grid-template-columns: 58px minmax(124px, 1fr) 92px;
     min-height: 58px;
     padding: 7px 8px;
     gap: 6px;
   }
 
   .header-left {
-    width: 62px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 10px;
   }
 
@@ -1475,15 +1475,15 @@ body {
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: 62px minmax(106px, 1fr) 84px;
+    grid-template-columns: 52px minmax(106px, 1fr) 84px;
     min-height: 54px;
     padding: 6px;
     gap: 5px;
   }
 
   .header-left {
-    width: 56px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
 
   .header-logo {
