@@ -24,9 +24,7 @@ const targets = [...rootTargets, ...subprojectTargets]
 const allOutputTargets = [distDir, ...targets]
 const cleanupAssets = [
   path.join(projectRoot, 'dist', 'static', 'logo-design.jpg'),
-  path.join(projectRoot, 'dist', 'static', 'higonoie-tree-logo.svg'),
   ...targets.map((target) => path.join(target, 'static', 'logo-design.jpg')),
-  ...targets.map((target) => path.join(target, 'static', 'higonoie-tree-logo.svg')),
 ]
 const pagesBaseUrl = 'https://higono-ie.pages.dev'
 const routePageDefinitions = [
