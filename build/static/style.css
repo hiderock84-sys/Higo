@@ -1148,14 +1148,6 @@ body.is-landing .landing-only {
   display: block;
 }
 
-.staff-activity-visual figcaption {
-  padding: 11px 12px 13px;
-  font-size: 0.88rem;
-  line-height: 1.72;
-  color: #2f4d60;
-  background: linear-gradient(180deg, #f7fbff, #eef5f9);
-}
-
 .leader-message {
   border-radius: 10px;
   border: 1px solid rgba(21, 82, 111, 0.2);
@@ -1170,6 +1162,43 @@ body.is-landing .landing-only {
   font-size: 1.05rem;
   color: #164868;
   margin-bottom: 10px;
+}
+
+.leader-profile {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+  gap: 14px;
+  margin: 8px 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(26, 89, 120, 0.2);
+  background: rgba(255, 255, 255, 0.84);
+  padding: 10px;
+}
+
+.leader-profile-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(22, 79, 108, 0.18);
+}
+
+.leader-profile-copy p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  line-height: 1.78;
+  color: #2f4c60;
+}
+
+.leader-profile-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.leader-profile-name {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #134561;
 }
 
 .leader-message p {
@@ -1607,6 +1636,14 @@ body.is-landing .landing-only {
   .contact-buttons,
   .footer-content {
     grid-template-columns: 1fr;
+  }
+
+  .leader-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-profile-image {
+    height: 178px;
   }
 
   .mini-gallery img {
