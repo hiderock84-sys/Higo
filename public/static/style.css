@@ -1488,15 +1488,15 @@ body.is-landing .landing-only {
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: 130px minmax(116px, 1fr) 98px;
+    grid-template-columns: 136px minmax(108px, 1fr) 96px;
     min-height: 60px;
     padding: 7px 8px;
     gap: 6px;
   }
 
   .header-left {
-    width: 124px;
-    height: 36px;
+    width: 132px;
+    height: 40px;
     padding: 0;
   }
 
@@ -1703,15 +1703,15 @@ body.is-landing .landing-only {
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: 102px minmax(96px, 1fr) 88px;
+    grid-template-columns: 114px minmax(84px, 1fr) 86px;
     min-height: 54px;
     padding: 6px;
     gap: 5px;
   }
 
   .header-left {
-    width: 96px;
-    height: 30px;
+    width: 108px;
+    height: 36px;
     padding: 0;
   }
 
@@ -1723,7 +1723,7 @@ body.is-landing .landing-only {
   .header-call-cta,
   .header-consult-btn {
     min-height: 34px;
-    min-width: 86px;
+    min-width: 84px;
     padding: 3px 5px;
   }
 
