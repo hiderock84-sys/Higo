@@ -47,7 +47,7 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: 108px minmax(220px, 1fr) 136px;
+  grid-template-columns: minmax(250px, 0.9fr) minmax(220px, 1fr) 146px;
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
@@ -71,10 +71,12 @@ body {
 }
 
 .header-left {
-  display: flex;
+  display: grid;
+  grid-template-columns: 96px minmax(132px, 1fr);
+  gap: 8px;
   align-items: center;
-  justify-content: center;
-  width: 96px;
+  justify-content: flex-start;
+  width: 100%;
   height: 66px;
   border: 0;
   background: transparent;
@@ -83,12 +85,35 @@ body {
 }
 
 .header-logo {
-  width: 100%;
-  height: 100%;
+  width: 96px;
+  height: 66px;
   object-fit: contain;
   object-position: center center;
   padding: 0;
   image-rendering: -webkit-optimize-contrast;
+}
+
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(7, 20, 33, 0.42);
+}
+
+.header-brand-subtitle {
+  font-size: 0.58rem;
+  letter-spacing: 0.09em;
+  color: rgba(207, 243, 251, 0.9);
+}
+
+.header-brand-title {
+  margin-top: 2px;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.96);
 }
 
 .header-call-cta {
@@ -101,7 +126,7 @@ body {
   padding: 9px 12px;
   text-decoration: none;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(195, 234, 244, 0.45);
   background: linear-gradient(140deg, rgba(15, 59, 91, 0.94), rgba(35, 127, 163, 0.9));
   box-shadow: 0 10px 20px rgba(8, 26, 40, 0.24);
 }
@@ -122,7 +147,7 @@ body {
 }
 
 .header-consult-btn {
-  border: 2px solid rgba(255, 255, 255, 0.88);
+  border: 2px solid rgba(230, 249, 255, 0.92);
   border-radius: 13px;
   min-height: 48px;
   min-width: 130px;
@@ -1339,9 +1364,9 @@ body.is-landing .landing-only {
 .footer-nav-section,
 .consultation-section {
   border-radius: 14px;
-  border: 1px solid rgba(166, 223, 235, 0.24);
-  background: rgba(7, 34, 52, 0.46);
-  box-shadow: 0 14px 24px rgba(8, 27, 43, 0.24);
+  border: 1px solid rgba(178, 227, 238, 0.26);
+  background: linear-gradient(165deg, rgba(9, 38, 57, 0.78), rgba(8, 30, 47, 0.65));
+  box-shadow: 0 16px 28px rgba(8, 27, 43, 0.28);
 }
 
 .footer-section-brand,
@@ -1351,25 +1376,29 @@ body.is-landing .landing-only {
 
 .footer-brand-row {
   display: grid;
-  grid-template-columns: 110px minmax(0, 1fr);
-  gap: 14px;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 16px;
   align-items: start;
 }
 
 .footer-logo-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 16px;
+  padding-top: 28px;
 }
 
 .footer-logo {
-  width: 100px;
-  height: 100px;
+  width: 84px;
+  height: 84px;
   background: transparent;
   border: 0;
   padding: 0;
   object-fit: contain;
+}
+
+.footer-brand-copy {
+  padding-top: 2px;
 }
 
 .footer-info {
@@ -1389,11 +1418,11 @@ body.is-landing .landing-only {
 .footer-nav-item {
   display: block;
   margin-bottom: 9px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(240, 251, 255, 0.86);
   text-decoration: none;
   font-size: 0.93rem;
   padding-bottom: 7px;
-  border-bottom: 1px dashed rgba(159, 219, 233, 0.2);
+  border-bottom: 1px dashed rgba(173, 229, 241, 0.26);
 }
 
 .footer-nav-item:hover {
@@ -1452,20 +1481,29 @@ body.is-landing .landing-only {
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: 76px minmax(124px, 1fr) 98px;
+    grid-template-columns: minmax(154px, 0.95fr) minmax(116px, 1fr) 98px;
     min-height: 60px;
     padding: 7px 8px;
     gap: 6px;
   }
 
   .header-left {
-    width: 64px;
+    grid-template-columns: 64px minmax(80px, 1fr);
+    width: 100%;
     height: 50px;
   }
 
   .header-logo {
-    width: 100%;
-    height: 100%;
+    width: 64px;
+    height: 50px;
+  }
+
+  .header-brand-subtitle {
+    display: none;
+  }
+
+  .header-brand-title {
+    font-size: 0.58rem;
   }
 
   .header-call-cta,
@@ -1641,37 +1679,41 @@ body.is-landing .landing-only {
   }
 
   .footer-brand-row {
-    grid-template-columns: 78px minmax(0, 1fr);
+    grid-template-columns: 68px minmax(0, 1fr);
     gap: 10px;
   }
 
   .footer-logo-container {
     justify-content: flex-start;
-    padding-top: 10px;
+    padding-top: 14px;
   }
 
   .footer-logo {
-    width: 68px;
-    height: 68px;
+    width: 58px;
+    height: 58px;
   }
 }
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: 66px minmax(96px, 1fr) 88px;
+    grid-template-columns: 54px minmax(96px, 1fr) 88px;
     min-height: 54px;
     padding: 6px;
     gap: 5px;
   }
 
   .header-left {
-    width: 54px;
+    grid-template-columns: 54px 1fr;
     height: 44px;
   }
 
   .header-logo {
-    width: 100%;
-    height: 100%;
+    width: 54px;
+    height: 44px;
+  }
+
+  .header-brand-text {
+    display: none;
   }
 
   .header-call-cta,
