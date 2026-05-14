@@ -1144,7 +1144,7 @@ body.is-landing .landing-only {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  object-position: center 26%;
+  object-position: center center;
   display: block;
 }
 
