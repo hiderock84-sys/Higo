@@ -47,15 +47,15 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: minmax(330px, 1fr) 230px 180px;
+  grid-template-columns: minmax(340px, 1fr) 218px 172px;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
-  min-height: 84px;
-  background: linear-gradient(180deg, rgba(8, 34, 54, 0.96), rgba(12, 58, 84, 0.93));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 20px rgba(8, 26, 42, 0.24);
-  border-bottom: 1px solid rgba(191, 228, 241, 0.34);
+  padding: 9px 14px;
+  min-height: 78px;
+  background: rgba(252, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(7, 28, 45, 0.14);
+  border-bottom: 1px solid rgba(28, 99, 136, 0.18);
 }
 
 .header::after {
@@ -67,7 +67,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  min-height: 62px;
+  min-height: 60px;
   text-decoration: none;
   background: transparent;
   border: 0;
@@ -77,7 +77,7 @@ body {
 .header-logo {
   display: block;
   width: auto;
-  height: 62px;
+  height: 60px;
   max-width: 100%;
   object-fit: contain;
   object-position: left center;
@@ -90,13 +90,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 54px;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 8px 12px;
   text-decoration: none;
-  color: #fff;
-  border: 1px solid rgba(195, 234, 244, 0.45);
-  background: linear-gradient(140deg, rgba(15, 59, 91, 0.94), rgba(35, 127, 163, 0.9));
-  box-shadow: 0 10px 20px rgba(8, 26, 40, 0.24);
+  color: #0d2f49;
+  border: 1px solid rgba(29, 109, 148, 0.35);
+  background: #f8fdff;
+  box-shadow: 0 2px 8px rgba(10, 46, 70, 0.1);
 }
 
 .header-call-label {
@@ -106,40 +106,42 @@ body {
   letter-spacing: 0.04em;
   white-space: nowrap;
   text-align: center;
+  color: #226c93;
 }
 
 .header-call-number {
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 900;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   line-height: 1.15;
   white-space: nowrap;
   text-align: center;
+  color: #0f3048;
 }
 
 .header-consult-btn {
   grid-area: menu;
-  border: 2px solid rgba(230, 249, 255, 0.92);
-  border-radius: 12px;
+  border: 1px solid #1f6f99;
+  border-radius: 10px;
   min-height: 54px;
-  min-width: 180px;
+  min-width: 172px;
   padding: 8px 10px;
   cursor: pointer;
   font-family: var(--font-heading);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   line-height: 1.2;
   white-space: nowrap;
   text-align: center;
   color: #fff;
-  background: linear-gradient(140deg, #17668e, #2a9ec1);
-  box-shadow: 0 10px 20px rgba(8, 29, 48, 0.26);
+  background: #1f78a4;
+  box-shadow: 0 2px 8px rgba(10, 52, 77, 0.18);
 }
 
 .header-consult-btn:hover {
-  filter: brightness(1.06);
+  background: #1a678e;
 }
 
 .header-menu {
@@ -1492,20 +1494,20 @@ body.is-landing .landing-only {
       "call menu";
     align-items: stretch;
     min-height: auto;
-    padding: 8px 10px;
-    gap: 6px;
+    padding: 7px 10px;
+    gap: 5px;
   }
 
   .header-left {
     grid-area: logo;
     width: 100%;
-    min-height: 50px;
+    min-height: 48px;
     justify-content: center;
     padding: 0 2px;
   }
 
   .header-logo {
-    height: 50px;
+    height: 48px;
     max-width: min(100%, 330px);
     object-position: center center;
   }
@@ -1520,11 +1522,11 @@ body.is-landing .landing-only {
 
   .header-call-cta,
   .header-consult-btn {
-    min-height: 44px;
+    min-height: 42px;
     border-radius: 10px;
     width: 100%;
     min-width: 0;
-    padding: 5px 8px;
+    padding: 5px 7px;
   }
 
   .header-call-label {
@@ -1532,12 +1534,12 @@ body.is-landing .landing-only {
   }
 
   .header-call-number {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     letter-spacing: 0.02em;
   }
 
   .header-consult-btn {
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     letter-spacing: 0.01em;
   }
 
@@ -1730,20 +1732,20 @@ body.is-landing .landing-only {
 
   .header-left {
     width: 100%;
-    min-height: 44px;
+    min-height: 42px;
     justify-content: center;
     padding: 0 2px;
   }
 
   .header-logo {
-    height: 44px;
+    height: 42px;
     max-width: min(100%, 290px);
     object-position: center center;
   }
 
   .header-call-cta,
   .header-consult-btn {
-    min-height: 38px;
+    min-height: 36px;
     min-width: auto;
     width: 100%;
     padding: 4px 5px;
@@ -1755,12 +1757,12 @@ body.is-landing .landing-only {
   }
 
   .header-call-number {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     letter-spacing: 0.01em;
   }
 
   .header-consult-btn {
-    font-size: 0.54rem;
+    font-size: 0.52rem;
     letter-spacing: 0;
   }
 }
