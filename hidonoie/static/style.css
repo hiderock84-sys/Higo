@@ -47,11 +47,11 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: minmax(340px, 1fr) 218px 172px;
+  grid-template-columns: minmax(300px, 1fr) 206px 164px;
   align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  min-height: 68px;
+  gap: 6px;
+  padding: 6px 10px;
+  min-height: 60px;
   background: rgba(252, 255, 255, 0.96);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 14px rgba(7, 28, 45, 0.14);
@@ -67,7 +67,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  min-height: 52px;
+  min-height: 44px;
   text-decoration: none;
   background: transparent;
   border: 0;
@@ -77,21 +77,21 @@ body {
 .header-logo {
   display: block;
   width: auto;
-  height: 52px;
+  height: 44px;
   max-width: 100%;
   object-fit: contain;
   object-position: left center;
 }
 
 .header-call-cta {
-  grid-area: call;
+  grid-area: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 44px;
-  border-radius: 8px;
-  padding: 6px 10px;
+  min-height: 40px;
+  border-radius: 7px;
+  padding: 5px 8px;
   text-decoration: none;
   color: #0d2f49;
   border: 1px solid rgba(29, 109, 148, 0.35);
@@ -101,7 +101,7 @@ body {
 
 .header-call-label {
   font-family: var(--font-heading);
-  font-size: 0.56rem;
+  font-size: 0.52rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -111,7 +111,7 @@ body {
 
 .header-call-number {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.03em;
   line-height: 1.15;
@@ -121,15 +121,15 @@ body {
 }
 
 .header-consult-btn {
-  grid-area: menu;
+  grid-area: auto;
   border: 1px solid #1f6f99;
-  border-radius: 8px;
-  min-height: 44px;
-  min-width: 172px;
-  padding: 6px 9px;
+  border-radius: 7px;
+  min-height: 40px;
+  min-width: 164px;
+  padding: 5px 8px;
   cursor: pointer;
   font-family: var(--font-heading);
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1.2;
@@ -1488,58 +1488,47 @@ body.is-landing .landing-only {
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "logo logo"
-      "call menu";
-    align-items: stretch;
-    min-height: auto;
+    grid-template-columns: minmax(150px, 1.2fr) minmax(126px, 1fr) minmax(112px, 1fr);
+    align-items: center;
+    min-height: 54px;
     padding: 5px 8px;
-    gap: 4px;
+    gap: 5px;
   }
 
   .header-left {
-    grid-area: logo;
+    grid-area: auto;
     width: 100%;
-    min-height: 40px;
-    justify-content: center;
+    min-height: 38px;
+    justify-content: flex-start;
     padding: 0;
   }
 
   .header-logo {
-    height: 40px;
-    max-width: min(100%, 330px);
-    object-position: center center;
-  }
-
-  .header-call-cta {
-    grid-area: call;
-  }
-
-  .header-consult-btn {
-    grid-area: menu;
+    height: 38px;
+    max-width: 100%;
+    object-position: left center;
   }
 
   .header-call-cta,
   .header-consult-btn {
-    min-height: 36px;
-    border-radius: 8px;
+    min-height: 34px;
+    border-radius: 7px;
     width: 100%;
     min-width: 0;
     padding: 4px 6px;
   }
 
   .header-call-label {
-    font-size: 0.42rem;
+    font-size: 0.4rem;
   }
 
   .header-call-number {
-    font-size: 0.74rem;
+    font-size: 0.68rem;
     letter-spacing: 0.02em;
   }
 
   .header-consult-btn {
-    font-size: 0.56rem;
+    font-size: 0.52rem;
     letter-spacing: 0.01em;
   }
 
@@ -1721,31 +1710,28 @@ body.is-landing .landing-only {
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "logo logo"
-      "call menu";
-    min-height: auto;
+    grid-template-columns: minmax(132px, 1.2fr) minmax(112px, 1fr) minmax(102px, 1fr);
+    min-height: 48px;
     padding: 4px 6px;
     gap: 3px;
   }
 
   .header-left {
     width: 100%;
-    min-height: 34px;
-    justify-content: center;
+    min-height: 32px;
+    justify-content: flex-start;
     padding: 0;
   }
 
   .header-logo {
-    height: 34px;
-    max-width: min(100%, 290px);
-    object-position: center center;
+    height: 32px;
+    max-width: 100%;
+    object-position: left center;
   }
 
   .header-call-cta,
   .header-consult-btn {
-    min-height: 32px;
+    min-height: 30px;
     min-width: auto;
     width: 100%;
     padding: 3px 4px;
@@ -1753,16 +1739,16 @@ body.is-landing .landing-only {
   }
 
   .header-call-label {
-    font-size: 0.36rem;
+    font-size: 0.34rem;
   }
 
   .header-call-number {
-    font-size: 0.66rem;
+    font-size: 0.6rem;
     letter-spacing: 0.01em;
   }
 
   .header-consult-btn {
-    font-size: 0.48rem;
+    font-size: 0.44rem;
     letter-spacing: 0;
   }
 }
