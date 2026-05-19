@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260519e" rel="stylesheet">
+  <link href="/static/style.css?v=20260519f" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -88,43 +88,39 @@
 
   <div class="trust-bar" aria-label="安心の取り組み">
     <div class="trust-bar-inner">
-      <span class="trust-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        秘密厳守
-      </span>
-      <span class="trust-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        初回相談無料
-      </span>
-      <span class="trust-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        医療・行政連携
-      </span>
-      <span class="trust-bar-item trust-bar-item--accent">女性専用施設「らぽーる」</span>
+      <p class="trust-bar-brand">一般社団法人ひごのいえ｜熊本県御船町</p>
+      <div class="trust-bar-items">
+        <span class="trust-bar-item">秘密厳守</span>
+        <span class="trust-bar-item">初回相談無料</span>
+        <span class="trust-bar-item">医療・行政連携</span>
+        <span class="trust-bar-item trust-bar-item--accent">女性専用施設「らぽーる」</span>
+      </div>
     </div>
   </div>
 
-  <header class="header" id="siteHeader">
-    <div class="header-shell">
-      <a href="/" class="header-left" aria-label="一般社団法人ひごのいえ トップへ戻る">
-        <img src="/static/higonoie-header-logo-complete-final-cutout.png?v=20260519e" alt="一般社団法人ひごのいえ ロゴ" class="header-logo" width="200" height="31">
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__brand" aria-label="一般社団法人ひごのいえ トップへ戻る">
+        <img src="/static/higonoie-header-logo-complete-final-cutout.png?v=20260519f" alt="一般社団法人ひごのいえ" class="site-header__logo" width="200" height="36">
+        <span class="site-header__tagline">KUMAMOTO RECOVERY HOME</span>
       </a>
-      <nav class="header-nav" aria-label="主要ナビゲーション">
-        <a href="/about" class="header-nav-link">私たちについて</a>
-        <a href="/program" class="header-nav-link">プログラム</a>
-        <a href="/rapport" class="header-nav-link">女性専用</a>
-        <a href="/guide" class="header-nav-link">利用案内</a>
-        <a href="/contact" class="header-nav-link">相談窓口</a>
+      <nav class="site-header__nav" aria-label="主要ナビゲーション">
+        <a href="/about" class="site-header__link">私たちについて</a>
+        <a href="/program" class="site-header__link">プログラム</a>
+        <a href="/staff" class="site-header__link">スタッフ</a>
+        <a href="/rapport" class="site-header__link">女性専用</a>
+        <a href="/guide" class="site-header__link">利用案内</a>
+        <a href="/contact" class="site-header__link">相談窓口</a>
       </nav>
-      <div class="header-actions">
-        <a href="tel:0964-41-2387" class="header-call-cta">
-          <span class="header-call-label">今すぐ電話相談</span>
-          <span class="header-call-number">0964-41-2387</span>
+      <div class="site-header__actions">
+        <a href="tel:0964-41-2387" class="site-header__phone">
+          <span class="site-header__phone-label">電話相談</span>
+          <span class="site-header__phone-number">0964-41-2387</span>
         </a>
-        <a href="/contact" class="header-primary-cta">無料相談</a>
-        <button type="button" class="header-consult-btn header-sections-btn" id="sectionTabButton" aria-label="ご案内メニューを開く">メニュー</button>
-        <button class="header-menu" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
-          <span class="header-menu-icon" aria-hidden="true"></span>
+        <a href="/contact" class="site-header__cta">無料相談</a>
+        <button type="button" class="site-header__menu-btn" id="sectionTabButton" aria-label="ご案内メニューを開く">メニュー</button>
+        <button type="button" class="site-header__menu-toggle" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
+          <span class="site-header__menu-icon" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -631,13 +627,13 @@
     <p class="section-kicker">OUR STAFF</p>
     <h2 class="section-title">スタッフ紹介</h2>
     <figure class="staff-activity-visual">
-      <img src="/static/staff-fellowship.jpg?v=20260519a" alt="アジア人の男女が笑顔で交流するフェローシップの様子">
+      <img src="/static/staff-fellowship.jpg?v=20260519f" alt="スタッフと利用者が笑顔で交流するフェローシップの様子" width="2400" height="1602" loading="lazy">
     </figure>
 
     <div class="leader-message">
       <h3>一般社団法人ひごのいえ 代表理事 栃原 晋太郎 メッセージ</h3>
       <div class="leader-profile">
-        <img src="http://nagoya.ciao.jp/wp/wp-content/uploads/2016/07/main_darc.jpg" alt="代表理事 栃原晋太郎氏プロフィール画像" class="leader-profile-image">
+        <img src="/static/tochihara-shintaro.jpg?v=20260519f" alt="代表理事 栃原晋太郎氏のプロフィール写真（薬物依存症回復支援の現場で）" class="leader-profile-image" width="240" height="334" loading="lazy" decoding="async">
         <div class="leader-profile-copy">
           <p class="leader-profile-name">栃原 晋太郎　一般社団法人ひごのいえ代表理事</p>
           <p>
@@ -732,48 +728,54 @@
     <a href="/contact" class="mobile-cta-bar-primary">無料相談</a>
   </aside>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section footer-section-brand">
-        <div class="footer-brand-row">
-          <div class="footer-logo-container">
-            <img src="/static/higonoie-full-logo-transparent.png?v=20260514f" alt="一般社団法人 ひごのいえ 木のロゴ" class="footer-logo">
-          </div>
-          <div class="footer-brand-copy">
-            <p class="footer-lead">KUMAMOTO NATURE RECOVERY HOME</p>
-            <div class="footer-info">一般社団法人ひごのいえ</div>
-            <div class="footer-info">〒861-3200 熊本県上益城郡御船町</div>
-            <div class="footer-info">TEL: 0964-41-2387</div>
-            <div class="footer-info">Email: info@higonoie.or.jp</div>
-          </div>
+  <footer class="site-footer">
+    <div class="site-footer__cta-band">
+      <div class="site-footer__cta-inner">
+        <div class="site-footer__cta-copy">
+          <p class="site-footer__cta-eyebrow">RECOVERY SUPPORT DESK</p>
+          <h2 class="site-footer__cta-title">まずは、安心してご相談ください</h2>
+          <p class="site-footer__cta-text">初回相談無料・秘密厳守。ご本人・ご家族・関係機関からのお問い合わせに対応しています。</p>
+        </div>
+        <div class="site-footer__cta-actions">
+          <a href="tel:0964-41-2387" class="site-footer__cta-phone">0964-41-2387</a>
+          <a href="/contact" class="site-footer__cta-button">相談窓口へ</a>
         </div>
       </div>
-      <div class="footer-section footer-nav-section">
-        <h4 class="footer-nav-title">ナビゲーション</h4>
-        <a href="/about" class="footer-nav-item">私たちについて</a>
-        <a href="/staff" class="footer-nav-item">スタッフ紹介</a>
-        <a href="/program" class="footer-nav-item">プログラム</a>
-        <a href="/testimonials" class="footer-nav-item">体験談</a>
-        <a href="/rapport" class="footer-nav-item">女性専用施設</a>
-        <a href="/grouphome" class="footer-nav-item">グループホーム</a>
-        <a href="/guide" class="footer-nav-item">利用案内</a>
-        <a href="/family-guide" class="footer-nav-item">家族ガイド</a>
-        <a href="/contact" class="footer-nav-item">相談窓口</a>
-        <a href="/top" class="footer-nav-item">トップ</a>
-      </div>
-      <div class="consultation-section">
-        <h4 class="consultation-title">相談窓口</h4>
-        <div class="consultation-info">電話相談: 0964-41-2387</div>
-        <div class="consultation-info">受付時間: 平日 10:00-17:00</div>
-        <div class="consultation-info">メール相談: info@higonoie.or.jp</div>
-        <div class="consultation-info">面談: 予約制</div>
-        <div class="consultation-note">
-          ご家族からのご相談も承ります。<br>
-          お気軽にお問い合わせください。
+    </div>
+    <div class="site-footer__main">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <img src="/static/higonoie-full-logo-transparent.png?v=20260519f" alt="一般社団法人 ひごのいえ" class="site-footer__logo" width="88" height="88">
+          <p class="site-footer__org">一般社団法人ひごのいえ</p>
+          <p class="site-footer__address">〒861-3200 熊本県上益城郡御船町</p>
+          <p class="site-footer__contact-line">TEL 0964-41-2387｜info@higonoie.or.jp</p>
         </div>
+        <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">施設について</h3>
+            <a href="/about">私たちについて</a>
+            <a href="/staff">スタッフ紹介</a>
+            <a href="/program">プログラム</a>
+            <a href="/testimonials">体験談</a>
+          </div>
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">サービス</h3>
+            <a href="/rapport">女性専用施設</a>
+            <a href="/grouphome">グループホーム</a>
+            <a href="/guide">利用案内</a>
+            <a href="/family-guide">家族ガイド</a>
+          </div>
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">サポート</h3>
+            <a href="/contact">相談窓口</a>
+            <a href="/top">トップ</a>
+            <a href="tel:0964-41-2387">電話相談（平日10:00–17:00）</a>
+          </div>
+        </nav>
       </div>
-      <div class="copyright">
-        © 2026 一般社団法人ひごのいえ All Rights Reserved.
+      <div class="site-footer__legal">
+        <p>© 2026 一般社団法人ひごのいえ All Rights Reserved.</p>
+        <p class="site-footer__legal-note">依存症回復支援施設｜熊本の自然と地域連携を活かした包括的支援</p>
       </div>
     </div>
   </footer>
@@ -894,7 +896,7 @@
     const siteHeader = document.getElementById('siteHeader');
     const setHeaderState = () => {
       if (!siteHeader) return;
-      siteHeader.classList.toggle('header--scrolled', window.scrollY > 12);
+      siteHeader.classList.toggle('site-header--scrolled', window.scrollY > 12);
     };
     setHeaderState();
     window.addEventListener('scroll', setHeaderState, { passive: true });
