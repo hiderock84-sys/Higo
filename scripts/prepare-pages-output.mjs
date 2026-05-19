@@ -26,7 +26,18 @@ const cleanupAssets = [
   ...targets.map((target) => path.join(target, 'static', 'logo-design.jpg')),
 ]
 
+async function syncStaticAssetsToDist() {
+  const sourceIndex = path.join(projectRoot, 'index.html')
+  const sourceStaticDir = path.join(projectRoot, 'public', 'static')
+  const distStaticDir = path.join(distDir, 'static')
+
+  await mkdir(distStaticDir, { recursive: true })
+  await cp(sourceIndex, path.join(distDir, 'index.html'))
+  await cp(sourceStaticDir, distStaticDir, { recursive: true })
+}
+
 async function copyDistToTargets() {
+  await syncStaticAssetsToDist()
   for (const target of targets) {
     await rm(target, { recursive: true, force: true })
     await mkdir(path.dirname(target), { recursive: true })
