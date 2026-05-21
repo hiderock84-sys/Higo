@@ -540,7 +540,7 @@ button:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 35%;
   z-index: 0;
   filter: brightness(1.1) saturate(1.14) contrast(1.03);
 }
@@ -1138,7 +1138,7 @@ button:focus-visible {
 }
 
 .nav-card-contact {
-  --card-image: url("/static/hero-nature-majestic.jpg");
+  --card-image: url("/static/amakusa-coast.jpg");
 }
 
 .detail-section .section-title {
