@@ -37,6 +37,8 @@
   --copy-line: 1.72;
   --copy-body: 0.9375rem;
   --copy-lead: 0.9375rem;
+  /* 短い見出し・肩書きは一行表示（font-size は各所で clamp 調整） */
+  --heading-oneline-size: clamp(0.6875rem, 2.85vw, 0.9375rem);
   --content-max: 1080px;
   --gutter: clamp(16px, 4vw, 28px);
 }
@@ -2248,9 +2250,28 @@ body.is-landing .nav-card-top {
   .site-copy .prose-lead,
   .site-copy .section-lead,
   .site-copy .leader-message > p,
-  .site-copy .leader-profile-copy p,
-  .site-copy .leader-profile-name,
-  .site-copy .leader-message__heading,
+  .site-copy .leader-profile-copy p {
+    word-break: normal;
+    overflow-wrap: anywhere;
+    text-wrap: wrap;
+  }
+
+  .leader-message__heading.heading-oneline {
+    font-size: clamp(1rem, 4.6vw, 1.125rem);
+    letter-spacing: 0.05em;
+  }
+
+  .leader-profile-name.heading-oneline {
+    font-size: clamp(0.625rem, 2.9vw, 0.875rem);
+    letter-spacing: -0.02em;
+  }
+
+  .heading-oneline {
+    white-space: nowrap;
+    text-wrap: nowrap;
+    overflow-wrap: normal;
+  }
+
   .program-page__lead p,
   .program-page .program-manifesto p,
   .program-page .program-section-lead,
@@ -3209,24 +3230,27 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   margin-bottom: 18px;
 }
 
-.leader-message__heading {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35em;
-  margin: 0 0 14px;
-  font-family: var(--font-heading);
-  font-size: clamp(0.9375rem, 2.6vw, 1.0625rem);
-  font-weight: 700;
-  line-height: 1.45;
-  color: #164868;
+/* 一行見出し — 2行に割れて中途半端に見えるのを防ぐ（全ページ共通の基本） */
+.heading-oneline {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
   word-break: normal;
-  overflow-wrap: break-word;
-  text-wrap: wrap;
+  overflow: hidden;
+  text-overflow: clip;
+  box-sizing: border-box;
 }
 
-.leader-message__line {
-  display: block;
+.leader-message__heading {
+  margin: 0 0 16px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.0625rem, 5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #164868;
+  letter-spacing: 0.06em;
 }
 
 .leader-profile {
@@ -3269,12 +3293,11 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 
 .leader-profile-name {
   font-family: var(--font-heading);
-  font-size: 0.9375rem;
+  font-size: var(--heading-oneline-size);
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.35;
   color: #134561;
-  word-break: normal;
-  overflow-wrap: break-word;
+  letter-spacing: -0.01em;
 }
 
 .leader-profile-copy {
