@@ -8,7 +8,20 @@ if (!hasToken) {
   process.exit(0)
 }
 
-const wranglerArgs = ['wrangler', 'pages', 'deploy', 'dist', ...args]
+const projectFlag = args.find((a) => a.startsWith('--project-name'))
+const projectName =
+  projectFlag?.split('=')[1] ||
+  process.env.CLOUDFLARE_PAGES_PROJECT ||
+  'higo-8il'
+const wranglerArgs = [
+  'wrangler',
+  'pages',
+  'deploy',
+  'dist',
+  '--project-name',
+  projectName,
+  ...args.filter((a) => !a.startsWith('--project-name')),
+]
 const child = spawn('npx', wranglerArgs, { stdio: 'inherit', shell: false })
 
 child.on('exit', (code) => {
