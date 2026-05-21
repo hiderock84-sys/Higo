@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260528" rel="stylesheet">
+  <link href="/static/style.css?v=20260529" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -475,98 +475,285 @@
     <p class="section-kicker">GROUP HOME</p>
     <h2 class="section-title">グループホーム</h2>
     <p class="prose-lead">
-      ひごのいえのグループホームは、障害福祉サービス「共同生活援助（グループホーム）」に基づく住まいです。依存症回復と生活再建を、共同生活のなかで丁寧に支えます。
+      ひごのいえのグループホームは、障害福祉サービス「<strong>共同生活援助</strong>」（一般的にグループホームと呼ばれます）に基づく住まいです。依存症回復と生活再建を、共同生活のなかで、医療・相談支援・行政と連携しながら支えます。
     </p>
 
-    <div class="info-panel">
-      <h3 class="info-panel__title">障害福祉サービスとは</h3>
-      <p class="info-panel__text">
-        障害のある方が地域で自分らしく暮らすため、国と自治体が整備している支援制度です。住まい・日中活動・就労・相談など、生活の場面ごとにサービスが用意されています。
+    <div class="content-block">
+      <h3 class="content-block__title">障害福祉サービスとは</h3>
+      <p class="content-block__text">
+        障害のある方が地域で自分らしく暮らすため、国・都道府県・市町村が整備する支援制度です。住まい、日中活動、就労、相談など、生活の場面ごとにサービスが分かれており、<strong>利用者一人ひとりの状況に応じて支給決定</strong>されます（一律ではありません）。
+      </p>
+      <p class="content-block__text">
+        共同生活援助は「<strong>訓練等給付</strong>」に位置づけられ、主に<strong>夜間</strong>の共同生活の場で、日常生活上の援助を受けるサービスです（厚生労働省の公表内容に基づく概要）。
       </p>
     </div>
 
-    <figure class="service-diagram" aria-label="障害福祉サービスとグループホームの位置づけ">
-      <div class="service-diagram__track">
-        <div class="service-diagram__box">
-          <span class="service-diagram__label">障害福祉サービス</span>
-          <span class="service-diagram__desc">地域で暮らすための支援制度</span>
-        </div>
-        <span class="service-diagram__arrow" aria-hidden="true">→</span>
-        <div class="service-diagram__box service-diagram__box--accent">
-          <span class="service-diagram__label">共同生活援助</span>
-          <span class="service-diagram__desc">いわゆる「グループホーム」</span>
-        </div>
-        <span class="service-diagram__arrow" aria-hidden="true">→</span>
-        <div class="service-diagram__box">
-          <span class="service-diagram__label">ひごのいえ</span>
-          <span class="service-diagram__desc">回復と生活再建に特化した運営</span>
-        </div>
-      </div>
-      <figcaption class="service-diagram__caption">共同生活援助は、障害福祉サービスのひとつで、少人数の共同生活を通じて自立を支援します。</figcaption>
-    </figure>
-
-    <div class="info-panel">
-      <h3 class="info-panel__title">グループホーム（共同生活援助）の制度</h3>
-      <ul class="info-list">
-        <li>少人数の共同生活を通じ、食事・睡眠・掃除・金銭管理など日常生活を整えます。</li>
-        <li>世話人・生活支援員が24時間体制で見守り、安心して過ごせる環境をつくります。</li>
-        <li>利用には<strong>障害福祉サービス受給者証</strong>が必要です（申請は自治体で審査）。</li>
-        <li>利用者負担額は所得に応じて決まります（上限月額など、自治体・制度により異なります）。</li>
-      </ul>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>障害福祉サービスの主な区分（概要）</caption>
+        <thead>
+          <tr>
+            <th scope="col">区分</th>
+            <th scope="col">内容のイメージ</th>
+            <th scope="col">例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">介護給付</th>
+            <td>身体の介護が中心</td>
+            <td>居宅介護、重度訪問介護、行動援護 など</td>
+          </tr>
+          <tr>
+            <th scope="row">訓練等給付</th>
+            <td>生活・就労・共同生活の支援</td>
+            <td>生活介護、就労移行支援、<strong>共同生活援助</strong> など</td>
+          </tr>
+          <tr>
+            <th scope="row">地域生活支援事業</th>
+            <td>市町村の独自事業</td>
+            <td>地域の状況に応じた柔軟な支援</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <h3 class="subsection-title">ご利用までの流れ</h3>
-    <ol class="info-flow" aria-label="グループホーム利用の流れ">
-      <li class="info-flow__step">
-        <span class="info-flow__num">1</span>
-        <div class="info-flow__body">
-          <strong>ご相談・見学</strong>
-          <p>お電話・メールで現状をお聞きし、施設の雰囲気や支援方針をご説明します。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">2</span>
-        <div class="info-flow__body">
-          <strong>受給者証の確認</strong>
-          <p>お持ちの場合は内容を確認。未申請の方は、自治体・相談支援専門員と連携して手続きを進めます。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">3</span>
-        <div class="info-flow__body">
-          <strong>利用調整・面談</strong>
-          <p>相談支援専門員・医療機関と連携し、入居時期と支援計画のたたき台を作成します。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">4</span>
-        <div class="info-flow__body">
-          <strong>契約・入居</strong>
-          <p>共同生活のルールを共有し、生活リズムの再建をスタートします。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">5</span>
-        <div class="info-flow__body">
-          <strong>地域生活への移行</strong>
-          <p>就労・家族連携・行政手続きを含め、無理のない自立へ段階的に伴走します。</p>
-        </div>
-      </li>
-    </ol>
+    <div class="content-block">
+      <h3 class="content-block__title">共同生活援助（グループホーム）とは</h3>
+      <p class="content-block__text">
+        障害者が<strong>共同生活を営む住居</strong>において、主として夜間に、相談・入浴・排せつ・食事の介護その他の日常生活上の援助を受けるサービスです。世話人・生活支援員が配置され、少人数の共同生活を通じて、地域での自立を目指します。
+      </p>
+    </div>
 
-    <div class="support-pillars" aria-label="ひごのいえのグループホームで行う支援">
-      <article class="support-pillar">
-        <h4>生活リズム</h4>
-        <p>睡眠・食事・服薬・通院を整え、再発しにくい毎日の型をつくります。</p>
-      </article>
-      <article class="support-pillar">
-        <h4>対人・心理</h4>
-        <p>共同生活のなかで、孤立を防ぎ、距離感と感情の扱いを練習します。</p>
-      </article>
-      <article class="support-pillar">
-        <h4>社会復帰</h4>
-        <p>就労準備・家族連携・行政手続きまで、出口を見据えて計画します。</p>
-      </article>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>共同生活援助の主な類型（参考：自治体・事業所の運営方針により異なります）</caption>
+        <thead>
+          <tr>
+            <th scope="col">類型</th>
+            <th scope="col">特徴</th>
+            <th scope="col">留意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">外部サービス利用型</th>
+            <td>日中は就労・生活介護等を利用し、夜はグループホームで生活</td>
+            <td>日中活動の確保が前提となる場合があります</td>
+          </tr>
+          <tr>
+            <th scope="row">日中サービス支援型</th>
+            <td>日中の支援と住まいの支援を組み合わせ</td>
+            <td>個別の支援計画に基づき調整</td>
+          </tr>
+          <tr>
+            <th scope="row">介護サービス包括型</th>
+            <td>住まいと介護的支援を一体的に受ける形態</td>
+            <td>支援区分・状態により可否が異なります</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>利用の主な要件（概要）</caption>
+        <thead>
+          <tr>
+            <th scope="col">項目</th>
+            <th scope="col">内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">対象</th>
+            <td>障害者（身体・知的・精神障害など。年齢・障害種別により細則あり）</td>
+          </tr>
+          <tr>
+            <th scope="row">人数</th>
+            <td>共同生活の人数は、原則<strong>2人以上10人以下</strong>（事業所・住居単位）</td>
+          </tr>
+          <tr>
+            <th scope="row">受給者証</th>
+            <td><strong>障害福祉サービス受給者証</strong>が必要（市町村が支給決定）</td>
+          </tr>
+          <tr>
+            <th scope="row">支援計画</th>
+            <td>相談支援専門員による<strong>サービス等利用計画</strong>を作成・運用</td>
+          </tr>
+          <tr>
+            <th scope="row">支給決定</th>
+            <td>利用日数・サービス種別・自己負担額等は<strong>自治体の審査</strong>により決定</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table__note">※可否・日数は個別審査のため、相談時に現状を整理することが重要です。</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>費用の考え方（2つの層）</caption>
+        <thead>
+          <tr>
+            <th scope="col">費用の種類</th>
+            <th scope="col">内容</th>
+            <th scope="col">負担の目安</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">サービス利用料</th>
+            <td>障害福祉サービスとしての利用料（国保連請求・自己負担あり）</td>
+            <td>所得に応じた<strong>自己負担上限月額</strong>等（原則1割負担・上限適用）</td>
+          </tr>
+          <tr>
+            <th scope="row">実費</th>
+            <td>食費、光熱水費、日用品、居住に関わる費用 など</td>
+            <td>事業所の実費規定に基づき負担</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table__note">※18歳以上は利用者・配偶者の所得に応じて負担額が決まります。詳細は自治体・相談支援専門員へご確認ください。</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>受給者証取得までの流れ（制度上の一般的な流れ）</caption>
+        <thead>
+          <tr>
+            <th scope="col">順番</th>
+            <th scope="col">手続き</th>
+            <th scope="col">担当</th>
+            <th scope="col">目安</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>市町村の障害福祉窓口へ相談</td>
+            <td>お住まいの自治体</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>相談支援専門員との面談・アセスメント</td>
+            <td>相談支援事業所</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>サービス等利用計画の作成</td>
+            <td>相談支援専門員</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>支給申請・審査</td>
+            <td>市町村</td>
+            <td>数週間〜</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>支給決定通知・受給者証交付</td>
+            <td>市町村</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>事業所との契約・利用開始</td>
+            <td>グループホーム</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table__note">※所要期間は自治体・申請状況により異なります（おおむね数週間〜1か月程度の事例が多いです）。</p>
+    </div>
+
+    <div class="content-block">
+      <h3 class="content-block__title">ひごのいえのグループホームで行う支援</h3>
+      <p class="content-block__text">
+        制度上の共同生活援助に加え、依存症回復の視点から、生活リズム・服薬・対人関係・再発予防を重視します。単なる「入居」ではなく、<strong>地域生活への移行</strong>まで見据えた支援計画を一緒につくります。
+      </p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>ひごのいえの支援内容一覧</caption>
+        <thead>
+          <tr>
+            <th scope="col">領域</th>
+            <th scope="col">支援内容</th>
+            <th scope="col">ねらい</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">生活リズム</th>
+            <td>睡眠・食事・清掃・金銭管理の見守りと習慣化</td>
+            <td>再発しにくい毎日の型をつくる</td>
+          </tr>
+          <tr>
+            <th scope="row">医療連携</th>
+            <td>通院・服薬・受診調整、かかりつけ医との情報共有</td>
+            <td>心身の安定を土台にする</td>
+          </tr>
+          <tr>
+            <th scope="row">心理・対人</th>
+            <td>共同生活での距離感、孤立防止、ピア・スタッフとの対話</td>
+            <td>人との関わりを取り戻す</td>
+          </tr>
+          <tr>
+            <th scope="row">家族連携</th>
+            <td>家族会・面談・境界線の整理</td>
+            <td>支え合いが続く関係を再設計</td>
+          </tr>
+          <tr>
+            <th scope="row">社会復帰</th>
+            <td>就労準備、日中活動、行政手続きの伴走</td>
+            <td>無理のない自立へ段階的に移行</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>ひごのいえでのご利用の流れ</caption>
+        <thead>
+          <tr>
+            <th scope="col">段階</th>
+            <th scope="col">内容</th>
+            <th scope="col">ひごのいえの対応</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">① 相談</th>
+            <td>電話・メールでの初回相談（無料・秘密厳守）</td>
+            <td>現状・ご希望・受給者証の有無を確認</td>
+          </tr>
+          <tr>
+            <th scope="row">② 見学</th>
+            <td>施設の雰囲気・支援方針の確認</td>
+            <td>事前予約で見学・面談を調整</td>
+          </tr>
+          <tr>
+            <th scope="row">③ 手続き支援</th>
+            <td>受給者証・利用計画・関係機関連携</td>
+            <td>相談支援専門員・自治体と連携し伴走</td>
+          </tr>
+          <tr>
+            <th scope="row">④ 入居・生活開始</th>
+            <td>共同生活ルールの共有、生活リズムの再建</td>
+            <td>個別支援計画に沿ってスタート</td>
+          </tr>
+          <tr>
+            <th scope="row">⑤ 移行</th>
+            <td>退所・一人暮らし・就労等への準備</td>
+            <td>出口を見据えた段階的な計画</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <figure class="home-showcase-single">
@@ -575,74 +762,162 @@
     </figure>
 
     <div class="page-cta-box">
-      <p>「何から始めればよいか分からない」段階から、スタッフが手続きと生活設計を伴走します。</p>
+      <p>受給者証の有無や申請方法が分からない段階でもご相談ください。スタッフが手続きと生活設計を伴走します。</p>
       <a href="/contact" class="page-cta-link">相談窓口へ</a>
       <a href="/guide" class="page-cta-link page-cta-link--ghost">利用案内を見る</a>
     </div>
+
+    <p class="ref-note">
+      参考：厚生労働省「障害福祉サービスの内容」、障害福祉サービス等利用手帳（WAM NET）共同生活援助の解説など、公的情報をもとにひごのいえが分かりやすく整理した概要です。個別の支給可否・負担額は<strong>お住まいの市町村</strong>の判断となります。
+      <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/service/naiyou.html" rel="noopener noreferrer" target="_blank">厚生労働省：障害福祉サービスの内容</a>
+    </p>
   </section>
 
   <section class="content-section detail-section standalone-page" id="guide">
     <p class="section-kicker">USER GUIDE</p>
     <h2 class="section-title">利用案内</h2>
     <p class="prose-lead">
-      初回相談から入所・プログラム・退所後の生活再建まで、一人ひとりのペースで伴走します。まずはお気軽にご相談ください（初回相談無料・秘密厳守）。
+      ひごのいえでは、初回相談（無料・秘密厳守）から、入所・グループホーム・女性専用施設「らぽーる」・退所後の生活再建まで、一人ひとりの状況に合わせて伴走します。まずはお気軽にご連絡ください。
     </p>
 
-    <div class="info-panel info-panel--highlight">
-      <h3 class="info-panel__title">こんな方にご利用いただいています</h3>
-      <ul class="info-list">
-        <li>薬物・アルコール・ギャンブル・処方薬などの依存症でお困りの方</li>
-        <li>再発を繰り返し、生活リズムを立て直したい方</li>
-        <li>ご家族・医療機関・行政からのご紹介で検討されている方</li>
-        <li>女性専用の安心できる環境をお探しの方（施設「らぽーる」）</li>
-      </ul>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>相談窓口・受付</caption>
+        <thead>
+          <tr>
+            <th scope="col">項目</th>
+            <th scope="col">内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">電話</th>
+            <td><a href="tel:0964-41-2387">0964-41-2387</a></td>
+          </tr>
+          <tr>
+            <th scope="row">受付時間</th>
+            <td>平日 10:00〜17:00（土日祝・時間外もご相談可。まずはお電話ください）</td>
+          </tr>
+          <tr>
+            <th scope="row">メール</th>
+            <td>info@higonoie.or.jp（24時間受付）</td>
+          </tr>
+          <tr>
+            <th scope="row">所在地</th>
+            <td>熊本県上益城郡御船町</td>
+          </tr>
+          <tr>
+            <th scope="row">初回相談</th>
+            <td><strong>無料</strong>・秘密厳守（ご本人・ご家族・関係機関）</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <h3 class="subsection-title">ご利用の流れ</h3>
-    <ol class="info-flow info-flow--guide" aria-label="ひごのいえの利用の流れ">
-      <li class="info-flow__step">
-        <span class="info-flow__num">1</span>
-        <div class="info-flow__body">
-          <strong>お問い合わせ（初回相談）</strong>
-          <p>電話・メールで現状をお聞きします。ご本人・ご家族・関係機関からの相談に対応します。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">2</span>
-        <div class="info-flow__body">
-          <strong>面談・見学</strong>
-          <p>支援方針・施設環境・プログラム内容をご説明。必要に応じて見学を調整します。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">3</span>
-        <div class="info-flow__body">
-          <strong>支援計画の作成</strong>
-          <p>医療機関・相談支援専門員・行政と連携し、入所・通所・グループホーム等の方針を整理します。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">4</span>
-        <div class="info-flow__body">
-          <strong>利用開始</strong>
-          <p>生活リズム・服薬・対人支援・ピアサポートなど、個別プランに沿って支援を開始します。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">5</span>
-        <div class="info-flow__body">
-          <strong>継続支援・家族連携</strong>
-          <p>再発予防と生活再建を見据え、家族会・面談・関係機関連携を継続します。</p>
-        </div>
-      </li>
-      <li class="info-flow__step">
-        <span class="info-flow__num">6</span>
-        <div class="info-flow__body">
-          <strong>退所・地域移行</strong>
-          <p>住居・就労・通院の段取りを整え、地域生活への移行を伴走します。</p>
-        </div>
-      </li>
-    </ol>
+    <div class="content-block">
+      <h3 class="content-block__title">ひごのいえで選べる主な支援</h3>
+      <p class="content-block__text">
+        状況に応じて、入所プログラム、グループホーム（共同生活援助）、女性専用施設、家族向け支援などを組み合わせます。最適な形は初回相談で一緒に整理します。
+      </p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>支援形態の一覧</caption>
+        <thead>
+          <tr>
+            <th scope="col">形態</th>
+            <th scope="col">内容</th>
+            <th scope="col">こんな方に</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">初回相談</th>
+            <td>電話・メールでの状況整理、支援の選択肢の説明</td>
+            <td>まず話を聞いてほしい方、情報が欲しい方</td>
+          </tr>
+          <tr>
+            <th scope="row">入所プログラム</th>
+            <td>施設内での回復支援・生活リズムの再建</td>
+            <td>集中的に整えたい方、医療連携が必要な方</td>
+          </tr>
+          <tr>
+            <th scope="row">グループホーム</th>
+            <td>共同生活援助に基づく地域生活の練習</td>
+            <td>自立に向けて共同生活を試したい方</td>
+          </tr>
+          <tr>
+            <th scope="row">女性専用「らぽーる」</th>
+            <td>女性のみの安心できる回復環境</td>
+            <td>女性が安心して過ごしたい方</td>
+          </tr>
+          <tr>
+            <th scope="row">家族向け支援</th>
+            <td>家族会・家族のみの相談・連携</td>
+            <td>ご家族が先に相談したい場合</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>ご利用の流れ（ひごのいえ）</caption>
+        <thead>
+          <tr>
+            <th scope="col">段階</th>
+            <th scope="col">内容</th>
+            <th scope="col">所要の目安</th>
+            <th scope="col">担当</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1. お問い合わせ</th>
+            <td>電話・メールでご相談。困りごと・既往・服薬・家族状況などをお聞きします</td>
+            <td>当日〜数日</td>
+            <td>ひごのいえ</td>
+          </tr>
+          <tr>
+            <th scope="row">2. 面談・見学</th>
+            <td>支援方針・施設・プログラムの説明。希望に応じて見学</td>
+            <td>1〜2週間</td>
+            <td>ひごのいえ</td>
+          </tr>
+          <tr>
+            <th scope="row">3. 支援計画</th>
+            <td>入所・GH・通院等の方針整理。医療機関・相談支援・行政と連携</td>
+            <td>個別</td>
+            <td>ひごのいえ＋関係機関</td>
+          </tr>
+          <tr>
+            <th scope="row">4. 手続き</th>
+            <td>受給者証・契約・入居日等の調整（GH利用時は自治体手続きを伴走）</td>
+            <td>数週間〜</td>
+            <td>相談支援・自治体</td>
+          </tr>
+          <tr>
+            <th scope="row">5. 利用開始</th>
+            <td>生活リズム・服薬・対人・ピア支援を個別プランで開始</td>
+            <td>—</td>
+            <td>ひごのいえ</td>
+          </tr>
+          <tr>
+            <th scope="row">6. 継続・家族連携</th>
+            <td>再発予防、家族会、関係機関との定期連携</td>
+            <td>継続</td>
+            <td>ひごのいえ</td>
+          </tr>
+          <tr>
+            <th scope="row">7. 地域移行</th>
+            <td>退所・一人暮らし・就労等への段階的な準備</td>
+            <td>個別</td>
+            <td>ひごのいえ＋関係機関</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <figure class="service-diagram service-diagram--vertical" aria-label="支援のつながり">
       <div class="service-diagram__track service-diagram__track--stack">
@@ -650,45 +925,142 @@
         <span class="service-diagram__arrow service-diagram__arrow--down" aria-hidden="true">↓</span>
         <div class="service-diagram__box service-diagram__box--accent">ひごのいえ</div>
         <span class="service-diagram__arrow service-diagram__arrow--down" aria-hidden="true">↓</span>
-        <div class="service-diagram__box">医療・相談支援・行政</div>
+        <div class="service-diagram__box">医療機関・相談支援専門員・自治体</div>
       </div>
-      <figcaption class="service-diagram__caption">一人で抱え込まず、関係機関と情報を共有しながら進めます。</figcaption>
+      <figcaption class="service-diagram__caption">情報を分断せず、関係機関と連携しながら進めます。</figcaption>
     </figure>
 
-    <div class="guide-grid">
-      <article class="guide-card">
-        <h3 class="guide-card__title">受付・相談</h3>
-        <dl class="guide-dl">
-          <dt>電話</dt>
-          <dd><a href="tel:0964-41-2387">0964-41-2387</a></dd>
-          <dt>受付時間</dt>
-          <dd>平日 10:00〜17:00</dd>
-          <dt>メール</dt>
-          <dd>info@higonoie.or.jp（24時間受付）</dd>
-        </dl>
-      </article>
-      <article class="guide-card">
-        <h3 class="guide-card__title">ご準備いただくもの（例）</h3>
-        <ul class="info-list">
-          <li>お薬手帳・通院情報（お持ちの場合）</li>
-          <li>障害福祉サービス受給者証（お持ちの場合）</li>
-          <li>これまでの支援履歴が分かる資料（任意）</li>
-        </ul>
-      </article>
-      <article class="guide-card">
-        <h3 class="guide-card__title">費用について</h3>
-        <p class="guide-card__text">
-          利用形態（入所・グループホーム・女性専用施設など）により異なります。初回相談時に、現状に合った選択肢と費用の考え方を分かりやすくご説明します。
-        </p>
-      </article>
-      <article class="guide-card">
-        <h3 class="guide-card__title">よくあるご質問</h3>
-        <ul class="info-list">
-          <li><strong>家族だけの相談は可能？</strong> — はい、秘密厳守で対応します。</li>
-          <li><strong>見学はできる？</strong> — 事前予約で調整します。</li>
-          <li><strong>女性だけの環境は？</strong> — 施設「らぽーる」をご案内します。</li>
-        </ul>
-      </article>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>初回相談でお聞きする主な内容</caption>
+        <thead>
+          <tr>
+            <th scope="col">分野</th>
+            <th scope="col">例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">お困りごと</th>
+            <td>依存の種類、再発歴、現在の生活状況</td>
+          </tr>
+          <tr>
+            <th scope="row">心身</th>
+            <td>通院・服薬、睡眠・食事の状態</td>
+          </tr>
+          <tr>
+            <th scope="row">家族</th>
+            <td>ご家族の負担、連携の希望（家族のみ相談も可）</td>
+          </tr>
+          <tr>
+            <th scope="row">制度</th>
+            <td>受給者証の有無、障害者手帳、他サービス利用状況</td>
+          </tr>
+          <tr>
+            <th scope="row">希望</th>
+            <td>入所・グループホーム・女性専用・見学の希望</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>ご準備いただくとスムーズなもの（任意を含む）</caption>
+        <thead>
+          <tr>
+            <th scope="col">書類・情報</th>
+            <th scope="col">用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">本人確認書類</th>
+            <td>面談・契約時</td>
+          </tr>
+          <tr>
+            <th scope="row">お薬手帳・通院情報</th>
+            <td>医療連携（お持ちの場合）</td>
+          </tr>
+          <tr>
+            <th scope="row">障害福祉サービス受給者証</th>
+            <td>グループホーム等の利用検討時</td>
+          </tr>
+          <tr>
+            <th scope="row">障害者手帳</th>
+            <td>支援区分・手続きの参考</td>
+          </tr>
+          <tr>
+            <th scope="row">これまでの支援履歴</th>
+            <td>入院・施設利用歴など（分かる範囲で）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>費用について（考え方）</caption>
+        <thead>
+          <tr>
+            <th scope="col">項目</th>
+            <th scope="col">説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">初回相談</th>
+            <td><strong>無料</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">入所・プログラム</th>
+            <td>利用形態・期間により異なります。相談時に概算をご説明します</td>
+          </tr>
+          <tr>
+            <th scope="row">グループホーム</th>
+            <td>サービス利用料（自己負担あり）＋食費・光熱費等の実費</td>
+          </tr>
+          <tr>
+            <th scope="row">女性専用施設</th>
+            <td>入所形態により個別見積り</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table__note">※詳細な金額は、支給決定・所得・利用プランにより変わります。無理な勧誘は行いません。</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>よくあるご質問</caption>
+        <thead>
+          <tr>
+            <th scope="col">質問</th>
+            <th scope="col">回答</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">家族だけ相談できる？</th>
+            <td>はい。秘密厳守で、ご家族のみの相談にも対応しています</td>
+          </tr>
+          <tr>
+            <th scope="row">見学はできる？</th>
+            <td>事前予約で調整します。受給者証がなくても見学・相談は可能です</td>
+          </tr>
+          <tr>
+            <th scope="row">受給者証がない</th>
+            <td>申請手続きの伴走を行います。まずは市町村・相談支援専門員との連携をご案内します</td>
+          </tr>
+          <tr>
+            <th scope="row">他県から利用できる？</th>
+            <td>状況によります。まずはご相談ください</td>
+          </tr>
+          <tr>
+            <th scope="row">女性だけの環境は？</th>
+            <td>女性専用施設「らぽーる」をご案内します（<a href="/rapport">詳細</a>）</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="support-banner">
@@ -697,8 +1069,13 @@
 
     <div class="page-cta-box">
       <a href="tel:0964-41-2387" class="page-cta-link">今すぐ電話相談</a>
-      <a href="/contact" class="page-cta-link page-cta-link--ghost">無料相談フォームへ</a>
+      <a href="/contact" class="page-cta-link page-cta-link--ghost">無料相談の詳細へ</a>
     </div>
+
+    <p class="ref-note">
+      参考：厚生労働省「サービスの利用手続き」等の公的情報をもとに整理した案内です。手続きの詳細は<strong>お住まいの市町村</strong>および<strong>相談支援専門員</strong>にご確認ください。
+      <a href="https://www.mhlw.go.jp/bunya/shougaihoken/service/riyou.html" rel="noopener noreferrer" target="_blank">厚生労働省：サービスの利用手続き</a>
+    </p>
   </section>
 
   <section class="content-section kyushu-nature-section landing-heavy" aria-label="九州の自然と回復環境">
