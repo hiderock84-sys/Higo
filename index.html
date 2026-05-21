@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260521b" rel="stylesheet">
+  <link href="/static/style.css?v=20260522b" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -117,8 +117,7 @@
           <span class="site-header__phone-label">電話相談</span>
           <span class="site-header__phone-number">0964-41-2387</span>
         </a>
-        <a href="/contact" class="site-header__cta">無料相談</a>
-        <button type="button" class="site-header__menu-btn" id="sectionTabButton" aria-label="ご案内メニューを開く">メニュー</button>
+        <a href="/contact" class="site-header__cta site-header__cta--desktop">無料相談</a>
         <button type="button" class="site-header__menu-toggle" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
           <span class="site-header__menu-icon" aria-hidden="true"></span>
         </button>
@@ -199,23 +198,23 @@
     </div>
   </section>
 
-  <section class="metrics-band" aria-label="支援実績と安心の取り組み">
-    <div class="metrics-band-inner">
-      <article class="metric-card">
-        <p class="metric-value">無料</p>
-        <p class="metric-label">初回相談</p>
+  <section class="key-facts-band" aria-label="支援の要点">
+    <div class="key-facts-band__inner">
+      <article class="key-fact">
+        <span class="key-fact__value">初回相談</span>
+        <span class="key-fact__label">無料・秘密厳守</span>
       </article>
-      <article class="metric-card">
-        <p class="metric-value">24h</p>
-        <p class="metric-label">メール受付</p>
+      <article class="key-fact">
+        <span class="key-fact__value">メール受付</span>
+        <span class="key-fact__label">24時間対応</span>
       </article>
-      <article class="metric-card">
-        <p class="metric-value">一体</p>
-        <p class="metric-label">医療・行政連携</p>
+      <article class="key-fact">
+        <span class="key-fact__value">連携支援</span>
+        <span class="key-fact__label">医療・行政と一体</span>
       </article>
-      <article class="metric-card metric-card--highlight">
-        <p class="metric-value">女性専用</p>
-        <p class="metric-label">施設「らぽーる」</p>
+      <article class="key-fact key-fact--accent">
+        <span class="key-fact__value">女性専用</span>
+        <span class="key-fact__label">施設「らぽーる」</span>
       </article>
     </div>
   </section>
@@ -455,47 +454,33 @@
     </div>
   </section>
 
-  <section class="content-section detail-section" id="rapport">
+  <section class="content-section detail-section prose-section" id="rapport">
     <p class="section-kicker">WOMEN ONLY SUPPORT</p>
     <h2 class="section-title">女性専用施設 らぽーる</h2>
-    <div class="copy-grid">
-      <div class="text-content">
-        日本国内において、女性専用の依存症回復施設はまだ数が少なく、安心して相談できる場を探すだけでも大きな負担になる現実があります。らぽーるは、その不足を埋めるために整備された希少な女性専用拠点です。男性の目線や環境刺激に緊張しやすい方、対人トラウマやDV被害、性被害経験が背景にある方でも、心身の安全を最優先にしながら回復へ向かえる環境を整えています。
-      </div>
-      <div class="text-content">
-        着任した女性施設長は、依存症回復支援の実務経験に加え、女性支援の現場で培った高いアセスメント力と危機対応力を備えています。表面的な行動だけで判断せず、背景にある孤立・喪失・自己否定感を丁寧に読み取り、本人のペースを尊重しながら回復計画を組み立てます。通院継続、服薬管理、生活リズム再建、家族調整、就労・社会復帰までを一貫して見通し、「ここなら安心して本音を話せる」と感じられる関係づくりを重視しています。
-      </div>
-    </div>
-    <div class="text-content">
-      らぽーるでは、単に「女性だけの空間」を提供するのではなく、女性だからこそ起こりやすい課題に専門的に向き合う支援体制を組んでいます。感情の波が強い時期の対話支援、夜間不安への寄り添い、再発リスクが高まる場面の早期介入、母子関係の再構築支援など、回復の現実に即した伴走を積み重ねています。初回相談の段階で「話せるか不安」という方にも、秘密厳守で丁寧に対応します。
-    </div>
+    <p class="prose-lead">
+      女性専用の依存症回復施設は国内でもまだ少なく、安心して相談できる場を探すだけでも負担になります。らぽーるは、女性が心身の安全を最優先に回復へ向かえる希少な拠点です。
+    </p>
+    <ul class="prose-highlights">
+      <li>男性の目線や環境刺激に緊張しやすい方も、安心して過ごせる専用空間</li>
+      <li>女性施設長が、孤立・トラウマ・再発リスクまで見据えた回復計画を設計</li>
+      <li>通院・服薬・生活リズム・家族調整・社会復帰まで一貫して伴走</li>
+    </ul>
     <figure class="section-showcase">
       <img src="/static/women-facility-laughing.jpg?v=20260521b" alt="女性専用施設らぽーるで笑顔で交流するスタッフと利用者" width="1200" height="800" loading="lazy" decoding="async">
       <figcaption>女性専用施設「らぽーる」— 安心して本音を話せる、明るく清潔な環境を整えています。</figcaption>
     </figure>
   </section>
 
-  <section class="content-section detail-section" id="grouphome">
+  <section class="content-section detail-section prose-section" id="grouphome">
     <p class="section-kicker">GROUP HOME</p>
-    <h2 class="section-title">グループホーム | 清潔で温かい、住みたくなる回復環境</h2>
-    <div class="copy-grid">
-      <div class="text-content">
-        阿蘇の山々と天草の海に抱かれた環境の中で、依存症からの回復をめざす方に、安心して暮らせる共同生活の場を提供しています。共同生活は「管理」ではなく「回復の練習場」。毎日の小さな成功体験を積み上げ、自己効力感を取り戻します。生活の整え直しに必要な睡眠・食事・服薬・通院・対人距離を、スタッフと一緒に実践できることが、再発予防の大きな土台になります。
-      </div>
-      <div class="text-content">
-        比較ではなく個別性を尊重した支援で、生活再建に向けた前進を着実にサポートし、地域生活への移行まで伴走します。居室環境、清掃動線、食事、睡眠、相談のしやすさまでを設計し、「ここに住みたい」と思える居住品質を保っています。本人の状態に応じて、就労準備・日中活動・金銭管理・家族連携・行政手続きまで段階的に計画し、無理のない自立を支援します。
-      </div>
-    </div>
-    <div class="text-content">
-      ひごのいえのグループホームは、障害福祉サービスにおける「共同生活援助（グループホーム）」の制度に基づき、自治体・相談支援専門員・医療機関と連携しながら利用開始を進めます。利用にあたって必要となる受給者証の確認、申請書類の作成、面談日程の調整、自治体窓口への提出、関係機関連絡など、煩雑な手続きはスタッフが一つずつ伴走し、必要に応じてご家族と一緒に進めます。制度条件や申請の可否は自治体判断となりますが、「何から始めれば良いか分からない」段階から、実務ベースで具体的に支援します。
-    </div>
-    <ul class="home-feature-list">
-      <li>清潔な住環境と毎日の生活リズム管理</li>
-      <li>スタッフ常駐による夜間・緊急時の安心感</li>
-      <li>家事・金銭管理・通院の伴走支援</li>
-      <li>孤立を防ぐ対話とピアコミュニティ</li>
-      <li>障害福祉サービス申請・受給者証手続きの伴走支援</li>
-      <li>自治体・相談支援専門員・医療機関との連携調整を一括サポート</li>
+    <h2 class="section-title">グループホーム</h2>
+    <p class="prose-lead">
+      熊本の自然に近い環境で、共同生活を「回復の練習場」として活用します。睡眠・食事・服薬・通院・対人距離を、スタッフと一緒に整え、再発しにくい生活の型を身につけます。
+    </p>
+    <ul class="prose-highlights">
+      <li>清潔な居室と共用空間 — 「ここに住みたい」と思える居住品質</li>
+      <li>個別性を尊重した支援で、就労・家族連携・行政手続きまで段階的に計画</li>
+      <li>受給者証や申請など、煩雑な手続きもスタッフが伴走</li>
     </ul>
     <figure class="home-showcase-single">
       <img src="/static/facility-bright-lounge.jpg?v=20260521b" alt="清潔で明るいグループホームの共用リビング" width="1200" height="800" loading="lazy" decoding="async">
@@ -814,7 +799,6 @@
 
   <script>
     const menuButton = document.getElementById('menuButton');
-    const sectionTabButton = document.getElementById('sectionTabButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -836,10 +820,6 @@
 
     if (menuButton) {
       menuButton.addEventListener('click', openMobileMenu);
-    }
-
-    if (sectionTabButton) {
-      sectionTabButton.addEventListener('click', openMobileMenu);
     }
 
     if (closeMenuButton) {
