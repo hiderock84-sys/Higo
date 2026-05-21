@@ -24,14 +24,22 @@
   --radius-lg: 16px;
   --header-height: 80px;
   --trust-bar-height: 40px;
-  --site-header-bg: rgba(6, 28, 44, 0.92);
+  --site-header-bg: rgba(6, 28, 44, 0.94);
   --font-body: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
   --font-heading: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --text-lead: clamp(1rem, 2.4vw, 1.125rem);
+  --text-body: clamp(0.9375rem, 2.1vw, 1.0625rem);
+  --text-caption: 0.8125rem;
+  --space-section: clamp(48px, 8vw, 72px);
+  --content-max: 1080px;
+  --gutter: clamp(16px, 4vw, 28px);
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -509,7 +517,7 @@ button:focus-visible {
   padding: 100px 24px 120px;
   background:
     linear-gradient(125deg, rgba(5, 18, 28, 0.88) 0%, rgba(12, 52, 76, 0.78) 45%, rgba(8, 38, 58, 0.85) 100%),
-    url("/static/aso-landscape.jpg") center/cover no-repeat fixed;
+    url("/static/kumamoto-aso-nature.jpg") center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -656,7 +664,7 @@ button:focus-visible {
 
 .visual-card img {
   width: 100%;
-  height: 156px;
+  height: clamp(160px, 28vw, 220px);
   object-fit: cover;
   display: block;
 }
@@ -707,9 +715,9 @@ button:focus-visible {
 }
 
 .content-section {
-  width: min(1080px, calc(100% - 28px));
+  width: min(var(--content-max), calc(100% - var(--gutter) * 2));
   margin: 0 auto;
-  padding: 66px 0;
+  padding: var(--space-section) 0;
 }
 
 .section-kicker {
@@ -743,9 +751,53 @@ button:focus-visible {
 }
 
 .text-content {
-  font-size: 1.03rem;
-  line-height: 2;
+  font-size: var(--text-body);
+  line-height: 1.9;
   color: #314a5f;
+  max-width: 42em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-content + .text-content {
+  margin-top: 1.25em;
+}
+
+.section-lead {
+  font-size: var(--text-lead);
+  line-height: 1.85;
+}
+
+.section-showcase {
+  margin: 28px auto 0;
+  max-width: 920px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  background: var(--surface-elevated);
+}
+
+.section-showcase img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.section-showcase figcaption {
+  padding: 14px 18px 16px;
+  font-size: var(--text-caption);
+  line-height: 1.7;
+  color: var(--ink-500);
+  background: linear-gradient(180deg, #fafcfd 0%, #f0f6fa 100%);
+  border-top: 1px solid var(--line);
+}
+
+.family-program-visual {
+  margin-bottom: 28px;
 }
 
 .route-summary {
@@ -1021,43 +1073,43 @@ button:focus-visible {
 }
 
 .nav-card-top {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg");
+  --card-image: url("/static/kumamoto-aso-nature.jpg");
 }
 
 .nav-card-about {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Amakusa_City_viewed_from_Junkyo_Park.jpg");
+  --card-image: url("/static/amakusa-coast.jpg");
 }
 
 .nav-card-staff {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Hakata-gion-yamakasa-oiyama.jpg");
+  --card-image: url("/static/facility-staff-team.jpg");
 }
 
 .nav-card-program {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Aso_city_Miyaji_district_Aerial_photograph.2016.jpg");
+  --card-image: url("/static/kyushu-countryside.jpg");
 }
 
 .nav-card-voice {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Hakata_Gion_Yamakasa_-_Kazariyama.jpg");
+  --card-image: url("/static/kumamoto-aso-nature.jpg");
 }
 
 .nav-card-women {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Dorphin-watching_Amakusa.jpg");
+  --card-image: url("/static/women-facility-rapport.jpg");
 }
 
 .nav-card-home {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Contemporary_japanese_homes_-_panoramio.jpg");
+  --card-image: url("/static/facility-interior-clean.jpg");
 }
 
 .nav-card-usage {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Fukuoka,_water_festival_1.jpg");
+  --card-image: url("/static/facility-interior-clean.jpg");
 }
 
 .nav-card-family {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Karatsu,_Saga_(31397237522).jpg");
+  --card-image: url("/static/family-support-session.jpg");
 }
 
 .nav-card-contact {
-  --card-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kumato_tomatoes.jpg");
+  --card-image: url("/static/amakusa-coast.jpg");
 }
 
 .detail-section .section-title {
@@ -1259,7 +1311,7 @@ button:focus-visible {
   text-align: center;
   background:
     linear-gradient(130deg, rgba(3, 12, 18, 0.86), rgba(11, 64, 89, 0.72)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Shiratsuru-hama_beach_and_the_village_of_Takahama.jpg") center/cover no-repeat;
+    url("/static/amakusa-coast.jpg") center/cover no-repeat;
 }
 
 .story-content {
@@ -1566,7 +1618,7 @@ body.is-landing .landing-only {
   padding: 80px 20px;
   background:
     linear-gradient(135deg, rgba(8, 45, 66, 0.92), rgba(17, 109, 120, 0.88)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg") center/cover no-repeat;
+    url("/static/kumamoto-aso-nature.jpg") center/cover no-repeat;
 }
 
 .contact-title {
@@ -2659,4 +2711,55 @@ body.is-landing .landing-only {
   .trust-bar-item {
     font-size: 0.6rem;
   }
+
+  .hero-message br {
+    display: none;
+  }
+
+  .section-showcase img {
+    max-height: 280px;
+  }
+}
+
+/* iPhone Safari: safe areas & touch targets */
+@supports (padding: max(0px)) {
+  .site-header__inner {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .trust-bar-inner {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .mobile-cta-bar {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.mobile-menu {
+  background: rgba(6, 22, 34, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-menu-header {
+  background: linear-gradient(135deg, rgba(14, 58, 82, 0.95), rgba(8, 38, 56, 0.98));
+  padding-top: max(20px, env(safe-area-inset-top));
+}
+
+.mobile-menu-item {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.site-footer__cta-band {
+  background: linear-gradient(145deg, #0c3a54 0%, #061a28 55%, #082838 100%);
+}
+
+.site-footer__main {
+  padding-bottom: max(28px, env(safe-area-inset-bottom));
 }

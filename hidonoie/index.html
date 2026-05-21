@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260519e" rel="stylesheet">
+  <link href="/static/style.css?v=20260521a" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -88,43 +88,39 @@
 
   <div class="trust-bar" aria-label="安心の取り組み">
     <div class="trust-bar-inner">
-      <span class="trust-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        秘密厳守
-      </span>
-      <span class="trust-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        初回相談無料
-      </span>
-      <span class="trust-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        医療・行政連携
-      </span>
-      <span class="trust-bar-item trust-bar-item--accent">女性専用施設「らぽーる」</span>
+      <p class="trust-bar-brand">一般社団法人ひごのいえ｜熊本県御船町</p>
+      <div class="trust-bar-items">
+        <span class="trust-bar-item">秘密厳守</span>
+        <span class="trust-bar-item">初回相談無料</span>
+        <span class="trust-bar-item">医療・行政連携</span>
+        <span class="trust-bar-item trust-bar-item--accent">女性専用施設「らぽーる」</span>
+      </div>
     </div>
   </div>
 
-  <header class="header" id="siteHeader">
-    <div class="header-shell">
-      <a href="/" class="header-left" aria-label="一般社団法人ひごのいえ トップへ戻る">
-        <img src="/static/higonoie-header-logo-complete-final-cutout.png?v=20260519e" alt="一般社団法人ひごのいえ ロゴ" class="header-logo" width="200" height="31">
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__brand" aria-label="一般社団法人ひごのいえ トップへ戻る">
+        <img src="/static/higonoie-header-logo-complete-final-cutout.png?v=20260521a" alt="一般社団法人ひごのいえ" class="site-header__logo" width="200" height="36">
+        <span class="site-header__tagline">KUMAMOTO RECOVERY HOME</span>
       </a>
-      <nav class="header-nav" aria-label="主要ナビゲーション">
-        <a href="/about" class="header-nav-link">私たちについて</a>
-        <a href="/program" class="header-nav-link">プログラム</a>
-        <a href="/rapport" class="header-nav-link">女性専用</a>
-        <a href="/guide" class="header-nav-link">利用案内</a>
-        <a href="/contact" class="header-nav-link">相談窓口</a>
+      <nav class="site-header__nav" aria-label="主要ナビゲーション">
+        <a href="/about" class="site-header__link">私たちについて</a>
+        <a href="/program" class="site-header__link">プログラム</a>
+        <a href="/staff" class="site-header__link">スタッフ</a>
+        <a href="/rapport" class="site-header__link">女性専用</a>
+        <a href="/guide" class="site-header__link">利用案内</a>
+        <a href="/contact" class="site-header__link">相談窓口</a>
       </nav>
-      <div class="header-actions">
-        <a href="tel:0964-41-2387" class="header-call-cta">
-          <span class="header-call-label">今すぐ電話相談</span>
-          <span class="header-call-number">0964-41-2387</span>
+      <div class="site-header__actions">
+        <a href="tel:0964-41-2387" class="site-header__phone">
+          <span class="site-header__phone-label">電話相談</span>
+          <span class="site-header__phone-number">0964-41-2387</span>
         </a>
-        <a href="/contact" class="header-primary-cta">無料相談</a>
-        <button type="button" class="header-consult-btn header-sections-btn" id="sectionTabButton" aria-label="ご案内メニューを開く">メニュー</button>
-        <button class="header-menu" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
-          <span class="header-menu-icon" aria-hidden="true"></span>
+        <a href="/contact" class="site-header__cta">無料相談</a>
+        <button type="button" class="site-header__menu-btn" id="sectionTabButton" aria-label="ご案内メニューを開く">メニュー</button>
+        <button type="button" class="site-header__menu-toggle" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
+          <span class="site-header__menu-icon" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -149,7 +145,7 @@
       <button class="mobile-menu-close" id="closeMenuButton" aria-label="メニューを閉じる">×</button>
     </div>
     <div class="mobile-menu-description">
-      依存症からの回復と「生き直し」を支えるために、熊本の自然と地域連携を活かした包括的な支援を行っています。
+      熊本・御船町を拠点に、依存症回復支援を行う一般社団法人です。ご本人・ご家族・関係機関からのご相談を、秘密厳守でお受けしています。
     </div>
     <nav class="mobile-menu-nav">
       <div class="mobile-menu-section-title">メニュー</div>
@@ -176,11 +172,10 @@
     <div class="hero-inner">
       <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
       <h1 class="hero-title">ひごのいえ</h1>
-      <p class="hero-tagline">熊本の大自然の中で、人生の再出発を。</p>
+      <p class="hero-tagline">熊本の大自然の中で、人生を再出発する。</p>
       <p class="hero-message">
-        阿蘇の山々、天草の海、静かな暮らしのリズムに支えられながら、<br>
-        ご本人・ご家族・医療機関・行政機関が同じ方向を向いて歩める回復支援体制を整えています。<br>
-        「もう一度やり直したい」と思ったその気持ちを、安心できる居場所と具体的な支援計画で、現実の一歩へつなげます。
+        一般社団法人ひごのいえは、薬物・アルコール・ギャンブル・処方薬などの依存症に悩む方とご家族を支える回復支援施設です。<br>
+        阿蘇の山々と天草の海に近い環境のなかで、医療・福祉・行政と連携し、初回相談から生活再建まで一貫して伴走します。
       </p>
       <div class="hero-chip-list">
         <span class="hero-chip">初回相談無料</span>
@@ -218,16 +213,16 @@
 
   <section class="visual-strip" aria-label="熊本と九州の自然・暮らしの風景">
     <article class="visual-card">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Aso_from_Aso_Volcano_Museum.jpg" alt="熊本 阿蘇の山並み">
-      <p>阿蘇の広大な景観が、焦らない回復の時間を支えます。</p>
+      <img src="/static/kumamoto-aso-nature.jpg?v=20260521a" alt="熊本・阿蘇の山並みと草原の風景" width="1200" height="800" loading="lazy" decoding="async">
+      <p>阿蘇の広い空と草原が、焦らず整える回復の時間を支えます。</p>
     </article>
     <article class="visual-card">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg" alt="上天草の島々">
-      <p>上天草の穏やかな海と島々の景観が、回復の日々に落ち着きをもたらします。</p>
+      <img src="/static/amakusa-coast.jpg?v=20260521a" alt="熊本・上天草の海と島々の風景" width="1200" height="800" loading="lazy" decoding="async">
+      <p>穏やかな海の光が、心を落ち着け、明日への一歩を後押しします。</p>
     </article>
     <article class="visual-card">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shiratsuru-hama_beach_and_the_village_of_Takahama.jpg" alt="天草の海岸風景">
-      <p>天草の穏やかな海のように、安心できる居場所を育てます。</p>
+      <img src="/static/kyushu-countryside.jpg?v=20260521a" alt="九州の田園と緑の風景" width="1200" height="800" loading="lazy" decoding="async">
+      <p>九州の自然のリズムに合わせ、生活と心を少しずつ取り戻します。</p>
     </article>
   </section>
 
@@ -250,10 +245,10 @@
   <section class="content-section route-summary landing-heavy" id="route-summary">
     <h2 class="section-title">回復支援の全体像</h2>
     <div class="text-content">
-      依存症は、適切な支援・環境・仲間とのつながりがあれば回復できる病気です。ひごのいえは、当事者とご家族が次の一歩を踏み出すための回復拠点です。
+      依存症は、適切な支援と環境、そして信頼できるつながりがあれば回復できる病気です。ひごのいえは、ご本人とご家族が「次の一歩」を踏み出すための拠点です。
     </div>
     <div class="text-content">
-      医療機関・行政機関・ご家族と連携しながら、初回相談から生活再建までを一貫して支援します。まずは現在の状況を安心してご相談ください。
+      医療機関・行政・ご家族と連携し、初回相談から入所・プログラム・退所後の生活再建まで、状況に合わせて伴走します。まずは今のお困りごとを、安心してお聞かせください。
     </div>
     <ul class="route-summary-list" aria-label="回復支援のポイント">
       <li>初回相談は無料。秘密厳守で対応します。</li>
@@ -275,8 +270,8 @@
       </div>
     </div>
     <div class="mini-gallery">
-      <img src="/static/aso-landscape.jpg" alt="阿蘇の自然風景">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Amakusa_City_viewed_from_Junkyo_Park.jpg" alt="上天草の街と海の眺望">
+      <img src="/static/kumamoto-aso-nature.jpg?v=20260521a" alt="阿蘇の自然風景" loading="lazy" decoding="async">
+      <img src="/static/amakusa-coast.jpg?v=20260521a" alt="上天草の海と島の眺望" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -371,7 +366,7 @@
   <section class="navigation-section">
     <div class="nav-section-header">
       <h2 class="section-title">ページメニュー</h2>
-      <div class="nav-section-subtitle">リンク構成は維持したまま、アーバンな切れ味と熊本の自然感を両立する情報設計へ最適化しています。</div>
+      <div class="nav-section-subtitle">ご覧になりたい内容をお選びください。各ページで、支援内容をわかりやすくご案内しています。</div>
     </div>
     <div class="nav-grid">
       <a href="/about" class="nav-card nav-card-about" aria-label="私たちについてへ移動">
@@ -461,10 +456,10 @@
     <div class="text-content">
       らぽーるでは、単に「女性だけの空間」を提供するのではなく、女性だからこそ起こりやすい課題に専門的に向き合う支援体制を組んでいます。感情の波が強い時期の対話支援、夜間不安への寄り添い、再発リスクが高まる場面の早期介入、母子関係の再構築支援など、回復の現実に即した伴走を積み重ねています。初回相談の段階で「話せるか不安」という方にも、秘密厳守で丁寧に対応します。
     </div>
-    <div class="mini-gallery">
-      <img src="/static/hero-image.jpg" alt="安心感のある生活空間">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aso_city_Miyaji_district_Aerial_photograph.2016.jpg" alt="阿蘇の街並みと自然">
-    </div>
+    <figure class="section-showcase">
+      <img src="/static/women-facility-rapport.jpg?v=20260521a" alt="女性専用施設らぽーるの明るい共用スペースでスタッフが温かく迎える様子" width="1200" height="800" loading="lazy" decoding="async">
+      <figcaption>女性専用施設「らぽーる」— 安心して本音を話せる、明るく清潔な環境を整えています。</figcaption>
+    </figure>
   </section>
 
   <section class="content-section detail-section" id="grouphome">
@@ -490,8 +485,8 @@
       <li>自治体・相談支援専門員・医療機関との連携調整を一括サポート</li>
     </ul>
     <figure class="home-showcase-single">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Living_room_in_apartment_of_Condom%C3%ADnio_do_Edif%C3%ADcio_Zaher,_Le_Blond,_Rio_de_Janeiro,_Brazil.jpg" alt="アーバンで清潔感のある家内装のリビング">
-      <figcaption>落ち着いた都市型の内装環境で、安心して生活再建に集中できる空間づくりを行っています。</figcaption>
+      <img src="/static/facility-interior-clean.jpg?v=20260521a" alt="清潔で明るいグループホームの共用リビング" width="1200" height="800" loading="lazy" decoding="async">
+      <figcaption>清潔で落ち着いた共用空間。生活リズムの再建に集中できる、住み心地のよい環境です。</figcaption>
     </figure>
   </section>
 
@@ -511,21 +506,21 @@
     </div>
   </section>
 
-  <section class="content-section kyushu-culture-section landing-heavy" aria-label="九州の地域風景">
-    <p class="section-kicker">KYUSHU SCENES</p>
-    <h2 class="section-title">九州の風景に触れながら、安心して回復を続ける</h2>
+  <section class="content-section kyushu-nature-section landing-heavy" aria-label="九州の自然と回復環境">
+    <p class="section-kicker">KYUSHU NATURE</p>
+    <h2 class="section-title">九州の自然に触れながら、回復を続ける</h2>
     <div class="text-content section-lead">
-      ひごのいえでは、地域に根ざした風景や空気感を大切にしながら、焦らず生活を整える支援を行っています。<br>
-      毎日の暮らしの中で「落ち着ける」「ここでやり直せる」と感じられることを重視しています。
+      ひごのいえは、熊本・九州の自然のなかで暮らしのリズムを整えます。<br>
+      広い空と穏やかな風景が、焦らない回復の時間を支えてくれます。
     </div>
     <div class="culture-gallery">
       <article class="culture-card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hakata-gion-yamakasa-oiyama.jpg" alt="九州らしい祭りの風景（博多祇園山笠）">
-        <p>九州の躍動感ある風景：前を向く気持ちを思い出すきっかけ。</p>
+        <img src="/static/kumamoto-aso-nature.jpg?v=20260521a" alt="阿蘇の山と草原" loading="lazy" decoding="async">
+        <p>阿蘇の雄大な景色が、前を向く気持ちを静かに後押しします。</p>
       </article>
       <article class="culture-card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E5%94%90%E6%B4%A5%E3%81%8F%E3%82%93%E3%81%A1.jpg" alt="九州らしい祭りの風景（唐津くんち）">
-        <p>地域に根づく景色：人とのつながりを感じながら回復を続ける土台。</p>
+        <img src="/static/kyushu-countryside.jpg?v=20260521a" alt="九州の田園風景" loading="lazy" decoding="async">
+        <p>緑豊かな風景のなかで、暮らしと心を少しずつ取り戻します。</p>
       </article>
     </div>
   </section>
@@ -541,6 +536,10 @@
         ご家族が疲弊した状態では、本人支援も持続しません。ひごのいえは医療機関・行政機関と連携しながら、家族の不安整理、境界線の引き方、危機時対応、生活再建の段取りまで、具体的に伴走します。
       </div>
     </div>
+    <figure class="section-showcase family-program-visual">
+      <img src="/static/family-support-session.jpg?v=20260521a" alt="明るい施設内で家族プログラム・家族会を行う様子" width="1200" height="800" loading="lazy" decoding="async">
+      <figcaption>ご家族向けのプログラム・家族会。責め合わず、学び合い、回復の設計図を一緒につくります。</figcaption>
+    </figure>
     <div class="family-process">
       <h3>家族が先に取り組む回復プロセス</h3>
       <ol class="family-process-list">
@@ -631,13 +630,13 @@
     <p class="section-kicker">OUR STAFF</p>
     <h2 class="section-title">スタッフ紹介</h2>
     <figure class="staff-activity-visual">
-      <img src="/static/staff-fellowship.jpg?v=20260519a" alt="アジア人の男女が笑顔で交流するフェローシップの様子">
+      <img src="/static/facility-staff-team.jpg?v=20260521a" alt="清潔な施設内で笑顔で交流するスタッフチーム" width="1200" height="800" loading="lazy" decoding="async">
     </figure>
 
     <div class="leader-message">
       <h3>一般社団法人ひごのいえ 代表理事 栃原 晋太郎 メッセージ</h3>
       <div class="leader-profile">
-        <img src="http://nagoya.ciao.jp/wp/wp-content/uploads/2016/07/main_darc.jpg" alt="代表理事 栃原晋太郎氏プロフィール画像" class="leader-profile-image">
+        <img src="/static/tochihara-shintaro.jpg?v=20260521a" alt="代表理事 栃原晋太郎氏のプロフィール写真" class="leader-profile-image" width="240" height="334" loading="lazy" decoding="async">
         <div class="leader-profile-copy">
           <p class="leader-profile-name">栃原 晋太郎　一般社団法人ひごのいえ代表理事</p>
           <p>
@@ -732,48 +731,54 @@
     <a href="/contact" class="mobile-cta-bar-primary">無料相談</a>
   </aside>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section footer-section-brand">
-        <div class="footer-brand-row">
-          <div class="footer-logo-container">
-            <img src="/static/higonoie-full-logo-transparent.png?v=20260514f" alt="一般社団法人 ひごのいえ 木のロゴ" class="footer-logo">
-          </div>
-          <div class="footer-brand-copy">
-            <p class="footer-lead">KUMAMOTO NATURE RECOVERY HOME</p>
-            <div class="footer-info">一般社団法人ひごのいえ</div>
-            <div class="footer-info">〒861-3200 熊本県上益城郡御船町</div>
-            <div class="footer-info">TEL: 0964-41-2387</div>
-            <div class="footer-info">Email: info@higonoie.or.jp</div>
-          </div>
+  <footer class="site-footer">
+    <div class="site-footer__cta-band">
+      <div class="site-footer__cta-inner">
+        <div class="site-footer__cta-copy">
+          <p class="site-footer__cta-eyebrow">RECOVERY SUPPORT DESK</p>
+          <h2 class="site-footer__cta-title">まずは、安心してご相談ください</h2>
+          <p class="site-footer__cta-text">初回相談無料・秘密厳守。ご本人・ご家族・関係機関からのお問い合わせに対応しています。</p>
+        </div>
+        <div class="site-footer__cta-actions">
+          <a href="tel:0964-41-2387" class="site-footer__cta-phone">0964-41-2387</a>
+          <a href="/contact" class="site-footer__cta-button">相談窓口へ</a>
         </div>
       </div>
-      <div class="footer-section footer-nav-section">
-        <h4 class="footer-nav-title">ナビゲーション</h4>
-        <a href="/about" class="footer-nav-item">私たちについて</a>
-        <a href="/staff" class="footer-nav-item">スタッフ紹介</a>
-        <a href="/program" class="footer-nav-item">プログラム</a>
-        <a href="/testimonials" class="footer-nav-item">体験談</a>
-        <a href="/rapport" class="footer-nav-item">女性専用施設</a>
-        <a href="/grouphome" class="footer-nav-item">グループホーム</a>
-        <a href="/guide" class="footer-nav-item">利用案内</a>
-        <a href="/family-guide" class="footer-nav-item">家族ガイド</a>
-        <a href="/contact" class="footer-nav-item">相談窓口</a>
-        <a href="/top" class="footer-nav-item">トップ</a>
-      </div>
-      <div class="consultation-section">
-        <h4 class="consultation-title">相談窓口</h4>
-        <div class="consultation-info">電話相談: 0964-41-2387</div>
-        <div class="consultation-info">受付時間: 平日 10:00-17:00</div>
-        <div class="consultation-info">メール相談: info@higonoie.or.jp</div>
-        <div class="consultation-info">面談: 予約制</div>
-        <div class="consultation-note">
-          ご家族からのご相談も承ります。<br>
-          お気軽にお問い合わせください。
+    </div>
+    <div class="site-footer__main">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <img src="/static/higonoie-full-logo-transparent.png?v=20260521a" alt="一般社団法人 ひごのいえ" class="site-footer__logo" width="88" height="88">
+          <p class="site-footer__org">一般社団法人ひごのいえ</p>
+          <p class="site-footer__address">〒861-3200 熊本県上益城郡御船町</p>
+          <p class="site-footer__contact-line">TEL 0964-41-2387｜info@higonoie.or.jp</p>
         </div>
+        <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">施設について</h3>
+            <a href="/about">私たちについて</a>
+            <a href="/staff">スタッフ紹介</a>
+            <a href="/program">プログラム</a>
+            <a href="/testimonials">体験談</a>
+          </div>
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">サービス</h3>
+            <a href="/rapport">女性専用施設</a>
+            <a href="/grouphome">グループホーム</a>
+            <a href="/guide">利用案内</a>
+            <a href="/family-guide">家族ガイド</a>
+          </div>
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">サポート</h3>
+            <a href="/contact">相談窓口</a>
+            <a href="/top">トップ</a>
+            <a href="tel:0964-41-2387">電話相談（平日10:00–17:00）</a>
+          </div>
+        </nav>
       </div>
-      <div class="copyright">
-        © 2026 一般社団法人ひごのいえ All Rights Reserved.
+      <div class="site-footer__legal">
+        <p>© 2026 一般社団法人ひごのいえ All Rights Reserved.</p>
+        <p class="site-footer__legal-note">依存症回復支援施設｜熊本の自然と地域連携を活かした包括的支援</p>
       </div>
     </div>
   </footer>
@@ -894,7 +899,7 @@
     const siteHeader = document.getElementById('siteHeader');
     const setHeaderState = () => {
       if (!siteHeader) return;
-      siteHeader.classList.toggle('header--scrolled', window.scrollY > 12);
+      siteHeader.classList.toggle('site-header--scrolled', window.scrollY > 12);
     };
     setHeaderState();
     window.addEventListener('scroll', setHeaderState, { passive: true });
