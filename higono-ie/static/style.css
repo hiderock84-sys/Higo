@@ -20,7 +20,7 @@
 
 body {
   font-family: var(--font-body);
-  line-height: 1.85;
+  line-height: 1.8;
   color: var(--base-text);
   background:
     linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
@@ -39,7 +39,7 @@ body {
 #guide,
 #family-guide,
 #contact {
-  scroll-margin-top: 86px;
+  scroll-margin-top: 74px;
 }
 
 .header {
@@ -47,11 +47,11 @@ body {
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 206px 164px;
+  grid-template-columns: minmax(320px, 1fr) 224px 184px;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  min-height: 60px;
+  gap: 10px;
+  padding: 7px 12px;
+  min-height: 68px;
   background: linear-gradient(180deg, #0c3a57 0%, #0f4a6c 100%);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 14px rgba(7, 28, 45, 0.14);
@@ -67,7 +67,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  min-height: 32px;
+  min-height: 40px;
   text-decoration: none;
   background: transparent;
   border: 0;
@@ -79,7 +79,7 @@ body {
 .header-logo {
   display: block;
   width: auto;
-  height: 31px;
+  height: 40px;
   max-width: 100%;
   object-fit: contain;
   object-position: left center;
@@ -91,9 +91,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 40px;
-  border-radius: 7px;
-  padding: 5px 8px;
+  min-height: 46px;
+  border-radius: 10px;
+  padding: 6px 10px;
   text-decoration: none;
   color: #ffffff;
   border: 1px solid rgba(197, 234, 247, 0.55);
@@ -103,7 +103,7 @@ body {
 
 .header-call-label {
   font-family: var(--font-heading);
-  font-size: 0.5rem;
+  font-size: 0.54rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -113,7 +113,7 @@ body {
 
 .header-call-number {
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 0.88rem;
   font-weight: 900;
   letter-spacing: 0.03em;
   line-height: 1.15;
@@ -125,13 +125,13 @@ body {
 .header-consult-btn {
   grid-area: auto;
   border: 1px solid rgba(197, 234, 247, 0.55);
-  border-radius: 7px;
-  min-height: 40px;
-  min-width: 164px;
-  padding: 5px 8px;
+  border-radius: 10px;
+  min-height: 46px;
+  min-width: 184px;
+  padding: 6px 10px;
   cursor: pointer;
   font-family: var(--font-heading);
-  font-size: 0.62rem;
+  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1.2;
@@ -431,8 +431,8 @@ body {
 
 .section-kicker {
   font-family: var(--font-heading);
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   color: var(--ink-500);
   margin-bottom: 10px;
   text-align: center;
@@ -441,16 +441,32 @@ body {
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 4vw, 2.1rem);
-  line-height: 1.42;
+  line-height: 1.35;
   text-align: center;
   color: var(--ink-900);
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 
 .text-content {
-  font-size: 1.03rem;
-  line-height: 2;
-  color: #314a5f;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #2f4558;
+  max-width: 72ch;
+  margin-inline: auto;
+}
+
+.text-content + .text-content {
+  margin-top: 14px;
+}
+
+.content-section p,
+.content-section li,
+.leader-message p,
+.leader-profile-copy p,
+.staff-profile-card p,
+.testimonial-card p {
+  line-height: 1.86;
+  letter-spacing: 0.01em;
 }
 
 .route-summary {
@@ -1333,21 +1349,14 @@ body.is-landing .landing-only {
 }
 
 .footer {
-  background:
-    linear-gradient(145deg, rgba(8, 27, 43, 0.98), rgba(16, 53, 81, 0.97)),
-    url("/static/hero-image.jpg") center/cover no-repeat;
+  background: linear-gradient(165deg, #0e2f46, #144663);
   color: #fff;
   padding: 58px 20px 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .footer::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(140, 216, 230, 0.2), rgba(140, 216, 230, 0.8), rgba(140, 216, 230, 0.2));
-  margin-bottom: 20px;
+  content: none;
 }
 
 .footer-lead {
@@ -1491,47 +1500,47 @@ body.is-landing .landing-only {
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: minmax(150px, 1.2fr) minmax(126px, 1fr) minmax(112px, 1fr);
+    grid-template-columns: minmax(168px, 1.15fr) 138px 120px;
     align-items: center;
-    min-height: 54px;
+    min-height: 56px;
     padding: 5px 8px;
-    gap: 5px;
+    gap: 6px;
   }
 
   .header-left {
     grid-area: auto;
     width: 100%;
-    min-height: 28px;
+    min-height: 34px;
     justify-content: flex-start;
     padding: 0;
   }
 
   .header-logo {
-    height: 27px;
+    height: 34px;
     max-width: 100%;
     object-position: left center;
   }
 
   .header-call-cta,
   .header-consult-btn {
-    min-height: 34px;
-    border-radius: 7px;
+    min-height: 36px;
+    border-radius: 8px;
     width: 100%;
     min-width: 0;
     padding: 4px 6px;
   }
 
   .header-call-label {
-    font-size: 0.4rem;
+    font-size: 0.42rem;
   }
 
   .header-call-number {
-    font-size: 0.6rem;
+    font-size: 0.68rem;
     letter-spacing: 0.02em;
   }
 
   .header-consult-btn {
-    font-size: 0.52rem;
+    font-size: 0.54rem;
     letter-spacing: 0.01em;
   }
 
@@ -1713,45 +1722,45 @@ body.is-landing .landing-only {
 
 @media (max-width: 390px) {
   .header {
-    grid-template-columns: minmax(132px, 1.2fr) minmax(112px, 1fr) minmax(102px, 1fr);
-    min-height: 48px;
+    grid-template-columns: minmax(146px, 1.15fr) 124px 106px;
+    min-height: 52px;
     padding: 4px 6px;
-    gap: 3px;
+    gap: 4px;
   }
 
   .header-left {
     width: 100%;
-    min-height: 23px;
+    min-height: 30px;
     justify-content: flex-start;
     padding: 0;
   }
 
   .header-logo {
-    height: 22px;
+    height: 30px;
     max-width: 100%;
     object-position: left center;
   }
 
   .header-call-cta,
   .header-consult-btn {
-    min-height: 30px;
+    min-height: 32px;
     min-width: auto;
     width: 100%;
     padding: 3px 4px;
-    border-radius: 7px;
+    border-radius: 8px;
   }
 
   .header-call-label {
-    font-size: 0.34rem;
+    font-size: 0.36rem;
   }
 
   .header-call-number {
-    font-size: 0.54rem;
+    font-size: 0.6rem;
     letter-spacing: 0.01em;
   }
 
   .header-consult-btn {
-    font-size: 0.44rem;
+    font-size: 0.48rem;
     letter-spacing: 0;
   }
 }
