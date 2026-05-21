@@ -6,14 +6,19 @@ import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const distDir = path.join(root, 'dist')
-const projectName = process.env.CLOUDFLARE_PAGES_PROJECT || 'higo-8il'
+const projectName = process.env.CLOUDFLARE_PAGES_PROJECT || 'higo'
 
 const token = process.env.CLOUDFLARE_API_TOKEN || process.env.CF_API_TOKEN
 const accountId = process.env.CLOUDFLARE_ACCOUNT_ID || process.env.CF_ACCOUNT_ID
 
-function run(command, args) {
+function run(command, args, extraEnv = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { stdio: 'inherit', cwd: root, shell: false })
+    const child = spawn(command, args, {
+      stdio: 'inherit',
+      cwd: root,
+      shell: false,
+      env: { ...process.env, ...extraEnv },
+    })
     child.on('exit', (code) => (code === 0 ? resolve() : reject(new Error(`${command} exited ${code}`))))
     child.on('error', reject)
   })
@@ -47,12 +52,12 @@ async function main() {
   }
 
   const args = ['wrangler', 'pages', 'deploy', 'dist', '--project-name', projectName, '--commit-dirty=true']
-  if (accountId) {
-    args.push('--account-id', accountId)
-  }
 
   console.log(`[deploy] Deploying to Cloudflare Pages project: ${projectName}`)
-  await run('npx', args)
+  await run('npx', args, {
+    CLOUDFLARE_API_TOKEN: token,
+    ...(accountId ? { CLOUDFLARE_ACCOUNT_ID: accountId } : {}),
+  })
   console.log('[deploy] Done.')
 }
 

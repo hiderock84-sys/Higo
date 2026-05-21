@@ -12,7 +12,7 @@ const projectFlag = args.find((a) => a.startsWith('--project-name'))
 const projectName =
   projectFlag?.split('=')[1] ||
   process.env.CLOUDFLARE_PAGES_PROJECT ||
-  'higo-8il'
+  'higo'
 const wranglerArgs = [
   'wrangler',
   'pages',

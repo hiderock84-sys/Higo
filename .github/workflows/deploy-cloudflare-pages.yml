@@ -36,10 +36,10 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'higo-8il' }} --commit-dirty=true
+          command: pages deploy dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'higo' }} --commit-dirty=true
 
       - name: Deployment summary
         if: success()
         run: |
-          echo "Deployed to Cloudflare Pages project: ${{ vars.CLOUDFLARE_PAGES_PROJECT || 'higo-8il' }}"
+          echo "Deployed to Cloudflare Pages project: ${{ vars.CLOUDFLARE_PAGES_PROJECT || 'higo' }}"
           echo "Verify: https://higo-8il.pages.dev/static/hero-cover-aso-kumamoto.jpg?v=20260521b"
