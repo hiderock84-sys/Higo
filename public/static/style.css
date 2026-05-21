@@ -96,7 +96,7 @@ button:focus-visible {
 .trust-bar {
   position: sticky;
   top: 0;
-  z-index: 110;
+  z-index: 100;
   background: linear-gradient(90deg, #0a2d42 0%, #0f3d56 50%, #0a2d42 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -1812,10 +1812,96 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   margin-bottom: 14px;
 }
 
+/* グループホーム・利用案内：情報は維持しつつ表示量を約70%に */
+.detail-section--volume-70 {
+  font-size: 87.5%;
+}
+
+.detail-section--volume-70 .prose-lead {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.detail-section--volume-70 .content-block {
+  margin: 18px 0;
+}
+
+.detail-section--volume-70 .content-block__title {
+  font-size: 0.9375rem;
+  margin-bottom: 7px;
+}
+
+.detail-section--volume-70 .content-block__text {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  margin-bottom: 9px;
+}
+
+.detail-section--volume-70 .data-table-wrap {
+  margin: 11px 0 16px;
+}
+
+.detail-section--volume-70 .data-table {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.detail-section--volume-70 .data-table caption {
+  padding: 9px 10px 7px;
+  font-size: 0.8125rem;
+}
+
+.detail-section--volume-70 .data-table th,
+.detail-section--volume-70 .data-table td {
+  padding: 7px 9px;
+}
+
+.detail-section--volume-70 .data-table__note {
+  font-size: 0.6875rem;
+  margin-top: 4px;
+}
+
+.detail-section--volume-70 .ref-note {
+  margin-top: 20px;
+  padding: 10px 12px;
+  font-size: 0.6875rem;
+  line-height: 1.55;
+}
+
+.detail-section--volume-70 .page-cta-box {
+  margin-top: 20px;
+  padding: 18px 16px;
+}
+
+.detail-section--volume-70 .page-cta-box p {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.detail-section--volume-70 .service-diagram {
+  margin: 14px 0;
+}
+
+.detail-section--volume-70 .support-banner {
+  font-size: 0.8125rem;
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+
+.detail-section--volume-70 .home-showcase-single {
+  margin: 16px 0;
+}
+
+.detail-section--volume-70 .home-showcase-single figcaption {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
 .data-table-wrap {
   margin: 16px 0 24px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: visible;
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: #fff;
@@ -1824,7 +1910,8 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
 
 .data-table {
   width: 100%;
-  min-width: 520px;
+  min-width: 0;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 0.8125rem;
   line-height: 1.65;
@@ -1849,7 +1936,9 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   color: var(--ink-900);
   background: #eef4f8;
   border-bottom: 2px solid rgba(40, 179, 174, 0.35);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .data-table tbody th {
@@ -1859,7 +1948,9 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   background: #f7fbfd;
   border-right: 1px solid var(--line);
   vertical-align: top;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .data-table td {
@@ -1867,6 +1958,9 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   color: var(--ink-700);
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .data-table tbody tr:last-child td,
@@ -2728,13 +2822,69 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   }
 
   .data-table {
-    min-width: 480px;
+    min-width: 0;
     font-size: 0.75rem;
   }
 
   .data-table th,
   .data-table td {
     padding: 9px 8px;
+  }
+
+  .data-table--stack-sm thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .data-table--stack-sm tbody tr {
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .data-table--stack-sm tbody th[scope='row'] {
+    display: block;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    background: #eef4f8;
+  }
+
+  .data-table--stack-sm tbody td {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+    padding-top: 8px;
+  }
+
+  .data-table--stack-sm tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .data-table--stack-sm tbody td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink-500);
+    text-transform: none;
+  }
+
+  .data-table--stack-sm tbody td[data-label='']::before,
+  .data-table--stack-sm tbody td:not([data-label])::before {
+    display: none;
   }
 
   .story-section {
@@ -2821,7 +2971,7 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
 .trust-bar {
   position: sticky;
   top: 0;
-  z-index: 120;
+  z-index: 100;
   background: #061a28;
   border-bottom: 1px solid rgba(120, 210, 230, 0.15);
 }
@@ -2871,8 +3021,8 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
 
 .site-header {
   position: sticky;
-  top: var(--trust-bar-height);
-  z-index: 110;
+  top: var(--trust-bar-height, 0);
+  z-index: 200;
   background: var(--site-header-bg);
   backdrop-filter: blur(20px) saturate(1.25);
   -webkit-backdrop-filter: blur(20px) saturate(1.25);
@@ -3045,8 +3195,9 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  min-height: 44px;
+  width: 48px;
+  min-width: 48px;
+  min-height: 48px;
   padding: 0;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -3055,6 +3206,8 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   cursor: pointer;
   flex-shrink: 0;
   z-index: 2;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
 }
 
@@ -3335,8 +3488,9 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   }
 
   .site-header__menu-toggle {
-    width: 40px;
-    min-height: 40px;
+    width: 48px;
+    min-width: 48px;
+    min-height: 48px;
   }
 
   .site-footer__grid {
