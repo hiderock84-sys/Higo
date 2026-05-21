@@ -1664,6 +1664,13 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   width: min(1080px, calc(100% - 28px));
 }
 
+/* 単体ページではフェードインを無効化（表示されない不具合を防ぐ） */
+body.is-standalone-view .standalone-target.reveal-on-scroll,
+body.is-standalone-view .standalone-target .reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+
 /* Info panels & diagrams */
 .subsection-title {
   font-family: var(--font-heading);

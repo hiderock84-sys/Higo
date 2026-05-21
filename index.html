@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260603" rel="stylesheet">
+  <link href="/static/style.css?v=20260604" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -1253,10 +1253,16 @@
     setHeaderState();
     window.addEventListener('scroll', setHeaderState, { passive: true });
 
+    const isStandaloneView = document.body.classList.contains('is-standalone-view');
     const revealTargets = document.querySelectorAll(
       '.content-section, .visual-card, .axis-card, .pillar-item, .nav-card, .metric-card, .faq-item'
     );
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+    if (isStandaloneView) {
+      document.querySelectorAll('.standalone-target').forEach((el) => {
+        el.classList.add('is-visible');
+      });
+    } else if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       revealTargets.forEach((el) => el.classList.add('reveal-on-scroll'));
       const revealObserver = new IntersectionObserver(
         (entries) => {
@@ -1267,7 +1273,7 @@
             }
           });
         },
-        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        { threshold: 0.08, rootMargin: '0px 0px 0px 0px' }
       );
       revealTargets.forEach((el) => revealObserver.observe(el));
     } else {

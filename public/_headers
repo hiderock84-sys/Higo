@@ -7,5 +7,8 @@
 /grouphome
   Cache-Control: no-cache, must-revalidate
 
+/program
+  Cache-Control: no-cache, must-revalidate
+
 /*
   Cache-Control: public, max-age=86400
