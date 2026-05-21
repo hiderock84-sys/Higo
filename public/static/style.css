@@ -351,11 +351,12 @@ button:focus-visible {
 .key-fact {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 4px;
   min-height: 72px;
-  padding: 16px 18px;
+  padding: 16px 12px;
+  text-align: center;
   border-radius: var(--radius-md);
   background: #fff;
   border: 1px solid rgba(19, 71, 100, 0.1);
@@ -609,43 +610,53 @@ button:focus-visible {
 }
 
 .hero-chip-list {
-  margin: 26px auto 0;
-  max-width: 760px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  margin: 24px auto 0;
+  width: min(100%, 360px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .hero-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
   font-family: var(--font-heading);
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  padding: 7px 11px;
-  border-radius: 999px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
   border: 1px solid rgba(151, 223, 237, 0.56);
   background: rgba(8, 40, 58, 0.35);
 }
 
 .hero-actions {
-  margin-top: 26px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  margin: 16px auto 0;
+  width: min(100%, 360px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .hero-action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  min-width: 180px;
+  min-height: 44px;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 8px;
   text-decoration: none;
   font-family: var(--font-heading);
+  font-size: 0.8125rem;
   font-weight: 700;
-  border-radius: 12px;
-  letter-spacing: 0.04em;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.03em;
+  text-align: center;
+  line-height: 1.35;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -657,7 +668,6 @@ button:focus-visible {
   color: var(--brand-steel);
   background: linear-gradient(180deg, #ffffff 0%, #e5f2f8 100%);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  min-width: 200px;
 }
 
 .hero-action.ghost {
@@ -1114,11 +1124,13 @@ button:focus-visible {
 }
 
 .nav-card-program {
-  --card-image: url("/static/peers-laughing-kumamoto.jpg");
+  --card-image: url("/static/program-recovery-session.jpg");
+  --card-position: center center;
 }
 
 .nav-card-voice {
-  --card-image: url("/static/family-support-session.jpg");
+  --card-image: url("/static/testimonial-young-woman-sharing.jpg");
+  --card-position: center 30%;
 }
 
 .nav-card-women {
@@ -2006,25 +2018,16 @@ body.is-landing .landing-only {
   }
 
   .key-facts-band__inner {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    padding: 14px 16px 18px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .key-facts-band__inner::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 12px 12px 16px;
+    overflow: visible;
   }
 
   .key-fact {
-    flex: 0 0 min(42vw, 168px);
-    min-height: 64px;
-    padding: 12px 14px;
-    scroll-snap-align: start;
+    min-height: 60px;
+    padding: 10px 8px;
   }
 
   .key-fact__value {
@@ -2104,14 +2107,22 @@ body.is-landing .landing-only {
     max-width: 26em;
   }
 
+  .hero-chip-list,
+  .hero-actions {
+    width: min(100%, 340px);
+    gap: 8px;
+  }
+
   .hero-chip {
-    font-size: 0.66rem;
+    min-height: 34px;
+    font-size: 0.625rem;
+    padding: 6px 8px;
   }
 
   .hero-action {
-    min-height: 42px;
-    min-width: 150px;
-    font-size: 0.86rem;
+    min-height: 40px;
+    font-size: 0.75rem;
+    padding: 8px 6px;
   }
 
   .visual-strip {
@@ -2167,7 +2178,6 @@ body.is-landing .landing-only {
   .home-feature-list,
   .home-showcase-grid,
   .culture-gallery,
-  .nav-grid,
   .compact-testimonial-grid,
   .testimonial-grid-wrap,
   .staff-profile-grid,
@@ -2201,8 +2211,28 @@ body.is-landing .landing-only {
     gap: 6px;
   }
 
+  .nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
   .nav-card {
-    min-height: 168px;
+    min-height: 132px;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-card-content {
+    padding: 16px 10px;
+    gap: 6px;
+  }
+
+  .nav-title {
+    font-size: 1rem;
+  }
+
+  .nav-subtitle {
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
 
   .story-section {
@@ -2271,8 +2301,12 @@ body.is-landing .landing-only {
 }
 
 @media (max-width: 480px) {
-  .key-fact {
-    flex: 0 0 min(44vw, 156px);
+  .key-fact__value {
+    font-size: 0.75rem;
+  }
+
+  .key-fact__label {
+    font-size: 0.625rem;
   }
 
   .trust-bar-item--accent {
