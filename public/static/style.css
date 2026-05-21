@@ -1967,9 +1967,7 @@ body.is-landing .landing-only {
   display: block;
 }
 
-body.is-landing {
-  --space-section: var(--space-section-landing);
-}
+/* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
 body.is-landing .hero-section {
   min-height: min(68vh, 560px);
@@ -2037,7 +2035,7 @@ body.is-landing .navigation-section {
 }
 
 body.is-landing .nav-card {
-  min-height: 120px;
+  min-height: 174px;
 }
 
 body.is-landing .nav-section-subtitle {
@@ -2056,14 +2054,6 @@ body.is-landing .contact-section {
 
 body.is-landing .story-section {
   display: none;
-}
-
-body.is-landing .visual-card:nth-child(3) {
-  display: none;
-}
-
-body.is-landing .visual-strip {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 body.is-landing .nav-card-top {
@@ -2152,11 +2142,6 @@ body.is-landing .nav-card-top {
 @media (max-width: 768px) {
   .landing-overview__grid {
     grid-template-columns: 1fr;
-  }
-
-  body.is-landing .visual-strip {
-    grid-template-columns: 1fr;
-    width: calc(100% - 24px);
   }
 
   body.is-landing .brand-axis {
