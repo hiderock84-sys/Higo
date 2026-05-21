@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260527" rel="stylesheet">
+  <link href="/static/style.css?v=20260528" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -266,7 +266,7 @@
   </section>
   <!-- ROUTE_SUMMARY_END -->
 
-  <section class="content-section intro-about" id="about">
+  <section class="content-section intro-about standalone-page" id="about">
     <p class="section-kicker">ABOUT HIGONOIE</p>
     <h2 class="section-title">私たちについて</h2>
     <div class="copy-grid">
@@ -283,7 +283,7 @@
     </div>
   </section>
 
-  <section class="content-section pillars-section" id="program">
+  <section class="content-section pillars-section standalone-page" id="program">
     <p class="section-kicker">RECOVERY PROGRAM</p>
     <h2 class="section-title">代表理事と専門チームが提供する多彩な回復プログラム</h2>
     <div class="text-content section-lead">
@@ -454,7 +454,7 @@
     </div>
   </section>
 
-  <section class="content-section detail-section prose-section" id="rapport">
+  <section class="content-section detail-section prose-section standalone-page" id="rapport">
     <p class="section-kicker">WOMEN ONLY SUPPORT</p>
     <h2 class="section-title">女性専用施設 らぽーる</h2>
     <p class="prose-lead">
@@ -471,36 +471,233 @@
     </figure>
   </section>
 
-  <section class="content-section detail-section prose-section" id="grouphome">
+  <section class="content-section detail-section prose-section standalone-page" id="grouphome">
     <p class="section-kicker">GROUP HOME</p>
     <h2 class="section-title">グループホーム</h2>
     <p class="prose-lead">
-      熊本の自然に近い環境で、共同生活を「回復の練習場」として活用します。睡眠・食事・服薬・通院・対人距離を、スタッフと一緒に整え、再発しにくい生活の型を身につけます。
+      ひごのいえのグループホームは、障害福祉サービス「共同生活援助（グループホーム）」に基づく住まいです。依存症回復と生活再建を、共同生活のなかで丁寧に支えます。
     </p>
-    <ul class="prose-highlights">
-      <li>清潔な居室と共用空間 — 「ここに住みたい」と思える居住品質</li>
-      <li>個別性を尊重した支援で、就労・家族連携・行政手続きまで段階的に計画</li>
-      <li>受給者証や申請など、煩雑な手続きもスタッフが伴走</li>
-    </ul>
+
+    <div class="info-panel">
+      <h3 class="info-panel__title">障害福祉サービスとは</h3>
+      <p class="info-panel__text">
+        障害のある方が地域で自分らしく暮らすため、国と自治体が整備している支援制度です。住まい・日中活動・就労・相談など、生活の場面ごとにサービスが用意されています。
+      </p>
+    </div>
+
+    <figure class="service-diagram" aria-label="障害福祉サービスとグループホームの位置づけ">
+      <div class="service-diagram__track">
+        <div class="service-diagram__box">
+          <span class="service-diagram__label">障害福祉サービス</span>
+          <span class="service-diagram__desc">地域で暮らすための支援制度</span>
+        </div>
+        <span class="service-diagram__arrow" aria-hidden="true">→</span>
+        <div class="service-diagram__box service-diagram__box--accent">
+          <span class="service-diagram__label">共同生活援助</span>
+          <span class="service-diagram__desc">いわゆる「グループホーム」</span>
+        </div>
+        <span class="service-diagram__arrow" aria-hidden="true">→</span>
+        <div class="service-diagram__box">
+          <span class="service-diagram__label">ひごのいえ</span>
+          <span class="service-diagram__desc">回復と生活再建に特化した運営</span>
+        </div>
+      </div>
+      <figcaption class="service-diagram__caption">共同生活援助は、障害福祉サービスのひとつで、少人数の共同生活を通じて自立を支援します。</figcaption>
+    </figure>
+
+    <div class="info-panel">
+      <h3 class="info-panel__title">グループホーム（共同生活援助）の制度</h3>
+      <ul class="info-list">
+        <li>少人数の共同生活を通じ、食事・睡眠・掃除・金銭管理など日常生活を整えます。</li>
+        <li>世話人・生活支援員が24時間体制で見守り、安心して過ごせる環境をつくります。</li>
+        <li>利用には<strong>障害福祉サービス受給者証</strong>が必要です（申請は自治体で審査）。</li>
+        <li>利用者負担額は所得に応じて決まります（上限月額など、自治体・制度により異なります）。</li>
+      </ul>
+    </div>
+
+    <h3 class="subsection-title">ご利用までの流れ</h3>
+    <ol class="info-flow" aria-label="グループホーム利用の流れ">
+      <li class="info-flow__step">
+        <span class="info-flow__num">1</span>
+        <div class="info-flow__body">
+          <strong>ご相談・見学</strong>
+          <p>お電話・メールで現状をお聞きし、施設の雰囲気や支援方針をご説明します。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">2</span>
+        <div class="info-flow__body">
+          <strong>受給者証の確認</strong>
+          <p>お持ちの場合は内容を確認。未申請の方は、自治体・相談支援専門員と連携して手続きを進めます。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">3</span>
+        <div class="info-flow__body">
+          <strong>利用調整・面談</strong>
+          <p>相談支援専門員・医療機関と連携し、入居時期と支援計画のたたき台を作成します。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">4</span>
+        <div class="info-flow__body">
+          <strong>契約・入居</strong>
+          <p>共同生活のルールを共有し、生活リズムの再建をスタートします。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">5</span>
+        <div class="info-flow__body">
+          <strong>地域生活への移行</strong>
+          <p>就労・家族連携・行政手続きを含め、無理のない自立へ段階的に伴走します。</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="support-pillars" aria-label="ひごのいえのグループホームで行う支援">
+      <article class="support-pillar">
+        <h4>生活リズム</h4>
+        <p>睡眠・食事・服薬・通院を整え、再発しにくい毎日の型をつくります。</p>
+      </article>
+      <article class="support-pillar">
+        <h4>対人・心理</h4>
+        <p>共同生活のなかで、孤立を防ぎ、距離感と感情の扱いを練習します。</p>
+      </article>
+      <article class="support-pillar">
+        <h4>社会復帰</h4>
+        <p>就労準備・家族連携・行政手続きまで、出口を見据えて計画します。</p>
+      </article>
+    </div>
+
     <figure class="home-showcase-single">
       <img src="/static/grouphome-cozy-home.jpg?v=20260522c" alt="アットホームで清潔感のあるグループホームのリビング" width="1200" height="800" loading="lazy" decoding="async">
       <figcaption>清潔で落ち着いた共用空間。生活リズムの再建に集中できる、住み心地のよい環境です。</figcaption>
     </figure>
+
+    <div class="page-cta-box">
+      <p>「何から始めればよいか分からない」段階から、スタッフが手続きと生活設計を伴走します。</p>
+      <a href="/contact" class="page-cta-link">相談窓口へ</a>
+      <a href="/guide" class="page-cta-link page-cta-link--ghost">利用案内を見る</a>
+    </div>
   </section>
 
-  <section class="content-section detail-section" id="guide">
+  <section class="content-section detail-section standalone-page" id="guide">
     <p class="section-kicker">USER GUIDE</p>
     <h2 class="section-title">利用案内</h2>
-    <div class="copy-grid">
-      <div class="text-content">
-        初回相談から入所検討、回復プログラム、退所後の生活再建まで、一人ひとりの状況に合わせて継続的に伴走します。
-      </div>
-      <div class="text-content">
-        受付時間は平日10:00〜17:00です。電話・メールどちらでも受け付けています。まずは相談から始めてみてください。
-      </div>
+    <p class="prose-lead">
+      初回相談から入所・プログラム・退所後の生活再建まで、一人ひとりのペースで伴走します。まずはお気軽にご相談ください（初回相談無料・秘密厳守）。
+    </p>
+
+    <div class="info-panel info-panel--highlight">
+      <h3 class="info-panel__title">こんな方にご利用いただいています</h3>
+      <ul class="info-list">
+        <li>薬物・アルコール・ギャンブル・処方薬などの依存症でお困りの方</li>
+        <li>再発を繰り返し、生活リズムを立て直したい方</li>
+        <li>ご家族・医療機関・行政からのご紹介で検討されている方</li>
+        <li>女性専用の安心できる環境をお探しの方（施設「らぽーる」）</li>
+      </ul>
     </div>
+
+    <h3 class="subsection-title">ご利用の流れ</h3>
+    <ol class="info-flow info-flow--guide" aria-label="ひごのいえの利用の流れ">
+      <li class="info-flow__step">
+        <span class="info-flow__num">1</span>
+        <div class="info-flow__body">
+          <strong>お問い合わせ（初回相談）</strong>
+          <p>電話・メールで現状をお聞きします。ご本人・ご家族・関係機関からの相談に対応します。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">2</span>
+        <div class="info-flow__body">
+          <strong>面談・見学</strong>
+          <p>支援方針・施設環境・プログラム内容をご説明。必要に応じて見学を調整します。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">3</span>
+        <div class="info-flow__body">
+          <strong>支援計画の作成</strong>
+          <p>医療機関・相談支援専門員・行政と連携し、入所・通所・グループホーム等の方針を整理します。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">4</span>
+        <div class="info-flow__body">
+          <strong>利用開始</strong>
+          <p>生活リズム・服薬・対人支援・ピアサポートなど、個別プランに沿って支援を開始します。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">5</span>
+        <div class="info-flow__body">
+          <strong>継続支援・家族連携</strong>
+          <p>再発予防と生活再建を見据え、家族会・面談・関係機関連携を継続します。</p>
+        </div>
+      </li>
+      <li class="info-flow__step">
+        <span class="info-flow__num">6</span>
+        <div class="info-flow__body">
+          <strong>退所・地域移行</strong>
+          <p>住居・就労・通院の段取りを整え、地域生活への移行を伴走します。</p>
+        </div>
+      </li>
+    </ol>
+
+    <figure class="service-diagram service-diagram--vertical" aria-label="支援のつながり">
+      <div class="service-diagram__track service-diagram__track--stack">
+        <div class="service-diagram__box">ご本人・ご家族</div>
+        <span class="service-diagram__arrow service-diagram__arrow--down" aria-hidden="true">↓</span>
+        <div class="service-diagram__box service-diagram__box--accent">ひごのいえ</div>
+        <span class="service-diagram__arrow service-diagram__arrow--down" aria-hidden="true">↓</span>
+        <div class="service-diagram__box">医療・相談支援・行政</div>
+      </div>
+      <figcaption class="service-diagram__caption">一人で抱え込まず、関係機関と情報を共有しながら進めます。</figcaption>
+    </figure>
+
+    <div class="guide-grid">
+      <article class="guide-card">
+        <h3 class="guide-card__title">受付・相談</h3>
+        <dl class="guide-dl">
+          <dt>電話</dt>
+          <dd><a href="tel:0964-41-2387">0964-41-2387</a></dd>
+          <dt>受付時間</dt>
+          <dd>平日 10:00〜17:00</dd>
+          <dt>メール</dt>
+          <dd>info@higonoie.or.jp（24時間受付）</dd>
+        </dl>
+      </article>
+      <article class="guide-card">
+        <h3 class="guide-card__title">ご準備いただくもの（例）</h3>
+        <ul class="info-list">
+          <li>お薬手帳・通院情報（お持ちの場合）</li>
+          <li>障害福祉サービス受給者証（お持ちの場合）</li>
+          <li>これまでの支援履歴が分かる資料（任意）</li>
+        </ul>
+      </article>
+      <article class="guide-card">
+        <h3 class="guide-card__title">費用について</h3>
+        <p class="guide-card__text">
+          利用形態（入所・グループホーム・女性専用施設など）により異なります。初回相談時に、現状に合った選択肢と費用の考え方を分かりやすくご説明します。
+        </p>
+      </article>
+      <article class="guide-card">
+        <h3 class="guide-card__title">よくあるご質問</h3>
+        <ul class="info-list">
+          <li><strong>家族だけの相談は可能？</strong> — はい、秘密厳守で対応します。</li>
+          <li><strong>見学はできる？</strong> — 事前予約で調整します。</li>
+          <li><strong>女性だけの環境は？</strong> — 施設「らぽーる」をご案内します。</li>
+        </ul>
+      </article>
+    </div>
+
     <div class="support-banner">
       <strong>ご相談窓口：</strong> 0964-41-2387（平日10:00〜17:00） / info@higonoie.or.jp（24時間受付）
+    </div>
+
+    <div class="page-cta-box">
+      <a href="tel:0964-41-2387" class="page-cta-link">今すぐ電話相談</a>
+      <a href="/contact" class="page-cta-link page-cta-link--ghost">無料相談フォームへ</a>
     </div>
   </section>
 
@@ -523,7 +720,7 @@
     </div>
   </section>
 
-  <section class="content-section detail-section landing-heavy" id="family-guide">
+  <section class="content-section detail-section landing-heavy standalone-page" id="family-guide">
     <p class="section-kicker">FAMILY SUPPORT</p>
     <h2 class="section-title">家族ガイド | 家族が先につながることが回復の第一歩</h2>
     <div class="copy-grid">
@@ -570,7 +767,7 @@
     </figure>
   </section>
 
-  <section class="story-section" id="testimonials">
+  <section class="story-section standalone-page" id="testimonials">
     <div class="story-content">
       <div class="story-label">STORIES OF RECOVERY</div>
       <h2 class="story-title">絶望から希望へ</h2>
@@ -633,7 +830,7 @@
     </article>
   </section>
 
-  <section class="staff-story" id="staff">
+  <section class="staff-story standalone-page" id="staff">
     <p class="section-kicker">OUR STAFF</p>
     <h2 class="section-title">スタッフ紹介</h2>
     <div class="staff-visual-grid">
@@ -717,7 +914,7 @@
     </div>
   </section>
 
-  <section class="contact-section" id="contact">
+  <section class="contact-section standalone-page" id="contact">
     <h2 class="contact-title">安心してご相談ください</h2>
     <div class="contact-subtitle">
       「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。
@@ -874,17 +1071,48 @@
       '/program': ['プログラム | ひごのいえ', '希望・正直・回復を軸にした、再発予防まで見据えた回復支援プログラムの概要です。'],
       '/testimonials': ['体験談 | ひごのいえ', '依存症回復を実現した体験談と、回復への具体的な道のりをご紹介します。'],
       '/rapport': ['女性専用施設 | ひごのいえ', '女性専用施設らぽーるの支援内容と安心して回復できる環境をご案内します。'],
-      '/grouphome': ['グループホーム | ひごのいえ', '共同生活を通じた生活再建と回復支援についてご紹介します。'],
-      '/guide': ['利用案内 | ひごのいえ', '初回相談から利用開始、生活再建までのご利用の流れをご案内します。'],
+      '/grouphome': ['グループホーム | ひごのいえ', '障害福祉サービス・共同生活援助（グループホーム）の制度と、ひごのいえの支援内容をわかりやすくご案内します。'],
+      '/guide': ['利用案内 | ひごのいえ', '初回相談から入所・継続支援・地域移行までの流れ、受付時間、準備物をご案内します。'],
       '/family-guide': ['家族ガイド | ひごのいえ', 'ご家族向けの相談支援と連携体制についてご案内します。'],
       '/contact': ['相談窓口 | ひごのいえ', '相談窓口の受付時間と連絡先をご案内します。'],
     };
 
     const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
     const landingPaths = new Set(['/', '/top']);
+    const standalonePaths = new Set([
+      '/about',
+      '/staff',
+      '/program',
+      '/testimonials',
+      '/rapport',
+      '/grouphome',
+      '/guide',
+      '/family-guide',
+      '/contact',
+      '/women',
+      '/usage',
+      '/family',
+    ]);
+
     if (landingPaths.has(normalizedPath)) {
       document.body.classList.add('is-landing');
+    } else if (standalonePaths.has(normalizedPath)) {
+      document.body.classList.add('is-standalone-view');
+      const activeSectionId = pathSectionMap[normalizedPath];
+      if (activeSectionId) {
+        document.body.dataset.activeSection = activeSectionId;
+        const sectionTarget = document.getElementById(activeSectionId);
+        if (sectionTarget) {
+          sectionTarget.classList.add('standalone-target');
+        }
+        if (activeSectionId === 'testimonials') {
+          document.querySelectorAll('.compact-testimonial-wrap, .testimonial-grid-wrap').forEach((el) => {
+            el.classList.add('standalone-target');
+          });
+        }
+      }
     }
+
     const pathMeta = pathMetaMap[normalizedPath];
     if (pathMeta) {
       document.title = pathMeta[0];
@@ -897,7 +1125,9 @@
     if (!window.location.hash && pathSectionMap[normalizedPath]) {
       const sectionTarget = document.getElementById(pathSectionMap[normalizedPath]);
       if (sectionTarget) {
-        sectionTarget.scrollIntoView({ behavior: 'auto', block: 'start' });
+        window.requestAnimationFrame(() => {
+          sectionTarget.scrollIntoView({ behavior: 'auto', block: 'start' });
+        });
       }
     }
 
