@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:sandbox": "wrangler pages dev dist --ip 0.0.0.0 --port 3000",
-    "build": "vite build && node scripts/prepare-pages-output.mjs",
+    "ensure:deps": "node scripts/ensure-deps.mjs",
+    "dev": "npm run ensure:deps && vite",
+    "dev:sandbox": "npm run ensure:deps && wrangler pages dev dist --ip 0.0.0.0 --port 3000",
+    "build:core": "npm run ensure:deps && vite build && node scripts/prepare-pages-output.mjs",
+    "build": "npm run build:core && node scripts/verify-generated-site.mjs",
     "build:pages": "npm run build",
     "pages:build": "npm run build",
     "build:prod": "npm run build",
@@ -17,11 +19,12 @@
     "cf:build": "npm run build",
     "generate": "npm run build",
     "export": "npm run build",
-    "preview": "wrangler pages dev dist",
+    "preview": "npm run ensure:deps && wrangler pages dev dist",
     "deploy": "npm run build && node scripts/maybe-wrangler-deploy.mjs",
     "deploy:prod": "npm run build && node scripts/maybe-wrangler-deploy.mjs --project-name higonoie",
     "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
-    "test": "curl http://localhost:3000"
+    "test": "curl http://localhost:3000",
+    "verify:site": "npm run build:core && node scripts/verify-generated-site.mjs"
   },
   "dependencies": {
     "hono": "^4.0.0"
