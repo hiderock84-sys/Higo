@@ -1,4 +1,4 @@
-# デプロイ手順（Cloudflare Pages: higo-8il）
+# デプロイ手順（Cloudflare Pages: higo）
 
 ## 自動デプロイ（GitHub Actions）
 
@@ -9,7 +9,7 @@
 | Secret 名 | 内容 |
 |-----------|------|
 | `CLOUDFLARE_API_TOKEN` | Cloudflare API トークン（Pages Edit 権限） |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare アカウント ID |
+| `CLOUDFLARE_ACCOUNT_ID` | `e696c49d9b07a09be98acdb426cb008e` |
 
 設定場所: https://github.com/hiderock84-sys/Higo/settings/secrets/actions
 
