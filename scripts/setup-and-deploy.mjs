@@ -51,7 +51,18 @@ async function main() {
     process.exit(1)
   }
 
-  const args = ['wrangler', 'pages', 'deploy', 'dist', '--project-name', projectName, '--commit-dirty=true']
+  const args = [
+    'wrangler',
+    'pages',
+    'deploy',
+    'dist',
+    '--project-name',
+    projectName,
+    '--branch',
+    'main',
+    '--commit-dirty=true',
+    '--skip-caching',
+  ]
 
   console.log(`[deploy] Deploying to Cloudflare Pages project: ${projectName}`)
   await run('npx', args, {
