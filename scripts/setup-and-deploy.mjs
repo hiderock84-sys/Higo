@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { spawn } from 'node:child_process'
-import { access } from 'node:fs/promises'
+import { access, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -27,7 +27,10 @@ function run(command, args, extraEnv = {}) {
 async function main() {
   console.log('[deploy] Verifying build output...')
   await access(path.join(distDir, 'index.html'))
-  await access(path.join(distDir, 'static', 'hero-cover-aso-kumamoto.jpg'))
+  const indexHtml = await readFile(path.join(distDir, 'index.html'), 'utf8')
+  if (!indexHtml.includes('info-sheet')) {
+    throw new Error('dist/index.html is stale — run npm run build from latest index.html')
+  }
 
   if (!token) {
     console.error(`

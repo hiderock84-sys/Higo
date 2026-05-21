@@ -32,10 +32,12 @@ async function syncStaticAssetsToDist() {
   const distStaticDir = path.join(distDir, 'static')
 
   const redirectsSource = path.join(projectRoot, 'public', '_redirects')
+  const headersSource = path.join(projectRoot, 'public', '_headers')
   await mkdir(distStaticDir, { recursive: true })
   await cp(sourceIndex, path.join(distDir, 'index.html'))
   await cp(sourceStaticDir, distStaticDir, { recursive: true })
   await cp(redirectsSource, path.join(distDir, '_redirects'))
+  await cp(headersSource, path.join(distDir, '_headers'))
   // SPA: static only — remove worker so _redirects handles all routes
   await rm(path.join(distDir, '_worker.js'), { force: true })
   await rm(path.join(distDir, '_routes.json'), { force: true })

@@ -1,0 +1,11 @@
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/guide
+  Cache-Control: no-cache, must-revalidate
+
+/grouphome
+  Cache-Control: no-cache, must-revalidate
+
+/*
+  Cache-Control: public, max-age=86400

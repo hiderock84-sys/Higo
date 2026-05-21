@@ -1,9 +1,9 @@
 # Dependencies
 node_modules/
 
-# Build output
-dist/_worker.js
-dist/_routes.json
+# Build output (never commit — Cloudflare builds from source)
+dist/
+build/
 out/
 output/
 .output/

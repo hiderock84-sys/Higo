@@ -27,9 +27,10 @@ jobs:
       - name: Verify build artifacts
         run: |
           test -f dist/index.html
-          test -f dist/static/hero-cover-aso-kumamoto.jpg
-          test -f dist/static/staff-energetic-laughing.jpg
-          grep -q 'hero-cover-aso-kumamoto' dist/index.html
+          test -f dist/_headers
+          test -f dist/static/style.css
+          grep -q 'info-sheet' dist/index.html
+          grep -q 'hero-kyushu-green' dist/index.html
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
