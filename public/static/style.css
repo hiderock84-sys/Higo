@@ -1915,9 +1915,9 @@ body.is-landing .landing-only {
 /* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
 body.is-landing .hero-section {
-  min-height: max(420px, calc(100svh - var(--site-chrome-height, 70px)));
-  min-height: max(420px, calc(100dvh - var(--site-chrome-height, 70px)));
-  padding: clamp(64px, 12vw, 88px) 16px clamp(80px, 14vw, 120px);
+  min-height: min(72vh, 620px);
+  padding: clamp(32px, 8vw, 56px) 16px clamp(56px, 10vw, 88px);
+  align-items: center;
 }
 
 body.is-landing .hero-title {
@@ -3672,9 +3672,8 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 
   body.is-landing .hero-section {
-    min-height: max(380px, calc(100svh - var(--site-chrome-height, 70px)));
-    min-height: max(380px, calc(100dvh - var(--site-chrome-height, 70px)));
-    padding: 52px 16px 96px;
+    min-height: min(65vh, 520px);
+    padding: 28px 16px 72px;
   }
 
   .hero-cover-photo {
