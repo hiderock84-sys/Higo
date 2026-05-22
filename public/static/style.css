@@ -24,6 +24,7 @@
   --radius-lg: 16px;
   --header-height: 64px;
   --trust-bar-height: 30px;
+  --site-chrome-height: 94px;
   --site-header-bg: rgba(6, 28, 44, 0.94);
   --font-body: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
   --font-heading: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
@@ -70,9 +71,19 @@ body {
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  padding-top: 0;
   padding-bottom: env(safe-area-inset-bottom, 0);
   overflow-wrap: break-word;
   word-break: normal;
+}
+
+#main-content {
+  margin: 0;
+  padding: 0;
+}
+
+#main-content > .hero-section:first-child {
+  margin-top: 0;
 }
 
 body.has-mobile-cta {
@@ -102,10 +113,17 @@ button:focus-visible {
   left: 0;
 }
 
-.trust-bar {
+.site-chrome {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 500;
+  flex-shrink: 0;
+}
+
+.trust-bar {
+  position: relative;
+  top: auto;
+  z-index: 1;
   background: linear-gradient(90deg, #0a2d42 0%, #0f3d56 50%, #0a2d42 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -152,7 +170,7 @@ button:focus-visible {
 #guide,
 #family-guide,
 #contact {
-  scroll-margin-top: calc(var(--header-height) + var(--trust-bar-height) + 16px);
+  scroll-margin-top: calc(var(--site-chrome-height, 94px) + 16px);
 }
 
 .header {
@@ -1897,7 +1915,8 @@ body.is-landing .landing-only {
 /* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
 body.is-landing .hero-section {
-  min-height: min(88vh, 780px);
+  min-height: max(420px, calc(100svh - var(--site-chrome-height, 70px)));
+  min-height: max(420px, calc(100dvh - var(--site-chrome-height, 70px)));
   padding: clamp(64px, 12vw, 88px) 16px clamp(80px, 14vw, 120px);
 }
 
@@ -3653,7 +3672,8 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 
   body.is-landing .hero-section {
-    min-height: min(86vh, 720px);
+    min-height: max(380px, calc(100svh - var(--site-chrome-height, 70px)));
+    min-height: max(380px, calc(100dvh - var(--site-chrome-height, 70px)));
     padding: 52px 16px 96px;
   }
 
@@ -3992,10 +4012,16 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 }
 /* Enterprise site chrome — header, trust bar, footer */
 
-.trust-bar {
+.site-chrome {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 500;
+}
+
+.trust-bar {
+  position: relative;
+  top: auto;
+  z-index: 1;
   background: #061a28;
   border-bottom: 1px solid rgba(120, 210, 230, 0.15);
 }
@@ -4047,9 +4073,9 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 }
 
 .site-header {
-  position: sticky;
-  top: var(--trust-bar-height);
-  z-index: 200;
+  position: relative;
+  top: auto;
+  z-index: 2;
   background: var(--site-header-bg);
   backdrop-filter: blur(20px) saturate(1.25);
   -webkit-backdrop-filter: blur(20px) saturate(1.25);

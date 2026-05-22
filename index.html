@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260526fix" rel="stylesheet">
+  <link href="/static/style.css?v=20260527chrome" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -86,6 +86,7 @@
 <body>
   <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
 
+  <div class="site-chrome" id="siteChrome">
   <div class="trust-bar" aria-label="安心の取り組み">
     <div class="trust-bar-inner">
       <p class="trust-bar-brand">一般社団法人ひごのいえ｜熊本県御船町</p>
@@ -125,6 +126,7 @@
       </div>
     </div>
   </header>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu" hidden>
     <div class="mobile-menu-header">
@@ -1094,16 +1096,18 @@
       menuButton.addEventListener('click', onMenuOpen);
     }
 
-    const trustBar = document.querySelector('.trust-bar');
-    const syncTrustBarHeight = () => {
-      if (!trustBar) return;
-      document.documentElement.style.setProperty('--trust-bar-height', `${trustBar.offsetHeight}px`);
+    const siteChrome = document.getElementById('siteChrome');
+    const syncSiteChromeHeight = () => {
+      if (!siteChrome) return;
+      const height = `${siteChrome.offsetHeight}px`;
+      document.documentElement.style.setProperty('--site-chrome-height', height);
+      document.documentElement.style.setProperty('--trust-bar-height', height);
     };
-    syncTrustBarHeight();
-    window.addEventListener('resize', syncTrustBarHeight, { passive: true });
-    if ('ResizeObserver' in window && trustBar) {
-      const trustBarObserver = new ResizeObserver(syncTrustBarHeight);
-      trustBarObserver.observe(trustBar);
+    syncSiteChromeHeight();
+    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
+    if ('ResizeObserver' in window && siteChrome) {
+      const chromeObserver = new ResizeObserver(syncSiteChromeHeight);
+      chromeObserver.observe(siteChrome);
     }
 
     document.querySelectorAll('.data-table').forEach((table) => {
