@@ -561,6 +561,7 @@ button:focus-visible {
   letter-spacing: 0.1em;
   line-height: 1.45;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.34);
+  text-wrap: pretty;
 }
 
 .hero-message {
@@ -1220,6 +1221,14 @@ button:focus-visible {
   display: none;
 }
 
+.br-sm-only {
+  display: block;
+}
+
+.hero-tagline__end {
+  white-space: nowrap;
+}
+
 .program-section-title {
   display: flex;
   flex-direction: column;
@@ -1388,6 +1397,10 @@ button:focus-visible {
 @media (min-width: 640px) {
   .br-md-up {
     display: inline;
+  }
+
+  .br-sm-only {
+    display: none;
   }
 }
 
