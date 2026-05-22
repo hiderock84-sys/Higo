@@ -651,9 +651,10 @@ button:focus-visible {
 }
 
 .visual-card {
+  position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--surface-elevated);
+  background: #061a28;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--line);
   transition: transform 0.35s var(--ease-out), box-shadow 0.35s;
@@ -666,17 +667,30 @@ button:focus-visible {
 
 .visual-card img {
   width: 100%;
-  height: clamp(120px, 22vw, 180px);
+  height: clamp(140px, 24vw, 200px);
   object-fit: cover;
   display: block;
 }
 
+.visual-card__caption,
 .visual-card p {
-  padding: 12px 14px 13px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 32px 14px 14px;
   font-size: 0.86rem;
   line-height: 1.7;
-  color: #2f4658;
+  color: #fff;
   font-family: var(--font-body);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to top,
+    rgba(6, 26, 40, 0.92) 0%,
+    rgba(6, 26, 40, 0.55) 48%,
+    transparent 100%
+  );
 }
 
 .brand-axis {
@@ -2030,7 +2044,7 @@ body.is-landing .visual-strip {
 }
 
 body.is-landing .visual-card img {
-  height: clamp(100px, 18vw, 150px);
+  height: clamp(128px, 22vw, 180px);
 }
 
 body.is-landing .brand-axis {
@@ -3833,7 +3847,14 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 
   .visual-card img {
-    height: 168px;
+    height: clamp(168px, 42vw, 220px);
+  }
+
+  .visual-card__caption,
+  .visual-card p {
+    padding: 36px 16px 16px;
+    font-size: 0.875rem;
+    line-height: 1.72;
   }
 
   .content-section,
