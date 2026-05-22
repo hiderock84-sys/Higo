@@ -1948,72 +1948,123 @@ body.is-landing .landing-only {
 /* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
 body.is-landing .hero-section {
-  min-height: min(82vh, 760px);
-  padding: clamp(48px, 11vh, 88px) clamp(20px, 5vw, 32px) clamp(64px, 12vh, 96px);
+  min-height: min(88vh, 840px);
+  padding: clamp(40px, 9vh, 72px) clamp(16px, 4vw, 28px) clamp(72px, 11vh, 104px);
   align-items: center;
   justify-content: center;
 }
 
 body.is-landing .hero-section::after {
-  height: 72px;
-  opacity: 0.85;
+  height: 96px;
+  opacity: 0.9;
 }
 
 body.is-landing .hero-section::before {
   background:
-    linear-gradient(180deg, rgba(6, 22, 34, 0.55) 0%, rgba(6, 22, 34, 0.2) 38%, transparent 62%),
-    linear-gradient(0deg, rgba(6, 22, 34, 0.75) 0%, rgba(6, 22, 34, 0.25) 35%, transparent 70%),
-    linear-gradient(125deg, rgba(5, 18, 28, 0.35) 0%, transparent 55%);
+    linear-gradient(180deg, rgba(6, 22, 34, 0.72) 0%, rgba(6, 22, 34, 0.35) 42%, rgba(6, 22, 34, 0.12) 68%, transparent 100%),
+    linear-gradient(0deg, rgba(6, 22, 34, 0.88) 0%, rgba(6, 22, 34, 0.45) 42%, transparent 78%);
 }
 
 body.is-landing .hero-cover-photo {
-  object-position: center 42%;
+  object-position: center 38%;
 }
 
-body.is-landing .hero-inner {
+body.is-landing .hero-inner--editorial {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
-  padding: clamp(12px, 3vh, 24px) 0;
+  gap: clamp(14px, 2.8vh, 22px);
+  width: min(100%, 42rem);
+  padding: clamp(8px, 2vh, 16px) 0;
 }
 
 body.is-landing .hero-eyebrow {
-  margin-bottom: clamp(18px, 4vh, 28px);
+  margin: 0;
   letter-spacing: 0.22em;
+  font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
 }
 
 body.is-landing .hero-title {
-  font-size: clamp(2.5rem, 9vw, 4.5rem);
+  font-size: clamp(2.5rem, 9vw, 4.25rem);
   margin: 0;
+  line-height: 1.1;
 }
 
 body.is-landing .hero-tagline {
-  margin-top: clamp(22px, 5.5vh, 40px);
-  max-width: 20em;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: clamp(1.125rem, 4.2vw, 1.5rem);
-  line-height: 1.65;
-  letter-spacing: 0.08em;
+  margin: 0;
+  max-width: 22em;
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
+  line-height: 1.6;
+  letter-spacing: 0.07em;
 }
 
-body.is-landing .hero-message,
+body.is-landing .hero-copy-panel {
+  width: 100%;
+  margin-top: clamp(4px, 1vh, 10px);
+  padding: clamp(20px, 4vw, 28px) clamp(18px, 4vw, 26px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2.5vh, 20px);
+  text-align: left;
+  background: rgba(6, 24, 38, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 48px rgba(4, 16, 28, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body.is-landing .hero-copy-panel .hero-message {
+  margin: 0;
+  max-width: none;
+  font-size: clamp(0.9375rem, 2.6vw, 1.0625rem);
+  line-height: 1.82;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+body.is-landing .hero-message--addendum {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.875rem, 2.4vw, 1rem);
+  line-height: 1.78;
+}
+
+body.is-landing .hero-highlights {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+
+body.is-landing .hero-highlights li {
+  position: relative;
+  padding: 8px 10px 8px 22px;
+  font-size: clamp(0.75rem, 2.1vw, 0.875rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-sm);
+}
+
+body.is-landing .hero-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: #5ed4e8;
+  box-shadow: 0 0 8px rgba(94, 212, 232, 0.6);
+}
+
 body.is-landing .hero-actions--text-tabs {
-  display: none;
-}
-
-body.is-landing.has-mobile-cta {
-  padding-bottom: env(safe-area-inset-bottom, 0);
-}
-
-body.is-landing .mobile-cta-bar {
-  display: none;
-}
-
-body.is-landing .hero-actions--text-tabs {
-  margin-top: clamp(16px, 3.5vw, 24px);
+  margin-top: clamp(4px, 1vh, 8px);
   width: min(100%, 36rem);
   max-width: 92vw;
   margin-left: auto;
@@ -3813,26 +3864,41 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 
   body.is-landing .hero-section {
-    min-height: min(88svh, 820px);
-    padding: clamp(44px, 12svh, 80px) 20px clamp(52px, 10svh, 72px);
+    min-height: min(94svh, 920px);
+    padding: clamp(36px, 10svh, 64px) 16px clamp(64px, 12svh, 88px);
     align-items: center;
     justify-content: center;
   }
 
-  body.is-landing .hero-inner {
-    margin-top: 0;
-    padding: clamp(16px, 4svh, 28px) 0;
+  body.is-landing .hero-inner--editorial {
+    width: 100%;
+    gap: clamp(12px, 2.5svh, 18px);
+    padding: clamp(8px, 2svh, 14px) 0;
   }
 
   body.is-landing .hero-tagline {
-    margin-top: clamp(24px, 6svh, 44px);
     font-size: clamp(1.0625rem, 4.5vw, 1.375rem);
-    line-height: 1.7;
+    line-height: 1.65;
     max-width: 18em;
   }
 
   body.is-landing .hero-title {
-    font-size: clamp(2.25rem, 11vw, 3.5rem);
+    font-size: clamp(2.125rem, 10vw, 3.25rem);
+  }
+
+  body.is-landing .hero-copy-panel {
+    padding: clamp(18px, 4vw, 24px) clamp(14px, 3.5vw, 18px);
+    gap: clamp(12px, 2vh, 16px);
+  }
+
+  body.is-landing .hero-highlights {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  body.is-landing .hero-actions--text-tabs {
+    width: 100%;
+    gap: 8px;
   }
 
   .hero-inner {
@@ -3853,8 +3919,8 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 
   body.is-landing .hero-section::before {
     background:
-      linear-gradient(180deg, rgba(6, 22, 34, 0.62) 0%, rgba(6, 22, 34, 0.22) 40%, transparent 65%),
-      linear-gradient(0deg, rgba(6, 22, 34, 0.82) 0%, rgba(6, 22, 34, 0.3) 38%, transparent 72%);
+      linear-gradient(180deg, rgba(6, 22, 34, 0.78) 0%, rgba(6, 22, 34, 0.4) 45%, rgba(6, 22, 34, 0.15) 70%, transparent 100%),
+      linear-gradient(0deg, rgba(6, 22, 34, 0.9) 0%, rgba(6, 22, 34, 0.5) 45%, transparent 80%);
   }
 
   .hero-chip-list,
