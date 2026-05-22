@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260610" rel="stylesheet">
+  <link href="/static/style.css?v=20260611" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -105,7 +105,7 @@
         <span class="site-header__tagline">KUMAMOTO RECOVERY HOME</span>
       </a>
       <nav class="site-header__nav" aria-label="主要ナビゲーション">
-        <a href="/about" class="site-header__link">私たちについて</a>
+        <a href="/#page-menu" class="site-header__link">ページメニュー</a>
         <a href="/program" class="site-header__link">プログラム</a>
         <a href="/staff" class="site-header__link">スタッフ</a>
         <a href="/rapport" class="site-header__link">女性専用</a>
@@ -146,7 +146,7 @@
     </div>
     <nav class="mobile-menu-nav">
       <div class="mobile-menu-section-title">メニュー</div>
-      <a href="/about" class="mobile-menu-item">私たちについて</a>
+      <a href="/#page-menu" class="mobile-menu-item">ページメニュー</a>
       <a href="/staff" class="mobile-menu-item">スタッフ紹介</a>
       <a href="/program" class="mobile-menu-item">プログラム</a>
       <a href="/testimonials" class="mobile-menu-item">体験談</a>
@@ -258,20 +258,75 @@
   </section>
   <!-- ROUTE_SUMMARY_END -->
 
-  <section class="content-section intro-about standalone-page site-copy" id="about">
-    <p class="section-kicker">ABOUT HIGONOIE</p>
-    <h2 class="section-title">私たちについて</h2>
-    <div class="copy-grid">
-      <div class="text-content">
-        ひごのいえは、依存症に悩むご本人とご家族を支えるために、医療機関・行政機関・地域福祉と連携した受け入れ体制を構築しています。
-      </div>
-      <div class="text-content">
-        初回相談から入所検討、回復プログラム、退所後の生活再建まで、一人ひとりの状況に合わせて継続的に伴走します。
-      </div>
+  <section class="navigation-section" id="page-menu">
+    <div class="nav-section-header">
+      <h2 class="section-title">ページメニュー</h2>
+      <div class="nav-section-subtitle">ご覧になりたい内容をお選びください。<br class="br-md-up">各ページで、支援内容をわかりやすくご案内しています。</div>
     </div>
-    <div class="mini-gallery">
-      <img src="/static/hero-nature-majestic.jpg?v=20260525" alt="阿蘇の自然風景" loading="lazy" decoding="async">
-      <img src="/static/hero-amakusa-sea.jpg?v=20260521b" alt="上天草の海と島の眺望" loading="lazy" decoding="async">
+    <div class="nav-grid">
+      <a href="/staff" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">スタッフ紹介</div>
+          <div class="nav-subtitle">支援スタッフと代表メッセージ</div>
+        </div>
+      </a>
+      <a href="/program" class="nav-card nav-card-program" aria-label="プログラムへ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">プログラム</div>
+          <div class="nav-subtitle">回復への道のり</div>
+        </div>
+      </a>
+      <a href="/testimonials" class="nav-card nav-card-voice" aria-label="体験談へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">体験談</div>
+          <div class="nav-subtitle">回復者の声</div>
+        </div>
+      </a>
+      <a href="/rapport" class="nav-card nav-card-women" aria-label="女性専用施設へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">女性専用施設</div>
+          <div class="nav-subtitle">らぽーる</div>
+        </div>
+      </a>
+      <a href="/grouphome" class="nav-card nav-card-home" aria-label="グループホームへ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">グループホーム</div>
+          <div class="nav-subtitle">共同生活の場</div>
+        </div>
+      </a>
+      <a href="/guide" class="nav-card nav-card-usage" aria-label="ご利用案内へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">ご利用案内</div>
+          <div class="nav-subtitle">ご利用の流れ</div>
+        </div>
+      </a>
+      <a href="/family-guide" class="nav-card nav-card-family" aria-label="家族ガイドへ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">家族ガイド</div>
+          <div class="nav-subtitle">ご家族へのサポート</div>
+        </div>
+      </a>
+      <a href="/contact" class="nav-card nav-card-contact" aria-label="相談窓口へ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">相談窓口</div>
+          <div class="nav-subtitle">すぐに話せる連絡先</div>
+        </div>
+      </a>
+      <a href="/top" class="nav-card nav-card-top" aria-label="トップへ移動">
+        <div class="nav-card-bg"></div>
+        <div class="nav-card-content">
+          <div class="nav-title">トップ</div>
+          <div class="nav-subtitle">ホームへ戻る</div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -499,85 +554,6 @@
     </div>
     <div class="text-content highlight">
       まずは相談から。医療機関・行政機関からのご相談にも、誠実かつ迅速に対応します。
-    </div>
-  </section>
-
-  <section class="navigation-section">
-    <div class="nav-section-header">
-      <h2 class="section-title">ページメニュー</h2>
-      <div class="nav-section-subtitle">ご覧になりたい内容をお選びください。<br class="br-md-up">各ページで、支援内容をわかりやすくご案内しています。</div>
-    </div>
-    <div class="nav-grid">
-      <a href="/about" class="nav-card nav-card-about" aria-label="私たちについてへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">私たちについて</div>
-          <div class="nav-subtitle">施設の理念と特徴</div>
-        </div>
-      </a>
-      <a href="/staff" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">スタッフ紹介</div>
-          <div class="nav-subtitle">支援スタッフと代表メッセージ</div>
-        </div>
-      </a>
-      <a href="/program" class="nav-card nav-card-program" aria-label="プログラムへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">プログラム</div>
-          <div class="nav-subtitle">回復への道のり</div>
-        </div>
-      </a>
-      <a href="/testimonials" class="nav-card nav-card-voice" aria-label="体験談へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">体験談</div>
-          <div class="nav-subtitle">回復者の声</div>
-        </div>
-      </a>
-      <a href="/rapport" class="nav-card nav-card-women" aria-label="女性専用施設へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">女性専用施設</div>
-          <div class="nav-subtitle">らぽーる</div>
-        </div>
-      </a>
-      <a href="/grouphome" class="nav-card nav-card-home" aria-label="グループホームへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">グループホーム</div>
-          <div class="nav-subtitle">共同生活の場</div>
-        </div>
-      </a>
-      <a href="/guide" class="nav-card nav-card-usage" aria-label="ご利用案内へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">ご利用案内</div>
-          <div class="nav-subtitle">ご利用の流れ</div>
-        </div>
-      </a>
-      <a href="/family-guide" class="nav-card nav-card-family" aria-label="家族ガイドへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">家族ガイド</div>
-          <div class="nav-subtitle">ご家族へのサポート</div>
-        </div>
-      </a>
-      <a href="/contact" class="nav-card nav-card-contact" aria-label="相談窓口へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">相談窓口</div>
-          <div class="nav-subtitle">すぐに話せる連絡先</div>
-        </div>
-      </a>
-      <a href="/top" class="nav-card nav-card-top" aria-label="トップへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">トップ</div>
-          <div class="nav-subtitle">ホームへ戻る</div>
-        </div>
-      </a>
     </div>
   </section>
 
@@ -1064,7 +1040,7 @@
         <nav class="site-footer__nav" aria-label="フッターナビゲーション">
           <div class="site-footer__nav-col">
             <h3 class="site-footer__nav-title">施設について</h3>
-            <a href="/about">私たちについて</a>
+            <a href="/#page-menu">ページメニュー</a>
             <a href="/staff">スタッフ紹介</a>
             <a href="/program">プログラム</a>
             <a href="/testimonials">体験談</a>
@@ -1202,7 +1178,6 @@
 
     const pathSectionMap = {
       '/top': 'top',
-      '/about': 'about',
       '/staff': 'staff',
       '/program': 'program',
       '/testimonials': 'testimonials',
@@ -1217,7 +1192,6 @@
     };
 
     const pathMetaMap = {
-      '/about': ['私たちについて | ひごのいえ', 'ひごのいえの理念と依存症回復支援体制をご紹介します。'],
       '/staff': ['スタッフ紹介 | ひごのいえ', '回復経験と支援経験を持つスタッフによるサポート体制をご紹介します。'],
       '/program': ['プログラム | ひごのいえ', '生活リズム・グループワーク・医療連携を統合し、「誰と生きるか」を最優先にした回復プログラムをご紹介します。'],
       '/testimonials': ['体験談 | ひごのいえ', '依存症回復を実現した体験談と、回復への具体的な道のりをご紹介します。'],
@@ -1229,9 +1203,13 @@
     };
 
     const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+
+    if (normalizedPath === '/about') {
+      window.location.replace(`${window.location.origin}/#page-menu`);
+    }
+
     const landingPaths = new Set(['/', '/top']);
     const standalonePaths = new Set([
-      '/about',
       '/staff',
       '/program',
       '/testimonials',
