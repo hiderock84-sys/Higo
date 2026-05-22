@@ -1629,6 +1629,10 @@ button:focus-visible {
   --card-image: url("/static/hero-nature-majestic.jpg");
 }
 
+.nav-card-menu {
+  --card-image: url("/static/hero-amakusa-sea.jpg");
+}
+
 .nav-card-staff {
   --card-image: url("/static/staff-energetic-laughing.jpg");
 }
@@ -2052,7 +2056,7 @@ body.is-landing .story-section {
   display: none;
 }
 
-body.is-landing .nav-card-top {
+body.is-landing .nav-card-menu {
   display: none;
 }
 
