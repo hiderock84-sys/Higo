@@ -2872,33 +2872,6 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 }
 
-@media (max-width: 900px) {
-  :root {
-    --header-height: 44px;
-    --trust-bar-height: 26px;
-  }
-
-  .trust-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-  }
-
-  .site-header {
-    position: fixed;
-    top: var(--trust-bar-height);
-    left: 0;
-    right: 0;
-    z-index: 1001;
-  }
-
-  body {
-    padding-top: calc(var(--trust-bar-height) + var(--header-height));
-  }
-}
-
 .data-table-wrap {
   margin: 16px 0 24px;
   overflow-x: visible;
@@ -4075,7 +4048,7 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 
 .site-header {
   position: sticky;
-  top: var(--trust-bar-height, 0);
+  top: var(--trust-bar-height);
   z-index: 200;
   background: var(--site-header-bg);
   backdrop-filter: blur(20px) saturate(1.25);
