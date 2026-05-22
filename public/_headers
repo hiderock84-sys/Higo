@@ -10,5 +10,14 @@
 /program
   Cache-Control: no-cache, must-revalidate
 
+/static/tochihara-representative-main.jpg
+  Cache-Control: no-cache, must-revalidate
+
+/static/tochihara-representative-alt1.jpg
+  Cache-Control: no-cache, must-revalidate
+
+/static/tochihara-representative-alt2.jpg
+  Cache-Control: no-cache, must-revalidate
+
 /*
   Cache-Control: public, max-age=86400
