@@ -1953,44 +1953,67 @@ body.is-landing .hero-message {
 }
 
 body.is-landing .hero-actions--text-tabs {
-  margin-top: clamp(14px, 3.5vw, 22px);
+  margin-top: clamp(16px, 3.5vw, 24px);
   width: min(100%, 36rem);
   max-width: 92vw;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(10px, 3.5vw, 20px);
-  align-items: end;
+  gap: clamp(8px, 2.5vw, 14px);
+  align-items: stretch;
 }
 
 body.is-landing .hero-actions--text-tabs .hero-action,
 body.is-landing .hero-actions--text-tabs .hero-action.primary,
 body.is-landing .hero-actions--text-tabs .hero-action.ghost {
-  min-height: 0;
-  padding: 4px 2px 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 10px;
   font-family: var(--font-body);
   font-size: clamp(0.9375rem, 2.8vw, 1.0625rem);
   font-weight: 400;
-  line-height: 1.78;
+  line-height: 1.5;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.94);
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
   background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  text-align: center;
+  -webkit-tap-highlight-color: rgba(126, 232, 244, 0.2);
+  transition:
+    color 0.2s var(--ease-out),
+    background 0.2s var(--ease-out),
+    text-decoration-color 0.2s var(--ease-out);
 }
 
-body.is-landing .hero-actions--text-tabs .hero-action:hover,
+body.is-landing .hero-actions--text-tabs .hero-action:hover {
+  transform: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration-color: #fff;
+}
+
+body.is-landing .hero-actions--text-tabs .hero-action:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 body.is-landing .hero-actions--text-tabs .hero-action:focus-visible {
   transform: none;
   color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.9);
-  background: transparent;
+  outline: 2px solid #7ee8f4;
+  outline-offset: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration-color: #fff;
 }
 
 body.is-landing .visual-strip {
@@ -3776,14 +3799,14 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 
   body.is-landing .hero-actions--text-tabs {
     width: min(100%, 28em);
-    gap: clamp(8px, 3vw, 16px);
+    gap: clamp(6px, 2.5vw, 12px);
   }
 
   body.is-landing .hero-actions--text-tabs .hero-action {
-    min-height: 0;
+    min-height: 44px;
     font-size: clamp(1rem, 3.5vw, 1.125rem);
-    line-height: 1.78;
-    padding: 4px 2px 5px;
+    line-height: 1.5;
+    padding: 8px 6px;
   }
 
   .visual-strip {
