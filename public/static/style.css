@@ -3672,8 +3672,13 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 
   body.is-landing .hero-section {
-    min-height: min(65vh, 520px);
-    padding: 28px 16px 72px;
+    min-height: min(52vh, 440px);
+    padding: 20px 16px 56px;
+    align-items: flex-start;
+  }
+
+  .hero-inner {
+    margin-top: clamp(8px, 2vw, 16px);
   }
 
   .hero-cover-photo {
@@ -4030,6 +4035,7 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   margin: 0 auto;
   padding: 4px 20px;
   min-height: var(--trust-bar-height);
+  max-height: 48px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4561,6 +4567,11 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   :root {
     --header-height: 44px;
     --trust-bar-height: 26px;
+  }
+
+  .site-chrome {
+    position: relative;
+    top: auto;
   }
 
   .trust-bar-inner {
