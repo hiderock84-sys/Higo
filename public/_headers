@@ -10,13 +10,13 @@
 /program
   Cache-Control: no-cache, must-revalidate
 
-/static/tochihara-representative-main.jpg
+/static/tochihara-portrait-2026.jpg
   Cache-Control: no-cache, must-revalidate
 
-/static/tochihara-representative-alt1.jpg
+/static/tochihara-facility-2026.jpg
   Cache-Control: no-cache, must-revalidate
 
-/static/tochihara-representative-alt2.jpg
+/static/tochihara-meeting-2026.jpg
   Cache-Control: no-cache, must-revalidate
 
 /*
