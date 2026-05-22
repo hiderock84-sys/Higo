@@ -114,10 +114,17 @@ button:focus-visible {
 }
 
 .site-chrome {
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 500;
   flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .site-chrome {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .trust-bar {
@@ -132,7 +139,6 @@ button:focus-visible {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4px 20px;
-  min-height: var(--trust-bar-height);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -3672,8 +3678,8 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 
   body.is-landing .hero-section {
-    min-height: min(52vh, 440px);
-    padding: 20px 16px 56px;
+    min-height: 0;
+    padding: 16px 16px 48px;
     align-items: flex-start;
   }
 
@@ -4016,12 +4022,6 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 }
 /* Enterprise site chrome — header, trust bar, footer */
 
-.site-chrome {
-  position: sticky;
-  top: 0;
-  z-index: 500;
-}
-
 .trust-bar {
   position: relative;
   top: auto;
@@ -4034,8 +4034,6 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   max-width: 1240px;
   margin: 0 auto;
   padding: 4px 20px;
-  min-height: var(--trust-bar-height);
-  max-height: 48px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4569,14 +4567,8 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
     --trust-bar-height: 26px;
   }
 
-  .site-chrome {
-    position: relative;
-    top: auto;
-  }
-
   .trust-bar-inner {
     padding: 3px 10px;
-    min-height: var(--trust-bar-height);
     gap: 4px 8px;
     justify-content: space-between;
     flex-wrap: nowrap;
