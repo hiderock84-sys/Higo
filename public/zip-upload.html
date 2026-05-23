@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIPアップロード</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f7fb;
+      color: #1d2433;
+    }
+    .container {
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    h1 { margin-top: 0; font-size: 1.5rem; }
+    p { line-height: 1.6; }
+    .row { margin-top: 16px; }
+    input[type="file"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #d0d7e2;
+      border-radius: 8px;
+      background: #fff;
+    }
+    button {
+      margin-top: 16px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #348ca9;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .status.info { background: #eaf3ff; color: #1f4b86; }
+    .status.success { background: #e7f8ee; color: #1d6b3a; }
+    .status.error { background: #ffeef0; color: #9b1c31; }
+    .hint {
+      margin-top: 12px;
+      color: #5a667a;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>ZIPファイルアップロード</h1>
+    <p>ZIPファイルを選択してアップロードできます。</p>
+    <form id="uploadForm">
+      <div class="row">
+        <input id="zipFile" name="zipFile" type="file" accept=".zip,application/zip" required>
+      </div>
+      <button id="submitButton" type="submit">アップロード</button>
+    </form>
+    <div class="hint">※ サーバー上限の初期値は 10MB です（ZIP_MAX_BYTES で変更可）。</div>
+    <div id="status" class="status info" role="status" aria-live="polite">待機中</div>
+  </main>
+
+  <script>
+    const form = document.getElementById('uploadForm')
+    const fileInput = document.getElementById('zipFile')
+    const status = document.getElementById('status')
+    const submitButton = document.getElementById('submitButton')
+
+    const setStatus = (type, message) => {
+      status.className = `status ${type}`
+      status.textContent = message
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+      const file = fileInput.files && fileInput.files[0]
+      if (!file) {
+        setStatus('error', 'ZIPファイルを選択してください。')
+        return
+      }
+      if (!file.name.toLowerCase().endsWith('.zip')) {
+        setStatus('error', 'ZIPファイル（.zip）のみ選択できます。')
+        return
+      }
+
+      submitButton.disabled = true
+      setStatus('info', 'アップロード中...')
+
+      try {
+        const data = new FormData()
+        data.append('zipFile', file)
+        const response = await fetch('/api/upload-zip', {
+          method: 'POST',
+          body: data,
+        })
+        const result = await response.json().catch(() => null)
+        if (!response.ok || !result || result.ok !== true) {
+          const message = result && result.message ? result.message : 'アップロードに失敗しました。'
+          setStatus('error', message)
+          return
+        }
+
+        const lines = [
+          result.message || 'アップロード成功',
+          `key: ${result.key || '-'}`,
+          `size: ${result.size || 0} bytes`,
+        ]
+        if (result.publicUrl) {
+          lines.push(`url: ${result.publicUrl}`)
+        }
+        setStatus('success', lines.join('\n'))
+      } catch (error) {
+        setStatus('error', '通信エラーが発生しました。時間をおいて再試行してください。')
+      } finally {
+        submitButton.disabled = false
+      }
+    })
+  </script>
+</body>
+</html>

@@ -19,6 +19,15 @@
 - `/` - トップページ
 - `/static/style.css` - スタイルシート
 - `/static/hero-image.jpg` - ヒーロー背景画像（鳥居と湖）
+- `/zip-upload` - ZIPアップロード画面（管理用途）
+
+## ZIPアップロード機能（新規）
+- 画面: `/zip-upload`
+- API: `POST /api/upload-zip`（multipart/form-data, フィールド名: `zipFile`）
+- 拡張子: `.zip` のみ
+- サイズ上限: デフォルト `10MB`（`ZIP_MAX_BYTES` で変更可能）
+- 保存先: Cloudflare R2 バインディング `ZIP_UPLOADS`
+- 任意: `ZIP_PUBLIC_BASE_URL` を設定すると、レスポンスに公開URLを返却
 
 ## 未実装の機能
 - プログラム詳細ページ
