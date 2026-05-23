@@ -1999,7 +1999,7 @@ body.is-landing .hero-inner--editorial {
   gap: clamp(14px, 2.4vh, 20px);
 }
 
-body.is-landing .hero-copy-stack {
+body.is-landing.hero-variant-glass .hero-copy-stack {
   width: 100%;
   max-width: min(36rem, 100%);
   margin-inline: auto;
@@ -2016,25 +2016,25 @@ body.is-landing .hero-copy-stack {
   -webkit-backdrop-filter: blur(14px) saturate(1.15);
 }
 
-body.is-landing .hero-copy-stack .hero-head {
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-head {
   gap: clamp(8px, 1.6vh, 12px);
   padding-bottom: clamp(10px, 2vh, 14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-body.is-landing .hero-copy-stack .hero-body {
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-body {
   gap: clamp(8px, 1.6vh, 12px);
   padding-top: clamp(10px, 2vh, 14px);
 }
 
-body.is-landing .hero-copy-stack .hero-eyebrow {
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-eyebrow {
   display: inline-block;
   padding-bottom: 6px;
   border-bottom: 1px solid rgba(126, 232, 244, 0.45);
   color: rgba(158, 232, 240, 0.95);
 }
 
-body.is-landing .hero-copy-stack .hero-title {
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-title {
   background: linear-gradient(180deg, #ffffff 0%, #d4eef8 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -2042,12 +2042,12 @@ body.is-landing .hero-copy-stack .hero-title {
   filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.45));
 }
 
-body.is-landing .hero-copy-stack .hero-tagline {
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-tagline {
   font-weight: 600;
   letter-spacing: 0.05em;
 }
 
-body.is-landing .hero-copy-stack .hero-deck {
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-deck {
   margin: 0;
   padding: 0;
   font-size: clamp(0.875rem, 2.6vw, 1.0625rem);
@@ -2056,7 +2056,7 @@ body.is-landing .hero-copy-stack .hero-deck {
   color: rgba(255, 255, 255, 0.96);
 }
 
-body.is-landing .hero-copy-stack .hero-lead {
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-lead {
   margin: 0;
   font-size: clamp(0.8125rem, 2.3vw, 0.9375rem);
   line-height: 1.7;
@@ -4197,18 +4197,18 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
     display: block;
   }
 
-  body.is-landing .hero-copy-stack {
+  body.is-landing.hero-variant-glass .hero-copy-stack {
     max-width: 100%;
     padding: clamp(16px, 4vw, 22px) clamp(14px, 3.5vw, 18px);
     border-radius: 16px;
   }
 
-  body.is-landing .hero-copy-stack .hero-deck {
+  body.is-landing.hero-variant-glass .hero-copy-stack .hero-deck {
     font-size: clamp(0.8125rem, 3.2vw, 0.9375rem);
     line-height: 1.65;
   }
 
-  body.is-landing .hero-copy-stack .hero-lead {
+  body.is-landing.hero-variant-glass .hero-copy-stack .hero-lead {
     font-size: clamp(0.75rem, 3.1vw, 0.8125rem);
     line-height: 1.62;
     max-width: none;

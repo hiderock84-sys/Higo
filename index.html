@@ -23,7 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260528c1" rel="stylesheet">
+  <link href="/static/style.css?v=20260528c2" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260528c2" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -171,7 +172,7 @@
 
   <main id="main-content">
 
-  <section class="hero-section" id="top">
+  <section class="hero-section hero-section--glass" id="top" data-hero-variant="glass">
     <img
       class="hero-cover-photo"
       src="/static/hero-kyushu-green.jpg?v=20260526"
@@ -1018,6 +1019,15 @@
 
   </main>
 
+  <nav class="hero-variant-picker" id="heroVariantPicker" aria-label="表紙デザイン比較" hidden>
+    <p class="hero-variant-picker__title">表紙 A/B</p>
+    <a class="hero-variant-picker__btn" data-hero-variant="glass" href="?hero-preview=1&amp;hero=glass">A ガラス<small>現在・読みやすい</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="open" href="?hero-preview=1&amp;hero=open">B オープン<small>前作に近い</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="bottom" href="?hero-preview=1&amp;hero=bottom">C 下寄せ<small>シネマ風</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="split" href="?hero-preview=1&amp;hero=split">D 分割<small>写真＋パネル</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="sheet" href="?hero-preview=1&amp;hero=sheet">E シート<small>写真＋白紙</small></a>
+  </nav>
+
   <aside class="mobile-cta-bar" id="mobileCtaBar" aria-label="クイック相談" hidden>
     <a href="tel:0964-41-2387" class="mobile-cta-bar__btn mobile-cta-bar__btn--phone">
       <span class="mobile-cta-bar__icon" aria-hidden="true">
@@ -1245,8 +1255,53 @@
       '/family',
     ]);
 
+    const heroVariantIds = ['glass', 'open', 'bottom', 'split', 'sheet'];
+    const urlParams = new URLSearchParams(window.location.search);
+    const heroPreviewMode = urlParams.get('hero-preview') === '1';
+    let heroVariant = urlParams.get('hero');
+    if (!heroVariantIds.includes(heroVariant)) {
+      heroVariant = 'glass';
+    }
+
+    const applyHeroVariant = (variantId) => {
+      heroVariantIds.forEach((id) => {
+        document.body.classList.remove(`hero-variant-${id}`);
+      });
+      document.body.classList.add(`hero-variant-${variantId}`);
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        heroVariantIds.forEach((id) => {
+          heroSection.classList.remove(`hero-section--${id}`);
+        });
+        heroSection.classList.add(`hero-section--${variantId}`);
+        heroSection.dataset.heroVariant = variantId;
+      }
+      document.querySelectorAll('.hero-variant-picker__btn').forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.heroVariant === variantId);
+      });
+    };
+
     if (landingPaths.has(normalizedPath)) {
       document.body.classList.add('is-landing');
+      applyHeroVariant(heroVariant);
+      const heroVariantPicker = document.getElementById('heroVariantPicker');
+      if (heroVariantPicker) {
+        heroVariantPicker.hidden = !heroPreviewMode;
+      }
+      if (heroPreviewMode) {
+        document.querySelectorAll('.hero-variant-picker__btn').forEach((btn) => {
+          btn.addEventListener('click', (event) => {
+            const nextVariant = btn.dataset.heroVariant;
+            if (!heroVariantIds.includes(nextVariant)) return;
+            event.preventDefault();
+            const nextUrl = new URL(window.location.href);
+            nextUrl.searchParams.set('hero-preview', '1');
+            nextUrl.searchParams.set('hero', nextVariant);
+            window.history.replaceState({}, '', nextUrl);
+            applyHeroVariant(nextVariant);
+          });
+        });
+      }
     } else if (standalonePaths.has(normalizedPath)) {
       document.body.classList.add('is-standalone-view');
       const activeSectionId = pathSectionMap[normalizedPath];
