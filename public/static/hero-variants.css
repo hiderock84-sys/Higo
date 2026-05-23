@@ -3,8 +3,8 @@
  * 比較: ?hero-preview=1 を付けると右側に切替パネル表示
  */
 
-/* ── ガラス／下寄せ以外：パネル装飾をリセット ── */
-body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack {
+/* ── ガラス案以外：パネル装飾をリセット ── */
+body.is-landing:not(.hero-variant-glass) .hero-copy-stack {
   background: none;
   border: none;
   box-shadow: none;
@@ -13,16 +13,16 @@ body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-st
   border-radius: 0;
 }
 
-body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-head {
+body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-head {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-body {
+body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-body {
   padding-top: 0;
 }
 
-body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-title {
+body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-title {
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
@@ -31,7 +31,7 @@ body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-st
   filter: none;
 }
 
-body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-eyebrow {
+body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-eyebrow {
   display: block;
   padding-bottom: 0;
   border-bottom: none;
@@ -95,7 +95,7 @@ body.is-landing.hero-variant-open .hero-actions--cta {
 }
 
 /* ═══════════════════════════════════════
-   C: bottom — 下寄せ + ガラスカード（本番デフォルト）
+   C: bottom — 下寄せ・ガラスなし（本番デフォルト）
    ═══════════════════════════════════════ */
 body.is-landing.hero-variant-bottom .hero-section {
   justify-content: flex-end;
@@ -105,8 +105,8 @@ body.is-landing.hero-variant-bottom .hero-section {
 
 body.is-landing.hero-variant-bottom .hero-section::before {
   background:
-    linear-gradient(180deg, rgba(120, 190, 235, 0.18) 0%, transparent 42%),
-    linear-gradient(0deg, rgba(4, 16, 26, 0.55) 0%, rgba(6, 22, 34, 0.2) 38%, transparent 68%);
+    linear-gradient(180deg, rgba(120, 190, 235, 0.14) 0%, transparent 40%),
+    linear-gradient(0deg, rgba(4, 16, 26, 0.82) 0%, rgba(6, 22, 34, 0.5) 40%, transparent 72%);
 }
 
 body.is-landing.hero-variant-bottom .hero-section::after {
@@ -131,28 +131,19 @@ body.is-landing.hero-variant-bottom .hero-copy-stack {
   width: 100%;
   max-width: min(22.5rem, 100%);
   margin-inline: auto;
-  padding: clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 18px);
-  border-radius: 14px;
+  padding: 0 clamp(4px, 1.5vw, 8px);
   text-align: center;
-  background:
-    linear-gradient(165deg, rgba(8, 36, 52, 0.38) 0%, rgba(6, 22, 34, 0.28) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 8px 28px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px) saturate(1.12);
-  -webkit-backdrop-filter: blur(10px) saturate(1.12);
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-head {
   gap: clamp(6px, 1.2vh, 10px);
-  padding-bottom: clamp(8px, 1.6vh, 12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-body {
   gap: clamp(8px, 1.5vh, 12px);
-  padding-top: clamp(8px, 1.6vh, 12px);
+  padding-top: 0;
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-eyebrow {
@@ -178,11 +169,10 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.12;
-  background: linear-gradient(180deg, #ffffff 0%, #d8eef8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+  color: #fff;
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.65),
+    0 0 28px rgba(0, 0, 0, 0.35);
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-tagline {
@@ -217,9 +207,9 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-lead {
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   width: 100%;
   max-width: none;
-  margin: clamp(10px, 1.8vh, 14px) 0 0;
-  padding-top: clamp(8px, 1.6vh, 12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  margin: clamp(12px, 2vh, 16px) 0 0;
+  padding-top: 0;
+  border-top: none;
   gap: clamp(8px, 2.5vw, 12px);
 }
 
@@ -472,8 +462,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
 
   body.is-landing.hero-variant-bottom .hero-copy-stack {
     max-width: 100%;
-    padding: clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 16px);
-    border-radius: 14px;
+    padding: 0 4px;
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
