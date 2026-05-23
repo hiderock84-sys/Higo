@@ -1975,14 +1975,15 @@ body.is-landing .hero-inner.hero-inner--editorial {
   width: 100%;
   max-width: min(1240px, 100%);
   margin-inline: auto;
-  padding: clamp(8px, 2vh, 16px) clamp(4px, 1vw, 8px);
-  text-align: left;
+  padding: clamp(8px, 2vh, 16px) clamp(16px, 4vw, 28px);
+  text-align: center;
+  box-sizing: border-box;
 }
 
 body.is-landing .hero-inner--editorial {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   gap: clamp(10px, 2vh, 16px);
 }
@@ -1990,8 +1991,8 @@ body.is-landing .hero-inner--editorial {
 body.is-landing .hero-head {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   gap: clamp(10px, 2vh, 16px);
   width: 100%;
 }
@@ -2078,16 +2079,28 @@ body.is-landing .hero-deck__row {
 body.is-landing .hero-org,
 body.is-landing .hero-eyebrow {
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-title {
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-tagline {
-  text-align: left;
+  text-align: center;
+}
+
+body.is-landing .hero-tagline__row {
+  text-align: center;
+}
+
+body.is-landing .hero-deck {
+  text-align: center;
+}
+
+body.is-landing .hero-deck__row {
+  text-align: center;
 }
 
 body.is-landing .hero-copy-panel,
@@ -2102,8 +2115,9 @@ body.is-landing .hero-body {
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: clamp(10px, 2vh, 16px);
-  text-align: left;
+  text-align: center;
   background: none;
   border: none;
   border-radius: 0;
@@ -2115,6 +2129,7 @@ body.is-landing .hero-body {
 body.is-landing .hero-flow-group {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: clamp(6px, 1.2vh, 10px);
   width: 100%;
 }
@@ -2122,10 +2137,13 @@ body.is-landing .hero-flow-group {
 body.is-landing .hero-meta-group {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 0.35rem 1.1rem;
   width: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 body.is-landing .hero-meta-group span {
@@ -2140,15 +2158,16 @@ body.is-landing .hero-meta-group span {
 body.is-landing .hero-body.site-copy .hero-lead,
 body.is-landing .hero-body.site-copy .hero-meta-group {
   max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 body.is-landing .hero-lead {
   margin: 0;
   width: 100%;
   max-width: none;
+  text-align: center;
   font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
   line-height: 1.68;
   font-weight: 400;
@@ -3957,7 +3976,7 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   body.is-landing .hero-section {
     min-height: auto;
     padding: calc(var(--site-chrome-height, 70px) + 10px) 16px calc(56px + env(safe-area-inset-bottom, 0));
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-start;
     overflow-x: clip;
   }
@@ -3976,12 +3995,16 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   body.is-landing .hero-inner.hero-inner--editorial {
     width: 100%;
     max-width: 100%;
-    padding: 0;
+    padding: 0 12px;
     gap: clamp(10px, 2.2svh, 14px);
+    text-align: center;
+    align-items: center;
   }
 
   body.is-landing .hero-head {
     gap: clamp(6px, 1.4svh, 10px);
+    align-items: center;
+    text-align: center;
   }
 
   body.is-landing .hero-org {
@@ -4030,8 +4053,14 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
 
   body.is-landing .hero-meta-group {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.2rem;
+  }
+
+  body.is-landing .hero-lead,
+  body.is-landing .hero-flow-group {
+    text-align: center;
+    align-items: center;
   }
 
   body.is-landing .hero-meta-group span {
