@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260528b9" rel="stylesheet">
+  <link href="/static/style.css?v=20260528c0" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -121,7 +121,11 @@
         </a>
         <a href="/contact" class="site-header__cta site-header__cta--desktop">無料相談</a>
         <button type="button" class="site-header__menu-toggle" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
-          <span class="site-header__menu-icon" aria-hidden="true"></span>
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span class="site-header__menu-bar"></span>
+            <span class="site-header__menu-bar"></span>
+            <span class="site-header__menu-bar"></span>
+          </span>
         </button>
       </div>
     </div>
@@ -192,24 +196,13 @@
         </p>
       </header>
       <div class="hero-body site-copy">
-        <div class="hero-flow-group">
-          <p class="hero-lead">
-            一般社団法人ひごのいえは、熊本県御船町の依存症回復支援施設です。ご本人・ご家族・関係機関からのご相談を秘密厳守でお受けし、初回相談から入所・プログラム・退所後の生活再建まで、医療・福祉と連携して一貫して伴走します。
-          </p>
-          <p class="hero-lead hero-lead--sub">
-            薬物・アルコール・ギャンブル・処方薬など多様な依存に対応します。ご家族のみの相談にも応じ、「誰と生きるか」を大切にした回復の場として、仲間とともに人生を再設計する家であり続けます。
-          </p>
-        </div>
-        <p class="hero-meta-group" aria-label="支援の要点">
-          <span>初回相談無料・秘密厳守</span>
-          <span>メール相談24時間</span>
-          <span>医療・行政連携</span>
-          <span>女性専用施設「らぽーる」</span>
+        <p class="hero-lead">
+          熊本・御船町の依存症回復支援施設として、秘密厳守のご相談から入所・プログラム・退所後の生活再建まで、医療・福祉と連携して伴走します。薬物・アルコール・ギャンブルなど多様な依存に加え、ご家族のみの相談にも対応しています。
         </p>
       </div>
-      <nav class="hero-actions hero-actions--text-tabs" aria-label="表紙のクイックリンク">
-        <a href="/contact" class="hero-action hero-action--link">今すぐ相談する</a>
-        <a href="/guide" class="hero-action hero-action--link">利用の流れを見る</a>
+      <nav class="hero-actions hero-actions--cta" aria-label="表紙のクイックリンク">
+        <a href="/contact" class="hero-action primary">今すぐ相談する</a>
+        <a href="/guide" class="hero-action ghost">利用の流れを見る</a>
       </nav>
     </div>
   </section>
