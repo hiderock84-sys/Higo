@@ -29,6 +29,7 @@
   --site-header-bg: rgba(6, 28, 44, 0.94);
   --font-body: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
   --font-heading: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+  --font-display: 'Shippori Mincho B1', 'Noto Sans JP', serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --text-lead: clamp(0.9375rem, 2vw, 1.0625rem);
   --text-body: clamp(0.875rem, 1.9vw, 1rem);
@@ -2063,6 +2064,14 @@ body.is-landing.hero-variant-glass .hero-copy-stack .hero-lead {
   color: rgba(255, 255, 255, 0.9);
   max-width: 32em;
   margin-inline: auto;
+}
+
+body.is-landing.hero-variant-glass .hero-copy-stack .hero-actions--cta {
+  width: 100%;
+  max-width: none;
+  margin: clamp(12px, 2vh, 16px) 0 0;
+  padding-top: clamp(10px, 2vh, 14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 body.is-landing .hero-head {

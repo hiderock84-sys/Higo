@@ -3,8 +3,8 @@
  * 比較: ?hero-preview=1 を付けると右側に切替パネル表示
  */
 
-/* ── 非ガラス案：パネル装飾をリセット ── */
-body.is-landing:not(.hero-variant-glass) .hero-copy-stack {
+/* ── ガラス／下寄せ以外：パネル装飾をリセット ── */
+body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack {
   background: none;
   border: none;
   box-shadow: none;
@@ -13,16 +13,16 @@ body.is-landing:not(.hero-variant-glass) .hero-copy-stack {
   border-radius: 0;
 }
 
-body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-head {
+body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-head {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-body {
+body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-body {
   padding-top: 0;
 }
 
-body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-title {
+body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-title {
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
@@ -31,7 +31,7 @@ body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-title {
   filter: none;
 }
 
-body.is-landing:not(.hero-variant-glass) .hero-copy-stack .hero-eyebrow {
+body.is-landing:not(.hero-variant-glass):not(.hero-variant-bottom) .hero-copy-stack .hero-eyebrow {
   display: block;
   padding-bottom: 0;
   border-bottom: none;
@@ -95,54 +95,133 @@ body.is-landing.hero-variant-open .hero-actions--cta {
 }
 
 /* ═══════════════════════════════════════
-   C: bottom — シネマ風・下寄せ
+   C: bottom — 下寄せ + ガラスカード（本番デフォルト）
    ═══════════════════════════════════════ */
 body.is-landing.hero-variant-bottom .hero-section {
   justify-content: flex-end;
   align-items: stretch;
+  min-height: min(92vh, 860px);
 }
 
 body.is-landing.hero-variant-bottom .hero-section::before {
   background:
-    linear-gradient(180deg, transparent 0%, transparent 35%),
-    linear-gradient(0deg, rgba(4, 16, 26, 0.92) 0%, rgba(6, 22, 34, 0.55) 45%, transparent 78%);
+    linear-gradient(180deg, rgba(120, 190, 235, 0.18) 0%, transparent 42%),
+    linear-gradient(0deg, rgba(4, 16, 26, 0.55) 0%, rgba(6, 22, 34, 0.2) 38%, transparent 68%);
+}
+
+body.is-landing.hero-variant-bottom .hero-section::after {
+  opacity: 0.35;
+  height: 48px;
 }
 
 body.is-landing.hero-variant-bottom .hero-cover-photo {
-  object-position: center 22%;
+  object-position: center 24%;
+  filter: brightness(1.18) saturate(1.12) contrast(1.03);
 }
 
 body.is-landing.hero-variant-bottom .hero-inner--editorial {
   justify-content: flex-end;
-  padding-bottom: clamp(8px, 2vh, 16px);
+  width: 100%;
+  max-width: min(1240px, 100%);
+  padding: 0 clamp(12px, 3.5vw, 20px) clamp(6px, 1.5vh, 12px);
+  gap: 0;
 }
 
-body.is-landing.hero-variant-bottom .hero-eyebrow {
-  letter-spacing: 0.28em;
-  font-size: 0.625rem;
-  opacity: 0.9;
+body.is-landing.hero-variant-bottom .hero-copy-stack {
+  width: 100%;
+  max-width: min(22.5rem, 100%);
+  margin-inline: auto;
+  padding: clamp(16px, 4vw, 24px) clamp(14px, 3.5vw, 20px);
+  border-radius: 16px;
+  text-align: center;
+  background:
+    linear-gradient(165deg, rgba(8, 36, 52, 0.82) 0%, rgba(6, 22, 34, 0.72) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
 }
 
-body.is-landing.hero-variant-bottom .hero-title {
-  font-size: clamp(1.875rem, 8.5vw, 2.5rem);
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-head {
+  gap: clamp(6px, 1.2vh, 10px);
+  padding-bottom: clamp(10px, 2vh, 14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-body.is-landing.hero-variant-bottom .hero-tagline {
-  font-size: clamp(0.9375rem, 4vw, 1.125rem);
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-body {
+  gap: clamp(8px, 1.5vh, 12px);
+  padding-top: clamp(10px, 2vh, 14px);
 }
 
-body.is-landing.hero-variant-bottom .hero-head {
-  gap: 6px;
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-eyebrow {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(126, 232, 244, 0.5);
+  color: rgba(158, 232, 240, 0.96);
+  letter-spacing: 0.22em;
+  font-size: clamp(0.625rem, 1.7vw, 0.75rem);
+  font-family: var(--font-heading);
 }
 
-body.is-landing.hero-variant-bottom .hero-body {
-  gap: 6px;
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-org {
+  font-size: clamp(0.625rem, 1.8vw, 0.75rem);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
 }
 
-body.is-landing.hero-variant-bottom .hero-deck,
-body.is-landing.hero-variant-bottom .hero-lead {
-  font-size: clamp(0.75rem, 2.9vw, 0.8125rem);
-  line-height: 1.58;
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 10vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.12;
+  background: linear-gradient(180deg, #ffffff 0%, #d8eef8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-tagline {
+  font-size: clamp(0.9375rem, 3.8vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-deck {
+  margin: 0;
+  font-size: clamp(0.8125rem, 2.8vw, 0.9375rem);
+  line-height: 1.68;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-lead {
+  margin: 0;
+  font-size: clamp(0.75rem, 2.6vw, 0.875rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
+  width: 100%;
+  max-width: none;
+  margin: clamp(12px, 2vh, 16px) 0 0;
+  padding-top: clamp(10px, 2vh, 14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  gap: clamp(8px, 2.5vw, 12px);
+}
+
+body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
+  min-height: 50px;
+  border-radius: 11px;
 }
 
 /* ═══════════════════════════════════════
@@ -380,7 +459,26 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
   }
 
   body.is-landing.hero-variant-bottom .hero-section {
-    padding-bottom: calc(var(--mobile-cta-height, 76px) + 12px);
+    min-height: min(88svh, 820px);
+    padding:
+      calc(var(--site-chrome-height, 70px) + 8px)
+      12px
+      calc(var(--mobile-cta-height, 76px) + 14px);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack {
+    max-width: 100%;
+    padding: clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 16px);
+    border-radius: 14px;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
+    font-size: clamp(2rem, 9.5vw, 2.75rem);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
+    margin-top: 10px;
+    padding-top: 10px;
   }
 
   body.is-landing.hero-variant-sheet .hero-inner--editorial {

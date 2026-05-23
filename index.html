@@ -22,9 +22,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260528c2" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=20260528c2" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="/static/style.css?v=20260528c3" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260528c3" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -172,7 +172,7 @@
 
   <main id="main-content">
 
-  <section class="hero-section hero-section--glass" id="top" data-hero-variant="glass">
+  <section class="hero-section hero-section--bottom" id="top" data-hero-variant="bottom">
     <img
       class="hero-cover-photo"
       src="/static/hero-kyushu-green.jpg?v=20260526"
@@ -201,17 +201,17 @@
             熊本・御船町の依存症回復支援施設。秘密厳守のご相談から生活再建まで医療・福祉と連携し、多様な依存とご家族相談に伴走します。
           </p>
         </div>
+        <nav class="hero-actions hero-actions--cta hero-actions--premium" aria-label="表紙のクイックリンク">
+          <a href="/contact" class="hero-action primary hero-action--premium">
+            <span class="hero-action__label">今すぐ相談する</span>
+            <span class="hero-action__hint">無料・秘密厳守</span>
+          </a>
+          <a href="/guide" class="hero-action ghost hero-action--premium">
+            <span class="hero-action__label">利用の流れを見る</span>
+            <span class="hero-action__hint">初回相談から</span>
+          </a>
+        </nav>
       </div>
-      <nav class="hero-actions hero-actions--cta hero-actions--premium" aria-label="表紙のクイックリンク">
-        <a href="/contact" class="hero-action primary hero-action--premium">
-          <span class="hero-action__label">今すぐ相談する</span>
-          <span class="hero-action__hint">無料・秘密厳守</span>
-        </a>
-        <a href="/guide" class="hero-action ghost hero-action--premium">
-          <span class="hero-action__label">利用の流れを見る</span>
-          <span class="hero-action__hint">初回相談から</span>
-        </a>
-      </nav>
     </div>
   </section>
 
@@ -1023,7 +1023,7 @@
     <p class="hero-variant-picker__title">表紙 A/B</p>
     <a class="hero-variant-picker__btn" data-hero-variant="glass" href="?hero-preview=1&amp;hero=glass">A ガラス<small>現在・読みやすい</small></a>
     <a class="hero-variant-picker__btn" data-hero-variant="open" href="?hero-preview=1&amp;hero=open">B オープン<small>前作に近い</small></a>
-    <a class="hero-variant-picker__btn" data-hero-variant="bottom" href="?hero-preview=1&amp;hero=bottom">C 下寄せ<small>シネマ風</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="bottom" href="?hero-preview=1&amp;hero=bottom">C 下寄せ<small>本番採用</small></a>
     <a class="hero-variant-picker__btn" data-hero-variant="split" href="?hero-preview=1&amp;hero=split">D 分割<small>写真＋パネル</small></a>
     <a class="hero-variant-picker__btn" data-hero-variant="sheet" href="?hero-preview=1&amp;hero=sheet">E シート<small>写真＋白紙</small></a>
   </nav>
@@ -1260,7 +1260,7 @@
     const heroPreviewMode = urlParams.get('hero-preview') === '1';
     let heroVariant = urlParams.get('hero');
     if (!heroVariantIds.includes(heroVariant)) {
-      heroVariant = 'glass';
+      heroVariant = 'bottom';
     }
 
     const applyHeroVariant = (variantId) => {
