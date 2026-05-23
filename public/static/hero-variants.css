@@ -131,28 +131,28 @@ body.is-landing.hero-variant-bottom .hero-copy-stack {
   width: 100%;
   max-width: min(22.5rem, 100%);
   margin-inline: auto;
-  padding: clamp(16px, 4vw, 24px) clamp(14px, 3.5vw, 20px);
-  border-radius: 16px;
+  padding: clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 18px);
+  border-radius: 14px;
   text-align: center;
   background:
-    linear-gradient(165deg, rgba(8, 36, 52, 0.82) 0%, rgba(6, 22, 34, 0.72) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+    linear-gradient(165deg, rgba(8, 36, 52, 0.38) 0%, rgba(6, 22, 34, 0.28) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    0 8px 28px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px) saturate(1.12);
+  -webkit-backdrop-filter: blur(10px) saturate(1.12);
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-head {
   gap: clamp(6px, 1.2vh, 10px);
-  padding-bottom: clamp(10px, 2vh, 14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  padding-bottom: clamp(8px, 1.6vh, 12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-body {
   gap: clamp(8px, 1.5vh, 12px);
-  padding-top: clamp(10px, 2vh, 14px);
+  padding-top: clamp(8px, 1.6vh, 12px);
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-eyebrow {
@@ -198,24 +198,28 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-deck {
   font-size: clamp(0.8125rem, 2.8vw, 0.9375rem);
   line-height: 1.68;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.96);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.98);
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.65),
+    0 0 12px rgba(0, 0, 0, 0.35);
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-lead {
   margin: 0;
   font-size: clamp(0.75rem, 2.6vw, 0.875rem);
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   width: 100%;
   max-width: none;
-  margin: clamp(12px, 2vh, 16px) 0 0;
-  padding-top: clamp(10px, 2vh, 14px);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: clamp(10px, 1.8vh, 14px) 0 0;
+  padding-top: clamp(8px, 1.6vh, 12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
   gap: clamp(8px, 2.5vw, 12px);
 }
 
