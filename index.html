@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260528c0" rel="stylesheet">
+  <link href="/static/style.css?v=20260528c1" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -182,27 +182,34 @@
       decoding="async"
     >
     <div class="hero-inner hero-inner--editorial">
-      <header class="hero-head">
-        <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
-        <p class="hero-org">一般社団法人ひごのいえ<br class="br-sm-only">熊本県上益城郡御船町</p>
-        <h1 class="hero-title">ひごのいえ</h1>
-        <p class="hero-tagline">
-          <span class="hero-tagline__row">熊本の<span class="hero-tagline__keep">大自然</span>の中で、</span>
-          <span class="hero-tagline__row">人生を<span class="hero-tagline__keep">再出発する。</span></span>
-        </p>
-        <p class="hero-deck">
-          <span class="hero-deck__row">依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば、</span>
-          <span class="hero-deck__row">希望ある未来を取り戻すことができます。</span>
-        </p>
-      </header>
-      <div class="hero-body site-copy">
-        <p class="hero-lead">
-          熊本・御船町の依存症回復支援施設として、秘密厳守のご相談から入所・プログラム・退所後の生活再建まで、医療・福祉と連携して伴走します。薬物・アルコール・ギャンブルなど多様な依存に加え、ご家族のみの相談にも対応しています。
-        </p>
+      <div class="hero-copy-stack">
+        <header class="hero-head">
+          <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
+          <p class="hero-org">一般社団法人ひごのいえ<br class="br-sm-only">熊本県上益城郡御船町</p>
+          <h1 class="hero-title">ひごのいえ</h1>
+          <p class="hero-tagline">
+            <span class="hero-tagline__row">熊本の<span class="hero-tagline__keep">大自然</span>の中で、</span>
+            <span class="hero-tagline__row">人生を<span class="hero-tagline__keep">再出発する。</span></span>
+          </p>
+        </header>
+        <div class="hero-body site-copy">
+          <p class="hero-deck">
+            依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば、希望ある未来を取り戻すことができます。
+          </p>
+          <p class="hero-lead">
+            熊本・御船町の依存症回復支援施設。秘密厳守のご相談から生活再建まで医療・福祉と連携し、多様な依存とご家族相談に伴走します。
+          </p>
+        </div>
       </div>
-      <nav class="hero-actions hero-actions--cta" aria-label="表紙のクイックリンク">
-        <a href="/contact" class="hero-action primary">今すぐ相談する</a>
-        <a href="/guide" class="hero-action ghost">利用の流れを見る</a>
+      <nav class="hero-actions hero-actions--cta hero-actions--premium" aria-label="表紙のクイックリンク">
+        <a href="/contact" class="hero-action primary hero-action--premium">
+          <span class="hero-action__label">今すぐ相談する</span>
+          <span class="hero-action__hint">無料・秘密厳守</span>
+        </a>
+        <a href="/guide" class="hero-action ghost hero-action--premium">
+          <span class="hero-action__label">利用の流れを見る</span>
+          <span class="hero-action__hint">初回相談から</span>
+        </a>
       </nav>
     </div>
   </section>
@@ -1011,9 +1018,25 @@
 
   </main>
 
-  <aside class="mobile-cta-bar" aria-label="クイック相談">
-    <a href="tel:0964-41-2387" class="mobile-cta-bar-phone">電話相談</a>
-    <a href="/contact" class="mobile-cta-bar-primary">無料相談</a>
+  <aside class="mobile-cta-bar" id="mobileCtaBar" aria-label="クイック相談" hidden>
+    <a href="tel:0964-41-2387" class="mobile-cta-bar__btn mobile-cta-bar__btn--phone">
+      <span class="mobile-cta-bar__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 3h3l1.5 5-2 1.2a13 13 0 006.8 6.8L19 14l5 1.5v3A2.5 2.5 0 0117.5 21C9.5 21 3 14.5 3 6.5A2.5 2.5 0 016.5 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="mobile-cta-bar__text">
+        <span class="mobile-cta-bar__label">電話相談</span>
+        <span class="mobile-cta-bar__sub">0964-41-2387</span>
+      </span>
+    </a>
+    <a href="/contact" class="mobile-cta-bar__btn mobile-cta-bar__btn--contact">
+      <span class="mobile-cta-bar__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="mobile-cta-bar__text">
+        <span class="mobile-cta-bar__label">無料相談</span>
+        <span class="mobile-cta-bar__sub">24時間メール可</span>
+      </span>
+    </a>
   </aside>
 
   <footer class="site-footer">
@@ -1080,6 +1103,7 @@
       document.body.style.overflow = 'hidden';
       if (menuButton) {
         menuButton.setAttribute('aria-expanded', 'true');
+        menuButton.setAttribute('aria-label', 'メニューを閉じる');
       }
     };
 
@@ -1090,6 +1114,7 @@
       document.body.style.overflow = '';
       if (menuButton) {
         menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'メニューを開く');
       }
       window.setTimeout(() => {
         if (!mobileMenu.classList.contains('active')) {
@@ -1257,9 +1282,28 @@
       }
     }
 
-    if (window.matchMedia('(max-width: 768px)').matches) {
-      document.body.classList.add('has-mobile-cta');
+    const mobileCtaBar = document.getElementById('mobileCtaBar');
+    const mobileCtaMq = window.matchMedia('(max-width: 768px)');
+
+    const syncMobileCtaBar = () => {
+      const isMobile = mobileCtaMq.matches;
+      document.body.classList.toggle('has-mobile-cta', isMobile);
+      if (!mobileCtaBar) return;
+      mobileCtaBar.hidden = !isMobile;
+      mobileCtaBar.setAttribute('aria-hidden', isMobile ? 'false' : 'true');
+      const barHeight = isMobile ? mobileCtaBar.offsetHeight : 0;
+      document.documentElement.style.setProperty('--mobile-cta-height', `${barHeight}px`);
+    };
+
+    syncMobileCtaBar();
+    mobileCtaMq.addEventListener('change', syncMobileCtaBar);
+    if (mobileCtaBar && typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(syncMobileCtaBar).observe(mobileCtaBar);
     }
+    window.addEventListener('orientationchange', () => {
+      window.setTimeout(syncMobileCtaBar, 120);
+    });
+    window.addEventListener('resize', syncMobileCtaBar, { passive: true });
 
     const siteHeader = document.getElementById('siteHeader');
     const setHeaderState = () => {
