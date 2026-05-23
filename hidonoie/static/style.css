@@ -1381,8 +1381,6 @@ button:focus-visible {
   min-height: 220px;
   object-fit: cover;
   object-position: center 15%;
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .program-leader-gallery__sub {
@@ -1405,8 +1403,6 @@ button:focus-visible {
   min-height: 100px;
   object-fit: cover;
   object-position: center 20%;
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .program-leader-caption {
@@ -2347,20 +2343,6 @@ body.is-standalone-view .standalone-target.reveal-on-scroll,
 body.is-standalone-view .standalone-target .reveal-on-scroll {
   opacity: 1;
   transform: none;
-}
-
-/* 代表理事ギャラリーは常に表示（reveal-on-scroll で消えないように） */
-.program-leader-block,
-.program-leader-block img {
-  opacity: 1 !important;
-  transform: none !important;
-  visibility: visible !important;
-}
-
-.reveal-on-scroll.program-page.is-visible .program-leader-block,
-.program-page .program-leader-block {
-  opacity: 1 !important;
-  transform: none !important;
 }
 
 /* Info panels & diagrams */
