@@ -1948,28 +1948,27 @@ body.is-landing .landing-only {
 /* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
 body.is-landing .hero-section {
-  min-height: 100svh;
-  min-height: 100dvh;
+  min-height: min(88vh, 820px);
   height: auto;
-  padding: clamp(36px, 8vh, 64px) clamp(10px, 2.5vw, 20px) clamp(80px, 10vh, 112px);
+  padding: clamp(40px, 9vh, 72px) clamp(16px, 3vw, 28px) clamp(64px, 9vh, 96px);
   align-items: center;
   justify-content: center;
 }
 
 body.is-landing .hero-section::after {
-  height: 72px;
-  opacity: 0.65;
+  height: 80px;
+  opacity: 0.75;
 }
 
 body.is-landing .hero-section::before {
   background:
-    linear-gradient(180deg, rgba(168, 220, 255, 0.42) 0%, rgba(120, 195, 245, 0.15) 38%, transparent 58%),
-    linear-gradient(0deg, rgba(8, 32, 48, 0.5) 0%, rgba(8, 32, 48, 0.18) 22%, transparent 48%);
+    linear-gradient(180deg, rgba(130, 195, 235, 0.28) 0%, rgba(80, 150, 200, 0.08) 42%, transparent 62%),
+    linear-gradient(0deg, rgba(6, 22, 34, 0.62) 0%, rgba(6, 22, 34, 0.28) 32%, transparent 58%);
 }
 
 body.is-landing .hero-cover-photo {
-  object-position: center 22%;
-  filter: brightness(1.52) saturate(1.2) contrast(0.96);
+  object-position: center 32%;
+  filter: brightness(1.2) saturate(1.14) contrast(1.03);
 }
 
 body.is-landing .hero-inner.hero-inner--editorial {
@@ -3956,84 +3955,109 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   }
 
   body.is-landing .hero-section {
-    min-height: 100svh;
-    min-height: 100dvh;
-    padding: clamp(32px, 9svh, 56px) clamp(8px, 2.5vw, 14px) clamp(72px, 11svh, 96px);
-    align-items: center;
-    justify-content: center;
+    min-height: auto;
+    padding: calc(var(--site-chrome-height, 70px) + 10px) 16px calc(56px + env(safe-area-inset-bottom, 0));
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: clip;
+  }
+
+  body.is-landing .hero-section::before {
+    background:
+      linear-gradient(180deg, rgba(110, 175, 215, 0.2) 0%, transparent 50%),
+      linear-gradient(0deg, rgba(6, 20, 32, 0.72) 0%, rgba(6, 20, 32, 0.4) 38%, transparent 72%);
+  }
+
+  body.is-landing .hero-cover-photo {
+    object-position: center 36%;
+    filter: brightness(1.14) saturate(1.1) contrast(1.04);
   }
 
   body.is-landing .hero-inner.hero-inner--editorial {
     width: 100%;
     max-width: 100%;
-    padding-inline: clamp(2px, 1vw, 6px);
-  }
-
-  body.is-landing .hero-inner--editorial {
-    gap: clamp(14px, 2.8svh, 20px);
+    padding: 0;
+    gap: clamp(10px, 2.2svh, 14px);
   }
 
   body.is-landing .hero-head {
-    gap: clamp(8px, 1.8svh, 12px);
-    text-align: left;
-    align-items: stretch;
+    gap: clamp(6px, 1.4svh, 10px);
   }
 
-  body.is-landing .hero-deck {
-    font-size: clamp(0.9375rem, 3.4vw, 1.0625rem);
-    line-height: 1.68;
-    max-width: none;
-    width: 100%;
-    text-align: left;
+  body.is-landing .hero-org {
+    font-size: 0.625rem;
+    line-height: 1.45;
+    letter-spacing: 0.04em;
+  }
+
+  body.is-landing .hero-title {
+    font-size: clamp(1.75rem, 8.5vw, 2.375rem);
+    line-height: 1.12;
+    letter-spacing: 0.08em;
   }
 
   body.is-landing .hero-tagline {
-    font-size: clamp(1.2rem, 5vw, 1.5rem);
-    line-height: 1.55;
-    max-width: none;
-    width: 100%;
-    text-align: left;
+    font-size: clamp(0.9375rem, 4.1vw, 1.125rem);
+    line-height: 1.5;
+    letter-spacing: 0.05em;
   }
 
-  body.is-landing .hero-title {
-    text-align: left;
+  body.is-landing .hero-tagline__row {
+    display: block;
   }
 
-  body.is-landing .hero-title {
-    font-size: clamp(2.55rem, 11vw, 3.75rem);
+  body.is-landing .hero-deck {
+    font-size: clamp(0.8125rem, 3.2vw, 0.9375rem);
+    line-height: 1.62;
+  }
+
+  body.is-landing .hero-deck__row {
+    display: block;
   }
 
   body.is-landing .hero-body {
+    gap: clamp(8px, 1.6svh, 12px);
+  }
+
+  body.is-landing .hero-flow-group {
     gap: clamp(5px, 1vh, 8px);
   }
 
   body.is-landing .hero-lead {
-    font-size: clamp(0.6875rem, 2.8vw, 0.8125rem);
-    line-height: 1.6;
+    font-size: clamp(0.75rem, 3.1vw, 0.8125rem);
+    line-height: 1.58;
   }
 
-  body.is-landing .hero-meta-line {
-    font-size: clamp(0.625rem, 2.5vw, 0.75rem);
-    line-height: 1.5;
+  body.is-landing .hero-meta-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  body.is-landing .hero-meta-group span {
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    white-space: normal;
   }
 
   body.is-landing .hero-actions--text-tabs {
     width: 100%;
-    gap: 6px;
+    gap: 8px;
+    margin-top: 4px;
   }
 
   body.is-landing .hero-actions--text-tabs .hero-action {
-    min-height: 32px;
-    font-size: clamp(0.6875rem, 2.6vw, 0.8125rem);
+    min-height: 40px;
+    font-size: 0.75rem;
   }
 
   .hero-inner {
-    margin-top: clamp(8px, 2vw, 16px);
+    margin-top: 0;
   }
 
   .hero-cover-photo {
-    filter: brightness(1.16) saturate(1.16) contrast(1.02);
-    object-position: center 40%;
+    filter: brightness(1.14) saturate(1.1) contrast(1.04);
+    object-position: center 36%;
   }
 
   .hero-section::before {
@@ -4041,25 +4065,6 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
       linear-gradient(180deg, rgba(90, 180, 245, 0.14) 0%, transparent 48%),
       linear-gradient(125deg, rgba(5, 18, 28, 0.18) 0%, rgba(12, 52, 76, 0.12) 45%, rgba(8, 38, 58, 0.22) 100%),
       radial-gradient(ellipse 80% 60% at 50% 100%, rgba(36, 166, 167, 0.05) 0%, transparent 70%);
-  }
-
-  body.is-landing .hero-section::before {
-    background:
-      linear-gradient(180deg, rgba(168, 220, 255, 0.48) 0%, rgba(130, 200, 245, 0.18) 40%, transparent 60%),
-      linear-gradient(0deg, rgba(8, 32, 48, 0.52) 0%, rgba(8, 32, 48, 0.2) 24%, transparent 50%);
-  }
-
-  body.is-landing .hero-cover-photo {
-    object-position: center 18%;
-    filter: brightness(1.55) saturate(1.22) contrast(0.95);
-  }
-
-  body.is-landing .hero-tagline__row {
-    display: block;
-  }
-
-  body.is-landing .hero-meta-group span {
-    white-space: normal;
   }
 
   .hero-chip-list,
