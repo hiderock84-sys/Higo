@@ -1951,7 +1951,7 @@ body.is-landing .hero-section {
   min-height: 100svh;
   min-height: 100dvh;
   height: auto;
-  padding: clamp(36px, 8vh, 64px) clamp(16px, 4vw, 28px) clamp(80px, 10vh, 112px);
+  padding: clamp(36px, 8vh, 64px) clamp(10px, 2.5vw, 20px) clamp(80px, 10vh, 112px);
   align-items: center;
   justify-content: center;
 }
@@ -1972,22 +1972,27 @@ body.is-landing .hero-cover-photo {
   filter: brightness(1.34) saturate(1.22) contrast(1.02);
 }
 
+body.is-landing .hero-inner.hero-inner--editorial {
+  width: 100%;
+  max-width: min(1240px, 100%);
+  margin-inline: auto;
+  padding: clamp(8px, 2vh, 16px) clamp(4px, 1vw, 8px);
+  text-align: left;
+}
+
 body.is-landing .hero-inner--editorial {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   gap: clamp(10px, 2vh, 16px);
-  width: min(100%, 1080px);
-  max-width: calc(100% - 24px);
-  padding: clamp(8px, 2vh, 16px) 0;
 }
 
 body.is-landing .hero-head {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: stretch;
+  text-align: left;
   gap: clamp(10px, 2vh, 16px);
   width: 100%;
 }
@@ -2035,9 +2040,19 @@ body.is-landing .hero-deck {
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
 }
 
-body.is-landing .hero-head {
-  align-items: center;
-  text-align: center;
+body.is-landing .hero-org,
+body.is-landing .hero-eyebrow {
+  width: 100%;
+  text-align: left;
+}
+
+body.is-landing .hero-title {
+  width: 100%;
+  text-align: left;
+}
+
+body.is-landing .hero-tagline {
+  text-align: left;
 }
 
 body.is-landing .hero-copy-panel,
@@ -2082,12 +2097,14 @@ body.is-landing .hero-lead--sub {
 body.is-landing .hero-meta-line {
   margin: clamp(2px, 0.5vh, 4px) 0 0;
   width: 100%;
-  font-size: clamp(0.6875rem, 1.85vw, 0.8125rem);
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   line-height: 1.55;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 body.is-landing .hero-actions--text-tabs {
@@ -3881,19 +3898,25 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   body.is-landing .hero-section {
     min-height: 100svh;
     min-height: 100dvh;
-    padding: clamp(32px, 9svh, 56px) 16px clamp(72px, 11svh, 96px);
+    padding: clamp(32px, 9svh, 56px) clamp(8px, 2.5vw, 14px) clamp(72px, 11svh, 96px);
     align-items: center;
     justify-content: center;
   }
 
-  body.is-landing .hero-inner--editorial {
+  body.is-landing .hero-inner.hero-inner--editorial {
     width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(2px, 1vw, 6px);
+  }
+
+  body.is-landing .hero-inner--editorial {
     gap: clamp(14px, 2.8svh, 20px);
-    padding: clamp(8px, 2svh, 14px) 0;
   }
 
   body.is-landing .hero-head {
     gap: clamp(8px, 1.8svh, 12px);
+    text-align: left;
+    align-items: stretch;
   }
 
   body.is-landing .hero-deck {
@@ -3901,6 +3924,7 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
     line-height: 1.68;
     max-width: none;
     width: 100%;
+    text-align: left;
   }
 
   body.is-landing .hero-tagline {
@@ -3908,6 +3932,11 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
     line-height: 1.55;
     max-width: none;
     width: 100%;
+    text-align: left;
+  }
+
+  body.is-landing .hero-title {
+    text-align: left;
   }
 
   body.is-landing .hero-title {
