@@ -488,3 +488,72 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     max-width: min(10rem, 42vw);
   }
 }
+
+/* ── PC（769px〜）：表紙 C 案をワイド画面向けに調整 ── */
+@media (min-width: 769px) {
+  body.is-landing.hero-variant-bottom .hero-section {
+    min-height: min(86vh, 820px);
+    padding:
+      calc(var(--site-chrome-height, 94px) + 24px)
+      clamp(32px, 5vw, 72px)
+      clamp(40px, 6vh, 64px);
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-section::before {
+    background:
+      linear-gradient(180deg, rgba(120, 190, 235, 0.12) 0%, transparent 48%),
+      linear-gradient(
+        0deg,
+        rgba(4, 16, 26, 0.78) 0%,
+        rgba(6, 22, 34, 0.42) 38%,
+        transparent 70%
+      );
+  }
+
+  body.is-landing.hero-variant-bottom .hero-cover-photo {
+    object-position: center 26%;
+    filter: brightness(1.14) saturate(1.1) contrast(1.02);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-inner--editorial {
+    width: 100%;
+    max-width: min(960px, 92vw);
+    padding-bottom: clamp(12px, 2vh, 24px);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack {
+    max-width: min(40rem, 100%);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
+    font-size: clamp(2.75rem, 4.8vw, 3.75rem);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-tagline {
+    font-size: clamp(1.125rem, 2vw, 1.4375rem);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-deck {
+    font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+    max-width: 36em;
+    margin-inline: auto;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-lead {
+    font-size: clamp(0.875rem, 1.2vw, 0.9375rem);
+    max-width: 34em;
+    margin-inline: auto;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
+    max-width: 28rem;
+    margin-inline: auto;
+    margin-top: clamp(16px, 2.5vh, 22px);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
+    min-height: 54px;
+  }
+}
