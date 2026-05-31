@@ -31,6 +31,19 @@ jobs:
           test -f dist/static/style.css
           grep -q 'info-sheet' dist/index.html
           grep -q 'hero-kyushu-green' dist/index.html
+          grep -q 'rapport-faq-block' dist/index.html
+
+      - name: Check Cloudflare credentials
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN が未設定です。Settings → Secrets → Actions に追加してください。"
+            echo "手順: https://github.com/hiderock84-sys/Higo/settings/secrets/actions"
+            exit 1
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID が未設定です。"
+            exit 1
+          fi
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

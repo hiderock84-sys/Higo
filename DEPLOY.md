@@ -45,3 +45,22 @@ npm run deploy:prod
 - スタッフ欄に `staff-energetic-laughing.jpg`
 
 Safari ではキャッシュ削除またはスーパーリロードを実施してください。
+
+## 「らぽーるの新しいページが見えない」とき
+
+本番 `https://higonoie.com/rapport` は **Cloudflare Pages に最新ビルドが載っていない** と、短い旧版のままになります。
+
+### 確認方法
+
+ブラウザでページのソースを表示し、次の文字列があるか確認:
+
+- ある → 最新版: `rapport-faq-block`（よくある質問ブロック）
+- ない → 未デプロイ: 下記の Secrets 設定とデプロイを実施
+
+### よくある原因
+
+1. **GitHub Secrets 未設定** — Actions のデプロイが `CLOUDFLARE_API_TOKEN` 不足で失敗している（ログに `non-interactive environment` と出る）
+2. **`main` が古い** — 機能ブランチだけ更新され、本番用 `main` にマージされていない
+3. **ブラウザキャッシュ** — スーパーリロード（Cmd+Shift+R / Ctrl+Shift+R）
+
+Secrets 設定後: Actions → **Deploy to Cloudflare Pages** → **Run workflow**（branch: `main`）
