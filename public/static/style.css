@@ -1966,6 +1966,108 @@ body.mobile-menu-open .mobile-cta-bar {
   }
 }
 
+.rapport-daily-list {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  color: #2c495d;
+}
+
+.rapport-daily-list li + li {
+  margin-top: 6px;
+}
+
+.rapport-table-wrap {
+  margin-top: 8px;
+  overflow-x: auto;
+}
+
+.rapport-matrix {
+  min-width: 520px;
+}
+
+.rapport-matrix th,
+.rapport-matrix td {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.rapport-matrix tbody th {
+  width: 34%;
+  font-weight: 600;
+  color: #173f58;
+}
+
+.rapport-program-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rapport-quote {
+  margin: 20px 0;
+  padding: 18px 20px;
+  border-left: 4px solid #c45c8a;
+  border-radius: 0 12px 12px 0;
+  background: linear-gradient(90deg, #fff5f9 0%, #f8fcfe 100%);
+}
+
+.rapport-quote p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: #2c495d;
+  font-style: italic;
+}
+
+.rapport-quote footer {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #4a6578;
+}
+
+.rapport-quote footer a {
+  margin-left: 6px;
+}
+
+.rapport-faq-block {
+  margin: 8px 0 16px;
+}
+
+.rapport-faq-block__title {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  color: #9b3d6b;
+  margin: 0 0 12px;
+}
+
+.rapport-faq-block .faq-item {
+  margin-bottom: 10px;
+}
+
+.rapport-faq-block .faq-item h4 {
+  font-size: 0.9375rem;
+  color: #173f58;
+  margin: 0 0 6px;
+}
+
+.rapport-faq-block .faq-item p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #335568;
+}
+
+.rapport-milestones .info-steps__body strong {
+  color: #173f58;
+}
+
+@media (max-width: 900px) {
+  .rapport-program-grid--two {
+    grid-template-columns: 1fr;
+  }
+}
+
 .family-recovery-chart h3 {
   font-family: var(--font-heading);
   font-size: 0.95rem;
