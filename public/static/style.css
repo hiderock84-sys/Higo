@@ -2898,6 +2898,14 @@ body.is-standalone-view .standalone-target .reveal-on-scroll {
   transform: none;
 }
 
+/* らぽーる単体ページ：子要素まで確実に表示 */
+body.is-standalone-view .standalone-target.rapport-page,
+body.is-standalone-view .standalone-target.rapport-page * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
 /* 代表理事ギャラリーは常に表示（reveal-on-scroll で消えないように） */
 .program-leader-block,
 .program-leader-block img {

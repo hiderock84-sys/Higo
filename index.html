@@ -1733,6 +1733,11 @@
     if (isStandaloneView) {
       document.querySelectorAll('.standalone-target').forEach((el) => {
         el.classList.add('is-visible');
+        el.querySelectorAll('.faq-item, .info-panel, .rapport-chart, .rapport-program-item').forEach((child) => {
+          child.classList.add('is-visible');
+          child.style.opacity = '1';
+          child.style.visibility = 'visible';
+        });
       });
     }
 

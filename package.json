@@ -20,6 +20,7 @@
     "preview": "wrangler pages dev dist",
     "deploy": "npm run build && node scripts/setup-and-deploy.mjs",
     "deploy:prod": "npm run build && CLOUDFLARE_PAGES_PROJECT=higo node scripts/setup-and-deploy.mjs",
+    "package:dist": "node scripts/package-dist-zip.mjs",
     "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
     "test": "curl http://localhost:3000"
   },
