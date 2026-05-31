@@ -1868,6 +1868,104 @@ body.mobile-menu-open .mobile-cta-bar {
   padding: 14px;
 }
 
+/* らぽーる（女性専用）ページ */
+.rapport-page .rapport-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.rapport-page .rapport-chart--wide {
+  margin-bottom: 20px;
+}
+
+.rapport-chart__intro {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #2c495d;
+}
+
+.rapport-chart__note {
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #4a6578;
+}
+
+.rapport-chart-bar--research::after {
+  background: linear-gradient(90deg, #5a6d9a, #8b7ab8);
+}
+
+.rapport-chart-bar--pillar::after {
+  background: linear-gradient(90deg, #c45c8a, #e8a0b8);
+}
+
+.rapport-callout {
+  border-color: rgba(196, 92, 138, 0.35);
+  background: linear-gradient(145deg, #fff8fb 0%, #f4fafc 100%);
+}
+
+.rapport-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rapport-program-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(24, 76, 106, 0.14);
+  background: #f8fcfe;
+}
+
+.rapport-program-item h4 {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  color: #9b3d6b;
+}
+
+.rapport-program-item p {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: #335568;
+}
+
+.rapport-checklist {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #2c495d;
+}
+
+.rapport-checklist li + li {
+  margin-top: 6px;
+}
+
+.rapport-showcase + .rapport-showcase {
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .rapport-page .rapport-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rapport-program-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .rapport-program-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .family-recovery-chart h3 {
   font-family: var(--font-heading);
   font-size: 0.95rem;
