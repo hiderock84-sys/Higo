@@ -381,6 +381,22 @@ body.mobile-menu-open .mobile-cta-bar {
   pointer-events: none;
 }
 
+/* スライドメニュー（z-index: 1100）の下にハンバーガーが隠れないよう、開閉ボタンだけ前面に固定 */
+body.mobile-menu-open .site-header__actions {
+  position: fixed;
+  z-index: 1200;
+  top: var(--trust-bar-height, 26px);
+  right: max(8px, env(safe-area-inset-right, 0));
+  margin: 0;
+  min-height: var(--header-height, 44px);
+  align-items: center;
+  pointer-events: auto;
+}
+
+body.mobile-menu-open .site-header__menu-toggle {
+  z-index: 1201;
+}
+
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
