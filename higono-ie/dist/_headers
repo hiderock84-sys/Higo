@@ -1,0 +1,32 @@
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/guide
+  Cache-Control: no-cache, must-revalidate
+
+/grouphome
+  Cache-Control: no-cache, must-revalidate
+
+/program
+  Cache-Control: no-cache, must-revalidate
+
+/static/tochihara-leader-portrait.jpg
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
+/static/tochihara-leader-facility.jpg
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
+/static/tochihara-leader-meeting.jpg
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
+/static/tochihara-portrait-2026.jpg
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
+/static/tochihara-facility-2026.jpg
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
+/static/tochihara-meeting-2026.jpg
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
+/*
+  Cache-Control: public, max-age=86400

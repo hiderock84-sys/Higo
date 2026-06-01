@@ -22,8 +22,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260527b3" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="/static/style.css?v=20260529b" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260528c6" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -121,7 +122,11 @@
         </a>
         <a href="/contact" class="site-header__cta site-header__cta--desktop">無料相談</a>
         <button type="button" class="site-header__menu-toggle" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
-          <span class="site-header__menu-icon" aria-hidden="true"></span>
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span class="site-header__menu-bar"></span>
+            <span class="site-header__menu-bar"></span>
+            <span class="site-header__menu-bar"></span>
+          </span>
         </button>
       </div>
     </div>
@@ -167,7 +172,7 @@
 
   <main id="main-content">
 
-  <section class="hero-section" id="top">
+  <section class="hero-section hero-section--bottom" id="top" data-hero-variant="bottom">
     <img
       class="hero-cover-photo"
       src="/static/hero-kyushu-green.jpg?v=20260526"
@@ -177,17 +182,35 @@
       fetchpriority="high"
       decoding="async"
     >
-    <div class="hero-inner">
-      <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
-      <h1 class="hero-title">ひごのいえ</h1>
-      <p class="hero-tagline">熊本の大自然の中で、人生を再出発する。</p>
-      <p class="hero-message">
-        依存症に悩むご本人とご家族を支える、熊本の回復支援施設です。<br class="br-md-up">
-        医療・福祉と連携し、初回相談から生活再建まで一貫して伴走します。
-      </p>
-      <div class="hero-actions">
-        <a href="/contact" class="hero-action primary">今すぐ相談する</a>
-        <a href="/guide" class="hero-action ghost">利用の流れを見る</a>
+    <div class="hero-inner hero-inner--editorial">
+      <div class="hero-copy-stack">
+        <header class="hero-head">
+          <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
+          <p class="hero-org">一般社団法人ひごのいえ<br class="br-sm-only">熊本県上益城郡御船町</p>
+          <h1 class="hero-title">ひごのいえ</h1>
+          <p class="hero-tagline">
+            <span class="hero-tagline__row">熊本の<span class="hero-tagline__keep">大自然</span>の中で、</span>
+            <span class="hero-tagline__row">人生を<span class="hero-tagline__keep">再出発する。</span></span>
+          </p>
+        </header>
+        <div class="hero-body site-copy">
+          <p class="hero-deck">
+            依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば、希望ある未来を取り戻すことができます。
+          </p>
+          <p class="hero-lead">
+            熊本・御船町の依存症回復支援施設。秘密厳守のご相談から生活再建まで医療・福祉と連携し、多様な依存とご家族相談に伴走します。
+          </p>
+        </div>
+        <nav class="hero-actions hero-actions--cta hero-actions--premium" aria-label="表紙のクイックリンク">
+          <a href="/contact" class="hero-action primary hero-action--premium">
+            <span class="hero-action__label">今すぐ相談する</span>
+            <span class="hero-action__hint">無料・秘密厳守</span>
+          </a>
+          <a href="/guide" class="hero-action ghost hero-action--premium">
+            <span class="hero-action__label">利用の流れを見る</span>
+            <span class="hero-action__hint">初回相談から</span>
+          </a>
+        </nav>
       </div>
     </div>
   </section>
@@ -195,15 +218,15 @@
   <section class="visual-strip" aria-label="熊本と九州の自然・暮らしの風景">
     <article class="visual-card">
       <img src="/static/hero-nature-majestic.jpg?v=20260525" alt="熊本・阿蘇の山並みと草原の風景" width="1200" height="800" loading="eager" decoding="async">
-      <p>阿蘇の広い空と草原が、焦らず整える回復の時間を支えます。</p>
+      <p class="visual-card__caption">阿蘇の広い空と草原が、焦らず整える回復の時間を支えます。</p>
     </article>
     <article class="visual-card">
       <img src="/static/hero-amakusa-sea.jpg?v=20260521b" alt="熊本・上天草の海と島々の風景" width="1200" height="800" loading="eager" decoding="async">
-      <p>穏やかな海の光が、心を落ち着け、明日への一歩を後押しします。</p>
+      <p class="visual-card__caption">穏やかな海の光が、心を落ち着け、明日への一歩を後押しします。</p>
     </article>
     <article class="visual-card">
       <img src="/static/amakusa-coast.jpg?v=20260526" alt="熊本・天草の青い海と島々の風景" width="1200" height="800" loading="eager" decoding="async">
-      <p>九州の自然のリズムに合わせ、生活と心を少しずつ取り戻します。</p>
+      <p class="visual-card__caption">九州の自然のリズムに合わせ、生活と心を少しずつ取り戻します。</p>
     </article>
   </section>
 
@@ -543,22 +566,379 @@
     </div>
   </section>
 
-  <section class="content-section detail-section prose-section standalone-page site-copy" id="rapport">
-    <p class="section-kicker">WOMEN ONLY SUPPORT</p>
+  <section class="content-section detail-section prose-section standalone-page info-sheet site-copy rapport-page" id="rapport">
+    <p class="section-kicker">WOMEN ONLY · RAPPORT</p>
     <h2 class="section-title">女性専用施設 らぽーる</h2>
     <p class="prose-lead">
-      女性専用の依存症回復施設は国内でもまだ少なく、安心して相談できる場を探すだけでも負担になります。<br class="br-md-up">
-      らぽーるは、女性が心身の安全を最優先に回復へ向かえる希少な拠点です。
+      2025年3月24日開設。利用者・スタッフともに<strong>女性のみ</strong>の空間で、依存症と向き合いながら、トラウマや役割の重荷から少しずつ距離を取り、<strong>「自分のための回復」</strong>に集中できる拠点です。<br class="br-md-up">
+      国内では女性専用の回復施設が極めて少なく、「ここなら安心できる」と感じられる場所を探すだけでも大きな負担になります。らぽーるは、その負担を減らすために設計されています。
     </p>
     <ul class="prose-highlights">
-      <li>男性の目線や環境刺激に緊張しやすい方も、安心して過ごせる専用空間</li>
-      <li>女性施設長が、孤立・トラウマ・再発リスクまで見据えた回復計画を設計</li>
-      <li>通院・服薬・生活リズム・家族調整・社会復帰まで一貫して伴走</li>
+      <li>男性の存在による緊張・過去の被害の連想を減らす、女性専用の生活空間</li>
+      <li>女性スタッフ常駐。母・妻・介護者などの「役割」からいったん離れ、自己回復を優先</li>
+      <li>トラウマインフォームド（傷つきに配慮した支援）を土台に、医療・行政と連携</li>
+      <li>ひごのいえ本体・グループホーム・退所後フォローまで、切れ目なく伴走</li>
     </ul>
-    <figure class="section-showcase">
+
+    <div class="rapport-chart-grid" aria-label="女性の回復とらぽーるの設計根拠">
+      <article class="family-recovery-chart rapport-chart">
+        <h3>研究が示す「女性とトラウマ」の近さ</h3>
+        <p class="rapport-chart__intro">薬物・アルコールなどの問題を抱える女性の多くは、暴力・虐待・搾取などの傷つきを背景に持ちます（国内・海外の調査）。だからこそ、<strong>安全が先</strong>の環境が回復の前提になります。</p>
+        <div class="chart-row"><span>女子刑事施設収容者のトラウマ経験（国内調査）</span><div class="chart-bar rapport-chart-bar--research" style="--bar: 72.5%;"></div></div>
+        <div class="chart-row"><span>物質使用障害の女性の身体的虐待経験（海外研究の目安）</span><div class="chart-bar rapport-chart-bar--research" style="--bar: 75%;"></div></div>
+        <div class="chart-row"><span>上記のうち PTSD の可能性が示された割合（国内・一部施設）</span><div class="chart-bar rapport-chart-bar--research" style="--bar: 31.6%;"></div></div>
+        <p class="rapport-chart__note">出典の目安：国立精神・神経医療研究センター・法務省協力調査（2023）、Najavits 他（1997）等。個人差は大きく、らぽーるでは経験の有無にかかわらず尊重して支援します。</p>
+      </article>
+
+      <article class="family-recovery-chart rapport-chart">
+        <h3>相談前に抱えやすい不安（文献・現場知見からの整理）</h3>
+        <p class="rapport-chart__intro">女性専用施設の利用をためらう理由は、依存そのものだけではありません。らぽーるは次の不安ごとに、具体的な仕組みで応えます。</p>
+        <div class="chart-row"><span>「男性がいると話せない・怖い」</span><div class="chart-bar" style="--bar: 94%;"></div></div>
+        <div class="chart-row"><span>「母・妻として失格では」という羞恥</span><div class="chart-bar" style="--bar: 88%;"></div></div>
+        <div class="chart-row"><span>過去の暴力・性被害が思い出される</span><div class="chart-bar" style="--bar: 86%;"></div></div>
+        <div class="chart-row"><span>規則が厳しすぎてまた閉じ込められる</span><div class="chart-bar" style="--bar: 72%;"></div></div>
+        <div class="chart-row"><span>子ども・家族への影響が心配</span><div class="chart-bar" style="--bar: 80%;"></div></div>
+        <div class="chart-row"><span>秘密が漏れる・差別されるのでは</span><div class="chart-bar" style="--bar: 76%;"></div></div>
+        <p class="rapport-chart__note">※相談現場・研究レビューに基づく「よくある不安」の重要度イメージ（％は相対比較）。個人の優先順位は異なります。</p>
+      </article>
+    </div>
+
+    <article class="family-recovery-chart rapport-chart rapport-chart--wide">
+      <h3>らぽーるが整える「安心して回復できる環境」8つの柱</h3>
+      <p class="rapport-chart__intro">トラウマインフォームド・ケア、女性専用施設のベストプラクティス、ひごのいえの支援哲学を統合し、らぽーるで特に重視している要素です。</p>
+      <div class="chart-row"><span>① 身体的・心理的な安全（男性不在・明るい動線）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 100%;"></div></div>
+      <div class="chart-row"><span>② 信頼できる関係（女性スタッフ・仲間・秘密厳守）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 96%;"></div></div>
+      <div class="chart-row"><span>③ 選択とコントロール（合意したルール・段階的な負荷）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 90%;"></div></div>
+      <div class="chart-row"><span>④ 共同・パートナーシップ（一方的な指導ではなく対話）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 88%;"></div></div>
+      <div class="chart-row"><span>⑤ エンパワメント（役割から離れ「自分」を取り戻す）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 92%;"></div></div>
+      <div class="chart-row"><span>⑥ 生活リズム・清潔な住環境（ホームライクな空間）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 85%;"></div></div>
+      <div class="chart-row"><span>⑦ 医療・精神・福祉との連携（通院・服薬・手続き）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 87%;"></div></div>
+      <div class="chart-row"><span>⑧ 退所後までの橋渡し（孤立させないフォロー）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 84%;"></div></div>
+    </article>
+
+    <div class="info-sheet__layout">
+      <article class="info-panel info-panel--wide info-panel--highlight rapport-callout">
+        <h3 class="info-panel__title">なぜ「女性だけ」の場所が必要なのか</h3>
+        <p class="info-panel__text">
+          混合施設では、男性利用者・男性スタッフの存在だけで緊張が続き、本音やトラウマの話が出にくいことがあります。欧米のソーバーリビング研究でも、DV・性暴力の歴史を持つ女性は<strong>女性専用の住まい</strong>で症状・不安・再被害リスクの改善が報告されています。<br>
+          日本でも、ケア役割（母・妻・娘）を求められながら依存と戦う女性が多く、「自分の回復の時間」が後回しになりやすい構造があります。らぽーるは、その構造に名前をつけ、いったん役割から離れる許可を出す場所です。
+        </p>
+      </article>
+
+      <div class="info-sheet__row">
+        <article class="info-panel">
+          <h3 class="info-panel__title">トラウマに配慮した5原則</h3>
+          <dl class="info-dl">
+            <div class="info-dl__row"><dt>安全</dt><dd>驚かせない声かけ、説明してから介入、逃げ道のある空間</dd></div>
+            <div class="info-dl__row"><dt>信頼</dt><dd>約束を守る、境界を尊重、責めない言葉</dd></div>
+            <div class="info-dl__row"><dt>選択</dt><dd>プログラム参加・面談深度は本人のペースで</dd></div>
+            <div class="info-dl__row"><dt>協働</dt><dd>目標は一緒に設計。正解を押し付けない</dd></div>
+            <div class="info-dl__row"><dt>力を取り戻す</dt><dd>小さな成功体験を積み、自己効力感を回復</dd></div>
+          </dl>
+        </article>
+        <article class="info-panel">
+          <h3 class="info-panel__title">らぽーるの空間づくり</h3>
+          <dl class="info-dl">
+            <div class="info-dl__row"><dt>光・音</dt><dd>明るく清潔。不意の物音・閉塞感を減らす</dd></div>
+            <div class="info-dl__row"><dt>プライバシー</dt><dd>個室・個人用ロッカー。身体のケアを尊ぶ</dd></div>
+            <div class="info-dl__row"><dt>人間関係</dt><dd>女性スタッフ常駐。少人数で見守りやすい</dd></div>
+            <div class="info-dl__row"><dt>ルール</dt><dd>安全のための線引きはあるが、罰ではなく伴走</dd></div>
+            <div class="info-dl__row"><dt>自然</dt><dd>熊本の穏やかな環境。焦らない回復のリズム</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">支援プログラム（例）</h3>
+        <div class="rapport-program-grid">
+          <div class="rapport-program-item">
+            <h4>生活・身体</h4>
+            <p>睡眠・食事・入浴・服薬・通院。再発しやすい夜を越えるための、見える日常の型。</p>
+          </div>
+          <div class="rapport-program-item">
+            <h4>心理・トラウマ</h4>
+            <p>感情の言語化、安全な対話、必要に応じた専門機関への橋渡し（無理な開示は求めません）。</p>
+          </div>
+          <div class="rapport-program-item">
+            <h4>依存・再発予防</h4>
+            <p>衝動が来たときの行動計画、ピア・グループワーク、12ステップの考え方（参加は任意）。</p>
+          </div>
+          <div class="rapport-program-item">
+            <h4>役割・家族</h4>
+            <p>母・妻としての罪悪感を扱う対話、家族会・境界線、子どもへの影響への配慮。</p>
+          </div>
+          <div class="rapport-program-item">
+            <h4>社会・就労</h4>
+            <p>手続き、日中活動、短時間の作業からの就労準備、退所後のつながり設計。</p>
+          </div>
+          <div class="rapport-program-item">
+            <h4>女性としての回復</h4>
+            <p>ホルモン・月経・育児歴・性暴力・搾取経験など、女性特有の話題に配慮した支援。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">ご利用の流れ</h3>
+        <ol class="info-steps">
+          <li><span class="info-steps__label">①</span><span class="info-steps__body">無料相談（電話・メール）— 現状・不安・希望を秘密厳守でお聞きします</span><span class="info-steps__time">即日</span></li>
+          <li><span class="info-steps__label">②</span><span class="info-steps__body">見学・面談 — 空間・スタッフ・ルールを確認。無理な入所は勧めません</span><span class="info-steps__time">1〜2週</span></li>
+          <li><span class="info-steps__label">③</span><span class="info-steps__body">受け入れ判断・計画 — 医療情報・家族・行政と連携し個別プランを作成</span><span class="info-steps__time">個別</span></li>
+          <li><span class="info-steps__label">④</span><span class="info-steps__body">入所・生活開始 — 生活リズムと安全な関係づくりから</span><span class="info-steps__time">—</span></li>
+          <li><span class="info-steps__label">⑤</span><span class="info-steps__body">移行・フォロー — グループホーム・通所・自助グループ・地域生活へ</span><span class="info-steps__time">個別</span></li>
+        </ol>
+      </article>
+
+      <div class="info-sheet__row">
+        <article class="info-panel">
+          <h3 class="info-panel__title">施設概要</h3>
+          <dl class="info-dl">
+            <div class="info-dl__row"><dt>名称</dt><dd>女性専用施設「らぽーる」</dd></div>
+            <div class="info-dl__row"><dt>開設</dt><dd>2025年3月24日</dd></div>
+            <div class="info-dl__row"><dt>所在地</dt><dd>熊本県上益城郡御船町（ひごのいえ）</dd></div>
+            <div class="info-dl__row"><dt>対象</dt><dd>依存症回復を目指す女性（薬物・アルコール・ギャンブル等）</dd></div>
+            <div class="info-dl__row"><dt>スタッフ</dt><dd>女性スタッフ常駐</dd></div>
+          </dl>
+        </article>
+        <article class="info-panel">
+          <h3 class="info-panel__title">こんな方に</h3>
+          <ul class="rapport-checklist">
+            <li>混合環境では緊張が続き、本音が出せない</li>
+            <li>トラウマ・DV・性暴力の経験があり、安全が最優先</li>
+            <li>母・妻の役割から離れ、自分を取り戻したい</li>
+            <li>規則は守りたいが、尊厳を損なわれたくない</li>
+            <li>医療・行政・家族との間に立つ伴走者がほしい</li>
+          </ul>
+        </article>
+      </div>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">「らぽーる（Rapport）」という名前に込めた想い</h3>
+        <p class="info-panel__text">
+          フランス語の <em>rapport</em> は、信頼関係・心と心のつながりを意味します。依存症の回復でいちばん傷つきやすいのは、「誰にも本当の自分を見せられない」という孤独です。らぽーるは、女性同士の<strong>対話・生活・笑い</strong>を通じて、そのつながりを少しずつ取り戻す場所です。<br>
+          完璧な回復を求めるのではなく、<strong>今日、安全に過ごせた</strong>という事実を積み重ねる。それが、明日への自信になります。
+        </p>
+      </article>
+
+      <article class="family-recovery-chart rapport-chart rapport-chart--wide">
+        <h3>女性の回復を支える「3つの段階」（Judith Herman らの回復モデルを踏まえた整理）</h3>
+        <p class="rapport-chart__intro">トラウマと依存が重なる場合、いきなり「社会復帰」より先に<strong>安全</strong>と<strong>つながり</strong>が必要です。らぽーるの支援は、この順番を大切にします。</p>
+        <div class="chart-row"><span>第1段階：安全の確保（身体・感情・人間関係）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 100%;"></div></div>
+        <div class="chart-row"><span>第2段階：つながりと記憶の整理（語る・選ぶ・休む）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 78%;"></div></div>
+        <div class="chart-row"><span>第3段階：力を取り戻す（役割・仕事・地域生活）</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 62%;"></div></div>
+        <p class="rapport-chart__note">※入所直後は第1段階に時間をかけます。段階の進み方は個人差があり、無理な前進はしません。</p>
+      </article>
+
+      <div class="info-sheet__row">
+        <article class="info-panel">
+          <h3 class="info-panel__title">一日の流れ（例）</h3>
+          <ol class="rapport-daily-list">
+            <li><strong>7:00</strong> 起床・身だしなみ。無理な早起きは求めません</li>
+            <li><strong>8:00</strong> 朝食・服薬確認・その日の気分チェック</li>
+            <li><strong>9:30</strong> ミーティング／個別面談（希望・体調に応じて）</li>
+            <li><strong>11:00</strong> 作業・創作・軽い運動・散歩（自然の中）</li>
+            <li><strong>12:30</strong> 昼食・休息</li>
+            <li><strong>14:00</strong> プログラム（認知行動・再発予防・女性回復グループ等）</li>
+            <li><strong>16:00</strong> 自由時間・入浴・通院同行</li>
+            <li><strong>18:00</strong> 夕食・共有の時間（話したい人だけ）</li>
+            <li><strong>20:00</strong> 自助グループ参加（任意）・静かな時間</li>
+            <li><strong>22:00</strong> 就寝準備。再発しやすい夜はスタッフが近くに</li>
+          </ol>
+          <p class="info-panel__note">※曜日・体調・医療予定により変動します。</p>
+        </article>
+        <article class="info-panel">
+          <h3 class="info-panel__title">対応している依存の種類</h3>
+          <ul class="rapport-checklist">
+            <li>アルコール依存</li>
+            <li>薬物依存（覚醒剤・大麻・処方薬の乱用など）</li>
+            <li>ギャンブル・ゲーム等の行動依存</li>
+            <li>摂食・過食など食べ物への依存</li>
+            <li>複数の依存が重なっている場合</li>
+            <li>併存するうつ・不安・トラウマ症状（医療連携）</li>
+          </ul>
+          <p class="info-panel__note">※受け入れ可否は健康状態・安全面を総合判断します。</p>
+        </article>
+      </div>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">不安への応答 — らぽーるが具体的にすること</h3>
+        <div class="rapport-table-wrap">
+          <table class="data-table rapport-matrix">
+            <thead>
+              <tr>
+                <th scope="col">よくある不安</th>
+                <th scope="col">らぽーるの応え</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">男性がいて話せない</th>
+                <td>利用者・常駐スタッフとも女性のみ。男性の来訪は事前調整・面談室等で配慮</td>
+              </tr>
+              <tr>
+                <th scope="row">母・妻としてダメな人</th>
+                <td>役割からいったん離れてよいと明示。罪悪感を扱うグループ・個別対話</td>
+              </tr>
+              <tr>
+                <th scope="row">トラウマが蘇る</th>
+                <td>無理な開示なし。安全な距離・声かけ・専門機関への橋渡し</td>
+              </tr>
+              <tr>
+                <th scope="row">規則が怖い</th>
+                <td>目的を説明したうえで合意。罰ではなく「安全のための線引き」</td>
+              </tr>
+              <tr>
+                <th scope="row">子ども・家族</th>
+                <td>家族会・連絡方法の調整。子どもへの説明はペースを尊重</td>
+              </tr>
+              <tr>
+                <th scope="row">秘密が漏れる</th>
+                <td>秘密厳守。共有は本人同意・法令に基づく範囲のみ</td>
+              </tr>
+              <tr>
+                <th scope="row">退所後に一人</th>
+                <td>グループホーム・通所・自助会・電話フォローで橋渡し</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">生活ルールと尊厳 — 「閉じ込め」ではなく「守る」ための約束</h3>
+        <p class="info-panel__text">
+          研究や現場でも、<strong>厳しすぎる規則</strong>は支援施設への不信につながることが指摘されています。らぽーるのルールは、尊厳を損なわず安全を守るためのものです。
+        </p>
+        <dl class="info-dl info-dl--compact">
+          <div class="info-dl__row"><dt>物質・酒</dt><dd>施設内での使用・持ち込みは不可（離脱・再発予防のため）</dd></div>
+          <div class="info-dl__row"><dt>暴力・ハラスメント</dt><dd>言葉・身体ともにゼロ。被害者を守る明確な手順</dd></div>
+          <div class="info-dl__row"><dt>金銭</dt><dd>管理方法は本人と相談。透明性を保ちつつ自主性を尊重</dd></div>
+          <div class="info-dl__row"><dt>連絡</dt><dd>家族・外部との連絡はプランに沿って。急ぎの連絡はスタッフが支援</dd></div>
+          <div class="info-dl__row"><dt>外出・通院</dt><dd>段階的に拡大。いきなり制限だけを課す運用はしません</dd></div>
+          <div class="info-dl__row"><dt>プライバシー</dt><dd>個室の尊重。許可なく私物を触らない</dd></div>
+        </dl>
+        <p class="info-panel__note">ルールの背景は入所時に説明し、疑問があればいつでも話し合えます。</p>
+      </article>
+
+      <div class="info-sheet__row">
+        <article class="info-panel">
+          <h3 class="info-panel__title">ひごのいえとのつながり</h3>
+          <p class="info-panel__text">
+            らぽーるは、一般社団法人ひごのいえの<strong>女性専用ユニット</strong>です。男性利用者がいる本体施設とは生活動線を分け、必要な連携のみ行います。<br>
+            入所前は本体で体調・動機づけを整える方、らぽーる後に<strong>グループホーム</strong>へ移る方もいます。切れ目のない「一本道」で設計できます。
+          </p>
+        </article>
+        <article class="info-panel">
+          <h3 class="info-panel__title">女性の回復が重視される理由</h3>
+          <p class="info-panel__text">
+            同じ依存症でも、女性は<strong>ケア役割・経済的脆弱性・暴力被害・妊娠・育児</strong>など、異なる圧力を受けやすいと指摘されています。混合プログラムでは「男性基準」になりがちな目標設定を避け、女性の生活史に沿った支援が必要です。
+          </p>
+        </article>
+      </div>
+
+      <article class="family-recovery-chart rapport-chart">
+        <h3>支援の時間配分イメージ（入所初期〜3ヶ月）</h3>
+        <p class="rapport-chart__intro">個別プランで調整しますが、初期は生活・安全にウェイトを置く例です。</p>
+        <div class="chart-row"><span>生活リズム・身体ケア</span><div class="chart-bar" style="--bar: 92%;"></div></div>
+        <div class="chart-row"><span>心理・対話・グループ</span><div class="chart-bar" style="--bar: 80%;"></div></div>
+        <div class="chart-row"><span>医療・服薬・通院</span><div class="chart-bar" style="--bar: 75%;"></div></div>
+        <div class="chart-row"><span>再発予防・衝動対処</span><div class="chart-bar" style="--bar: 70%;"></div></div>
+        <div class="chart-row"><span>家族・役割の整理</span><div class="chart-bar" style="--bar: 55%;"></div></div>
+        <div class="chart-row"><span>就労・社会復帰準備</span><div class="chart-bar" style="--bar: 45%;"></div></div>
+      </article>
+
+      <article class="family-recovery-chart rapport-chart">
+        <h3>スタッフが大切にする関わり方</h3>
+        <p class="rapport-chart__intro">正論で押さえつけず、今日を一緒に設計する — 体験談でも評価の高い姿勢です。</p>
+        <div class="chart-row"><span>「なぜできない？」より「今日は何ができる？」</span><div class="chart-bar rapport-chart-bar--pillar" style="--bar: 96%;"></div></div>
+        <div class="chart-row"><span>感情を否定せず、名前で受け止める</span><div class="chart-bar" style="--bar: 94%;"></div></div>
+        <div class="chart-row"><span>小さな成功を一緒に記録する</span><div class="chart-bar" style="--bar: 90%;"></div></div>
+        <div class="chart-row"><span>回復経験者スタッフのピア支援</span><div class="chart-bar" style="--bar: 85%;"></div></div>
+        <div class="chart-row"><span>医療者・行政との橋渡し</span><div class="chart-bar" style="--bar: 82%;"></div></div>
+      </article>
+
+      <blockquote class="rapport-quote">
+        <p>らぽーるで救われたのは、正論で責められなかったこと。「なぜできないのか」ではなく、「どうしたら今日を安全に過ごせるか」を一緒に考えてくれました。</p>
+        <footer>— 体験談より（女性専用施設で回復中・38歳・仮名）<a href="/testimonials">体験談ページへ</a></footer>
+      </blockquote>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">ご家族・関係機関の方へ</h3>
+        <div class="rapport-program-grid rapport-program-grid--two">
+          <div class="rapport-program-item">
+            <h4>ご家族</h4>
+            <p>「何を言えばいいか分からない」状態でも構いません。責め合わない関わり方、境界線、連絡の取り方を一緒に整理します。本人の意思を最優先します。</p>
+          </div>
+          <div class="rapport-program-item">
+            <h4>医療・行政・支援者</h4>
+            <p>紹介・情報共有・退所後の接続について協議可能です。女性専用環境が必要な理由を共有し、切れ目のない支援網をつくります。</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="rapport-faq-block" aria-label="らぽーるによくある質問">
+        <h3 class="rapport-faq-block__title">らぽーる よくある質問</h3>
+        <article class="faq-item">
+          <h4>男性の家族が見学に来られますか？</h4>
+          <p>生活空間への立ち入りは、本人・他の利用者の安全を考え、事前調整と別室面談などで対応します。詳細は相談時にご説明します。</p>
+        </article>
+        <article class="faq-item">
+          <h4>妊娠中・授乳中でも相談できますか？</h4>
+          <p>まずは状況をお聞きし、医療機関と連携のうえで受け入れ可否を判断します。無理な入所は勧めません。</p>
+        </article>
+        <article class="faq-item">
+          <h4>他県からの入所は可能ですか？</h4>
+          <p>可能な場合があります。通院・家族連絡・退所後の住まいについて、事前にプランを組みます。</p>
+        </article>
+        <article class="faq-item">
+          <h4>どのくらいの期間入所しますか？</h4>
+          <p>目安は個人差がありますが、数ヶ月を想定し、体調・目標に応じて延長・移行（グループホーム等）を相談します。</p>
+        </article>
+        <article class="faq-item">
+          <h4>費用はどのくらいかかりますか？</h4>
+          <p>支援内容・期間・公的支援の有無により異なります。初回相談で概算と選択肢をお伝えします。</p>
+        </article>
+        <article class="faq-item">
+          <h4>トラウマの話をしなくても大丈夫ですか？</h4>
+          <p>はい。話したくなるまで待ちます。沈黙も、回復の一部です。</p>
+        </article>
+        <article class="faq-item">
+          <h4>見学だけでも可能ですか？</h4>
+          <p>はい。無理な勧誘はしません。空気感を確かめてからご判断ください。</p>
+        </article>
+      </div>
+
+      <article class="info-panel info-panel--wide rapport-milestones">
+        <h3 class="info-panel__title">回復のマイルストーン（イメージ）</h3>
+        <ol class="info-steps info-steps--milestones">
+          <li><span class="info-steps__label">1</span><span class="info-steps__body"><strong>相談・見学</strong> — 「ここなら息ができる」と感じる</span><span class="info-steps__time">数日〜数週</span></li>
+          <li><span class="info-steps__label">2</span><span class="info-steps__body"><strong>安定した生活</strong> — 睡眠・食事・服薬が戻る</span><span class="info-steps__time">2〜4週</span></li>
+          <li><span class="info-steps__label">3</span><span class="info-steps__body"><strong>つながり</strong> — スタッフ・仲間に本音を少し話せる</span><span class="info-steps__time">1〜2ヶ月</span></li>
+          <li><span class="info-steps__label">4</span><span class="info-steps__body"><strong>再発予防の型</strong> — 衝動が来たときの行動計画が機能</span><span class="info-steps__time">2〜3ヶ月</span></li>
+          <li><span class="info-steps__label">5</span><span class="info-steps__body"><strong>移行</strong> — グループホーム・地域・仕事へ</span><span class="info-steps__time">個別</span></li>
+        </ol>
+        <p class="info-panel__note">※期間は目安です。後戻りしても、また一緒に立て直します。</p>
+      </article>
+    </div>
+
+    <figure class="section-showcase rapport-showcase">
       <img src="/static/women-facility-laughing.jpg?v=20260521b" alt="女性専用施設らぽーるで笑顔で交流するスタッフと利用者" width="1200" height="800" loading="lazy" decoding="async">
-      <figcaption>女性専用施設「らぽーる」— 安心して本音を話せる、明るく清潔な環境を整えています。</figcaption>
+      <figcaption>笑顔と対話が自然に生まれる空間。正論で責めず、「今日を安全に過ごす」ことを一緒に考えます。</figcaption>
     </figure>
+    <figure class="section-showcase rapport-showcase">
+      <img src="/static/women-facility-rapport.jpg?v=20260521b" alt="女性専用施設らぽーるの明るい室内" width="1200" height="800" loading="lazy" decoding="async">
+      <figcaption>明るく清潔な住環境。施設特有の冷たさではなく、暮らしのなかで整える回復を目指します。</figcaption>
+    </figure>
+
+    <div class="page-cta-box">
+      <p>「女性専用なら話せるかも」— その一言だけでも大丈夫です。見学のみ・家族相談のみも歓迎します。</p>
+      <a href="/contact" class="page-cta-link">女性専用施設について相談する</a>
+      <a href="tel:0964-41-2387" class="page-cta-link page-cta-link--ghost">電話 0964-41-2387</a>
+    </div>
+
+    <p class="ref-note">
+      参考・推論の根拠：国立精神・神経医療研究センター・法務省協力「薬物問題を持つ女性のトラウマ」調査（2023）、近藤あゆみ「女性のためのリカバリー・プログラム SeRA」（臨床心理学 2023）、Covington「Women and Addiction / Trauma-Informed Care」、BCSTH「Women-Centred Housing Design Toolkit」、ダルク女性ハウス・オ’ハナ等の女性専用回復施設の公開情報、Traumatology（SEEDs 女性ソーバーリビング）等。グラフの「不安の重要度」「8つの柱」は文献と現場知見を統合した<strong>施設設計上の整理</strong>であり、統計調査の再現ではありません。
+    </p>
   </section>
 
   <section class="content-section detail-section prose-section standalone-page info-sheet site-copy" id="grouphome">
@@ -996,9 +1376,34 @@
 
   </main>
 
-  <aside class="mobile-cta-bar" aria-label="クイック相談">
-    <a href="tel:0964-41-2387" class="mobile-cta-bar-phone">電話相談</a>
-    <a href="/contact" class="mobile-cta-bar-primary">無料相談</a>
+  <nav class="hero-variant-picker" id="heroVariantPicker" aria-label="表紙デザイン比較" hidden>
+    <p class="hero-variant-picker__title">表紙 A/B</p>
+    <a class="hero-variant-picker__btn" data-hero-variant="glass" href="?hero-preview=1&amp;hero=glass">A ガラス<small>現在・読みやすい</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="open" href="?hero-preview=1&amp;hero=open">B オープン<small>前作に近い</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="bottom" href="?hero-preview=1&amp;hero=bottom">C 下寄せ<small>本番採用</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="split" href="?hero-preview=1&amp;hero=split">D 分割<small>写真＋パネル</small></a>
+    <a class="hero-variant-picker__btn" data-hero-variant="sheet" href="?hero-preview=1&amp;hero=sheet">E シート<small>写真＋白紙</small></a>
+  </nav>
+
+  <aside class="mobile-cta-bar" id="mobileCtaBar" aria-label="クイック相談" hidden>
+    <a href="tel:0964-41-2387" class="mobile-cta-bar__btn mobile-cta-bar__btn--phone">
+      <span class="mobile-cta-bar__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 3h3l1.5 5-2 1.2a13 13 0 006.8 6.8L19 14l5 1.5v3A2.5 2.5 0 0117.5 21C9.5 21 3 14.5 3 6.5A2.5 2.5 0 016.5 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="mobile-cta-bar__text">
+        <span class="mobile-cta-bar__label">電話相談</span>
+        <span class="mobile-cta-bar__sub">0964-41-2387</span>
+      </span>
+    </a>
+    <a href="/contact" class="mobile-cta-bar__btn mobile-cta-bar__btn--contact">
+      <span class="mobile-cta-bar__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="mobile-cta-bar__text">
+        <span class="mobile-cta-bar__label">無料相談</span>
+        <span class="mobile-cta-bar__sub">24時間メール可</span>
+      </span>
+    </a>
   </aside>
 
   <footer class="site-footer">
@@ -1065,6 +1470,7 @@
       document.body.style.overflow = 'hidden';
       if (menuButton) {
         menuButton.setAttribute('aria-expanded', 'true');
+        menuButton.setAttribute('aria-label', 'メニューを閉じる');
       }
     };
 
@@ -1075,6 +1481,7 @@
       document.body.style.overflow = '';
       if (menuButton) {
         menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'メニューを開く');
       }
       window.setTimeout(() => {
         if (!mobileMenu.classList.contains('active')) {
@@ -1103,20 +1510,9 @@
         '--site-chrome-height',
         `${siteChrome.offsetHeight}px`
       );
-      const trustBar = siteChrome.querySelector('.trust-bar');
-      if (trustBar) {
-        document.documentElement.style.setProperty(
-          '--trust-bar-height',
-          `${trustBar.offsetHeight}px`
-        );
-      }
     };
     syncSiteChromeHeight();
     window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
-    if ('ResizeObserver' in window && siteChrome) {
-      const chromeObserver = new ResizeObserver(syncSiteChromeHeight);
-      chromeObserver.observe(siteChrome);
-    }
 
     document.querySelectorAll('.data-table').forEach((table) => {
       const headers = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
@@ -1188,14 +1584,24 @@
       '/staff': ['スタッフ紹介 | ひごのいえ', '回復経験と支援経験を持つスタッフによるサポート体制をご紹介します。'],
       '/program': ['プログラム | ひごのいえ', '生活リズム・グループワーク・医療連携を統合し、「誰と生きるか」を最優先にした回復プログラムをご紹介します。'],
       '/testimonials': ['体験談 | ひごのいえ', '依存症回復を実現した体験談と、回復への具体的な道のりをご紹介します。'],
-      '/rapport': ['女性専用施設 | ひごのいえ', '女性専用施設らぽーるの支援内容と安心して回復できる環境をご案内します。'],
+      '/rapport': ['女性専用施設 らぽーる | ひごのいえ', '女性専用の依存症回復施設らぽーる。トラウマに配慮した安全な環境・女性スタッフ常駐・2025年3月開設。相談無料・秘密厳守。'],
       '/grouphome': ['グループホーム | ひごのいえ', '障害福祉サービス・共同生活援助（グループホーム）の制度と、ひごのいえの支援内容をわかりやすくご案内します。'],
       '/guide': ['利用案内 | ひごのいえ', '初回相談から入所・継続支援・地域移行までの流れ、受付時間、準備物をご案内します。'],
       '/family-guide': ['家族ガイド | ひごのいえ', 'ご家族向けの相談支援と連携体制についてご案内します。'],
       '/contact': ['相談窓口 | ひごのいえ', '相談窓口の受付時間と連絡先をご案内します。'],
     };
 
-    const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+    const repoBase = (document.querySelector('base')?.getAttribute('href') || '')
+      .replace(/\/+$/, '')
+      .replace(/^\//, '');
+    let normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+    if (repoBase) {
+      const prefix = `/${repoBase}`;
+      if (normalizedPath === prefix) normalizedPath = '/';
+      else if (normalizedPath.startsWith(`${prefix}/`)) {
+        normalizedPath = normalizedPath.slice(prefix.length) || '/';
+      }
+    }
 
     if (normalizedPath === '/about') {
       window.location.replace(`${window.location.origin}/#page-menu`);
@@ -1216,8 +1622,53 @@
       '/family',
     ]);
 
+    const heroVariantIds = ['glass', 'open', 'bottom', 'split', 'sheet'];
+    const urlParams = new URLSearchParams(window.location.search);
+    const heroPreviewMode = urlParams.get('hero-preview') === '1';
+    let heroVariant = urlParams.get('hero');
+    if (!heroVariantIds.includes(heroVariant)) {
+      heroVariant = 'bottom';
+    }
+
+    const applyHeroVariant = (variantId) => {
+      heroVariantIds.forEach((id) => {
+        document.body.classList.remove(`hero-variant-${id}`);
+      });
+      document.body.classList.add(`hero-variant-${variantId}`);
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        heroVariantIds.forEach((id) => {
+          heroSection.classList.remove(`hero-section--${id}`);
+        });
+        heroSection.classList.add(`hero-section--${variantId}`);
+        heroSection.dataset.heroVariant = variantId;
+      }
+      document.querySelectorAll('.hero-variant-picker__btn').forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.heroVariant === variantId);
+      });
+    };
+
     if (landingPaths.has(normalizedPath)) {
       document.body.classList.add('is-landing');
+      applyHeroVariant(heroVariant);
+      const heroVariantPicker = document.getElementById('heroVariantPicker');
+      if (heroVariantPicker) {
+        heroVariantPicker.hidden = !heroPreviewMode;
+      }
+      if (heroPreviewMode) {
+        document.querySelectorAll('.hero-variant-picker__btn').forEach((btn) => {
+          btn.addEventListener('click', (event) => {
+            const nextVariant = btn.dataset.heroVariant;
+            if (!heroVariantIds.includes(nextVariant)) return;
+            event.preventDefault();
+            const nextUrl = new URL(window.location.href);
+            nextUrl.searchParams.set('hero-preview', '1');
+            nextUrl.searchParams.set('hero', nextVariant);
+            window.history.replaceState({}, '', nextUrl);
+            applyHeroVariant(nextVariant);
+          });
+        });
+      }
     } else if (standalonePaths.has(normalizedPath)) {
       document.body.classList.add('is-standalone-view');
       const activeSectionId = pathSectionMap[normalizedPath];
@@ -1253,9 +1704,28 @@
       }
     }
 
-    if (window.matchMedia('(max-width: 768px)').matches) {
-      document.body.classList.add('has-mobile-cta');
+    const mobileCtaBar = document.getElementById('mobileCtaBar');
+    const mobileCtaMq = window.matchMedia('(max-width: 768px)');
+
+    const syncMobileCtaBar = () => {
+      const isMobile = mobileCtaMq.matches;
+      document.body.classList.toggle('has-mobile-cta', isMobile);
+      if (!mobileCtaBar) return;
+      mobileCtaBar.hidden = !isMobile;
+      mobileCtaBar.setAttribute('aria-hidden', isMobile ? 'false' : 'true');
+      const barHeight = isMobile ? mobileCtaBar.offsetHeight : 0;
+      document.documentElement.style.setProperty('--mobile-cta-height', `${barHeight}px`);
+    };
+
+    syncMobileCtaBar();
+    mobileCtaMq.addEventListener('change', syncMobileCtaBar);
+    if (mobileCtaBar && typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(syncMobileCtaBar).observe(mobileCtaBar);
     }
+    window.addEventListener('orientationchange', () => {
+      window.setTimeout(syncMobileCtaBar, 120);
+    });
+    window.addEventListener('resize', syncMobileCtaBar, { passive: true });
 
     const siteHeader = document.getElementById('siteHeader');
     const setHeaderState = () => {
@@ -1273,6 +1743,11 @@
     if (isStandaloneView) {
       document.querySelectorAll('.standalone-target').forEach((el) => {
         el.classList.add('is-visible');
+        el.querySelectorAll('.faq-item, .info-panel, .rapport-chart, .rapport-program-item').forEach((child) => {
+          child.classList.add('is-visible');
+          child.style.opacity = '1';
+          child.style.visibility = 'visible';
+        });
       });
     }
 
