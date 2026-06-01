@@ -2389,6 +2389,21 @@ body.is-landing .hero-deck__row {
   text-align: center;
 }
 
+body.is-landing .hero-lead__row {
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  body.is-landing .hero-lead__row {
+    display: inline;
+  }
+
+  body.is-landing .hero-lead__row + .hero-lead__row::before {
+    content: ' ';
+  }
+}
+
 body.is-landing .hero-copy-panel,
 body.is-landing .hero-highlights,
 body.is-landing .hero-facts {
