@@ -25,6 +25,7 @@
   --header-height: 64px;
   --trust-bar-height: 30px;
   --mobile-cta-height: 0px;
+  --mobile-cta-slot: 0px;
   --site-chrome-height: 94px;
   --site-header-bg: rgba(6, 28, 44, 0.94);
   --font-body: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
@@ -89,7 +90,7 @@ body {
 }
 
 body.has-mobile-cta {
-  padding-bottom: var(--mobile-cta-height, 76px);
+  padding-bottom: var(--mobile-cta-slot, var(--mobile-cta-slot, 76px));
 }
 
 a:focus-visible,
@@ -369,7 +370,12 @@ button:focus-visible {
 
 .mobile-cta-bar {
   display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
+
 
 .mobile-cta-bar[hidden] {
   display: none !important;
@@ -4235,7 +4241,9 @@ body.is-standalone-view .standalone-target.rapport-page * {
   }
 
   :root {
+    --mobile-cta-bar-core: 76px;
     --mobile-cta-height: 76px;
+    --mobile-cta-slot: calc(var(--mobile-cta-bar-core) + env(safe-area-inset-bottom, 0px));
   }
 
   .mobile-cta-bar {
@@ -4246,16 +4254,17 @@ body.is-standalone-view .standalone-target.rapport-page * {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1200;
+    z-index: 10050;
     pointer-events: auto;
     touch-action: manipulation;
+    -webkit-touch-callout: none;
+    contain: layout style paint;
     padding:
       10px max(14px, env(safe-area-inset-left, 0))
-      max(10px, env(safe-area-inset-bottom, 0))
+      10px
       max(14px, env(safe-area-inset-right, 0));
-    background: rgba(5, 24, 38, 0.96);
-    backdrop-filter: blur(18px) saturate(1.2);
-    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 0px));
+    background: rgba(5, 24, 38, 0.98);
     border-top: 1px solid rgba(126, 232, 244, 0.22);
     box-shadow:
       0 -12px 32px rgba(0, 0, 0, 0.28),
@@ -4274,8 +4283,8 @@ body.is-standalone-view .standalone-target.rapport-page * {
     justify-content: flex-start;
     gap: 10px;
     width: 100%;
-    min-height: 52px;
-    padding: 10px 12px;
+    min-height: 56px;
+    padding: 12px 10px;
     border-radius: 12px;
     text-decoration: none;
     box-sizing: border-box;
@@ -4290,8 +4299,10 @@ body.is-standalone-view .standalone-target.rapport-page * {
       border-color 0.15s var(--ease-out);
   }
 
-  .mobile-cta-bar__btn:active {
-    transform: scale(0.98);
+  @media (hover: hover) {
+    .mobile-cta-bar__btn:active {
+      transform: scale(0.98);
+    }
   }
 
   .mobile-cta-bar__btn .mobile-cta-bar__icon,
@@ -4360,7 +4371,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
   }
 
   body.has-mobile-cta {
-    padding-bottom: var(--mobile-cta-height, 76px);
+    padding-bottom: var(--mobile-cta-slot, 76px);
   }
 
   .hero-section {
@@ -4374,7 +4385,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
     padding:
       calc(var(--site-chrome-height, 70px) + 10px)
       16px
-      calc(var(--mobile-cta-height, 76px) + 20px);
+      calc(var(--mobile-cta-slot, 76px) + 20px);
     align-items: center;
     justify-content: flex-start;
     overflow-x: clip;
@@ -5484,9 +5495,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
     padding-right: max(16px, env(safe-area-inset-right));
   }
 
-  .mobile-cta-bar {
-    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0));
-  }
 }
 
 .mobile-menu {

@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260529b" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=20260528c6" rel="stylesheet">
+  <link href="/static/style.css?v=20260604f" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260604f" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -1706,47 +1706,21 @@
 
     const mobileCtaBar = document.getElementById('mobileCtaBar');
     const mobileCtaMq = window.matchMedia('(max-width: 768px)');
-    const MOBILE_CTA_HEIGHT_FALLBACK = 76;
-    let mobileCtaHeightPx = MOBILE_CTA_HEIGHT_FALLBACK;
-    let mobileCtaSyncScheduled = false;
 
-    const syncMobileCtaBar = () => {
+    const applyMobileCtaBar = () => {
       const isMobile = mobileCtaMq.matches;
       document.body.classList.toggle('has-mobile-cta', isMobile);
       if (!mobileCtaBar) return;
-
       mobileCtaBar.hidden = !isMobile;
       mobileCtaBar.setAttribute('aria-hidden', isMobile ? 'false' : 'true');
-
-      if (isMobile) {
-        const measured = Math.ceil(mobileCtaBar.getBoundingClientRect().height);
-        if (measured >= 48) {
-          mobileCtaHeightPx = measured;
-        }
-        document.documentElement.style.setProperty('--mobile-cta-height', `${mobileCtaHeightPx}px`);
-      } else {
-        document.documentElement.style.setProperty('--mobile-cta-height', '0px');
-      }
     };
 
-    const scheduleMobileCtaSync = () => {
-      if (mobileCtaSyncScheduled) return;
-      mobileCtaSyncScheduled = true;
-      window.requestAnimationFrame(() => {
-        mobileCtaSyncScheduled = false;
-        syncMobileCtaBar();
-      });
-    };
-
-    syncMobileCtaBar();
-    mobileCtaMq.addEventListener('change', scheduleMobileCtaSync);
-    window.addEventListener('orientationchange', () => {
-      window.setTimeout(scheduleMobileCtaSync, 150);
-    });
-    window.addEventListener('resize', scheduleMobileCtaSync, { passive: true });
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', scheduleMobileCtaSync, { passive: true });
+    if (mobileCtaBar && mobileCtaBar.parentElement !== document.body) {
+      document.body.appendChild(mobileCtaBar);
     }
+
+    applyMobileCtaBar();
+    mobileCtaMq.addEventListener('change', applyMobileCtaBar);
 
     const siteHeader = document.getElementById('siteHeader');
     const setHeaderState = () => {
