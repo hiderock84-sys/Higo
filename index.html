@@ -1503,17 +1503,6 @@
       menuButton.addEventListener('click', onMenuOpen);
     }
 
-    const siteChrome = document.getElementById('siteChrome');
-    const syncSiteChromeHeight = () => {
-      if (!siteChrome) return;
-      document.documentElement.style.setProperty(
-        '--site-chrome-height',
-        `${siteChrome.offsetHeight}px`
-      );
-    };
-    syncSiteChromeHeight();
-    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
-
     document.querySelectorAll('.data-table').forEach((table) => {
       const headers = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
       if (headers.length < 2) return;
