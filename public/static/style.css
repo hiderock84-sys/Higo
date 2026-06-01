@@ -4879,35 +4879,42 @@ body.is-standalone-view .standalone-target.rapport-page * {
   margin: 0 auto;
   padding: 0 20px;
   min-height: var(--header-height);
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
   align-items: center;
-  gap: 20px;
+  column-gap: clamp(12px, 2vw, 20px);
+  row-gap: 8px;
 }
 
 .site-header__brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
-  flex-shrink: 0;
   min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .site-header__logo {
   height: 32px;
   width: auto;
-  max-width: 200px;
+  max-width: min(200px, 36vw);
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .site-header__tagline {
   font-family: var(--font-heading);
   font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(126, 232, 244, 0.9);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .site-header__nav {
@@ -4915,8 +4922,9 @@ body.is-standalone-view .standalone-target.rapport-page * {
   align-items: center;
   justify-content: center;
   gap: 2px;
-  flex: 1;
   min-width: 0;
+  overflow: hidden;
+  padding-inline: 4px;
 }
 
 .site-header__link {
@@ -5313,6 +5321,52 @@ body.is-standalone-view .standalone-target.rapport-page * {
   border-radius: var(--radius-md);
 }
 
+@media (min-width: 1025px) {
+  .site-header__menu-toggle {
+    display: none;
+  }
+
+  .site-header__nav .site-header__link[href='/contact'] {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1360px) {
+  .site-header__tagline {
+    display: none;
+  }
+
+  .site-header__logo {
+    max-width: min(168px, 32vw);
+    height: 30px;
+  }
+
+  .site-header__link {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .site-header__phone {
+    padding: 4px 8px;
+  }
+
+  .site-header__phone-number {
+    font-size: 0.8125rem;
+  }
+
+  .site-header__cta {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1361px) {
+  .site-header__tagline {
+    display: block;
+  }
+}
+
 @media (max-width: 1024px) {
   .site-header__tagline {
     display: none;
@@ -5328,6 +5382,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
   }
 
   .site-header__inner {
+    display: flex;
     justify-content: flex-start;
     gap: 10px;
     padding: 0 12px;
