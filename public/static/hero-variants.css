@@ -455,9 +455,17 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
   body.is-landing.hero-variant-bottom .hero-section {
     min-height: min(88svh, 820px);
     padding:
-      calc(var(--site-chrome-height, 70px) + 8px)
+      calc(var(--site-chrome-height, 70px) + 2px)
       12px
-      calc(var(--mobile-cta-height, 76px) + 14px);
+      calc(var(--mobile-cta-height, 76px) + 22px);
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-inner--editorial {
+    width: 100%;
+    margin-bottom: clamp(2.75rem, 11vw, 3.5rem);
+    padding-bottom: 0;
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack {
