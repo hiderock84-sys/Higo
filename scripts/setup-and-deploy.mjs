@@ -10,6 +10,7 @@ const projectName = process.env.CLOUDFLARE_PAGES_PROJECT || 'higo'
 
 const token = process.env.CLOUDFLARE_API_TOKEN || process.env.CF_API_TOKEN
 const accountId = process.env.CLOUDFLARE_ACCOUNT_ID || process.env.CF_ACCOUNT_ID
+const deployHookUrl = process.env.CLOUDFLARE_DEPLOY_HOOK_URL
 
 function run(command, args, extraEnv = {}) {
   return new Promise((resolve, reject) => {
@@ -30,6 +31,16 @@ async function main() {
   const indexHtml = await readFile(path.join(distDir, 'index.html'), 'utf8')
   if (!indexHtml.includes('info-sheet')) {
     throw new Error('dist/index.html is stale — run npm run build from latest index.html')
+  }
+
+  if (!token && deployHookUrl) {
+    console.log('[deploy] Triggering Cloudflare Deploy Hook (Git 連携ビルド)...')
+    const response = await fetch(deployHookUrl, { method: 'POST' })
+    if (!response.ok) {
+      throw new Error(`Deploy hook failed: ${response.status} ${await response.text()}`)
+    }
+    console.log('[deploy] Deploy hook accepted. Cloudflare が main からビルドします（数分かかります）。')
+    return
   }
 
   if (!token) {

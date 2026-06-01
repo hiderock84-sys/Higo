@@ -1591,7 +1591,17 @@
       '/contact': ['相談窓口 | ひごのいえ', '相談窓口の受付時間と連絡先をご案内します。'],
     };
 
-    const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+    const repoBase = (document.querySelector('base')?.getAttribute('href') || '')
+      .replace(/\/+$/, '')
+      .replace(/^\//, '');
+    let normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+    if (repoBase) {
+      const prefix = `/${repoBase}`;
+      if (normalizedPath === prefix) normalizedPath = '/';
+      else if (normalizedPath.startsWith(`${prefix}/`)) {
+        normalizedPath = normalizedPath.slice(prefix.length) || '/';
+      }
+    }
 
     if (normalizedPath === '/about') {
       window.location.replace(`${window.location.origin}/#page-menu`);

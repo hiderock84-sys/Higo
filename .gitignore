@@ -3,6 +3,7 @@ node_modules/
 
 # Build output (never commit — Cloudflare builds from source)
 dist/
+dist-pages/
 build/
 out/
 output/

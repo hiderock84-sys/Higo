@@ -1,0 +1,56 @@
+name: Deploy GitHub Pages preview
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Verify rapport content in build
+        run: grep -q 'rapport-faq-block' dist/index.html
+
+      - name: Prepare GitHub Pages output
+        run: node scripts/prepare-github-pages.mjs
+        env:
+          GITHUB_PAGES_BASE: /Higo/
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-pages
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Preview URL
+        run: |
+          echo "GitHub Pages preview: ${{ steps.deployment.outputs.page_url }}"
+          echo "Rapport: ${{ steps.deployment.outputs.page_url }}rapport"
