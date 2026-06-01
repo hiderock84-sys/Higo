@@ -214,8 +214,7 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 }
 
 body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
-  min-height: 50px;
-  border-radius: 11px;
+  border-radius: 14px;
 }
 
 /* ═══════════════════════════════════════
@@ -518,38 +517,6 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     flex-shrink: 0;
   }
 
-  body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
-    min-height: 42px;
-    padding: 7px 9px;
-    border-radius: 9px;
-  }
-
-  body.is-landing.hero-variant-bottom .hero-action__label {
-    font-size: clamp(0.6875rem, 2.85vw, 0.8125rem);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-
-  body.is-landing.hero-variant-bottom .hero-action__hint {
-    font-size: clamp(0.5625rem, 1.75vw, 0.625rem);
-    letter-spacing: 0.03em;
-    opacity: 0.85;
-  }
-
-  body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action.primary {
-    border-width: 1px;
-    box-shadow:
-      0 3px 12px rgba(0, 0, 0, 0.22),
-      inset 0 1px 0 rgba(255, 255, 255, 0.88);
-  }
-
-  body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action.ghost {
-    border-width: 1px;
-    background: rgba(7, 30, 46, 0.84);
-    border-color: rgba(126, 232, 244, 0.4);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-  }
-
   body.is-landing.hero-variant-sheet .hero-inner--editorial {
     padding-inline: 12px;
   }
@@ -629,7 +596,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     margin-top: clamp(16px, 2.5vh, 22px);
   }
 
-  body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
-    min-height: 54px;
+  body.is-landing.hero-variant-bottom .hero-actions--cta {
+    --hero-cta-height: 52px;
   }
 }
