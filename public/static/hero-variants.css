@@ -455,26 +455,67 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
   body.is-landing.hero-variant-bottom .hero-section {
     min-height: min(88svh, 820px);
     padding:
-      calc(var(--site-chrome-height, 70px) + 8px)
+      calc(var(--site-chrome-height, 70px) + 4px)
       12px
-      calc(var(--mobile-cta-height, 76px) + 14px);
+      calc(var(--mobile-cta-height, 76px) + 12px);
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-inner--editorial {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(88svh - var(--site-chrome-height, 70px) - var(--mobile-cta-height, 76px) - 28px);
+    padding: 0 12px;
+    justify-content: flex-end;
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
     max-width: 100%;
+    min-height: 100%;
     padding: 0 4px;
   }
 
+  body.is-landing.hero-variant-bottom .hero-copy-text {
+    flex: 0 0 auto;
+    width: 100%;
+    padding-top: clamp(6px, 2vh, 14px);
+  }
+
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
-    font-size: clamp(2rem, 9.5vw, 2.75rem);
+    font-size: clamp(2.125rem, 10.5vw, 3rem);
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-tagline {
+    font-size: clamp(1.0625rem, 4.5vw, 1.3125rem);
+    line-height: 1.52;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-deck {
+    font-size: clamp(0.875rem, 3.15vw, 1rem);
+    line-height: 1.72;
+  }
+
+  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-lead {
+    font-size: clamp(0.8125rem, 2.9vw, 0.9375rem);
+    line-height: 1.68;
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
-    margin-top: clamp(20px, 5.2vw, 28px);
-    padding-top: 0;
+    margin-top: auto;
+    margin-bottom: clamp(6px, 1.5vh, 12px);
+    padding-top: clamp(32px, 8vw, 44px);
     gap: 7px;
     max-width: min(17.5rem, 88vw);
     margin-inline: auto;
+    flex-shrink: 0;
   }
 
   body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
