@@ -456,7 +456,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     padding:
       calc(var(--site-chrome-height, 70px) + 4px)
       12px
-      calc(var(--mobile-cta-height, 76px) + 12px);
+      calc(var(--mobile-cta-slot, 76px) + 12px);
     justify-content: flex-start;
     align-items: center;
   }
@@ -467,7 +467,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     flex-direction: column;
     width: 100%;
     max-width: 100%;
-    min-height: calc(88svh - var(--site-chrome-height, 70px) - var(--mobile-cta-height, 76px) - 28px);
+    min-height: calc(88svh - var(--site-chrome-height, 70px) - var(--mobile-cta-slot, 76px) - 28px);
     padding: 0 12px;
     justify-content: flex-end;
   }
@@ -523,7 +523,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
 
   .hero-variant-picker {
     top: auto;
-    bottom: calc(var(--mobile-cta-height, 76px) + 12px);
+    bottom: calc(var(--mobile-cta-slot, 76px) + 12px);
     right: 8px;
     transform: none;
     border-radius: 12px;
