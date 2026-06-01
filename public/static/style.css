@@ -116,17 +116,10 @@ button:focus-visible {
 }
 
 .site-chrome {
-  position: relative;
-  top: auto;
+  position: sticky;
+  top: 0;
   z-index: 500;
   flex-shrink: 0;
-}
-
-@media (min-width: 769px) {
-  .site-chrome {
-    position: sticky;
-    top: 0;
-  }
 }
 
 .trust-bar {
@@ -381,6 +374,15 @@ body.mobile-menu-open .mobile-cta-bar {
   pointer-events: none;
 }
 
+body.mobile-menu-open .site-chrome {
+  z-index: 1200;
+}
+
+body.mobile-menu-open .site-header__menu-toggle {
+  position: relative;
+  z-index: 1201;
+}
+
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -394,7 +396,10 @@ body.mobile-menu-open .mobile-cta-bar {
 
 .mobile-menu {
   position: fixed;
-  inset: 0;
+  top: var(--site-chrome-height, 70px);
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1100;
   background: rgba(13, 29, 44, 0.98);
   color: #fff;
@@ -5036,6 +5041,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
   color: #fff;
   cursor: pointer;
   flex-shrink: 0;
+  overflow: visible;
   z-index: 2;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -5312,6 +5318,11 @@ body.is-standalone-view .standalone-target.rapport-page * {
 }
 
 @media (max-width: 1024px) {
+  .site-header,
+  .site-header__inner {
+    overflow: visible;
+  }
+
   .site-header__tagline {
     display: none;
   }
@@ -5483,7 +5494,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
 
 .mobile-menu-header {
   background: linear-gradient(135deg, rgba(14, 58, 82, 0.95), rgba(8, 38, 56, 0.98));
-  padding-top: 20px;
+  padding-top: max(20px, env(safe-area-inset-top));
 }
 
 .mobile-menu-item {
