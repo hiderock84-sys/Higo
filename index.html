@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260601a" rel="stylesheet">
+  <link href="/static/style.css?v=20260601b" rel="stylesheet">
   <link href="/static/hero-variants.css?v=20260528c6" rel="stylesheet">
 
   <script type="application/ld+json">
@@ -186,7 +186,7 @@
       <div class="hero-copy-stack">
         <header class="hero-head">
           <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
-          <p class="hero-org">一般社団法人ひごのいえ<br class="br-sm-only">熊本県上益城郡御船町</p>
+          <p class="hero-org">一般社団法人ひごのいえ</p>
           <h1 class="hero-title">ひごのいえ</h1>
           <p class="hero-tagline">
             <span class="hero-tagline__row">熊本の<span class="hero-tagline__keep">大自然</span>の中で、</span>
@@ -195,10 +195,13 @@
         </header>
         <div class="hero-body site-copy">
           <p class="hero-deck">
-            依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば、希望ある未来を取り戻すことができます。
+            <span class="hero-deck__row">依存症は、回復できる病気です。</span>
+            <span class="hero-deck__row">適切な支援と環境、仲間とのつながり。</span>
+            <span class="hero-deck__row">その先に、希望ある未来があります。</span>
           </p>
           <p class="hero-lead">
-            熊本・御船町の依存症回復支援施設。秘密厳守のご相談から生活再建まで医療・福祉と連携し、多様な依存とご家族相談に伴走します。
+            <span class="hero-lead__row">秘密厳守のご相談から、生活再建まで。</span>
+            <span class="hero-lead__row">医療・福祉と連携し、ご本人とご家族に伴走します。</span>
           </p>
         </div>
         <nav class="hero-actions hero-actions--cta hero-actions--premium" aria-label="表紙のクイックリンク">
@@ -1459,25 +1462,9 @@
     const menuButton = document.getElementById('menuButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
-    const siteChrome = document.getElementById('siteChrome');
-
-    const syncSiteChromeHeight = () => {
-      if (!siteChrome) return;
-      document.documentElement.style.setProperty(
-        '--site-chrome-height',
-        `${siteChrome.offsetHeight}px`
-      );
-    };
-
-    syncSiteChromeHeight();
-    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
-    if (siteChrome && typeof ResizeObserver !== 'undefined') {
-      new ResizeObserver(syncSiteChromeHeight).observe(siteChrome);
-    }
 
     const openMobileMenu = () => {
       if (!mobileMenu) return;
-      syncSiteChromeHeight();
       mobileMenu.hidden = false;
       requestAnimationFrame(() => {
         mobileMenu.classList.add('active');
@@ -1518,6 +1505,17 @@
       };
       menuButton.addEventListener('click', onMenuOpen);
     }
+
+    const siteChrome = document.getElementById('siteChrome');
+    const syncSiteChromeHeight = () => {
+      if (!siteChrome) return;
+      document.documentElement.style.setProperty(
+        '--site-chrome-height',
+        `${siteChrome.offsetHeight}px`
+      );
+    };
+    syncSiteChromeHeight();
+    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
 
     document.querySelectorAll('.data-table').forEach((table) => {
       const headers = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
