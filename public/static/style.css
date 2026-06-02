@@ -2112,6 +2112,109 @@ body.mobile-menu-open .mobile-cta-bar {
   padding: 14px;
 }
 
+/* 家族ガイドページ */
+.family-page .family-hero-visual,
+.family-page .family-support-visual {
+  margin: 18px 0 20px;
+}
+
+.family-callout {
+  border-color: rgba(40, 179, 174, 0.35);
+  background: linear-gradient(145deg, #f4fbff 0%, #eef8f6 100%);
+}
+
+.family-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.family-chart {
+  margin-top: 0;
+}
+
+.family-chart__intro {
+  margin: 0 0 12px;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: #2c495d;
+}
+
+.family-chart__note {
+  margin: 10px 0 0;
+  font-size: 0.6875rem;
+  line-height: 1.55;
+  color: #4a6578;
+}
+
+.family-chart-bar--focus::after {
+  background: linear-gradient(90deg, #2f80ab, #28b3ae);
+}
+
+.family-chart-bar--worry::after {
+  background: linear-gradient(90deg, #3a7a9e, #5eb8c4);
+}
+
+.family-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.family-program-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(24, 76, 106, 0.14);
+  background: #f8fcfe;
+}
+
+.family-program-item h4 {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #173f58;
+}
+
+.family-program-item p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: #335568;
+}
+
+.family-support-banner {
+  background: linear-gradient(135deg, #0a3d56 0%, #134a66 100%);
+  color: #fff;
+  border: none;
+}
+
+.family-page .info-steps.family-steps .info-steps__body {
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .family-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .family-program-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .family-page .chart-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .family-page .chart-row span {
+    font-size: 0.8125rem;
+  }
+}
+
 .story-section {
   width: 100%;
   margin: 10px 0 0;
@@ -2532,18 +2635,6 @@ body.is-landing .hero-actions--premium .hero-action:active {
 body.is-landing .hero-actions--premium .hero-action:focus-visible {
   outline: 2px solid #7ee8f4;
   outline-offset: 3px;
-}
-
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  body.is-landing .hero-actions--premium .hero-action--premium {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(10, 38, 58, 0.9);
-  }
-
-  body.is-landing .hero-actions--premium .hero-action.primary {
-    background: rgba(255, 255, 255, 0.92);
-  }
 }
 
 body.is-landing .site-header__menu-toggle {
