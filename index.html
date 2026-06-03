@@ -23,7 +23,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260604a" rel="stylesheet">
+<<<<<<< HEAD
+  <link href="/static/style.css?v=20260604d" rel="stylesheet">
+=======
+  <link href="/static/style.css?v=20260604d" rel="stylesheet">
+>>>>>>> 9ecbd8f (fix(header): モバイルでスクロール後もハンバーガーを常時表示)
   <link href="/static/hero-variants.css?v=20260604b" rel="stylesheet">
 
   <script type="application/ld+json">
@@ -1464,9 +1468,25 @@
     const menuButton = document.getElementById('menuButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
+    const siteChrome = document.getElementById('siteChrome');
+
+    const syncSiteChromeHeight = () => {
+      if (!siteChrome) return;
+      document.documentElement.style.setProperty(
+        '--site-chrome-height',
+        `${siteChrome.offsetHeight}px`
+      );
+    };
+
+    syncSiteChromeHeight();
+    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
+    if (siteChrome && typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(syncSiteChromeHeight).observe(siteChrome);
+    }
 
     const openMobileMenu = () => {
       if (!mobileMenu) return;
+      syncSiteChromeHeight();
       mobileMenu.hidden = false;
       requestAnimationFrame(() => {
         mobileMenu.classList.add('active');
@@ -1507,17 +1527,6 @@
       };
       menuButton.addEventListener('click', onMenuOpen);
     }
-
-    const siteChrome = document.getElementById('siteChrome');
-    const syncSiteChromeHeight = () => {
-      if (!siteChrome) return;
-      document.documentElement.style.setProperty(
-        '--site-chrome-height',
-        `${siteChrome.offsetHeight}px`
-      );
-    };
-    syncSiteChromeHeight();
-    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
 
     document.querySelectorAll('.data-table').forEach((table) => {
       const headers = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
