@@ -4999,10 +4999,8 @@ body.is-landing .landing-contact {
   z-index: 1;
   color: #fff;
   text-align: center;
-  padding: clamp(48px, 10vw, 72px) 16px clamp(40px, 8vw, 56px);
-  background:
-    linear-gradient(135deg, rgba(8, 45, 66, 0.94) 0%, rgba(17, 109, 120, 0.9) 100%),
-    url("/static/hero-nature-majestic.jpg") center/cover no-repeat;
+  padding: clamp(48px, 10vw, 72px) 20px clamp(36px, 7vw, 52px);
+  background: transparent;
 }
 
 body.is-landing .landing-contact__inner {
@@ -5101,50 +5099,105 @@ body.is-landing .landing-contact__hours {
 
 body.is-landing .site-footer {
   margin-top: 0;
-  background: linear-gradient(180deg, #0a3348 0%, #061a28 100%);
+  background:
+    linear-gradient(135deg, rgba(8, 45, 66, 0.94) 0%, rgba(17, 109, 120, 0.9) 100%),
+    url("/static/hero-nature-majestic.jpg") center/cover no-repeat;
+  background-color: #082d42;
 }
 
 body.is-landing .site-footer::before {
-  display: none;
+  display: block;
+  background:
+    radial-gradient(ellipse 75% 55% at 8% 0%, rgba(64, 200, 190, 0.22) 0%, transparent 58%),
+    radial-gradient(ellipse 65% 50% at 92% 100%, rgba(30, 120, 160, 0.2) 0%, transparent 52%),
+    radial-gradient(ellipse 50% 40% at 50% 40%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
 }
 
 body.is-landing .site-footer__main {
-  padding: 28px 16px max(24px, env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px max(28px, env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 body.is-landing .site-footer__grid {
   grid-template-columns: 1fr;
-  justify-items: center;
-  text-align: center;
-  gap: 0;
+  gap: 28px;
+  text-align: left;
+  justify-items: stretch;
+  padding: 28px 0 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.is-landing .site-footer__brand {
+  max-width: 22rem;
 }
 
 body.is-landing .site-footer__nav {
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+}
+
+body.is-landing .site-footer__nav-title {
+  color: #7ee8f4;
 }
 
 body.is-landing .site-footer__legal {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 20px;
+  text-align: left;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.is-landing .site-footer__legal-note {
+  max-width: 28em;
 }
 
 body.is-landing .site-footer__logo {
   width: 72px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 body.is-landing .site-footer__org {
-  font-size: 0.9375rem;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
-body.is-landing .site-footer__address {
-  font-size: 0.8125rem;
-  opacity: 0.85;
-}
-
+body.is-landing .site-footer__address,
 body.is-landing .site-footer__contact-line {
-  display: none;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (min-width: 768px) {
+  body.is-landing .site-footer__grid {
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 1.5fr);
+    align-items: start;
+    gap: 40px 48px;
+  }
+
+  body.is-landing .site-footer__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 40px;
+  }
+
+  body.is-landing .site-footer__legal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px 24px;
+  }
 }
 
 
