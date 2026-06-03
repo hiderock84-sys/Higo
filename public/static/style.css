@@ -115,18 +115,12 @@ button:focus-visible {
   left: 0;
 }
 
+/* 全画面幅で sticky 必須（モバイルのみ relative にするとスクロールでハンバーガーが消える） */
 .site-chrome {
-  position: relative;
-  top: auto;
+  position: sticky;
+  top: 0;
   z-index: 500;
   flex-shrink: 0;
-}
-
-@media (min-width: 769px) {
-  .site-chrome {
-    position: sticky;
-    top: 0;
-  }
 }
 
 .trust-bar {
@@ -381,6 +375,15 @@ body.mobile-menu-open .mobile-cta-bar {
   pointer-events: none;
 }
 
+body.mobile-menu-open .site-chrome {
+  z-index: 1200;
+}
+
+body.mobile-menu-open .site-header__menu-toggle {
+  position: relative;
+  z-index: 1201;
+}
+
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -394,7 +397,10 @@ body.mobile-menu-open .mobile-cta-bar {
 
 .mobile-menu {
   position: fixed;
-  inset: 0;
+  top: var(--site-chrome-height, 70px);
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1100;
   background: rgba(13, 29, 44, 0.98);
   color: #fff;
@@ -2157,51 +2163,27 @@ body.is-landing .landing-only {
   display: block;
 }
 
-/* 表紙・スマホ用：風景1枚＋まとめ文（PCでは visual-strip / brand-axis を表示） */
+/* 表紙・スマホ用：天草の写真1枚＋キャプション（PCでは visual-strip / brand-axis） */
 .landing-brief {
   width: min(1080px, calc(100% - 28px));
   margin: clamp(16px, 3vw, 24px) auto clamp(20px, 4vw, 28px);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid rgba(25, 89, 122, 0.14);
-  background: #fff;
-  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 3;
 }
 
-.landing-brief__media {
+.landing-brief__card {
   margin: 0;
 }
 
-.landing-brief__media img {
-  display: block;
-  width: 100%;
-  height: clamp(168px, 42vw, 220px);
-  object-fit: cover;
-  object-position: center 40%;
+.landing-brief__card img {
+  height: clamp(180px, 48vw, 240px);
+  object-position: center center;
 }
 
-.landing-brief__body {
-  padding: clamp(16px, 4vw, 22px) clamp(16px, 4vw, 20px) clamp(18px, 4vw, 24px);
-}
-
-.landing-brief__title {
-  margin: 0 0 10px;
-  font-family: var(--font-heading);
-  font-size: clamp(1.05rem, 4.2vw, 1.2rem);
-  font-weight: 700;
-  color: var(--ink-900);
-  line-height: 1.4;
-}
-
-.landing-brief__body p {
-  margin: 0 0 0.9em;
-  font-size: clamp(0.9rem, 3.6vw, 1rem);
-  line-height: 1.82;
-  color: var(--ink-500);
-}
-
-.landing-brief__body p:last-child {
-  margin-bottom: 0;
+.landing-brief__card .visual-card__caption {
+  font-size: clamp(0.875rem, 3.8vw, 0.94rem);
+  line-height: 1.75;
+  padding: 40px 16px 18px;
 }
 
 @media (min-width: 769px) {
