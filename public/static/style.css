@@ -2534,18 +2534,6 @@ body.is-landing .hero-actions--premium .hero-action:focus-visible {
   outline-offset: 3px;
 }
 
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  body.is-landing .hero-actions--premium .hero-action--premium {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(10, 38, 58, 0.9);
-  }
-
-  body.is-landing .hero-actions--premium .hero-action.primary {
-    background: rgba(255, 255, 255, 0.92);
-  }
-}
-
 body.is-landing .site-header__menu-toggle {
   width: 48px;
   min-width: 48px;
@@ -3720,6 +3708,80 @@ body.is-standalone-view .standalone-target.rapport-page * {
   margin-top: 8px;
   font-size: 0.86rem;
   color: #587286;
+}
+
+/* 体験談ページ：全文を読みやすく（単体表示） */
+body.is-standalone-view .testimonial-grid-wrap.testimonials-page.standalone-target {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 40px);
+  width: min(720px, calc(100% - 28px));
+  max-width: 720px;
+  margin: 0 auto;
+  grid-template-columns: none;
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card {
+  padding: clamp(22px, 4.5vw, 34px);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(15, 45, 64, 0.1);
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card__head {
+  margin-bottom: clamp(18px, 3vw, 24px);
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(25, 89, 122, 0.14);
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card__label {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #3d7a9e;
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 2.4vw, 1.22rem);
+  line-height: 1.45;
+  color: #194c67;
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card__body p {
+  margin: 0 0 1.15em;
+  font-size: clamp(0.98rem, 2.1vw, 1.05rem);
+  line-height: 1.92;
+  color: #2f4a5c;
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card__body p:last-child {
+  margin-bottom: 0;
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card__footer {
+  margin-top: clamp(18px, 3vw, 24px);
+  padding-top: 16px;
+  border-top: 1px solid rgba(25, 89, 122, 0.12);
+}
+
+body.is-standalone-view .testimonials-page .testimonial-card__name {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #4a6578;
+  text-align: right;
+}
+
+body.is-standalone-view .testimonials-page .testimonials-page-cta {
+  margin-top: 4px;
+}
+
+body.is-standalone-view #testimonials.standalone-target .story-subtitle {
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .staff-story {
