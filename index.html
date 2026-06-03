@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260605c" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=20260604b" rel="stylesheet">
+  <link href="/static/style.css?v=20260529b" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260528c6" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -184,27 +184,22 @@
     >
     <div class="hero-inner hero-inner--editorial">
       <div class="hero-copy-stack">
-        <div class="hero-copy-text">
         <header class="hero-head">
           <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
-          <p class="hero-org">一般社団法人ひごのいえ</p>
+          <p class="hero-org">一般社団法人ひごのいえ<br class="br-sm-only">熊本県上益城郡御船町</p>
           <h1 class="hero-title">ひごのいえ</h1>
           <p class="hero-tagline">
-            <span class="hero-tagline__row">熊本の<span class="hero-tagline__keep">大自然</span>と仲間に囲まれ、</span>
+            <span class="hero-tagline__row">熊本の<span class="hero-tagline__keep">大自然</span>の中で、</span>
             <span class="hero-tagline__row">人生を<span class="hero-tagline__keep">再出発する。</span></span>
           </p>
         </header>
         <div class="hero-body site-copy">
           <p class="hero-deck">
-            <span class="hero-deck__row">依存症は、回復できる病気です。</span>
-            <span class="hero-deck__row">適切な支援と環境、仲間とのつながりがあれば、</span>
-            <span class="hero-deck__row">希望ある未来を、取り戻すことができます。</span>
+            依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば、希望ある未来を取り戻すことができます。
           </p>
           <p class="hero-lead">
-            <span class="hero-lead__row">秘密厳守のご相談から、生活再建まで。</span>
-            <span class="hero-lead__row">医療・福祉と連携し、ご本人とご家族に伴走します。</span>
+            熊本・御船町の依存症回復支援施設。秘密厳守のご相談から生活再建まで医療・福祉と連携し、多様な依存とご家族相談に伴走します。
           </p>
-        </div>
         </div>
         <nav class="hero-actions hero-actions--cta hero-actions--premium" aria-label="表紙のクイックリンク">
           <a href="/contact" class="hero-action primary hero-action--premium">
@@ -217,6 +212,17 @@
           </a>
         </nav>
       </div>
+    </div>
+  </section>
+
+  <section class="landing-only landing-brief" aria-label="熊本の自然とひごのいえの支援">
+    <figure class="landing-brief__media">
+      <img src="/static/hero-nature-majestic.jpg?v=20260525" alt="熊本・阿蘇の草原と青空の風景" width="1200" height="800" loading="lazy" decoding="async">
+    </figure>
+    <div class="landing-brief__body site-copy">
+      <h2 class="landing-brief__title">大自然と、丁寧な支援設計</h2>
+      <p>阿蘇の広い空と草原、天草の穏やかな海。九州の自然のリズムに合わせ、焦らず生活と心を少しずつ取り戻す時間を支えます。</p>
+      <p>自然のなかで生活リズムの土台を整え、医療・福祉・ご家族と連携しながら、一人ひとりに合わせた再出発の計画と伴走を行います。回復だけでなく、尊重し合える関係のなかで人生を再設計する「家」として機能します。</p>
     </div>
   </section>
 
@@ -426,8 +432,8 @@
 
     <div class="program-daily-block">
       <h3 class="program-section-title">
-        <span class="program-section-title__main">ひごのいえの一日</span>
-        <span class="program-section-title__sub">一日のスケジュール</span>
+        <span class="program-section-title__main">一日の型</span>
+        <span class="program-section-title__sub">生活リズムプログラム</span>
       </h3>
       <p class="program-section-lead">リハビリ施設で広く採用されている規則正しい生活を、ひごのいえの共同生活に合わせて設計しています。同じ時間に起き、食べ、働き、休む――その反復のなかで、信頼関係が育ちます。</p>
       <dl class="program-daily-list">
@@ -1216,7 +1222,7 @@
       <div class="story-label">STORIES OF RECOVERY</div>
       <h2 class="story-title">絶望から希望へ</h2>
       <div class="story-subtitle">
-        3名の回復者が語る、再生の物語。<br class="br-md-up">
+        5人の回復者が語る、再生の物語。<br class="br-md-up">
         彼らは地獄を見た。そして今、笑顔で未来を語る。
       </div>
     </div>
@@ -1464,25 +1470,9 @@
     const menuButton = document.getElementById('menuButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
-    const siteChrome = document.getElementById('siteChrome');
-
-    const syncSiteChromeHeight = () => {
-      if (!siteChrome) return;
-      document.documentElement.style.setProperty(
-        '--site-chrome-height',
-        `${siteChrome.offsetHeight}px`
-      );
-    };
-
-    syncSiteChromeHeight();
-    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
-    if (siteChrome && typeof ResizeObserver !== 'undefined') {
-      new ResizeObserver(syncSiteChromeHeight).observe(siteChrome);
-    }
 
     const openMobileMenu = () => {
       if (!mobileMenu) return;
-      syncSiteChromeHeight();
       mobileMenu.hidden = false;
       requestAnimationFrame(() => {
         mobileMenu.classList.add('active');
@@ -1523,6 +1513,17 @@
       };
       menuButton.addEventListener('click', onMenuOpen);
     }
+
+    const siteChrome = document.getElementById('siteChrome');
+    const syncSiteChromeHeight = () => {
+      if (!siteChrome) return;
+      document.documentElement.style.setProperty(
+        '--site-chrome-height',
+        `${siteChrome.offsetHeight}px`
+      );
+    };
+    syncSiteChromeHeight();
+    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
 
     document.querySelectorAll('.data-table').forEach((table) => {
       const headers = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
@@ -1689,7 +1690,7 @@
           sectionTarget.classList.add('standalone-target');
         }
         if (activeSectionId === 'testimonials') {
-          document.querySelectorAll('.testimonial-grid-wrap').forEach((el) => {
+          document.querySelectorAll('.compact-testimonial-wrap, .testimonial-grid-wrap').forEach((el) => {
             el.classList.add('standalone-target');
           });
         }

@@ -115,12 +115,18 @@ button:focus-visible {
   left: 0;
 }
 
-/* 全画面幅で sticky 必須（モバイルのみ relative にするとスクロールでハンバーガーが消える） */
 .site-chrome {
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 500;
   flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .site-chrome {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .trust-bar {
@@ -375,15 +381,6 @@ body.mobile-menu-open .mobile-cta-bar {
   pointer-events: none;
 }
 
-body.mobile-menu-open .site-chrome {
-  z-index: 1200;
-}
-
-body.mobile-menu-open .site-header__menu-toggle {
-  position: relative;
-  z-index: 1201;
-}
-
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -397,10 +394,7 @@ body.mobile-menu-open .site-header__menu-toggle {
 
 .mobile-menu {
   position: fixed;
-  top: var(--site-chrome-height, 70px);
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 1100;
   background: rgba(13, 29, 44, 0.98);
   color: #fff;
@@ -2163,6 +2157,59 @@ body.is-landing .landing-only {
   display: block;
 }
 
+/* 表紙・スマホ用：風景1枚＋まとめ文（PCでは visual-strip / brand-axis を表示） */
+.landing-brief {
+  width: min(1080px, calc(100% - 28px));
+  margin: clamp(16px, 3vw, 24px) auto clamp(20px, 4vw, 28px);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(25, 89, 122, 0.14);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.landing-brief__media {
+  margin: 0;
+}
+
+.landing-brief__media img {
+  display: block;
+  width: 100%;
+  height: clamp(168px, 42vw, 220px);
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.landing-brief__body {
+  padding: clamp(16px, 4vw, 22px) clamp(16px, 4vw, 20px) clamp(18px, 4vw, 24px);
+}
+
+.landing-brief__title {
+  margin: 0 0 10px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 4.2vw, 1.2rem);
+  font-weight: 700;
+  color: var(--ink-900);
+  line-height: 1.4;
+}
+
+.landing-brief__body p {
+  margin: 0 0 0.9em;
+  font-size: clamp(0.9rem, 3.6vw, 1rem);
+  line-height: 1.82;
+  color: var(--ink-500);
+}
+
+.landing-brief__body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 769px) {
+  body.is-landing .landing-brief {
+    display: none !important;
+  }
+}
+
 /* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
 body.is-landing .hero-section {
@@ -2540,18 +2587,6 @@ body.is-landing .hero-actions--premium .hero-action:focus-visible {
   outline-offset: 3px;
 }
 
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  body.is-landing .hero-actions--premium .hero-action--premium {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(10, 38, 58, 0.9);
-  }
-
-  body.is-landing .hero-actions--premium .hero-action.primary {
-    background: rgba(255, 255, 255, 0.92);
-  }
-}
-
 body.is-landing .site-header__menu-toggle {
   width: 48px;
   min-width: 48px;
@@ -2904,10 +2939,7 @@ body.is-standalone-view .standalone-target {
   padding-bottom: clamp(40px, 8vw, 64px);
 }
 
-body.is-standalone-view .compact-testimonial-wrap {
-  display: none !important;
-}
-
+body.is-standalone-view .compact-testimonial-wrap.standalone-target,
 body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   width: min(1080px, calc(100% - 28px));
 }
@@ -4522,12 +4554,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
     margin-top: clamp(12px, 3vw, 24px);
   }
 
-  /* 表紙ランディング：スマホでは風景カード・支援設計3枚を省略（PC/タブレットは表示） */
-  body.is-landing .visual-strip,
-  body.is-landing .brand-axis {
-    display: none !important;
-  }
-
   .brand-axis {
     width: calc(100% - 20px);
     grid-template-columns: 1fr;
@@ -5063,7 +5089,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
   color: #fff;
   cursor: pointer;
   flex-shrink: 0;
-  overflow: visible;
   z-index: 2;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -5340,11 +5365,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
 }
 
 @media (max-width: 1024px) {
-  .site-header,
-  .site-header__inner {
-    overflow: visible;
-  }
-
   .site-header__tagline {
     display: none;
   }
