@@ -2163,35 +2163,6 @@ body.is-landing .landing-only {
   display: block;
 }
 
-/* 表紙・スマホ用：天草の写真1枚＋キャプション（PCでは visual-strip / brand-axis） */
-.landing-brief {
-  width: min(1080px, calc(100% - 28px));
-  margin: clamp(16px, 3vw, 24px) auto clamp(20px, 4vw, 28px);
-  position: relative;
-  z-index: 3;
-}
-
-.landing-brief__card {
-  margin: 0;
-}
-
-.landing-brief__card img {
-  height: clamp(180px, 48vw, 240px);
-  object-position: center center;
-}
-
-.landing-brief__card .visual-card__caption {
-  font-size: clamp(0.875rem, 3.8vw, 0.94rem);
-  line-height: 1.75;
-  padding: 40px 16px 18px;
-}
-
-@media (min-width: 769px) {
-  body.is-landing .landing-brief {
-    display: none !important;
-  }
-}
-
 /* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
 body.is-landing .hero-section {
@@ -4532,7 +4503,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
     grid-template-columns: 1fr;
   }
 
-  /* 表紙ランディング：スマホでは6枚カードを隠し landing-brief の1枚のみ */
+  /* 表紙ランディング：スマホでは風景・支援設計ブロックを非表示 */
   body.is-landing .visual-strip,
   body.is-landing .brand-axis {
     display: none !important;
