@@ -210,12 +210,12 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   margin: clamp(12px, 2vh, 16px) 0 0;
   padding-top: 0;
   border-top: none;
-  gap: clamp(16px, 4.5vw, 20px);
+  gap: clamp(8px, 2.5vw, 12px);
 }
 
-body.is-landing.hero-variant-bottom .hero-actions--quad .hero-action--premium {
-  border-radius: 22px;
-  min-height: 80px;
+body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
+  min-height: 50px;
+  border-radius: 11px;
 }
 
 /* ═══════════════════════════════════════
@@ -455,73 +455,23 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
   body.is-landing.hero-variant-bottom .hero-section {
     min-height: min(88svh, 820px);
     padding:
-      calc(var(--site-chrome-height, 70px) + 4px)
+      calc(var(--site-chrome-height, 70px) + 8px)
       12px
-      clamp(16px, 4vw, 24px);
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  body.is-landing.hero-variant-bottom .hero-inner--editorial {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    min-height: calc(88svh - var(--site-chrome-height, 70px) - 0px - 28px);
-    padding: 0 12px;
-    justify-content: flex-end;
+      calc(var(--mobile-cta-height, 76px) + 14px);
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: 100%;
     max-width: 100%;
-    min-height: 100%;
     padding: 0 4px;
   }
 
-  body.is-landing.hero-variant-bottom .hero-copy-text {
-    flex: 0 0 auto;
-    width: 100%;
-    padding-top: clamp(6px, 2vh, 14px);
-  }
-
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
-    font-size: clamp(2.125rem, 10.5vw, 3rem);
-  }
-
-  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-tagline {
-    font-size: clamp(1.0625rem, 4.5vw, 1.3125rem);
-    line-height: 1.52;
-  }
-
-  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-deck {
-    font-size: clamp(0.875rem, 3.15vw, 1rem);
-    line-height: 1.72;
-  }
-
-  body.is-landing.hero-variant-bottom .hero-copy-stack .hero-lead {
-    font-size: clamp(0.8125rem, 2.9vw, 0.9375rem);
-    line-height: 1.68;
+    font-size: clamp(2rem, 9.5vw, 2.75rem);
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
-    margin-top: auto;
-    margin-bottom: clamp(8px, 2vh, 14px);
-    padding-top: clamp(20px, 5vw, 32px);
-    gap: clamp(16px, 4.5vw, 20px);
-    max-width: 100%;
-    width: 100%;
-    margin-inline: 0;
-    flex-shrink: 0;
-  }
-
-  body.is-landing.hero-variant-bottom .hero-actions--quad .hero-action--premium {
-    border-radius: 22px;
-    min-height: clamp(72px, 18vw, 80px);
+    margin-top: 10px;
+    padding-top: 10px;
   }
 
   body.is-landing.hero-variant-sheet .hero-inner--editorial {
@@ -530,7 +480,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
 
   .hero-variant-picker {
     top: auto;
-    bottom: clamp(16px, 4vw, 24px);
+    bottom: 12px;
     right: 8px;
     transform: none;
     border-radius: 12px;
@@ -603,7 +553,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     margin-top: clamp(16px, 2.5vh, 22px);
   }
 
-  body.is-landing.hero-variant-bottom .hero-actions--cta {
-    --hero-cta-height: 52px;
+  body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
+    min-height: 54px;
   }
 }

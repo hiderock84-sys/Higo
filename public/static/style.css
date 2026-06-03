@@ -5461,14 +5461,15 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   box-shadow: none;
 }
 
-/* ── お悩みセクション（カード140px固定・サンプル準拠） ── */
+/* ── お悩みセクション（スクリーンショット赤丸準拠・4+3列） ── */
 #concerns.concerns-section {
-  --concerns-gutter: 12px;
-  background: linear-gradient(180deg, #f8fbfd 0%, #ffffff 100%);
-  padding: 40px 0 44px;
-  margin: 0;
+  --concerns-gutter: 10px;
+  --concerns-gap: 8px;
+  background: linear-gradient(180deg, #f8fbfd 0%, #ffffff 55%);
+  padding: 28px 0 36px;
+  margin-top: -20px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 #concerns .concerns-section__inner {
@@ -5481,25 +5482,25 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 
 #concerns .concerns-section__header {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 #concerns .concerns-section__title {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   font-family: var(--font-display), var(--font-heading), serif;
-  font-size: clamp(1.5rem, 6.8vw, 2.125rem);
+  font-size: clamp(1.375rem, 5.6vw, 1.75rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: 0.02em;
   color: #0d2238;
 }
 
 #concerns .concerns-section__lead {
-  margin: 0 auto 16px;
-  max-width: 20em;
-  font-size: 15px;
-  line-height: 1.65;
-  color: rgba(13, 34, 56, 0.82);
+  margin: 0 auto 12px;
+  max-width: 22em;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(13, 34, 56, 0.78);
 }
 
 #concerns .concerns-grid {
@@ -5507,20 +5508,28 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--concerns-gap);
 }
 
 #concerns .concerns-card {
   margin: 0;
   padding: 0;
   min-width: 0;
+  grid-column: span 2;
 }
 
-#concerns .concerns-card--solo {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: calc(50% - 6px);
+/* 2段目3枚を中央寄せ（8列グリッドの中央6列） */
+#concerns .concerns-card:nth-child(5) {
+  grid-column: 2 / span 2;
+}
+
+#concerns .concerns-card:nth-child(6) {
+  grid-column: 4 / span 2;
+}
+
+#concerns .concerns-card:nth-child(7) {
+  grid-column: 6 / span 2;
 }
 
 #concerns .concerns-card__surface {
@@ -5531,15 +5540,15 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  height: 140px;
-  min-height: 140px;
-  max-height: 140px;
-  padding: 12px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  padding: 8px 4px;
   margin: 0;
   background: #ffffff;
-  border-radius: 18px;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.05);
   overflow: hidden;
 }
 
@@ -5548,57 +5557,58 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  margin: 0 0 6px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  margin: 0 0 4px;
+  border-radius: 8px;
   background: rgba(52, 140, 169, 0.1);
   color: #348ca9;
 }
 
 #concerns .concerns-card__svg {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 #concerns .concerns-card__title {
   margin: 0 0 2px;
   padding: 0;
   font-family: var(--font-heading);
-  font-size: 16px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.25;
   color: #0d2238;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 #concerns .concerns-card__desc {
   margin: 0;
   padding: 0;
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 9px;
+  line-height: 1.35;
   color: #6b7280;
+  max-width: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  max-width: 100%;
 }
 
 #concerns .concerns-section__footer {
-  margin-top: 18px;
+  margin-top: 14px;
   text-align: center;
 }
 
 #concerns .concerns-section__closing {
-  margin: 0 auto 14px;
+  margin: 0 auto 12px;
   max-width: 34em;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.5;
   color: #0d2238;
 }
 
@@ -5608,17 +5618,17 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   justify-content: center;
   gap: 10px;
   width: min(100%, 300px);
-  height: 60px;
-  min-height: 60px;
-  max-height: 60px;
+  height: 56px;
+  min-height: 56px;
+  max-height: 56px;
   padding: 0 20px;
   box-sizing: border-box;
   border-radius: 999px;
   text-decoration: none;
   color: #0d2238;
   background: #ffffff;
-  border: 1px solid rgba(13, 34, 56, 0.08);
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(52, 140, 169, 0.25);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
 #concerns .concerns-section__cta-icon {
@@ -5637,45 +5647,81 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 
 #concerns .concerns-section__cta-label {
   font-family: var(--font-heading);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1.2;
   color: #0d2238;
 }
 
 #concerns .concerns-section__cta-hint {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: #6b7280;
   line-height: 1.2;
 }
 
+@media (min-width: 480px) and (max-width: 768px) {
+  #concerns .concerns-card__surface {
+    height: 108px;
+    min-height: 108px;
+    max-height: 108px;
+    padding: 10px 6px;
+  }
+
+  #concerns .concerns-card__title {
+    font-size: 12px;
+  }
+
+  #concerns .concerns-card__desc {
+    font-size: 10px;
+  }
+}
+
 @media (min-width: 769px) {
   #concerns.concerns-section {
+    margin-top: 0;
     padding: 48px 0;
   }
 
   #concerns .concerns-section__inner {
-    width: min(960px, calc(100% - 32px));
+    width: min(920px, calc(100% - 32px));
     padding-inline: 0;
     margin-inline: auto;
   }
 
   #concerns .concerns-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 12px;
   }
 
+  #concerns .concerns-card {
+    grid-column: span 2;
+  }
+
+  #concerns .concerns-card:nth-child(5) {
+    grid-column: 2 / span 2;
+  }
+
+  #concerns .concerns-card:nth-child(6) {
+    grid-column: 4 / span 2;
+  }
+
+  #concerns .concerns-card:nth-child(7) {
+    grid-column: 6 / span 2;
+  }
+
   #concerns .concerns-card__surface {
-    height: 140px;
-    min-height: 140px;
-    max-height: 140px;
-    padding: 12px;
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    padding: 12px 8px;
+    border-radius: 14px;
   }
 
   #concerns .concerns-card__icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 6px;
   }
 
   #concerns .concerns-card__svg {
@@ -5684,11 +5730,11 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   }
 
   #concerns .concerns-card__title {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #concerns .concerns-card__desc {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
