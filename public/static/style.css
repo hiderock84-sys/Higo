@@ -4532,6 +4532,12 @@ body.is-standalone-view .standalone-target.rapport-page * {
     grid-template-columns: 1fr;
   }
 
+  /* 表紙ランディング：スマホでは6枚カードを隠し landing-brief の1枚のみ */
+  body.is-landing .visual-strip,
+  body.is-landing .brand-axis {
+    display: none !important;
+  }
+
   body.is-landing .visual-strip {
     margin-top: clamp(12px, 3vw, 24px);
   }
