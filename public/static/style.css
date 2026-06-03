@@ -5755,9 +5755,8 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 
 /* ── お悩みセクション（スクリーンショット赤丸準拠・4+3列） ── */
 #concerns.concerns-section {
-  --concerns-gutter: 8px;
-  --concerns-gap: 10px;
-  --concerns-card-h: clamp(116px, 28vw, 132px);
+  --concerns-gutter: 4px;
+  --concerns-gap: 8px;
   position: relative;
   z-index: 3;
   margin-top: 0;
@@ -5794,7 +5793,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 #concerns .concerns-section__inner {
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: min(100%, calc(100vw - (var(--concerns-gutter) * 2)));
   max-width: 100%;
   margin: 0 auto;
   padding-inline: var(--concerns-gutter);
@@ -5863,10 +5862,10 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  height: var(--concerns-card-h);
-  min-height: var(--concerns-card-h);
-  max-height: var(--concerns-card-h);
-  padding: 10px 6px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  padding: 8px 4px;
   margin: 0;
   background: #ffffff;
   border-radius: 12px;
@@ -5880,40 +5879,46 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: clamp(34px, 9vw, 40px);
-  height: clamp(34px, 9vw, 40px);
-  margin: 0 0 6px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  margin: 0 0 4px;
+  border-radius: 8px;
   background: rgba(52, 140, 169, 0.1);
   color: #348ca9;
 }
 
 #concerns .concerns-card__svg {
   display: block;
-  width: clamp(18px, 5vw, 22px);
-  height: clamp(18px, 5vw, 22px);
+  width: 18px;
+  height: 18px;
 }
 
 #concerns .concerns-card__title {
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   padding: 0;
   font-family: var(--font-heading);
-  font-size: clamp(11px, 3.1vw, 13px);
+  font-size: 11px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.25;
   color: #0d2238;
   max-width: 100%;
-  text-wrap: balance;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 #concerns .concerns-card__desc {
   margin: 0;
   padding: 0;
-  font-size: clamp(9px, 2.5vw, 11px);
-  line-height: 1.4;
+  font-size: 9px;
+  line-height: 1.35;
   color: #6b7280;
   max-width: 100%;
-  text-wrap: pretty;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 #concerns .concerns-section__footer {
@@ -5980,21 +5985,32 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
-  #concerns.concerns-section {
-    --concerns-card-h: 124px;
+  #concerns .concerns-card__surface {
+    height: 108px;
+    min-height: 108px;
+    max-height: 108px;
+    padding: 10px 6px;
+  }
+
+  #concerns .concerns-card__title {
+    font-size: 12px;
+  }
+
+  #concerns .concerns-card__desc {
+    font-size: 10px;
   }
 }
 
 @media (min-width: 769px) {
   #concerns.concerns-section {
     --concerns-gutter: 0;
-    --concerns-gap: 14px;
-    --concerns-card-h: 148px;
+    --concerns-gap: 12px;
     padding: clamp(64px, 8vw, 80px) 0;
   }
 
   #concerns .concerns-section__inner {
-    width: min(960px, calc(100% - 40px));
+    width: min(100%, calc(100vw - 24px));
+    max-width: 1000px;
     padding-inline: 0;
     margin-inline: auto;
   }
@@ -6005,16 +6021,30 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   }
 
   #concerns .concerns-card__surface {
-    padding: 14px 10px;
-    border-radius: 16px;
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    padding: 12px 8px;
+    border-radius: 14px;
+  }
+
+  #concerns .concerns-card__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 6px;
+  }
+
+  #concerns .concerns-card__svg {
+    width: 20px;
+    height: 20px;
   }
 
   #concerns .concerns-card__title {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   #concerns .concerns-card__desc {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
