@@ -4522,6 +4522,12 @@ body.is-standalone-view .standalone-target.rapport-page * {
     margin-top: clamp(12px, 3vw, 24px);
   }
 
+  /* 表紙ランディング：スマホでは風景カード・支援設計3枚を省略（PC/タブレットは表示） */
+  body.is-landing .visual-strip,
+  body.is-landing .brand-axis {
+    display: none !important;
+  }
+
   .brand-axis {
     width: calc(100% - 20px);
     grid-template-columns: 1fr;
