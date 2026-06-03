@@ -5920,16 +5920,15 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  height: 108px;
   min-height: 108px;
-  max-height: 108px;
+  height: auto;
   padding: 10px 8px;
   margin: 0;
   background: #ffffff;
   border-radius: 12px;
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: 0 1px 6px rgba(15, 23, 42, 0.05);
-  overflow: hidden;
+  overflow: visible;
 }
 
 #concerns .concerns-card__icon {
@@ -5959,20 +5958,26 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   font-weight: 700;
   line-height: 1.3;
   text-wrap: balance;
+  line-break: strict;
   color: #0d2238;
   max-width: 100%;
-
 }
 
 #concerns .concerns-card__desc {
   margin: 0;
   padding: 0;
   font-size: clamp(10px, 2.8vw, 12px);
-  line-height: 1.4;
+  line-height: 1.45;
   text-wrap: pretty;
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: normal;
   color: #6b7280;
   max-width: 100%;
+}
 
+#concerns .concerns-card__desc-line {
+  display: block;
 }
 
 #concerns .concerns-section__footer {
@@ -6098,12 +6103,47 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   line-height: 1.2;
 }
 
+
+@media (max-width: 479px) {
+  #concerns.concerns-section {
+    --concerns-gutter: 12px;
+    --concerns-gap: 10px;
+  }
+
+  #concerns .concerns-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #concerns .concerns-card {
+    grid-column: auto;
+  }
+
+  #concerns .concerns-card__surface {
+    min-height: 112px;
+    padding: 12px 10px;
+  }
+
+  #concerns .concerns-card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+  }
+
+  #concerns .concerns-card__title {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  #concerns .concerns-card__desc {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
 @media (min-width: 480px) and (max-width: 768px) {
   #concerns .concerns-card__surface {
-    height: 108px;
     min-height: 108px;
-    max-height: 108px;
-    padding: 10px 6px;
+    padding: 10px 8px;
   }
 
   #concerns .concerns-card__title {
@@ -6111,7 +6151,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   }
 
   #concerns .concerns-card__desc {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -6135,10 +6175,9 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   }
 
   #concerns .concerns-card__surface {
-    height: 120px;
     min-height: 120px;
-    max-height: 120px;
-    padding: 12px 8px;
+    height: auto;
+    padding: 12px 10px;
     border-radius: 14px;
   }
 
