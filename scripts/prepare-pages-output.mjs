@@ -76,3 +76,13 @@ async function cleanupUnusedAssets() {
 await copyDistToTargets()
 await syncRootFilesForSubprojects()
 await cleanupUnusedAssets()
+
+const distIndex = await readFile(path.join(distDir, 'index.html'), 'utf8')
+if (distIndex.includes('program-section-title__main">一日の型<')) {
+  throw new Error(
+    'dist/index.html に「一日の型」が残っています。ルート index.html を「ひごのいえの一日」に修正してから再ビルドしてください。'
+  )
+}
+if (!distIndex.includes('program-section-title__main">ひごのいえの一日<')) {
+  throw new Error('dist/index.html に「ひごのいえの一日」がありません。')
+}

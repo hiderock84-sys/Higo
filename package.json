@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "vite",
     "dev:sandbox": "wrangler pages dev dist --ip 0.0.0.0 --port 3000",
-    "verify:header": "node scripts/verify-site-chrome-sticky.mjs",
-    "build": "npm run verify:header && vite build && node scripts/prepare-pages-output.mjs",
+    "verify:program": "node scripts/verify-program-copy.mjs",
+    "build": "npm run verify:program && vite build && node scripts/prepare-pages-output.mjs",
     "build:pages": "npm run build",
     "pages:build": "npm run build",
     "build:prod": "npm run build",
