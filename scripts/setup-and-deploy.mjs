@@ -33,6 +33,14 @@ async function main() {
     throw new Error('dist/index.html is stale — run npm run build from latest index.html')
   }
 
+  const styleCss = await readFile(path.join(distDir, 'static', 'style.css'), 'utf8')
+  if (!styleCss.includes('#concerns .concerns-grid') || !styleCss.includes('repeat(8, minmax(0, 1fr))')) {
+    throw new Error('dist/static/style.css missing concerns 4+3 grid — rebuild required')
+  }
+  if (indexHtml.includes('mobile-cta-bar') || indexHtml.includes('mobileCtaBar')) {
+    throw new Error('dist/index.html still contains mobile-cta-bar')
+  }
+
   if (!token && deployHookUrl) {
     console.log('[deploy] Triggering Cloudflare Deploy Hook (Git 連携ビルド)...')
     const response = await fetch(deployHookUrl, { method: 'POST' })
