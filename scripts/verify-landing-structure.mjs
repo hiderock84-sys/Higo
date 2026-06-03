@@ -60,4 +60,8 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
+if (html.includes('mobile-cta-bar') || html.includes('mobileCtaBar')) {
+  errors.push('下部固定CTA (mobile-cta-bar) が index.html に残っています');
+}
+
 console.log('verify-landing-structure: OK');
