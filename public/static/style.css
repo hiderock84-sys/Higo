@@ -5936,23 +5936,49 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   line-break: strict;
 }
 
-#concerns .concerns-section__cta {
+#concerns .concerns-section__cta,
+#concerns .concerns-section__cta--glass {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: min(100%, 300px);
-  height: 56px;
-  min-height: 56px;
-  max-height: 56px;
-  padding: 0 20px;
+  width: min(100%, 420px);
+  min-height: 64px;
+  height: auto;
+  padding: 12px 20px;
   box-sizing: border-box;
-  border-radius: 999px;
+  border-radius: 14px;
   text-decoration: none;
   color: #0d2238;
-  background: #ffffff;
-  border: 1px solid rgba(52, 140, 169, 0.25);
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(1.15);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  box-shadow:
+    0 8px 22px rgba(43, 108, 176, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  transition:
+    transform 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    background 0.2s var(--ease-out);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  #concerns .concerns-section__cta,
+  #concerns .concerns-section__cta--glass {
+    background: rgba(255, 255, 255, 0.92);
+  }
+}
+
+#concerns .concerns-section__cta:hover,
+#concerns .concerns-section__cta--glass:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.58);
+  border-color: rgba(52, 140, 169, 0.35);
+  box-shadow:
+    0 12px 28px rgba(43, 108, 176, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 #concerns .concerns-section__cta-icon {
@@ -5965,7 +5991,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
+  gap: 3px;
   text-align: left;
 }
 
