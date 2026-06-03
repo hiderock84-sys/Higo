@@ -247,7 +247,7 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 }
 
 body.is-landing.hero-variant-bottom .hero-actions--quad {
-  margin-bottom: clamp(2px, 0.6vh, 6px);
+  margin-bottom: 0;
 }
 
 /* ═══════════════════════════════════════
@@ -520,7 +520,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
 
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
     margin-top: auto;
-    margin-bottom: clamp(2px, 0.8vh, 6px);
+    margin-bottom: clamp(14px, 3.2vh, 22px);
   }
 
   body.is-landing.hero-variant-sheet .hero-inner--editorial {
@@ -602,6 +602,6 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     max-width: min(24rem, 100%);
     margin: auto 0 0;
     margin-inline: auto;
-    margin-bottom: clamp(4px, 1vh, 8px);
+    margin-bottom: clamp(12px, 2vh, 18px);
   }
 }
