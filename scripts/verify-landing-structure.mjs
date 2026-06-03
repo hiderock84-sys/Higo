@@ -3,7 +3,7 @@
  * 表紙ランディング（PR #24 方針）の構造が崩れていないか検証する。
  * - 全文セクションは landing-heavy（表紙では非表示）
  * - 要約のみ landing-only（表紙でのみ表示）
- * - 回復支援の全体像は表紙に表示（landing-heavy 禁止）
+ * - 回復支援の全体像(route-summary)は表紙から削除済み
  */
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';

@@ -5753,7 +5753,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   box-shadow: none;
 }
 
-/* ── お悩みセクション（スクリーンショット赤丸準拠・4+3列） ── */
+/* ── お悩みセクション（3+3列） ── */
 #concerns.concerns-section {
   --concerns-gutter: 4px;
   --concerns-gap: 8px;
@@ -5830,7 +5830,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: var(--concerns-gap);
 }
 
@@ -5841,19 +5841,6 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   grid-column: span 2;
 }
 
-/* 2段目3枚を中央寄せ（8列グリッドの中央6列） */
-#concerns .concerns-card:nth-child(5) {
-  grid-column: 2 / span 2;
-}
-
-#concerns .concerns-card:nth-child(6) {
-  grid-column: 4 / span 2;
-}
-
-#concerns .concerns-card:nth-child(7) {
-  grid-column: 6 / span 2;
-}
-
 #concerns .concerns-card__surface {
   display: flex;
   flex-direction: column;
@@ -5862,9 +5849,9 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  height: 100px;
-  min-height: 100px;
-  max-height: 100px;
+  height: 108px;
+  min-height: 108px;
+  max-height: 108px;
   padding: 8px 4px;
   margin: 0;
   background: #ffffff;
@@ -6042,7 +6029,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   }
 
   #concerns .concerns-grid {
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: var(--concerns-gap);
   }
 
