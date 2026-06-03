@@ -4987,6 +4987,167 @@ body.is-standalone-view .standalone-target.rapport-page * {
   transform: translateY(-7.5px) rotate(-45deg);
 }
 
+
+/* 表紙フッター上：相談CTA（スクリーンショット2準拠） */
+.landing-contact {
+  display: none;
+}
+
+body.is-landing .landing-contact {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: clamp(48px, 10vw, 72px) 16px clamp(40px, 8vw, 56px);
+  background:
+    linear-gradient(135deg, rgba(8, 45, 66, 0.94) 0%, rgba(17, 109, 120, 0.9) 100%),
+    url("/static/hero-nature-majestic.jpg") center/cover no-repeat;
+}
+
+body.is-landing .landing-contact__inner {
+  width: min(100%, 420px);
+  margin: 0 auto;
+}
+
+body.is-landing .landing-contact__title {
+  margin: 0 0 14px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 5.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+}
+
+body.is-landing .landing-contact__lead,
+body.is-landing .landing-contact__message {
+  margin: 0 auto 10px;
+  max-width: 22em;
+  font-size: clamp(0.875rem, 3.6vw, 1rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.is-landing .landing-contact__message {
+  margin-bottom: 22px;
+}
+
+body.is-landing .landing-contact__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  margin: 0 auto 18px;
+}
+
+body.is-landing .landing-contact__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.is-landing .landing-contact__btn--primary {
+  color: #0f4665;
+  background: linear-gradient(180deg, #ffffff 0%, #e8f4fa 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+body.is-landing .landing-contact__btn--ghost {
+  color: #fff;
+  background: rgba(4, 37, 54, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+body.is-landing .landing-contact__btn-label {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+body.is-landing .landing-contact__btn-hint {
+  margin-top: 2px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 0.88;
+}
+
+body.is-landing .landing-contact__btn--ghost {
+  flex-direction: row;
+  justify-content: center;
+  min-height: 48px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+body.is-landing .landing-contact__hours {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.is-landing .site-footer {
+  margin-top: 0;
+  background: linear-gradient(180deg, #0a3348 0%, #061a28 100%);
+}
+
+body.is-landing .site-footer::before {
+  display: none;
+}
+
+body.is-landing .site-footer__main {
+  padding: 28px 16px max(24px, env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.is-landing .site-footer__grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+body.is-landing .site-footer__nav {
+  display: none;
+}
+
+body.is-landing .site-footer__legal {
+  display: none;
+}
+
+body.is-landing .site-footer__logo {
+  width: 72px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+body.is-landing .site-footer__org {
+  font-size: 0.9375rem;
+}
+
+body.is-landing .site-footer__address {
+  font-size: 0.8125rem;
+  opacity: 0.85;
+}
+
+body.is-landing .site-footer__contact-line {
+  display: none;
+}
+
+
 /* Footer */
 .site-footer {
   margin-top: 48px;
@@ -5374,13 +5535,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
   font-size: 1rem;
 }
 
-.site-footer__cta-band {
-  background: linear-gradient(145deg, #0c3a54 0%, #061a28 55%, #082838 100%);
-}
-
-.site-footer__main {
-  padding-bottom: max(28px, env(safe-area-inset-bottom));
-}
 
 /* ── Hero CTA renewal (premium) ── */
 body.is-landing .hero-actions--quad {
