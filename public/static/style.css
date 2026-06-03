@@ -2904,7 +2904,10 @@ body.is-standalone-view .standalone-target {
   padding-bottom: clamp(40px, 8vw, 64px);
 }
 
-body.is-standalone-view .compact-testimonial-wrap.standalone-target,
+body.is-standalone-view .compact-testimonial-wrap {
+  display: none !important;
+}
+
 body.is-standalone-view .testimonial-grid-wrap.standalone-target {
   width: min(1080px, calc(100% - 28px));
 }
