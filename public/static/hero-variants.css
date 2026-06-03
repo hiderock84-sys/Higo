@@ -480,7 +480,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
 
   .hero-variant-picker {
     top: auto;
-    bottom: 12px;
+    bottom: calc(var(--mobile-cta-height, 76px) + 12px);
     right: 8px;
     transform: none;
     border-radius: 12px;
@@ -553,7 +553,8 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
     margin-top: clamp(16px, 2.5vh, 22px);
   }
 
-  body.is-landing.hero-variant-bottom .hero-actions--premium .hero-action--premium {
-    min-height: 54px;
+  body.is-landing.hero-variant-bottom .hero-actions--quad .hero-action--premium,
+  body.is-landing.hero-variant-bottom .hero-actions--quad .hero-action--glass {
+    min-height: clamp(76px, 19vw, 86px);
   }
 }
