@@ -116,10 +116,17 @@ button:focus-visible {
 }
 
 .site-chrome {
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 500;
   flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .site-chrome {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .trust-bar {
@@ -374,15 +381,6 @@ body.mobile-menu-open .mobile-cta-bar {
   pointer-events: none;
 }
 
-body.mobile-menu-open .site-chrome {
-  z-index: 1200;
-}
-
-body.mobile-menu-open .site-header__menu-toggle {
-  position: relative;
-  z-index: 1201;
-}
-
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -396,10 +394,7 @@ body.mobile-menu-open .site-header__menu-toggle {
 
 .mobile-menu {
   position: fixed;
-  top: var(--site-chrome-height, 70px);
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 1100;
   background: rgba(13, 29, 44, 0.98);
   color: #fff;
@@ -2560,6 +2555,10 @@ body.is-landing .site-header__menu-bar {
 body.is-landing .visual-strip {
   margin-top: clamp(20px, 4vw, 32px);
   margin-bottom: 20px;
+}
+
+body.is-landing .visual-card:not(:first-child) {
+  display: none;
 }
 
 body.is-landing .visual-card img {
@@ -5041,7 +5040,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
   color: #fff;
   cursor: pointer;
   flex-shrink: 0;
-  overflow: visible;
   z-index: 2;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -5318,11 +5316,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
 }
 
 @media (max-width: 1024px) {
-  .site-header,
-  .site-header__inner {
-    overflow: visible;
-  }
-
   .site-header__tagline {
     display: none;
   }

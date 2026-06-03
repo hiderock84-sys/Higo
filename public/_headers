@@ -7,7 +7,7 @@
 /static/hero-variants.css
   Cache-Control: no-cache, must-revalidate
 
-/guide
+/blog
   Cache-Control: no-cache, must-revalidate
 
 /grouphome

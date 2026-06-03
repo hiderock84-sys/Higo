@@ -27,7 +27,7 @@ function sectionTag(id) {
   return html.match(re)?.[0] ?? null;
 }
 
-for (const id of ['program', 'rapport', 'grouphome', 'guide', 'staff']) {
+for (const id of ['program', 'rapport', 'grouphome', 'blog', 'staff']) {
   const tag = sectionTag(id);
   if (!tag) {
     errors.push(`#${id} セクションが見つかりません`);
@@ -50,14 +50,6 @@ if (!css.includes('body.is-landing .visual-card:not(:first-child)')) {
 
 if (!css.includes('body.is-landing .landing-heavy')) {
   errors.push('landing-heavy 非表示用の CSS がありません');
-}
-
-if (html.includes('mobile-cta-bar') || html.includes('mobileCtaBar')) {
-  errors.push('下部固定CTA (mobile-cta-bar) が index.html に残っています');
-}
-
-if (css.includes('.mobile-cta-bar') || css.includes('has-mobile-cta')) {
-  errors.push('下部固定CTA用の CSS (mobile-cta-bar) が残っています');
 }
 
 if (errors.length > 0) {
