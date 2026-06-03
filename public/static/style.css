@@ -5933,13 +5933,14 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   border-radius: 14px;
   text-decoration: none;
   color: #0d2238;
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(20px) saturate(1.15);
-  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  background: rgba(255, 255, 255, 0.68);
+  border: 1.5px solid rgba(52, 140, 169, 0.48);
+  backdrop-filter: blur(18px) saturate(1.12);
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
   box-shadow:
-    0 8px 22px rgba(43, 108, 176, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+    0 8px 24px rgba(43, 108, 176, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 0 0 1px rgba(255, 255, 255, 0.55);
   transition:
     transform 0.2s var(--ease-out),
     box-shadow 0.2s var(--ease-out),
@@ -5950,18 +5951,20 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   #concerns .concerns-section__cta,
   #concerns .concerns-section__cta--glass {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
+    border: 1.5px solid rgba(52, 140, 169, 0.5);
   }
 }
 
 #concerns .concerns-section__cta:hover,
 #concerns .concerns-section__cta--glass:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.58);
-  border-color: rgba(52, 140, 169, 0.35);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(52, 140, 169, 0.62);
   box-shadow:
-    0 12px 28px rgba(43, 108, 176, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    0 12px 28px rgba(43, 108, 176, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 0 0 1px rgba(255, 255, 255, 0.65);
 }
 
 #concerns .concerns-section__cta-icon {
