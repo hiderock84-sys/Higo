@@ -2567,6 +2567,14 @@ body.is-landing .site-header__menu-bar {
 body.is-landing .visual-strip {
   margin-top: clamp(20px, 4vw, 32px);
   margin-bottom: 20px;
+  grid-template-columns: 1fr;
+  max-width: min(720px, calc(100% - 28px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.is-landing .visual-card:not(:first-child) {
+  display: none;
 }
 
 body.is-landing .visual-card img {
@@ -2607,6 +2615,14 @@ body.is-landing .nav-section-subtitle {
   font-size: 0.875rem;
   line-height: 1.65;
   max-width: var(--copy-measure);
+}
+
+body.is-landing .landing-overview {
+  padding-top: 0;
+}
+
+body.is-landing .landing-overview__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 body.is-landing .compact-testimonial-wrap {
