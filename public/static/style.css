@@ -1695,7 +1695,8 @@ body.mobile-menu-open .mobile-cta-bar {
 }
 
 .nav-card-family {
-  --card-image: url("/static/family-guide-harmony.jpg");
+  --card-image: url("/static/hero-amakusa-sea.jpg");
+  --card-position: center 68%;
 }
 
 .nav-card-contact {
@@ -2165,7 +2166,7 @@ body.mobile-menu-open .mobile-cta-bar {
   text-align: center;
   background:
     linear-gradient(130deg, rgba(3, 12, 18, 0.86), rgba(11, 64, 89, 0.72)),
-    url("/static/peers-laughing-kumamoto.jpg") center/cover no-repeat;
+    url("/static/testimonial-young-woman-sharing.jpg") center 32% / cover no-repeat;
 }
 
 .story-content {
@@ -2807,8 +2808,8 @@ body.is-landing .nav-card-menu {
 }
 
 .landing-overview__card--family {
-  --card-image: url("/static/family-guide-harmony.jpg");
-  --card-position: center 40%;
+  --card-image: url("/static/hero-amakusa-sea.jpg");
+  --card-position: center 68%;
 }
 
 .landing-overview__card--grouphome {
@@ -3732,7 +3733,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
   word-break: break-all;
 }
 
-.compact-testimonial-wrap {
+.compact-testimonial-wrap:not(.testimonial-highlight__panel) {
   width: min(1080px, calc(100% - 28px));
   margin: -30px auto 0;
   position: relative;
@@ -5629,6 +5630,190 @@ body.is-standalone-view .standalone-target.rapport-page * {
   padding-bottom: max(28px, env(safe-area-inset-bottom));
 }
 
+
+
+/* ── 体験談ハイライト（表紙） ── */
+.testimonial-highlight {
+  width: min(1080px, calc(100% - 28px));
+  margin: clamp(28px, 5vw, 44px) auto 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(10, 38, 56, 0.14);
+}
+
+.testimonial-highlight__hero {
+  color: #fff;
+  text-align: center;
+  padding: clamp(44px, 9vw, 68px) 20px clamp(40px, 7vw, 56px);
+  background:
+    linear-gradient(130deg, rgba(3, 12, 18, 0.88), rgba(11, 64, 89, 0.74)),
+    url("/static/testimonial-young-woman-sharing.jpg") center 32% / cover no-repeat;
+}
+
+.testimonial-highlight__panel.compact-testimonial-wrap {
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid rgba(23, 82, 112, 0.14);
+  box-shadow: none;
+  padding: clamp(18px, 4vw, 24px) clamp(14px, 3.5vw, 20px) clamp(20px, 4vw, 26px);
+}
+
+body.is-landing .testimonial-highlight {
+  display: block;
+}
+
+/* ── 体験談ページ（3名・読みやすいカード） ── */
+.testimonial-grid-wrap {
+  width: min(760px, calc(100% - 28px));
+  margin: clamp(20px, 4vw, 32px) auto 0;
+  grid-template-columns: 1fr;
+  gap: clamp(18px, 4vw, 24px);
+}
+
+.testimonial-story {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(26, 82, 110, 0.16);
+  box-shadow: 0 14px 32px rgba(12, 42, 62, 0.1);
+  padding: clamp(18px, 4vw, 24px);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-story::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #28b3ae 0%, #5ed4e8 100%);
+}
+
+.testimonial-story__header {
+  margin: 0 0 12px;
+  padding-left: 8px;
+}
+
+.testimonial-story__category {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0d4a66;
+  background: #e8f6ff;
+  border: 1px solid rgba(24, 104, 139, 0.2);
+}
+
+.testimonial-story__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 3.6vw, 1.125rem);
+  line-height: 1.45;
+  color: #123f58;
+}
+
+.testimonial-story__lead {
+  margin: 0 0 14px;
+  padding-left: 8px;
+  font-size: clamp(0.875rem, 3.2vw, 0.9375rem);
+  line-height: 1.85;
+  color: #2f4f63;
+}
+
+.testimonial-story__more {
+  margin: 0 0 12px;
+  padding-left: 8px;
+}
+
+.testimonial-story__more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0f4a66;
+  background: #eef7fc;
+  border: 1px solid rgba(24, 104, 139, 0.28);
+  cursor: pointer;
+  list-style: none;
+}
+
+.testimonial-story__more-btn::-webkit-details-marker {
+  display: none;
+}
+
+.testimonial-story__more[open] .testimonial-story__more-btn {
+  background: #dff1fd;
+}
+
+.testimonial-story__prose {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(23, 82, 112, 0.12);
+}
+
+.testimonial-story__prose p {
+  margin: 0 0 14px;
+  font-size: clamp(0.875rem, 3.1vw, 0.9375rem);
+  line-height: 1.9;
+  color: #334e60;
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+.testimonial-story__prose p:last-child {
+  margin-bottom: 0;
+}
+
+.testimonial-story__author {
+  margin: 0;
+  padding: 12px 8px 0;
+  border-top: 1px solid rgba(23, 82, 112, 0.1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4d6a7c;
+  font-style: normal;
+}
+
+body.is-standalone-view .standalone-target.story-section {
+  margin-top: 0;
+  border-radius: 0;
+}
+
+body.is-standalone-view .testimonial-grid-wrap.standalone-target {
+  margin-top: -28px;
+}
+
+@media (max-width: 768px) {
+  .compact-testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .testimonial-highlight {
+    width: calc(100% - 20px);
+  }
+
+  .testimonial-highlight__hero {
+    padding-inline: 16px;
+  }
+
+  .testimonial-highlight__panel.compact-testimonial-wrap {
+    padding-inline: 14px;
+  }
+}
+
 /* Restored landing UI (hero / concerns / footer contact) */
 .landing-contact {
   display: block;
@@ -6834,7 +7019,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   text-align: center;
   background:
     linear-gradient(130deg, rgba(3, 12, 18, 0.86), rgba(11, 64, 89, 0.72)),
-    url("/static/peers-laughing-kumamoto.jpg") center/cover no-repeat;
+    url("/static/testimonial-young-woman-sharing.jpg") center 32% / cover no-repeat;
 }
 
 .story-content {
