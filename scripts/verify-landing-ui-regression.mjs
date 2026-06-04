@@ -31,7 +31,10 @@ requireMatch(css.split('\n').length >= 7800, `style.css が短すぎます（${c
 requireMatch((css.match(/concerns-section/g) ?? []).length >= 20, 'style.css に concerns-section スタイルが不足');
 requireMatch(css.includes('hero-actions--quad'), 'style.css に hero-actions--quad がありません');
 requireMatch(css.includes('.glass-btn') || css.includes('hero-action--glass'), 'style.css にガラスCTAスタイルがありません');
-requireMatch(css.includes('上寄せ固定'), 'style.css に表紙上寄せ固定ブロックがありません');
+requireMatch(
+  css.includes('上寄せ固定') || css.includes('上寄せ・密度'),
+  'style.css に表紙上寄せブロックがありません',
+);
 requireMatch(css.includes('フッター：余白'), 'style.css にフッターコンパクトブロックがありません');
 requireMatch(css.includes('body.is-landing .visual-card:not(:first-child)'), '表紙風景1枚化 CSS がありません');
 requireMatch(css.includes('landing-overview__grid--menu'), 'モバイルメニュー写真カード用 CSS がありません');
