@@ -7161,7 +7161,7 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 
 /* 表紙C案：コピーは上寄せ・CTAのみ下固定 */
 body.is-landing.hero-variant-bottom .hero-section {
-  justify-content: stretch;
+  justify-content: flex-start;
 }
 
 body.is-landing.hero-variant-bottom .hero-inner--editorial {
