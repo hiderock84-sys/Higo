@@ -27,7 +27,7 @@ function sectionTag(id) {
   return html.match(re)?.[0] ?? null;
 }
 
-for (const id of ['program', 'rapport', 'grouphome', 'blog', 'staff']) {
+for (const id of ['program', 'rapport', 'grouphome', 'blog', 'staff', 'family-guide']) {
   const tag = sectionTag(id);
   if (!tag) {
     errors.push(`#${id} セクションが見つかりません`);
