@@ -6853,6 +6853,9 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   margin-top: clamp(24px, 5vw, 32px);
   padding-bottom: 4px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #concerns .concerns-section__closing {
@@ -6867,10 +6870,11 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
 
 #concerns .concerns-section__cta,
 #concerns .concerns-section__cta--glass {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-inline: auto;
   width: min(100%, 248px);
   min-height: 48px;
   height: auto;
@@ -6975,8 +6979,8 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   line-height: 1.2;
 }
 
-/* お悩みCTA：ヒーロー4ボタンと同一レイアウト */
-#concerns .concerns-section__cta.hero-action--glass {
+/* お悩みCTA：ヒーロー4ボタンと同一レイアウト（中央配置） */
+#concerns .concerns-section__footer .concerns-section__cta.hero-action--glass {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6984,7 +6988,17 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   gap: clamp(6px, 1.75vw, 8px);
   width: min(100%, 248px);
   min-height: clamp(56px, 14.5vw, 64px);
+  margin-inline: auto;
   padding: clamp(8px, 2vw, 10px) clamp(8px, 2.5vw, 12px);
+  box-sizing: border-box;
+}
+
+#concerns .concerns-section__cta.hero-action--glass {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.75vw, 8px);
 }
 
 #concerns .concerns-section__cta .hero-action__icon {
@@ -7142,6 +7156,17 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
     font-size: clamp(0.625rem, 2.9vw, 0.8125rem);
   }
 
+}
+
+
+/* 表紙C案：コピーは上寄せ・CTAのみ下固定 */
+body.is-landing.hero-variant-bottom .hero-section {
+  justify-content: stretch;
+}
+
+body.is-landing.hero-variant-bottom .hero-inner--editorial {
+  flex: 1;
+  min-height: 0;
 }
 
 /* ── 表紙：ヒーロー・お悩みCTA・相談ブロック（最終調整） ── */

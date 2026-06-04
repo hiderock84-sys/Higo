@@ -98,7 +98,7 @@ body.is-landing.hero-variant-open .hero-actions--cta {
    C: bottom — 下寄せ・ガラスなし（本番デフォルト）
    ═══════════════════════════════════════ */
 body.is-landing.hero-variant-bottom .hero-section {
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: stretch;
   min-height: min(92vh, 860px);
 }
@@ -494,7 +494,7 @@ body.is-landing.hero-variant-sheet .hero-actions--premium .hero-action.ghost .he
   body.is-landing.hero-variant-bottom .hero-section {
     min-height: min(86vh, 820px);
     padding:
-      calc(var(--site-chrome-height, 94px) + 8px)
+      calc(var(--site-chrome-height, 94px) + 24px)
       clamp(32px, 5vw, 72px)
       clamp(40px, 6vh, 64px);
     justify-content: flex-end;
