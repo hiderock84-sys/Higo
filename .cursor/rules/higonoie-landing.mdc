@@ -1,0 +1,47 @@
+---
+description: ひごのいえ ランディング正本とUI回帰防止
+globs:
+  - index.html
+  - public/static/**/*
+  - scripts/verify-landing*.mjs
+alwaysApply: true
+---
+
+# ひごのいえ ランディング — 正本と禁止事項
+
+## 正本（これ以外を編集してはいけない）
+
+- HTML: ルート `index.html`
+- CSS: `public/static/style.css`, `public/static/hero-variants.css`
+- ビルド後: `npm run build` が `dist/` にコピーする
+
+**禁止**: `hidonoie/`, `higono-ie/` の `index.html` / `static/` を正本として編集したり、そこからルートへ上書きしたりしない。
+
+## 変更後は必ず実行
+
+```bash
+npm run verify:landing
+npm run build
+```
+
+`verify-landing-ui-regression` が FAIL したらコミット・デプロイしない。
+
+## やってはいけないこと（戻りの主因）
+
+1. **`style.css` 末尾だけ直して、8000行超の本体を短い版（5500行台）に差し替えない**  
+   - コミット `957c93c` が約2500行削除し、`concerns-section` / `glass-btn` / `hero-actions--quad` が消えた
+2. **`index.html` を古いテンプレ（`#page-menu` あり）に戻さない**
+3. **`<body class="is-landing">` を HTML に直書きしない** — `/program` 等が崩れる。クラスは JS の `clearPageViewState()` 経由のみ
+4. **キャッシュバスター** `?v=` を index と同時に更新しないデプロイ
+
+## 表紙・お悩み・フッターの要件（要約）
+
+- 表紙 C 案: コピー上・4ガラスボタン下（`hero-actions--quad` + 末尾「上寄せ固定」CSS）
+- お悩み: `#concerns.concerns-section` + グリッドカード CSS（`style.css` 内 20 箇所以上）
+- フッター: コンパクト余白 + モバイル2カラムナビ
+- ページメニュー: 削除済み
+- モバイルメニュー: 写真カード overview、お問い合わせブロックなし
+
+## index.html の `?v=` 更新
+
+CSS を変えたら `style.css?v=` と `hero-variants.css?v=` を同じ新しい値に（例: `20260614j`）。
