@@ -468,35 +468,36 @@ body.mobile-menu-open .mobile-cta-bar {
 .landing-overview__grid--menu {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px;
+  gap: 10px;
 }
 
 .landing-overview__grid--menu .landing-overview__card {
-  min-height: 4.75rem;
+  min-height: clamp(108px, 30vw, 152px);
   border-radius: 12px;
 }
 
 .landing-overview__grid--menu .landing-overview__card-media {
-  width: 34%;
-  min-width: 5.5rem;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  min-width: 0;
 }
 
 .landing-overview__grid--menu .landing-overview__card-body {
-  padding: 10px 12px;
+  min-height: 100%;
+  padding: 12px 14px 14px;
 }
 
 .landing-overview__grid--menu .landing-overview__card-title {
-  font-size: 0.875rem;
-  margin-bottom: 2px;
+  font-size: clamp(0.875rem, 2.6vw, 0.9375rem);
+  margin-bottom: 4px;
 }
 
 .landing-overview__grid--menu .landing-overview__card-text {
-  font-size: 0.6875rem;
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: clamp(0.6875rem, 2vw, 0.75rem);
+  line-height: 1.55;
+  display: block;
+  overflow: visible;
 }
 
 
@@ -2814,6 +2815,16 @@ body.is-landing .nav-card-menu {
 
 .landing-overview__card--grouphome {
   --card-image: url("/static/grouphome-cozy-home.jpg");
+}
+
+.landing-overview__card--testimonials {
+  --card-image: url("/static/testimonial-young-woman-sharing.jpg");
+  --card-position: center 32%;
+}
+
+.landing-overview__card--staff {
+  --card-image: url("/static/staff-energetic-laughing.jpg");
+  --card-position: center 40%;
 }
 
 .landing-overview__card-link {
@@ -5361,7 +5372,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr);
+  grid-template-columns: 1fr;
   gap: 40px 48px;
   padding-bottom: 32px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -5910,15 +5921,7 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
     background 0.22s var(--ease-out);
 }
 
-.site-footer .landing-contact__btn-body {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(8px, 2.2vw, 10px);
-  transform: scale(0.8);
-  transform-origin: center center;
-}
+
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-footer .landing-contact__btn,
@@ -5938,10 +5941,7 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
     0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
-.site-footer .landing-contact__btn:hover .landing-contact__btn-body,
-.site-footer .landing-contact__btn--glass:hover .landing-contact__btn-body {
-  transform: scale(0.82);
-}
+
 
 .site-footer .landing-contact__btn-icon {
   display: inline-flex;
@@ -5974,6 +5974,59 @@ body.is-standalone-view .testimonial-grid-wrap.standalone-target {
 .site-footer .landing-contact__btn-stack--solo {
   align-items: center;
   justify-content: center;
+}
+
+
+
+/* フッター相談CTA：ヒーロー4ボタンと同一アイコン・中央配置 */
+.site-footer .landing-contact__btn.hero-action--glass {
+  gap: clamp(6px, 1.75vw, 8px);
+  height: auto;
+  min-height: clamp(56px, 14.5vw, 64px);
+  padding: clamp(8px, 2vw, 10px) clamp(8px, 2.5vw, 12px);
+  border-radius: 14px;
+}
+
+.site-footer .landing-contact__btn .hero-action__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: clamp(22px, 6vw, 26px);
+  line-height: 0;
+  color: #ffffff;
+}
+
+.site-footer .landing-contact__btn .hero-icon {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.site-footer .landing-contact__btn .hero-action__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex: 0 1 auto;
+  min-width: 0;
+  text-align: center;
+}
+
+.site-footer .landing-contact__btn .hero-action__label {
+  font-size: clamp(0.75rem, 3.1vw, 0.9375rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.site-footer .landing-contact__btn .hero-action__hint {
+  font-size: clamp(0.625rem, 2.4vw, 0.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .site-footer .landing-contact__btn-label {
@@ -6063,6 +6116,7 @@ body.is-standalone-view .site-footer {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px 16px;
   align-items: start;
+  width: 100%;
 }
 
 .site-footer__nav-title {
@@ -6131,7 +6185,7 @@ body.is-standalone-view .site-footer {
   color: rgba(255, 255, 255, 0.82);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .site-footer__main {
     padding-inline: 32px;
   }
@@ -6368,6 +6422,7 @@ body.is-landing .hero-actions--quad .hero-action--glass {
   align-items: center;
   justify-content: center;
   gap: clamp(6px, 1.75vw, 8px);
+  margin-inline: auto;
   min-height: clamp(56px, 14.5vw, 64px);
   height: auto;
   padding: clamp(8px, 2vw, 10px) clamp(8px, 2.5vw, 12px);
@@ -6670,14 +6725,8 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
     background 0.2s var(--ease-out);
 }
 
-#concerns .concerns-section__cta-body {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transform: scale(0.8);
-  transform-origin: center center;
+#concerns .concerns-section__cta.hero-action--glass {
+  gap: clamp(6px, 1.75vw, 8px);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -6747,6 +6796,61 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
   color: #6b7280;
   line-height: 1.2;
 }
+
+/* お悩みCTA：ヒーロー4ボタンと同一レイアウト */
+#concerns .concerns-section__cta.hero-action--glass {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.75vw, 8px);
+  width: min(100%, 248px);
+  min-height: clamp(56px, 14.5vw, 64px);
+  padding: clamp(8px, 2vw, 10px) clamp(8px, 2.5vw, 12px);
+}
+
+#concerns .concerns-section__cta .hero-action__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: clamp(22px, 6vw, 26px);
+  line-height: 0;
+  color: #348ca9;
+}
+
+#concerns .concerns-section__cta .hero-icon {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#concerns .concerns-section__cta .hero-action__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex: 0 1 auto;
+  min-width: 0;
+  text-align: center;
+}
+
+#concerns .concerns-section__cta .hero-action__label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.75rem, 3.1vw, 0.9375rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0d2238;
+}
+
+#concerns .concerns-section__cta .hero-action__hint {
+  font-size: clamp(0.625rem, 2.4vw, 0.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #6b7280;
+}
+
 
 
 @media (max-width: 479px) {
