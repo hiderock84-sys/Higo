@@ -6514,10 +6514,9 @@ button.glass-btn.hero-action--glass {
   margin-top: 14px;
 }
 
-/* 明るい背景上のガラスボタン */
+/* 明るい背景上のガラスボタン（ブログヒーロー・フィルタのみ。末尾CTAパネルは除外） */
 .blog-hero__actions .glass-btn,
-.blog-toolbar .glass-btn-chip,
-.blog-page .glass-btn-row .glass-btn {
+.blog-toolbar .glass-btn-chip {
   color: #0d2238;
   background: rgba(255, 255, 255, 0.72);
   border: 1.5px solid rgba(52, 140, 169, 0.45);
@@ -6555,25 +6554,105 @@ button.blog-filter.glass-btn-chip.is-active {
   border-color: rgba(255, 255, 255, 0.45);
 }
 
-.page-cta-box.glass-btn-panel {
-  padding: clamp(18px, 4vw, 24px) 16px;
+/* ── ページ末尾CTA：家族ガイド page-cta-box 仕様（全ページ共通） ── */
+.page-cta-box.glass-btn-panel,
+.page-end-cta.glass-btn-panel {
+  margin-top: clamp(20px, 4vw, 28px);
+  margin-bottom: 0;
+  padding: clamp(18px, 4vw, 22px) clamp(14px, 3.5vw, 18px);
+  border-radius: var(--radius-md);
+  background: linear-gradient(160deg, #0a2d42 0%, #123f5c 100%);
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(6, 22, 34, 0.18);
 }
 
-.page-cta-box.glass-btn-panel .glass-btn {
-  width: min(100%, 16.5rem);
+.page-cta-box.glass-btn-panel > p,
+.page-cta-box.glass-btn-panel .page-end-cta__lead,
+.page-end-cta__lead {
+  font-size: clamp(0.875rem, 3.4vw, 0.9375rem);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 clamp(12px, 2.5vw, 16px);
+  text-wrap: pretty;
 }
 
-.compact-testimonial-link.glass-btn {
-  margin: 18px auto 0;
-  width: min(100%, 16.5rem);
+.page-cta-box.glass-btn-panel .glass-btn-row {
+  margin-top: 0;
 }
 
-.contact-buttons.glass-btn-row {
-  margin-top: 20px;
-}
-
-.contact-buttons .glass-btn {
+.page-cta-box.glass-btn-panel .glass-btn,
+.page-end-cta.glass-btn-panel .glass-btn,
+.contact-section .page-cta-box .glass-btn,
+.blog-reassure .page-cta-box .glass-btn,
+.testimonial-highlight__panel .page-cta-box .glass-btn,
+.program-marathon-note .page-cta-box .glass-btn {
   width: min(100%, 18.5rem);
+  min-height: clamp(48px, 12vw, 56px);
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(1.15);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38) !important;
+}
+
+.page-cta-box.glass-btn-panel .glass-btn .hero-action__icon,
+.page-end-cta.glass-btn-panel .glass-btn .hero-action__icon {
+  color: #ffffff !important;
+}
+
+.page-cta-box.glass-btn-panel .glass-btn:hover,
+.page-end-cta.glass-btn-panel .glass-btn:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.blog-reassure .page-cta-box.glass-btn-panel {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.testimonial-highlight__panel .page-cta-box.glass-btn-panel {
+  margin-top: clamp(14px, 3vw, 18px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.program-marathon-note .page-cta-box.glass-btn-panel {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.contact-section .page-cta-box.glass-btn-panel {
+  margin: 0 auto clamp(16px, 3vw, 20px);
+  width: min(100%, 420px);
+}
+
+.site-footer .landing-contact .page-cta-box.glass-btn-panel {
+  margin-top: 4px;
+  width: 100%;
+  max-width: min(100%, 420px);
+  margin-inline: auto;
+}
+
+/* 旧・体験談リンク（ガラスボタン化後は無効） */
+a.compact-testimonial-link:not(.glass-btn) {
+  margin: 14px auto 0;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0f4a66;
+  border: 1px solid rgba(24, 104, 139, 0.35);
+  background: #e8f6ff;
 }
 
 /* 表紙：お悩み → 支援のかたち（ページメニュー削除後） */
