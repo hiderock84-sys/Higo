@@ -4483,7 +4483,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
     background-attachment: scroll;
   }
 
-  body.is-landing .hero-section {
+  body.is-landing:not(.hero-variant-bottom) .hero-section {
     min-height: auto;
     padding:
       calc(var(--site-chrome-height, 70px) + 10px)
@@ -4494,13 +4494,17 @@ body.is-standalone-view .standalone-target.rapport-page * {
     overflow-x: clip;
   }
 
-  body.is-landing .hero-section::before {
+  body.is-landing.hero-variant-bottom .hero-section {
+    overflow-x: clip;
+  }
+
+  body.is-landing:not(.hero-variant-bottom) .hero-section::before {
     background:
       linear-gradient(180deg, rgba(110, 175, 215, 0.2) 0%, transparent 50%),
       linear-gradient(0deg, rgba(6, 20, 32, 0.72) 0%, rgba(6, 20, 32, 0.4) 38%, transparent 72%);
   }
 
-  body.is-landing .hero-cover-photo {
+  body.is-landing:not(.hero-variant-bottom) .hero-cover-photo {
     object-position: center 36%;
     filter: brightness(1.14) saturate(1.1) contrast(1.04);
   }
@@ -4520,19 +4524,19 @@ body.is-standalone-view .standalone-target.rapport-page * {
     text-align: center;
   }
 
-  body.is-landing .hero-org {
+  body.is-landing:not(.hero-variant-bottom) .hero-org {
     font-size: 0.625rem;
     line-height: 1.45;
     letter-spacing: 0.04em;
   }
 
-  body.is-landing .hero-title {
+  body.is-landing:not(.hero-variant-bottom) .hero-title {
     font-size: clamp(1.75rem, 8.5vw, 2.375rem);
     line-height: 1.12;
     letter-spacing: 0.08em;
   }
 
-  body.is-landing .hero-tagline {
+  body.is-landing:not(.hero-variant-bottom) .hero-tagline {
     font-size: clamp(0.9375rem, 4.1vw, 1.125rem);
     line-height: 1.5;
     letter-spacing: 0.05em;
