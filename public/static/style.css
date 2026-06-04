@@ -116,17 +116,10 @@ button:focus-visible {
 }
 
 .site-chrome {
-  position: relative;
-  top: auto;
-  z-index: 500;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
   flex-shrink: 0;
-}
-
-@media (min-width: 769px) {
-  .site-chrome {
-    position: sticky;
-    top: 0;
-  }
 }
 
 .trust-bar {
@@ -458,6 +451,54 @@ body.mobile-menu-open .mobile-cta-bar {
 .mobile-menu-nav {
   padding: 16px 0;
 }
+
+.mobile-menu-overview {
+  padding: 4px 16px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-overview__lead {
+  margin: 0 0 10px;
+  padding: 0 4px;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.landing-overview__grid--menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.landing-overview__grid--menu .landing-overview__card {
+  min-height: 4.75rem;
+  border-radius: 12px;
+}
+
+.landing-overview__grid--menu .landing-overview__card-media {
+  width: 34%;
+  min-width: 5.5rem;
+}
+
+.landing-overview__grid--menu .landing-overview__card-body {
+  padding: 10px 12px;
+}
+
+.landing-overview__grid--menu .landing-overview__card-title {
+  font-size: 0.875rem;
+  margin-bottom: 2px;
+}
+
+.landing-overview__grid--menu .landing-overview__card-text {
+  font-size: 0.6875rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 
 .mobile-menu-section-title {
   font-family: var(--font-heading);
@@ -1645,13 +1686,16 @@ body.mobile-menu-open .mobile-cta-bar {
   --card-image: url("/static/grouphome-cozy-home.jpg");
 }
 
-.nav-card-usage,
-.nav-card-blog {
+.nav-card-usage {
   --card-image: url("/static/hero-kyushu-green.jpg");
 }
 
+.nav-card-blog {
+  --card-image: url("/static/blog-daily-records.jpg");
+}
+
 .nav-card-family {
-  --card-image: url("/static/family-meeting-laughing.jpg");
+  --card-image: url("/static/family-guide-harmony.jpg");
 }
 
 .nav-card-contact {
@@ -2758,12 +2802,13 @@ body.is-landing .nav-card-menu {
 }
 
 .landing-overview__card--blog {
-  --card-image: url("/static/peers-laughing-kumamoto.jpg");
-  --card-position: center 35%;
+  --card-image: url("/static/blog-daily-records.jpg");
+  --card-position: center 42%;
 }
 
 .landing-overview__card--family {
-  --card-image: url("/static/family-meeting-laughing.jpg");
+  --card-image: url("/static/family-guide-harmony.jpg");
+  --card-position: center 40%;
 }
 
 .landing-overview__card--grouphome {
@@ -4933,6 +4978,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
   position: relative;
   top: auto;
   z-index: 2;
+  isolation: isolate;
   background: var(--site-header-bg);
   backdrop-filter: blur(20px) saturate(1.25);
   -webkit-backdrop-filter: blur(20px) saturate(1.25);
@@ -5641,7 +5687,9 @@ body.is-standalone-view .standalone-target.rapport-page * {
 
 /* 相談CTA：ヒーロー4ボタンと同一ガラス仕様・同一サイズ */
 .site-footer .landing-contact__btn,
-.site-footer .landing-contact__btn--glass {
+.site-footer .landing-contact__btn--glass,
+.site-footer .landing-contact__btn:visited,
+.site-footer .landing-contact__btn--glass:visited {
   display: flex;
   flex-direction: row;
   align-items: center;
