@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260614h" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=20260614h" rel="stylesheet">
+  <link href="/static/style.css?v=20260614i" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260614i" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -84,7 +84,7 @@
     }
   </script>
 </head>
-<body class="is-landing hero-variant-bottom">
+<body>
   <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
 
   <div class="site-chrome" id="siteChrome">
@@ -2107,7 +2107,19 @@
       });
     };
 
+    const clearPageViewState = () => {
+      document.body.classList.remove('is-landing', 'is-standalone-view');
+      heroVariantIds.forEach((id) => {
+        document.body.classList.remove(`hero-variant-${id}`);
+      });
+      delete document.body.dataset.activeSection;
+      document.querySelectorAll('.standalone-target').forEach((el) => {
+        el.classList.remove('standalone-target');
+      });
+    };
+
     if (landingPaths.has(normalizedPath)) {
+      clearPageViewState();
       document.body.classList.add('is-landing');
       applyHeroVariant(heroVariant);
       const heroVariantPicker = document.getElementById('heroVariantPicker');
@@ -2129,6 +2141,7 @@
         });
       }
     } else if (standalonePaths.has(normalizedPath)) {
+      clearPageViewState();
       document.body.classList.add('is-standalone-view');
       const activeSectionId = pathSectionMap[normalizedPath];
       if (activeSectionId) {
