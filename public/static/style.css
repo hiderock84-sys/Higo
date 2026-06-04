@@ -2159,7 +2159,7 @@ body.is-landing .landing-only {
 
 /* 表紙も各セクションは通常の余白（長いスクロール表示） */
 
-body.is-landing .hero-section {
+body.is-landing:not(.hero-variant-bottom) .hero-section {
   min-height: min(88vh, 820px);
   height: auto;
   padding: clamp(40px, 9vh, 72px) clamp(16px, 3vw, 28px) clamp(64px, 9vh, 96px);
@@ -2192,7 +2192,7 @@ body.is-landing .hero-inner.hero-inner--editorial {
   box-sizing: border-box;
 }
 
-body.is-landing .hero-inner--editorial {
+body.is-landing:not(.hero-variant-bottom) .hero-inner--editorial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5504,3 +5504,154 @@ body.is-standalone-view .standalone-target.rapport-page * {
 .site-footer__main {
   padding-bottom: max(28px, env(safe-area-inset-bottom));
 }
+
+/* ── 表紙C案：上寄せ固定（汎用ヒーロー上書きより後勝ち） ── */
+body.is-landing.hero-variant-bottom .hero-section {
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  min-height: min(88svh, 860px);
+  padding:
+    calc(var(--site-chrome-height, 70px) + 0px)
+    clamp(12px, 3.5vw, 20px)
+    calc(var(--mobile-cta-height, 76px) + 12px) !important;
+}
+
+body.is-landing.hero-variant-bottom .hero-inner--editorial {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: stretch !important;
+  align-items: stretch !important;
+  min-height: 0 !important;
+  width: 100%;
+  max-width: min(1240px, 100%);
+  margin-inline: auto;
+  padding: 0 clamp(12px, 3.5vw, 20px) clamp(6px, 1.5vh, 12px) !important;
+  gap: 0 !important;
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center;
+  min-height: 0 !important;
+  width: 100%;
+  max-width: min(22.5rem, 100%);
+  margin-inline: auto;
+  padding: 0 clamp(4px, 1.5vw, 8px);
+  text-align: center;
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-head {
+  flex: 0 0 auto;
+  gap: clamp(2px, 0.45vh, 5px) !important;
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-body {
+  flex: 0 0 auto;
+  gap: clamp(12px, 2.2vh, 18px);
+  margin-top: clamp(2px, 0.5vh, 6px);
+}
+
+body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
+  flex: 0 0 auto;
+  margin: auto 0 0 !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  body.is-landing.hero-variant-bottom .hero-section {
+    padding:
+      calc(var(--site-chrome-height, 70px) + 0px)
+      12px
+      calc(var(--mobile-cta-height, 76px) + 10px) !important;
+  }
+}
+
+@media (min-width: 769px) {
+  body.is-landing.hero-variant-bottom .hero-section {
+    justify-content: flex-start !important;
+    padding:
+      calc(var(--site-chrome-height, 94px) + 8px)
+      clamp(32px, 5vw, 72px)
+      clamp(32px, 5vh, 48px) !important;
+  }
+}
+
+/* ── フッター：余白をコンパクトに ── */
+.site-footer .site-footer__main {
+  padding: 6px 16px max(14px, env(safe-area-inset-bottom)) !important;
+}
+
+.site-footer .site-footer__grid {
+  gap: 12px !important;
+  padding: 12px 0 10px !important;
+}
+
+.site-footer .site-footer__logo {
+  width: 64px;
+  margin-bottom: 8px;
+}
+
+.site-footer .site-footer__org {
+  margin: 0 0 6px !important;
+}
+
+.site-footer .site-footer__address,
+.site-footer .site-footer__contact-line {
+  margin: 0 0 4px !important;
+  line-height: 1.55;
+  font-size: 0.8125rem;
+}
+
+.site-footer .site-footer__nav {
+  gap: 10px 12px !important;
+}
+
+.site-footer .site-footer__nav-title {
+  margin: 0 0 6px !important;
+  font-size: 0.75rem;
+}
+
+.site-footer .site-footer__nav-col a {
+  margin-bottom: 5px !important;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.site-footer .site-footer__legal {
+  gap: 6px !important;
+  padding-top: 10px !important;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .site-footer .site-footer__grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .site-footer .site-footer__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px 16px !important;
+    align-items: start;
+  }
+}
+
+@media (min-width: 900px) {
+  .site-footer .site-footer__grid {
+    gap: 24px 32px !important;
+    padding: 20px 0 14px !important;
+  }
+
+  .site-footer .site-footer__nav {
+    gap: 16px 24px !important;
+  }
+
+  .site-footer .site-footer__legal {
+    padding-top: 14px !important;
+  }
+}
+
