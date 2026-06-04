@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260613c" rel="stylesheet">
+  <link href="/static/style.css?v=20260613d" rel="stylesheet">
   <link href="/static/hero-variants.css?v=20260613a" rel="stylesheet">
 
   <script type="application/ld+json">
@@ -427,32 +427,42 @@
 
   <section class="landing-only landing-overview" aria-label="主要ページの概要">
     <h2 class="landing-overview__title">支援のかたち</h2>
-    <p class="landing-overview__lead">気になるテーマから詳しくご覧ください。各ページに全文を掲載しています。</p>
+    <p class="landing-overview__lead">気になるテーマをタップして各ページへ。枠内のどこを押しても移動できます。</p>
     <div class="landing-overview__grid">
-      <a href="/program" class="landing-overview__card">
-        <span class="landing-overview__card-title">回復プログラム</span>
-        <span class="landing-overview__card-text">「誰と生きるか」を最優先。生活リズム・医療連携・仲間との関係から、焦らず回復を支えます。</span>
-        <span class="landing-overview__card-link">詳しく見る</span>
+      <a href="/program" class="landing-overview__card landing-overview__card--program">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">回復プログラム</span>
+          <span class="landing-overview__card-text">「誰と生きるか」を最優先。生活リズム・医療連携・仲間との関係から、焦らず回復を支えます。</span>
+        </span>
       </a>
-      <a href="/rapport" class="landing-overview__card">
-        <span class="landing-overview__card-title">女性専用施設 らぽーる</span>
-        <span class="landing-overview__card-text">女性のみの空間・女性スタッフ常駐。トラウマに配慮し、安心して回復に集中できる拠点です。</span>
-        <span class="landing-overview__card-link">詳しく見る</span>
+      <a href="/rapport" class="landing-overview__card landing-overview__card--rapport">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">女性専用施設 らぽーる</span>
+          <span class="landing-overview__card-text">女性のみの空間・女性スタッフ常駐。トラウマに配慮し、安心して回復に集中できる拠点です。</span>
+        </span>
       </a>
-      <a href="/blog" class="landing-overview__card">
-        <span class="landing-overview__card-title">ブログ</span>
-        <span class="landing-overview__card-text">開所からのお知らせと日々の記録。施設の歩みと、初めての方への安心メッセージをお届けします。</span>
-        <span class="landing-overview__card-link">詳しく見る</span>
+      <a href="/blog" class="landing-overview__card landing-overview__card--blog">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">ブログ</span>
+          <span class="landing-overview__card-text">開所からのお知らせと日々の記録。施設の歩みと、初めての方への安心メッセージをお届けします。</span>
+        </span>
       </a>
-      <a href="/family-guide" class="landing-overview__card">
-        <span class="landing-overview__card-title">家族ガイド</span>
-        <span class="landing-overview__card-text">ご家族だけの相談も歓迎。正しい知識と境界線づくりが、本人支援と家族の回復の土台になります。</span>
-        <span class="landing-overview__card-link">詳しく見る</span>
+      <a href="/family-guide" class="landing-overview__card landing-overview__card--family">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">家族ガイド</span>
+          <span class="landing-overview__card-text">ご家族だけの相談も歓迎。正しい知識と境界線づくりが、本人支援と家族の回復の土台になります。</span>
+        </span>
       </a>
-      <a href="/grouphome" class="landing-overview__card">
-        <span class="landing-overview__card-title">グループホーム</span>
-        <span class="landing-overview__card-text">共同生活援助に基づく住まいで、生活リズムの再建と地域生活への移行を支援します。</span>
-        <span class="landing-overview__card-link">詳しく見る</span>
+      <a href="/grouphome" class="landing-overview__card landing-overview__card--grouphome">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">グループホーム</span>
+          <span class="landing-overview__card-text">共同生活援助に基づく住まいで、生活リズムの再建と地域生活への移行を支援します。</span>
+        </span>
       </a>
     </div>
   </section>
@@ -1839,14 +1849,14 @@
             <a href="/program">プログラム</a>
             <a href="/rapport">女性専用施設</a>
             <a href="/grouphome">グループホーム</a>
+            <a href="/blog">ブログ</a>
           </div>
           <div class="site-footer__nav-col">
             <h3 class="site-footer__nav-title">ご案内・相談</h3>
-            <a href="/blog">ブログ</a>
             <a href="/testimonials">体験談</a>
             <a href="/staff">スタッフ紹介</a>
             <a href="/family-guide">家族ガイド</a>
-            <a href="/blog">ブログ</a>
+            <a href="tel:0964-41-2387">電話相談（平日10:00–17:00）</a>
           </div>
         </nav>
       </div>

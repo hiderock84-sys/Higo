@@ -1645,7 +1645,8 @@ body.mobile-menu-open .mobile-cta-bar {
   --card-image: url("/static/grouphome-cozy-home.jpg");
 }
 
-.nav-card-usage {
+.nav-card-usage,
+.nav-card-blog {
   --card-image: url("/static/hero-kyushu-green.jpg");
 }
 
@@ -2617,6 +2618,16 @@ body.is-landing .nav-card-menu {
   display: none;
 }
 
+@media (min-width: 981px) {
+  .landing-overview__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .landing-overview__card--blog {
+    grid-column: span 2;
+  }
+}
+
 @media (min-width: 769px) and (max-width: 980px) {
   .landing-overview__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2650,50 +2661,93 @@ body.is-landing .nav-card-menu {
 
 .landing-overview__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .landing-overview__card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-height: 108px;
-  padding: 14px 12px;
+  --card-overlay: linear-gradient(180deg, rgba(6, 27, 40, 0.08) 0%, rgba(6, 27, 40, 0.35) 42%, rgba(6, 27, 40, 0.88) 100%);
+  --card-position: center center;
+  position: relative;
+  display: block;
+  min-height: clamp(168px, 38vw, 220px);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(22, 80, 109, 0.18);
-  background: #fff;
+  border: 1px solid rgba(22, 80, 109, 0.22);
   box-shadow: var(--shadow-sm);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .landing-overview__card:hover {
-  border-color: rgba(40, 179, 174, 0.4);
+  transform: translateY(-3px);
+  border-color: rgba(40, 179, 174, 0.45);
   box-shadow: var(--shadow-md);
+}
+
+.landing-overview__card-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--card-overlay), var(--card-image);
+  background-size: cover;
+  background-position: center center, var(--card-position);
+}
+
+.landing-overview__card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  min-height: 100%;
+  padding: 14px 14px 16px;
+  box-sizing: border-box;
 }
 
 .landing-overview__card-title {
   font-family: var(--font-heading);
-  font-size: 0.9375rem;
+  font-size: clamp(0.9375rem, 2.6vw, 1.0625rem);
   font-weight: 700;
-  color: var(--ink-900);
+  color: #f4fbff;
   line-height: 1.35;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
 .landing-overview__card-text {
-  font-size: 0.8125rem;
-  line-height: 1.6;
-  color: var(--ink-500);
+  font-size: clamp(0.75rem, 2.2vw, 0.8125rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
   word-break: normal;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.landing-overview__card--program {
+  --card-image: url("/static/program-recovery-session.jpg");
+}
+
+.landing-overview__card--rapport {
+  --card-image: url("/static/women-facility-rapport.jpg");
+}
+
+.landing-overview__card--blog {
+  --card-image: url("/static/peers-laughing-kumamoto.jpg");
+  --card-position: center 35%;
+}
+
+.landing-overview__card--family {
+  --card-image: url("/static/family-meeting-laughing.jpg");
+}
+
+.landing-overview__card--grouphome {
+  --card-image: url("/static/grouphome-cozy-home.jpg");
 }
 
 .landing-overview__card-link {
-  margin-top: auto;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--brand-blue);
+  display: none;
 }
 
 @media (max-width: 768px) {
