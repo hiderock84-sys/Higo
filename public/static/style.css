@@ -6554,9 +6554,26 @@ button.blog-filter.glass-btn-chip.is-active {
   border-color: rgba(255, 255, 255, 0.45);
 }
 
-/* ── ページ末尾CTA：らぽーる page-cta-box 仕様（全ページ共通） ── */
-.page-cta-box.glass-btn-panel {
-  padding: clamp(18px, 4vw, 24px) 16px;
+/* ── ページ末尾CTA：家族ガイド page-cta-box 仕様（全ページ共通） ── */
+.page-cta-box.glass-btn-panel,
+.page-end-cta.glass-btn-panel {
+  margin-top: clamp(20px, 4vw, 28px);
+  margin-bottom: 0;
+  padding: clamp(18px, 4vw, 22px) clamp(14px, 3.5vw, 18px);
+  border-radius: var(--radius-md);
+  background: linear-gradient(160deg, #0a2d42 0%, #123f5c 100%);
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(6, 22, 34, 0.18);
+}
+
+.page-cta-box.glass-btn-panel > p,
+.page-cta-box.glass-btn-panel .page-end-cta__lead,
+.page-end-cta__lead {
+  font-size: clamp(0.875rem, 3.4vw, 0.9375rem);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 clamp(12px, 2.5vw, 16px);
+  text-wrap: pretty;
 }
 
 .page-cta-box.glass-btn-panel .glass-btn-row {
@@ -6564,28 +6581,32 @@ button.blog-filter.glass-btn-chip.is-active {
 }
 
 .page-cta-box.glass-btn-panel .glass-btn,
+.page-end-cta.glass-btn-panel .glass-btn,
+.contact-section .page-cta-box .glass-btn,
+.blog-reassure .page-cta-box .glass-btn,
 .testimonial-highlight__panel .page-cta-box .glass-btn,
-.program-section .page-cta-box .glass-btn {
-  width: min(100%, 16.5rem);
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+.program-marathon-note .page-cta-box .glass-btn {
+  width: min(100%, 18.5rem);
+  min-height: clamp(48px, 12vw, 56px);
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
   backdrop-filter: blur(20px) saturate(1.15);
   -webkit-backdrop-filter: blur(20px) saturate(1.15);
   box-shadow:
     0 8px 22px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+    inset 0 1px 0 rgba(255, 255, 255, 0.38) !important;
 }
 
 .page-cta-box.glass-btn-panel .glass-btn .hero-action__icon,
-.testimonial-highlight__panel .page-cta-box .glass-btn .hero-action__icon {
-  color: #ffffff;
+.page-end-cta.glass-btn-panel .glass-btn .hero-action__icon {
+  color: #ffffff !important;
 }
 
 .page-cta-box.glass-btn-panel .glass-btn:hover,
-.testimonial-highlight__panel .page-cta-box .glass-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.72);
+.page-end-cta.glass-btn-panel .glass-btn:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.72) !important;
 }
 
 .blog-reassure .page-cta-box.glass-btn-panel {
@@ -6593,18 +6614,27 @@ button.blog-filter.glass-btn-chip.is-active {
   width: 100%;
 }
 
-.blog-reassure__text {
-  margin: 0 0 12px;
-  font-size: clamp(0.875rem, 3.4vw, 0.9375rem);
-  line-height: 1.72;
-  color: var(--ink-700);
-  text-wrap: pretty;
-}
-
 .testimonial-highlight__panel .page-cta-box.glass-btn-panel {
   margin-top: clamp(14px, 3vw, 18px);
   width: 100%;
   box-sizing: border-box;
+}
+
+.program-marathon-note .page-cta-box.glass-btn-panel {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.contact-section .page-cta-box.glass-btn-panel {
+  margin: 0 auto clamp(16px, 3vw, 20px);
+  width: min(100%, 420px);
+}
+
+.site-footer .landing-contact .page-cta-box.glass-btn-panel {
+  margin-top: 4px;
+  width: 100%;
+  max-width: min(100%, 420px);
+  margin-inline: auto;
 }
 
 /* 旧・体験談リンク（ガラスボタン化後は無効） */
