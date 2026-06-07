@@ -5511,3 +5511,108 @@ body.is-standalone-view .standalone-target.rapport-page * {
 .site-footer__main {
   padding-bottom: max(28px, env(safe-area-inset-bottom));
 }
+
+/* ── サイト共通ガラスボタン（らぽーる末尾CTA等） ── */
+.glass-btn.hero-action.hero-action--glass,
+a.glass-btn.hero-action--glass,
+button.glass-btn.hero-action--glass {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.75vw, 8px);
+  min-height: clamp(48px, 12vw, 56px);
+  padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 16px);
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px) saturate(1.15);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  transition:
+    transform 0.22s var(--ease-out),
+    box-shadow 0.22s var(--ease-out),
+    border-color 0.22s var(--ease-out),
+    background 0.22s var(--ease-out);
+  cursor: pointer;
+}
+
+.glass-btn.hero-action--glass:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.72);
+}
+
+.glass-btn .hero-action__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: clamp(22px, 6vw, 26px);
+  line-height: 0;
+  color: inherit;
+}
+
+.glass-btn .hero-icon {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.glass-btn .hero-action__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  text-align: center;
+}
+
+.glass-btn .hero-action__label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.75rem, 3.1vw, 0.9375rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.glass-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(8px, 2.2vw, 12px);
+  width: 100%;
+}
+
+.glass-btn-row--stack {
+  flex-direction: column;
+  align-items: center;
+}
+
+.glass-btn-row--stack .glass-btn {
+  width: min(100%, 18.5rem);
+}
+
+.glass-btn-panel {
+  text-align: center;
+}
+
+.glass-btn-panel .glass-btn-row {
+  margin-top: 0;
+}
+
+.page-cta-box.glass-btn-panel {
+  padding: clamp(18px, 4vw, 24px) 16px;
+}
+
+.page-cta-box.glass-btn-panel .glass-btn {
+  width: min(100%, 16.5rem);
+}
