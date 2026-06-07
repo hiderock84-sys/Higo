@@ -3210,11 +3210,14 @@ body.is-standalone-view .standalone-target.rapport-page * {
 }
 
 .page-cta-box {
-  margin-top: 32px;
-  padding: 20px 16px;
+  margin-top: 18px;
+  padding: 16px;
   border-radius: var(--radius-md);
   background: linear-gradient(160deg, #0a2d42 0%, #123f5c 100%);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .page-cta-box p {
@@ -3225,12 +3228,14 @@ body.is-standalone-view .standalone-target.rapport-page * {
 }
 
 .page-cta-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  width: calc(100% - 12px);
   min-height: 44px;
   padding: 0 20px;
-  margin: 4px 6px;
+  margin: 6px auto;
   border-radius: var(--radius-sm);
   font-family: var(--font-heading);
   font-size: 0.875rem;
@@ -4654,12 +4659,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
     padding: 6px 0;
   }
 
-  .page-cta-link {
-    display: flex;
-    width: calc(100% - 12px);
-    margin: 6px auto;
-  }
-
   .data-table {
     min-width: 0;
     font-size: 0.75rem;
@@ -5138,12 +5137,11 @@ body.is-standalone-view .standalone-target.rapport-page * {
 .site-footer__cta-inner {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 36px 16px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .site-footer__cta-eyebrow {
@@ -5174,9 +5172,10 @@ body.is-standalone-view .standalone-target.rapport-page * {
 
 .site-footer__cta-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
 }
 
 .site-footer__cta-phone {
@@ -5514,25 +5513,9 @@ body.is-standalone-view .standalone-target.rapport-page * {
 
 /* page-cta-link 仕様：トップ以外（standalone）のページ末尾CTA — らぽーると同一 */
 body.is-standalone-view .standalone-target .page-cta-box {
-  margin-top: 18px;
-  padding: 16px;
   width: 100%;
   max-width: none;
   margin-inline: unset;
-}
-
-body.is-standalone-view .standalone-target .page-cta-box p {
-  font-size: 0.875rem;
-  line-height: 1.75;
-  margin-bottom: 14px;
-}
-
-.site-footer__cta-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 8px;
-  width: min(100%, 18.5rem);
 }
 
 .site-footer__cta-actions .page-cta-link {
