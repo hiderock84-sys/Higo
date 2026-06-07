@@ -5512,19 +5512,19 @@ body.is-standalone-view .standalone-target.rapport-page * {
   padding-bottom: max(28px, env(safe-area-inset-bottom));
 }
 
-/* page-cta-link 仕様：各ページ末尾・フッターCTA */
-.intro-message .page-cta-box,
-.compact-testimonial-wrap .page-cta-box,
-.testimonial-grid-wrap .page-cta-box,
-.staff-story .page-cta-box,
-.assurance-section .page-cta-box,
-.contact-section .page-cta-box {
-  margin-top: clamp(20px, 4vw, 28px);
+/* page-cta-link 仕様：トップ以外（standalone）のページ末尾CTA — らぽーると同一 */
+body.is-standalone-view .standalone-target .page-cta-box {
+  margin-top: 18px;
+  padding: 16px;
+  width: 100%;
+  max-width: none;
+  margin-inline: unset;
 }
 
-.contact-section .page-cta-box {
-  width: min(100%, 420px);
-  margin-inline: auto;
+body.is-standalone-view .standalone-target .page-cta-box p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin-bottom: 14px;
 }
 
 .site-footer__cta-actions {
