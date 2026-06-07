@@ -5511,3 +5511,31 @@ body.is-standalone-view .standalone-target.rapport-page * {
 .site-footer__main {
   padding-bottom: max(28px, env(safe-area-inset-bottom));
 }
+
+/* page-cta-link 仕様：各ページ末尾・フッターCTA */
+.intro-message .page-cta-box,
+.compact-testimonial-wrap .page-cta-box,
+.testimonial-grid-wrap .page-cta-box,
+.staff-story .page-cta-box,
+.assurance-section .page-cta-box,
+.contact-section .page-cta-box {
+  margin-top: clamp(20px, 4vw, 28px);
+}
+
+.contact-section .page-cta-box {
+  width: min(100%, 420px);
+  margin-inline: auto;
+}
+
+.site-footer__cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: min(100%, 18.5rem);
+}
+
+.site-footer__cta-actions .page-cta-link {
+  width: 100%;
+  margin: 0;
+}
