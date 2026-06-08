@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260614v" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=20260528c6" rel="stylesheet">
+  <link href="/static/style.css?v=20260614w" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260613a" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -53,7 +53,7 @@
           "name": "費用はどのくらいかかりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "障害福祉サービス受給者証をお持ちの方は、自己負担額が軽減されます。詳しくは利用案内をご覧ください。まずはお気軽にご相談ください。"
+            "text": "障害福祉サービス受給者証をお持ちの方は、自己負担額が軽減されます。詳しくは<a href="/blog">ブログ</a>や<a href="/blog">ブログ</a>をご覧ください。まずはお気軽にご相談ください。"
           }
         },
         {
@@ -112,15 +112,14 @@
         <a href="/program" class="site-header__link">プログラム</a>
         <a href="/rapport" class="site-header__link">女性専用施設</a>
         <a href="/grouphome" class="site-header__link">グループホーム</a>
-        <a href="/guide" class="site-header__link">利用案内</a>
-        <a href="/contact" class="site-header__link">相談窓口</a>
+        <a href="/blog" class="site-header__link">ブログ</a>
       </nav>
       <div class="site-header__actions">
         <a href="tel:0964-41-2387" class="site-header__phone">
           <span class="site-header__phone-label">電話相談</span>
           <span class="site-header__phone-number">0964-41-2387</span>
         </a>
-        <a href="/contact" class="site-header__cta site-header__cta--desktop">無料相談</a>
+        <a href="tel:0964-41-2387" class="site-header__cta site-header__cta--desktop">無料相談</a>
         <button type="button" class="site-header__menu-toggle" id="menuButton" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
           <span class="site-header__menu-icon" aria-hidden="true">
             <span class="site-header__menu-bar"></span>
@@ -156,15 +155,14 @@
       <a href="/program" class="mobile-menu-item">プログラム</a>
       <a href="/rapport" class="mobile-menu-item">女性専用施設</a>
       <a href="/grouphome" class="mobile-menu-item">グループホーム</a>
-      <a href="/guide" class="mobile-menu-item">利用案内</a>
+      <a href="/blog" class="mobile-menu-item">ブログ</a>
       <a href="/testimonials" class="mobile-menu-item">体験談</a>
       <a href="/staff" class="mobile-menu-item">スタッフ紹介</a>
       <a href="/family-guide" class="mobile-menu-item">家族ガイド</a>
-      <a href="/contact" class="mobile-menu-item">相談窓口</a>
     </nav>
     <div class="mobile-menu-contact">
       <div class="mobile-menu-section-title">お問い合わせ</div>
-      <div class="mobile-menu-contact-phone">0964-41-2387</div>
+      <a href="tel:0964-41-2387" class="mobile-menu-contact-phone">0964-41-2387</a>
       <div class="mobile-menu-contact-hours">平日 10:00〜17:00</div>
       <div class="mobile-menu-contact-address">熊本県上益城郡御船町</div>
     </div>
@@ -186,7 +184,7 @@
       <div class="hero-copy-stack">
         <header class="hero-head">
           <p class="hero-eyebrow">KUMAMOTO RECOVERY HOME</p>
-          <p class="hero-org">一般社団法人ひごのいえ<br class="br-sm-only">熊本県上益城郡御船町</p>
+          <p class="hero-org">一般社団法人ひごのいえ</p>
           <h1 class="hero-title">ひごのいえ</h1>
           <p class="hero-tagline">
             <span class="hero-tagline__row">熊本の<span class="hero-tagline__keep">大自然</span>の中で、</span>
@@ -195,25 +193,126 @@
         </header>
         <div class="hero-body site-copy">
           <p class="hero-deck">
-            依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば、希望ある未来を取り戻すことができます。
+            <span class="hero-deck__row">依存症は回復できる病気です。適切な支援と環境、仲間とのつながりがあれば、</span>
+            <span class="hero-deck__row">希望ある未来を取り戻すことができます。</span>
           </p>
           <p class="hero-lead">
             熊本・御船町の依存症回復支援施設。秘密厳守のご相談から生活再建まで医療・福祉と連携し、多様な依存とご家族相談に伴走します。
           </p>
         </div>
-        <nav class="hero-actions hero-actions--cta hero-actions--premium" aria-label="表紙のクイックリンク">
-          <a href="/contact" class="hero-action primary hero-action--premium">
-            <span class="hero-action__label">今すぐ相談する</span>
-            <span class="hero-action__hint">無料・秘密厳守</span>
+        <nav class="hero-actions hero-actions--cta hero-actions--premium hero-actions--quad" aria-label="表紙のクイックリンク">
+          <a href="tel:0964-41-2387" class="hero-action hero-action--premium hero-action--glass">
+            <span class="hero-action__icon"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+            <span class="hero-action__stack">
+              <span class="hero-action__label">無料相談する</span>
+              <span class="hero-action__hint">無料・秘密厳守</span>
+            </span>
           </a>
-          <a href="/guide" class="hero-action ghost hero-action--premium">
-            <span class="hero-action__label">利用の流れを見る</span>
-            <span class="hero-action__hint">初回相談から</span>
+          <a href="/blog" class="hero-action hero-action--premium hero-action--glass">
+            <span class="hero-action__icon"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C10.87 15.429 7 11.613 7 8a5 5 0 0 1 10 0"/><circle cx="12" cy="8" r="2"/></svg></span>
+            <span class="hero-action__stack">
+              <span class="hero-action__label">見学・入所の流れ</span>
+              <span class="hero-action__hint">初回相談から</span>
+            </span>
+          </a>
+          <a href="tel:0964-41-2387" class="hero-action hero-action--premium hero-action--glass">
+            <span class="hero-action__icon"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span class="hero-action__stack">
+              <span class="hero-action__label">24時間相談受付</span>
+              <span class="hero-action__hint">0964-41-2387</span>
+            </span>
+          </a>
+          <a href="/family-guide" class="hero-action hero-action--premium hero-action--glass">
+            <span class="hero-action__icon"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <span class="hero-action__stack">
+              <span class="hero-action__label">家族の方へ</span>
+              <span class="hero-action__hint">ご家族のご相談はこちら</span>
+            </span>
           </a>
         </nav>
       </div>
     </div>
   </section>
+
+  <section class="concerns-section landing-only" id="concerns" aria-labelledby="concerns-heading">
+    <div class="concerns-section__inner">
+      <header class="concerns-section__header">
+        <h2 class="concerns-section__title" id="concerns-heading">こんなお悩みありませんか？</h2>
+        <p class="concerns-section__lead">一人で抱え込まず、まずはご相談ください。依存症は回復できる病気です。</p>
+      </header>
+      <ul class="concerns-grid" role="list">
+        <li class="concerns-card">
+          <article class="concerns-card__surface">
+            <span class="concerns-card__icon" aria-hidden="true">
+              <svg class="concerns-card__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg>
+            </span>
+            <h3 class="concerns-card__title">アルコール依存</h3>
+            <p class="concerns-card__desc"><span class="concerns-card__desc-line">飲酒量が</span><span class="concerns-card__desc-line">減らない</span></p>
+          </article>
+        </li>
+        <li class="concerns-card">
+          <article class="concerns-card__surface">
+            <span class="concerns-card__icon" aria-hidden="true">
+              <svg class="concerns-card__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M16 8h.01"/><path d="M8 8h.01"/><path d="M8 16h.01"/><path d="M16 16h.01"/><path d="M12 12h.01"/></svg>
+            </span>
+            <h3 class="concerns-card__title">ギャンブル依存</h3>
+            <p class="concerns-card__desc"><span class="concerns-card__desc-line">借金を</span><span class="concerns-card__desc-line">繰り返す</span></p>
+          </article>
+        </li>
+        <li class="concerns-card">
+          <article class="concerns-card__surface">
+            <span class="concerns-card__icon" aria-hidden="true">
+              <svg class="concerns-card__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+            </span>
+            <h3 class="concerns-card__title">薬物依存</h3>
+            <p class="concerns-card__desc"><span class="concerns-card__desc-line">薬の使用が</span><span class="concerns-card__desc-line">止まらない</span></p>
+          </article>
+        </li>
+        <li class="concerns-card">
+          <article class="concerns-card__surface">
+            <span class="concerns-card__icon" aria-hidden="true">
+              <svg class="concerns-card__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m19.5 12.572-7.5 7.5a4.95 4.95 0 0 1-7-7l7.5-7.5a4.95 4.95 0 0 1 7 7Z"/><path d="m15 9-6 6"/><path d="M9.5 13.5 8 15"/></svg>
+            </span>
+            <h3 class="concerns-card__title">市販薬依存</h3>
+            <p class="concerns-card__desc"><span class="concerns-card__desc-line">市販薬の</span><span class="concerns-card__desc-line">飲み過ぎ</span></p>
+          </article>
+        </li>
+        <li class="concerns-card">
+          <article class="concerns-card__surface">
+            <span class="concerns-card__icon" aria-hidden="true">
+              <svg class="concerns-card__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14h6"/><path d="M12 11v6"/></svg>
+            </span>
+            <h3 class="concerns-card__title">処方薬依存</h3>
+            <p class="concerns-card__desc"><span class="concerns-card__desc-line">薬の量が</span><span class="concerns-card__desc-line">増え続ける</span></p>
+          </article>
+        </li>
+        <li class="concerns-card">
+          <article class="concerns-card__surface">
+            <span class="concerns-card__icon" aria-hidden="true">
+              <svg class="concerns-card__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            </span>
+            <h3 class="concerns-card__title">ネット・SNS依存</h3>
+            <p class="concerns-card__desc"><span class="concerns-card__desc-line">SNSや動画が</span><span class="concerns-card__desc-line">手放せない</span></p>
+          </article>
+        </li>
+      </ul>
+      <div class="concerns-section__footer">
+        <p class="concerns-section__closing">あなたやご家族だけで悩む必要はありません。<br class="br-sm-only">ひごのいえでは医療・福祉・地域と連携し、<br class="br-md-up">回復への第一歩をサポートしています。</p>
+        <a href="tel:0964-41-2387" class="concerns-section__cta concerns-section__cta--glass">
+          <span class="concerns-section__cta-body">
+            <span class="concerns-section__cta-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <span class="concerns-section__cta-stack">
+              <span class="concerns-section__cta-label">無料相談する</span>
+              <span class="concerns-section__cta-hint">無料・秘密厳守</span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 
   <section class="visual-strip" aria-label="熊本と九州の自然・暮らしの風景">
     <article class="visual-card">
@@ -245,20 +344,6 @@
     </article>
   </section>
 
-  <!-- ROUTE_SUMMARY_START -->
-  <section class="content-section route-summary landing-heavy site-copy" id="route-summary">
-    <h2 class="section-title">回復支援の全体像</h2>
-    <div class="text-content">
-      依存症は、適切な支援と環境、そして信頼できるつながりがあれば回復できる病気です。<br class="br-md-up">
-      ひごのいえは、医療・行政・ご家族と連携し、初回相談から入所・プログラム・退所後の生活再建まで、状況に合わせて伴走します。
-    </div>
-    <ul class="route-summary-list" aria-label="回復支援のポイント">
-      <li>初回相談は無料。秘密厳守で対応します。</li>
-      <li>ご本人だけでなく、ご家族のみの相談にも対応します。</li>
-      <li>女性専用施設・共同生活支援・退所後支援まで一体で伴走します。</li>
-    </ul>
-  </section>
-  <!-- ROUTE_SUMMARY_END -->
 
   <section class="navigation-section" id="page-menu">
     <div class="nav-section-header">
@@ -301,11 +386,11 @@
           <div class="nav-subtitle">共同生活の場</div>
         </div>
       </a>
-      <a href="/guide" class="nav-card nav-card-usage" aria-label="ご利用案内へ移動">
+      <a href="/blog" class="nav-card nav-card-blog" aria-label="ブログへ移動">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
-          <div class="nav-title">ご利用案内</div>
-          <div class="nav-subtitle">ご利用の流れ</div>
+          <div class="nav-title">ブログ</div>
+          <div class="nav-subtitle">活動記録・お知らせ</div>
         </div>
       </a>
       <a href="/testimonials" class="nav-card nav-card-voice" aria-label="体験談へ移動">
@@ -329,17 +414,60 @@
           <div class="nav-subtitle">ご家族へのサポート</div>
         </div>
       </a>
-      <a href="/contact" class="nav-card nav-card-contact" aria-label="相談窓口へ移動">
+      <a href="tel:0964-41-2387" class="nav-card nav-card-contact" aria-label="電話相談へ">
         <div class="nav-card-bg"></div>
         <div class="nav-card-content">
-          <div class="nav-title">相談窓口</div>
-          <div class="nav-subtitle">すぐに話せる連絡先</div>
+          <div class="nav-title">電話相談</div>
+          <div class="nav-subtitle">0964-41-2387</div>
         </div>
       </a>
     </div>
   </section>
 
-  <section class="content-section pillars-section standalone-page program-page" id="program">
+
+  <section class="landing-only landing-overview" aria-label="主要ページの概要">
+    <h2 class="landing-overview__title">支援のかたち</h2>
+    <p class="landing-overview__lead">気になるテーマをタップして各ページへ。枠内のどこを押しても移動できます。</p>
+    <div class="landing-overview__grid">
+      <a href="/program" class="landing-overview__card landing-overview__card--program">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">回復プログラム</span>
+          <span class="landing-overview__card-text">「誰と生きるか」を最優先。生活リズム・医療連携・仲間との関係から、焦らず回復を支えます。</span>
+        </span>
+      </a>
+      <a href="/rapport" class="landing-overview__card landing-overview__card--rapport">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">女性専用施設 らぽーる</span>
+          <span class="landing-overview__card-text">女性のみの空間・女性スタッフ常駐。トラウマに配慮し、安心して回復に集中できる拠点です。</span>
+        </span>
+      </a>
+      <a href="/blog" class="landing-overview__card landing-overview__card--blog">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">ブログ</span>
+          <span class="landing-overview__card-text">開所からのお知らせと日々の記録。施設の歩みと、初めての方への安心メッセージをお届けします。</span>
+        </span>
+      </a>
+      <a href="/family-guide" class="landing-overview__card landing-overview__card--family">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">家族ガイド</span>
+          <span class="landing-overview__card-text">ご家族だけの相談も歓迎。正しい知識と境界線づくりが、本人支援と家族の回復の土台になります。</span>
+        </span>
+      </a>
+      <a href="/grouphome" class="landing-overview__card landing-overview__card--grouphome">
+        <span class="landing-overview__card-media" aria-hidden="true"></span>
+        <span class="landing-overview__card-body">
+          <span class="landing-overview__card-title">グループホーム</span>
+          <span class="landing-overview__card-text">共同生活援助に基づく住まいで、生活リズムの再建と地域生活への移行を支援します。</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="content-section pillars-section standalone-page program-page landing-heavy" id="program">
     <p class="section-kicker">RECOVERY PROGRAM</p>
     <h2 class="section-title program-page__title">
       <span class="program-page__title-line">回復プログラム</span>
@@ -421,7 +549,7 @@
 
     <div class="program-daily-block">
       <h3 class="program-section-title">
-        <span class="program-section-title__main">一日の型</span>
+        <span class="program-section-title__main">ひごのいえの一日</span>
         <span class="program-section-title__sub">生活リズムプログラム</span>
       </h3>
       <p class="program-section-lead">リハビリ施設で広く採用されている規則正しい生活を、ひごのいえの共同生活に合わせて設計しています。同じ時間に起き、食べ、働き、休む――その反復のなかで、信頼関係が育ちます。</p>
@@ -536,7 +664,7 @@
         熊本・御船町の空気のなかで、一緒に長距離走を続けましょう。最初の一歩は、相談の電話からで大丈夫です。
       </p>
       <p class="program-marathon-note__cta">
-        <a href="/contact">相談窓口へ</a>　<a href="/testimonials">体験談を読む</a>
+        <a href="tel:0964-41-2387">電話相談</a>　<a href="/testimonials">体験談を読む</a>
       </p>
     </div>
 
@@ -545,7 +673,7 @@
     </p>
   </section>
 
-  <section class="content-section intro-message site-copy">
+  <section class="content-section intro-message site-copy landing-heavy">
     <h2 class="section-title">回復を支える実践サイクル</h2>
     <div class="support-steps">
       <div class="support-step">
@@ -566,7 +694,7 @@
     </div>
   </section>
 
-  <section class="content-section detail-section prose-section standalone-page info-sheet site-copy rapport-page" id="rapport">
+  <section class="content-section detail-section prose-section standalone-page info-sheet site-copy rapport-page landing-heavy" id="rapport">
     <p class="section-kicker">WOMEN ONLY · RAPPORT</p>
     <h2 class="section-title">女性専用施設 らぽーる</h2>
     <p class="prose-lead">
@@ -941,7 +1069,7 @@
     </p>
   </section>
 
-  <section class="content-section detail-section prose-section standalone-page info-sheet site-copy" id="grouphome">
+  <section class="content-section detail-section prose-section standalone-page info-sheet site-copy landing-heavy" id="grouphome">
     <p class="section-kicker">GROUP HOME</p>
     <h2 class="section-title">グループホーム</h2>
     <p class="prose-lead">
@@ -1020,8 +1148,8 @@
 
     <div class="page-cta-box">
       <p>受給者証の有無・申請方法が不明でもご相談ください。手続きと生活設計を伴走します。</p>
-      <a href="/contact" class="page-cta-link">相談窓口へ</a>
-      <a href="/guide" class="page-cta-link page-cta-link--ghost">利用案内を見る</a>
+      <a href="tel:0964-41-2387" class="page-cta-link">電話相談</a>
+      <a href="/blog" class="page-cta-link page-cta-link--ghost">ブログを読む</a>
     </div>
 
     <p class="ref-note">
@@ -1030,111 +1158,250 @@
     </p>
   </section>
 
-  <section class="content-section detail-section standalone-page info-sheet site-copy" id="guide">
-    <p class="section-kicker">USER GUIDE</p>
-    <h2 class="section-title">利用案内</h2>
-    <p class="prose-lead">
-      初回相談（無料・秘密厳守）から入所・グループホーム・女性専用「らぽーる」・退所後の再建まで、状況に合わせて伴走します。<br class="br-md-up">
-      医療機関・相談支援専門員・自治体と連携します。
-    </p>
+  <section class="content-section blog-page detail-section standalone-page landing-heavy site-copy" id="blog" aria-labelledby="blog-page-title">
+    <header class="blog-hero">
+      <p class="section-kicker">BLOG &amp; DIARY</p>
+      <h2 class="section-title" id="blog-page-title">ブログ</h2>
+      <p class="blog-hero__lead">
+        開所からの歩みと、施設の日々をお伝えします。<br class="br-md-up">
+        回復への道のりに不安を感じる方へ——<strong>あなたは一人ではありません。</strong>
+      </p>
+      <p class="blog-hero__note">初回相談は無料・秘密厳守です。記事を読んだうえで、気が向いたときにご連絡ください。</p>
+      <div class="blog-hero__actions">
+        <a href="tel:0964-41-2387" class="blog-hero__cta blog-hero__cta--primary">無料相談する</a>
+        <a href="tel:0964-41-2387" class="blog-hero__cta blog-hero__cta--ghost">0964-41-2387</a>
+      </div>
+    </header>
 
-    <div class="info-sheet__layout">
-      <article class="info-panel info-panel--wide">
-        <h3 class="info-panel__title">相談窓口</h3>
-        <dl class="info-dl info-dl--contact">
-          <div class="info-dl__row"><dt>電話</dt><dd><a href="tel:0964-41-2387">0964-41-2387</a></dd></div>
-          <div class="info-dl__row"><dt>受付</dt><dd>平日10:00–17:00（時間外も要相談）</dd></div>
-          <div class="info-dl__row"><dt>メール</dt><dd>info@higonoie.or.jp（24h）</dd></div>
-          <div class="info-dl__row"><dt>所在地</dt><dd>熊本県上益城郡御船町</dd></div>
-          <div class="info-dl__row"><dt>初回相談</dt><dd><strong>無料</strong>・秘密厳守</dd></div>
-        </dl>
-      </article>
+    <div class="blog-layout">
+      <div class="blog-main">
+        <div class="blog-toolbar" role="toolbar" aria-label="記事の絞り込み">
+          <button type="button" class="blog-filter is-active" data-blog-filter="all">すべて</button>
+          <button type="button" class="blog-filter" data-blog-filter="news">お知らせ</button>
+          <button type="button" class="blog-filter" data-blog-filter="diary">日々の記録</button>
+        </div>
 
-      <article class="info-panel info-panel--wide">
-        <h3 class="info-panel__title">選べる支援</h3>
-        <p class="info-panel__text">入所・グループホーム・女性専用・家族支援を組み合わせ可能。最適な形は初回相談で整理します。</p>
-        <dl class="info-dl info-dl--compact">
-          <div class="info-dl__row"><dt>初回相談</dt><dd>状況整理・選択肢の説明</dd></div>
-          <div class="info-dl__row"><dt>入所</dt><dd>施設内で回復支援・生活リズム再建</dd></div>
-          <div class="info-dl__row"><dt>GH</dt><dd>共同生活援助による地域生活の練習</dd></div>
-          <div class="info-dl__row"><dt>らぽーる</dt><dd>女性専用の安心できる環境</dd></div>
-          <div class="info-dl__row"><dt>家族</dt><dd>家族会・家族のみの相談</dd></div>
-        </dl>
-      </article>
-
-      <article class="info-panel info-panel--wide">
-        <h3 class="info-panel__title">ご利用の流れ</h3>
-        <ol class="info-steps">
-          <li><span class="info-steps__label">1</span><span class="info-steps__body">お問い合わせ — 困りごと・既往・服薬等を確認</span><span class="info-steps__time">即日</span></li>
-          <li><span class="info-steps__label">2</span><span class="info-steps__body">面談・見学 — 支援方針・施設の説明</span><span class="info-steps__time">1〜2週</span></li>
-          <li><span class="info-steps__label">3</span><span class="info-steps__body">支援計画 — 入所・GH・通院の方針整理</span><span class="info-steps__time">個別</span></li>
-          <li><span class="info-steps__label">4</span><span class="info-steps__body">手続き — 受給者証・契約等（GHは自治体手続きを伴走）</span><span class="info-steps__time">数週</span></li>
-          <li><span class="info-steps__label">5</span><span class="info-steps__body">利用開始 — 生活リズム・服薬・ピア支援</span><span class="info-steps__time">—</span></li>
-          <li><span class="info-steps__label">6</span><span class="info-steps__body">継続・家族連携 — 再発予防・家族会</span><span class="info-steps__time">継続</span></li>
-          <li><span class="info-steps__label">7</span><span class="info-steps__body">地域移行 — 退所・就労等への準備</span><span class="info-steps__time">個別</span></li>
-        </ol>
-      </article>
-
-      <div class="info-sheet__row">
-        <article class="info-panel">
-          <h3 class="info-panel__title">相談でお聞きすること</h3>
-          <dl class="info-dl info-dl--compact">
-            <div class="info-dl__row"><dt>困りごと</dt><dd>依存の種類・再発歴・生活状況</dd></div>
-            <div class="info-dl__row"><dt>心身</dt><dd>通院・服薬・睡眠・食事</dd></div>
-            <div class="info-dl__row"><dt>家族</dt><dd>負担・連携希望（家族のみ相談可）</dd></div>
-            <div class="info-dl__row"><dt>制度</dt><dd>受給者証・手帳・他サービス</dd></div>
-            <div class="info-dl__row"><dt>希望</dt><dd>入所・GH・女性専用・見学</dd></div>
-          </dl>
+        <article class="blog-featured" data-blog-category="news" id="blog-featured">
+          <figure class="blog-featured__media">
+            <img src="/static/women-facility-rapport.jpg?v=20260521b" alt="女性専用施設らぽーるの明るい室内" width="960" height="540" loading="eager" decoding="async">
+          </figure>
+          <div class="blog-featured__content">
+          <p class="blog-card__meta">
+            <span class="blog-card__category blog-card__category--news">お知らせ</span>
+            <time class="blog-card__date" datetime="2025-08-13">2025.08.13</time>
+          </p>
+          <h3 class="blog-featured__title">女性専用施設「らぽーる」を御船町に開設しました</h3>
+          <p class="blog-featured__excerpt">
+            定員8名の小さな施設ですが、女性一人ひとりにとって安心できる居場所になるよう、女性スタッフが丁寧に伴走します。入寮のご相談も随時受け付けています。
+          </p>
+          <a href="#post-rapport-2025" class="blog-card__more">記事を読む</a>
+          </div>
         </article>
-        <article class="info-panel">
-          <h3 class="info-panel__title">あるとスムーズ</h3>
-          <dl class="info-dl info-dl--compact">
-            <div class="info-dl__row"><dt>本人確認</dt><dd>面談・契約時</dd></div>
-            <div class="info-dl__row"><dt>お薬手帳</dt><dd>医療連携（任意）</dd></div>
-            <div class="info-dl__row"><dt>受給者証</dt><dd>GH利用検討時</dd></div>
-            <div class="info-dl__row"><dt>手帳</dt><dd>支援区分の参考</dd></div>
-            <div class="info-dl__row"><dt>履歴</dt><dd>入院・施設利用（分かる範囲）</dd></div>
-          </dl>
-        </article>
+
+        <div class="blog-grid" id="blog-grid">
+          <article class="blog-card" data-blog-category="news" id="post-open-2024">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--news">お知らせ</span>
+              <time class="blog-card__date" datetime="2024-02-01">2024.02.01</time>
+            </p>
+            <h3 class="blog-card__title">ひごのいえ、開所のごあいさつ</h3>
+            <p class="blog-card__excerpt">2024年2月1日、熊本の地で依存症回復支援の拠点「ひごのいえ」を開所しました。地域に根ざした居場所づくりの第一歩です。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>公式サイト（<a href="https://higonoie.info/" rel="noopener noreferrer" target="_blank">higonoie.info</a>）でもお伝えしているとおり、ひごのいえは<strong>2024年2月1日に開所</strong>しました。</p>
+                <p>「よいときも悪いときも立ち寄れる場所」「本音を言い合える関係」を目指し、薬物・アルコール・ギャンブルなど多様な依存に悩む方とご家族を支えます。</p>
+                <p>開所当初から<strong>初回相談は無料・秘密厳守</strong>です。まだ話す言葉が見つからなくても大丈夫です。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="news" id="post-incorporation-2024">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--news">お知らせ</span>
+              <time class="blog-card__date" datetime="2024-04-23">2024.04.23</time>
+            </p>
+            <h3 class="blog-card__title">一般社団法人としての認可をいただきました</h3>
+            <p class="blog-card__excerpt">2024年4月23日、一般社団法人ひごのいえとして法人認可を受け、地域に根ざした支援を継続してまいります。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>2024年4月23日、<strong>一般社団法人としての認可</strong>をいただきました（開所情報：ひごのいえ公式サイト）。</p>
+                <p>法人として、依存症に関する普及啓発と回復支援を一体的に進め、熊本県内の方々が健やかに暮らせる地域づくりに寄与していく所存です。</p>
+                <p>医療・福祉・行政・ご家族と連携し、支援の質を高めてまいります。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="diary" id="post-first-consult-2024">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--diary">日々の記録</span>
+              <time class="blog-card__date" datetime="2024-05-15">2024.05.15</time>
+            </p>
+            <h3 class="blog-card__title">「こんなことで相談していいのかな」——初めてのお電話</h3>
+            <p class="blog-card__excerpt">開所後、多くの方が「話してよいのか」迷ったまま連絡してくださいます。その一言が、回復の第一歩になることがあります。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>スタッフが印象に残っているのは、「家族のことばかり話してしまってすみません」というお言葉です。ご家族の悩みだけの相談も、もちろん歓迎です。</p>
+                <p>電話一本で状況を整理し、入所・通所・グループホーム・女性専用施設など、選択肢を一緒に考えます。時間外のご相談も可能です（平日10:00〜17:00が中心）。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="diary" id="post-mifune-nature-2024">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--diary">日々の記録</span>
+              <time class="blog-card__date" datetime="2024-07-20">2024.07.20</time>
+            </p>
+            <h3 class="blog-card__title">御船町の朝——生活リズムを取り戻す小さな一歩</h3>
+            <p class="blog-card__excerpt">阿蘇の山並みを望む穏やかな風景のなかで、起床・食事・軽い運動から一日を始める方がいらっしゃいます。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>依存症の回復は、意志だけでは続きません。<strong>睡眠・食事・人とのつながり</strong>——生活リズムの再建が土台になります。</p>
+                <p>熊本・御船町の自然は、焦らず整える時間を後押ししてくれます。「今日はできた」という実感を、仲間とスタッフが一緒に積み重ねていきます。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="news" id="post-family-2024">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--news">お知らせ</span>
+              <time class="blog-card__date" datetime="2024-10-01">2024.10.01</time>
+            </p>
+            <h3 class="blog-card__title">ご家族だけのご相談も、秘密厳守で承ります</h3>
+            <p class="blog-card__excerpt">本人さまが施設を受け入れていない場合でも、ご家族からのお問い合わせに対応しています。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>依存症はご本人だけでなく、ご家族も深く傷つく病気です。何を伝えればよいか、どこに相談すればよいか——一人で抱え込まないでください。</p>
+                <p>家族会や連携機関のご紹介、話し方の整理など、状況に合わせて伴走します。<a href="/family-guide">家族ガイド</a>もあわせてご覧ください。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="diary" id="post-year-end-2024">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--diary">日々の記録</span>
+              <time class="blog-card__date" datetime="2024-12-28">2024.12.28</time>
+            </p>
+            <h3 class="blog-card__title">年末年始も、つらいときはお電話を</h3>
+            <p class="blog-card__excerpt">行事の多い時期は再発リスクも高まります。休暇中も、時間外のご相談を受け付けています。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>「みんなが楽しそうなのに」——そう感じる方も少なくありません。ひとりで耐えず、<strong>0964-41-2387</strong>へ。短い電話でも構いません。</p>
+                <p>受付は平日10:00〜17:00が中心ですが、土日祝・時間外も可能な場合があります。まずはお問い合わせください。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="news" id="post-rapport-open-2025">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--news">お知らせ</span>
+              <time class="blog-card__date" datetime="2025-03-24">2025.03.24</time>
+            </p>
+            <h3 class="blog-card__title">女性専用施設「らぽーる」開設（2025年3月24日）</h3>
+            <p class="blog-card__excerpt">女性ならではの不安に配慮した、入寮型の回復支援施設を御船町に開設しました。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>2025年3月24日、女性専用の入寮型回復支援施設<strong>「らぽーる」</strong>を開設しました（当法人の案内・FAQより）。</p>
+                <p>女性スタッフが常駐し、トラウマや人間関係への配慮を大切にした支援を行います。詳しくは<a href="/rapport">女性専用施設のページ</a>をご覧ください。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="diary" id="post-grouphome-2025">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--diary">日々の記録</span>
+              <time class="blog-card__date" datetime="2025-05-10">2025.05.10</time>
+            </p>
+            <h3 class="blog-card__title">共同生活援助（グループホーム）のご案内を本格化</h3>
+            <p class="blog-card__excerpt">施設を出たあとも、地域で暮らし続けるための支援——グループホームとの連携を進めています。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>回復のゴールは「施設にいること」ではなく、<strong>自分らしい生活を地域で続けること</strong>です。</p>
+                <p>共同生活援助（グループホーム）の制度や受給者証の手続きについて、<a href="/grouphome">グループホームのページ</a>でわかりやすくご案内しています。申請の伴走も行います。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="news" id="post-rapport-2025">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--news">お知らせ</span>
+              <time class="blog-card__date" datetime="2025-08-13">2025.08.13</time>
+            </p>
+            <h3 class="blog-card__title">「らぽーる」について、改めてお知らせします</h3>
+            <p class="blog-card__excerpt">公式サイトに掲載したとおり、女性専用施設の入寮相談を随時受け付けています。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>2025年8月、公式サイト（<a href="https://higonoie.info/2025/08/13/oshirase/" rel="noopener noreferrer" target="_blank">お知らせ</a>）でも「らぽーる」の開設をお伝えしました。</p>
+                <p>定員8名の小さな施設ですが、一人ひとりにとって大切な居場所になるよう活動しています。住所は非公開ですが、お問い合わせは<strong>0964-41-2387</strong>（ひごのいえ）まで。</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="blog-card" data-blog-category="diary" id="post-any-addiction-2025">
+            <p class="blog-card__meta">
+              <span class="blog-card__category blog-card__category--diary">日々の記録</span>
+              <time class="blog-card__date" datetime="2025-11-18">2025.11.18</time>
+            </p>
+            <h3 class="blog-card__title">アルコールも、薬も、ギャンブルも——「どれも相談していい」</h3>
+            <p class="blog-card__excerpt">依存の種類で「軽い」「重い」をつけなくていい。あなたのつらさが本当なら、それで十分です。</p>
+            <details class="blog-card__body">
+              <summary class="blog-card__summary">続きを読む</summary>
+              <div class="blog-prose">
+                <p>お悩みカードにもあるとおり、アルコール・ギャンブル・薬物・市販薬・処方薬・ネットやSNS……表れ方は違っても、つらさの構造には共通点があります。</p>
+                <p>回復は可能な病気です。比較する必要はありません。<a href="/blog">ブログ</a>から、今の気持ちをそのままお聞かせください。</p>
+              </div>
+            </details>
+          </article>
+        </div>
+
+        <aside class="blog-reassure" aria-label="ご相談への案内">
+          <h3 class="blog-reassure__title">記事を読んで、少し心が軽くなったら</h3>
+          <p class="blog-reassure__text">相談は「覚悟」ではなく、情報収集の一歩としてお越しください。無理な勧誘はいたしません。</p>
+          <div class="page-cta-box">
+            <a href="/blog" class="page-cta-link page-cta-link--ghost">ブログを読む</a>
+            <a href="tel:0964-41-2387" class="page-cta-link page-cta-link--ghost">電話する</a>
+          </div>
+        </aside>
       </div>
 
-      <div class="info-sheet__row">
-        <article class="info-panel">
-          <h3 class="info-panel__title">費用</h3>
-          <dl class="info-dl info-dl--compact">
-            <div class="info-dl__row"><dt>初回相談</dt><dd><strong>無料</strong></dd></div>
-            <div class="info-dl__row"><dt>入所</dt><dd>形態・期間により相談時に説明</dd></div>
-            <div class="info-dl__row"><dt>GH</dt><dd>利用料（自己負担）＋実費</dd></div>
-            <div class="info-dl__row"><dt>女性専用</dt><dd>個別見積り</dd></div>
-          </dl>
-          <p class="info-panel__note">※金額は支給決定・所得等により変動。無理な勧誘はしません。</p>
-        </article>
-        <article class="info-panel">
-          <h3 class="info-panel__title">よくある質問</h3>
-          <dl class="info-dl info-dl--faq">
-            <div class="info-dl__row"><dt>家族だけ？</dt><dd>可。秘密厳守で対応</dd></div>
-            <div class="info-dl__row"><dt>見学？</dt><dd>予約制。受給者証なしでも可</dd></div>
-            <div class="info-dl__row"><dt>受給者証なし</dt><dd>申請を伴走</dd></div>
-            <div class="info-dl__row"><dt>他県？</dt><dd>要相談</dd></div>
-            <div class="info-dl__row"><dt>女性専用</dt><dd>「らぽーる」（<a href="/rapport">詳細</a>）</dd></div>
-          </dl>
-        </article>
-      </div>
+      <aside class="blog-aside" aria-label="お知らせと日々の記録">
+        <div class="blog-aside__panel blog-aside__panel--sticky">
+          <section class="blog-aside__block">
+            <h3 class="blog-aside__heading">お知らせ</h3>
+            <ul class="blog-aside__list">
+              <li><a href="#post-rapport-2025"><time datetime="2025-08-13">08.13</time> らぽーるについて</a></li>
+              <li><a href="#post-rapport-open-2025"><time datetime="2025-03-24">03.24</time> らぽーる開設</a></li>
+              <li><a href="#post-family-2024"><time datetime="2024-10-01">10.01</time> 家族相談のご案内</a></li>
+              <li><a href="#post-incorporation-2024"><time datetime="2024-04-23">04.23</time> 法人認可</a></li>
+              <li><a href="#post-open-2024"><time datetime="2024-02-01">02.01</time> 開所のごあいさつ</a></li>
+            </ul>
+          </section>
+          <section class="blog-aside__block">
+            <h3 class="blog-aside__heading">日々の記録</h3>
+            <ul class="blog-aside__list">
+              <li><a href="#post-any-addiction-2025"><time datetime="2025-11-18">11.18</time> どれも相談していい</a></li>
+              <li><a href="#post-grouphome-2025"><time datetime="2025-05-10">05.10</time> グループホーム案内</a></li>
+              <li><a href="#post-year-end-2024"><time datetime="2024-12-28">12.28</time> 年末年始の電話</a></li>
+              <li><a href="#post-mifune-nature-2024"><time datetime="2024-07-20">07.20</time> 御船町の朝</a></li>
+              <li><a href="#post-first-consult-2024"><time datetime="2024-05-15">05.15</time> 初めてのお電話</a></li>
+            </ul>
+          </section>
+          <p class="blog-aside__contact">
+            <strong>相談窓口</strong><br>
+            <a href="tel:0964-41-2387">0964-41-2387</a><br>
+            <span class="blog-aside__hours">平日 10:00〜17:00（時間外も要相談）</span>
+          </p>
+        </div>
+      </aside>
     </div>
-
-    <div class="support-banner">
-      <strong>ご相談窓口：</strong> 0964-41-2387（平日10:00〜17:00） / info@higonoie.or.jp（24時間受付）
-    </div>
-
-    <div class="page-cta-box">
-      <a href="tel:0964-41-2387" class="page-cta-link">今すぐ電話相談</a>
-      <a href="/contact" class="page-cta-link page-cta-link--ghost">無料相談の詳細へ</a>
-    </div>
-
-    <p class="ref-note">
-      参考：厚労省「サービスの利用手続き」等に基づく案内。詳細は<strong>市町村</strong>・<strong>相談支援専門員</strong>へご確認ください。
-      <a href="https://www.mhlw.go.jp/bunya/shougaihoken/service/riyou.html" rel="noopener noreferrer" target="_blank">厚生労働省：サービスの利用手続き</a>
-    </p>
   </section>
 
   <section class="content-section kyushu-nature-section landing-heavy" aria-label="九州の自然と回復環境">
@@ -1156,45 +1423,174 @@
     </div>
   </section>
 
-  <section class="content-section detail-section landing-heavy standalone-page site-copy" id="family-guide">
+<section class="content-section detail-section prose-section standalone-page info-sheet site-copy family-page landing-heavy" id="family-guide">
     <p class="section-kicker">FAMILY SUPPORT</p>
     <h2 class="section-title section-title--stack">
       <span class="section-title__main">家族ガイド</span>
-      <span class="section-title__sub">家族が先につながることが回復の第一歩</span>
+      <span class="section-title__sub">家族が先につながることが、回復の第一歩</span>
     </h2>
-    <div class="copy-grid">
-      <div class="text-content">
-        ご家族だけのご相談を、私たちは最優先で受け付けています。依存症は「意思の弱さ」ではなく、脳と行動の病気です。だからこそ、ご家族が正しい知識を持つことが、回復プロセス全体の安全性と継続性を大きく左右します。
-      </div>
-      <div class="text-content">
-        ご家族が疲弊した状態では、本人支援も持続しません。ひごのいえは医療機関・行政機関と連携しながら、家族の不安整理、境界線の引き方、危機時対応、生活再建の段取りまで、具体的に伴走します。
-      </div>
-    </div>
-    <figure class="section-showcase family-program-visual">
+    <p class="prose-lead">
+      ご家族だけのご相談を、私たちは<strong>最優先</strong>で受け付けています。依存症は「意思の弱さ」ではなく、脳と行動の病気です。ご家族が正しい知識と支援の設計図を持つことが、本人の回復の安全性と継続性を大きく左右します。<br class="br-md-up">
+      ひごのいえは医療機関・行政機関と連携しながら、不安の整理、境界線の引き方、危機時対応、生活再建の段取りまで、具体的に伴走します。
+    </p>
+    <ul class="prose-highlights">
+      <li>本人の同意がなくても、<strong>家族だけ</strong>の相談が可能（秘密厳守）</li>
+      <li>「責める支援」から「回復を支える関わり方」への転換を一緒に設計</li>
+      <li>家族会・面談・危機時対応まで、医療・福祉・行政と一本化</li>
+      <li>家族の疲弊を防ぐセルフケアと、生活再建の段取りを具体化</li>
+    </ul>
+
+    <figure class="home-showcase-single family-hero-visual">
       <img src="/static/family-meeting-laughing.jpg?v=20260521b" alt="明るい施設内で笑顔の家族プログラム・家族会" width="1200" height="800" loading="lazy" decoding="async">
       <figcaption>ご家族向けのプログラム・家族会。責め合わず、学び合い、回復の設計図を一緒につくります。</figcaption>
     </figure>
-    <div class="family-process">
-      <h3>家族が先に取り組む回復プロセス</h3>
-      <ol class="family-process-list">
-        <li><strong>Step 1:</strong> 依存症を病気として理解する（責める支援から卒業する）</li>
-        <li><strong>Step 2:</strong> 家族の安全確保と生活基盤を整える（睡眠・金銭・相談先）</li>
-        <li><strong>Step 3:</strong> 本人との関わり方を再設計する（境界線・言葉・距離感）</li>
-        <li><strong>Step 4:</strong> 医療・福祉・行政との連携ラインを一本化する</li>
-        <li><strong>Step 5:</strong> 再発時を想定した家族行動計画を作る</li>
-      </ol>
+
+    <div class="info-sheet__layout">
+      <article class="info-panel info-panel--wide info-panel--highlight family-callout">
+        <h3 class="info-panel__title">なぜ「家族が先」なのか</h3>
+        <p class="info-panel__text">
+          依存症の回復は、本人だけの努力では成立しません。ご家族が疲弊した状態では、本人支援も持続しません。研究・現場知見ともに、<strong>家族の理解と関わり方の見直し</strong>が再発予防と生活再建の鍵であることが示されています。<br>
+          ひごのいえは、家族こそ回復チームの中核であるという前提で支援を設計しています。
+        </p>
+      </article>
+
+      <div class="info-sheet__row">
+        <article class="info-panel">
+          <h3 class="info-panel__title">家族だけの相談</h3>
+          <dl class="info-dl info-dl--compact">
+            <div class="info-dl__row"><dt>対象</dt><dd>配偶者・親・兄弟・子ども等</dd></div>
+            <div class="info-dl__row"><dt>内容</dt><dd>依存症の理解・関わり方・危機対応</dd></div>
+            <div class="info-dl__row"><dt>本人</dt><dd>同意なく相談可（秘密厳守）</dd></div>
+            <div class="info-dl__row"><dt>初回</dt><dd><strong>無料</strong>・電話・メール可</dd></div>
+          </dl>
+        </article>
+        <article class="info-panel">
+          <h3 class="info-panel__title">家族のセルフケア</h3>
+          <dl class="info-dl info-dl--compact">
+            <div class="info-dl__row"><dt>睡眠</dt><dd>自分の生活リズムを守る</dd></div>
+            <div class="info-dl__row"><dt>金銭</dt><dd>共倒れを防ぐ境界線</dd></div>
+            <div class="info-dl__row"><dt>感情</dt><dd>一人で抱え込まない相談先</dd></div>
+            <div class="info-dl__row"><dt>支援</dt><dd>家族会・専門家へのつながり</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">家族が先に取り組む回復プロセス</h3>
+        <ol class="info-steps family-steps">
+          <li><span class="info-steps__label">1</span><span class="info-steps__body">依存症を病気として理解する（責める支援から卒業する）</span><span class="info-steps__time">理解</span></li>
+          <li><span class="info-steps__label">2</span><span class="info-steps__body">家族の安全確保と生活基盤を整える（睡眠・金銭・相談先）</span><span class="info-steps__time">安全</span></li>
+          <li><span class="info-steps__label">3</span><span class="info-steps__body">本人との関わり方を再設計する（境界線・言葉・距離感）</span><span class="info-steps__time">関係</span></li>
+          <li><span class="info-steps__label">4</span><span class="info-steps__body">医療・福祉・行政との連携ラインを一本化する</span><span class="info-steps__time">連携</span></li>
+          <li><span class="info-steps__label">5</span><span class="info-steps__body">再発時を想定した家族行動計画を作る</span><span class="info-steps__time">計画</span></li>
+        </ol>
+      </article>
     </div>
-    <div class="family-recovery-chart" aria-label="家族支援による回復継続のポイント">
-      <h3>回復継続を支える家族支援の重点配分</h3>
-      <div class="chart-row"><span>依存症理解の学習</span><div class="chart-bar" style="--bar: 92%;"></div></div>
-      <div class="chart-row"><span>感情整理と境界線</span><div class="chart-bar" style="--bar: 84%;"></div></div>
-      <div class="chart-row"><span>危機時対応の準備</span><div class="chart-bar" style="--bar: 78%;"></div></div>
-      <div class="chart-row"><span>医療・行政連携</span><div class="chart-bar" style="--bar: 81%;"></div></div>
-      <div class="chart-row"><span>生活再建の伴走</span><div class="chart-bar" style="--bar: 88%;"></div></div>
+
+    <div class="family-chart-grid" aria-label="家族支援の重点とよくあるお悩み">
+      <article class="family-recovery-chart family-chart">
+        <h3>回復継続を支える家族支援の重点</h3>
+        <p class="family-chart__intro">ひごのいえが家族支援で特に重視する要素です（相対的な重要度イメージ）。</p>
+        <div class="chart-row"><span>依存症理解の学習</span><div class="chart-bar family-chart-bar--focus" style="--bar: 92%;"></div></div>
+        <div class="chart-row"><span>感情整理と境界線</span><div class="chart-bar family-chart-bar--focus" style="--bar: 84%;"></div></div>
+        <div class="chart-row"><span>危機時対応の準備</span><div class="chart-bar family-chart-bar--focus" style="--bar: 78%;"></div></div>
+        <div class="chart-row"><span>医療・行政連携</span><div class="chart-bar family-chart-bar--focus" style="--bar: 81%;"></div></div>
+        <div class="chart-row"><span>生活再建の伴走</span><div class="chart-bar family-chart-bar--focus" style="--bar: 88%;"></div></div>
+      </article>
+
+      <article class="family-recovery-chart family-chart">
+        <h3>ご家族からよく寄せられるお悩み</h3>
+        <p class="family-chart__intro">相談現場で多いテーマです。個人差はありますが、ひごのいえは次の順で整理・伴走します。</p>
+        <div class="chart-row"><span>「何を信じればいいかわからない」</span><div class="chart-bar family-chart-bar--worry" style="--bar: 90%;"></div></div>
+        <div class="chart-row"><span>「止めても止められない」</span><div class="chart-bar family-chart-bar--worry" style="--bar: 86%;"></div></div>
+        <div class="chart-row"><span>「借金・生活が崩れている」</span><div class="chart-bar family-chart-bar--worry" style="--bar: 82%;"></div></div>
+        <div class="chart-row"><span>「再発したらどうすれば」</span><div class="chart-bar family-chart-bar--worry" style="--bar: 88%;"></div></div>
+        <div class="chart-row"><span>「自分も限界・孤立している」</span><div class="chart-bar family-chart-bar--worry" style="--bar: 84%;"></div></div>
+        <p class="family-chart__note">※相談現場の傾向をもとにした相対比較（％）。一人ひとりの優先順位は異なります。</p>
+      </article>
     </div>
-    <div class="text-content family-emphasis">
-      依存症の回復は、本人だけの努力で成立するものではありません。家族が先に「学ぶ」「つながる」「支援の設計図を持つ」ことで、回復の初速が変わります。ひごのいえは、家族こそ回復チームの中核であるという前提で支援を設計しています。
+
+    <figure class="home-showcase-single family-support-visual">
+      <img src="/static/family-support-session.jpg?v=20260521b" alt="スタッフとご家族が穏やかに対話する家族支援セッション" width="1200" height="800" loading="lazy" decoding="async">
+      <figcaption>スタッフが同席する家族面談。正論で責めるのではなく、今日からできる一歩を一緒に整理します。</figcaption>
+    </figure>
+
+    <div class="info-sheet__layout">
+      <div class="info-sheet__row">
+        <article class="info-panel">
+          <h3 class="info-panel__title">危機時の家族対応</h3>
+          <dl class="info-dl info-dl--compact">
+            <div class="info-dl__row"><dt>再使用</dt><dd>孤立させず、連絡ルートを確保</dd></div>
+            <div class="info-dl__row"><dt>暴力</dt><dd>安全確保を最優先・専門機関へ</dd></div>
+            <div class="info-dl__row"><dt>自傷</dt><dd>医療機関・119への連携</dd></div>
+            <div class="info-dl__row"><dt>計画</dt><dd>事前に家族行動計画を作成</dd></div>
+          </dl>
+        </article>
+        <article class="info-panel">
+          <h3 class="info-panel__title">連携する機関</h3>
+          <dl class="info-dl info-dl--compact">
+            <div class="info-dl__row"><dt>医療</dt><dd>精神科・依存症専門・かかりつけ</dd></div>
+            <div class="info-dl__row"><dt>福祉</dt><dd>相談支援・障害福祉サービス</dd></div>
+            <div class="info-dl__row"><dt>行政</dt><dd>市町村・生活保護・就労支援</dd></div>
+            <div class="info-dl__row"><dt>司法</dt><dd>保護司・法テラス等（必要時）</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <article class="info-panel info-panel--wide">
+        <h3 class="info-panel__title">家族会・プログラム（例）</h3>
+        <div class="family-program-grid">
+          <div class="family-program-item">
+            <h4>家族学習会</h4>
+            <p>依存症のメカニズム、再発予防、関わり方の基本を学ぶ集団プログラム。</p>
+          </div>
+          <div class="family-program-item">
+            <h4>個別家族面談</h4>
+            <p>ご家庭の状況に合わせ、境界線・言葉・距離感を具体化します。</p>
+          </div>
+          <div class="family-program-item">
+            <h4>危機対応ロールプレイ</h4>
+            <p>再使用・衝突時の連絡先・行動計画を、事前に練習します。</p>
+          </div>
+        </div>
+        <p class="info-panel__note">※プログラム内容・頻度は時期により異なります。詳細は相談時にご案内します。</p>
+      </article>
+
+      <div class="info-sheet__row">
+        <article class="info-panel">
+          <h3 class="info-panel__title">よくあるご質問</h3>
+          <dl class="info-dl info-dl--faq">
+            <div class="info-dl__row"><dt>本人に内緒？</dt><dd>家族のみ相談可。秘密厳守</dd></div>
+            <div class="info-dl__row"><dt>遠方から？</dt><dd>電話・オンライン可。要相談</dd></div>
+            <div class="info-dl__row"><dt>費用は？</dt><dd>初回相談無料。以降は個別案内</dd></div>
+            <div class="info-dl__row"><dt>入所前でも？</dt><dd>可。支援設計の相談から</dd></div>
+          </dl>
+        </article>
+        <article class="info-panel">
+          <h3 class="info-panel__title">相談の流れ</h3>
+          <ol class="info-steps">
+            <li><span class="info-steps__label">1</span><span class="info-steps__body">お電話・メールでご連絡</span><span class="info-steps__time">即日</span></li>
+            <li><span class="info-steps__label">2</span><span class="info-steps__body">状況ヒアリング・不安の整理</span><span class="info-steps__time">初回</span></li>
+            <li><span class="info-steps__label">3</span><span class="info-steps__body">支援方針・連携先の提案</span><span class="info-steps__time">個別</span></li>
+            <li><span class="info-steps__label">4</span><span class="info-steps__body">家族会・面談・本人支援へ</span><span class="info-steps__time">継続</span></li>
+          </ol>
+        </article>
+      </div>
     </div>
+
+    <div class="support-banner family-support-banner">
+      <strong>家族相談窓口：</strong> 0964-41-2387（平日10:00–17:00） / info@higonoie.or.jp（24時間受付）— 本人の同意なくご相談いただけます
+    </div>
+
+    <div class="page-cta-box">
+      <p>一人で抱え込まず、まずはご家族だけの相談から。秘密厳守・初回無料です。</p>
+      <a href="tel:0964-41-2387" class="page-cta-link">今すぐ電話相談</a>
+      <a href="tel:0964-41-2387" class="page-cta-link page-cta-link--ghost">電話相談</a>
+    </div>
+
+    <p class="ref-note">
+      参考：SAMHSA「家族支援の原則」、日本家族会連合会の家族支援ガイド等に基づく概要。個別の支援方針は<strong>初回相談</strong>で整理します。
+    </p>
   </section>
 
   <section class="content-section community-energy-section landing-heavy" aria-label="仲間と笑い合う回復の風景">
@@ -1269,7 +1665,7 @@
     </article>
   </section>
 
-  <section class="staff-story standalone-page site-copy" id="staff">
+  <section class="staff-story standalone-page site-copy landing-heavy" id="staff">
     <p class="section-kicker">OUR STAFF</p>
     <h2 class="section-title">スタッフ紹介</h2>
     <div class="staff-visual-grid">
@@ -1336,7 +1732,7 @@
     <div class="faq-grid">
       <article class="faq-item">
         <h3>Q. 費用はどのくらいかかりますか？</h3>
-        <p>A. 障害福祉サービス受給者証をお持ちの方は自己負担額が軽減されます。詳しくは利用案内をご覧ください。</p>
+        <p>A. 障害福祉サービス受給者証をお持ちの方は自己負担額が軽減されます。詳しくは<a href="/blog">ブログ</a>をご覧ください。</p>
       </article>
       <article class="faq-item">
         <h3>Q. 家族だけの相談も可能ですか？</h3>
@@ -1353,7 +1749,7 @@
     </div>
   </section>
 
-  <section class="contact-section standalone-page site-copy" id="contact">
+  <section class="contact-section standalone-page site-copy landing-heavy" id="contact">
     <h2 class="contact-title">安心してご相談ください</h2>
     <div class="contact-subtitle">
       「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。
@@ -1370,7 +1766,8 @@
     </div>
     <div class="contact-hours">
       受付時間：平日 10:00〜17:00<br>
-      土日祝日、時間外のご相談も可能です。まずはお電話でご相談ください。
+      土日祝日、時間外のご相談も可能です。<br>
+      <span class="contact-hours__call">まずはお電話でご相談ください。</span>
     </div>
   </section>
 
@@ -1385,41 +1782,57 @@
     <a class="hero-variant-picker__btn" data-hero-variant="sheet" href="?hero-preview=1&amp;hero=sheet">E シート<small>写真＋白紙</small></a>
   </nav>
 
-  <aside class="mobile-cta-bar" id="mobileCtaBar" aria-label="クイック相談" hidden>
-    <a href="tel:0964-41-2387" class="mobile-cta-bar__btn mobile-cta-bar__btn--phone">
-      <span class="mobile-cta-bar__icon" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 3h3l1.5 5-2 1.2a13 13 0 006.8 6.8L19 14l5 1.5v3A2.5 2.5 0 0117.5 21C9.5 21 3 14.5 3 6.5A2.5 2.5 0 016.5 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-      </span>
-      <span class="mobile-cta-bar__text">
-        <span class="mobile-cta-bar__label">電話相談</span>
-        <span class="mobile-cta-bar__sub">0964-41-2387</span>
-      </span>
-    </a>
-    <a href="/contact" class="mobile-cta-bar__btn mobile-cta-bar__btn--contact">
-      <span class="mobile-cta-bar__icon" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-      </span>
-      <span class="mobile-cta-bar__text">
-        <span class="mobile-cta-bar__label">無料相談</span>
-        <span class="mobile-cta-bar__sub">24時間メール可</span>
-      </span>
-    </a>
-  </aside>
+
 
   <footer class="site-footer">
-    <div class="site-footer__cta-band">
-      <div class="site-footer__cta-inner">
-        <div class="site-footer__cta-copy">
-          <p class="site-footer__cta-eyebrow">RECOVERY SUPPORT DESK</p>
-          <h2 class="site-footer__cta-title">まずは、安心してご相談ください</h2>
-          <p class="site-footer__cta-text">初回相談無料・秘密厳守。ご本人・ご家族・関係機関からのお問い合わせに対応しています。</p>
-        </div>
-        <div class="site-footer__cta-actions">
-          <a href="tel:0964-41-2387" class="site-footer__cta-phone">0964-41-2387</a>
-          <a href="/contact" class="site-footer__cta-button">相談窓口へ</a>
-        </div>
+
+  <section class="landing-contact" aria-label="ご相談・お問い合わせ">
+    <div class="landing-contact__inner site-copy">
+      <h2 class="landing-contact__title">安心してご相談ください</h2>
+      <p class="landing-contact__lead">「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。</p>
+      <p class="landing-contact__message">あなたの勇気ある一歩を、私たちは心から応援します。</p>
+      <div class="landing-contact__actions">
+        <a href="tel:0964-41-2387" class="landing-contact__btn landing-contact__btn--glass">
+          <span class="landing-contact__btn-body">
+            <span class="landing-contact__btn-icon" aria-hidden="true">
+            <svg class="landing-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+          </span>
+          <span class="landing-contact__btn-stack">
+            <span class="landing-contact__btn-label">無料相談する</span>
+            <span class="landing-contact__btn-hint">無料・秘密厳守</span>
+          </span>
+          </span>
+        </a>
+        <a href="tel:0964-41-2387" class="landing-contact__btn landing-contact__btn--glass">
+          <span class="landing-contact__btn-body">
+            <span class="landing-contact__btn-icon" aria-hidden="true">
+            <svg class="landing-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="landing-contact__btn-stack">
+            <span class="landing-contact__btn-label">24時間相談受付</span>
+            <span class="landing-contact__btn-hint">0964-41-2387</span>
+          </span>
+          </span>
+        </a>
+        <a href="/testimonials" class="landing-contact__btn landing-contact__btn--glass">
+          <span class="landing-contact__btn-body">
+            <span class="landing-contact__btn-icon" aria-hidden="true">
+            <svg class="landing-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+          </span>
+          <span class="landing-contact__btn-stack landing-contact__btn-stack--solo">
+            <span class="landing-contact__btn-label">体験談を読む</span>
+          </span>
+          </span>
+        </a>
       </div>
+      <p class="landing-contact__hours">
+        <span class="landing-contact__hours-line">受付時間：平日 10:00〜17:00</span>
+        <span class="landing-contact__hours-line">土日祝日、時間外のご相談も可能です。</span>
+        <span class="landing-contact__hours-line landing-contact__hours-line--call">まずはお電話でご相談ください。</span>
+      </p>
     </div>
+  </section>
+
     <div class="site-footer__main">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
@@ -1436,14 +1849,13 @@
             <a href="/program">プログラム</a>
             <a href="/rapport">女性専用施設</a>
             <a href="/grouphome">グループホーム</a>
-            <a href="/guide">利用案内</a>
+            <a href="/blog">ブログ</a>
+          </div>
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">ご案内・相談</h3>
             <a href="/testimonials">体験談</a>
             <a href="/staff">スタッフ紹介</a>
             <a href="/family-guide">家族ガイド</a>
-            <a href="/contact">相談窓口</a>
-          </div>
-          <div class="site-footer__nav-col">
-            <h3 class="site-footer__nav-title">サポート</h3>
             <a href="tel:0964-41-2387">電話相談（平日10:00–17:00）</a>
           </div>
         </nav>
@@ -1459,25 +1871,9 @@
     const menuButton = document.getElementById('menuButton');
     const closeMenuButton = document.getElementById('closeMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
-    const siteChrome = document.getElementById('siteChrome');
-
-    const syncSiteChromeHeight = () => {
-      if (!siteChrome) return;
-      document.documentElement.style.setProperty(
-        '--site-chrome-height',
-        `${siteChrome.offsetHeight}px`
-      );
-    };
-
-    syncSiteChromeHeight();
-    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
-    if (siteChrome && typeof ResizeObserver !== 'undefined') {
-      new ResizeObserver(syncSiteChromeHeight).observe(siteChrome);
-    }
 
     const openMobileMenu = () => {
       if (!mobileMenu) return;
-      syncSiteChromeHeight();
       mobileMenu.hidden = false;
       requestAnimationFrame(() => {
         mobileMenu.classList.add('active');
@@ -1518,6 +1914,17 @@
       };
       menuButton.addEventListener('click', onMenuOpen);
     }
+
+    const siteChrome = document.getElementById('siteChrome');
+    const syncSiteChromeHeight = () => {
+      if (!siteChrome) return;
+      document.documentElement.style.setProperty(
+        '--site-chrome-height',
+        `${siteChrome.offsetHeight}px`
+      );
+    };
+    syncSiteChromeHeight();
+    window.addEventListener('resize', syncSiteChromeHeight, { passive: true });
 
     document.querySelectorAll('.data-table').forEach((table) => {
       const headers = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
@@ -1577,11 +1984,10 @@
       '/testimonials': 'testimonials',
       '/rapport': 'rapport',
       '/grouphome': 'grouphome',
-      '/guide': 'guide',
+      '/blog': 'blog',
       '/family-guide': 'family-guide',
-      '/contact': 'contact',
       '/women': 'rapport',
-      '/usage': 'guide',
+      '/usage': 'blog',
       '/family': 'family-guide',
     };
 
@@ -1591,9 +1997,8 @@
       '/testimonials': ['体験談 | ひごのいえ', '依存症回復を実現した体験談と、回復への具体的な道のりをご紹介します。'],
       '/rapport': ['女性専用施設 らぽーる | ひごのいえ', '女性専用の依存症回復施設らぽーる。トラウマに配慮した安全な環境・女性スタッフ常駐・2025年3月開設。相談無料・秘密厳守。'],
       '/grouphome': ['グループホーム | ひごのいえ', '障害福祉サービス・共同生活援助（グループホーム）の制度と、ひごのいえの支援内容をわかりやすくご案内します。'],
-      '/guide': ['利用案内 | ひごのいえ', '初回相談から入所・継続支援・地域移行までの流れ、受付時間、準備物をご案内します。'],
+      '/blog': ['ブログ | ひごのいえ', '開所からの歩み・日々の記録・お知らせ。回復への不安に寄り添う記事を掲載しています。'],
       '/family-guide': ['家族ガイド | ひごのいえ', 'ご家族向けの相談支援と連携体制についてご案内します。'],
-      '/contact': ['相談窓口 | ひごのいえ', '相談窓口の受付時間と連絡先をご案内します。'],
     };
 
     const repoBase = (document.querySelector('base')?.getAttribute('href') || '')
@@ -1608,6 +2013,11 @@
       }
     }
 
+    if (normalizedPath === '/guide' || normalizedPath === '/usage' || normalizedPath === '/contact') {
+      const blogBase = repoBase ? `/${repoBase}/blog` : '/blog';
+      window.location.replace(`${window.location.origin}${blogBase}`);
+    }
+
     if (normalizedPath === '/about') {
       window.location.replace(`${window.location.origin}/#page-menu`);
     }
@@ -1619,9 +2029,8 @@
       '/testimonials',
       '/rapport',
       '/grouphome',
-      '/guide',
+      '/blog',
       '/family-guide',
-      '/contact',
       '/women',
       '/usage',
       '/family',
@@ -1684,7 +2093,7 @@
           sectionTarget.classList.add('standalone-target');
         }
         if (activeSectionId === 'testimonials') {
-          document.querySelectorAll('.compact-testimonial-wrap, .testimonial-grid-wrap').forEach((el) => {
+          document.querySelectorAll('.testimonial-grid-wrap').forEach((el) => {
             el.classList.add('standalone-target');
           });
         }
@@ -1709,29 +2118,6 @@
       }
     }
 
-    const mobileCtaBar = document.getElementById('mobileCtaBar');
-    const mobileCtaMq = window.matchMedia('(max-width: 768px)');
-
-    const syncMobileCtaBar = () => {
-      const isMobile = mobileCtaMq.matches;
-      document.body.classList.toggle('has-mobile-cta', isMobile);
-      if (!mobileCtaBar) return;
-      mobileCtaBar.hidden = !isMobile;
-      mobileCtaBar.setAttribute('aria-hidden', isMobile ? 'false' : 'true');
-      const barHeight = isMobile ? mobileCtaBar.offsetHeight : 0;
-      document.documentElement.style.setProperty('--mobile-cta-height', `${barHeight}px`);
-    };
-
-    syncMobileCtaBar();
-    mobileCtaMq.addEventListener('change', syncMobileCtaBar);
-    if (mobileCtaBar && typeof ResizeObserver !== 'undefined') {
-      new ResizeObserver(syncMobileCtaBar).observe(mobileCtaBar);
-    }
-    window.addEventListener('orientationchange', () => {
-      window.setTimeout(syncMobileCtaBar, 120);
-    });
-    window.addEventListener('resize', syncMobileCtaBar, { passive: true });
-
     const siteHeader = document.getElementById('siteHeader');
     const setHeaderState = () => {
       if (!siteHeader) return;
@@ -1742,7 +2128,7 @@
 
     const isStandaloneView = document.body.classList.contains('is-standalone-view');
     const revealTargets = document.querySelectorAll(
-      '.content-section, .visual-card, .axis-card, .pillar-item, .nav-card, .metric-card, .faq-item'
+      '.content-section, .visual-card, .axis-card, .pillar-item, .nav-card, .metric-card, .faq-item, .concerns-card'
     );
 
     if (isStandaloneView) {
@@ -1787,6 +2173,26 @@
     } else if (!isStandaloneView) {
       revealTargets.forEach((el) => el.classList.add('is-visible'));
     }
+    const blogPage = document.getElementById('blog');
+    if (blogPage) {
+      const blogFilters = blogPage.querySelectorAll('.blog-filter');
+      const blogItems = blogPage.querySelectorAll('[data-blog-category]');
+      blogFilters.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.blogFilter;
+          blogFilters.forEach((b) => b.classList.toggle('is-active', b === btn));
+          blogItems.forEach((item) => {
+            const show = filter === 'all' || item.dataset.blogCategory === filter;
+            item.hidden = !show;
+          });
+          const featured = document.getElementById('blog-featured');
+          if (featured) {
+            featured.hidden = filter !== 'all' && filter !== 'news';
+          }
+        });
+      });
+    }
+
   </script>
 </body>
 </html>

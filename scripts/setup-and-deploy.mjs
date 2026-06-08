@@ -76,6 +76,8 @@ async function main() {
     'main',
     '--commit-dirty=true',
     '--skip-caching',
+    '--commit-message',
+    'deploy: higonoie.com production build',
   ]
 
   console.log(`[deploy] Deploying to Cloudflare Pages project: ${projectName}`)

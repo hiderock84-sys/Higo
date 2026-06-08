@@ -32,6 +32,8 @@ jobs:
           grep -q 'info-sheet' dist/index.html
           grep -q 'hero-kyushu-green' dist/index.html
           grep -q 'rapport-faq-block' dist/index.html
+          grep -q 'repeat(8, minmax(0, 1fr))' dist/static/style.css
+          ! grep -q 'mobile-cta-bar' dist/index.html
 
       - name: Check Cloudflare credentials
         run: |

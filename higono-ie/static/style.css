@@ -2557,6 +2557,10 @@ body.is-landing .visual-strip {
   margin-bottom: 20px;
 }
 
+body.is-landing .visual-card:not(:first-child) {
+  display: none;
+}
+
 body.is-landing .visual-card img {
   height: clamp(128px, 22vw, 180px);
 }

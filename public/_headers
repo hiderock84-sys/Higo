@@ -1,7 +1,13 @@
 /index.html
   Cache-Control: no-cache, must-revalidate
 
-/guide
+/static/style.css
+  Cache-Control: no-cache, must-revalidate
+
+/static/hero-variants.css
+  Cache-Control: no-cache, must-revalidate
+
+/blog
   Cache-Control: no-cache, must-revalidate
 
 /grouphome
