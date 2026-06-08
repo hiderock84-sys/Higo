@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260615a" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=20260613a" rel="stylesheet">
+  <link href="/static/style.css?v=20260615b" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=20260615b" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -108,7 +108,6 @@
       </a>
       <nav class="site-header__nav" aria-label="主要ナビゲーション">
         <a href="/top" class="site-header__link">トップ</a>
-        <a href="/#page-menu" class="site-header__link">ページメニュー</a>
         <a href="/program" class="site-header__link">プログラム</a>
         <a href="/rapport" class="site-header__link">女性専用施設</a>
         <a href="/grouphome" class="site-header__link">グループホーム</a>
@@ -149,23 +148,61 @@
       熊本・御船町を拠点に、依存症回復支援を行う一般社団法人です。ご本人・ご家族・関係機関からのご相談を、秘密厳守でお受けしています。
     </div>
     <nav class="mobile-menu-nav">
-      <div class="mobile-menu-section-title">メニュー</div>
-      <a href="/top" class="mobile-menu-item">トップ</a>
-      <a href="/#page-menu" class="mobile-menu-item">ページメニュー</a>
-      <a href="/program" class="mobile-menu-item">プログラム</a>
-      <a href="/rapport" class="mobile-menu-item">女性専用施設</a>
-      <a href="/grouphome" class="mobile-menu-item">グループホーム</a>
-      <a href="/blog" class="mobile-menu-item">ブログ</a>
-      <a href="/testimonials" class="mobile-menu-item">体験談</a>
-      <a href="/staff" class="mobile-menu-item">スタッフ紹介</a>
-      <a href="/family-guide" class="mobile-menu-item">家族ガイド</a>
+      <div class="mobile-menu-overview" aria-label="支援のかたち">
+        <p class="mobile-menu-overview__lead">気になるテーマをタップして各ページへ</p>
+        <div class="landing-overview__grid landing-overview__grid--menu">
+          <a href="/program" class="landing-overview__card landing-overview__card--program">
+            <span class="landing-overview__card-media" aria-hidden="true"></span>
+            <span class="landing-overview__card-body">
+              <span class="landing-overview__card-title">回復プログラム</span>
+              <span class="landing-overview__card-text">生活リズム・医療連携・仲間との関係から、焦らず回復を支えます。</span>
+            </span>
+          </a>
+          <a href="/rapport" class="landing-overview__card landing-overview__card--rapport">
+            <span class="landing-overview__card-media" aria-hidden="true"></span>
+            <span class="landing-overview__card-body">
+              <span class="landing-overview__card-title">女性専用施設 らぽーる</span>
+              <span class="landing-overview__card-text">女性のみの空間・女性スタッフ常駐。安心して回復に集中できる拠点です。</span>
+            </span>
+          </a>
+          <a href="/blog" class="landing-overview__card landing-overview__card--blog">
+            <span class="landing-overview__card-media" aria-hidden="true"></span>
+            <span class="landing-overview__card-body">
+              <span class="landing-overview__card-title">ブログ</span>
+              <span class="landing-overview__card-text">開所からのお知らせと日々の記録。施設の歩みをお届けします。</span>
+            </span>
+          </a>
+          <a href="/family-guide" class="landing-overview__card landing-overview__card--family">
+            <span class="landing-overview__card-media" aria-hidden="true"></span>
+            <span class="landing-overview__card-body">
+              <span class="landing-overview__card-title">家族ガイド</span>
+              <span class="landing-overview__card-text">ご家族だけの相談も歓迎。本人支援と家族の回復の土台を整えます。</span>
+            </span>
+          </a>
+          <a href="/grouphome" class="landing-overview__card landing-overview__card--grouphome">
+            <span class="landing-overview__card-media" aria-hidden="true"></span>
+            <span class="landing-overview__card-body">
+              <span class="landing-overview__card-title">グループホーム</span>
+              <span class="landing-overview__card-text">共同生活で生活リズムの再建と地域生活への移行を支援します。</span>
+            </span>
+          </a>
+          <a href="/testimonials" class="landing-overview__card landing-overview__card--testimonials">
+            <span class="landing-overview__card-media" aria-hidden="true"></span>
+            <span class="landing-overview__card-body">
+              <span class="landing-overview__card-title">体験談</span>
+              <span class="landing-overview__card-text">回復者の声と、回復への具体的な道のりをお届けします。</span>
+            </span>
+          </a>
+          <a href="/staff" class="landing-overview__card landing-overview__card--staff">
+            <span class="landing-overview__card-media" aria-hidden="true"></span>
+            <span class="landing-overview__card-body">
+              <span class="landing-overview__card-title">スタッフ紹介</span>
+              <span class="landing-overview__card-text">支援スタッフと代表メッセージ。回復を支えるチームをご紹介します。</span>
+            </span>
+          </a>
+        </div>
+      </div>
     </nav>
-    <div class="mobile-menu-contact">
-      <div class="mobile-menu-section-title">お問い合わせ</div>
-      <a href="tel:0964-41-2387" class="mobile-menu-contact-phone">0964-41-2387</a>
-      <div class="mobile-menu-contact-hours">平日 10:00〜17:00</div>
-      <div class="mobile-menu-contact-address">熊本県上益城郡御船町</div>
-    </div>
   </div>
 
   <main id="main-content">
@@ -209,10 +246,10 @@
             </span>
           </a>
           <a href="/blog" class="hero-action hero-action--premium hero-action--glass">
-            <span class="hero-action__icon"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C10.87 15.429 7 11.613 7 8a5 5 0 0 1 10 0"/><circle cx="12" cy="8" r="2"/></svg></span>
+            <span class="hero-action__icon"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
             <span class="hero-action__stack">
-              <span class="hero-action__label">見学・入所の流れ</span>
-              <span class="hero-action__hint">初回相談から</span>
+              <span class="hero-action__label">ブログ</span>
+              <span class="hero-action__hint">活動記録お知らせ</span>
             </span>
           </a>
           <a href="tel:0964-41-2387" class="hero-action hero-action--premium hero-action--glass">
@@ -298,172 +335,14 @@
       </ul>
       <div class="concerns-section__footer">
         <p class="concerns-section__closing">あなたやご家族だけで悩む必要はありません。<br class="br-sm-only">ひごのいえでは医療・福祉・地域と連携し、<br class="br-md-up">回復への第一歩をサポートしています。</p>
-        <a href="tel:0964-41-2387" class="concerns-section__cta concerns-section__cta--glass">
-          <span class="concerns-section__cta-body">
-            <span class="concerns-section__cta-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </span>
-            <span class="concerns-section__cta-stack">
-              <span class="concerns-section__cta-label">無料相談する</span>
-              <span class="concerns-section__cta-hint">無料・秘密厳守</span>
-            </span>
+        <a href="tel:0964-41-2387" class="concerns-section__cta concerns-section__cta--glass hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">無料相談する</span>
+            <span class="hero-action__hint">無料・秘密厳守</span>
           </span>
         </a>
       </div>
-    </div>
-  </section>
-
-
-  <section class="visual-strip" aria-label="熊本と九州の自然・暮らしの風景">
-    <article class="visual-card">
-      <img src="/static/hero-nature-majestic.jpg?v=20260525" alt="熊本・阿蘇の山並みと草原の風景" width="1200" height="800" loading="eager" decoding="async">
-      <p class="visual-card__caption">阿蘇の広い空と草原が、焦らず整える回復の時間を支えます。</p>
-    </article>
-    <article class="visual-card">
-      <img src="/static/hero-amakusa-sea.jpg?v=20260521b" alt="熊本・上天草の海と島々の風景" width="1200" height="800" loading="eager" decoding="async">
-      <p class="visual-card__caption">穏やかな海の光が、心を落ち着け、明日への一歩を後押しします。</p>
-    </article>
-    <article class="visual-card">
-      <img src="/static/amakusa-coast.jpg?v=20260526" alt="熊本・天草の青い海と島々の風景" width="1200" height="800" loading="eager" decoding="async">
-      <p class="visual-card__caption">九州の自然のリズムに合わせ、生活と心を少しずつ取り戻します。</p>
-    </article>
-  </section>
-
-  <section class="brand-axis" aria-label="ひごのいえの支援設計">
-    <article class="axis-card">
-      <h3>NATURE RESET</h3>
-      <p>阿蘇と天草の自然環境で、自律神経と生活リズムを再構築する土台を整えます。</p>
-    </article>
-    <article class="axis-card">
-      <h3>RESTART DESIGN</h3>
-      <p>医療・福祉・家族連携を丁寧に束ね、再出発に必要な評価・計画・伴走を一人ひとりに合わせて設計します。</p>
-    </article>
-    <article class="axis-card">
-      <h3>HOME FOR GROWTH</h3>
-      <p>回復だけでなく、個性を尊重し合い、人生を再設計する「家」として機能させます。</p>
-    </article>
-  </section>
-
-
-  <section class="navigation-section" id="page-menu">
-    <div class="nav-section-header">
-      <h2 class="section-title">ページメニュー</h2>
-      <div class="nav-section-subtitle">ご覧になりたい内容をお選びください。<br class="br-md-up">各ページで、支援内容をわかりやすくご案内しています。</div>
-    </div>
-    <div class="nav-grid">
-      <a href="/top" class="nav-card nav-card-top" aria-label="トップへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">トップ</div>
-          <div class="nav-subtitle">ホームへ戻る</div>
-        </div>
-      </a>
-      <a href="/#page-menu" class="nav-card nav-card-menu" aria-label="ページメニューへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">ページメニュー</div>
-          <div class="nav-subtitle">各ページへの入口</div>
-        </div>
-      </a>
-      <a href="/program" class="nav-card nav-card-program" aria-label="プログラムへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">プログラム</div>
-          <div class="nav-subtitle">回復への道のり</div>
-        </div>
-      </a>
-      <a href="/rapport" class="nav-card nav-card-women" aria-label="女性専用施設へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">女性専用施設</div>
-          <div class="nav-subtitle">らぽーる</div>
-        </div>
-      </a>
-      <a href="/grouphome" class="nav-card nav-card-home" aria-label="グループホームへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">グループホーム</div>
-          <div class="nav-subtitle">共同生活の場</div>
-        </div>
-      </a>
-      <a href="/blog" class="nav-card nav-card-blog" aria-label="ブログへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">ブログ</div>
-          <div class="nav-subtitle">活動記録・お知らせ</div>
-        </div>
-      </a>
-      <a href="/testimonials" class="nav-card nav-card-voice" aria-label="体験談へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">体験談</div>
-          <div class="nav-subtitle">回復者の声</div>
-        </div>
-      </a>
-      <a href="/staff" class="nav-card nav-card-staff" aria-label="スタッフ紹介へ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">スタッフ紹介</div>
-          <div class="nav-subtitle">支援スタッフと代表メッセージ</div>
-        </div>
-      </a>
-      <a href="/family-guide" class="nav-card nav-card-family" aria-label="家族ガイドへ移動">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">家族ガイド</div>
-          <div class="nav-subtitle">ご家族へのサポート</div>
-        </div>
-      </a>
-      <a href="tel:0964-41-2387" class="nav-card nav-card-contact" aria-label="電話相談へ">
-        <div class="nav-card-bg"></div>
-        <div class="nav-card-content">
-          <div class="nav-title">電話相談</div>
-          <div class="nav-subtitle">0964-41-2387</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-
-  <section class="landing-only landing-overview" aria-label="主要ページの概要">
-    <h2 class="landing-overview__title">支援のかたち</h2>
-    <p class="landing-overview__lead">気になるテーマをタップして各ページへ。枠内のどこを押しても移動できます。</p>
-    <div class="landing-overview__grid">
-      <a href="/program" class="landing-overview__card landing-overview__card--program">
-        <span class="landing-overview__card-media" aria-hidden="true"></span>
-        <span class="landing-overview__card-body">
-          <span class="landing-overview__card-title">回復プログラム</span>
-          <span class="landing-overview__card-text">「誰と生きるか」を最優先。生活リズム・医療連携・仲間との関係から、焦らず回復を支えます。</span>
-        </span>
-      </a>
-      <a href="/rapport" class="landing-overview__card landing-overview__card--rapport">
-        <span class="landing-overview__card-media" aria-hidden="true"></span>
-        <span class="landing-overview__card-body">
-          <span class="landing-overview__card-title">女性専用施設 らぽーる</span>
-          <span class="landing-overview__card-text">女性のみの空間・女性スタッフ常駐。トラウマに配慮し、安心して回復に集中できる拠点です。</span>
-        </span>
-      </a>
-      <a href="/blog" class="landing-overview__card landing-overview__card--blog">
-        <span class="landing-overview__card-media" aria-hidden="true"></span>
-        <span class="landing-overview__card-body">
-          <span class="landing-overview__card-title">ブログ</span>
-          <span class="landing-overview__card-text">開所からのお知らせと日々の記録。施設の歩みと、初めての方への安心メッセージをお届けします。</span>
-        </span>
-      </a>
-      <a href="/family-guide" class="landing-overview__card landing-overview__card--family">
-        <span class="landing-overview__card-media" aria-hidden="true"></span>
-        <span class="landing-overview__card-body">
-          <span class="landing-overview__card-title">家族ガイド</span>
-          <span class="landing-overview__card-text">ご家族だけの相談も歓迎。正しい知識と境界線づくりが、本人支援と家族の回復の土台になります。</span>
-        </span>
-      </a>
-      <a href="/grouphome" class="landing-overview__card landing-overview__card--grouphome">
-        <span class="landing-overview__card-media" aria-hidden="true"></span>
-        <span class="landing-overview__card-body">
-          <span class="landing-overview__card-title">グループホーム</span>
-          <span class="landing-overview__card-text">共同生活援助に基づく住まいで、生活リズムの再建と地域生活への移行を支援します。</span>
-        </span>
-      </a>
     </div>
   </section>
 
@@ -1058,10 +937,22 @@
       <figcaption>明るく清潔な住環境。施設特有の冷たさではなく、暮らしのなかで整える回復を目指します。</figcaption>
     </figure>
 
-    <div class="page-cta-box">
+    <div class="page-cta-box glass-btn-panel">
       <p>「女性専用なら話せるかも」— その一言だけでも大丈夫です。見学のみ・家族相談のみも歓迎します。</p>
-      <a href="/contact" class="page-cta-link">女性専用施設について相談する</a>
-      <a href="tel:0964-41-2387" class="page-cta-link page-cta-link--ghost">電話 0964-41-2387</a>
+      <div class="glass-btn-row glass-btn-row--stack">
+        <a href="/contact" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">女性専用施設について相談する</span>
+          </span>
+        </a>
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">電話 0964-41-2387</span>
+          </span>
+        </a>
+      </div>
     </div>
 
     <p class="ref-note">
@@ -1146,10 +1037,22 @@
       <figcaption>清潔で落ち着いた共用空間。生活リズムの再建に集中できる、住み心地のよい環境です。</figcaption>
     </figure>
 
-    <div class="page-cta-box">
+    <div class="page-cta-box glass-btn-panel">
       <p>受給者証の有無・申請方法が不明でもご相談ください。手続きと生活設計を伴走します。</p>
-      <a href="tel:0964-41-2387" class="page-cta-link">電話相談</a>
-      <a href="/blog" class="page-cta-link page-cta-link--ghost">ブログを読む</a>
+      <div class="glass-btn-row glass-btn-row--stack">
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">電話相談</span>
+          </span>
+        </a>
+        <a href="/blog" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">ブログを読む</span>
+          </span>
+        </a>
+      </div>
     </div>
 
     <p class="ref-note">
@@ -1167,18 +1070,30 @@
         回復への道のりに不安を感じる方へ——<strong>あなたは一人ではありません。</strong>
       </p>
       <p class="blog-hero__note">初回相談は無料・秘密厳守です。記事を読んだうえで、気が向いたときにご連絡ください。</p>
-      <div class="blog-hero__actions">
-        <a href="tel:0964-41-2387" class="blog-hero__cta blog-hero__cta--primary">無料相談する</a>
-        <a href="tel:0964-41-2387" class="blog-hero__cta blog-hero__cta--ghost">0964-41-2387</a>
+      <div class="blog-hero__actions glass-btn-row">
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">無料相談する</span>
+            <span class="hero-action__hint">無料・秘密厳守</span>
+          </span>
+        </a>
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">0964-41-2387</span>
+            <span class="hero-action__hint">24時間相談受付</span>
+          </span>
+        </a>
       </div>
     </header>
 
     <div class="blog-layout">
       <div class="blog-main">
         <div class="blog-toolbar" role="toolbar" aria-label="記事の絞り込み">
-          <button type="button" class="blog-filter is-active" data-blog-filter="all">すべて</button>
-          <button type="button" class="blog-filter" data-blog-filter="news">お知らせ</button>
-          <button type="button" class="blog-filter" data-blog-filter="diary">日々の記録</button>
+          <button type="button" class="blog-filter glass-btn-chip is-active" data-blog-filter="all">すべて</button>
+          <button type="button" class="blog-filter glass-btn-chip" data-blog-filter="news">お知らせ</button>
+          <button type="button" class="blog-filter glass-btn-chip" data-blog-filter="diary">日々の記録</button>
         </div>
 
         <article class="blog-featured" data-blog-category="news" id="blog-featured">
@@ -1365,9 +1280,21 @@
         <aside class="blog-reassure" aria-label="ご相談への案内">
           <h3 class="blog-reassure__title">記事を読んで、少し心が軽くなったら</h3>
           <p class="blog-reassure__text">相談は「覚悟」ではなく、情報収集の一歩としてお越しください。無理な勧誘はいたしません。</p>
-          <div class="page-cta-box">
-            <a href="/blog" class="page-cta-link page-cta-link--ghost">ブログを読む</a>
-            <a href="tel:0964-41-2387" class="page-cta-link page-cta-link--ghost">電話する</a>
+          <div class="page-cta-box glass-btn-panel">
+            <div class="glass-btn-row glass-btn-row--stack">
+        <a href="/blog" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">ブログを読む</span>
+          </span>
+        </a>
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">電話する</span>
+          </span>
+        </a>
+            </div>
           </div>
         </aside>
       </div>
@@ -1582,10 +1509,22 @@
       <strong>家族相談窓口：</strong> 0964-41-2387（平日10:00–17:00） / info@higonoie.or.jp（24時間受付）— 本人の同意なくご相談いただけます
     </div>
 
-    <div class="page-cta-box">
+    <div class="page-cta-box glass-btn-panel">
       <p>一人で抱え込まず、まずはご家族だけの相談から。秘密厳守・初回無料です。</p>
-      <a href="tel:0964-41-2387" class="page-cta-link">今すぐ電話相談</a>
-      <a href="tel:0964-41-2387" class="page-cta-link page-cta-link--ghost">電話相談</a>
+      <div class="glass-btn-row glass-btn-row--stack">
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">今すぐ電話相談</span>
+          </span>
+        </a>
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">電話相談</span>
+          </span>
+        </a>
+      </div>
     </div>
 
     <p class="ref-note">
@@ -1606,14 +1545,25 @@
     <div class="story-content">
       <div class="story-label">STORIES OF RECOVERY</div>
       <h2 class="story-title">絶望から希望へ</h2>
-      <div class="story-subtitle">
+      <p class="story-subtitle">
         5人の回復者が語る、再生の物語。<br class="br-md-up">
         彼らは地獄を見た。そして今、笑顔で未来を語る。
-      </div>
+      </p>
     </div>
   </section>
 
-  <section class="landing-only compact-testimonial-wrap" aria-label="体験談の要約">
+  <section class="testimonial-highlight landing-only" aria-label="体験談ハイライト">
+    <div class="testimonial-highlight__hero">
+      <div class="story-content">
+        <div class="story-label">STORIES OF RECOVERY</div>
+        <h2 class="story-title">絶望から希望へ</h2>
+        <p class="story-subtitle">
+          5人の回復者が語る、再生の物語。<br class="br-md-up">
+          彼らは地獄を見た。そして今、笑顔で未来を語る。
+        </p>
+      </div>
+    </div>
+    <div class="compact-testimonial-wrap testimonial-highlight__panel">
     <h3 class="compact-testimonial-title">体験談ハイライト</h3>
     <div class="compact-testimonial-grid">
       <article class="compact-testimonial-card">
@@ -1629,39 +1579,60 @@
         <p>女性専用施設で安心して支援につながり、断酒だけでなく生活全体を再建。子どもとの再会を支えに、回復を継続しています。</p>
       </article>
     </div>
-    <a href="/testimonials" class="compact-testimonial-link">全ての体験談を読む</a>
+            <a href="/testimonials" class="glass-btn hero-action hero-action--glass compact-testimonial-link">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">全ての体験談を読む</span>
+          </span>
+        </a>
+    </div>
   </section>
 
   <section class="testimonial-grid-wrap landing-heavy">
-    <article class="testimonial-card">
-      <h3>薬物依存症 / 回復者スタッフ</h3>
-      <p>
-        18歳で覚醒剤に手を出し、最初は「眠らずに働ける」「気持ちが軽くなる」と思っていました。けれど、使うたびに嘘が増え、約束を破り、人を傷つける自分になっていきました。20代で仕事を転々とし、借金を重ね、暴力団関係者とのつながりも断てず、逮捕3回・服役3回。出所するたびに「もう終わりにする」と誓いましたが、孤独と不安に耐えきれず、数日で再使用してしまう。その繰り返しでした。家族は電話に出なくなり、友人は連絡先を変え、気がつけば誰も私を信じていませんでした。最後の出所の日、迎えに来た人は本当に一人もいませんでした。駅のベンチで夜を明かし、「ここから先は死ぬか、助けを求めるかしかない」と思ったことを今でもはっきり覚えています。偶然、役所の相談窓口で紹介されたのが、回復支援につながる最初のきっかけでした。最初の数か月は、正直、何も信じられませんでした。人の優しさを疑い、指導されると反発し、少し嫌なことがあると逃げたくなる。そんな私にスタッフは、責めるでも放任するでもなく、「今日一日を一緒に整える」ことだけを繰り返してくれました。起床、食事、通院、ミーティング、振り返り。単純ですが、その積み重ねが乱れた生活を少しずつ戻してくれました。再発の衝動が強い日は、過去の失敗を隠さず言葉にし、仲間の前で助けを求める練習をしました。恥ずかしさよりも、孤立の怖さのほうが大きいと理解できた時、回復は進み始めました。今、私は回復者スタッフとして、新しく来られる方に最初に伝えています。「今のあなたがどれだけ壊れていても、回復はここから始められる」と。過去は消せませんが、今日の選択は変えられる。私自身がその証明であり続けることが、支えてくれた人たちへの恩返しだと思っています。
-      </p>
-      <p>
-        依存症の苦しさは、外からは「意思の弱さ」に見えやすいかもしれません。私自身も長い間そう言われ、最後は自分でもそう思い込んでいました。けれど実際は、病気として適切な支援につながらない限り、根性だけでは止め続けることが難しい状態でした。だから私は、今苦しんでいる方に「あなたのせいだけではない」と必ず伝えます。相談することは負けではなく、回復の責任を引き受ける最初の行動です。昨日まで何度失敗していても、今日助けを求められたなら、それは十分に大きな一歩です。私はその一歩に、現場で何度も救われてきました。どうか一人で終わらせず、つながってください。必ず道は開けます。
-      </p>
-      <p class="name">—— 田村 健一さん（42歳・仮名）</p>
+    <article class="testimonial-story">
+      <header class="testimonial-story__header">
+        <span class="testimonial-story__category">薬物依存症</span>
+        <h3 class="testimonial-story__title">回復者スタッフ</h3>
+      </header>
+      <p class="testimonial-story__lead">18歳で覚醒剤に手を出し、最初は「眠らずに働ける」「気持ちが軽くなる」と思っていました。けれど、使うたびに嘘が増え、約束を破り、人を傷つける自分になっていきました。20代で仕事を転々とし、借金を重ね、暴力団関係者とのつながりも断てず、逮捕3回・服役3回。出所するたびに「もう終わりにする」と誓いましたが、孤独と不安に耐えきれず、数日で再使用してしまう。その繰り…</p>
+      <details class="testimonial-story__more">
+        <summary class="testimonial-story__more-btn">全文を読む</summary>
+        <div class="testimonial-story__prose">
+          <p>18歳で覚醒剤に手を出し、最初は「眠らずに働ける」「気持ちが軽くなる」と思っていました。けれど、使うたびに嘘が増え、約束を破り、人を傷つける自分になっていきました。20代で仕事を転々とし、借金を重ね、暴力団関係者とのつながりも断てず、逮捕3回・服役3回。出所するたびに「もう終わりにする」と誓いましたが、孤独と不安に耐えきれず、数日で再使用してしまう。その繰り返しでした。家族は電話に出なくなり、友人は連絡先を変え、気がつけば誰も私を信じていませんでした。最後の出所の日、迎えに来た人は本当に一人もいませんでした。駅のベンチで夜を明かし、「ここから先は死ぬか、助けを求めるかしかない」と思ったことを今でもはっきり覚えています。偶然、役所の相談窓口で紹介されたのが、回復支援につながる最初のきっかけでした。最初の数か月は、正直、何も信じられませんでした。人の優しさを疑い、指導されると反発し、少し嫌なことがあると逃げたくなる。そんな私にスタッフは、責めるでも放任するでもなく、「今日一日を一緒に整える」ことだけを繰り返してくれました。起床、食事、通院、ミーティング、振り返り。単純ですが、その積み重ねが乱れた生活を少しずつ戻してくれました。再発の衝動が強い日は、過去の失敗を隠さず言葉にし、仲間の前で助けを求める練習をしました。恥ずかしさよりも、孤立の怖さのほうが大きいと理解できた時、回復は進み始めました。今、私は回復者スタッフとして、新しく来られる方に最初に伝えています。「今のあなたがどれだけ壊れていても、回復はここから始められる」と。過去は消せませんが、今日の選択は変えられる。私自身がその証明であり続けることが、支えてくれた人たちへの恩返しだと思っています。</p>
+          <p>依存症の苦しさは、外からは「意思の弱さ」に見えやすいかもしれません。私自身も長い間そう言われ、最後は自分でもそう思い込んでいました。けれど実際は、病気として適切な支援につながらない限り、根性だけでは止め続けることが難しい状態でした。だから私は、今苦しんでいる方に「あなたのせいだけではない」と必ず伝えます。相談することは負けではなく、回復の責任を引き受ける最初の行動です。昨日まで何度失敗していても、今日助けを求められたなら、それは十分に大きな一歩です。私はその一歩に、現場で何度も救われてきました。どうか一人で終わらせず、つながってください。必ず道は開けます。</p>
+        </div>
+      </details>
+      <footer class="testimonial-story__author">—— 田村 健一さん（42歳・仮名）</footer>
     </article>
-    <article class="testimonial-card">
-      <h3>ギャンブル依存症 / 回復歴1年半</h3>
-      <p>
-        私は会社員として真面目に働いているつもりでしたが、給料日の夜にパチンコ店へ行く習慣が、いつの間にか生活の中心になっていました。最初は小遣いの範囲で遊んでいたはずが、負けを取り返したくて消費者金融に手を出し、クレジットカードのキャッシング枠を使い切り、気づけば借金は2000万円近くまで膨らんでいました。家では「残業だ」と嘘をつき、通帳も明細も隠し、妻の財布に手を付けたことさえあります。見つかった時、妻は泣きながら「あなたを信じられない」と言いました。それでも私は「もうやめる」と口先だけで謝り、翌週にはまた店に戻っていました。催促の電話が鳴り続け、職場でも集中力を失い、遅刻と欠勤が増え、最終的に退職。妻は子どもを連れて実家に戻り、家は静かになりました。静かすぎて、逆に逃げ場がなくなった夜、元妻から「子どもたちがパパを心配してる」とメッセージが届きました。その短い一文を見た瞬間、自分の人生を壊しているのは運でも景気でもなく、自分の病気だと認めざるを得ませんでした。支援につながってから最初にやったのは、「ギャンブルをやめる」ではなく「生活を整える」ことでした。借金の現状をすべて書き出し、弁護士と相談して債務整理を進め、現金管理と家計管理を第三者と共有し、スマホの決済機能も止めました。衝動が出る時間帯を記録し、危ない場所に近づかないルートを作り、代わりに歩く・話す・休む行動を決めました。正直、地味で面倒で、何度も投げ出したくなりましたが、スタッフと仲間に「今日を崩さない」ことだけを繰り返し支えてもらいました。今は仕事を再開し、返済計画に沿って一歩ずつ進めています。月に一度、子どもと会える時間ができ、長男が「前より顔が優しくなったね」と言ってくれた時、初めて本当に回復している実感が湧きました。ギャンブルをやめることはゴールではなく、家族と信頼を作り直すことが本当の回復だと、私は毎日学び直しています。
-      </p>
-      <p>
-        もし今、請求書を開くのが怖い人、家族の顔を見るのがつらい人がいたら、私と同じところに立っているのだと思います。私が言えるのは、「状況を隠す時間が長くなるほど回復は遅れる」ということです。逆に、現実を言葉にした瞬間から回復は前に進みます。借金の整理、生活費の再設計、仕事の立て直し、家族との関係修復は、ひとりで抱えると潰れてしまいます。支援につながれば、順番を一緒に決めて進められます。私もまだ途中ですが、途中でも人生は十分に変えられると、今は胸を張って言えます。
-      </p>
-      <p class="name">—— 佐藤 裕介さん（45歳・仮名）</p>
+    <article class="testimonial-story">
+      <header class="testimonial-story__header">
+        <span class="testimonial-story__category">ギャンブル依存症</span>
+        <h3 class="testimonial-story__title">回復歴1年半</h3>
+      </header>
+      <p class="testimonial-story__lead">私は会社員として真面目に働いているつもりでしたが、給料日の夜にパチンコ店へ行く習慣が、いつの間にか生活の中心になっていました。最初は小遣いの範囲で遊んでいたはずが、負けを取り返したくて消費者金融に手を出し、クレジットカードのキャッシング枠を使い切り、気づけば借金は2000万円近くまで膨らんでいました。家では「残業だ」と嘘をつき、通帳も明細も隠し、妻の財布に手…</p>
+      <details class="testimonial-story__more">
+        <summary class="testimonial-story__more-btn">全文を読む</summary>
+        <div class="testimonial-story__prose">
+          <p>私は会社員として真面目に働いているつもりでしたが、給料日の夜にパチンコ店へ行く習慣が、いつの間にか生活の中心になっていました。最初は小遣いの範囲で遊んでいたはずが、負けを取り返したくて消費者金融に手を出し、クレジットカードのキャッシング枠を使い切り、気づけば借金は2000万円近くまで膨らんでいました。家では「残業だ」と嘘をつき、通帳も明細も隠し、妻の財布に手を付けたことさえあります。見つかった時、妻は泣きながら「あなたを信じられない」と言いました。それでも私は「もうやめる」と口先だけで謝り、翌週にはまた店に戻っていました。催促の電話が鳴り続け、職場でも集中力を失い、遅刻と欠勤が増え、最終的に退職。妻は子どもを連れて実家に戻り、家は静かになりました。静かすぎて、逆に逃げ場がなくなった夜、元妻から「子どもたちがパパを心配してる」とメッセージが届きました。その短い一文を見た瞬間、自分の人生を壊しているのは運でも景気でもなく、自分の病気だと認めざるを得ませんでした。支援につながってから最初にやったのは、「ギャンブルをやめる」ではなく「生活を整える」ことでした。借金の現状をすべて書き出し、弁護士と相談して債務整理を進め、現金管理と家計管理を第三者と共有し、スマホの決済機能も止めました。衝動が出る時間帯を記録し、危ない場所に近づかないルートを作り、代わりに歩く・話す・休む行動を決めました。正直、地味で面倒で、何度も投げ出したくなりましたが、スタッフと仲間に「今日を崩さない」ことだけを繰り返し支えてもらいました。今は仕事を再開し、返済計画に沿って一歩ずつ進めています。月に一度、子どもと会える時間ができ、長男が「前より顔が優しくなったね」と言ってくれた時、初めて本当に回復している実感が湧きました。ギャンブルをやめることはゴールではなく、家族と信頼を作り直すことが本当の回復だと、私は毎日学び直しています。</p>
+          <p>もし今、請求書を開くのが怖い人、家族の顔を見るのがつらい人がいたら、私と同じところに立っているのだと思います。私が言えるのは、「状況を隠す時間が長くなるほど回復は遅れる」ということです。逆に、現実を言葉にした瞬間から回復は前に進みます。借金の整理、生活費の再設計、仕事の立て直し、家族との関係修復は、ひとりで抱えると潰れてしまいます。支援につながれば、順番を一緒に決めて進められます。私もまだ途中ですが、途中でも人生は十分に変えられると、今は胸を張って言えます。</p>
+        </div>
+      </details>
+      <footer class="testimonial-story__author">—— 佐藤 裕介さん（45歳・仮名）</footer>
     </article>
-    <article class="testimonial-card">
-      <h3>アルコール依存症 / 女性専用施設で回復中</h3>
-      <p>
-        私は離婚後、子ども2人と離れて一人暮らしになってから、お酒を「眠るための薬」のように使い始めました。最初は缶チューハイ1本だったのに、気づけば朝から飲まないと手が震え、食事も取れず、部屋はゴミ袋で埋まり、仕事も続かなくなりました。体調が悪くても「今日は飲まないと余計につらい」と言い訳し、病院で肝機能異常を指摘されても本気で止められませんでした。ある日、酩酊して転倒し、救急搬送された病院で医師から「このままでは命に関わる」と告げられました。それでも退院後にまた飲んでしまった自分を見て、私は本当に絶望しました。母親なのに、子どもに会う資格もない、そう思っていました。転機は、娘からの着信でした。久しぶりに電話に出ると、娘は泣きながら「ママ、生きててくれてありがとう」と言いました。責められると思っていた私は、その言葉で崩れました。そこで初めて、ひとりで隠れて耐える方法では回復できないと認め、女性専用施設に相談しました。女性専用の環境は、私にとって想像以上に大きな意味がありました。夜間の不安、対人緊張、過去の怖い経験を、同じ女性スタッフに安心して話せること。感情が乱れる日でも「怖かったね」「今日はここまでで十分」と受け止めてもらえること。これまで何度も自分を責めてきた私にとって、その関わりは治療そのものでした。回復プログラムでは、断酒だけでなく、睡眠、食事、服薬、通院、金銭管理、対人関係の練習を一つずつやり直しました。再飲酒衝動が出た時の行動計画も、スタッフと一緒に紙に書いて、すぐ見える場所に貼りました。私はまだ「完了」ではありません。回復中です。けれど、今は朝起きて顔を洗い、食事を作り、約束の時間に通院し、困った時に助けを求めることができます。先月、子どもたちと再会した時、娘が「ママの目が前よりやさしい」と言ってくれました。その一言を支えに、私は母として、そして一人の人間として、これからの人生を丁寧に取り戻していきます。今苦しんでいる方にも伝えたいです。恥ずかしさより先に、まず相談してほしい。助けを求めた瞬間から、回復は始まります。
-      </p>
-      <p>
-        女性として生きる中で抱える痛みは、言葉にしにくいものが多くあります。だからこそ、安心できる場所と信頼できる支援者が必要でした。らぽーるで私が救われたのは、正論で責められなかったことです。「なぜできないのか」ではなく、「どうしたら今日を安全に過ごせるか」を一緒に考えてくれました。回復は劇的な一日ではなく、静かな一日の積み重ねです。今つらさの真ん中にいる方にも、どうか自分を見放さず、相談という選択をしてほしいです。あなたの人生にも、必ずやり直せる時間が戻ってきます。
-      </p>
-      <p class="name">—— 中村 美咲さん（38歳・仮名）</p>
+    <article class="testimonial-story">
+      <header class="testimonial-story__header">
+        <span class="testimonial-story__category">アルコール依存症</span>
+        <h3 class="testimonial-story__title">女性専用施設で回復中</h3>
+      </header>
+      <p class="testimonial-story__lead">私は離婚後、子ども2人と離れて一人暮らしになってから、お酒を「眠るための薬」のように使い始めました。最初は缶チューハイ1本だったのに、気づけば朝から飲まないと手が震え、食事も取れず、部屋はゴミ袋で埋まり、仕事も続かなくなりました。体調が悪くても「今日は飲まないと余計につらい」と言い訳し、病院で肝機能異常を指摘されても本気で止められませんでした。ある日、酩酊し…</p>
+      <details class="testimonial-story__more">
+        <summary class="testimonial-story__more-btn">全文を読む</summary>
+        <div class="testimonial-story__prose">
+          <p>私は離婚後、子ども2人と離れて一人暮らしになってから、お酒を「眠るための薬」のように使い始めました。最初は缶チューハイ1本だったのに、気づけば朝から飲まないと手が震え、食事も取れず、部屋はゴミ袋で埋まり、仕事も続かなくなりました。体調が悪くても「今日は飲まないと余計につらい」と言い訳し、病院で肝機能異常を指摘されても本気で止められませんでした。ある日、酩酊して転倒し、救急搬送された病院で医師から「このままでは命に関わる」と告げられました。それでも退院後にまた飲んでしまった自分を見て、私は本当に絶望しました。母親なのに、子どもに会う資格もない、そう思っていました。転機は、娘からの着信でした。久しぶりに電話に出ると、娘は泣きながら「ママ、生きててくれてありがとう」と言いました。責められると思っていた私は、その言葉で崩れました。そこで初めて、ひとりで隠れて耐える方法では回復できないと認め、女性専用施設に相談しました。女性専用の環境は、私にとって想像以上に大きな意味がありました。夜間の不安、対人緊張、過去の怖い経験を、同じ女性スタッフに安心して話せること。感情が乱れる日でも「怖かったね」「今日はここまでで十分」と受け止めてもらえること。これまで何度も自分を責めてきた私にとって、その関わりは治療そのものでした。回復プログラムでは、断酒だけでなく、睡眠、食事、服薬、通院、金銭管理、対人関係の練習を一つずつやり直しました。再飲酒衝動が出た時の行動計画も、スタッフと一緒に紙に書いて、すぐ見える場所に貼りました。私はまだ「完了」ではありません。回復中です。けれど、今は朝起きて顔を洗い、食事を作り、約束の時間に通院し、困った時に助けを求めることができます。先月、子どもたちと再会した時、娘が「ママの目が前よりやさしい」と言ってくれました。その一言を支えに、私は母として、そして一人の人間として、これからの人生を丁寧に取り戻していきます。今苦しんでいる方にも伝えたいです。恥ずかしさより先に、まず相談してほしい。助けを求めた瞬間から、回復は始まります。</p>
+          <p>女性として生きる中で抱える痛みは、言葉にしにくいものが多くあります。だからこそ、安心できる場所と信頼できる支援者が必要でした。らぽーるで私が救われたのは、正論で責められなかったことです。「なぜできないのか」ではなく、「どうしたら今日を安全に過ごせるか」を一緒に考えてくれました。回復は劇的な一日ではなく、静かな一日の積み重ねです。今つらさの真ん中にいる方にも、どうか自分を見放さず、相談という選択をしてほしいです。あなたの人生にも、必ずやり直せる時間が戻ってきます。</p>
+        </div>
+      </details>
+      <footer class="testimonial-story__author">—— 中村 美咲さん（38歳・仮名）</footer>
     </article>
   </section>
 
@@ -1757,12 +1728,20 @@
     <div class="contact-message">
       あなたの勇気ある一歩を、私たちは心から応援します。
     </div>
-    <div class="contact-buttons">
-      <a href="tel:0964-41-2387" class="contact-button primary">
-        今すぐ相談する
-        <span class="phone-number">0964-41-2387</span>
-      </a>
-      <a href="/testimonials" class="contact-button outline">体験談を読む</a>
+    <div class="contact-buttons glass-btn-row glass-btn-row--stack">
+        <a href="tel:0964-41-2387" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">今すぐ相談する</span>
+            <span class="hero-action__hint">0964-41-2387</span>
+          </span>
+        </a>
+        <a href="/testimonials" class="glass-btn hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">体験談を読む</span>
+          </span>
+        </a>
     </div>
     <div class="contact-hours">
       受付時間：平日 10:00〜17:00<br>
@@ -1792,36 +1771,24 @@
       <p class="landing-contact__lead">「こんなことで相談していいのかな？」と思うことも、どうぞお気軽にお話しください。</p>
       <p class="landing-contact__message">あなたの勇気ある一歩を、私たちは心から応援します。</p>
       <div class="landing-contact__actions">
-        <a href="tel:0964-41-2387" class="landing-contact__btn landing-contact__btn--glass">
-          <span class="landing-contact__btn-body">
-            <span class="landing-contact__btn-icon" aria-hidden="true">
-            <svg class="landing-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-          </span>
-          <span class="landing-contact__btn-stack">
-            <span class="landing-contact__btn-label">無料相談する</span>
-            <span class="landing-contact__btn-hint">無料・秘密厳守</span>
-          </span>
+        <a href="tel:0964-41-2387" class="landing-contact__btn landing-contact__btn--glass hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">無料相談する</span>
+            <span class="hero-action__hint">無料・秘密厳守</span>
           </span>
         </a>
-        <a href="tel:0964-41-2387" class="landing-contact__btn landing-contact__btn--glass">
-          <span class="landing-contact__btn-body">
-            <span class="landing-contact__btn-icon" aria-hidden="true">
-            <svg class="landing-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </span>
-          <span class="landing-contact__btn-stack">
-            <span class="landing-contact__btn-label">24時間相談受付</span>
-            <span class="landing-contact__btn-hint">0964-41-2387</span>
-          </span>
+        <a href="tel:0964-41-2387" class="landing-contact__btn landing-contact__btn--glass hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">24時間相談受付</span>
+            <span class="hero-action__hint">0964-41-2387</span>
           </span>
         </a>
-        <a href="/testimonials" class="landing-contact__btn landing-contact__btn--glass">
-          <span class="landing-contact__btn-body">
-            <span class="landing-contact__btn-icon" aria-hidden="true">
-            <svg class="landing-contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-          </span>
-          <span class="landing-contact__btn-stack landing-contact__btn-stack--solo">
-            <span class="landing-contact__btn-label">体験談を読む</span>
-          </span>
+        <a href="/testimonials" class="landing-contact__btn landing-contact__btn--glass hero-action hero-action--glass">
+          <span class="hero-action__icon" aria-hidden="true"><svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+          <span class="hero-action__stack">
+            <span class="hero-action__label">体験談を読む</span>
           </span>
         </a>
       </div>
@@ -1845,7 +1812,6 @@
           <div class="site-footer__nav-col">
             <h3 class="site-footer__nav-title">サイト案内</h3>
             <a href="/top">トップ</a>
-            <a href="/#page-menu">ページメニュー</a>
             <a href="/program">プログラム</a>
             <a href="/rapport">女性専用施設</a>
             <a href="/grouphome">グループホーム</a>
@@ -1963,6 +1929,10 @@
       link.addEventListener('click', closeMobileMenu);
     });
 
+    document.querySelectorAll('.mobile-menu-overview .landing-overview__card').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', function (event) {
         event.preventDefault();
@@ -2019,7 +1989,7 @@
     }
 
     if (normalizedPath === '/about') {
-      window.location.replace(`${window.location.origin}/#page-menu`);
+      window.location.replace(`${window.location.origin}/`);
     }
 
     const landingPaths = new Set(['/', '/top']);
@@ -2062,7 +2032,19 @@
       });
     };
 
+    const clearPageViewState = () => {
+      document.body.classList.remove('is-landing', 'is-standalone-view');
+      heroVariantIds.forEach((id) => {
+        document.body.classList.remove(`hero-variant-${id}`);
+      });
+      delete document.body.dataset.activeSection;
+      document.querySelectorAll('.standalone-target').forEach((el) => {
+        el.classList.remove('standalone-target');
+      });
+    };
+
     if (landingPaths.has(normalizedPath)) {
+      clearPageViewState();
       document.body.classList.add('is-landing');
       applyHeroVariant(heroVariant);
       const heroVariantPicker = document.getElementById('heroVariantPicker');
@@ -2084,6 +2066,7 @@
         });
       }
     } else if (standalonePaths.has(normalizedPath)) {
+      clearPageViewState();
       document.body.classList.add('is-standalone-view');
       const activeSectionId = pathSectionMap[normalizedPath];
       if (activeSectionId) {

@@ -14,8 +14,12 @@ const html = readFileSync(join(root, 'index.html'), 'utf8');
 const css = readFileSync(join(root, 'public/static/style.css'), 'utf8');
 const errors = [];
 
-if (!html.includes('landing-only landing-overview')) {
-  errors.push('「支援のかたち」(landing-overview) セクションがありません');
+if (!html.includes('mobile-menu-overview') && !html.includes('landing-only landing-overview')) {
+  errors.push('「支援のかたち」(landing-overview) がハンバーガーメニューまたは表紙にありません');
+}
+
+if (html.includes('navigation-section') && html.includes('id="page-menu"')) {
+  errors.push('ページメニュー(navigation-section) が残っています（表紙から削除済みのはず）');
 }
 
 if (/id="route-summary"[^>]*landing-heavy|route-summary landing-heavy/.test(html)) {
