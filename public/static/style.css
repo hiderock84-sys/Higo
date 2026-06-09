@@ -7706,12 +7706,12 @@ body.is-standalone-view .standalone-target.blog-page {
   align-items: start;
 }
 
-.blog-aside--top {
+.blog-aside--inline {
   width: 100%;
   margin: 0 0 clamp(20px, 3.5vw, 28px);
 }
 
-.blog-aside--top .blog-aside__panel {
+.blog-aside--inline .blog-aside__panel {
   padding: clamp(18px, 3.5vw, 24px);
 }
 
@@ -7748,7 +7748,7 @@ body.is-standalone-view .standalone-target.blog-page {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: clamp(16px, 3vw, 20px);
 }
 
 .blog-filter {
