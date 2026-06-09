@@ -3372,6 +3372,15 @@ body.is-standalone-view .standalone-target.rapport-page * {
   margin-bottom: 14px;
 }
 
+.page-cta-box .page-cta-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, calc(100% - 12px));
+  margin: 6px auto;
+  box-sizing: border-box;
+}
+
 .page-cta-link {
   display: inline-flex;
   align-items: center;
@@ -3392,6 +3401,15 @@ body.is-standalone-view .standalone-target.rapport-page * {
   color: #fff;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.page-cta-link--ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.page-cta-link:hover {
+  background: #f0f7fb;
 }
 
 .content-block {
