@@ -7693,6 +7693,90 @@ body.is-standalone-view .standalone-target.blog-page {
   color: var(--ink-600);
 }
 
+.blog-founder-message {
+  width: min(1120px, calc(100% - var(--gutter) * 2));
+  margin: 0 auto clamp(24px, 4vw, 36px);
+  padding: clamp(20px, 3.5vw, 28px);
+  border-radius: 16px;
+  border: 1px solid rgba(40, 179, 174, 0.22);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(244, 250, 252, 0.92));
+  box-shadow: 0 16px 40px rgba(12, 58, 82, 0.08);
+}
+
+.blog-founder-message__title {
+  margin: 0 0 clamp(16px, 3vw, 20px);
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.8vw, 1.1875rem);
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--ink-900);
+  letter-spacing: 0.02em;
+}
+
+.blog-founder-message__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 clamp(16px, 3vw, 20px);
+  padding-bottom: clamp(14px, 2.5vw, 18px);
+  border-bottom: 1px solid rgba(12, 58, 82, 0.1);
+}
+
+.blog-founder-message__photo {
+  width: min(140px, 36vw);
+  height: auto;
+  aspect-ratio: 10 / 13;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(22, 79, 108, 0.18);
+  box-shadow: 0 8px 24px rgba(12, 58, 82, 0.1);
+}
+
+.blog-founder-message__name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(0.75rem, 2.6vw, 0.875rem);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--ink-700);
+  letter-spacing: 0.02em;
+}
+
+.blog-founder-message__body {
+  max-width: var(--copy-measure);
+  margin: 0 auto;
+}
+
+.blog-founder-message__body p {
+  margin: 0 0 14px;
+  font-size: var(--copy-body);
+  line-height: var(--copy-line);
+  color: var(--ink-700);
+  text-align: left;
+}
+
+.blog-founder-message__body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .blog-founder-message__profile {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .blog-founder-message__name {
+    text-align: left;
+    align-self: center;
+    max-width: 16rem;
+  }
+}
+
 .blog-hero__note {
   font-size: 0.875rem;
   color: var(--ink-500);
