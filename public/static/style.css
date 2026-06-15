@@ -7695,7 +7695,7 @@ body.is-standalone-view .standalone-target.blog-page {
 
 .blog-founder-message {
   width: min(1120px, calc(100% - var(--gutter) * 2));
-  margin: 0 auto clamp(24px, 4vw, 36px);
+  margin: clamp(32px, 5vw, 48px) auto 0;
   padding: clamp(20px, 3.5vw, 28px);
   border-radius: 16px;
   border: 1px solid rgba(40, 179, 174, 0.22);
