@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260615k" rel="stylesheet">
+  <link href="/static/style.css?v=20260616" rel="stylesheet">
   <link href="/static/hero-variants.css?v=20260615d" rel="stylesheet">
 
   <script type="application/ld+json">
@@ -1080,20 +1080,21 @@
   </section>
 
   <section class="content-section blog-page detail-section standalone-page landing-heavy site-copy" id="blog" aria-labelledby="blog-page-title">
-    <header class="blog-hero">
-      <p class="section-kicker">HIGO NO KAZE</p>
-      <h2 class="section-title" id="blog-page-title">ひごの風</h2>
-      <p class="blog-hero__lead">開所からの歩みと、日々の出来事をお伝えします。</p>
-    </header>
+    <div class="blog-page-cover">
+      <header class="blog-hero">
+        <p class="section-kicker">HIGO NO KAZE</p>
+        <h2 class="section-title" id="blog-page-title">ひごの風</h2>
+        <p class="blog-hero__lead">開所からの歩みと、日々の出来事をお伝えします。</p>
+      </header>
+      <div class="blog-toolbar" role="toolbar" aria-label="記事の絞り込み">
+        <button type="button" class="blog-filter glass-btn-chip is-active" data-blog-filter="all">すべて</button>
+        <button type="button" class="blog-filter glass-btn-chip" data-blog-filter="news">お知らせ</button>
+        <button type="button" class="blog-filter glass-btn-chip" data-blog-filter="diary">日々の記録</button>
+      </div>
+    </div>
 
     <div class="blog-layout">
       <div class="blog-main">
-        <div class="blog-toolbar" role="toolbar" aria-label="記事の絞り込み">
-          <button type="button" class="blog-filter glass-btn-chip is-active" data-blog-filter="all">すべて</button>
-          <button type="button" class="blog-filter glass-btn-chip" data-blog-filter="news">お知らせ</button>
-          <button type="button" class="blog-filter glass-btn-chip" data-blog-filter="diary">日々の記録</button>
-        </div>
-
         <aside class="blog-aside blog-aside--inline" aria-label="お知らせと日々の記録">
           <div class="blog-aside__panel">
             <div class="blog-aside__panel-grid">
