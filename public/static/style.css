@@ -7297,6 +7297,21 @@ body.is-landing .hero-actions--premium .hero-action.ghost {
     font-size: clamp(0.625rem, 2.9vw, 0.8125rem);
   }
 
+  body.is-landing .hero-actions--quad .hero-action--mail .hero-action__label,
+  body.is-landing .hero-actions--quad .hero-action--mail .hero-action__hint {
+    white-space: nowrap;
+  }
+
+  body.is-landing .hero-actions--quad .hero-action--mail .hero-action__label {
+    font-size: clamp(0.5625rem, 2.55vw, 0.75rem);
+    letter-spacing: 0;
+  }
+
+  body.is-landing .hero-actions--quad .hero-action--mail .hero-action__hint {
+    font-size: clamp(0.5rem, 2.15vw, 0.625rem);
+    letter-spacing: -0.02em;
+  }
+
 }
 
 
@@ -8486,6 +8501,18 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 
   body.is-landing .hero-actions--quad .hero-action__label {
     font-size: clamp(0.8125rem, 3.2vw, 0.9375rem) !important;
+  }
+
+  body.is-landing .hero-actions--quad .hero-action--mail .hero-action__label {
+    font-size: clamp(0.5625rem, 2.55vw, 0.75rem) !important;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  body.is-landing .hero-actions--quad .hero-action--mail .hero-action__hint {
+    font-size: clamp(0.5rem, 2.15vw, 0.625rem) !important;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
   }
 }
 
