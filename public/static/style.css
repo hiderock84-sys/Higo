@@ -2711,10 +2711,6 @@ body.is-landing .nav-card-menu {
   .landing-overview__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
-  .landing-overview__card--blog {
-    grid-column: span 2;
-  }
 }
 
 @media (min-width: 769px) and (max-width: 980px) {
