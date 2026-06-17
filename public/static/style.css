@@ -8600,6 +8600,14 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   color: rgba(255, 255, 255, 0.62);
 }
 
+.site-footer__location--private .site-footer__location-private {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.01em;
+}
+
 .site-footer .site-footer__main {
   padding: 6px 16px max(14px, env(safe-area-inset-bottom)) !important;
 }
