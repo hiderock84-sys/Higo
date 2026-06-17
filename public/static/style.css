@@ -6664,6 +6664,15 @@ body.is-landing #concerns + .landing-overview {
   padding-top: clamp(36px, 6vw, 48px);
 }
 
+/* 表紙：支援のかたち（最後のスラジェカード）→ 体験談ハイライトの余白を詰める */
+body.is-landing .landing-overview {
+  padding-bottom: 0;
+}
+
+body.is-landing .testimonial-highlight {
+  margin-top: 0;
+}
+
 body.is-landing .navigation-section {
   display: none !important;
 }
