@@ -6647,6 +6647,59 @@ button.blog-filter.glass-btn-chip.is-active {
   width: min(100%, 16.5rem);
 }
 
+.compact-testimonial-link.glass-btn.hero-action.hero-action--glass {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.75vw, 8px);
+  color: #0d2238;
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.88) 0%,
+      rgba(255, 255, 255, 0.52) 42%,
+      rgba(230, 244, 252, 0.62) 100%
+    );
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(40px) saturate(1.85);
+  -webkit-backdrop-filter: blur(40px) saturate(1.85);
+  box-shadow:
+    0 14px 40px rgba(43, 108, 176, 0.22),
+    0 4px 14px rgba(52, 140, 169, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(52, 140, 169, 0.12),
+    0 0 0 1px rgba(52, 140, 169, 0.28);
+  border-radius: 14px;
+}
+
+.compact-testimonial-link.glass-btn.hero-action.hero-action--glass:hover {
+  transform: translateY(-2px);
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.48) 48%,
+      rgba(230, 244, 252, 0.55) 100%
+    );
+  border-color: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 14px 36px rgba(43, 108, 176, 0.2),
+    0 4px 12px rgba(52, 140, 169, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    inset 0 -1px 0 rgba(52, 140, 169, 0.1),
+    0 0 0 1px rgba(52, 140, 169, 0.32);
+}
+
+.compact-testimonial-link.glass-btn.hero-action.hero-action--glass .hero-action__icon {
+  color: #348ca9;
+}
+
+.compact-testimonial-link.glass-btn.hero-action.hero-action--glass .hero-action__label {
+  color: #0d2238;
+  opacity: 1;
+}
+
 .contact-buttons.glass-btn-row {
   margin-top: 20px;
 }
