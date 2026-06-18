@@ -5730,6 +5730,24 @@ body.is-standalone-view .standalone-target.rapport-page * {
   padding: clamp(18px, 4vw, 24px) clamp(14px, 3.5vw, 20px) clamp(20px, 4vw, 26px);
 }
 
+.testimonial-highlight__panel .compact-testimonial-link.glass-btn.hero-action.hero-action--glass {
+  display: flex;
+  margin: 18px auto 0;
+  width: min(100%, 11.55rem);
+  min-height: 34px;
+  padding: 6px 10px;
+  gap: 5px;
+  border-radius: 10px;
+}
+
+.testimonial-highlight__panel .compact-testimonial-link.glass-btn .hero-action__icon {
+  width: 18px;
+}
+
+.testimonial-highlight__panel .compact-testimonial-link.glass-btn .hero-action__label {
+  font-size: 0.8rem;
+}
+
 body.is-landing .testimonial-highlight {
   display: block;
 }
@@ -6714,9 +6732,9 @@ body.is-landing #concerns + .landing-overview {
   padding-top: clamp(36px, 6vw, 48px);
 }
 
-/* 表紙：支援のかたち（最後のスラジェカード）→ 体験談ハイライトの余白を詰める */
+/* 表紙：支援のかたち（最後のスラジェカード）→ 体験談ハイライトの間隔 */
 body.is-landing .landing-overview {
-  padding-bottom: 0;
+  padding-bottom: var(--space-section-landing);
 }
 
 body.is-landing .testimonial-highlight {
