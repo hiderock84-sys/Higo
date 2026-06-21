@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" role="img" aria-label="‰}ü‹ Rapport">
+  <defs>
+    <linearGradient id="rapportLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d8ebe0"/>
+      <stop offset="100%" stop-color="#9fc0ad"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#rapportLeaf)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 34c18 10 30 28 30 48 0 24-13 44-30 54-17-10-30-30-30-54 0-20 12-38 30-48z"/>
+    <path d="M72 78c-8 6-12 14-12 22M128 78c8 6 12 14 12 22"/>
+    <path d="M84 96c6 8 10 16 10 24M116 96c-6 8-10 16-10 24"/>
+    <path d="M92 118c4 6 8 10 8 16M108 118c-4 6-8 10-8 16"/>
+    <path d="M76 62c6-8 14-12 24-12M124 62c-6-8-14-12-24-12"/>
+  </g>
+  <g fill="#e8f4ec" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif">
+    <text x="100" y="168" text-anchor="middle" font-size="18" font-weight="600" letter-spacing="0.08em">‰}ü‹</text>
+    <text x="100" y="196" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="0.14em" fill="#cfe3d6">Rapport</text>
+  </g>
+</svg>
