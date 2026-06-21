@@ -4201,6 +4201,23 @@ body.is-standalone-view .standalone-target.rapport-page * {
   color: rgba(255, 255, 255, 0.92);
 }
 
+.contact-hours a[href^="mailto:"],
+.contact-hours a[href^="mailto:"]:visited,
+.landing-contact__hours a[href^="mailto:"],
+.landing-contact__hours a[href^="mailto:"]:visited {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.15em;
+}
+
+.contact-hours a[href^="mailto:"]:hover,
+.landing-contact__hours a[href^="mailto:"]:hover {
+  color: #9ee8f0;
+  text-decoration-color: rgba(158, 232, 240, 0.85);
+}
+
 .footer {
   background:
     linear-gradient(145deg, rgba(8, 27, 43, 0.98), rgba(16, 53, 81, 0.97)),
@@ -5472,7 +5489,8 @@ body.is-standalone-view .standalone-target.rapport-page * {
   margin: 0 0 14px;
 }
 
-.site-footer__nav-col a {
+.site-footer__nav-col a,
+.site-footer__nav-col a:visited {
   display: block;
   margin-bottom: 10px;
   font-size: 0.875rem;
@@ -6205,7 +6223,8 @@ body.is-standalone-view .site-footer {
   min-height: 0;
 }
 
-.site-footer__nav-col a {
+.site-footer__nav-col a,
+.site-footer__nav-col a:visited {
   margin-bottom: 10px;
   font-size: 0.875rem;
   line-height: 1.45;
@@ -8763,13 +8782,32 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   line-height: 1.5;
 }
 
-.site-footer .site-footer__mail a {
-  color: rgba(255, 255, 255, 0.88);
-  text-decoration: none;
+.site-footer .site-footer__mail a,
+.site-footer .site-footer__mail a:visited {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.15em;
 }
 
 .site-footer .site-footer__mail a:hover {
   color: #9ee8f0;
+  text-decoration-color: rgba(158, 232, 240, 0.85);
+}
+
+.site-footer .landing-contact__hours a[href^="mailto:"],
+.site-footer .landing-contact__hours a[href^="mailto:"]:visited {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.15em;
+}
+
+.site-footer .landing-contact__hours a[href^="mailto:"]:hover {
+  color: #9ee8f0;
+  text-decoration-color: rgba(158, 232, 240, 0.85);
 }
 
 @media (max-width: 768px) {
