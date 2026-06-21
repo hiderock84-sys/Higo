@@ -9,3 +9,7 @@
   tochihara-facility.jpg   … 右上
   tochihara-meeting.jpg    … 右下
   → それぞれ ../tochihara-portrait-2026.jpg などにリネームしてコピー
+
+【スラジェ公式ロゴ】透過PNGをそのまま置く場合:
+  soulage-logo.png
+  → ../soulage-logo.png にコピー（ページ・フッターで使用）
