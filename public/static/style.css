@@ -8677,11 +8677,25 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 .site-footer__location {
   margin: 0;
   padding: 8px 14px 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .site-footer__location + .site-footer__location {
   padding-left: 14px;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer__facility-logo {
+  display: block;
+  height: 72px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  margin: 0 0 10px;
 }
 
 .site-footer__location-name {
@@ -8692,14 +8706,6 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   letter-spacing: 0.04em;
   color: #9ee8f0;
   line-height: 1.35;
-}
-
-.site-footer__location--rapport .site-footer__facility-logo,
-.site-footer__location--soulage .site-footer__facility-logo {
-  display: block;
-  width: min(100%, 80px);
-  height: auto;
-  margin: 0 0 10px;
 }
 
 .site-footer__location-sub {
