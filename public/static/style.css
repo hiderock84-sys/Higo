@@ -4201,6 +4201,23 @@ body.is-standalone-view .standalone-target.rapport-page * {
   color: rgba(255, 255, 255, 0.92);
 }
 
+.contact-hours a[href^="mailto:"],
+.contact-hours a[href^="mailto:"]:visited,
+.landing-contact__hours a[href^="mailto:"],
+.landing-contact__hours a[href^="mailto:"]:visited {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.15em;
+}
+
+.contact-hours a[href^="mailto:"]:hover,
+.landing-contact__hours a[href^="mailto:"]:hover {
+  color: #9ee8f0;
+  text-decoration-color: rgba(158, 232, 240, 0.85);
+}
+
 .footer {
   background:
     linear-gradient(145deg, rgba(8, 27, 43, 0.98), rgba(16, 53, 81, 0.97)),
@@ -5472,7 +5489,8 @@ body.is-standalone-view .standalone-target.rapport-page * {
   margin: 0 0 14px;
 }
 
-.site-footer__nav-col a {
+.site-footer__nav-col a,
+.site-footer__nav-col a:visited {
   display: block;
   margin-bottom: 10px;
   font-size: 0.875rem;
@@ -6205,7 +6223,8 @@ body.is-standalone-view .site-footer {
   min-height: 0;
 }
 
-.site-footer__nav-col a {
+.site-footer__nav-col a,
+.site-footer__nav-col a:visited {
   margin-bottom: 10px;
   font-size: 0.875rem;
   line-height: 1.45;
@@ -8121,6 +8140,172 @@ body.is-standalone-view .standalone-target.blog-page {
   margin: 0 0 clamp(20px, 3.5vw, 28px);
 }
 
+.blog-aside--landing {
+  width: 100%;
+  margin: 0;
+}
+
+.blog-aside--landing .blog-aside__panel {
+  padding: clamp(16px, 3vw, 22px);
+}
+
+.landing-blog-preview {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: 0;
+  background: #f2f9fd;
+}
+
+.landing-blog-preview__cover {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(260px, 52vw, 360px);
+  background-image:
+    linear-gradient(180deg, rgba(6, 22, 34, 0.14) 0%, rgba(6, 22, 34, 0.38) 58%, rgba(242, 249, 253, 0.72) 86%, rgba(242, 249, 253, 0.98) 100%),
+    var(--higo-no-kaze-image);
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.landing-blog-preview__inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--content-max), calc(100% - var(--gutter) * 2));
+  margin: 0 auto;
+  padding: clamp(28px, 5.5vw, 40px) clamp(16px, 4vw, 20px) clamp(24px, 4.5vw, 36px);
+}
+
+.landing-blog-preview__header {
+  position: relative;
+  text-align: center;
+  margin-bottom: clamp(20px, 4.5vw, 30px);
+  padding-bottom: clamp(10px, 2.5vw, 16px);
+}
+
+.landing-blog-preview__header .section-kicker {
+  color: rgba(158, 232, 240, 0.98);
+  letter-spacing: 0.22em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.landing-blog-preview__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.8vw, 1.75rem);
+  font-weight: 700;
+  margin: 4px 0 6px;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+.landing-blog-preview__lead {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.landing-blog-preview__panel {
+  position: relative;
+  margin-top: clamp(4px, 1.5vw, 12px);
+  padding: clamp(16px, 3.5vw, 22px);
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(12, 58, 82, 0.1);
+  box-shadow: 0 14px 36px rgba(6, 22, 34, 0.1);
+}
+
+.landing-blog-preview .blog-aside--landing {
+  margin: 0;
+}
+
+.landing-blog-preview .blog-aside--landing .blog-aside__panel {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.landing-blog-preview__articles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2.5vw, 16px);
+  margin-top: clamp(16px, 3vw, 20px);
+  padding-top: clamp(16px, 3vw, 20px);
+  border-top: 1px solid rgba(12, 58, 82, 0.08);
+}
+
+.landing-blog-preview .blog-card--landing-preview {
+  margin: 0;
+  background: #f7fbfd;
+  border: 1px solid rgba(12, 58, 82, 0.1);
+  box-shadow: none;
+}
+
+.landing-blog-preview .blog-card--landing-preview .blog-card__title {
+  color: var(--ink-900);
+}
+
+.landing-blog-preview .blog-card--landing-preview .blog-card__excerpt {
+  flex: 1;
+  color: var(--ink-600);
+}
+
+.landing-blog-preview .blog-card--landing-preview .blog-card__date {
+  color: var(--ink-500);
+}
+
+.landing-blog-preview .blog-card--landing-preview .blog-card__more {
+  color: #0c6f78;
+}
+
+.landing-blog-preview .blog-aside__list a:hover {
+  background: rgba(40, 179, 174, 0.1);
+  color: var(--ink-900);
+}
+
+.landing-blog-preview__more {
+  margin: clamp(16px, 3.5vw, 20px) 0 0;
+  text-align: center;
+}
+
+.landing-blog-preview__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(12, 111, 120, 0.35);
+  background: linear-gradient(135deg, #1a8f96 0%, #0c6f78 100%);
+  box-shadow: 0 6px 18px rgba(12, 111, 120, 0.22);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-blog-preview__link:hover {
+  background: linear-gradient(135deg, #1f9ba3 0%, #0e7d87 100%);
+  box-shadow: 0 8px 22px rgba(12, 111, 120, 0.28);
+}
+
+@media (max-width: 640px) {
+  .landing-blog-preview__cover {
+    height: clamp(248px, 58vw, 320px);
+    background-position: center 36%;
+  }
+
+  .landing-blog-preview__articles {
+    grid-template-columns: 1fr;
+  }
+}
+
 .blog-aside--inline .blog-aside__panel {
   padding: clamp(18px, 3.5vw, 24px);
 }
@@ -8763,13 +8948,32 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   line-height: 1.5;
 }
 
-.site-footer .site-footer__mail a {
-  color: rgba(255, 255, 255, 0.88);
-  text-decoration: none;
+.site-footer .site-footer__mail a,
+.site-footer .site-footer__mail a:visited {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.15em;
 }
 
 .site-footer .site-footer__mail a:hover {
   color: #9ee8f0;
+  text-decoration-color: rgba(158, 232, 240, 0.85);
+}
+
+.site-footer .landing-contact__hours a[href^="mailto:"],
+.site-footer .landing-contact__hours a[href^="mailto:"]:visited {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.15em;
+}
+
+.site-footer .landing-contact__hours a[href^="mailto:"]:hover {
+  color: #9ee8f0;
+  text-decoration-color: rgba(158, 232, 240, 0.85);
 }
 
 @media (max-width: 768px) {
