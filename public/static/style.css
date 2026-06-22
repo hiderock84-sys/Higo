@@ -6257,7 +6257,7 @@ body.is-standalone-view .site-footer {
 }
 
 .site-footer__logo {
-  width: 80px;
+  width: min(168px, 58vw);
   height: auto;
   margin-bottom: 14px;
 }
@@ -8987,7 +8987,7 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   }
 
   .site-footer .site-footer__logo {
-    width: 64px;
+    width: min(148px, 54vw);
     margin-bottom: 8px;
   }
 
