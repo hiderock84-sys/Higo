@@ -5447,7 +5447,6 @@ body.is-standalone-view .standalone-target.rapport-page * {
   grid-template-columns: 1fr;
   gap: 40px 48px;
   padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .site-footer__logo {
@@ -6185,7 +6184,6 @@ body.is-standalone-view .site-footer {
   max-width: 1240px;
   margin: 0 auto;
   padding: 8px 20px max(32px, env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .site-footer__grid {
@@ -6195,7 +6193,6 @@ body.is-standalone-view .site-footer {
   text-align: left;
   justify-items: stretch;
   padding: 32px 0 28px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .site-footer__brand {
@@ -7893,6 +7890,8 @@ body.is-standalone-view .standalone-target.blog-page {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .grouphome-page-cover .soulage-brand {
@@ -8855,8 +8854,6 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   gap: 0;
   margin: 0;
   padding: 10px 0 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-footer__location {
@@ -8870,7 +8867,6 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 
 .site-footer__location + .site-footer__location {
   padding-left: 14px;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .site-footer__facility-logo {
@@ -8881,6 +8877,7 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   object-fit: contain;
   object-position: left center;
   margin: 0 0 10px;
+  align-self: flex-start;
 }
 
 .site-footer__location-name {
@@ -8940,6 +8937,14 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 
 .site-footer .site-footer__brand {
   align-self: start;
+  justify-self: start;
+  text-align: left;
+}
+
+.site-footer .site-footer__logo {
+  display: block;
+  margin-left: 0;
+  object-position: left center;
 }
 
 .site-footer .site-footer__mail {
@@ -9043,8 +9048,6 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 
   .site-footer__location + .site-footer__location {
     padding-left: 0;
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
