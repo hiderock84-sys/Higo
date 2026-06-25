@@ -2343,29 +2343,11 @@ body.is-landing.hero-variant-glass .hero-copy-stack .hero-actions--cta {
 
 body.is-landing .hero-head {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  gap: clamp(12px, 3.2vw, 20px);
-  width: 100%;
-}
-
-.hero-head__logo {
-  flex: 0 0 auto;
-  width: clamp(56px, 16vw, 76px);
-  height: auto;
-  object-fit: contain;
-  object-position: left center;
-}
-
-.hero-head__text {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(4px, 1vh, 8px);
+  align-items: center;
+  text-align: center;
+  gap: clamp(8px, 1.8vh, 14px);
+  width: 100%;
 }
 
 body.is-landing .hero-eyebrow {
@@ -2449,23 +2431,25 @@ body.is-landing .hero-deck__row {
 
 body.is-landing .hero-org,
 body.is-landing .hero-eyebrow {
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-title {
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  text-align: left;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
 }
 
 body.is-landing .hero-tagline {
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-tagline__row {
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-deck {
@@ -4622,14 +4606,18 @@ body.is-standalone-view .standalone-target.rapport-page * {
   }
 
   body.is-landing .hero-head {
-    gap: clamp(8px, 2.4vw, 12px);
+    gap: clamp(6px, 1.4svh, 10px);
     align-items: center;
-    text-align: left;
-    justify-content: flex-start;
+    text-align: center;
   }
 
-  .hero-head__logo {
-    width: clamp(52px, 14vw, 68px);
+  .site-header__label {
+    display: block;
+  }
+
+  .site-header__logo {
+    height: 34px;
+    max-width: 40px;
   }
 
   body.is-landing:not(.hero-variant-bottom) .hero-org {
@@ -5128,17 +5116,34 @@ body.is-standalone-view .standalone-target.rapport-page * {
 .site-header__brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   text-decoration: none;
-  flex-shrink: 0;
+  flex: 1 1 auto;
   min-width: 0;
+  flex-wrap: nowrap;
 }
 
 .site-header__logo {
-  height: 32px;
+  height: 34px;
   width: auto;
-  max-width: 200px;
+  max-width: 42px;
+  flex-shrink: 0;
   object-fit: contain;
+  object-position: left center;
+}
+
+.site-header__label {
+  display: none;
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.94);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .site-header__tagline {
@@ -5654,9 +5659,19 @@ body.is-standalone-view .standalone-target.rapport-page * {
     gap: 6px;
   }
 
+  .site-header__brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .site-header__label {
+    display: block;
+  }
+
   .site-header__logo {
-    height: 28px;
-    max-width: min(38vw, 140px);
+    height: 34px;
+    max-width: 40px;
   }
 
   .site-footer__cta-inner {
@@ -6448,9 +6463,19 @@ body.is-standalone-view .site-footer {
     gap: 6px;
   }
 
+  .site-header__brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .site-header__label {
+    display: block;
+  }
+
   .site-header__logo {
-    height: 28px;
-    max-width: min(38vw, 140px);
+    height: 34px;
+    max-width: 40px;
   }
 
   .site-footer__cta-inner {
@@ -7671,29 +7696,11 @@ body.is-landing.hero-variant-glass .hero-copy-stack .hero-actions--cta {
 
 body.is-landing .hero-head {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  gap: clamp(12px, 3.2vw, 20px);
-  width: 100%;
-}
-
-.hero-head__logo {
-  flex: 0 0 auto;
-  width: clamp(56px, 16vw, 76px);
-  height: auto;
-  object-fit: contain;
-  object-position: left center;
-}
-
-.hero-head__text {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(4px, 1vh, 8px);
+  align-items: center;
+  text-align: center;
+  gap: clamp(8px, 1.8vh, 14px);
+  width: 100%;
 }
 
 body.is-landing .hero-eyebrow {
@@ -7777,23 +7784,25 @@ body.is-landing .hero-deck__row {
 
 body.is-landing .hero-org,
 body.is-landing .hero-eyebrow {
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-title {
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  text-align: left;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
 }
 
 body.is-landing .hero-tagline {
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-tagline__row {
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing .hero-deck {
@@ -8679,19 +8688,20 @@ body.is-landing.hero-variant-bottom .hero-copy-stack {
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-start !important;
-  align-items: stretch;
+  align-items: center;
   gap: clamp(10px, 2.1svh, 14px) !important;
   width: 100%;
-  max-width: min(34rem, 100%);
-  margin-inline: 0;
+  max-width: min(30rem, 100%);
+  margin-inline: auto;
   padding: 0 clamp(4px, 1.5vw, 8px);
-  text-align: left;
+  text-align: center;
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-head {
   flex: 0 0 auto;
-  gap: clamp(10px, 2.4vw, 16px) !important;
+  gap: clamp(6px, 1.2svh, 10px) !important;
   align-items: center;
+  width: 100%;
 }
 
 body.is-landing.hero-variant-bottom .hero-copy-stack .hero-body {
@@ -8755,9 +8765,10 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-title {
-    font-size: clamp(3rem, 13.8vw, 3.875rem) !important;
-    line-height: 1.06 !important;
-    letter-spacing: 0.05em !important;
+    font-size: clamp(2.5rem, 12.5vw, 3.75rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
   }
 
   body.is-landing.hero-variant-bottom .hero-copy-stack .hero-tagline {
@@ -9294,12 +9305,26 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   }
 }
 
-/* Gold facility logos — subtle depth on dark/photo backgrounds */
+/* Gold facility logos — depth on dark/photo backgrounds */
+@media (min-width: 1025px) {
+  .site-header__label {
+    display: none;
+  }
+
+  .site-header__logo {
+    height: 32px;
+    max-width: 200px;
+  }
+
+  .site-header__brand {
+    flex: 0 0 auto;
+  }
+}
+
 .site-header__logo,
 .mobile-menu-logo-img,
-.hero-head__logo,
 .site-footer__logo,
 .site-footer__facility-logo,
 .facility-brand__logo {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.42)) contrast(1.06) saturate(1.08);
 }
