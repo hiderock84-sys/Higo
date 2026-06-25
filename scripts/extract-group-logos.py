@@ -11,6 +11,8 @@ import fitz
 import numpy as np
 from PIL import Image
 
+from logo_gold_enhance import enhance_gold_logo
+
 ROOT = Path(__file__).resolve().parents[1]
 STATIC = ROOT / "public" / "static"
 INCOMING = STATIC / "incoming"
@@ -103,7 +105,7 @@ def main() -> None:
     )
 
     for filename, y0, y1 in SEGMENTS:
-        logo = extract_logo(image[y0:y1])
+        logo = enhance_gold_logo(extract_logo(image[y0:y1]))
         target = STATIC / filename
         extracted = INCOMING / filename.replace(".png", "-extracted.png")
         Image.fromarray(logo).save(extracted)

@@ -9293,3 +9293,13 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Gold facility logos — subtle depth on dark/photo backgrounds */
+.site-header__logo,
+.mobile-menu-logo-img,
+.hero-head__logo,
+.site-footer__logo,
+.site-footer__facility-logo,
+.facility-brand__logo {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
