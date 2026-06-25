@@ -1,10 +1,17 @@
-"""Shared gold-logo color enhancement and cleanup."""
+"""Shared logo cleanup and brand-color recoloring."""
 
 from __future__ import annotations
 
 from collections import deque
 
 import numpy as np
+
+# Site brand palette (teal / cyan — matches header, footer, CTAs)
+BRAND_DARK = np.array([18, 118, 128], dtype=np.float32)      # #127680
+BRAND_MID = np.array([40, 179, 174], dtype=np.float32)       # #28b3ae
+BRAND_BRIGHT = np.array([94, 212, 232], dtype=np.float32)    # #5ed4e8
+BRAND_LIGHT = np.array([196, 244, 252], dtype=np.float32)    # #c4f4fc
+BRAND_PEAK = np.array([255, 255, 255], dtype=np.float32)
 
 
 def _connected_components(mask: np.ndarray) -> list[list[tuple[int, int]]]:
@@ -66,7 +73,6 @@ def remove_stray_artifacts(rgba: np.ndarray) -> np.ndarray:
         output[:, :, channel] = np.where(cleaned, output[:, :, channel], 0)
     output[:, :, 3] = np.where(cleaned, output[:, :, 3], 0)
 
-  # Trim empty margin created by artifact removal.
     alpha = output[:, :, 3]
     ys, xs = np.where(alpha > 0)
     if len(xs):
@@ -80,21 +86,48 @@ def remove_stray_artifacts(rgba: np.ndarray) -> np.ndarray:
     return output
 
 
+def _mix_stops(t: np.ndarray) -> np.ndarray:
+    """Map 0..1 luminance to brand cyan gradient (Nx3)."""
+    t = np.clip(t, 0.0, 1.0)
+    out = np.zeros((t.size, 3), dtype=np.float32)
+
+    low = t < 0.28
+    mid = (t >= 0.28) & (t < 0.58)
+    high = (t >= 0.58) & (t < 0.82)
+    peak = t >= 0.82
+
+    if low.any():
+        ratio = t[low] / 0.28
+        out[low] = BRAND_DARK + (BRAND_MID - BRAND_DARK) * ratio[:, None]
+    if mid.any():
+        ratio = (t[mid] - 0.28) / 0.3
+        out[mid] = BRAND_MID + (BRAND_BRIGHT - BRAND_MID) * ratio[:, None]
+    if high.any():
+        ratio = (t[high] - 0.58) / 0.24
+        out[high] = BRAND_BRIGHT + (BRAND_LIGHT - BRAND_BRIGHT) * ratio[:, None]
+    if peak.any():
+        ratio = (t[peak] - 0.82) / 0.18
+        out[peak] = BRAND_LIGHT + (BRAND_PEAK - BRAND_LIGHT) * ratio[:, None]
+
+    return out
+
+
 def enhance_gold_logo(rgba: np.ndarray) -> np.ndarray:
-    """Balance gold logos for strong, professional contrast on dark UI."""
+    """Recolor facility logos to bold brand cyan/teal for site-wide consistency."""
     output = remove_stray_artifacts(rgba).astype(np.float32)
     mask = output[:, :, 3] > 20
     rgb = output[:, :, :3]
 
-    rgb[mask] = np.clip((rgb[mask] - 92) * 1.2 + 108, 0, 252)
+    luminance = 0.299 * rgb[:, :, 0] + 0.587 * rgb[:, :, 1] + 0.114 * rgb[:, :, 2]
+    visible = luminance[mask]
+    low = float(np.percentile(visible, 4))
+    high = float(np.percentile(visible, 99))
+    tone = np.clip((luminance - low) / max(high - low, 1.0), 0.0, 1.0)
+    tone = np.power(tone, 0.82)
 
-    red = rgb[:, :, 0]
-    green = rgb[:, :, 1]
-    blue = rgb[:, :, 2]
-    red[mask] = np.clip(red[mask] * 1.06 + 14, 0, 252)
-    green[mask] = np.clip(green[mask] * 1.03 + 8, 0, 248)
-    blue[mask] = np.clip(blue[mask] * 0.8, 0, 198)
-
-    output[:, :, :3] = rgb
+    recolored = _mix_stops(tone[mask])
+    output[:, :, 0][mask] = recolored[:, 0]
+    output[:, :, 1][mask] = recolored[:, 1]
+    output[:, :, 2][mask] = recolored[:, 2]
     output[:, :, 3] = np.where(mask, 255, 0)
     return output.astype(np.uint8)

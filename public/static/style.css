@@ -4423,7 +4423,12 @@ body.is-standalone-view .standalone-target.rapport-page * {
 @media (max-width: 768px) {
   :root {
     --header-height: 44px;
-    --trust-bar-height: 26px;
+    --trust-bar-height: 0px;
+    --site-chrome-height: 44px;
+  }
+
+  .trust-bar {
+    display: none;
   }
 
   .trust-bar-inner {
@@ -4613,6 +4618,14 @@ body.is-standalone-view .standalone-target.rapport-page * {
 
   .site-header__label {
     display: block;
+  }
+
+  .site-header__rapport {
+    display: inline-flex;
+    align-items: center;
+    max-width: 34vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .site-header__logo {
@@ -5137,13 +5150,32 @@ body.is-standalone-view .standalone-target.rapport-page * {
   font-family: var(--font-heading);
   font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.94);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
+}
+
+.site-header__rapport {
+  display: none;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: #7ee8f4;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(40, 179, 174, 0.65);
+  padding-bottom: 1px;
+}
+
+.site-header__rapport:hover {
+  color: #fff;
 }
 
 .site-header__tagline {
@@ -5615,7 +5647,12 @@ body.is-standalone-view .standalone-target.rapport-page * {
 @media (max-width: 768px) {
   :root {
     --header-height: 44px;
-    --trust-bar-height: 26px;
+    --trust-bar-height: 0px;
+    --site-chrome-height: 44px;
+  }
+
+  .trust-bar {
+    display: none;
   }
 
   .trust-bar-inner {
@@ -5667,6 +5704,14 @@ body.is-standalone-view .standalone-target.rapport-page * {
 
   .site-header__label {
     display: block;
+  }
+
+  .site-header__rapport {
+    display: inline-flex;
+    align-items: center;
+    max-width: 34vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .site-header__logo {
@@ -6419,7 +6464,12 @@ body.is-standalone-view .site-footer {
 @media (max-width: 768px) {
   :root {
     --header-height: 44px;
-    --trust-bar-height: 26px;
+    --trust-bar-height: 0px;
+    --site-chrome-height: 44px;
+  }
+
+  .trust-bar {
+    display: none;
   }
 
   .trust-bar-inner {
@@ -6471,6 +6521,14 @@ body.is-standalone-view .site-footer {
 
   .site-header__label {
     display: block;
+  }
+
+  .site-header__rapport {
+    display: inline-flex;
+    align-items: center;
+    max-width: 34vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .site-header__logo {
@@ -8220,12 +8278,19 @@ body.is-standalone-view .standalone-target.blog-page {
 .landing-blog-preview__cover {
   position: absolute;
   inset: 0 0 auto 0;
-  height: clamp(260px, 52vw, 360px);
-  background-image:
-    linear-gradient(180deg, rgba(6, 22, 34, 0.14) 0%, rgba(6, 22, 34, 0.38) 58%, rgba(242, 249, 253, 0.72) 86%, rgba(242, 249, 253, 0.98) 100%),
-    var(--higo-no-kaze-image);
-  background-size: cover;
-  background-position: center 40%;
+  height: clamp(200px, 40vw, 280px);
+  background:
+    linear-gradient(180deg, rgba(242, 249, 253, 0) 68%, rgba(242, 249, 253, 0.92) 88%, #f2f9fd 100%),
+    radial-gradient(ellipse 95% 75% at 50% -8%, rgba(126, 232, 244, 0.42) 0%, transparent 58%),
+    radial-gradient(ellipse 60% 45% at 82% 18%, rgba(40, 179, 174, 0.28) 0%, transparent 70%),
+    repeating-linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.035) 0 1px,
+      transparent 1px 16px
+    ),
+    linear-gradient(145deg, #061a28 0%, #0a3548 36%, #0c5f68 68%, #0a3d52 100%);
+  background-size: auto, auto, auto, auto, auto;
+  background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
 }
@@ -8357,8 +8422,7 @@ body.is-standalone-view .standalone-target.blog-page {
 
 @media (max-width: 640px) {
   .landing-blog-preview__cover {
-    height: clamp(248px, 58vw, 320px);
-    background-position: center 36%;
+    height: clamp(188px, 46vw, 248px);
   }
 
   .landing-blog-preview__articles {
@@ -9305,9 +9369,10 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   }
 }
 
-/* Gold facility logos — depth on dark/photo backgrounds */
+/* Brand-cyan facility logos — depth on dark/photo backgrounds */
 @media (min-width: 1025px) {
-  .site-header__label {
+  .site-header__label,
+  .site-header__rapport {
     display: none;
   }
 
@@ -9326,5 +9391,10 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 .site-footer__logo,
 .site-footer__facility-logo,
 .facility-brand__logo {
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.42)) contrast(1.06) saturate(1.08);
+  filter:
+    drop-shadow(0 0 10px rgba(94, 212, 232, 0.38))
+    drop-shadow(0 1px 4px rgba(0, 0, 0, 0.45))
+    brightness(1.08)
+    contrast(1.12)
+    saturate(1.15);
 }
