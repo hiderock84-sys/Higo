@@ -13,3 +13,7 @@
 【スラジェ公式ロゴ】透過PNGをそのまま置く場合:
   soulage-logo.png
   → ../soulage-logo.png にコピー（ページ・フッターで使用）
+
+【3施設グループロゴ（PDF）】higo-group-logos-source.pdf から抽出:
+  higonoie-full-logo-transparent.png / rapport-logo-light.png / soulage-logo.png
+  → PDF 1ページ目の上・中・下の金ロゴを透過PNGに変換して配置
