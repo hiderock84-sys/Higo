@@ -108,6 +108,27 @@ function blitRegion(data, srcWidth, out, outWidth, srcBox, destX, destY) {
   }
 }
 
+async function scaleContentToCanvas(contentBuffer, canvasW, canvasH) {
+  const trimmed = await sharp(contentBuffer).trim({ threshold: 12 }).png().toBuffer()
+  const meta = await sharp(trimmed).metadata()
+  const scale = Math.min(canvasW / meta.width, canvasH / meta.height)
+  const newW = Math.round(meta.width * scale)
+  const newH = Math.round(meta.height * scale)
+  const scaled = await sharp(trimmed).resize({ width: newW, height: newH }).png().toBuffer()
+
+  return sharp({
+    create: {
+      width: canvasW,
+      height: canvasH,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    },
+  })
+    .composite([{ input: scaled, left: Math.round((canvasW - newW) / 2), top: Math.round((canvasH - newH) / 2) }])
+    .png()
+    .toBuffer()
+}
+
 async function processSoulage() {
   const input = path.join(staticDir, 'soulage-logo.png')
   const { data, info } = await rawFromSharp(sharp(input))
@@ -153,7 +174,7 @@ async function processSoulage() {
   const iconLeft = Math.round((CANVAS_W - iconMeta.width) / 2)
   const textLeft = Math.round((CANVAS_W - textMeta.width) / 2)
 
-  const composed = await sharp({
+  const draft = await sharp({
     create: {
       width: CANVAS_W,
       height: CANVAS_H,
@@ -167,6 +188,9 @@ async function processSoulage() {
     ])
     .png()
     .toBuffer()
+
+  /** らぽーると同じキャンバス占有率になるよう全体を拡大して中央配置 */
+  const composed = await scaleContentToCanvas(draft, CANVAS_W, CANVAS_H)
 
   await saveWhiteLogo(composed, 'soulage-logo-site-toned.png', { trim: false })
 }
