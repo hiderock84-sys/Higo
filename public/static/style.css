@@ -452,7 +452,7 @@ body.mobile-menu-open .site-header__menu-toggle {
   object-position: left center;
   flex-shrink: 0;
   filter: var(--logo-shadow-header);
-  opacity: 0.96;
+  opacity: 1;
 }
 
 .mobile-menu-close {
@@ -5103,7 +5103,7 @@ body.is-standalone-view .standalone-target.rapport-page * {
   object-fit: contain;
   object-position: left center;
   filter: var(--logo-shadow-header);
-  opacity: 0.96;
+  opacity: 1;
 }
 
 .site-header__tagline {
@@ -5444,9 +5444,10 @@ body.is-standalone-view .standalone-target.rapport-page * {
   width: 72px;
   height: 72px;
   object-fit: contain;
+  object-position: left top;
   margin-bottom: 14px;
   filter: var(--logo-shadow-cover);
-  opacity: 0.94;
+  opacity: 1;
 }
 
 .site-footer__org {
@@ -7883,8 +7884,9 @@ body.is-standalone-view .standalone-target.blog-page {
   display: block;
   width: 100%;
   height: auto;
+  object-position: left top;
   filter: var(--logo-shadow-cover);
-  opacity: 0.93;
+  opacity: 1;
 }
 
 .grouphome-page-cover .soulage-brand {
@@ -8705,10 +8707,10 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  object-position: left center;
+  object-position: left top;
   margin: 0 0 10px;
   filter: var(--logo-shadow-cover);
-  opacity: 0.93;
+  opacity: 1;
 }
 
 .site-footer__location-name {

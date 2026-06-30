@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ロゴをサイトのティール／ネイビー基調に合わせて調整し、黒背景マットを除去する。
+ * ロゴをサイトのダークUI向けに統一（左揃え・単色ホワイト）。
  */
 import sharp from 'sharp'
 import path from 'node:path'
@@ -9,128 +9,138 @@ import { fileURLToPath } from 'node:url'
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const staticDir = path.join(root, 'public', 'static')
 
-const BRAND_TINT = { r: 168, g: 228, b: 232 } // #a8e4e8 — ヘッダーアクセントに近い色
-const FACILITY_TINT = { r: 184, g: 232, b: 236 } // #b8e8ec — カバー上のロゴ用
+/** ヘッダー／フッターアクセント #9ee8f0 に近い統一ホワイト */
+const SITE_WHITE = { r: 238, g: 248, b: 250 }
 
-function blendChannel(value, tint, amount) {
-  return Math.round(value * (1 - amount) + tint * amount)
-}
-
-async function toneHigonoieLogo(inputName, outputName) {
-  const input = path.join(staticDir, inputName)
-  const output = path.join(staticDir, outputName)
-  const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
-  const out = Buffer.from(data)
-
+function applySiteWhite(data, info, out) {
   for (let i = 0; i < info.width * info.height; i++) {
     const o = i * 4
     const r = data[o]
     const g = data[o + 1]
     const b = data[o + 2]
     const a = data[o + 3]
-    if (a < 8) continue
-
     const max = Math.max(r, g, b)
-    const min = Math.min(r, g, b)
-    const sat = max === 0 ? 0 : (max - min) / max
 
-    if (sat > 0.08) {
-      const amount = 0.42
-      out[o] = blendChannel(r, BRAND_TINT.r, amount)
-      out[o + 1] = blendChannel(g, BRAND_TINT.g, amount)
-      out[o + 2] = blendChannel(b, BRAND_TINT.b, amount)
-    } else {
-      const amount = 0.35
-      const ink = { r: 196, g: 214, b: 220 }
-      out[o] = blendChannel(r, ink.r, amount)
-      out[o + 1] = blendChannel(g, ink.g, amount)
-      out[o + 2] = blendChannel(b, ink.b, amount)
-    }
-  }
-
-  await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
-    .modulate({ saturation: 0.72, brightness: 1.04 })
-    .png({ compressionLevel: 9 })
-    .toFile(output)
-  console.log(`[logo] ${outputName}`)
-}
-
-async function removeBlackMatte(inputName, outputName, tint = FACILITY_TINT, { creamThreshold = 175 } = {}) {
-  const input = path.join(staticDir, inputName)
-  const output = path.join(staticDir, outputName)
-  const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
-  const out = Buffer.from(data)
-
-  for (let i = 0; i < info.width * info.height; i++) {
-    const o = i * 4
-    const r = data[o]
-    const g = data[o + 1]
-    const b = data[o + 2]
-    const max = Math.max(r, g, b)
-    const min = Math.min(r, g, b)
-
-    if (max < 42) {
+    if (a < 8 || max < 42) {
       out[o + 3] = 0
       continue
     }
 
-    if (min > creamThreshold - 40 && max > creamThreshold) {
-      const amount = 0.28
-      out[o] = blendChannel(r, tint.r, amount)
-      out[o + 1] = blendChannel(g, tint.g, amount)
-      out[o + 2] = blendChannel(b, tint.b, amount)
-    } else if (max - min < 28 && max > 90 && max < 210) {
-      const amount = 0.18
-      out[o] = blendChannel(r, tint.r, amount)
-      out[o + 1] = blendChannel(g, tint.g, amount)
-      out[o + 2] = blendChannel(b, tint.b, amount)
-    }
+    const lum = (r * 0.299 + g * 0.587 + b * 0.114) / 255
+    out[o] = SITE_WHITE.r
+    out[o + 1] = SITE_WHITE.g
+    out[o + 2] = SITE_WHITE.b
+    out[o + 3] = Math.round(a * Math.min(1, 0.4 + lum * 0.6))
   }
+}
 
+async function rawFromSharp(image) {
+  return image.ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+}
+
+async function saveWhiteLogo(pngBuffer, outputName) {
+  const { data, info } = await rawFromSharp(sharp(pngBuffer))
+  const out = Buffer.alloc(data.length)
+  applySiteWhite(data, info, out)
   await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
+    .trim({ threshold: 12 })
     .png({ compressionLevel: 9 })
-    .toFile(output)
+    .toFile(path.join(staticDir, outputName))
   console.log(`[logo] ${outputName}`)
 }
 
-async function toneSoulageLogo(inputName, outputName) {
-  const input = path.join(staticDir, inputName)
-  const output = path.join(staticDir, outputName)
-  const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
-  const out = Buffer.from(data)
-
-  for (let i = 0; i < info.width * info.height; i++) {
-    const o = i * 4
-    const r = data[o]
-    const g = data[o + 1]
-    const b = data[o + 2]
-    const max = Math.max(r, g, b)
-
-    if (max < 42) {
-      out[o + 3] = 0
-      continue
-    }
-
-    const lum = (r + g + b) / 3
-    const amount = lum > 140 ? 0.22 : 0.12
-    out[o] = blendChannel(r, BRAND_TINT.r, amount)
-    out[o + 1] = blendChannel(g, BRAND_TINT.g, amount)
-    out[o + 2] = blendChannel(b, BRAND_TINT.b, amount)
-    out[o + 3] = Math.min(255, Math.round(data[o + 3] * (0.82 + (lum / 255) * 0.18)))
-  }
-
-  await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
-    .png({ compressionLevel: 9 })
-    .toFile(output)
-  console.log(`[logo] ${outputName}`)
+async function processHigonoieHeader() {
+  await saveWhiteLogo(
+    await sharp(path.join(staticDir, 'higonoie-header-logo-complete-final-cutout.png')).png().toBuffer(),
+    'higonoie-header-logo-site-toned.png'
+  )
 }
 
-await toneHigonoieLogo(
-  'higonoie-header-logo-complete-final-cutout.png',
-  'higonoie-header-logo-site-toned.png'
-)
-await toneHigonoieLogo('higonoie-full-logo-transparent.png', 'higonoie-full-logo-site-toned.png')
-await removeBlackMatte('rapport-logo-light.png', 'rapport-logo-site-toned.png')
-await toneSoulageLogo('soulage-logo.png', 'soulage-logo-site-toned.png')
+async function processHigonoieFull() {
+  await saveWhiteLogo(
+    await sharp(path.join(staticDir, 'higonoie-full-logo-transparent.png')).png().toBuffer(),
+    'higonoie-full-logo-site-toned.png'
+  )
+}
+
+async function processRapport() {
+  await saveWhiteLogo(
+    await sharp(path.join(staticDir, 'rapport-logo-light.png')).png().toBuffer(),
+    'rapport-logo-site-toned.png'
+  )
+}
+
+function getRegionBbox(data, width, height, yStart, yEnd) {
+  let minX = width
+  let minY = height
+  let maxX = -1
+  let maxY = -1
+
+  for (let y = yStart; y < yEnd; y++) {
+    for (let x = 0; x < width; x++) {
+      const a = data[(y * width + x) * 4 + 3]
+      if (a > 16) {
+        minX = Math.min(minX, x)
+        minY = Math.min(minY, y)
+        maxX = Math.max(maxX, x)
+        maxY = Math.max(maxY, y)
+      }
+    }
+  }
+
+  if (maxX < minX) return null
+  return { minX, minY, maxX, maxY }
+}
+
+function blitRegion(data, srcWidth, out, outWidth, srcBox, destX, destY) {
+  for (let y = srcBox.minY; y <= srcBox.maxY; y++) {
+    for (let x = srcBox.minX; x <= srcBox.maxX; x++) {
+      const si = (y * srcWidth + x) * 4
+      const dx = destX + (x - srcBox.minX)
+      const dy = destY + (y - srcBox.minY)
+      const di = (dy * outWidth + dx) * 4
+      out[di] = data[si]
+      out[di + 1] = data[si + 1]
+      out[di + 2] = data[si + 2]
+      out[di + 3] = data[si + 3]
+    }
+  }
+}
+
+async function processSoulage() {
+  const input = path.join(staticDir, 'soulage-logo.png')
+  const { data, info } = await rawFromSharp(sharp(input))
+
+  const splitY = Math.floor(info.height * 0.56)
+  const iconBox = getRegionBbox(data, info.width, info.height, 0, splitY)
+  const textBox = getRegionBbox(data, info.width, info.height, splitY, info.height)
+
+  if (!iconBox || !textBox) {
+    await saveWhiteLogo(await sharp(input).png().toBuffer(), 'soulage-logo-site-toned.png')
+    return
+  }
+
+  const iconW = iconBox.maxX - iconBox.minX + 1
+  const iconH = iconBox.maxY - iconBox.minY + 1
+  const textW = textBox.maxX - textBox.minX + 1
+  const textH = textBox.maxY - textBox.minY + 1
+  const gap = Math.max(6, Math.round(info.height * 0.015))
+  const outW = Math.max(iconW, textW)
+  const outH = iconH + gap + textH
+  const out = Buffer.alloc(outW * outH * 4)
+
+  blitRegion(data, info.width, out, outW, iconBox, 0, 0)
+  blitRegion(data, info.width, out, outW, textBox, 0, iconH + gap)
+
+  await saveWhiteLogo(
+    await sharp(out, { raw: { width: outW, height: outH, channels: 4 } }).png().toBuffer(),
+    'soulage-logo-site-toned.png'
+  )
+}
+
+await processHigonoieHeader()
+await processHigonoieFull()
+await processRapport()
+await processSoulage()
 
 console.log('[logo] Done.')
