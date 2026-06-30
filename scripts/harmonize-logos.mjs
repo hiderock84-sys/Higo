@@ -71,63 +71,25 @@ async function processRapport() {
   )
 }
 
-function getGoldLogoBbox(data, width, height) {
-  let minX = width
-  let minY = height
-  let maxX = -1
-  let maxY = -1
-
-  for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-      const i = (y * width + x) * 4
-      const r = data[i]
-      const g = data[i + 1]
-      const b = data[i + 2]
-      const max = Math.max(r, g, b)
-      const isLogoInk = max > 165 && r > 115 && r + g > b * 1.35 && r - b > 20
-
-      if (isLogoInk) {
-        minX = Math.min(minX, x)
-        minY = Math.min(minY, y)
-        maxX = Math.max(maxX, x)
-        maxY = Math.max(maxY, y)
-      }
-    }
-  }
-
-  if (maxX < minX) return null
-  return { minX, minY, maxX, maxY }
+function isSoulageBackground(r, g, b, a) {
+  if (a < 40) return true
+  if (r > 210 && r - b > 50) return false
+  return r < 210 && g < 210 && b < 185 && r - b < 75
 }
 
 async function processSoulage() {
   const input = path.join(staticDir, 'soulage-logo.png')
   const { data, info } = await rawFromSharp(sharp(input))
-  const box = getGoldLogoBbox(data, info.width, info.height)
+  const cleaned = Buffer.alloc(data.length)
 
-  let source = sharp(input)
-  if (box) {
-    const pad = 4
-    source = source.extract({
-      left: Math.max(0, box.minX - pad),
-      top: Math.max(0, box.minY - pad),
-      width: Math.min(info.width, box.maxX - box.minX + 1 + pad * 2),
-      height: Math.min(info.height, box.maxY - box.minY + 1 + pad * 2),
-    })
-  }
-
-  const cropped = await rawFromSharp(source)
-  const cleaned = Buffer.alloc(cropped.data.length)
-
-  for (let i = 0; i < cropped.info.width * cropped.info.height; i++) {
+  for (let i = 0; i < info.width * info.height; i++) {
     const o = i * 4
-    const r = cropped.data[o]
-    const g = cropped.data[o + 1]
-    const b = cropped.data[o + 2]
-    const a = cropped.data[o + 3]
-    const max = Math.max(r, g, b)
-    const isLogoInk = max > 150 && r > 100 && r + g > b * 1.25 && r - b > 15
+    const r = data[o]
+    const g = data[o + 1]
+    const b = data[o + 2]
+    const a = data[o + 3]
 
-    if (a < 8 || !isLogoInk) {
+    if (isSoulageBackground(r, g, b, a)) {
       cleaned[o + 3] = 0
       continue
     }
@@ -136,10 +98,10 @@ async function processSoulage() {
     cleaned[o] = SITE_WHITE.r
     cleaned[o + 1] = SITE_WHITE.g
     cleaned[o + 2] = SITE_WHITE.b
-    cleaned[o + 3] = Math.round(a * Math.min(1, 0.4 + lum * 0.6))
+    cleaned[o + 3] = Math.round(a * Math.min(1, 0.55 + lum * 0.45))
   }
 
-  await sharp(cleaned, { raw: { width: cropped.info.width, height: cropped.info.height, channels: 4 } })
+  await sharp(cleaned, { raw: { width: info.width, height: info.height, channels: 4 } })
     .trim({ threshold: 12 })
     .png({ compressionLevel: 9 })
     .toFile(path.join(staticDir, 'soulage-wreath-logo.png'))

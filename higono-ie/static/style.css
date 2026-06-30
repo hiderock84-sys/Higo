@@ -8721,6 +8721,7 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 .site-footer__location--soulage .site-footer__facility-logo {
   width: auto;
   max-width: min(148px, 46vw);
+  filter: none;
 }
 
 .site-footer__location-name {
