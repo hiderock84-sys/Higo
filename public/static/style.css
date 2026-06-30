@@ -7884,7 +7884,7 @@ body.is-standalone-view .standalone-target.blog-page {
   display: block;
   width: 100%;
   height: auto;
-  object-position: left top;
+  object-position: center center;
   filter: var(--logo-shadow-cover);
   opacity: 1;
 }
@@ -8699,11 +8699,11 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 
 .site-footer__facility-logo {
   display: block;
+  width: 56px;
   height: 72px;
-  width: auto;
   max-width: 100%;
   object-fit: contain;
-  object-position: left top;
+  object-position: center center;
   margin: 0 0 10px;
   filter: var(--logo-shadow-cover);
   opacity: 1;

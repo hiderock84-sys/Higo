@@ -108,23 +108,18 @@ function blitRegion(data, srcWidth, out, outWidth, srcBox, destX, destY) {
   }
 }
 
-async function scaleContentToCanvas(contentBuffer, canvasW, canvasH) {
+async function scaleContentToCoverCanvas(contentBuffer, canvasW, canvasH) {
   const trimmed = await sharp(contentBuffer).trim({ threshold: 12 }).png().toBuffer()
   const meta = await sharp(trimmed).metadata()
-  const scale = Math.min(canvasW / meta.width, canvasH / meta.height)
+  const scale = Math.max(canvasW / meta.width, canvasH / meta.height)
   const newW = Math.round(meta.width * scale)
   const newH = Math.round(meta.height * scale)
-  const scaled = await sharp(trimmed).resize({ width: newW, height: newH }).png().toBuffer()
+  const left = Math.max(0, Math.round((newW - canvasW) / 2))
+  const top = Math.max(0, Math.round((newH - canvasH) / 2))
 
-  return sharp({
-    create: {
-      width: canvasW,
-      height: canvasH,
-      channels: 4,
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
-    },
-  })
-    .composite([{ input: scaled, left: Math.round((canvasW - newW) / 2), top: Math.round((canvasH - newH) / 2) }])
+  return sharp(trimmed)
+    .resize({ width: newW, height: newH })
+    .extract({ left, top, width: canvasW, height: canvasH })
     .png()
     .toBuffer()
 }
@@ -151,9 +146,9 @@ async function processSoulage() {
   const rapportRef = await sharp(path.join(staticDir, 'rapport-logo-site-toned.png')).metadata()
   const CANVAS_W = rapportRef.width || 341
   const CANVAS_H = rapportRef.height || 439
-  const iconTargetH = Math.round(CANVAS_H * 0.5)
-  const textTargetH = Math.round(CANVAS_H * 0.27)
-  const gap = Math.round(CANVAS_H * 0.08)
+  const iconTargetH = Math.round(CANVAS_H * 0.54)
+  const textTargetH = Math.round(CANVAS_H * 0.28)
+  const gap = Math.round(CANVAS_H * 0.04)
   const contentH = iconTargetH + gap + textTargetH
   const topPad = Math.max(0, Math.round((CANVAS_H - contentH) / 2))
 
@@ -190,7 +185,7 @@ async function processSoulage() {
     .toBuffer()
 
   /** らぽーると同じキャンバス占有率になるよう全体を拡大して中央配置 */
-  const composed = await scaleContentToCanvas(draft, CANVAS_W, CANVAS_H)
+  const composed = await scaleContentToCoverCanvas(draft, CANVAS_W, CANVAS_H)
 
   await saveWhiteLogo(composed, 'soulage-logo-site-toned.png', { trim: false })
 }
