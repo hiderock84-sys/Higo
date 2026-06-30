@@ -7889,6 +7889,10 @@ body.is-standalone-view .standalone-target.blog-page {
   opacity: 1;
 }
 
+.grouphome-page-cover .soulage-brand {
+  width: min(200px, 50vw);
+}
+
 .rapport-brand {
   margin: 0 auto clamp(14px, 3vw, 20px);
   width: min(168px, 42vw);
@@ -8699,14 +8703,24 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
 
 .site-footer__facility-logo {
   display: block;
-  width: 56px;
   height: 72px;
+  width: auto;
   max-width: 100%;
   object-fit: contain;
-  object-position: center center;
+  object-position: left center;
   margin: 0 0 10px;
   filter: var(--logo-shadow-cover);
   opacity: 1;
+}
+
+.site-footer__location--higonoie .site-footer__facility-logo,
+.site-footer__location--rapport .site-footer__facility-logo {
+  width: 56px;
+}
+
+.site-footer__location--soulage .site-footer__facility-logo {
+  width: auto;
+  max-width: min(148px, 46vw);
 }
 
 .site-footer__location-name {
