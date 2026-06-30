@@ -38,14 +38,15 @@ async function rawFromSharp(image) {
   return image.ensureAlpha().raw().toBuffer({ resolveWithObject: true })
 }
 
-async function saveWhiteLogo(pngBuffer, outputName) {
+async function saveWhiteLogo(pngBuffer, outputName, { trim = true } = {}) {
   const { data, info } = await rawFromSharp(sharp(pngBuffer))
   const out = Buffer.alloc(data.length)
   applySiteWhite(data, info, out)
-  await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
-    .trim({ threshold: 12 })
-    .png({ compressionLevel: 9 })
-    .toFile(path.join(staticDir, outputName))
+  let pipeline = sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
+  if (trim) {
+    pipeline = pipeline.trim({ threshold: 12 })
+  }
+  await pipeline.png({ compressionLevel: 9 }).toFile(path.join(staticDir, outputName))
   console.log(`[logo] ${outputName}`)
 }
 
@@ -125,11 +126,15 @@ async function processSoulage() {
   const textW = textBox.maxX - textBox.minX + 1
   const textH = textBox.maxY - textBox.minY + 1
 
-  /** らぽーるロゴ（341×439）に合わせたフッター用プロポーション */
-  const REF_HEIGHT = 439
-  const iconTargetH = Math.round(REF_HEIGHT * 0.72)
-  const textTargetH = Math.round(REF_HEIGHT * 0.13)
-  const gap = Math.round(REF_HEIGHT * 0.05)
+  /** フッター3ロゴの基準 = らぽーる（341×439）。英文27%・エンブレム主体・中央揃え */
+  const rapportRef = await sharp(path.join(staticDir, 'rapport-logo-site-toned.png')).metadata()
+  const CANVAS_W = rapportRef.width || 341
+  const CANVAS_H = rapportRef.height || 439
+  const iconTargetH = Math.round(CANVAS_H * 0.5)
+  const textTargetH = Math.round(CANVAS_H * 0.27)
+  const gap = Math.round(CANVAS_H * 0.08)
+  const contentH = iconTargetH + gap + textTargetH
+  const topPad = Math.max(0, Math.round((CANVAS_H - contentH) / 2))
 
   const iconBuffer = await sharp(input)
     .extract({ left: iconBox.minX, top: iconBox.minY, width: iconW, height: iconH })
@@ -145,37 +150,25 @@ async function processSoulage() {
 
   const iconMeta = await sharp(iconBuffer).metadata()
   const textMeta = await sharp(textBuffer).metadata()
-  const outW = Math.max(iconMeta.width, textMeta.width)
-  const outH = iconTargetH + gap + textTargetH
+  const iconLeft = Math.round((CANVAS_W - iconMeta.width) / 2)
+  const textLeft = Math.round((CANVAS_W - textMeta.width) / 2)
 
-  let composed = await sharp({
+  const composed = await sharp({
     create: {
-      width: outW,
-      height: outH,
+      width: CANVAS_W,
+      height: CANVAS_H,
       channels: 4,
       background: { r: 0, g: 0, b: 0, alpha: 0 },
     },
   })
     .composite([
-      { input: iconBuffer, left: 0, top: 0 },
-      { input: textBuffer, left: 0, top: iconTargetH + gap },
+      { input: iconBuffer, left: iconLeft, top: topPad },
+      { input: textBuffer, left: textLeft, top: topPad + iconTargetH + gap },
     ])
     .png()
     .toBuffer()
 
-  const composedMeta = await sharp(composed).metadata()
-  const rapportMeta = await sharp(path.join(staticDir, 'rapport-logo-light.png')).metadata()
-  const rapportTrimmed = await sharp(path.join(staticDir, 'rapport-logo-light.png')).trim({ threshold: 12 }).metadata()
-  const maxW = rapportTrimmed.width || rapportMeta.width || 341
-
-  if (composedMeta.width > maxW * 1.02) {
-    composed = await sharp(composed)
-      .resize({ width: maxW })
-      .png()
-      .toBuffer()
-  }
-
-  await saveWhiteLogo(composed, 'soulage-logo-site-toned.png')
+  await saveWhiteLogo(composed, 'soulage-logo-site-toned.png', { trim: false })
 }
 
 await processHigonoieHeader()
