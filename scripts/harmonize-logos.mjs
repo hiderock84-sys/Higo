@@ -124,18 +124,58 @@ async function processSoulage() {
   const iconH = iconBox.maxY - iconBox.minY + 1
   const textW = textBox.maxX - textBox.minX + 1
   const textH = textBox.maxY - textBox.minY + 1
-  const gap = Math.max(6, Math.round(info.height * 0.015))
-  const outW = Math.max(iconW, textW)
-  const outH = iconH + gap + textH
-  const out = Buffer.alloc(outW * outH * 4)
 
-  blitRegion(data, info.width, out, outW, iconBox, 0, 0)
-  blitRegion(data, info.width, out, outW, textBox, 0, iconH + gap)
+  /** らぽーるロゴ（341×439）に合わせたフッター用プロポーション */
+  const REF_HEIGHT = 439
+  const iconTargetH = Math.round(REF_HEIGHT * 0.72)
+  const textTargetH = Math.round(REF_HEIGHT * 0.13)
+  const gap = Math.round(REF_HEIGHT * 0.05)
 
-  await saveWhiteLogo(
-    await sharp(out, { raw: { width: outW, height: outH, channels: 4 } }).png().toBuffer(),
-    'soulage-logo-site-toned.png'
-  )
+  const iconBuffer = await sharp(input)
+    .extract({ left: iconBox.minX, top: iconBox.minY, width: iconW, height: iconH })
+    .resize({ height: iconTargetH })
+    .png()
+    .toBuffer()
+
+  const textBuffer = await sharp(input)
+    .extract({ left: textBox.minX, top: textBox.minY, width: textW, height: textH })
+    .resize({ height: textTargetH })
+    .png()
+    .toBuffer()
+
+  const iconMeta = await sharp(iconBuffer).metadata()
+  const textMeta = await sharp(textBuffer).metadata()
+  const outW = Math.max(iconMeta.width, textMeta.width)
+  const outH = iconTargetH + gap + textTargetH
+
+  let composed = await sharp({
+    create: {
+      width: outW,
+      height: outH,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    },
+  })
+    .composite([
+      { input: iconBuffer, left: 0, top: 0 },
+      { input: textBuffer, left: 0, top: iconTargetH + gap },
+    ])
+    .png()
+    .toBuffer()
+
+  const composedMeta = await sharp(composed).metadata()
+  const rapportMeta = await sharp(path.join(staticDir, 'rapport-logo-light.png')).metadata()
+  const rapportTrimmed = await sharp(path.join(staticDir, 'rapport-logo-light.png')).trim({ threshold: 12 }).metadata()
+  const maxW = rapportTrimmed.width || rapportMeta.width || 341
+
+  if (composedMeta.width > maxW * 1.02) {
+    composed = await sharp(composed)
+      .resize({ width: maxW })
+      .png()
+      .toBuffer()
+  }
+
+  await saveWhiteLogo(composed, 'soulage-logo-site-toned.png')
 }
 
 await processHigonoieHeader()
