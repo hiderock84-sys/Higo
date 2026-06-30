@@ -10,6 +10,7 @@
   tochihara-meeting.jpg    … 右下
   → それぞれ ../tochihara-portrait-2026.jpg などにリネームしてコピー
 
-【スラジェ公式ロゴ】透過PNGをそのまま置く場合:
+【スラジェ公式ロゴ】PDFの月桂冠デザイン（一般社団法人ひごのいえ＋家＋Soulage＋月桂）:
   soulage-logo.png
-  → ../soulage-logo.png にコピー（ページ・フッターで使用）
+  → ../soulage-logo.png にコピー後 npm run logos:harmonize
+  → 出力: ../soulage-facility-logo.png（サイトで使用）

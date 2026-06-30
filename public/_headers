@@ -10,6 +10,9 @@
 /static/hero-variants.css
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
 
+/static/soulage-facility-logo.png
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
 /static/soulage-logo-site-toned.png
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
 

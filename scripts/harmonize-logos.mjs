@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ロゴをサイトのダークUI向けに統一（左揃え・単色ホワイト）。
+ * ロゴをサイトのダークUI向けに統一（単色ホワイト）。
  */
 import sharp from 'sharp'
 import path from 'node:path'
@@ -50,6 +50,22 @@ async function saveWhiteLogo(pngBuffer, outputName, { trim = true } = {}) {
   console.log(`[logo] ${outputName}`)
 }
 
+async function scaleContentToCoverCanvas(contentBuffer, canvasW, canvasH) {
+  const trimmed = await sharp(contentBuffer).trim({ threshold: 12 }).png().toBuffer()
+  const meta = await sharp(trimmed).metadata()
+  const scale = Math.max(canvasW / meta.width, canvasH / meta.height)
+  const newW = Math.round(meta.width * scale)
+  const newH = Math.round(meta.height * scale)
+  const left = Math.max(0, Math.round((newW - canvasW) / 2))
+  const top = Math.max(0, Math.round((newH - canvasH) / 2))
+
+  return sharp(trimmed)
+    .resize({ width: newW, height: newH })
+    .extract({ left, top, width: canvasW, height: canvasH })
+    .png()
+    .toBuffer()
+}
+
 async function processHigonoieHeader() {
   await saveWhiteLogo(
     await sharp(path.join(staticDir, 'higonoie-header-logo-complete-final-cutout.png')).png().toBuffer(),
@@ -71,123 +87,21 @@ async function processRapport() {
   )
 }
 
-function getRegionBbox(data, width, height, yStart, yEnd) {
-  let minX = width
-  let minY = height
-  let maxX = -1
-  let maxY = -1
-
-  for (let y = yStart; y < yEnd; y++) {
-    for (let x = 0; x < width; x++) {
-      const a = data[(y * width + x) * 4 + 3]
-      if (a > 16) {
-        minX = Math.min(minX, x)
-        minY = Math.min(minY, y)
-        maxX = Math.max(maxX, x)
-        maxY = Math.max(maxY, y)
-      }
-    }
-  }
-
-  if (maxX < minX) return null
-  return { minX, minY, maxX, maxY }
-}
-
-function blitRegion(data, srcWidth, out, outWidth, srcBox, destX, destY) {
-  for (let y = srcBox.minY; y <= srcBox.maxY; y++) {
-    for (let x = srcBox.minX; x <= srcBox.maxX; x++) {
-      const si = (y * srcWidth + x) * 4
-      const dx = destX + (x - srcBox.minX)
-      const dy = destY + (y - srcBox.minY)
-      const di = (dy * outWidth + dx) * 4
-      out[di] = data[si]
-      out[di + 1] = data[si + 1]
-      out[di + 2] = data[si + 2]
-      out[di + 3] = data[si + 3]
-    }
-  }
-}
-
-async function scaleContentToCoverCanvas(contentBuffer, canvasW, canvasH) {
-  const trimmed = await sharp(contentBuffer).trim({ threshold: 12 }).png().toBuffer()
-  const meta = await sharp(trimmed).metadata()
-  const scale = Math.max(canvasW / meta.width, canvasH / meta.height)
-  const newW = Math.round(meta.width * scale)
-  const newH = Math.round(meta.height * scale)
-  const left = Math.max(0, Math.round((newW - canvasW) / 2))
-  const top = Math.max(0, Math.round((newH - canvasH) / 2))
-
-  return sharp(trimmed)
-    .resize({ width: newW, height: newH })
-    .extract({ left, top, width: canvasW, height: canvasH })
-    .png()
-    .toBuffer()
-}
-
 async function processSoulage() {
   const input = path.join(staticDir, 'soulage-logo.png')
-  const { data, info } = await rawFromSharp(sharp(input))
-
-  const splitY = Math.floor(info.height * 0.56)
-  const iconBox = getRegionBbox(data, info.width, info.height, 0, splitY)
-  const textBox = getRegionBbox(data, info.width, info.height, splitY, info.height)
-
-  if (!iconBox || !textBox) {
-    await saveWhiteLogo(await sharp(input).png().toBuffer(), 'soulage-logo-site-toned.png')
-    return
-  }
-
-  const iconW = iconBox.maxX - iconBox.minX + 1
-  const iconH = iconBox.maxY - iconBox.minY + 1
-  const textW = textBox.maxX - textBox.minX + 1
-  const textH = textBox.maxY - textBox.minY + 1
-
-  /** フッター3ロゴの基準 = らぽーる（341×439）。英文27%・エンブレム主体・中央揃え */
   const rapportRef = await sharp(path.join(staticDir, 'rapport-logo-site-toned.png')).metadata()
   const CANVAS_W = rapportRef.width || 341
   const CANVAS_H = rapportRef.height || 439
-  const iconTargetH = Math.round(CANVAS_H * 0.54)
-  const textTargetH = Math.round(CANVAS_H * 0.28)
-  const gap = Math.round(CANVAS_H * 0.04)
-  const contentH = iconTargetH + gap + textTargetH
-  const topPad = Math.max(0, Math.round((CANVAS_H - contentH) / 2))
 
-  const iconBuffer = await sharp(input)
-    .extract({ left: iconBox.minX, top: iconBox.minY, width: iconW, height: iconH })
-    .resize({ height: iconTargetH })
+  const { data, info } = await rawFromSharp(sharp(input))
+  const out = Buffer.alloc(data.length)
+  applySiteWhite(data, info, out)
+  const toned = await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
     .png()
     .toBuffer()
 
-  const textBuffer = await sharp(input)
-    .extract({ left: textBox.minX, top: textBox.minY, width: textW, height: textH })
-    .resize({ height: textTargetH })
-    .png()
-    .toBuffer()
-
-  const iconMeta = await sharp(iconBuffer).metadata()
-  const textMeta = await sharp(textBuffer).metadata()
-  const iconLeft = Math.round((CANVAS_W - iconMeta.width) / 2)
-  const textLeft = Math.round((CANVAS_W - textMeta.width) / 2)
-
-  const draft = await sharp({
-    create: {
-      width: CANVAS_W,
-      height: CANVAS_H,
-      channels: 4,
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
-    },
-  })
-    .composite([
-      { input: iconBuffer, left: iconLeft, top: topPad },
-      { input: textBuffer, left: textLeft, top: topPad + iconTargetH + gap },
-    ])
-    .png()
-    .toBuffer()
-
-  /** らぽーると同じキャンバス占有率になるよう全体を拡大して中央配置 */
-  const composed = await scaleContentToCoverCanvas(draft, CANVAS_W, CANVAS_H)
-
-  await saveWhiteLogo(composed, 'soulage-logo-site-toned.png', { trim: false })
+  const composed = await scaleContentToCoverCanvas(toned, CANVAS_W, CANVAS_H)
+  await saveWhiteLogo(composed, 'soulage-facility-logo.png', { trim: false })
 }
 
 await processHigonoieHeader()
