@@ -50,6 +50,8 @@
   --rapport-facility-image: url("/static/women-facility-rapport.jpg?v=20260521b");
   --gutter: clamp(16px, 4vw, 28px);
   --content-max: 1120px;
+  --logo-shadow-header: drop-shadow(0 1px 0 rgba(4, 18, 28, 0.22));
+  --logo-shadow-cover: drop-shadow(0 4px 14px rgba(4, 18, 28, 0.28));
 }
 
 html {
@@ -449,6 +451,8 @@ body.mobile-menu-open .site-header__menu-toggle {
   object-fit: contain;
   object-position: left center;
   flex-shrink: 0;
+  filter: var(--logo-shadow-header);
+  opacity: 0.96;
 }
 
 .mobile-menu-close {
@@ -5097,6 +5101,9 @@ body.is-standalone-view .standalone-target.rapport-page * {
   width: auto;
   max-width: 200px;
   object-fit: contain;
+  object-position: left center;
+  filter: var(--logo-shadow-header);
+  opacity: 0.96;
 }
 
 .site-header__tagline {
@@ -5438,6 +5445,8 @@ body.is-standalone-view .standalone-target.rapport-page * {
   height: 72px;
   object-fit: contain;
   margin-bottom: 14px;
+  filter: var(--logo-shadow-cover);
+  opacity: 0.94;
 }
 
 .site-footer__org {
@@ -7874,6 +7883,8 @@ body.is-standalone-view .standalone-target.blog-page {
   display: block;
   width: 100%;
   height: auto;
+  filter: var(--logo-shadow-cover);
+  opacity: 0.93;
 }
 
 .grouphome-page-cover .soulage-brand {
@@ -8696,6 +8707,8 @@ body.is-landing.hero-variant-bottom .hero-copy-stack .hero-actions--cta {
   object-fit: contain;
   object-position: left center;
   margin: 0 0 10px;
+  filter: var(--logo-shadow-cover);
+  opacity: 0.93;
 }
 
 .site-footer__location-name {
