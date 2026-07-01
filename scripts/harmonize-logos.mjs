@@ -100,6 +100,27 @@ async function scaleContentToContainCanvas(contentBuffer, canvasW, canvasH) {
     .toBuffer()
 }
 
+const SOULAGE_JP_LABEL = {
+  erase: { left: 120, top: 410, width: 280, height: 75 },
+  text: { cx: 256, cy: 451, size: 38 },
+}
+
+function eraseRegion(data, width, box) {
+  for (let y = box.top; y < box.top + box.height; y++) {
+    for (let x = box.left; x < box.left + box.width; x++) {
+      const o = (y * width + x) * 4
+      data[o + 3] = 0
+    }
+  }
+}
+
+function createSurajeLabelSvg(width, height, { cx, cy, size }) {
+  const svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+    <text x="${cx}" y="${cy}" font-family="Droid Sans Fallback, 'Noto Serif JP', serif" font-size="${size}" font-weight="500" fill="rgb(${SITE_WHITE.r},${SITE_WHITE.g},${SITE_WHITE.b})" text-anchor="middle" dominant-baseline="middle">スラジェ</text>
+  </svg>`
+  return Buffer.from(svg)
+}
+
 async function processSoulage() {
   const input = path.join(staticDir, 'soulage-logo.png')
   const rapportRef = await sharp(path.join(staticDir, 'rapport-logo-site-toned.png')).metadata()
@@ -128,11 +149,14 @@ async function processSoulage() {
     cleaned[o + 3] = Math.round(a * Math.min(1, 0.55 + lum * 0.45))
   }
 
-  const toned = await sharp(cleaned, { raw: { width: info.width, height: info.height, channels: 4 } })
+  eraseRegion(cleaned, info.width, SOULAGE_JP_LABEL.erase)
+
+  const labeled = await sharp(cleaned, { raw: { width: info.width, height: info.height, channels: 4 } })
+    .composite([{ input: createSurajeLabelSvg(info.width, info.height, SOULAGE_JP_LABEL.text), top: 0, left: 0 }])
     .png()
     .toBuffer()
 
-  const composed = await scaleContentToContainCanvas(toned, CANVAS_W, CANVAS_H)
+  const composed = await scaleContentToContainCanvas(labeled, CANVAS_W, CANVAS_H)
   await saveWhiteLogo(composed, 'soulage-wreath-logo.png', { trim: false })
 }
 
