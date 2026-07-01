@@ -88,27 +88,6 @@ function eraseRegion(data, width, box) {
   }
 }
 
-async function scaleContentToContainCanvas(contentBuffer, canvasW, canvasH) {
-  const trimmed = await sharp(contentBuffer).trim({ threshold: 12 }).png().toBuffer()
-  const meta = await sharp(trimmed).metadata()
-  const scale = Math.min(canvasW / meta.width, canvasH / meta.height)
-  const newW = Math.round(meta.width * scale)
-  const newH = Math.round(meta.height * scale)
-  const scaled = await sharp(trimmed).resize({ width: newW, height: newH }).png().toBuffer()
-
-  return sharp({
-    create: {
-      width: canvasW,
-      height: canvasH,
-      channels: 4,
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
-    },
-  })
-    .composite([{ input: scaled, left: Math.round((canvasW - newW) / 2), top: Math.round((canvasH - newH) / 2) }])
-    .png()
-    .toBuffer()
-}
-
 function arcPoint(p0, p1, p2, t) {
   const mt = 1 - t
   return {
@@ -123,26 +102,49 @@ function arcTangentDeg(p0, p1, p2, t) {
   return (Math.atan2(dy, dx) * 180) / Math.PI + 90
 }
 
-/** らぽーると同じ2属性：上部アーチ日本語＋下部英文（textPathはsharp非対応のため文字配置） */
-function createSoulageLabelSvg(width, height) {
+/** らぽーる 341×439 から導出したスラジェ専用レイアウト規則 */
+const SOULAGE_LAYOUT = {
+  canvasW: 341,
+  canvasH: 439,
+  topArc: {
+    p0: { x: 52, y: 98 },
+    p1: { x: 170.5, y: 34 },
+    p2: { x: 289, y: 98 },
+    fontSize: 32,
+    chars: 'スラジェ',
+    ts: [0.22, 0.4, 0.58, 0.76],
+  },
+  emblem: {
+    top: 95,
+    height: 270,
+    maxWidth: 300,
+  },
+  bottomLabel: {
+    y: 405,
+    fontSize: 34,
+    text: 'Soulage',
+  },
+}
+
+function createSoulageLayoutSvg({ canvasW, canvasH, topArc, bottomLabel }) {
   const white = `rgb(${SITE_WHITE.r},${SITE_WHITE.g},${SITE_WHITE.b})`
-  const fontSize = Math.round(width * 0.094)
-  const p0 = { x: Math.round(width * 0.14), y: Math.round(height * 0.19) }
-  const p1 = { x: Math.round(width / 2), y: Math.round(height * 0.08) }
-  const p2 = { x: Math.round(width * 0.86), y: Math.round(height * 0.19) }
-  const chars = 'スラジェ'
-  const ts = [0.22, 0.4, 0.58, 0.76]
-  const texts = [...chars]
+  const { p0, p1, p2, fontSize, chars, ts } = topArc
+  const archTexts = [...chars]
     .map((ch, i) => {
       const { x, y } = arcPoint(p0, p1, p2, ts[i])
       const rot = arcTangentDeg(p0, p1, p2, ts[i])
       return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-family="sans-serif" font-size="${fontSize}" font-weight="700" fill="${white}" text-anchor="middle" dominant-baseline="middle" transform="rotate(${rot.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})">${ch}</text>`
     })
     .join('')
-  return Buffer.from(`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">${texts}</svg>`)
+
+  const svg = `<svg width="${canvasW}" height="${canvasH}" xmlns="http://www.w3.org/2000/svg">
+    ${archTexts}
+    <text x="${(canvasW / 2).toFixed(1)}" y="${bottomLabel.y}" font-family="sans-serif" font-size="${bottomLabel.fontSize}" font-weight="700" fill="${white}" text-anchor="middle" dominant-baseline="middle">${bottomLabel.text}</text>
+  </svg>`
+  return Buffer.from(svg)
 }
 
-async function extractSoulageFromPdf() {
+async function extractSoulageSourceFromPdf() {
   const pdfPath = path.join(staticDir, 'incoming', 'soulage-logo-official.pdf')
   const { execSync } = await import('node:child_process')
   const tmpPdfImg = path.join(staticDir, 'soulage-pdf-sheet.png')
@@ -159,23 +161,14 @@ async function extractSoulageFromPdf() {
   const third = Math.round(meta.width / 3)
   const left = third * 2 + 8
   const cropW = meta.width - left - 8
-  const cropped = await sharp(tmpPdfImg)
+  return sharp(tmpPdfImg)
     .extract({ left, top: 0, width: cropW, height: meta.height })
     .png()
     .toBuffer()
-
-  await sharp(cropped).toFile(path.join(staticDir, 'soulage-logo.png'))
-  return cropped
 }
 
-async function processSoulage() {
-  await extractSoulageFromPdf()
-
-  const rapportRef = await sharp(path.join(staticDir, 'rapport-logo-site-toned.png')).metadata()
-  const CANVAS_W = rapportRef.width || 341
-  const CANVAS_H = rapportRef.height || 439
-
-  const { data, info } = await rawFromSharp(sharp(path.join(staticDir, 'soulage-logo.png')))
+async function extractSoulageEmblemOnly(sourceBuffer) {
+  const { data, info } = await rawFromSharp(sharp(sourceBuffer))
   const cleaned = Buffer.alloc(data.length)
 
   for (let i = 0; i < info.width * info.height; i++) {
@@ -197,16 +190,57 @@ async function processSoulage() {
     cleaned[o + 3] = Math.round(a * Math.min(1, 0.55 + lum * 0.45))
   }
 
-  /** PDF上部 HIGO NO IE GROUP と中部 そらじえ を除去（家・月桂冠・Soulage は保持） */
+  /** 文字領域のみ除去（家＋月桂冠のみ残す） */
   eraseRegion(cleaned, info.width, { left: 55, top: 135, width: 400, height: 82 })
-  eraseRegion(cleaned, info.width, { left: 75, top: 472, width: 300, height: 52 })
+  eraseRegion(cleaned, info.width, { left: 70, top: 448, width: 330, height: 95 })
 
-  const labeled = await sharp(cleaned, { raw: { width: info.width, height: info.height, channels: 4 } })
-    .composite([{ input: createSoulageLabelSvg(info.width, info.height), top: 0, left: 0 }])
+  const trimmed = await sharp(cleaned, { raw: { width: info.width, height: info.height, channels: 4 } })
+    .trim({ threshold: 12 })
+    .png()
+    .toBuffer()
+  const trimmedMeta = await sharp(trimmed).metadata()
+  return sharp(trimmed)
+    .extract({
+      left: 0,
+      top: 0,
+      width: trimmedMeta.width,
+      height: Math.round(trimmedMeta.height * 0.92),
+    })
+    .trim({ threshold: 12 })
+    .png()
+    .toBuffer()
+}
+
+async function processSoulage() {
+  const source = await extractSoulageSourceFromPdf()
+  const emblem = await extractSoulageEmblemOnly(source)
+  const emblemMeta = await sharp(emblem).metadata()
+
+  const { canvasW, canvasH, topArc, emblem: emblemBox, bottomLabel } = SOULAGE_LAYOUT
+  const scale = Math.min(emblemBox.maxWidth / emblemMeta.width, emblemBox.height / emblemMeta.height)
+  const emblemW = Math.round(emblemMeta.width * scale)
+  const emblemH = Math.round(emblemMeta.height * scale)
+  const emblemLeft = Math.round((canvasW - emblemW) / 2)
+  const emblemTop = Math.round(emblemBox.top + (emblemBox.height - emblemH) / 2)
+
+  const emblemScaled = await sharp(emblem).resize({ width: emblemW, height: emblemH }).png().toBuffer()
+  const layoutSvg = createSoulageLayoutSvg({ canvasW, canvasH, topArc, bottomLabel })
+
+  const composed = await sharp({
+    create: {
+      width: canvasW,
+      height: canvasH,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    },
+  })
+    .composite([
+      { input: emblemScaled, left: emblemLeft, top: emblemTop },
+      { input: layoutSvg, left: 0, top: 0 },
+    ])
     .png()
     .toBuffer()
 
-  const composed = await scaleContentToContainCanvas(labeled, CANVAS_W, CANVAS_H)
   await saveWhiteLogo(composed, 'soulage-wreath-logo.png', { trim: false })
 }
 

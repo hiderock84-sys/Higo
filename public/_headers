@@ -56,4 +56,5 @@
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
 
 /*
-  Cache-Control: public, max-age=86400
+  ! Cache-Control
+  Cache-Control: public, max-age=3600, must-revalidate
