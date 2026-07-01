@@ -26,8 +26,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="/static/style.css?v=20260630d" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=20260615d" rel="stylesheet">
+  <meta name="build-id" content="__BUILD_ID__">
+  <script>
+    (function () {
+      var buildId = '__BUILD_ID__';
+      if (!buildId || buildId.indexOf('BUILD_ID') !== -1) return;
+
+      var storageKey = 'higonoie-build-id';
+      var stored = localStorage.getItem(storageKey);
+      var isRefresh = /\b_refresh=1\b/.test(location.search);
+
+      if (stored && stored !== buildId && !isRefresh) {
+        localStorage.setItem(storageKey, buildId);
+        var next = location.pathname + '?_refresh=1&_b=' + encodeURIComponent(buildId) + location.hash;
+        location.replace(next);
+        return;
+      }
+
+      localStorage.setItem(storageKey, buildId);
+
+      if (isRefresh) {
+        var clean = location.pathname + location.hash;
+        history.replaceState(null, '', clean);
+      }
+    })();
+  </script>
+  <link href="/static/style.css?v=__BUILD_ID__" rel="stylesheet">
+  <link href="/static/hero-variants.css?v=__BUILD_ID__" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -2312,14 +2337,6 @@
         });
       });
     }
-
-    // スラジェロゴ：端末キャッシュが残る環境向け（スマホ等）
-    document.querySelectorAll('img[src*="soulage-logo-site-toned"]').forEach((img) => {
-      const src = img.getAttribute('src');
-      if (!src) return;
-      const joiner = src.includes('?') ? '&' : '?';
-      img.src = `${src}${joiner}r=${Date.now()}`;
-    });
 
   </script>
 </body>
