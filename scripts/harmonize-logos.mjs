@@ -79,6 +79,15 @@ function isSoulageCreamBackground(r, g, b, a) {
   return lum > 228 && max - min < 18
 }
 
+function eraseRegion(data, width, box) {
+  for (let y = box.top; y < box.top + box.height; y++) {
+    for (let x = box.left; x < box.left + box.width; x++) {
+      const o = (y * width + x) * 4
+      data[o + 3] = 0
+    }
+  }
+}
+
 async function scaleContentToContainCanvas(contentBuffer, canvasW, canvasH) {
   const trimmed = await sharp(contentBuffer).trim({ threshold: 12 }).png().toBuffer()
   const meta = await sharp(trimmed).metadata()
@@ -100,34 +109,73 @@ async function scaleContentToContainCanvas(contentBuffer, canvasW, canvasH) {
     .toBuffer()
 }
 
-const SOULAGE_JP_LABEL = {
-  erase: { left: 120, top: 410, width: 280, height: 75 },
-  text: { cx: 256, cy: 451, size: 38 },
-}
-
-function eraseRegion(data, width, box) {
-  for (let y = box.top; y < box.top + box.height; y++) {
-    for (let x = box.left; x < box.left + box.width; x++) {
-      const o = (y * width + x) * 4
-      data[o + 3] = 0
-    }
+function arcPoint(p0, p1, p2, t) {
+  const mt = 1 - t
+  return {
+    x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x,
+    y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y,
   }
 }
 
-function createSurajeLabelSvg(width, height, { cx, cy, size }) {
-  const svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-    <text x="${cx}" y="${cy}" font-family="Droid Sans Fallback, 'Noto Serif JP', serif" font-size="${size}" font-weight="500" fill="rgb(${SITE_WHITE.r},${SITE_WHITE.g},${SITE_WHITE.b})" text-anchor="middle" dominant-baseline="middle">スラジェ</text>
-  </svg>`
-  return Buffer.from(svg)
+function arcTangentDeg(p0, p1, p2, t) {
+  const dx = 2 * (1 - t) * (p1.x - p0.x) + 2 * t * (p2.x - p1.x)
+  const dy = 2 * (1 - t) * (p1.y - p0.y) + 2 * t * (p2.y - p1.y)
+  return (Math.atan2(dy, dx) * 180) / Math.PI + 90
+}
+
+/** らぽーると同じ2属性：上部アーチ日本語＋下部英文（textPathはsharp非対応のため文字配置） */
+function createSoulageLabelSvg(width, height) {
+  const white = `rgb(${SITE_WHITE.r},${SITE_WHITE.g},${SITE_WHITE.b})`
+  const fontSize = Math.round(width * 0.094)
+  const p0 = { x: Math.round(width * 0.14), y: Math.round(height * 0.19) }
+  const p1 = { x: Math.round(width / 2), y: Math.round(height * 0.08) }
+  const p2 = { x: Math.round(width * 0.86), y: Math.round(height * 0.19) }
+  const chars = 'スラジェ'
+  const ts = [0.22, 0.4, 0.58, 0.76]
+  const texts = [...chars]
+    .map((ch, i) => {
+      const { x, y } = arcPoint(p0, p1, p2, ts[i])
+      const rot = arcTangentDeg(p0, p1, p2, ts[i])
+      return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-family="sans-serif" font-size="${fontSize}" font-weight="700" fill="${white}" text-anchor="middle" dominant-baseline="middle" transform="rotate(${rot.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})">${ch}</text>`
+    })
+    .join('')
+  return Buffer.from(`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">${texts}</svg>`)
+}
+
+async function extractSoulageFromPdf() {
+  const pdfPath = path.join(staticDir, 'incoming', 'soulage-logo-official.pdf')
+  const { execSync } = await import('node:child_process')
+  const tmpPdfImg = path.join(staticDir, 'soulage-pdf-sheet.png')
+
+  execSync(
+    `python3 - <<'PY'\nimport fitz\n` +
+      `doc=fitz.open(${JSON.stringify(pdfPath)})\n` +
+      `img=doc[0].get_images(full=True)[0]\n` +
+      `open(${JSON.stringify(tmpPdfImg)},'wb').write(doc.extract_image(img[0])['image'])\nPY`,
+    { stdio: 'inherit' }
+  )
+
+  const meta = await sharp(tmpPdfImg).metadata()
+  const third = Math.round(meta.width / 3)
+  const left = third * 2 + 8
+  const cropW = meta.width - left - 8
+  const cropped = await sharp(tmpPdfImg)
+    .extract({ left, top: 0, width: cropW, height: meta.height })
+    .png()
+    .toBuffer()
+
+  await sharp(cropped).toFile(path.join(staticDir, 'soulage-logo.png'))
+  return cropped
 }
 
 async function processSoulage() {
-  const input = path.join(staticDir, 'soulage-logo.png')
+  await extractSoulageFromPdf()
+
   const rapportRef = await sharp(path.join(staticDir, 'rapport-logo-site-toned.png')).metadata()
   const CANVAS_W = rapportRef.width || 341
   const CANVAS_H = rapportRef.height || 439
 
-  const { data, info } = await rawFromSharp(sharp(input))
+  const { data, info } = await rawFromSharp(sharp(path.join(staticDir, 'soulage-logo.png')))
   const cleaned = Buffer.alloc(data.length)
 
   for (let i = 0; i < info.width * info.height; i++) {
@@ -149,10 +197,12 @@ async function processSoulage() {
     cleaned[o + 3] = Math.round(a * Math.min(1, 0.55 + lum * 0.45))
   }
 
-  eraseRegion(cleaned, info.width, SOULAGE_JP_LABEL.erase)
+  /** PDF上部 HIGO NO IE GROUP と中部 そらじえ を除去（家・月桂冠・Soulage は保持） */
+  eraseRegion(cleaned, info.width, { left: 55, top: 135, width: 400, height: 82 })
+  eraseRegion(cleaned, info.width, { left: 75, top: 472, width: 300, height: 52 })
 
   const labeled = await sharp(cleaned, { raw: { width: info.width, height: info.height, channels: 4 } })
-    .composite([{ input: createSurajeLabelSvg(info.width, info.height, SOULAGE_JP_LABEL.text), top: 0, left: 0 }])
+    .composite([{ input: createSoulageLabelSvg(info.width, info.height), top: 0, left: 0 }])
     .png()
     .toBuffer()
 
