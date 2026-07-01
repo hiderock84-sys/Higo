@@ -27,6 +27,9 @@ const cleanupAssets = [
 ]
 
 async function syncStaticAssetsToDist() {
+  const { execSync } = await import('node:child_process')
+  execSync('node scripts/build-soulage-logo.mjs', { stdio: 'inherit', cwd: projectRoot })
+
   const sourceIndex = path.join(projectRoot, 'index.html')
   const sourceStaticDir = path.join(projectRoot, 'public', 'static')
   const distStaticDir = path.join(distDir, 'static')

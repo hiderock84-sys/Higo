@@ -1,60 +1,29 @@
-/
+/*
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Pragma: no-cache
+  Expires: 0
 
 /index.html
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Pragma: no-cache
+  Expires: 0
 
-/static/style.css
+/static/*
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/hero-variants.css
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/soulage-wreath-logo.png
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/soulage-facility-logo.png
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/soulage-logo-site-toned.png
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/rapport-logo-site-toned.png
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/higonoie-full-logo-site-toned.png
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/higonoie-header-logo-site-toned.png
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/blog
-  Cache-Control: no-cache, must-revalidate
+  Pragma: no-cache
+  Expires: 0
 
 /grouphome
-  Cache-Control: no-cache, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Pragma: no-cache
+  Expires: 0
+
+/blog
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Pragma: no-cache
+  Expires: 0
 
 /program
-  Cache-Control: no-cache, must-revalidate
-
-/static/tochihara-leader-portrait.jpg
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/tochihara-leader-facility.jpg
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/tochihara-leader-meeting.jpg
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/tochihara-portrait-2026.jpg
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/tochihara-facility-2026.jpg
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/static/tochihara-meeting-2026.jpg
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-
-/*
-  ! Cache-Control
-  Cache-Control: public, max-age=3600, must-revalidate
+  Pragma: no-cache
+  Expires: 0
