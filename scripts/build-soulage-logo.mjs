@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 /**
  * スラジェロゴを SVG から一から生成（らぽーると同じ 341×439 / 2属性規則）。
- * PDF・旧 soulage-wreath-logo.png には依存しない。
+ * 出力ファイル名にコンテンツハッシュを付与し、ブラウザキャッシュを確実に回避する。
  */
+import { createHash } from 'node:crypto'
+import { writeFile, readdir, unlink } from 'node:fs/promises'
 import sharp from 'sharp'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -38,7 +40,6 @@ function arcText(chars, ts, p0, p1, p2, fontSize) {
     .join('\n    ')
 }
 
-/** 月桂冠の葉（楕円＋回転） */
 function leaf(cx, cy, w, h, rot) {
   return `<ellipse cx="${cx}" cy="${cy}" rx="${w}" ry="${h}" fill="none" stroke="${WHITE}" stroke-width="1.6" transform="rotate(${rot} ${cx} ${cy})"/>`
 }
@@ -117,13 +118,33 @@ function createSoulageLogoSvg() {
   </svg>`)
 }
 
+async function removeOldHashedLogos() {
+  const files = await readdir(staticDir)
+  await Promise.all(
+    files
+      .filter((name) => /^soulage-logo-site-toned\.[a-f0-9]+\.png$/.test(name))
+      .map((name) => unlink(path.join(staticDir, name)))
+  )
+}
+
 async function buildSoulageLogo() {
   const svg = createSoulageLogoSvg()
   const png = await sharp(svg).png().toBuffer()
-  const outPath = path.join(staticDir, 'soulage-logo-site-toned.png')
+  const hash = createHash('sha256').update(png).digest('hex').slice(0, 12)
+  const filename = `soulage-logo-site-toned.${hash}.png`
+  const outPath = path.join(staticDir, filename)
+  const url = `/static/${filename}`
+
+  await removeOldHashedLogos()
   await sharp(png).png({ compressionLevel: 9 }).toFile(outPath)
+  await writeFile(
+    path.join(staticDir, 'soulage-logo.manifest.json'),
+    `${JSON.stringify({ filename, url, hash }, null, 2)}\n`
+  )
+
   const meta = await sharp(outPath).metadata()
-  console.log(`[soulage-logo] ${outPath} (${meta.width}x${meta.height})`)
+  console.log(`[soulage-logo] ${outPath} (${meta.width}x${meta.height}) hash=${hash}`)
+  return { filename, url, hash }
 }
 
 await buildSoulageLogo()

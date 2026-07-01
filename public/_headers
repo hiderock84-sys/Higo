@@ -1,29 +1,34 @@
 /*
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Clear-Site-Data: "cache"
+  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
   Pragma: no-cache
   Expires: 0
 
 /index.html
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
-  Pragma: no-cache
-  Expires: 0
-
-/static/*
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Clear-Site-Data: "cache"
+  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
   Pragma: no-cache
   Expires: 0
 
 /grouphome
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Clear-Site-Data: "cache"
+  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
   Pragma: no-cache
   Expires: 0
 
 /blog
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Clear-Site-Data: "cache"
+  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
   Pragma: no-cache
   Expires: 0
 
 /program
-  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Clear-Site-Data: "cache"
+  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
+  Pragma: no-cache
+  Expires: 0
+
+/static/*
+  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
   Pragma: no-cache
   Expires: 0

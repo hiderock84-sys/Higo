@@ -26,6 +26,15 @@ const cleanupAssets = [
   ...targets.map((target) => path.join(target, 'static', 'logo-design.jpg')),
 ]
 
+async function injectSoulageLogoUrl(html) {
+  const manifestPath = path.join(projectRoot, 'public', 'static', 'soulage-logo.manifest.json')
+  const manifest = JSON.parse(await readFile(manifestPath, 'utf8'))
+  return html
+    .replaceAll('__SOULAGE_LOGO_URL__', manifest.url)
+    .replaceAll(/\/static\/soulage-logo-site-toned(?:\.[a-f0-9]+)?\.png(?:\?[^"']*)?/g, manifest.url)
+    .replaceAll(/\/static\/soulage-wreath-logo\.png(?:\?[^"']*)?/g, manifest.url)
+}
+
 async function syncStaticAssetsToDist() {
   const { execSync } = await import('node:child_process')
   execSync('node scripts/build-soulage-logo.mjs', { stdio: 'inherit', cwd: projectRoot })
@@ -37,7 +46,10 @@ async function syncStaticAssetsToDist() {
   const redirectsSource = path.join(projectRoot, 'public', '_redirects')
   const headersSource = path.join(projectRoot, 'public', '_headers')
   await mkdir(distStaticDir, { recursive: true })
-  await cp(sourceIndex, path.join(distDir, 'index.html'))
+
+  const html = await injectSoulageLogoUrl(await readFile(sourceIndex, 'utf8'))
+  await writeFile(path.join(distDir, 'index.html'), html)
+
   await cp(sourceStaticDir, distStaticDir, { recursive: true })
   await cp(redirectsSource, path.join(distDir, '_redirects'))
   await cp(headersSource, path.join(distDir, '_headers'))
@@ -58,7 +70,7 @@ async function copyDistToTargets() {
 async function syncRootFilesForSubprojects() {
   const sourceIndex = path.join(projectRoot, 'index.html')
   const sourceStyle = path.join(projectRoot, 'public', 'static', 'style.css')
-  const html = await readFile(sourceIndex, 'utf8')
+  const html = await injectSoulageLogoUrl(await readFile(sourceIndex, 'utf8'))
   const css = await readFile(sourceStyle, 'utf8')
 
   for (const folder of subprojectRoots) {
