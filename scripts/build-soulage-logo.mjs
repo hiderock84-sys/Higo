@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
  * スラジェロゴ — らぽーる計測レイアウト完全一致（341×439）。
+ * デザイン方針: 線画ではなく塗り要素で視覚的重さをらぽーるに合わせる。
  *
  * 実測（rapport-logo-site-toned.png）:
- *   上部アーチ  span ~242, y 0–96
+ *   上部アーチ  span ~246, y 0–96
  *   中央紋章    span 341, y 90–355
  *   下部英字    span 282, x 32, y 366
  */
@@ -28,9 +29,9 @@ const LAYOUT = {
   emblem: { left: 0, top: 90, width: 341, height: 265 },
   bottom: { left: 32, top: 366, width: 282 },
   arch: [
-    { ch: 'ス', x: 68, y: 80, size: 36 },
-    { ch: 'ラ', x: 128, y: 48, size: 36 },
-    { ch: 'ジェ', x: 224, y: 66, size: 38 },
+    { ch: 'ス', x: 73, y: 63, size: 48 },
+    { ch: 'ラ', x: 150, y: 31, size: 48 },
+    { ch: 'ジェ', x: 258, y: 53, size: 50 },
   ],
 }
 
@@ -52,48 +53,116 @@ async function ensureNotoFont() {
   }
 }
 
+function leaf(cx, cy, w, h, rot) {
+  return `<ellipse cx="${cx}" cy="${cy}" rx="${w}" ry="${h}" fill="${WHITE}" transform="rotate(${rot} ${cx} ${cy})"/>`
+}
+
+function teardropLeaf(cx, cy, size, rot) {
+  const s = size
+  return `<path d="M ${cx} ${cy - s} Q ${cx + s * 0.55} ${cy - s * 0.15} ${cx} ${cy + s * 0.85} Q ${cx - s * 0.55} ${cy - s * 0.15} ${cx} ${cy - s} Z" fill="${WHITE}" transform="rotate(${rot} ${cx} ${cy})"/>`
+}
+
 function createEmblemSvg() {
   const cx = CANVAS_W / 2
-  const leaf = (cx, cy, rx, ry, rot, sw = 2.4) =>
-    `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="none" stroke="${WHITE}" stroke-width="${sw}" transform="rotate(${rot} ${cx} ${cy})"/>`
+  const parts = []
+
+  parts.push(
+    `<path d="M 24 348 C 8 300, 10 228, 28 168 C 46 112, 72 72, 104 48 C 88 88, 68 132, 56 182 C 42 238, 44 296, 58 338" fill="none" stroke="${WHITE}" stroke-width="6.5" stroke-linecap="round"/>`,
+    `<path d="M ${CANVAS_W - 24} 348 C ${CANVAS_W - 8} 300, ${CANVAS_W - 10} 228, ${CANVAS_W - 28} 168 C ${CANVAS_W - 46} 112, ${CANVAS_W - 72} 72, ${CANVAS_W - 104} 48 C ${CANVAS_W - 88} 88, ${CANVAS_W - 68} 132, ${CANVAS_W - 56} 182 C ${CANVAS_W - 42} 238, ${CANVAS_W - 44} 296, ${CANVAS_W - 58} 338" fill="none" stroke="${WHITE}" stroke-width="6.5" stroke-linecap="round"/>`
+  )
+
+  const leftLeaves = [
+    [38, 318, 16, 8.5, -28],
+    [26, 278, 17, 9, -42],
+    [22, 236, 16, 8.5, -58],
+    [28, 196, 15, 8, -72],
+    [42, 158, 14, 7.5, -86],
+    [62, 124, 13, 7, -98],
+    [88, 96, 12, 6.5, -108],
+    [48, 292, 12, 6.5, -18],
+    [34, 252, 13, 7, -35],
+    [30, 212, 12, 6.5, -50],
+    [36, 174, 12, 6.5, -65],
+    [52, 140, 11, 6, -80],
+    [74, 110, 11, 6, -92],
+    [58, 326, 10, 5.5, -10],
+    [18, 248, 11, 6, -52],
+    [46, 218, 10, 5.5, -62],
+  ]
+  for (const [x, y, w, h, r] of leftLeaves) parts.push(leaf(x, y, w, h, r))
+
+  const rightLeaves = leftLeaves.map(([x, y, w, h, r]) => [CANVAS_W - x, y, w, h, -r])
+  for (const [x, y, w, h, r] of rightLeaves) parts.push(leaf(x, y, w, h, r))
+
+  const innerLeaves = [
+    [cx - 88, 286, 12, -18],
+    [cx - 70, 252, 11, -12],
+    [cx - 54, 222, 10, -8],
+    [cx + 88, 286, 12, 18],
+    [cx + 70, 252, 11, 12],
+    [cx + 54, 222, 10, 8],
+    [cx - 36, 286, 9, -4],
+    [cx + 36, 286, 9, 4],
+    [cx - 22, 302, 8, 0],
+    [cx + 22, 302, 8, 0],
+    [cx, 296, 9, 90],
+    [cx - 48, 178, 8, -20],
+    [cx + 48, 178, 8, 20],
+  ]
+  for (const [x, y, s, r] of innerLeaves) parts.push(teardropLeaf(x, y, s, r))
+
+  for (const [x, y, r] of [
+    [52, 228, 4],
+    [40, 268, 3.5],
+    [CANVAS_W - 52, 228, 4],
+    [CANVAS_W - 40, 268, 3.5],
+    [cx - 18, 318, 3.2],
+    [cx + 18, 318, 3.2],
+    [cx - 34, 328, 2.8],
+    [cx + 34, 328, 2.8],
+    [cx, 334, 3],
+  ]) {
+    parts.push(`<circle cx="${x}" cy="${y}" r="${r}" fill="${WHITE}"/>`)
+  }
+
+  parts.push(
+    `<g fill="${WHITE}" stroke="${WHITE}" stroke-linejoin="round">` +
+      `<path d="M ${cx} 176 L 228 218 L 228 288 L 114 288 L 114 218 Z" fill="none" stroke-width="5.2"/>` +
+      `<path d="M ${cx} 176 L 114 218 L ${cx} 176 L 228 218" fill="${WHITE}" stroke="none"/>` +
+      `<rect x="148" y="238" width="36" height="46" rx="2" fill="${WHITE}" stroke="none"/>` +
+      `</g>`
+  )
+
+  parts.push(
+    teardropLeaf(cx, 248, 18, 0),
+    `<path d="M ${cx} 228 L ${cx} 268" stroke="${WHITE}" stroke-width="2.8" stroke-linecap="round"/>`,
+    `<path d="M ${cx} 242 Q ${cx - 16} 252 ${cx - 22} 264" fill="none" stroke="${WHITE}" stroke-width="2.6" stroke-linecap="round"/>`,
+    `<path d="M ${cx} 242 Q ${cx + 16} 252 ${cx + 22} 264" fill="none" stroke="${WHITE}" stroke-width="2.6" stroke-linecap="round"/>`
+  )
+
+  parts.push(
+    `<path d="M ${cx - 62} 342 Q ${cx} 356 ${cx + 62} 342" fill="none" stroke="${WHITE}" stroke-width="4.8" stroke-linecap="round"/>`,
+    `<circle cx="${cx - 62}" cy="342" r="4" fill="${WHITE}"/>`,
+    `<circle cx="${cx + 62}" cy="342" r="4" fill="${WHITE}"/>`
+  )
+
+  for (const ox of [-34, 0, 34]) {
+    parts.push(
+      `<circle cx="${cx + ox}" cy="318" r="6" fill="${WHITE}"/>`,
+      teardropLeaf(cx + ox, 306, 8, 0)
+    )
+  }
 
   return Buffer.from(
-    `<svg width="${CANVAS_W}" height="${CANVAS_H}" xmlns="http://www.w3.org/2000/svg">` +
-      `<path d="M 18 358 C -8 310, -4 236, 16 168 C 36 108, 68 62, 108 34 C 84 78, 62 128, 50 182 C 36 244, 40 304, 62 346" fill="none" stroke="${WHITE}" stroke-width="3.2" stroke-linecap="round"/>` +
-      `<path d="M ${CANVAS_W - 18} 358 C ${CANVAS_W + 8} 310, ${CANVAS_W + 4} 236, ${CANVAS_W - 16} 168 C ${CANVAS_W - 36} 108, ${CANVAS_W - 68} 62, ${CANVAS_W - 108} 34 C ${CANVAS_W - 84} 78, ${CANVAS_W - 62} 128, ${CANVAS_W - 50} 182 C ${CANVAS_W - 36} 244, ${CANVAS_W - 40} 304, ${CANVAS_W - 62} 346" fill="none" stroke="${WHITE}" stroke-width="3.2" stroke-linecap="round"/>` +
-      leaf(42, 306, 12, 6.5, -30) +
-      leaf(28, 252, 12, 6.5, -50) +
-      leaf(36, 198, 11, 6, -68) +
-      leaf(58, 148, 10, 5.5, -84) +
-      leaf(92, 102, 10, 5.5, -100) +
-      leaf(CANVAS_W - 42, 306, 12, 6.5, 30) +
-      leaf(CANVAS_W - 28, 252, 12, 6.5, 50) +
-      leaf(CANVAS_W - 36, 198, 11, 6, 68) +
-      leaf(CANVAS_W - 58, 148, 10, 5.5, 84) +
-      leaf(CANVAS_W - 92, 102, 10, 5.5, 100) +
-      leaf(cx - 50, 336, 9, 5, -12) +
-      leaf(cx + 50, 336, 9, 5, 12) +
-      `<circle cx="56" cy="232" r="3" fill="${WHITE}"/><circle cx="42" cy="280" r="2.6" fill="${WHITE}"/>` +
-      `<circle cx="${CANVAS_W - 56}" cy="232" r="3" fill="${WHITE}"/><circle cx="${CANVAS_W - 42}" cy="280" r="2.6" fill="${WHITE}"/>` +
-      `<g stroke="${WHITE}" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round">` +
-      `<path d="M ${cx} 168 L 232 214 L 232 286 L 109 286 L 109 214 Z"/>` +
-      `<path d="M ${cx} 168 L 109 214"/><path d="M ${cx} 168 L 232 214"/>` +
-      `<rect x="144" y="234" width="38" height="48" rx="2"/>` +
-      `<path d="M ${cx} 192 Q ${cx} 236 ${cx} 258" stroke-width="2.6"/>` +
-      `<path d="M ${cx} 204 Q ${cx - 18} 220 ${cx - 26} 240" stroke-width="2.2"/>` +
-      `<path d="M ${cx} 204 Q ${cx + 18} 220 ${cx + 26} 240" stroke-width="2.2"/>` +
-      `</g>` +
-      `<path d="M ${cx} 226 Q ${cx - 10} 244 ${cx} 262 Q ${cx + 10} 244 ${cx} 226 Z" fill="none" stroke="${WHITE}" stroke-width="2.4"/>` +
-      `<path d="M ${cx - 58} 344 Q ${cx} 358 ${cx + 58} 344" fill="none" stroke="${WHITE}" stroke-width="2.6" stroke-linecap="round"/>` +
-      `</svg>`
+    `<svg width="${CANVAS_W}" height="${CANVAS_H}" xmlns="http://www.w3.org/2000/svg">${parts.join('')}</svg>`
   )
 }
 
 async function renderGlyph(ch, size) {
   const svg = Buffer.from(
-    `<svg width="160" height="96" xmlns="http://www.w3.org/2000/svg">` +
+    `<svg width="200" height="120" xmlns="http://www.w3.org/2000/svg">` +
       `<defs><style>${notoFontFaceCss()}</style></defs>` +
-      `<text x="80" y="56" font-family="${JP_FONT}" font-size="${size}" font-weight="700" fill="${WHITE}" text-anchor="middle" dominant-baseline="middle">${ch}</text>` +
+      `<text x="100" y="68" font-family="${JP_FONT}" font-size="${size}" font-weight="700" fill="${WHITE}" text-anchor="middle" dominant-baseline="middle">${ch}</text>` +
       `</svg>`
   )
   return sharp(svg).trim({ threshold: 1 }).png().toBuffer()
