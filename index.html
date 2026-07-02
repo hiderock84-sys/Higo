@@ -26,33 +26,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Shippori+Mincho+B1:wght@500;600;700&display=swap" rel="stylesheet">
-  <meta name="build-id" content="__BUILD_ID__">
-  <script>
-    (function () {
-      var buildId = '__BUILD_ID__';
-      if (!buildId || buildId.indexOf('BUILD_ID') !== -1) return;
-
-      var storageKey = 'higonoie-build-id';
-      var stored = localStorage.getItem(storageKey);
-      var isRefresh = /\b_refresh=1\b/.test(location.search);
-
-      if (stored && stored !== buildId && !isRefresh) {
-        localStorage.setItem(storageKey, buildId);
-        var next = location.pathname + '?_refresh=1&_b=' + encodeURIComponent(buildId) + location.hash;
-        location.replace(next);
-        return;
-      }
-
-      localStorage.setItem(storageKey, buildId);
-
-      if (isRefresh) {
-        var clean = location.pathname + location.hash;
-        history.replaceState(null, '', clean);
-      }
-    })();
-  </script>
-  <link href="/static/style.css?v=__BUILD_ID__" rel="stylesheet">
-  <link href="/static/hero-variants.css?v=__BUILD_ID__" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
+  <link href="/static/hero-variants.css" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -1031,7 +1006,7 @@
     <div class="grouphome-page-cover">
       <p class="section-kicker">GROUP HOME</p>
       <figure class="facility-brand soulage-brand">
-        <img src="__SOULAGE_LOGO_URL__" alt="Soulage スラジェ" class="facility-brand__logo soulage-brand__logo" width="200" height="255" loading="lazy" decoding="async">
+        <img src="/static/soulage-logo-site-toned.png" alt="Soulage スラジェ" class="facility-brand__logo soulage-brand__logo" width="200" height="255" loading="lazy" decoding="async">
       </figure>
       <h2 class="section-title section-title--stack">
         <span class="section-title__main">スラジェ</span>
@@ -1979,7 +1954,7 @@
           <p class="site-footer__location-private">住所・電話番号は、利用者保護の理由により非公開としています。</p>
         </article>
         <article class="site-footer__location site-footer__location--soulage">
-          <img src="__SOULAGE_LOGO_URL__" alt="Soulage スラジェ" class="site-footer__facility-logo" loading="lazy" decoding="async">
+          <img src="/static/soulage-logo-site-toned.png" alt="Soulage スラジェ" class="site-footer__facility-logo" loading="lazy" decoding="async">
           <h3 class="site-footer__location-name">スラジェ<span class="site-footer__location-sub">グループホーム</span></h3>
           <span class="site-footer__location-address">熊本県上益城郡御船町滝川1720-1</span>
           <span class="site-footer__location-address">ミュージックハイツ103号室</span>

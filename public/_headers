@@ -1,19 +1,17 @@
 /*
-  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0, proxy-revalidate
   Pragma: no-cache
   Expires: 0
+  CDN-Cache-Control: no-store
 
 /index.html
-  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0, proxy-revalidate
   Pragma: no-cache
   Expires: 0
-
-/static/build-id.json
-  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
-  Pragma: no-cache
-  Expires: 0
+  CDN-Cache-Control: no-store
 
 /static/*
-  Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0, proxy-revalidate
   Pragma: no-cache
   Expires: 0
+  CDN-Cache-Control: no-store
