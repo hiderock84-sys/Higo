@@ -1,13 +1,17 @@
 #!/usr/bin/env node
 /**
- * スラジェロゴ — SVG から完全新規生成（PDF・旧画像に非依存）。
- * らぽーると同じ 341×439 / 上部アーチ「スラジェ」+ 中央エンブレム + 下部「Soulage」
+ * スラジェロゴ — らぽーる計測レイアウト完全一致（341×439）。
+ *
+ * 実測（rapport-logo-site-toned.png）:
+ *   上部アーチ  span ~242, y 0–96
+ *   中央紋章    span 341, y 90–355
+ *   下部英字    span 282, x 32, y 366
  */
 import sharp from 'sharp'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { access, mkdir, writeFile } from 'node:fs/promises'
-import { createWriteStream } from 'node:fs'
+import { access, createWriteStream } from 'node:fs'
+import { mkdir } from 'node:fs/promises'
 import { pipeline } from 'node:stream/promises'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -17,8 +21,18 @@ const notoFontPath = path.join(staticDir, 'incoming', 'fonts', 'NotoSansJP.ttf')
 const CANVAS_W = 341
 const CANVAS_H = 439
 const WHITE = '#eef8fa'
-const JP_FONT = `'Noto Sans JP', WenQuanYi Micro Hei, Droid Sans Fallback, sans-serif`
-const EN_FONT = 'Inter, Plus Jakarta Sans, sans-serif'
+const JP_FONT = `'Noto Sans JP', sans-serif`
+const EN_FONT = `'Inter', 'Plus Jakarta Sans', sans-serif`
+
+const LAYOUT = {
+  emblem: { left: 0, top: 90, width: 341, height: 265 },
+  bottom: { left: 32, top: 366, width: 282 },
+  arch: [
+    { ch: 'ス', x: 68, y: 80, size: 36 },
+    { ch: 'ラ', x: 128, y: 48, size: 36 },
+    { ch: 'ジェ', x: 224, y: 66, size: 38 },
+  ],
+}
 
 function notoFontFaceCss() {
   return `@font-face { font-family: 'Noto Sans JP'; src: url('file://${notoFontPath}'); font-weight: 700; }`
@@ -27,7 +41,6 @@ function notoFontFaceCss() {
 async function ensureNotoFont() {
   try {
     await access(notoFontPath)
-    return
   } catch {
     await mkdir(path.dirname(notoFontPath), { recursive: true })
     const response = await fetch(
@@ -39,89 +52,60 @@ async function ensureNotoFont() {
   }
 }
 
-function arcPoint(p0, p1, p2, t) {
-  const mt = 1 - t
-  return {
-    x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x,
-    y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y,
-  }
-}
+function createEmblemSvg() {
+  const cx = CANVAS_W / 2
+  const leaf = (cx, cy, rx, ry, rot, sw = 2.4) =>
+    `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="none" stroke="${WHITE}" stroke-width="${sw}" transform="rotate(${rot} ${cx} ${cy})"/>`
 
-function arcTangentDeg(p0, p1, p2, t) {
-  const dx = 2 * (1 - t) * (p1.x - p0.x) + 2 * t * (p2.x - p1.x)
-  const dy = 2 * (1 - t) * (p1.y - p0.y) + 2 * t * (p2.y - p1.y)
-  return (Math.atan2(dy, dx) * 180) / Math.PI + 90
-}
-
-function leaf(cx, cy, w, h, rot, sw = 3) {
-  return `<ellipse cx="${cx}" cy="${cy}" rx="${w}" ry="${h}" fill="none" stroke="${WHITE}" stroke-width="${sw}" transform="rotate(${rot} ${cx} ${cy})"/>`
-}
-
-/** 横書き「スラジェ」を1枚描画→分割→アーチ配置（ラ/ジェの字形崩れを防ぐ） */
-async function createArchLabelLayer() {
-  const archUnits = ['ス', 'ラ', 'ジェ']
-  const ts = [0.17, 0.46, 0.78]
-  const p0 = { x: 48, y: 96 }
-  const p1 = { x: CANVAS_W / 2, y: 28 }
-  const p2 = { x: 293, y: 96 }
-
-  const lineSvg = Buffer.from(
-    `<svg width="420" height="80" xmlns="http://www.w3.org/2000/svg">` +
-      `<defs><style>${notoFontFaceCss()}</style></defs>` +
-      `<text x="210" y="52" font-family="${JP_FONT}" font-size="38" font-weight="700" fill="${WHITE}" text-anchor="middle" dominant-baseline="middle">スラジェ</text>` +
+  return Buffer.from(
+    `<svg width="${CANVAS_W}" height="${CANVAS_H}" xmlns="http://www.w3.org/2000/svg">` +
+      `<path d="M 18 358 C -8 310, -4 236, 16 168 C 36 108, 68 62, 108 34 C 84 78, 62 128, 50 182 C 36 244, 40 304, 62 346" fill="none" stroke="${WHITE}" stroke-width="3.2" stroke-linecap="round"/>` +
+      `<path d="M ${CANVAS_W - 18} 358 C ${CANVAS_W + 8} 310, ${CANVAS_W + 4} 236, ${CANVAS_W - 16} 168 C ${CANVAS_W - 36} 108, ${CANVAS_W - 68} 62, ${CANVAS_W - 108} 34 C ${CANVAS_W - 84} 78, ${CANVAS_W - 62} 128, ${CANVAS_W - 50} 182 C ${CANVAS_W - 36} 244, ${CANVAS_W - 40} 304, ${CANVAS_W - 62} 346" fill="none" stroke="${WHITE}" stroke-width="3.2" stroke-linecap="round"/>` +
+      leaf(42, 306, 12, 6.5, -30) +
+      leaf(28, 252, 12, 6.5, -50) +
+      leaf(36, 198, 11, 6, -68) +
+      leaf(58, 148, 10, 5.5, -84) +
+      leaf(92, 102, 10, 5.5, -100) +
+      leaf(CANVAS_W - 42, 306, 12, 6.5, 30) +
+      leaf(CANVAS_W - 28, 252, 12, 6.5, 50) +
+      leaf(CANVAS_W - 36, 198, 11, 6, 68) +
+      leaf(CANVAS_W - 58, 148, 10, 5.5, 84) +
+      leaf(CANVAS_W - 92, 102, 10, 5.5, 100) +
+      leaf(cx - 50, 336, 9, 5, -12) +
+      leaf(cx + 50, 336, 9, 5, 12) +
+      `<circle cx="56" cy="232" r="3" fill="${WHITE}"/><circle cx="42" cy="280" r="2.6" fill="${WHITE}"/>` +
+      `<circle cx="${CANVAS_W - 56}" cy="232" r="3" fill="${WHITE}"/><circle cx="${CANVAS_W - 42}" cy="280" r="2.6" fill="${WHITE}"/>` +
+      `<g stroke="${WHITE}" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round">` +
+      `<path d="M ${cx} 168 L 232 214 L 232 286 L 109 286 L 109 214 Z"/>` +
+      `<path d="M ${cx} 168 L 109 214"/><path d="M ${cx} 168 L 232 214"/>` +
+      `<rect x="144" y="234" width="38" height="48" rx="2"/>` +
+      `<path d="M ${cx} 192 Q ${cx} 236 ${cx} 258" stroke-width="2.6"/>` +
+      `<path d="M ${cx} 204 Q ${cx - 18} 220 ${cx - 26} 240" stroke-width="2.2"/>` +
+      `<path d="M ${cx} 204 Q ${cx + 18} 220 ${cx + 26} 240" stroke-width="2.2"/>` +
+      `</g>` +
+      `<path d="M ${cx} 226 Q ${cx - 10} 244 ${cx} 262 Q ${cx + 10} 244 ${cx} 226 Z" fill="none" stroke="${WHITE}" stroke-width="2.4"/>` +
+      `<path d="M ${cx - 58} 344 Q ${cx} 358 ${cx + 58} 344" fill="none" stroke="${WHITE}" stroke-width="2.6" stroke-linecap="round"/>` +
       `</svg>`
   )
+}
 
-  const trimmedLine = await sharp(lineSvg).trim({ threshold: 1 }).png().toBuffer()
-  const trimmedMeta = await sharp(trimmedLine).metadata()
-  const { data, info } = await sharp(trimmedLine).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+async function renderGlyph(ch, size) {
+  const svg = Buffer.from(
+    `<svg width="160" height="96" xmlns="http://www.w3.org/2000/svg">` +
+      `<defs><style>${notoFontFaceCss()}</style></defs>` +
+      `<text x="80" y="56" font-family="${JP_FONT}" font-size="${size}" font-weight="700" fill="${WHITE}" text-anchor="middle" dominant-baseline="middle">${ch}</text>` +
+      `</svg>`
+  )
+  return sharp(svg).trim({ threshold: 1 }).png().toBuffer()
+}
 
-  const colInk = Array.from({ length: info.width }, (_, x) => {
-    let n = 0
-    for (let y = 0; y < info.height; y++) {
-      if (data[(y * info.width + x) * 4 + 3] > 20) n++
-    }
-    return n
-  })
-
-  const gaps = []
-  for (let x = 1; x < info.width - 1; x++) {
-    if (colInk[x] === 0 && colInk[x - 1] > 0) gaps.push(x)
-  }
-
-  if (gaps.length < 2) {
-    throw new Error('[soulage-logo] 「スラジェ」の字間検出に失敗しました')
-  }
-
-  const segments = [
-    { left: 0, width: gaps[0] },
-    { left: gaps[0], width: gaps[1] - gaps[0] },
-    { left: gaps[1], width: info.width - gaps[1] },
-  ]
-
+async function createArchLayer() {
   const layers = []
-
-  for (let i = 0; i < archUnits.length; i++) {
-    const { left, width } = segments[i]
-    const glyph = await sharp(trimmedLine)
-      .extract({ left, top: 0, width, height: trimmedMeta.height })
-      .trim({ threshold: 1 })
-      .png()
-      .toBuffer()
-    const { x, y } = arcPoint(p0, p1, p2, ts[i])
-    const rot = arcTangentDeg(p0, p1, p2, ts[i])
-    const rotated = await sharp(glyph)
-      .rotate(rot, { background: { r: 0, g: 0, b: 0, alpha: 0 } })
-      .png()
-      .toBuffer()
-    const rMeta = await sharp(rotated).metadata()
-    layers.push({
-      input: rotated,
-      left: Math.round(x - rMeta.width / 2),
-      top: Math.round(y - rMeta.height / 2),
-    })
+  for (const { ch, x, y, size } of LAYOUT.arch) {
+    const glyph = await renderGlyph(ch, size)
+    const meta = await sharp(glyph).metadata()
+    layers.push({ input: glyph, left: Math.round(x - meta.width / 2), top: Math.round(y - meta.height / 2) })
   }
-
   return sharp({
     create: { width: CANVAS_W, height: CANVAS_H, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
   })
@@ -130,120 +114,60 @@ async function createArchLabelLayer() {
     .toBuffer()
 }
 
-function createEmblemSvg() {
-  const cx = CANVAS_W / 2
-
-  const house = `
-    <g stroke="${WHITE}" stroke-width="4.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M ${cx} 158 L 228 208 L 228 282 L 113 282 L 113 208 Z"/>
-      <path d="M ${cx} 158 L 113 208"/>
-      <path d="M ${cx} 158 L 228 208"/>
-      <rect x="148" y="232" width="36" height="50" rx="2"/>
-      <path d="M ${cx} 186 Q ${cx} 232 ${cx} 258" stroke-width="3.6"/>
-      <path d="M ${cx} 200 Q ${cx - 22} 218 ${cx - 32} 244" stroke-width="3"/>
-      <path d="M ${cx} 200 Q ${cx + 22} 218 ${cx + 32} 244" stroke-width="3"/>
-      <path d="M ${cx} 208 Q ${cx - 12} 224 ${cx - 14} 242" stroke-width="2.6"/>
-      <path d="M ${cx} 208 Q ${cx + 12} 224 ${cx + 14} 242" stroke-width="2.6"/>
-    </g>`
-
-  const wreathLeft = `
-    <path d="M 62 348
-      C 28 304, 18 242, 36 188
-      C 52 148, 82 108, 118 82
-      C 96 116, 74 162, 64 208
-      C 52 262, 56 314, 82 342" fill="none" stroke="${WHITE}" stroke-width="4.2" stroke-linecap="round"/>
-    <path d="M 82 342 C 66 326, 58 312, 62 348" fill="none" stroke="${WHITE}" stroke-width="4.2" stroke-linecap="round"/>`
-
-  const wreathRight = `
-    <path d="M ${CANVAS_W - 62} 348
-      C ${CANVAS_W - 28} 304, ${CANVAS_W - 18} 242, ${CANVAS_W - 36} 188
-      C ${CANVAS_W - 52} 148, ${CANVAS_W - 82} 108, ${CANVAS_W - 118} 82
-      C ${CANVAS_W - 96} 116, ${CANVAS_W - 74} 162, ${CANVAS_W - 64} 208
-      C ${CANVAS_W - 52} 262, ${CANVAS_W - 56} 314, ${CANVAS_W - 82} 342" fill="none" stroke="${WHITE}" stroke-width="4.2" stroke-linecap="round"/>
-    <path d="M ${CANVAS_W - 82} 342 C ${CANVAS_W - 66} 326, ${CANVAS_W - 58} 312, ${CANVAS_W - 62} 348" fill="none" stroke="${WHITE}" stroke-width="4.2" stroke-linecap="round"/>`
-
-  const leaves = [
-    leaf(64, 292, 10, 5.5, -30, 2.4),
-    leaf(52, 248, 10, 5.5, -50, 2.4),
-    leaf(58, 202, 9, 5, -68, 2.2),
-    leaf(78, 162, 8, 4.5, -82, 2.2),
-    leaf(108, 128, 8, 4.5, -98, 2.2),
-    leaf(92, 312, 8, 4.5, -18, 2.2),
-    leaf(82, 178, 7, 4, -75, 2),
-    leaf(CANVAS_W - 64, 292, 10, 5.5, 30, 2.4),
-    leaf(CANVAS_W - 52, 248, 10, 5.5, 50, 2.4),
-    leaf(CANVAS_W - 58, 202, 9, 5, 68, 2.2),
-    leaf(CANVAS_W - 78, 162, 8, 4.5, 82, 2.2),
-    leaf(CANVAS_W - 108, 128, 8, 4.5, 98, 2.2),
-    leaf(CANVAS_W - 92, 312, 8, 4.5, 18, 2.2),
-    leaf(CANVAS_W - 82, 178, 7, 4, 75, 2),
-    leaf(cx - 44, 328, 7, 4, -12, 2),
-    leaf(cx + 44, 328, 7, 4, 12, 2),
-    leaf(cx - 28, 318, 6, 3.5, -8, 2),
-    leaf(cx + 28, 318, 6, 3.5, 8, 2),
-    leaf(128, 148, 7, 4, -105, 2),
-    leaf(CANVAS_W - 128, 148, 7, 4, 105, 2),
-  ].join('\n    ')
-
-  const berries = [
-    `<circle cx="88" cy="224" r="3" fill="${WHITE}"/>`,
-    `<circle cx="74" cy="268" r="2.6" fill="${WHITE}"/>`,
-    `<circle cx="102" cy="298" r="2.4" fill="${WHITE}"/>`,
-    `<circle cx="${CANVAS_W - 88}" cy="224" r="3" fill="${WHITE}"/>`,
-    `<circle cx="${CANVAS_W - 74}" cy="268" r="2.6" fill="${WHITE}"/>`,
-    `<circle cx="${CANVAS_W - 102}" cy="298" r="2.4" fill="${WHITE}"/>`,
-  ].join('\n    ')
-
-  const ribbon = `
-    <path d="M ${cx - 58} 338 Q ${cx} 352 ${cx + 58} 338" fill="none" stroke="${WHITE}" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M ${cx - 58} 338 L ${cx - 68} 352 M ${cx + 58} 338 L ${cx + 68} 352" fill="none" stroke="${WHITE}" stroke-width="2.4" stroke-linecap="round"/>`
-
-  const bottomText = `
-    <text x="${cx.toFixed(1)}" y="410" font-family="${EN_FONT}" font-size="38" font-weight="700" fill="${WHITE}" text-anchor="middle" dominant-baseline="middle">Soulage</text>`
-
-  return Buffer.from(`<svg width="${CANVAS_W}" height="${CANVAS_H}" xmlns="http://www.w3.org/2000/svg">
-    ${wreathLeft}
-    ${wreathRight}
-    ${leaves}
-    ${berries}
-    ${ribbon}
-    ${house}
-    ${bottomText}
-  </svg>`)
+async function createBottomLayer() {
+  let label = await sharp(
+    Buffer.from(
+      `<svg width="420" height="96" xmlns="http://www.w3.org/2000/svg">` +
+        `<text x="210" y="58" font-family="${EN_FONT}" font-size="48" font-weight="700" fill="${WHITE}" text-anchor="middle" dominant-baseline="middle">Soulage</text></svg>`
+    )
+  )
+    .trim({ threshold: 1 })
+    .png()
+    .toBuffer()
+  label = await sharp(label).resize({ width: LAYOUT.bottom.width }).png().toBuffer()
+  return sharp({
+    create: { width: CANVAS_W, height: CANVAS_H, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
+  })
+    .composite([{ input: label, left: LAYOUT.bottom.left, top: LAYOUT.bottom.top }])
+    .png()
+    .toBuffer()
 }
 
 async function buildSoulageLogo() {
   await ensureNotoFont()
-  const [archLayer, emblemLayer] = await Promise.all([
-    createArchLabelLayer(),
-    sharp(createEmblemSvg()).png().toBuffer(),
-  ])
 
-  let composed = await sharp({
-    create: {
-      width: CANVAS_W,
-      height: CANVAS_H,
-      channels: 4,
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
-    },
-  })
-    .composite([
-      { input: emblemLayer, left: 0, top: 0 },
-      { input: archLayer, left: 0, top: 0 },
-    ])
+  let emblem = await sharp(createEmblemSvg()).png().toBuffer()
+  emblem = await sharp(emblem)
+    .extract({ left: 0, top: LAYOUT.emblem.top, width: CANVAS_W, height: LAYOUT.emblem.height })
+    .png()
+    .toBuffer()
+  emblem = await sharp(emblem)
+    .resize(LAYOUT.emblem.width, LAYOUT.emblem.height, { fit: 'cover', position: 'centre' })
     .png()
     .toBuffer()
 
-  composed = await sharp(composed)
-    .trim({ threshold: 8 })
-    .resize(CANVAS_W, CANVAS_H, { fit: 'cover', position: 'centre' })
+  const [archLayer, bottomLayer] = await Promise.all([createArchLayer(), createBottomLayer()])
+
+  const composed = await sharp({
+    create: { width: CANVAS_W, height: CANVAS_H, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
+  })
+    .composite([
+      { input: emblem, left: LAYOUT.emblem.left, top: LAYOUT.emblem.top },
+      { input: archLayer, left: 0, top: 0 },
+      { input: bottomLayer, left: 0, top: 0 },
+    ])
     .png()
     .toBuffer()
 
   const outPath = path.join(staticDir, 'soulage-logo-site-toned.png')
   await sharp(composed).png({ compressionLevel: 9 }).toFile(outPath)
-  const meta = await sharp(outPath).metadata()
-  console.log(`[soulage-logo] ${outPath} (${meta.width}x${meta.height})`)
+
+  const { data, info } = await sharp(outPath).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+  let ink = 0
+  for (let i = 3; i < data.length; i += 4) if (data[i] > 20) ink++
+  console.log(
+    `[soulage-logo] ${outPath} (${CANVAS_W}x${CANVAS_H}) ink ${((ink / (info.width * info.height)) * 100).toFixed(1)}%`
+  )
 }
 
 await buildSoulageLogo()
